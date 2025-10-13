@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import styles from './businessCalculatorSuite.module.css';
+import styles from './businesscalculatorsuite.module.css';
 
 const BusinessCalculatorSuite = () => {
   const [searchTerm, setSearchTerm] = useState('');

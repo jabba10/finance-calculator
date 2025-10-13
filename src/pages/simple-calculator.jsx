@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import styles from './SimpleCalculator.module.css';
+import styles from './simplecalculator.module.css';
 
 const SimpleCalculator = () => {
   const ctaButtonRef = useRef(null);

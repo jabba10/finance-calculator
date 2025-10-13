@@ -1,7 +1,7 @@
 // components/BlogPost.jsx
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import styles from './BlogPost.module.css';
+import styles from './blogpost.module.css';
 
 const BlogPost = () => {
   const [searchTerm, setSearchTerm] = useState('');

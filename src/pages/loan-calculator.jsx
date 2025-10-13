@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import styles from './LoanCalculator.module.css';
+import styles from './loancalculator.module.css';
 
 const LoanCalculator = () => {
   const ctaButtonRef = useRef(null);

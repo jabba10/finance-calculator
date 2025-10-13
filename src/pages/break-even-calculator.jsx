@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Head from 'react-helmet';
-import styles from './BreakEvenCalculator.module.css';
+import styles from './breakevencalculator.module.css';
 
 const BreakEvenCalculator = () => {
   const ctaButtonRef = useRef(null);
