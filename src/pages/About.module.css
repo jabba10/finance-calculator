@@ -1,0 +1,305 @@
+/* components/About.module.css */
+
+.aboutPage {
+  min-height: 100vh;
+  background-color: white;
+  color: #0d1b2a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Add top padding to create gap below navbar and bottom padding for footer */
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  margin-top: 0; /* Ensure no negative margins */
+}
+
+.heroContent h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0d1b2a;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.heroContent p {
+  font-size: 0.95rem;
+  color: #414a4c;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Mission & Vision Cards */
+.cardsSection {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.8rem 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  padding: 1.3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(13, 27, 42, 0.08);
+  background-color: white;
+  border: 1px solid #e9ecef;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: #0d1b2a;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.88rem;
+  color: #414a4c;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mission {
+  background: linear-gradient(to bottom, #eef5ff, white);
+}
+
+.vision {
+  background: linear-gradient(to bottom, #f0f8f0, white);
+}
+
+/* Core Values Section */
+.valuesSection {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.valuesSection h2 {
+  font-size: 1.3rem;
+  color: #0d1b2a;
+  margin-bottom: 1.4rem;
+  font-weight: 600;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.valueCard {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(13, 27, 42, 0.06);
+  border: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.valueCard .icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.valueCard h4 {
+  font-size: 1rem;
+  color: #0d1b2a;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.valueCard p {
+  font-size: 0.82rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 2.2rem 1.5rem;
+  background-color: #0d1b2a;
+  color: white;
+  text-align: center;
+}
+
+.ctaContent h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.ctaContent p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: white;
+  color: #0d1b2a;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButton .arrow {
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+  .aboutPage {
+    padding-top: 4.5rem; /* Adjusted for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutPage {
+    padding-top: 4rem; /* Adjusted for smaller tablet */
+    padding-bottom: 3.5rem;
+  }
+
+  .cardsSection {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .card {
+    min-width: auto;
+    max-width: none;
+  }
+
+  .valuesSection h2 {
+    font-size: 1.2rem;
+  }
+
+  .valueCard h4 {
+    font-size: 0.95rem;
+  }
+
+  .valueCard p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutPage {
+    padding-top: 3.5rem; /* Adjusted for mobile */
+    padding-bottom: 3rem;
+  }
+
+  .heroContent h1 {
+    font-size: 1.5rem;
+  }
+
+  .heroContent p,
+  .card p,
+  .valueCard p {
+    font-size: 0.85rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .ctaSection {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .ctaContent h2 {
+    font-size: 1.2rem;
+  }
+
+  .ctaContent p {
+    font-size: 0.85rem;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutPage {
+    padding-top: 3rem; /* Adjusted for small mobile */
+  }
+}
+
+@media (max-width: 375px) {
+  .aboutPage {
+    padding-top: 2.5rem; /* Adjusted for very small screens */
+    padding-bottom: 2.5rem;
+  }
+
+  .hero {
+    padding: 2.2rem 1rem 1.5rem;
+  }
+
+  .heroContent h1 {
+    font-size: 1.4rem;
+  }
+
+  .heroContent p {
+    font-size: 0.82rem;
+  }
+
+  .cardsSection {
+    padding: 1.4rem 1rem;
+  }
+
+  .card {
+    padding: 1.1rem;
+  }
+
+  .card h3 {
+    font-size: 1.05rem;
+  }
+
+  .valuesSection {
+    padding: 1.6rem 1rem;
+  }
+
+  .ctaSection {
+    padding: 1.6rem 1rem;
+  }
+
+  .ctaContent h2 {
+    font-size: 1.15rem;
+  }
+
+  .ctaButton {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+}

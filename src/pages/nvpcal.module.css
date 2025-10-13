@@ -1,0 +1,273 @@
+/* Main Container */
+.npv-calculator {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  color: #2d3748;
+}
+
+/* Card Styles */
+.npv-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.npv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Header Styles */
+.npv-header {
+  background: #00809D;
+  color: white;
+  padding: 1.75rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.npv-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.npv-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.npv-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Body Styles */
+.npv-body {
+  padding: 2rem;
+}
+
+.npv-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.npv-input-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-symbol, .percent-symbol {
+  position: absolute;
+  left: 1rem;
+  color: #4a5568;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.npv-input-group input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.npv-input-group input:focus {
+  outline: none;
+  border-color: #434343;
+  box-shadow: 0 0 0 3px rgba(67, 67, 67, 0.1);
+  background-color: white;
+}
+
+/* Cash Flow Section */
+.cashflow-section {
+  margin-bottom: 1.5rem;
+}
+
+.cashflow-section label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.cashflow-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.cashflow-input-group {
+  margin-bottom: 0;
+}
+
+.cashflow-input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+/* Button Styles */
+.npv-calculate-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: #00809D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.npv-calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(67, 67, 67, 0.3);
+}
+
+.npv-calculate-btn:active {
+  transform: translateY(0);
+}
+
+.npv-calculate-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Results Styles */
+.npv-result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.npv-result.positive {
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.npv-result.negative {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.result-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.result-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.positive .result-value {
+  color: #2ecc71;
+}
+
+.negative .result-value {
+  color: #e74c3c;
+}
+
+.profit-indicator, .loss-indicator {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.profit-indicator {
+  color: #2ecc71;
+}
+
+.loss-indicator {
+  color: #e74c3c;
+}
+
+.npv-interpretation {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+/* Footer Styles */
+.npv-footer {
+  padding: 1rem 2rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cashflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .npv-calculator {
+    margin: 1rem;
+  }
+  
+  .npv-header {
+    padding: 1.5rem;
+  }
+  
+  .npv-body {
+    padding: 1.5rem;
+  }
+  
+  .result-value {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .npv-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .npv-body {
+    padding: 1.25rem;
+  }
+  
+  .npv-input-group input {
+    padding: 0.9rem 1rem 0.9rem 2.2rem;
+  }
+  
+  .npv-calculate-btn {
+    padding: 1rem;
+  }
+}

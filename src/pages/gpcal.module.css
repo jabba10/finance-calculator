@@ -1,0 +1,564 @@
+/* Design System Variables */
+:root {
+  --payrollcalc-primary-gradient: linear-gradient(135deg, #00809d, #00a0c7);
+  --payrollcalc-hover-blue: #34d3f9;
+  --payrollcalc-text-light: #ffffff;
+  --payrollcalc-text-dark: #1e293b;
+  --payrollcalc-bg-light: #f8fafc;
+  --payrollcalc-bg-dark: #0c1421;
+  --payrollcalc-card-bg: #ffffff;
+  --payrollcalc-card-bg-dark: #1a2433;
+  --payrollcalc-border-radius: 16px;
+  --payrollcalc-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --payrollcalc-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --payrollcalc-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --payrollcalc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --payrollcalc-container-width: 1280px;
+  --payrollcalc-padding: 0 1.5rem;
+}
+
+body.dark-mode {
+  background-color: var(--payrollcalc-bg-dark);
+  color: #e2e8f0;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--payrollcalc-text-dark);
+  background: var(--payrollcalc-bg-light);
+  transition: background-color 0.4s ease;
+}
+
+/* Container */
+.payrollcalc-container {
+  max-width: var(--payrollcalc-container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.payrollcalc-hero {
+  background: var(--payrollcalc-primary-gradient);
+  color: var(--payrollcalc-text-light);
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.payrollcalc-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.payrollcalc-title {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #a0e7ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.payrollcalc-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  color: whitesmoke;
+}
+
+/* Calculator Section */
+.payrollcalc-calculator-section {
+  padding: 5rem 0;
+}
+
+.payrollcalc-calculator-card {
+  background: var(--payrollcalc-card-bg);
+  border-radius: var(--payrollcalc-border-radius);
+  padding: 2.5rem;
+  box-shadow: var(--payrollcalc-shadow-md);
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  transition: var(--payrollcalc-transition);
+}
+
+.dark .payrollcalc-calculator-card {
+  background: var(--payrollcalc-card-bg-dark);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: var(--payrollcalc-text-light);
+}
+
+/* Instruction */
+.payrollcalc-instruction {
+  font-size: 0.95rem;
+  color: var(--payrollcalc-text-dark);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dark .payrollcalc-instruction {
+  color: var(--payrollcalc-text-light);
+}
+
+/* Input Group */
+.payrollcalc-input-group {
+  margin-bottom: 1.8rem;
+}
+
+.payrollcalc-label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--payrollcalc-text-dark);
+}
+
+.dark .payrollcalc-label {
+  color: var(--payrollcalc-text-light);
+}
+
+.payrollcalc-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.payrollcalc-input:focus {
+  outline: none;
+  border-color: #00809d;
+  box-shadow: 0 0 0 3px rgba(0, 128, 157, 0.1);
+}
+
+.dark .payrollcalc-input {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+}
+
+.dark .payrollcalc-input:focus {
+  border-color: #34d3f9;
+  box-shadow: 0 0 0 3px rgba(52, 211, 249, 0.15);
+}
+
+/* Note */
+.payrollcalc-note {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--payrollcalc-text-dark);
+  opacity: 0.7;
+  margin-top: 0.8rem;
+}
+
+.dark .payrollcalc-note {
+  color: #e2e8f0;
+}
+
+/* Result */
+.payrollcalc-result {
+  margin-top: 2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--payrollcalc-text-dark);
+}
+
+.dark .payrollcalc-result {
+  color: #e2e8f0;
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.payrollcalc-result h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #00809d;
+}
+
+.dark .payrollcalc-result h3 {
+  color: var(--payrollcalc-hover-blue);
+}
+
+/* Result Grid */
+.payrollcalc-result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.payrollcalc-result-item {
+  font-size: 0.95rem;
+  padding: 0.6rem;
+  background: rgba(0, 128, 157, 0.05);
+  border-radius: 8px;
+}
+
+.payrollcalc-result-item.highlight {
+  background: rgba(26, 188, 156, 0.15);
+  font-weight: 600;
+}
+
+.dark .payrollcalc-result-item {
+  background: rgba(52, 211, 249, 0.1);
+}
+
+.dark .payrollcalc-result-item.highlight {
+  background: rgba(34, 183, 156, 0.2);
+}
+
+/* Formula */
+.payrollcalc-formula {
+  background: rgba(0, 128, 157, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+.dark .payrollcalc-formula {
+  background: rgba(52, 211, 249, 0.1);
+  color: #e2e8f0;
+}
+
+/* Info Section */
+.payrollcalc-info-section {
+  padding: 4rem 0;
+}
+
+.payrollcalc-info-card {
+  background: var(--payrollcalc-card-bg);
+  border-radius: var(--payrollcalc-border-radius);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: var(--payrollcalc-shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--payrollcalc-text-dark);
+  line-height: 1.7;
+}
+
+.dark .payrollcalc-info-card {
+  background: var(--payrollcalc-card-bg-dark);
+  border-color: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+}
+
+.payrollcalc-info-card h3,
+.payrollcalc-info-card h4 {
+  margin: 1.5rem 0 0.8rem 0;
+  color: #00809d;
+}
+
+.dark .payrollcalc-info-card h3,
+.dark .payrollcalc-info-card h4 {
+  color: var(--payrollcalc-hover-blue);
+}
+
+.payrollcalc-info-card h3 {
+  font-size: 1.4rem;
+}
+
+.payrollcalc-info-card h4 {
+  font-size: 1.2rem;
+}
+
+/* Table */
+.payrollcalc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.payrollcalc-table th,
+.payrollcalc-table td {
+  padding: 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.payrollcalc-table th {
+  background: rgba(0, 128, 157, 0.1);
+  font-weight: 600;
+}
+
+.dark .payrollcalc-table th {
+  background: rgba(52, 211, 249, 0.1);
+  color: var(--payrollcalc-hover-blue);
+}
+
+.dark .payrollcalc-table th,
+.dark .payrollcalc-table td {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.payrollcalc-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* List */
+.payrollcalc-list {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.payrollcalc-list li {
+  margin-bottom: 0.6rem;
+}
+
+/* CTA Button */
+.payrollcalc-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #00809d, #00a0c7 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 
+    0 2px 5px rgba(59, 130, 246, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.payrollcalc-btn-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.payrollcalc-btn-arrow {
+  display: inline-block;
+  transition: 
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    opacity 0.3s ease;
+  font-weight: bold;
+}
+
+.payrollcalc-cta-button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #00809d 100%);
+  box-shadow: 
+    0 4px 8px rgba(99, 102, 241, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.payrollcalc-cta-button:hover .payrollcalc-btn-text {
+  transform: translateX(2px);
+}
+
+.payrollcalc-cta-button:hover .payrollcalc-btn-arrow {
+  transform: translateX(3px) scale(1.1);
+}
+
+.payrollcalc-cta-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 1px 3px rgba(59, 130, 246, 0.3),
+    inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.payrollcalc-cta-button:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.5);
+  outline-offset: 2px;
+}
+
+.payrollcalc-cta-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.payrollcalc-cta-button:hover::after {
+  transform: translateX(100%);
+}
+
+/* CTA Section */
+.payrollcalc-cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--payrollcalc-card-bg);
+}
+
+.dark .payrollcalc-cta-section {
+  background: var(--payrollcalc-card-bg-dark);
+}
+
+.payrollcalc-cta-section .payrollcalc-container {
+  text-align: center;
+  max-width: 42rem;
+  width: 100%;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background: var(--payrollcalc-card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+  margin: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.dark .payrollcalc-cta-section .payrollcalc-container {
+  background: var(--payrollcalc-card-bg-dark);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.payrollcalc-cta-section .payrollcalc-container:hover {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.08);
+  transform: translateY(-0.25rem);
+}
+
+.payrollcalc-cta-section h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #00809d;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.dark .payrollcalc-cta-section h2 {
+  color: var(--payrollcalc-hover-blue);
+}
+
+.payrollcalc-cta-section p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #4b5563;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dark .payrollcalc-cta-section p {
+  color: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .payrollcalc-hero {
+    padding: 4rem 0;
+  }
+
+  .payrollcalc-title {
+    font-size: 2.2rem;
+  }
+
+  .payrollcalc-calculator-card,
+  .payrollcalc-info-card {
+    padding: 2rem;
+  }
+
+  .payrollcalc-result-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .payrollcalc-cta-section {
+    padding: 1.5rem;
+  }
+  
+  .payrollcalc-cta-section .payrollcalc-container {
+    padding: 2rem 1.5rem;
+    margin: 0.5rem;
+  }
+  
+  .payrollcalc-cta-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .payrollcalc-title {
+    font-size: 2rem;
+  }
+
+  .payrollcalc-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .payrollcalc-calculator-card,
+  .payrollcalc-info-card {
+    padding: 1.8rem 1.5rem;
+  }
+
+  .payrollcalc-result h3,
+  .payrollcalc-info-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .payrollcalc-table {
+    font-size: 0.9rem;
+  }
+
+  .payrollcalc-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payrollcalc-cta-section {
+    min-height: 90vh;
+    padding: 1rem;
+  }
+  
+  .payrollcalc-cta-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .payrollcalc-cta-section p {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .payrollcalc-cta-button {
+    padding: 0.75rem 1.25rem;
+  }
+}

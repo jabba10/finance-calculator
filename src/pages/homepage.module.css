@@ -1,0 +1,360 @@
+/* components/Homepage.module.css */
+
+.homepage {
+  min-height: 100vh;
+  background-color: white;
+  color: #0d1b2a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  padding-top: 5rem; /* Added significant padding to push content below fixed navbar */
+}
+
+/* Hero Section */
+.hero {
+  padding: 2.8rem 1.5rem 1.8rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  margin-top: 0; /* Ensure no negative margins */
+}
+
+.heroTitle {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #0d1b2a;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.highlight {
+  color: #1b263b;
+}
+
+.heroSubtitle {
+  font-size: 0.9rem;
+  color: #414a4c;
+  max-width: 600px;
+  margin: 0 auto 0.9rem;
+  line-height: 1.55;
+}
+
+.simpleCta {
+  display: inline-block;
+  background-color: #0d1b2a;
+  color: white;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.simpleCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Value Props */
+.valueProps {
+  padding: 1.8rem 1.5rem;
+}
+
+.valueProps .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.valueProp {
+  padding: 0.9rem;
+}
+
+.valueProp .icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.45rem;
+}
+
+.valueProp h3 {
+  font-size: 0.95rem;
+  color: #0d1b2a;
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+}
+
+.valueProp p {
+  font-size: 0.82rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Calculators Section */
+.calculatorsSection {
+  padding: 1.8rem 1.5rem;
+}
+
+.calculatorsSection h2 {
+  font-size: 1.15rem;
+  color: #0d1b2a;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.sectionSubtitle {
+  font-size: 0.87rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+/* Cards Grid */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.cardLink {
+  text-decoration: none;
+  display: block;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.85rem;
+  box-shadow: 0 2px 8px rgba(13, 27, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 220px; /* Reduced further for compactness */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(13, 27, 42, 0.1);
+}
+
+.cardIcon {
+  font-size: 1.25rem;
+  margin-bottom: 0.45rem;
+}
+
+.cardTitle {
+  font-size: 0.92rem;
+  color: #0d1b2a;
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.76rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0 0 0.75rem;
+  flex-grow: 1;
+}
+
+.cardAction {
+  display: inline-block;
+  background-color: #000;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.42rem 0.65rem;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cardAction:hover {
+  background-color: #111;
+}
+
+/* Load More Button */
+.loadMoreBtn {
+  display: block;
+  margin: 1.8rem auto 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.88rem;
+  background-color: #0d1b2a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loadMoreBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .homepage {
+    padding-top: 4.5rem; /* Adjusted for tablet */
+  }
+
+  .hero {
+    padding: 2.4rem 1.3rem 1.6rem;
+  }
+
+  .heroTitle {
+    font-size: 1.35rem;
+  }
+
+  .heroSubtitle,
+  .sectionSubtitle {
+    font-size: 0.87rem;
+  }
+
+  .valueProps .container {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .valueProp {
+    padding: 0.8rem;
+  }
+
+  .valueProp h3 {
+    font-size: 0.92rem;
+  }
+
+  .valueProp p {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    height: 215px;
+    padding: 0.8rem;
+  }
+
+  .cardTitle {
+    font-size: 0.9rem;
+  }
+
+  .cardDesc {
+    font-size: 0.74rem;
+  }
+
+  .cardAction {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .homepage {
+    padding-top: 4rem; /* Adjusted for mobile */
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .card {
+    height: 210px;
+  }
+
+  .loadMoreBtn {
+    font-size: 0.85rem;
+    padding: 0.55rem 1.1rem;
+    margin: 1.6rem auto 1rem;
+  }
+
+  .calculatorsSection {
+    padding: 1.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage {
+    padding-top: 3.5rem; /* Adjusted for small mobile */
+  }
+
+  .heroTitle {
+    font-size: 1.3rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.84rem;
+  }
+
+  .card {
+    height: 205px;
+    padding: 0.78rem;
+  }
+
+  .cardTitle {
+    font-size: 0.88rem;
+  }
+
+  .cardDesc {
+    font-size: 0.72rem;
+  }
+
+  .cardAction {
+    font-size: 0.68rem;
+    padding: 0.4rem 0.58rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .homepage {
+    padding-top: 3rem; /* Adjusted for very small screens */
+  }
+
+  .hero {
+    padding: 2.2rem 1.1rem 1.4rem;
+  }
+
+  .heroTitle {
+    font-size: 1.25rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.82rem;
+  }
+
+  .card {
+    height: 200px;
+    padding: 0.75rem;
+  }
+
+  .cardTitle {
+    font-size: 0.86rem;
+  }
+
+  .cardDesc {
+    font-size: 0.7rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .cardAction {
+    font-size: 0.66rem;
+    padding: 0.38rem 0.55rem;
+  }
+
+  .loadMoreBtn {
+    font-size: 0.82rem;
+    padding: 0.5rem 1rem;
+  }
+}

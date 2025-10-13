@@ -1,0 +1,296 @@
+/* Main Container */
+.profit-margin-calculator {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #2d3748;
+}
+
+/* Card Styles */
+.margin-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.margin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Header Styles */
+.margin-header {
+  background: #00809D;
+  color: white;
+  padding: 1.75rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.margin-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.margin-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.margin-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Body Styles */
+.margin-body {
+  padding: 2rem;
+}
+
+.margin-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.margin-input-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dollar-icon {
+  position: absolute;
+  left: 1rem;
+  color: #4a5568;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.margin-input-group input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.margin-input-group input:focus {
+  outline: none;
+  border-color: #00b09b;
+  box-shadow: 0 0 0 3px rgba(0, 176, 155, 0.1);
+  background-color: white;
+}
+
+/* Button Styles */
+.margin-calculate-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: #00809D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.margin-calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 176, 155, 0.3);
+}
+
+.margin-calculate-btn:active {
+  transform: translateY(0);
+}
+
+.margin-calculate-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Results Styles */
+.margin-result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.margin-result.excellent {
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.margin-result.good {
+  background-color: rgba(52, 152, 219, 0.1);
+  border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.margin-result.fair {
+  background-color: rgba(241, 196, 15, 0.1);
+  border: 1px solid rgba(241, 196, 15, 0.2);
+}
+
+.margin-result.low {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.result-label {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.result-value {
+  font-weight: 600;
+}
+
+.excellent .result-value {
+  color: #2ecc71;
+}
+
+.good .result-value {
+  color: #3498db;
+}
+
+.fair .result-value {
+  color: #f1c40f;
+}
+
+.low .result-value {
+  color: #e74c3c;
+}
+
+/* Margin Visualization */
+.margin-visualization {
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.margin-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.margin-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #e74c3c 0%, #f1c40f 50%, #2ecc71 100%);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.margin-indicator {
+  position: absolute;
+  top: -25px;
+  transform: translateX(-50%);
+  background: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.excellent .margin-indicator {
+  color: #2ecc71;
+}
+
+.good .margin-indicator {
+  color: #3498db;
+}
+
+.fair .margin-indicator {
+  color: #f1c40f;
+}
+
+.low .margin-indicator {
+  color: #e74c3c;
+}
+
+.margin-assessment {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Footer Styles */
+.margin-footer {
+  padding: 1rem 2rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .profit-margin-calculator {
+    margin: 1rem;
+  }
+  
+  .margin-header {
+    padding: 1.5rem;
+  }
+  
+  .margin-body {
+    padding: 1.5rem;
+  }
+  
+  .result-row {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .margin-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .margin-body {
+    padding: 1.25rem;
+  }
+  
+  .margin-input-group input {
+    padding: 0.9rem 1rem 0.9rem 2.2rem;
+  }
+  
+  .margin-calculate-btn {
+    padding: 1rem;
+  }
+}

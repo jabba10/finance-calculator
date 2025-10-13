@@ -1,0 +1,309 @@
+.container {
+  min-height: 100vh;
+  background-color: white;
+  color: #0d1b2a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Enhanced spacers for navigation bar and footer */
+.spacerTop {
+  height: 3rem;
+}
+
+.spacerBottom {
+  height: 6rem;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 1.8rem 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #0d1b2a;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #414a4c;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Info Section */
+.infoSection {
+  padding: 2.5rem 1.8rem;
+}
+
+.infoCard {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.8rem;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-bottom: 2rem;
+}
+
+.infoCard h2,
+.infoCard h3,
+.infoCard h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  color: #0d1b2a;
+  font-weight: 600;
+}
+
+.infoCard h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  color: #414a4c;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* List */
+.list {
+  margin: 0.8rem 0 1.2rem;
+  padding-left: 1.6rem;
+  font-size: 1rem;
+}
+
+.list li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* Final Note */
+.finalNote {
+  background-color: #e9f7ef;
+  border-left: 4px solid #2ecc71;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  color: #27ae60;
+  border-radius: 0 8px 8px 0;
+}
+
+/* CTA Wrapper */
+.ctaWrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background: #0d1b2a;
+  color: white;
+  padding: 0.9rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  min-width: 200px;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:hover {
+  background: #1b263b;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButton .arrow {
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* Magnetic Glow Effect */
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ctaButton:hover::before {
+  opacity: 1;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .spacerTop {
+    height: 2.5rem;
+  }
+  
+  .spacerBottom {
+    height: 4rem;
+  }
+  
+  .hero {
+    padding: 2.5rem 1.5rem 1.8rem;
+  }
+  
+  .title {
+    font-size: 1.7rem;
+  }
+  
+  .subtitle {
+    font-size: 1.05rem;
+  }
+  
+  .infoSection {
+    padding: 2rem 1.5rem;
+  }
+  
+  .infoCard {
+    padding: 1.5rem;
+  }
+  
+  .infoCard h2 {
+    font-size: 1.2rem;
+  }
+  
+  .ctaButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .spacerTop {
+    height: 2rem;
+  }
+  
+  .spacerBottom {
+    height: 3rem;
+  }
+  
+  .hero {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .infoSection {
+    padding: 1.5rem 1rem;
+  }
+
+  .infoCard {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .infoCard h2 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+  }
+
+  .paragraph,
+  .intro,
+  .finalNote {
+    font-size: 0.95rem;
+  }
+
+  .list {
+    font-size: 0.95rem;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 1.3rem;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spacerTop {
+    height: 1.5rem;
+  }
+  
+  .spacerBottom {
+    height: 2.5rem;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .infoCard h2 {
+    font-size: 1.1rem;
+  }
+
+  .ctaButton {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .spacerTop,
+  .spacerBottom {
+    display: none;
+  }
+  
+  .ctaButton {
+    display: none;
+  }
+}

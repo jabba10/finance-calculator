@@ -1,0 +1,227 @@
+/* Main Container */
+.payroll-calculator {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #2d3748;
+}
+
+/* Card Styles */
+.payroll-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payroll-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Header Styles */
+.payroll-header {
+  background: #00809D;
+  color: white;
+  padding: 1.75rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.payroll-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.payroll-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.payroll-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Body Styles */
+.payroll-body {
+  padding: 2rem;
+}
+
+.payroll-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.payroll-input-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.employee-icon, .hours-icon, .currency-symbol {
+  position: absolute;
+  left: 1rem;
+  color: #4a5568;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.payroll-input-group input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.payroll-input-group input:focus {
+  outline: none;
+  border-color: #00c6ff;
+  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.1);
+  background-color: white;
+}
+
+/* Button Styles */
+.payroll-calculate-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: #00809D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.payroll-calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3);
+}
+
+.payroll-calculate-btn:active {
+  transform: translateY(0);
+}
+
+.payroll-calculate-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Results Styles */
+.payroll-result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-out;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.result-header {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.result-amount {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0072ff;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.breakdown {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.breakdown-item span:first-child {
+  color: #718096;
+}
+
+.breakdown-item span:last-child {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* Footer Styles */
+.payroll-footer {
+  padding: 1rem 2rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .payroll-calculator {
+    margin: 1rem;
+  }
+  
+  .payroll-header {
+    padding: 1.5rem;
+  }
+  
+  .payroll-body {
+    padding: 1.5rem;
+  }
+  
+  .result-amount {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .payroll-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .payroll-body {
+    padding: 1.25rem;
+  }
+  
+  .payroll-input-group input {
+    padding: 0.9rem 1rem 0.9rem 2.2rem;
+  }
+  
+  .payroll-calculate-btn {
+    padding: 1rem;
+  }
+}

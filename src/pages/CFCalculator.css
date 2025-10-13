@@ -1,0 +1,223 @@
+/* Main Container */
+.cashflow-calculator {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+/* Card Styles */
+.cashflow-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cashflow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Header Styles */
+.cashflow-header {
+  background: #00809D;
+  color: white;
+  padding: 1.75rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.cashflow-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cashflow-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.cashflow-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Body Styles */
+.cashflow-body {
+  padding: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency {
+  position: absolute;
+  left: 1rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #00b4db;
+  box-shadow: 0 0 0 3px rgba(0, 180, 219, 0.1);
+  background-color: white;
+}
+
+/* Button Styles */
+.calculate-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: #00809D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 180, 219, 0.3);
+}
+
+.calculate-btn:active {
+  transform: translateY(0);
+}
+
+.calculate-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Result Styles */
+.cashflow-result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.cashflow-result.positive {
+  background-color: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.cashflow-result.negative {
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.result-label {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.result-amount {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.positive .result-amount {
+  color: #28a745;
+}
+
+.negative .result-amount {
+  color: #dc3545;
+}
+
+.result-message {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-top: 0.5rem;
+}
+
+/* Footer Styles */
+.cashflow-footer {
+  padding: 1rem 2rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .cashflow-calculator {
+    margin: 1rem;
+  }
+  
+  .cashflow-header {
+    padding: 1.5rem;
+  }
+  
+  .cashflow-body {
+    padding: 1.5rem;
+  }
+  
+  .result-amount {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .cashflow-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .cashflow-body {
+    padding: 1.25rem;
+  }
+  
+  .input-wrapper input {
+    padding: 0.9rem 1rem 0.9rem 2.2rem;
+  }
+  
+  .calculate-btn {
+    padding: 1rem;
+  }
+}

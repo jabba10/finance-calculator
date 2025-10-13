@@ -1,0 +1,651 @@
+/* Container and Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Spacers for Navbar and Footer Gap */
+.spacerTop {
+  height: 4rem;
+}
+
+.spacerBottom {
+  height: 5rem;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0d1b2a;
+  margin-bottom: 0.7rem;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #414a4c;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Calculator Card */
+.calculatorCard {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto 2.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(13, 27, 42, 0.1);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+/* Form */
+.form {
+  padding: 1.3rem 1.4rem;
+}
+
+.instruction {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* Input Group */
+.inputGroup {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #0d1b2a;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  padding-left: 0.2rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  outline: none;
+  background-color: white;
+  transition: all 0.3s ease;
+  height: 46px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #0d1b2a;
+  box-shadow: 0 0 0 3px rgba(13, 27, 42, 0.1);
+}
+
+.input::placeholder {
+  color: #adb5bd;
+  font-size: 0.95rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 0.3rem;
+  text-align: left;
+  padding-left: 0.2rem;
+}
+
+/* CTA Button - Submit & Navigation Link */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #0d1b2a;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.8rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ctaButton:hover {
+  background: #1b263b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btnText {
+  font-size: 0.95rem;
+}
+
+.btnArrow {
+  font-size: 1em;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .btnArrow {
+  transform: translateX(4px);
+}
+
+/* Magnetic Glow Effect on CTA */
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ctaButton:hover::before {
+  opacity: 1;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+}
+
+/* Result Section */
+.result {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  background-color: #f9fafa;
+  border-radius: 8px;
+  border: 1px dashed #e9ecef;
+}
+
+.result h3 {
+  font-size: 1.05rem;
+  color: #0d1b2a;
+  margin: 0 0 0.6rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.resultGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.resultItem {
+  font-size: 0.9rem;
+  color: #414a4c;
+  line-height: 1.5;
+}
+
+.resultItem strong {
+  color: #0d1b2a;
+  font-weight: 500;
+}
+
+.resultItem.highlight {
+  font-weight: 600;
+  color: #0d1b2a;
+  font-size: 1rem;
+}
+
+/* Info Section */
+.infoSection {
+  padding: 2.2rem 1.5rem;
+}
+
+.infoCard {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-bottom: 2rem;
+}
+
+.infoCard h3,
+.infoCard h4 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  color: #0d1b2a;
+  font-weight: 600;
+}
+
+.infoCard h4 {
+  font-size: 1.05rem;
+  margin-top: 1rem;
+}
+
+.infoCard p,
+.infoCard li {
+  font-size: 0.95rem;
+  color: #414a4c;
+  line-height: 1.65;
+  margin: 0 0 0.5rem;
+}
+
+.infoCard code {
+  font-size: 0.9rem;
+  background-color: #e9ecef;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Formula Block */
+.formula {
+  background-color: #e9ecef;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  margin: 0.7rem 0;
+  overflow-x: auto;
+}
+
+.formula code {
+  background: none;
+  padding: 0;
+  white-space: nowrap;
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+}
+
+/* List Styling */
+.list {
+  margin: 0.7rem 0 1rem;
+  padding-left: 1.4rem;
+  font-size: 0.95rem;
+}
+
+.list li {
+  margin: 0.4rem 0;
+  line-height: 1.6;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f1f3f5;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 2.8rem 1.5rem;
+  text-align: center;
+  background-color: #0d1b2a;
+  color: white;
+  border-radius: 12px;
+  margin: 2.5rem 0 3.5rem;
+}
+
+.ctaSectionInner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaSection h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ctaSection p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .spacerTop {
+    height: 3rem;
+  }
+  
+  .spacerBottom {
+    height: 4rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1.3rem 1.8rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .calculatorCard {
+    max-width: 380px;
+    margin-bottom: 2.2rem;
+  }
+
+  .form {
+    padding: 1.2rem;
+  }
+
+  .input {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.7rem;
+    height: 44px;
+  }
+
+  .label {
+    font-size: 0.88rem;
+  }
+
+  .ctaButton {
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .result {
+    padding: 0.9rem;
+  }
+
+  .result h3 {
+    font-size: 1rem;
+  }
+
+  .resultItem {
+    font-size: 0.88rem;
+  }
+
+  .infoSection {
+    padding: 2rem 1.3rem;
+  }
+
+  .infoCard {
+    padding: 1.3rem;
+  }
+
+  .infoCard h3 {
+    font-size: 1.05rem;
+  }
+
+  .infoCard h4 {
+    font-size: 1rem;
+  }
+
+  .infoCard p,
+  .infoCard li {
+    font-size: 0.9rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.85rem;
+  }
+
+  .ctaSection {
+    padding: 2.4rem 1.3rem;
+    margin: 2rem 0 3rem;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.35rem;
+  }
+
+  .ctaSection p {
+    font-size: 0.95rem;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.65rem 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .spacerTop {
+    height: 2.5rem;
+  }
+
+  .spacerBottom {
+    height: 3.5rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .calculatorCard {
+    max-width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+  }
+
+  .form {
+    padding: 1.1rem;
+  }
+
+  .instruction {
+    font-size: 0.9rem;
+  }
+
+  .input {
+    font-size: 0.9rem;
+    height: 44px;
+  }
+
+  .label {
+    font-size: 0.85rem;
+  }
+
+  .note {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .result {
+    padding: 0.85rem;
+  }
+
+  .result h3 {
+    font-size: 0.95rem;
+  }
+
+  .resultItem {
+    font-size: 0.85rem;
+  }
+
+  .infoSection {
+    padding: 1.6rem 1rem;
+  }
+
+  .infoCard {
+    padding: 1.1rem;
+    margin-bottom: 1.6rem;
+    border-radius: 10px;
+  }
+
+  .infoCard h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .infoCard h4 {
+    font-size: 0.95rem;
+  }
+
+  .infoCard p,
+  .infoCard li {
+    font-size: 0.88rem;
+  }
+
+  .formula {
+    padding: 0.7rem;
+    font-size: 0.88rem;
+  }
+
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .ctaSection {
+    padding: 2rem 1rem;
+    margin: 1.8rem 0 3rem;
+    border-radius: 10px;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.25rem;
+  }
+
+  .ctaSection p {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    font-size: 0.88rem;
+    min-width: 160px;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+/* Extra Small Devices (e.g., iPhone SE) */
+@media (max-width: 480px) {
+  .spacerTop {
+    height: 2rem;
+  }
+
+  .spacerBottom {
+    height: 3rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .input {
+    font-size: 0.85rem;
+    height: 42px;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .ctaButton {
+    font-size: 0.85rem;
+    padding: 0.55rem 0.85rem;
+  }
+
+  .resultItem {
+    font-size: 0.8rem;
+  }
+
+  .infoCard h3 {
+    font-size: 0.95rem;
+  }
+
+  .infoCard p,
+  .infoCard li {
+    font-size: 0.83rem;
+  }
+
+  .table th,
+  .table td {
+    min-width: 130px;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.8rem;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.15rem;
+  }
+
+  .ctaButton {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .spacerTop,
+  .spacerBottom {
+    display: none;
+  }
+
+  .ctaSection {
+    break-inside: avoid;
+  }
+}

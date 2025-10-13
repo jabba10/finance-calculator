@@ -1,0 +1,378 @@
+/* components/Contact.module.css */
+
+.contactWrapper {
+  min-height: 100vh;
+  background-color: white;
+  color: #0d1b2a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Spacers for consistent vertical gap above/below card */
+.spacerTop {
+  height: 8rem; /* Increased from 4rem to create wider gap below navbar */
+}
+
+.spacerBottom {
+  height: 1rem; /* Drastically reduced from 4rem to minimize gap above footer */
+}
+
+@media (max-width: 600px) {
+  .spacerTop {
+    height: 6rem; /* Increased for mobile */
+  }
+  .spacerBottom {
+    height: 0.8rem; /* Reduced for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .spacerTop {
+    height: 5rem; /* Increased for small mobile */
+  }
+  .spacerBottom {
+    height: 0.5rem; /* Further reduced for small mobile */
+  }
+}
+
+/* Contact Card */
+.contactCard {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.1);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header inside card */
+.cardHeader {
+  padding: 1.3rem 1.4rem 0.7rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  box-sizing: border-box;
+}
+
+.cardHeader h2 {
+  font-size: 1.15rem;
+  color: #0d1b2a;
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.cardHeader p {
+  font-size: 0.82rem;
+  color: #414a4c;
+  margin: 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Form container – ensures all children are centered and constrained */
+.contactForm {
+  padding: 1.1rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Form group – full width but never exceeds card padding */
+.formGroup {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Inputs and textarea – always fit within card, no overflow */
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  background-color: white;
+  outline: none;
+  line-height: 1.2;
+  box-sizing: border-box;
+  overflow: hidden;
+  word-wrap: break-word;
+  resize: none;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #0d1b2a;
+  box-shadow: 0 0 0 2px rgba(13, 27, 42, 0.12);
+}
+
+/* Floating labels */
+.formGroup label {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.5rem;
+  color: #6c757d;
+  font-size: 0.85rem;
+  pointer-events: none;
+  transition: 0.2s ease;
+  background: white;
+  padding: 0 0.15rem;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 1.5rem);
+}
+
+.formGroup input:focus ~ label,
+.formGroup textarea:focus ~ label,
+.formGroup input:not(:placeholder-shown) ~ label,
+.formGroup textarea:not(:placeholder-shown) ~ label {
+  top: -0.6rem;
+  left: 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #0d1b2a;
+  white-space: normal;
+}
+
+/* Textarea – allow vertical resize only, with sensible min height */
+.textareaGroup textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.4;
+}
+
+/* Alert messages – match input width and stay centered */
+.alert {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  margin: 0;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  text-align: center;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.alert.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6c9;
+}
+
+/* Submit Button */
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0d1b2a;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.submitBtn:hover {
+  background: #1b263b;
+}
+
+.submitBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Magnetic glow effect */
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+}
+
+.submitBtn:hover::before {
+  opacity: 1;
+}
+
+/* Spinner animation */
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffffff80;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Arrow hover effect */
+.arrow {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+
+.submitBtn:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 600px) {
+  .contactCard {
+    margin: 0 0.5rem;
+    border-radius: 10px;
+  }
+
+  .contactForm {
+    padding: 1rem 1.2rem 1.2rem;
+    gap: 0.8rem;
+  }
+
+  .cardHeader h2 {
+    font-size: 1.1rem;
+  }
+
+  .cardHeader p {
+    font-size: 0.8rem;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.7rem;
+  }
+
+  .formGroup label {
+    font-size: 0.82rem;
+  }
+
+  .formGroup input:focus ~ label,
+  .formGroup textarea:focus ~ label,
+  .formGroup input:not(:placeholder-shown) ~ label,
+  .formGroup textarea:not(:placeholder-shown) ~ label {
+    font-size: 0.7rem;
+  }
+
+  .alert {
+    font-size: 0.78rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .submitBtn {
+    font-size: 0.82rem;
+    padding: 0.55rem 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardHeader h2 {
+    font-size: 1.05rem;
+  }
+
+  .cardHeader p {
+    font-size: 0.78rem;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.65rem;
+  }
+
+  .submitBtn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contactForm {
+    padding: 0.9rem 1rem 1rem;
+  }
+
+  .cardHeader {
+    padding: 1.1rem 1rem 0.6rem;
+  }
+
+  .cardHeader h2 {
+    font-size: 1rem;
+  }
+
+  .cardHeader p {
+    font-size: 0.75rem;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 0.78rem;
+    padding: 0.38rem 0.6rem;
+  }
+
+  .formGroup label {
+    font-size: 0.78rem;
+    left: 0.6rem;
+    top: 0.38rem;
+  }
+
+  .formGroup input:focus ~ label,
+  .formGroup textarea:focus ~ label,
+  .formGroup input:not(:placeholder-shown) ~ label,
+  .formGroup textarea:not(:placeholder-shown) ~ label {
+    font-size: 0.68rem;
+    left: 0.45rem;
+  }
+
+  .alert {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.65rem;
+  }
+
+  .submitBtn {
+    font-size: 0.78rem;
+    padding: 0.48rem 0.8rem;
+  }
+}

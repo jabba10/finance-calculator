@@ -1,0 +1,597 @@
+/* Container */
+.bondcalcContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  background: #f8fafc;
+  transition: background-color 0.4s ease;
+}
+
+/* Dark Mode Wrapper Class */
+.darkMode .bondcalcContainer {
+  background-color: #0c1421;
+  color: #e2e8f0;
+}
+
+/* Hero Section */
+.bondcalcHero {
+  background: linear-gradient(135deg, #00809d, #00a0c7);
+  color: #ffffff;
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bondcalcHero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bondcalcTitle {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #a0e7ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.bondcalcSubtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Calculator Section */
+.bondcalcCalculatorSection {
+  padding: 5rem 0;
+}
+
+.bondcalcCalculatorCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.darkMode .bondcalcCalculatorCard {
+  background: #1a2433;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+/* Instruction */
+.bondcalcInstruction {
+  font-size: 0.95rem;
+  color: #1e293b;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.darkMode .bondcalcInstruction {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Input Group */
+.bondcalcInputGroup {
+  margin-bottom: 1.8rem;
+}
+
+.bondcalcLabel {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.darkMode .bondcalcLabel {
+  color: #ffffff;
+}
+
+.bondcalcInput {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.bondcalcInput:focus {
+  outline: none;
+  border-color: #00809d;
+  box-shadow: 0 0 0 3px rgba(0, 128, 157, 0.05);
+}
+
+.darkMode .bondcalcInput {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.darkMode .bondcalcInput:focus {
+  border-color: #34d3f9;
+  box-shadow: 0 0 0 3px rgba(52, 211, 249, 0.15);
+}
+
+/* Select Styling */
+.bondcalcInput[type="text"],
+.bondcalcInput[type="number"],
+.bondcalcInput[type="select"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.bondcalcInput select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%236b7280' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+.darkMode .bondcalcInput select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23e2e8f0' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Note */
+.bondcalcNote {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #1e293b;
+  opacity: 0.7;
+  margin-top: 0.8rem;
+}
+
+.darkMode .bondcalcNote {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Result Section */
+.bondcalcResult {
+  margin-top: 2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1e293b;
+}
+
+.darkMode .bondcalcResult {
+  color: #e2e8f0;
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.bondcalcResult h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #00809d;
+}
+
+.darkMode .bondcalcResult h3 {
+  color: #34d3f9;
+}
+
+/* Result Grid */
+.bondcalcResultGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.bondcalcResultItem {
+  font-size: 0.95rem;
+  padding: 0.6rem;
+  background: rgba(0, 128, 157, 0.05);
+  border-radius: 8px;
+}
+
+.bondcalcResultItem.highlight {
+  font-weight: 600;
+  background: rgba(26, 188, 156, 0.15);
+  color: #16a085;
+}
+
+.bondcalcResultItem.highlight.positive {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.bondcalcResultItem.highlight.negative {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.darkMode .bondcalcResultItem {
+  background: rgba(52, 211, 249, 0.1);
+}
+
+.darkMode .bondcalcResultItem.highlight {
+  background: rgba(34, 183, 156, 0.2);
+  color: #25d366;
+}
+
+.darkMode .bondcalcResultItem.highlight.positive {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+.darkMode .bondcalcResultItem.highlight.negative {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+/* Formula */
+.bondcalcFormula {
+  background: rgba(0, 128, 157, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+.darkMode .bondcalcFormula {
+  background: rgba(52, 211, 249, 0.1);
+  color: #e2e8f0;
+}
+
+/* Info Section */
+.bondcalcInfoSection {
+  padding: 4rem 0;
+}
+
+.bondcalcInfoCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #1e293b;
+  line-height: 1.7;
+}
+
+.darkMode .bondcalcInfoCard {
+  background: #1a2433;
+  border-color: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+}
+
+.bondcalcInfoCard h3,
+.bondcalcInfoCard h4 {
+  margin: 1.5rem 0 0.8rem 0;
+  color: #00809d;
+}
+
+.darkMode .bondcalcInfoCard h3,
+.darkMode .bondcalcInfoCard h4 {
+  color: #34d3f9;
+}
+
+.bondcalcInfoCard h3 {
+  font-size: 1.4rem;
+}
+
+.bondcalcInfoCard h4 {
+  font-size: 1.2rem;
+}
+
+/* Table */
+.bondcalcTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.bondcalcTable th,
+.bondcalcTable td {
+  padding: 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bondcalcTable th {
+  background: rgba(0, 128, 157, 0.1);
+  font-weight: 600;
+}
+
+.darkMode .bondcalcTable th {
+  background: rgba(52, 211, 249, 0.1);
+  color: #34d3f9;
+}
+
+.darkMode .bondcalcTable td,
+.darkMode .bondcalcTable th {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.bondcalcTable tr:last-child td {
+  border-bottom: none;
+}
+
+/* List */
+.bondcalcList {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.bondcalcList li {
+  margin-bottom: 0.6rem;
+}
+
+/* CTA Button */
+.bondcalcCtaButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.85rem 1.75rem;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #00809d, #00a0c7);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  box-shadow: 
+    0 2px 6px rgba(0, 128, 157, 0.25),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bondcalcBtnText {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.bondcalcBtnArrow {
+  display: inline-block;
+  transition: 
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    opacity 0.3s ease;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.bondcalcCtaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 12px rgba(0, 128, 157, 0.3),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.bondcalcCtaButton:hover .bondcalcBtnText {
+  transform: translateX(3px);
+}
+
+.bondcalcCtaButton:hover .bondcalcBtnArrow {
+  transform: translateX(4px) scale(1.15);
+}
+
+.bondcalcCtaButton:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 1px 3px rgba(0, 128, 157, 0.3),
+    inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.bondcalcCtaButton:focus-visible {
+  outline: 2px solid rgba(0, 128, 157, 0.5);
+  outline-offset: 3px;
+}
+
+.bondcalcCtaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+.bondcalcCtaButton:hover::before {
+  transform: translateX(100%);
+}
+
+.bondcalcCtaButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 128, 157, 0.8) 0%,
+    rgba(0, 160, 199, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.bondcalcCtaButton:hover::after {
+  opacity: 1;
+}
+
+/* CTA Section */
+.bondcalcCtaSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #ffffff;
+}
+
+.darkMode .bondcalcCtaSection {
+  background: #1a2433;
+}
+
+.bondcalcCtaSectionInner {
+  text-align: center;
+  max-width: 42rem;
+  width: 100%;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+  margin: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.darkMode .bondcalcCtaSectionInner {
+  background: #1a2433;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.bondcalcCtaSectionInner:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.25rem);
+}
+
+.bondcalcCtaSection h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #00809d;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.darkMode .bondcalcCtaSection h2 {
+  color: #34d3f9;
+}
+
+.bondcalcCtaSection p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #4b5563;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.darkMode .bondcalcCtaSection p {
+  color: #e2e8f0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .bondcalcHero {
+    padding: 4rem 0;
+  }
+  .bondcalcTitle {
+    font-size: 2.2rem;
+  }
+  .bondcalcCalculatorCard,
+  .bondcalcInfoCard {
+    padding: 2rem;
+  }
+  .bondcalcResultGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .bondcalcCtaSection {
+    padding: 1.5rem;
+  }
+  .bondcalcCtaSectionInner {
+    padding: 2rem 1.5rem;
+    margin: 0.5rem;
+  }
+  .bondcalcCtaButton {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bondcalcTitle {
+    font-size: 2rem;
+  }
+  .bondcalcSubtitle {
+    font-size: 1.05rem;
+  }
+  .bondcalcCalculatorCard,
+  .bondcalcInfoCard {
+    padding: 1.8rem 1.5rem;
+  }
+  .bondcalcResult h3,
+  .bondcalcInfoCard h3 {
+    font-size: 1.2rem;
+  }
+  .bondcalcTable {
+    font-size: 0.9rem;
+  }
+  .bondcalcResultGrid {
+    grid-template-columns: 1fr;
+  }
+  .bondcalcCtaSection {
+    min-height: 90vh;
+    padding: 1rem;
+  }
+  .bondcalcCtaSectionInner {
+    padding: 1.8rem 1.2rem;
+  }
+  .bondcalcCtaSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .bondcalcCtaSection p {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+  .bondcalcCtaButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}

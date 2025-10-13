@@ -1,0 +1,290 @@
+/* components/Navbar.module.css */
+
+/* Font Family Application */
+.navbarHeader,
+.container,
+.logo,
+.navLinks,
+.navLinks a,
+.navLinks button,
+.darkModeToggle,
+.menuButton,
+.mobileMenu,
+.backdrop {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.navbarHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  color: #0d1b2a;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.navbarHeader.scrolled {
+  box-shadow: 0 4px 12px rgba(13, 27, 42, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0d1b2a;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #1b263b;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navLinks a,
+.navLinks button {
+  color: #0d1b2a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.navLinks a:hover,
+.navLinks button:hover {
+  color: #1b263b;
+}
+
+.navLinks .active {
+  color: #1b263b;
+  font-weight: 600;
+}
+
+.darkModeToggle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+  font-weight: 500;
+}
+
+.darkModeToggle:hover {
+  transform: scale(1.05);
+  color: #1b263b;
+}
+
+/* Hamburger Menu Button */
+.menuButton {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.menuButton:hover {
+  transform: scale(1.1);
+}
+
+.menuButton .bar {
+  width: 24px;
+  height: 2px;
+  background-color: #0d1b2a;
+  margin: 3px 0;
+  transition: 0.3s ease;
+  border-radius: 1px;
+}
+
+.menuButton.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menuButton.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButton.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 2rem;
+  gap: 1.5rem;
+  box-shadow: 0 10px 20px rgba(13, 27, 42, 0.1);
+  z-index: 999;
+}
+
+.mobileMenu.active {
+  display: flex;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.mobileMenu a,
+.mobileMenu button {
+  color: #0d1b2a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.mobileMenu a:hover,
+.mobileMenu button:hover {
+  color: #1b263b;
+}
+
+.mobileMenu .active {
+  color: #1b263b;
+  font-weight: 600;
+}
+
+/* Backdrop for mobile menu */
+.backdrop {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 998;
+  display: none;
+}
+
+.backdrop.active {
+  display: block;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menuButton {
+    display: flex;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  .mobileMenu.active {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .menuButton {
+    display: none;
+  }
+
+  .navLinks {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: none !important;
+  }
+
+  .backdrop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+    height: 56px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .menuButton {
+    padding: 0.4rem;
+  }
+
+  .menuButton .bar {
+    width: 20px;
+    height: 2px;
+    margin: 2.5px 0;
+  }
+
+  .mobileMenu {
+    top: 56px;
+    padding: 1rem 0 1.5rem;
+    gap: 1rem;
+  }
+
+  .mobileMenu a,
+  .mobileMenu button {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .backdrop {
+    top: 56px;
+  }
+}
