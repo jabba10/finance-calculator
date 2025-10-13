@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import Link from 'next/link';
-import styles from './debtSnowballCalculator.module.css';
+import styles from './debtsnowballcalculator.module.css';
 
 const DebtSnowballCalculator = () => {
   const ctaButtonRef = useRef(null);

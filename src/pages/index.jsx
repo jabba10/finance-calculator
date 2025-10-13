@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import styles from './Homepage.module.css';
+import styles from './homepage.module.css';
 
 const Homepage = () => {
   const [visibleCalculators, setVisibleCalculators] = useState(6);
