@@ -1,6 +1,6 @@
 // src/pages/_app.js (Recommended)
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 import './globals.css';
 
 export default function App({ Component, pageProps }) {
