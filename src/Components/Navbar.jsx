@@ -96,7 +96,7 @@ const Navbar = () => {
             Blog
           </Link>
           <Link
-            href="/aboutus"
+            href="/about"
             className={isActive('/aboutus') ? styles.active : ''}
             aria-current={isActive('/aboutus') ? 'page' : undefined}
           >
