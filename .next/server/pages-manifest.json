@@ -2,8 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/roi-calculator": "pages/roi-calculator.js",
-  "/blog": "pages/blog.js",
-  "/suite": "pages/suite.js",
   "/credit-card-payoff-calculator": "pages/credit-card-payoff-calculator.js"
 }

@@ -20,20 +20,10 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/blog": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/blog.js"
-    ],
     "/credit-card-payoff-calculator": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/credit-card-payoff-calculator.js"
-    ],
-    "/suite": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/suite.js"
     ]
   },
   "ampFirstPages": []
