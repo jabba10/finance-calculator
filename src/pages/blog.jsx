@@ -399,13 +399,7 @@ const BlogPost = () => {
       description: 'Calculate compound interest over time based on principal, interest rate, and time period.',
       formula: 'A = P(1 + r/n)^(nt)'
     },
-    {
-      id: 57,
-      title: 'Debt Snowball Calculator',
-      path: '/debt-snowball-calculator',
-      description: 'Calculate how long it will take to pay off your debts using a snowball method.',
-      formula: 'Months = Σ (Debtᵢ / Monthly Paymentᵢ)'
-    }
+    
   ];
 
   const filteredCalculators = useMemo(() => {

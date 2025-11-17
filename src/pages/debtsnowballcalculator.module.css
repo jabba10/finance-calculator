@@ -1,3 +1,4 @@
+/* Container and Layout */
 .container {
   min-height: 100vh;
   background-color: white;
@@ -6,21 +7,27 @@
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-/* Enhanced spacers for navigation bar and footer */
+/* Spacers for Navbar and Footer Gap */
 .spacerTop {
   height: 3rem;
+  width: 100%;
 }
 
 .spacerBottom {
   height: 6rem;
+  width: 100%;
 }
 
 /* Hero Section */
 .hero {
   padding: 3rem 1.8rem 2rem;
   text-align: center;
+  width: 100%;
+  max-width: 800px;
 }
 
 .title {
@@ -41,7 +48,7 @@
 
 /* Calculator Card */
 .calculatorCard {
-  max-width: 440px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto 3rem;
   background-color: white;
@@ -59,29 +66,50 @@
 .instruction {
   font-size: 1rem;
   color: #555;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
   text-align: center;
 }
 
-.formSectionTitle {
-  font-size: 1.2rem;
-  margin: 0 0 1.2rem;
+.sectionTitle {
+  font-size: 1.1rem;
   color: #0d1b2a;
+  margin-bottom: 1rem;
   font-weight: 600;
+  text-align: center;
+}
+
+.debtsSection {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+/* Debt Rows */
+.debtRow {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr auto;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  align-items: end;
 }
 
 /* Input Group */
 .inputGroup {
-  margin-bottom: 1.1rem;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
 }
 
 .label {
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: #0d1b2a;
   margin-bottom: 0.4rem;
   font-weight: 500;
@@ -91,24 +119,24 @@
 .input {
   width: 100%;
   padding: 0.7rem 0.8rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   border: 1px solid #ced4da;
-  border-radius: 8px;
+  border-radius: 6px;
   outline: none;
   background-color: white;
   transition: all 0.3s ease;
-  height: 50px;
+  height: 42px;
   box-sizing: border-box;
 }
 
 .input:focus {
   border-color: #0d1b2a;
-  box-shadow: 0 0 0 3px rgba(13, 27, 42, 0.1);
+  box-shadow: 0 0 0 2px rgba(13, 27, 42, 0.1);
 }
 
 .input::placeholder {
   color: #adb5bd;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .note {
@@ -119,80 +147,45 @@
   padding-left: 0.2rem;
 }
 
-/* Debt-specific styles */
-.debtRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr auto;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-  align-items: flex-end;
-}
-
-.debtInputGroup {
-  display: flex;
-  flex-direction: column;
-}
-
-.debtLabel {
-  font-size: 0.85rem;
-  color: #0d1b2a;
-  margin-bottom: 0.3rem;
-  font-weight: 500;
-}
-
-.debtInput {
-  width: 100%;
-  padding: 0.6rem 0.7rem;
-  font-size: 0.9rem;
-  border: 1px solid #ced4da;
+/* Buttons */
+.removeButton {
+  background: #dc3545;
+  color: white;
+  border: none;
   border-radius: 6px;
-  outline: none;
-  background-color: white;
-  height: 42px;
-  box-sizing: border-box;
-}
-
-.debtInput:focus {
-  border-color: #0d1b2a;
-  box-shadow: 0 0 0 2px rgba(13, 27, 42, 0.1);
-}
-
-.debtRemoveBtn {
-  width: 32px;
-  height: 32px;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 6px;
-  color: #e74c3c;
-  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.4rem;
 }
 
-.debtRemoveBtn:hover {
-  background: #ffedee;
-  border-color: #ffcccc;
+.removeButton:hover {
+  background: #c82333;
+  transform: scale(1.05);
 }
 
-.addDebtBtn {
-  background: #e9ecef;
-  color: #0d1b2a;
+.addButton {
+  background: #28a745;
+  color: white;
   border: none;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 1.2rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  width: 100%;
-  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  align-self: flex-start;
 }
 
-.addDebtBtn:hover {
-  background: #dfe3e6;
+.addButton:hover {
+  background: #218838;
+  transform: translateY(-1px);
 }
 
 /* Submit Button */
@@ -221,12 +214,12 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.submitBtn .arrow {
+.submitBtn .taxpro-btn-arrow {
   font-size: 1.1em;
   transition: transform 0.3s ease;
 }
 
-.submitBtn:hover .arrow {
+.submitBtn:hover .taxpro-btn-arrow {
   transform: translateX(4px);
 }
 
@@ -247,11 +240,16 @@
   font-weight: 500;
 }
 
-.resultSubheading {
+.resultSubsection {
+  margin-top: 1.2rem;
+}
+
+.resultSubsection h4 {
   font-size: 1rem;
-  margin: 1rem 0 0.6rem;
   color: #0d1b2a;
-  font-weight: 600;
+  margin: 1.2rem 0 0.8rem;
+  font-weight: 500;
+  text-align: center;
 }
 
 .resultGrid {
@@ -274,46 +272,65 @@
 
 .resultItem.highlight {
   font-weight: 600;
-  color: #0d1b2a;
+  color: #2e856e;
 }
 
-/* Table Wrapper */
-.tableWrapper {
+.textSuccess {
+  color: #2e856e;
+  font-weight: 500;
+}
+
+.textDanger {
+  color: #cc3300;
+  font-weight: 500;
+}
+
+/* Table Styles */
+.tableContainer {
   overflow-x: auto;
-  margin: 0.8rem 0;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   min-width: 500px;
 }
 
 .table th,
 .table td {
   border: 1px solid #dee2e6;
-  padding: 0.6rem 0.8rem;
+  padding: 0.7rem 0.8rem;
   text-align: left;
 }
 
 .table th {
   background-color: #f1f3f5;
   font-weight: 600;
-  font-size: 0.9rem;
+  color: #0d1b2a;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
 }
 
 .tableNote {
   text-align: center;
-  font-style: italic;
   color: #6c757d;
-  font-size: 0.9rem;
-  padding: 0.5rem;
+  font-style: italic;
+  padding: 0.8rem;
+  font-size: 0.85rem;
+  background-color: #f8f9fa;
 }
 
 /* Info Section */
 .infoSection {
   padding: 2.5rem 1.8rem;
+  width: 100%;
+  max-width: 800px;
 }
 
 .infoCard {
@@ -326,8 +343,7 @@
 }
 
 .infoCard h3,
-.infoCard h4,
-.infoCard h5 {
+.infoCard h4 {
   margin-top: 1.5rem;
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
@@ -338,12 +354,6 @@
 .infoCard h4 {
   font-size: 1.1rem;
   margin-top: 1.2rem;
-}
-
-.infoCard h5 {
-  font-size: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 0.4rem;
 }
 
 .infoCard p,
@@ -362,7 +372,24 @@
   font-family: 'Courier New', monospace;
 }
 
-/* List */
+/* Formula Block */
+.formula {
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  margin: 0.8rem 0;
+  overflow-x: auto;
+}
+
+.formula code {
+  background: none;
+  padding: 0;
+  white-space: nowrap;
+  font-family: 'Courier New', monospace;
+}
+
+/* List Styling */
 .list {
   margin: 0.8rem 0 1.2rem;
   padding-left: 1.6rem;
@@ -374,25 +401,6 @@
   line-height: 1.6;
 }
 
-/* Benefits Grid */
-.benefitsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.benefitItem h5 {
-  margin-top: 0;
-  margin-bottom: 0.3rem;
-  color: #0d1b2a;
-}
-
-.benefitItem p {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
 /* CTA Section */
 .ctaSection {
   padding: 3rem 1.8rem;
@@ -401,16 +409,18 @@
   color: white;
   border-radius: 12px;
   margin: 2rem 0 4rem;
+  width: 100%;
+  max-width: 800px;
 }
 
-.ctaSection h2 {
+.ctaSectionHeading {
   font-size: 1.6rem;
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
-.ctaSection p {
+.ctaSectionSubtext {
   font-size: 1.1rem;
   color: #cccccc;
   margin-bottom: 1.5rem;
@@ -446,12 +456,12 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
-.ctaButton .arrow {
+.ctaButton .btn-icon {
   font-size: 1.2em;
   transition: transform 0.3s ease;
 }
 
-.ctaButton:hover .arrow {
+.ctaButton:hover .btn-icon {
   transform: translateX(6px);
 }
 
@@ -502,6 +512,18 @@
     margin-bottom: 2.5rem;
   }
   
+  .debtRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  
+  .removeButton {
+    grid-column: span 2;
+    justify-self: start;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  
   .infoSection {
     padding: 2rem 1.5rem;
   }
@@ -523,27 +545,11 @@
     margin: 1.5rem 0 3rem;
   }
   
-  .ctaSection h2 {
+  .ctaSectionHeading {
     font-size: 1.4rem;
   }
   
-  .ctaSection p {
-    font-size: 1rem;
-  }
-
-  .debtRow {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-
-  .debtInputGroup:nth-child(3),
-  .debtInputGroup:nth-child(4) {
-    display: none;
-  }
-
-  .debtRemoveBtn {
-    width: 28px;
-    height: 28px;
+  .ctaSectionSubtext {
     font-size: 1rem;
   }
 }
@@ -552,6 +558,7 @@
 @media (max-width: 600px) {
   .container {
     padding: 0 0.5rem;
+    align-items: stretch; /* Stretch to full width on mobile */
   }
   
   .spacerTop {
@@ -590,14 +597,31 @@
     font-size: 0.95rem;
   }
 
+  .debtsSection {
+    padding: 1rem;
+  }
+
+  .debtRow {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .removeButton {
+    grid-column: 1;
+    justify-self: center;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
   .input {
-    font-size: 0.95rem;
+    height: 40px;
+    font-size: 0.9rem;
     padding: 0.65rem 0.75rem;
-    height: 48px;
   }
 
   .label {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .submitBtn {
@@ -640,10 +664,15 @@
     font-size: 0.95rem;
   }
 
+  .formula {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
   .table th,
   .table td {
-    padding: 0.5rem 0.6rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
   }
 
   .ctaSection {
@@ -652,12 +681,12 @@
     border-radius: 10px;
   }
 
-  .ctaSection h2 {
+  .ctaSectionHeading {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
   }
 
-  .ctaSection p {
+  .ctaSectionSubtext {
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
   }
@@ -666,16 +695,6 @@
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
     min-width: 180px;
-  }
-
-  /* Mobile debt row: stack vertically */
-  .debtRow {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-
-  .debtInputGroup {
-    width: 100%;
   }
 }
 
@@ -697,8 +716,8 @@
   }
 
   .input {
-    height: 46px;
-    font-size: 0.9rem;
+    height: 38px;
+    font-size: 0.85rem;
   }
 
   .submitBtn {
@@ -706,7 +725,7 @@
     padding: 0.65rem 1rem;
   }
 
-  .ctaSection h2 {
+  .ctaSectionHeading {
     font-size: 1.2rem;
   }
 
@@ -719,16 +738,14 @@
 /* Ensure table scrolls horizontally on tiny screens */
 @media (max-width: 480px) {
   .table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+    min-width: 450px;
   }
 
   .table th,
   .table td {
-    min-width: 120px;
+    min-width: 90px;
     padding: 0.5rem 0.6rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -741,5 +758,11 @@
   
   .ctaSection {
     break-inside: avoid;
+  }
+  
+  .removeButton,
+  .addButton,
+  .ctaButton {
+    display: none;
   }
 }

@@ -63,9 +63,8 @@ const BusinessCalculatorSuite = () => {
     { id: 52, title: 'Car Loan', icon: '🚗', path: '/car-loan-calculator', description: 'Estimate monthly payments and total cost of financing a car.' },
     { id: 53, title: 'Social Security', icon: '👵', path: '/social-security-calculator', description: 'Forecast Social Security retirement benefits based on earnings history.' },
     { id: 54, title: 'PPF', icon: '🇮🇳', path: '/ppf-calculator', description: 'Plan savings and project maturity in India Public Provident Fund.' },
-    { id: 55, title: 'Debt Snowball', icon: '💳', path: '/debt-snowball-calculator', description: 'Create a payoff plan for credit card debt using snowball or avalanche methods.' },
-    { id: 56, title: 'Mortgage Calculator', icon: '🏡', path: '/mortgage-calculator', description: 'Calculate monthly payments and total cost of financing a mortgage.' },
-    { id: 57, title: 'Compound Interest Calculator', icon: '📉', path: '/compound-interest-calculator', description: 'Calculate compound interest over time based on principal, rate, and time.' },
+    { id: 55, title: 'Mortgage Calculator', icon: '🏡', path: '/mortgage-calculator', description: 'Calculate monthly payments and total cost of financing a mortgage.' },
+    { id: 56, title: 'Compound Interest Calculator', icon: '📉', path: '/compound-interest-calculator', description: 'Calculate compound interest over time based on principal, rate, and time.' },
   ];
 
   const filteredCalculators = calculators.filter(calc =>

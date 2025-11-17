@@ -20,15 +20,20 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/break-even-calculator": [
+    "/blog": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/break-even-calculator.js"
+      "static/chunks/pages/blog.js"
     ],
-    "/contactus": [
+    "/credit-card-payoff-calculator": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/contactus.js"
+      "static/chunks/pages/credit-card-payoff-calculator.js"
+    ],
+    "/suite": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/suite.js"
     ]
   },
   "ampFirstPages": []

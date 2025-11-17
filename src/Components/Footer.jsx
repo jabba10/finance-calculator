@@ -38,7 +38,6 @@ const Footer = () => {
               <li><Link href="/compound-interest-calculator" className={styles.footerLink}>Compound Interest</Link></li>
               <li><Link href="/retirement-calculator" className={styles.footerLink}>Retirement Calculator</Link></li>
               <li><Link href="/roi-calculator" className={styles.footerLink}>ROI Calculator</Link></li>
-              <li><Link href="/debt-snowball-calculator" className={styles.footerLink}>Debt Snowball/Avalanche</Link></li>
             </ul>
           </div>
 
