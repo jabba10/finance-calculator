@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './retirementcalculator.module.css';
 
 const RetirementCalculator = () => {
@@ -77,6 +77,79 @@ const RetirementCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "retirement", "calculator", "401k", "savings", "pension", "ira", "roth", "ira", "investing", "compound",
+    "growth", "employer", "match", "contribution", "inflation", "withdrawal", "nest", "egg", "financial", "planning",
+    "future", "income", "wealth", "accumulation", "portfolio", "stocks", "bonds", "mutual", "funds", "etf",
+    "social", "security", "fidelity", "vanguard", "tiaa", "plan", "advisor", "funds", "balance", "projection",
+    "time", "horizon", "risk", "tolerance", "diversification", "tax", "deferred", "tax", "free", "rollover",
+    "annuity", "distribution", "retirement", "age", "early", "retirement", "delayed", "retirement", "salary",
+    "income", "replacement", "rate", "savings", "goal", "target", "budget", "expenses", "lifestyle", "freedom"
+  ];
+
+  const twoWordKeywords = [
+    "retirement calculator", "401k calculator", "retirement planning", "compound growth", "employer match",
+    "annual contribution", "inflation adjustment", "retirement savings", "pension planning", "ira calculator",
+    "roth ira", "financial independence", "early retirement", "nest egg", "wealth building", "investment growth",
+    "stock portfolio", "bond allocation", "mutual funds", "etf investing", "social security", "retirement income",
+    "future value", "time horizon", "risk tolerance", "tax deferred", "tax free", "retirement goal", "savings target",
+    "income replacement", "expense budget", "lifestyle planning", "retirement age", "delayed retirement", "salary history",
+    "contribution limit", "match limit", "annual return", "inflation rate", "monthly withdrawal", "retirement projection",
+    "free calculator", "online tool", "financial planning", "retirement strategy", "investment calculator"
+  ];
+
+  const longTailKeywords = [
+    "free 401k retirement calculator with employer match",
+    "how much will my 401k be worth at retirement",
+    "retirement savings calculator with inflation adjustment",
+    "401k compound growth calculator with employer match",
+    "free retirement calculator for early retirement planning",
+    "calculate retirement nest egg with current savings and contributions",
+    "401k future value calculator with annual return and inflation",
+    "how to plan retirement savings by age 30 40 50",
+    "retirement calculator with social security and 401k",
+    "free tool to estimate monthly retirement income",
+    "401k vs ira retirement calculator",
+    "roth 401k retirement savings calculator",
+    "retirement calculator with employer match limit",
+    "how much to save for retirement by age",
+    "free online retirement calculator no signup",
+    "retirement savings goal calculator with salary",
+    "401k balance projection tool with compound interest",
+    "calculate inflation adjusted retirement value",
+    "retirement calculator for financial independence fire",
+    "how employer match impacts 401k growth calculator",
+    "retirement withdrawal calculator with real return",
+    "401k contribution calculator with match and limit",
+    "free retirement planning tool for beginners",
+    "retirement calculator with stock and bond allocation",
+    "how much will i need to retire comfortably calculator",
+    "401k calculator for self employed individuals",
+    "retirement savings calculator with annual raises",
+    "free tool to compare retirement scenarios",
+    "retirement calculator with tax deferred growth",
+    "401k rollover and retirement projection calculator",
+    "retirement calculator for teachers and government employees",
+    "how to maximize 401k employer match calculator",
+    "retirement calculator with healthcare cost estimates",
+    "free calculator to plan retirement at age 62",
+    "401k calculator with delayed retirement credits",
+    "retirement income replacement rate calculator",
+    "compound interest retirement calculator with monthly deposits",
+    "free retirement calculator for vanguard fidelity tiaa users",
+    "retirement savings calculator for dual income households",
+    "401k calculator with investment risk tolerance",
+    "how much can i withdraw in retirement calculator",
+    "retirement calculator with part time work income",
+    "free tool to estimate retirement lifestyle costs",
+    "401k calculator with automatic contribution increases",
+    "retirement calculator for small business owners",
+    "how inflation affects retirement savings calculator"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Meta Tags */}
@@ -88,10 +161,10 @@ const RetirementCalculator = () => {
         />
         <meta
           name="keywords"
-          content="retirement calculator, 401k calculator, retirement planning, compound growth, employer match"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/retirement-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/retirement-calculator" />
         <meta property="og:title" content="401(k) Retirement Calculator" />
         <meta
           property="og:description"

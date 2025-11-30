@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './pensionplanningcalculator.module.css';
 
 const PensionPlanningCalculator = () => {
@@ -76,6 +76,77 @@ const PensionPlanningCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "pension", "retirement", "calculator", "savings", "planning", "401k", "ira", "roth", "annuity", "social",
+    "security", "nest", "egg", "future", "value", "compound", "interest", "inflation", "withdrawal", "income",
+    "budget", "expenses", "lifestyle", "freedom", "financial", "independence", "fire", "early", "retirement",
+    "delayed", "pension", "fund", "portfolio", "investment", "growth", "return", "yield", "risk", "tolerance",
+    "diversification", "asset", "allocation", "tax", "deferred", "tax", "free", "rollover", "contribution",
+    "employer", "match", "salary", "replacement", "rate", "goal", "target", "projection", "forecast", "advisor",
+    "wealth", "accumulation", "capital", "preservation", "healthcare", "rmd", "required", "minimum", "distribution"
+  ];
+
+  const twoWordKeywords = [
+    "pension calculator", "retirement planning", "retirement savings", "compound interest", "inflation adjustment",
+    "401k calculator", "ira planning", "roth ira", "social security", "nest egg", "financial independence",
+    "early retirement", "delayed retirement", "retirement income", "future value", "investment growth", "tax deferred",
+    "tax free", "retirement goal", "savings target", "expense budget", "lifestyle planning", "salary replacement",
+    "contribution limit", "employer match", "annual return", "inflation rate", "monthly contribution", "retirement projection",
+    "free calculator", "online tool", "financial planning", "retirement strategy", "wealth accumulation", "capital preservation",
+    "healthcare planning", "rmd calculator", "fire movement", "investment portfolio", "asset allocation", "risk tolerance"
+  ];
+
+  const longTailKeywords = [
+    "free pension planning calculator with inflation adjustment",
+    "retirement savings calculator for early retirement",
+    "pension calculator with monthly contributions and compound interest",
+    "how much will i have saved by retirement calculator",
+    "free tool to estimate retirement nest egg",
+    "retirement calculator with 4% withdrawal rule",
+    "pension planning calculator for financial independence fire",
+    "free inflation adjusted retirement calculator",
+    "calculate retirement savings goal by age",
+    "pension calculator with social security and 401k",
+    "retirement fund projection tool with real returns",
+    "free online pension calculator no signup",
+    "how to plan for comfortable retirement calculator",
+    "pension calculator for teachers and government employees",
+    "retirement calculator with healthcare cost estimates",
+    "free tool to compare retirement scenarios",
+    "pension calculator with tax deferred growth",
+    "retirement savings calculator for dual income households",
+    "how much to save monthly for retirement calculator",
+    "pension calculator with salary replacement rate",
+    "retirement calculator with required minimum distributions",
+    "free calculator to plan retirement at age 55",
+    "pension planning tool for self employed individuals",
+    "retirement calculator with stock and bond allocation",
+    "how inflation affects retirement savings calculator",
+    "free pension calculator for vanguard fidelity users",
+    "retirement savings calculator with annual raises",
+    "pension calculator for small business owners",
+    "free tool to estimate retirement lifestyle costs",
+    "retirement calculator with part time work income",
+    "pension calculator with annuity payout estimate",
+    "how to maximize 401k and ira for retirement",
+    "retirement calculator for luxury or basic lifestyle",
+    "free calculator to assess retirement readiness",
+    "pension planning calculator with sequence of returns risk",
+    "retirement calculator with roth vs traditional comparison",
+    "free tool to project retirement income streams",
+    "pension calculator for single vs married filers",
+    "retirement savings calculator with employer match",
+    "how much can i withdraw in retirement calculator",
+    "pension calculator with historical market returns",
+    "free retirement planning tool for beginners",
+    "pension calculator with automatic contribution increases",
+    "retirement calculator for nonprofit employees",
+    "free calculator to estimate future value of pension"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Meta Tags */}
@@ -87,10 +158,10 @@ const PensionPlanningCalculator = () => {
         />
         <meta
           name="keywords"
-          content="pension calculator, retirement planning, retirement savings, compound growth, retirement fund"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/pension-planning-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/pension-planning-calculator" />
         <meta property="og:title" content="Pension Planning Calculator - Secure Your Future" />
         <meta
           property="og:description"

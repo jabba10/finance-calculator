@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './cac.module.css';
 
 const CacCalculator = () => {
@@ -54,6 +54,82 @@ const CacCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "cac", "customer", "acquisition", "cost", "marketing", "sales", "roi", "metrics", "startup", "saas",
+    "ecommerce", "calculator", "tool", "free", "online", "business", "growth", "profit", "efficiency",
+    "conversion", "leads", "funnel", "budget", "spend", "analytics", "kpis", "performance", "value",
+    "ltv", "lifetime", "value", "benchmark", "ratio", "cpa", "cpo", "cpc", "advertising", "revenue",
+    "margin", "scalability", "unit", "economics", "break", "even", "customers", "acquire", "spend",
+    "optimize", "track", "measure", "digital", "marketing", "sales", "team", "funnel", "costs", "spending"
+  ];
+
+  const twoWordKeywords = [
+    "cac calculator", "customer acquisition", "acquisition cost", "marketing roi", "sales efficiency",
+    "startup metrics", "saas metrics", "ecommerce cac", "free calculator", "online tool", "business metrics",
+    "growth hacking", "profit margin", "conversion rate", "lead cost", "funnel metrics", "marketing spend",
+    "sales costs", "budget planning", "performance analytics", "kpis dashboard", "ltv ratio", "cac benchmark",
+    "cac formula", "cost per", "cost per acquisition", "cost per customer", "customer lifetime", "lifetime value",
+    "ltv cac", "cac ltv", "unit economics", "break even", "marketing budget", "sales funnel", "roi calculator",
+    "marketing efficiency", "customer cost", "acquisition roi", "growth metrics", "scalable business", "digital marketing",
+    "marketing analytics", "sales performance", "customer value", "acquisition strategy", "cost optimization",
+    "spend tracking", "revenue per", "profit per", "efficient growth", "marketing attribution"
+  ];
+
+  const longTailKeywords = [
+    "free customer acquisition cost calculator",
+    "cac calculator for startups",
+    "how to calculate cac for saas",
+    "cac and ltv calculator online",
+    "marketing roi calculator free",
+    "customer acquisition cost formula tool",
+    "cac benchmark by industry 2025",
+    "cac calculator for ecommerce store",
+    "free online cac and ltv ratio tool",
+    "how to lower customer acquisition cost",
+    "cac vs ltv calculator",
+    "what is a good cac for b2b saas",
+    "calculate cost per customer acquired",
+    "marketing and sales cost per customer",
+    "cac calculator with benchmark comparison",
+    "free tool to measure marketing efficiency",
+    "cac for mobile app user acquisition",
+    "customer acquisition cost for small business",
+    "how much does it cost to acquire a customer",
+    "cac calculator for subscription business",
+    "estimate customer acquisition cost online",
+    "free cac calculator no signup",
+    "cac and lifetime value calculator",
+    "marketing spend per new customer tool",
+    "sales and marketing cost per lead calculator",
+    "cac calculator for digital marketing",
+    "customer acquisition cost by channel",
+    "free business metric calculator cac",
+    "calculate roi on customer acquisition",
+    "is my cac too high calculator",
+    "cac efficiency score calculator",
+    "compare cac across marketing channels",
+    "cac for facebook ads vs google ads",
+    "customer acquisition cost for real estate",
+    "cac calculator for insurance agents",
+    "how to track cac in google sheets",
+    "free cac tool for founders and ceos",
+    "cac calculator with industry benchmarks",
+    "marketing efficiency ratio calculator",
+    "cac payback period calculator",
+    "unit economics calculator including cac",
+    "cac for b2c vs b2b businesses",
+    "customer acquisition cost for d2c brands",
+    "cac calculator for growth teams",
+    "optimize cac using free online tool",
+    "measure marketing effectiveness with cac",
+    "cac and churn rate impact calculator",
+    "customer acquisition cost for startups pre revenue",
+    "cac calculator with revenue forecast"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Metadata */}
@@ -65,10 +141,10 @@ const CacCalculator = () => {
         />
         <meta
           name="keywords"
-          content="CAC calculator, customer acquisition cost, marketing ROI, sales efficiency, startup metrics, SaaS tools"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/cac-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/cac-calculator" />
 
         {/* Open Graph / Social Sharing */}
         <meta property="og:title" content="CAC Calculator | Measure Marketing Efficiency" />
@@ -285,9 +361,8 @@ const CacCalculator = () => {
               <strong>Rule of thumb:</strong>
             </p>
             <ul className={styles.list}>
-              
               <li>Ratio {"<"} 1 → Losing money</li>
-               <li>Ratio = 3 → Healthy</li>
+              <li>Ratio = 3 → Healthy</li>
               <li>Ratio {">"} 5 → Excellent efficiency</li>
             </ul>
             <p>

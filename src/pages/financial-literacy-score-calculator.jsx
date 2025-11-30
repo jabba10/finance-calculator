@@ -161,7 +161,55 @@ const FinancialLiteracyScoreCalculator = () => {
         />
         <meta
           name="keywords"
-          content="financial literacy test, money quiz, financial knowledge, personal finance assessment, financial education"
+          content="
+          financial literacy,
+          literacy score,
+          money quiz,
+          finance test,
+          financial knowledge,
+          personal finance,
+          financial education,
+          financial IQ,
+          budgeting,
+          saving,
+          investing,
+          debt management,
+          credit score,
+          compound interest,
+          emergency fund,
+          retirement planning,
+          financial health,
+          money skills,
+          financial awareness,
+          financial wellness,
+          finance literacy test,
+          financial literacy quiz,
+          free financial test,
+          financial literacy assessment,
+          personal finance test,
+          financial capability,
+          money management,
+          financial planning,
+          financial confidence,
+          financial independence,
+          financial responsibility,
+          financial decision making,
+          basic finance,
+          financial basics,
+          financial literacy score,
+          test your finance knowledge,
+          are you financially literate,
+          how financially smart are you,
+          financial literacy checker,
+          financial literacy tool,
+          financial literacy calculator,
+          financial quiz for adults,
+          financial literacy for beginners,
+          measure financial knowledge,
+          improve financial literacy,
+          financial literacy grade,
+          financial health score
+          "
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/financial-literacy-score-calculator" />

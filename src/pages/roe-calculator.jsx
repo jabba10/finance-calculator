@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './roecalculator.module.css';
 
 const ROECalculator = () => {
@@ -58,6 +58,78 @@ const ROECalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "roe", "return", "equity", "calculator", "profitability", "ratio", "financial", "investor", "stocks",
+    "shares", "shareholder", "income", "net", "equity", "capital", "efficiency", "performance", "metrics",
+    "analysis", "cfo", "ceo", "fund", "manager", "stock", "valuation", "earnings", "profit", "margin",
+    "balance", "sheet", "income", "statement", "roa", "eps", "diluted", "earnings", "per", "share",
+    "leverage", "debt", "book", "value", "investing", "portfolio", "screening", "benchmark", "industry",
+    "saas", "tech", "retail", "finance", "banking", "utilities", "consumer", "goods", "free", "online",
+    "tool", "finance", "calculator", "business", "metrics", "kpis", "roi", "roic", "return", "capital"
+  ];
+
+  const twoWordKeywords = [
+    "roe calculator", "return equity", "return on", "on equity", "financial ratio", "profitability ratio",
+    "investor tools", "stock analysis", "equity valuation", "net income", "shareholder equity", "capital efficiency",
+    "financial metrics", "performance metric", "cfo dashboard", "ceo reporting", "fund screening", "stock screening",
+    "earnings analysis", "balance sheet", "income statement", "roa ratio", "eps calculation", "book value",
+    "debt equity", "profit margin", "capital return", "free calculator", "online tool", "finance calculator",
+    "business metrics", "investment ratio", "equity return", "company performance", "financial health", "industry benchmark",
+    "saas roe", "tech stocks", "retail profitability", "banking metrics", "consumer goods", "utility stocks",
+    "portfolio analysis", "valuation metric", "return capital"
+  ];
+
+  const longTailKeywords = [
+    "free roe calculator online no signup",
+    "how to calculate return on equity",
+    "roe calculator for investors",
+    "return on equity ratio formula calculator",
+    "calculate roe from net income and equity",
+    "roe calculator for stock analysis",
+    "what is a good return on equity ratio",
+    "roe benchmark by industry 2025",
+    "free tool to compare company roe",
+    "roe calculator for saas companies",
+    "return on equity for tech startups",
+    "how to interpret roe for investing",
+    "roe vs roa calculator",
+    "calculate shareholder return on equity",
+    "free financial calculator for roe",
+    "roe calculator for mba students",
+    "how to improve return on equity",
+    "roe calculator with industry comparison",
+    "return on equity for retail business",
+    "roe calculator for financial services",
+    "is 15% roe good for manufacturing",
+    "free roe tool for portfolio managers",
+    "calculate roe from balance sheet data",
+    "roe calculator for private companies",
+    "how ceos use roe to measure performance",
+    "roe calculator for angel investors",
+    "return on equity for utility stocks",
+    "roe calculator with eps and roa",
+    "free online roe calculator for analysts",
+    "downloadable roe spreadsheet alternative",
+    "roe calculator for cfo financial reporting",
+    "assess company efficiency with roe calculator",
+    "roe calculator for equity research",
+    "compare roe across s&p 500 companies",
+    "roe calculator for dividend investors",
+    "how leverage affects return on equity",
+    "roe calculator with debt-to-equity context",
+    "real time roe calculation tool",
+    "roe calculator for business valuation",
+    "free tool to screen high roe stocks",
+    "roe calculator for startup pitch decks",
+    "how to explain roe to shareholders",
+    "roe calculator for academic finance",
+    "calculate roe after share buybacks",
+    "roe impact of net income changes calculator"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Metadata */}
@@ -69,10 +141,10 @@ const ROECalculator = () => {
         />
         <meta
           name="keywords"
-          content="roe calculator, return on equity, financial ratio, profitability tool, investor tools"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/roe-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/roe-calculator" />
 
         {/* Open Graph / Social */}
         <meta property="og:title" content="ROE Calculator | Measure Profitability Efficiency" />

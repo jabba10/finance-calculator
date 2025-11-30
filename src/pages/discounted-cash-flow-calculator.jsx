@@ -92,7 +92,54 @@ const DiscountedCashFlowCalculator = () => {
         />
         <meta
           name="keywords"
-          content="DCF calculator, discounted cash flow, investment valuation, NPV calculator, business valuation tool"
+          content="
+          DCF,
+          discounted cash flow,
+          NPV,
+          net present value,
+          valuation,
+          investment value,
+          cash flow,
+          finance,
+          financial calculator,
+          business valuation,
+          stock valuation,
+          intrinsic value,
+          present value,
+          future cash flow,
+          discount rate,
+          terminal value,
+          equity valuation,
+          real estate valuation,
+          startup valuation,
+          M&A valuation,
+          DCF analysis,
+          NPV calculator,
+          DCF calculator,
+          investment calculator,
+          financial modeling,
+          cash flow analysis,
+          time value of money,
+          ROI calculator,
+          capital budgeting,
+          project valuation,
+          venture capital,
+          private equity,
+          free DCF tool,
+          online DCF calculator,
+          calculate NPV,
+          DCF formula,
+          discounted cash flow analysis,
+          business appraisal,
+          asset valuation,
+          financial forecast,
+          investment appraisal,
+          value investing,
+          Warren Buffett method,
+          cash flow discounting,
+          financial decision tool,
+          investment decision calculator
+          "
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/discounted-cash-flow-calculator" />

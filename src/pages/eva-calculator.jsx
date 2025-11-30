@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './evacalculator.module.css';
 
 const EvaCalculator = () => {
@@ -64,6 +64,73 @@ const EvaCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "eva", "economic", "value", "added", "calculator", "nopat", "wacc", "capital", "profit", "profitability",
+    "shareholder", "value", "roi", "roic", "finance", "financial", "analysis", "metrics", "performance", "cfo",
+    "ceo", "investor", "equity", "debt", "cost", "of", "capital", "hurdle", "rate", "economic", "profit", "valuation",
+    "business", "valuation", "corporate", "finance", "free", "online", "tool", "cash", "flow", "free", "cash", "flow",
+    "npv", "irr", "discounted", "cash", "flow", "ebit", "earnings", "before", "interest", "tax", "financial", "modeling",
+    "executive", "compensation", "incentives", "m&a", "mergers", "acquisitions", "division", "performance", "asset",
+    "efficiency", "return", "investment", "capital", "efficiency", "book", "value", "market", "value", "value", "creation"
+  ];
+
+  const twoWordKeywords = [
+    "eva calculator", "economic value", "value added", "nopat calculation", "wacc calculator", "cost capital",
+    "capital efficiency", "shareholder value", "economic profit", "financial metrics", "performance metric", "cfo tool",
+    "ceo dashboard", "investor analysis", "equity cost", "debt cost", "hurdle rate", "business valuation", "corporate finance",
+    "free calculator", "online tool", "cash flow", "free cash", "npv analysis", "irr calculation", "ebit margin",
+    "return investment", "roic ratio", "division performance", "m&a analysis", "merger evaluation", "acquisition value",
+    "asset turnover", "capital structure", "value creation", "value destruction", "profit analysis", "economic return",
+    "capital charge", "weighted average", "average cost", "cost capital", "financial modeling", "executive incentive",
+    "performance bonus", "economic value", "added metric"
+  ];
+
+  const longTailKeywords = [
+    "free eva calculator online no signup",
+    "how to calculate economic value added",
+    "eva calculator for business valuation",
+    "economic value added formula calculator",
+    "calculate eva from nopat and wacc",
+    "eva calculator for investors and analysts",
+    "what is a good eva for a company",
+    "free tool to measure shareholder value creation",
+    "eva vs net income calculator",
+    "calculate true economic profit with eva",
+    "eva calculator for cfo financial reporting",
+    "economic value added for executive compensation",
+    "eva calculator with wacc and nopat inputs",
+    "free eva tool for mba students",
+    "how to improve eva for your business",
+    "eva calculator for division performance",
+    "calculate eva for mergers and acquisitions",
+    "free online eva calculator for startups",
+    "eva calculator with roic and npv context",
+    "economic value added benchmark by industry",
+    "eva calculator for asset-heavy companies",
+    "how amazon and coca cola use eva",
+    "free eva calculator for financial modeling",
+    "eva vs roi vs roic comparison tool",
+    "calculate cost of capital for eva",
+    "eva calculator for private equity firms",
+    "free tool to assess value creation or destruction",
+    "eva calculator for business school projects",
+    "downloadable eva spreadsheet alternative",
+    "real time economic value added calculator",
+    "eva calculator for executive incentive plans",
+    "how to explain eva to board members",
+    "eva calculator with free cash flow integration",
+    "calculate eva after tax operating profit",
+    "eva calculator for manufacturing businesses",
+    "free financial metric calculator suite eva",
+    "eva calculator for saas and tech companies",
+    "how eva aligns management with shareholder value",
+    "eva calculator with sensitivity analysis",
+    "free tool to evaluate capital allocation efficiency"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Metadata */}
@@ -75,10 +142,10 @@ const EvaCalculator = () => {
         />
         <meta
           name="keywords"
-          content="eva calculator, economic value added, nopat, wacc, financial analysis, value creation"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/eva-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/eva-calculator" />
 
         {/* Open Graph / Social */}
         <meta property="og:title" content="EVA Calculator | Measure True Business Profitability" />
@@ -250,15 +317,15 @@ const EvaCalculator = () => {
               <tbody>
                 <tr>
                   <td>EVA {'>'} $0</td>
-<td>✅ Creating value — returns exceed cost of capital</td>
-</tr>
-<tr>
-<td>EVA = $0</td>
-<td>⚠️ Breaking even — returns equal cost of capital</td>
-</tr>
-<tr>
-<td>EVA {'<'} $0</td>
-<td>❌ Destroying value — returns below required return</td>
+                  <td>✅ Creating value — returns exceed cost of capital</td>
+                </tr>
+                <tr>
+                  <td>EVA = $0</td>
+                  <td>⚠️ Breaking even — returns equal cost of capital</td>
+                </tr>
+                <tr>
+                  <td>EVA {'<'} $0</td>
+                  <td>❌ Destroying value — returns below required return</td>
                 </tr>
               </tbody>
             </table>

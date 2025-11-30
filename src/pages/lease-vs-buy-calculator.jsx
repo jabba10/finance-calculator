@@ -111,7 +111,7 @@ const LeaseVsBuyCalculator = () => {
         />
         <meta
           name="keywords"
-          content="lease vs buy calculator, equipment leasing, vehicle lease calculator, purchase vs lease, business finance tools"
+          content="lease vs buy calculator, lease or buy, equipment lease calculator, vehicle lease vs buy, business lease calculator, car lease vs buy, lease payment calculator, buy vs lease car, lease vs purchase, finance calculator, leasing calculator, equipment financing, vehicle financing, asset purchase calculator, total cost of ownership, lease tax deduction, depreciation calculator, buy equipment calculator, commercial lease calculator, fleet lease vs buy, machinery lease calculator, truck lease calculator, SUV lease vs buy, tax benefit lease, Section 179 calculator, operating lease vs capital lease, lease residual value, monthly lease payment, interest rate calculator, loan vs lease, small business lease calculator, lease buyout calculator, NPV lease buy, cash flow lease buy, balance sheet lease, opportunity cost calculator, capital expenditure calculator, leasing vs financing, equipment cost comparison, vehicle total cost, lease term calculator, finance decision tool, business asset calculator, compare lease and loan, lease calculator with tax, buy calculator with depreciation"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/lease-vs-buy-calculator" />
@@ -121,7 +121,7 @@ const LeaseVsBuyCalculator = () => {
           content="Compare the total cost of leasing versus buying assets like vehicles and equipment with tax and financing considerations."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/lease-vs-buy-calculator" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/lease-vs-buy-calculator  " />
       </Head>
 
       <div className={styles.page}>

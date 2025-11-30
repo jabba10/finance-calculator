@@ -86,7 +86,7 @@ const DevelopmentFeasibilityCalculator = () => {
         />
         <meta
           name="keywords"
-          content="feasibility calculator, project evaluation, NPV calculator, ROI analysis, business planning"
+          content="development feasibility calculator, project feasibility, feasibility study, NPV calculator, ROI calculator, business feasibility, real estate feasibility, product launch feasibility, market demand analysis, investment feasibility, project evaluation, business case analysis, go/no-go analysis, capital budgeting, financial feasibility, startup feasibility, commercial real estate feasibility, business expansion calculator, project viability tool, feasibility score, pre-investment analysis, venture feasibility, economic viability, project risk assessment, financial modeling, business planning tool, feasibility metrics, project screening, early-stage evaluation, commercial feasibility, real estate development calculator, startup planning tool, business development calculator, project assessment, feasibility analysis, development ROI, market potential calculator, NPV and ROI calculator, feasibility decision tool"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/development-feasibility-calculator" />

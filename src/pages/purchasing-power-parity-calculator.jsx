@@ -64,7 +64,7 @@ const PurchasingPowerParityCalculator = () => {
         />
         <meta
           name="keywords"
-          content="PPP calculator, purchasing power parity, currency comparison, cost of living, international economics"
+          content="PPP calculator, purchasing power parity, currency comparison, cost of living, international economics, exchange rate calculator, PPP tool, cost of living calculator, currency value, real exchange rate, PPP exchange rate, Big Mac Index, GDP PPP, international purchasing power, currency valuation, inflation-adjusted exchange rate, cross country cost comparison, currency parity, economic parity, global price comparison, forex calculator, international salary calculator, living cost abroad, currency conversion tool, relative purchasing power, PPP theory, macroeconomic calculator, IMF PPP, World Bank PPP, currency overvaluation, currency undervaluation, cost parity, price level comparison, international finance tool, economic indicator"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/purchasing-power-parity-calculator" />
@@ -74,7 +74,7 @@ const PurchasingPowerParityCalculator = () => {
           content="Calculate how much a good should cost in another country based on exchange rates and PPP theory."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/purchasing-power-parity-calculator" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/purchasing-power-parity-calculator  " />
       </Head>
 
       <div className={styles.page}>

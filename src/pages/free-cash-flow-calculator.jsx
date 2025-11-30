@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './freecashflowcalculator.module.css';
 
 const FreeCashFlowCalculator = () => {
@@ -71,6 +71,80 @@ const FreeCashFlowCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "cash", "flow", "calculator", "operating", "free", "cashflow", "ocf", "fcf", "net", "income",
+    "depreciation", "ebit", "ebitda", "revenue", "cogs", "opex", "expenses", "profit", "liquidity",
+    "solvency", "financial", "health", "business", "finance", "metrics", "analysis", "startup",
+    "small", "business", "owner", "entrepreneur", "cfo", "ceo", "accounting", "bookkeeping",
+    "forecasting", "valuation", "dcf", "discounted", "cash", "flow", "capital", "expenditure",
+    "capex", "working", "capital", "receivables", "payables", "inventory", "turnover", "margin",
+    "profitability", "efficiency", "cash", "conversion", "cycle", "burn", "rate", "runway",
+    "funding", "investment", "equity", "debt", "loan", "lender", "investor", "due", "diligence"
+  ];
+
+  const twoWordKeywords = [
+    "cash flow", "flow calculator", "free cash", "operating cash", "cash flow", "ocf calculator",
+    "fcf calculator", "net income", "depreciation expense", "ebit margin", "ebitda margin", "gross profit",
+    "cogs calculator", "operating expenses", "business liquidity", "financial health", "cash metrics",
+    "startup finance", "small business", "cfo tool", "ceo dashboard", "accounting metric", "bookkeeping tool",
+    "cash forecasting", "business valuation", "dcf valuation", "discounted cash", "capex analysis",
+    "working capital", "receivables turnover", "payables management", "inventory turnover", "cash margin",
+    "profitability ratio", "cash efficiency", "conversion cycle", "burn rate", "runway calculator",
+    "investor analysis", "lender report", "due diligence", "cash benchmark", "cash projection", "cash statement"
+  ];
+
+  const longTailKeywords = [
+    "free cash flow calculator online no signup",
+    "operating cash flow calculator for small business",
+    "how to calculate ocf from income statement",
+    "cash flow calculator with depreciation and tax",
+    "free tool to estimate business liquidity",
+    "cash flow calculator for startups and founders",
+    "ocf vs net income calculator",
+    "cash flow calculator with smart input parsing",
+    "free calculator to assess financial health",
+    "how to improve operating cash flow",
+    "cash flow calculator for cfo reporting",
+    "cash flow calculator for investor pitch deck",
+    "calculate cash flow from revenue and cogs",
+    "free cash flow calculator with ebit and tax",
+    "cash flow margin by industry benchmark",
+    "cash flow calculator for saas companies",
+    "free tool for restaurant cash flow analysis",
+    "retail business operating cash flow calculator",
+    "manufacturing cash flow calculator with capex",
+    "how lenders evaluate cash flow for loans",
+    "cash flow calculator for due diligence",
+    "free online ocf calculator for entrepreneurs",
+    "cash flow calculator with automatic number extraction",
+    "calculate cash conversion cycle and ocf",
+    "free tool to reduce cash burn rate",
+    "cash flow calculator for e-commerce business",
+    "how to forecast cash flow for startups",
+    "cash flow calculator with working capital impact",
+    "free calculator to value business using dcf",
+    "cash flow calculator for real estate holdings",
+    "cash flow analysis for service businesses",
+    "free tool to compare cash flow across quarters",
+    "cash flow calculator for nonprofit organizations",
+    "how to present cash flow to investors",
+    "cash flow calculator with sensitivity scenario",
+    "free calculator for burn rate and runway",
+    "cash flow calculator for amazon fba sellers",
+    "cash flow calculator for franchise owners",
+    "how to use cash flow in financial modeling",
+    "free cash flow vs operating cash flow calculator",
+    "cash flow calculator with interest and tax shield",
+    "downloadable cash flow spreadsheet alternative",
+    "cash flow calculator for angel investors",
+    "free tool to detect negative cash flow early",
+    "cash flow calculator for construction companies",
+    "cash flow calculator for consulting firms"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Meta Tags */}
@@ -82,10 +156,10 @@ const FreeCashFlowCalculator = () => {
         />
         <meta
           name="keywords"
-          content="cash flow calculator, operating cash flow, OCF, net income, depreciation, business finance tools"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/free-cash-flow-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/free-cash-flow-calculator" />
         <meta property="og:title" content="Free Cash Flow Calculator - Business Liquidity Tool" />
         <meta
           property="og:description"

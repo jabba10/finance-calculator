@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './cdcalculator.module.css';
 
 const CdCalculator = () => {
@@ -69,6 +69,76 @@ const CdCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "cd", "certificate", "deposit", "calculator", "savings", "interest", "apy", "apr", "compound", "interest",
+    "fixed", "income", "bank", "rate", "yield", "maturity", "value", "principal", "investment", "safe", "risk",
+    "free", "online", "tool", "finance", "financial", "planning", "high", "yield", "online", "bank", "early",
+    "withdrawal", "penalty", "term", "length", "ladder", "bump", "up", "cd", "reinvestment", "growth", "capital",
+    "preservation", "liquidity", "treasury", "comparison", "return", "annual", "percentage", "yield", "compounding",
+    "monthly", "daily", "quarterly", "annually", "semi", "annual", "interest", "earned", "future", "value"
+  ];
+
+  const twoWordKeywords = [
+    "cd calculator", "certificate deposit", "deposit calculator", "savings calculator", "interest calculator",
+    "apy calculator", "compound interest", "fixed income", "bank cd", "cd rates", "high yield", "online bank",
+    "cd ladder", "bump up", "maturity value", "interest earned", "annual percentage", "percentage yield", "apy rate",
+    "cd investment", "safe investment", "low risk", "cd term", "cd penalty", "early withdrawal", "cd comparison",
+    "cd growth", "future value", "principal amount", "cd return", "cd savings", "free calculator", "online tool",
+    "financial calculator", "cd planning", "cd strategy", "cd portfolio", "cd vs savings", "cd vs treasury",
+    "monthly compounding", "daily compounding", "cd maturity", "investment calculator", "savings goal", "rate benchmark"
+  ];
+
+  const longTailKeywords = [
+    "free cd calculator with compound interest",
+    "certificate of deposit maturity value calculator",
+    "how much will my cd be worth at maturity",
+    "cd interest earned calculator with apy",
+    "best cd calculator for high yield savings",
+    "online cd calculator with monthly compounding",
+    "free tool to compare cd rates and terms",
+    "cd calculator with early withdrawal penalty estimate",
+    "calculate cd growth with daily compounding",
+    "cd ladder planning calculator free",
+    "bump up cd interest calculator",
+    "cd vs savings account calculator",
+    "cd calculator with effective apy conversion",
+    "how to calculate cd interest manually",
+    "free certificate of deposit calculator no signup",
+    "cd maturity calculator for 1 year 3 year 5 year",
+    "cd calculator with reinvestment option",
+    "cd investment return calculator with inflation",
+    "cd calculator for retirement savings",
+    "compare bank cd rates with calculator",
+    "cd calculator for short term savings goals",
+    "financial calculator for cd and treasury comparison",
+    "cd compound interest calculator with quarterly compounding",
+    "how much interest will i earn on a 10k cd",
+    "cd calculator with semi annual compounding",
+    "free online cd calculator for beginners",
+    "cd calculator with tax deferred growth option",
+    "cd calculator for emergency fund planning",
+    "cd maturity value with 4.5 interest rate",
+    "cd calculator for education savings plan",
+    "cd calculator with real apy after fees",
+    "downloadable cd interest spreadsheet alternative",
+    "cd calculator for senior citizens safe investing",
+    "cd calculator with guaranteed return projection",
+    "free tool to plan cd laddering strategy",
+    "cd calculator with changing interest rates",
+    "cd calculator for risk averse investors",
+    "cd calculator with principal protection",
+    "how cd compounding frequency affects returns",
+    "cd calculator with historical rate benchmarks",
+    "cd calculator for holiday savings plan",
+    "cd calculator with automatic rollover option",
+    "cd calculator for down payment savings",
+    "cd calculator with 5 year term projection",
+    "free cd calculator from financecalculatorfree"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Meta Tags */}
@@ -80,10 +150,10 @@ const CdCalculator = () => {
         />
         <meta
           name="keywords"
-          content="cd calculator, certificate of deposit, compound interest, apy calculator, savings calculator"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/cd-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/cd-calculator" />
         <meta property="og:title" content="CD Calculator - Project Your CD Growth" />
         <meta
           property="og:description"

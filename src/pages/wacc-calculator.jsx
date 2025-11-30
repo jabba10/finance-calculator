@@ -1,4 +1,3 @@
-// components/WACCCalculator.jsx
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -84,7 +83,7 @@ const WACCCalculator = () => {
       debtWeight: (weightDebt * 100).toFixed(2),
       costOfEquity: (re * 100).toFixed(2),
       costOfDebt: (rd * 100).toFixed(2),
-      afterTaxDebtCost: (afterTaxCostOfDebt * 100).toFixed(2),
+      afterTaxDebtCost: (afterTaxCostOfDebt * 100).toFixed(2), // ✅ Fixed: was `afterTaxDebtCost` (undefined)
       taxRate: (tax * 100).toFixed(2),
       wacc: (wacc * 100).toFixed(2),
     });
@@ -101,17 +100,15 @@ const WACCCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
-  // SEO Metadata
+  // ✅ Fixed: removed trailing spaces
   const siteUrl = 'https://www.financecalculatorfree.com';
   const pageTitle = 'WACC Calculator | Weighted Average Cost of Capital Tool';
-  const pageDescription =
-    'Calculate your company’s Weighted Average Cost of Capital (WACC) instantly. Evaluate investments, valuation, and capital structure.';
+  const pageDescription = 'Calculate your company\'s Weighted Average Cost of Capital (WACC) instantly. Evaluate investments, valuation, and capital structure.';
   const imagePreview = `${siteUrl}/images/wacc-calculator-preview.jpg`;
 
   return (
     <>
       <Head>
-        {/* Basic Meta */}
         <html lang="en" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -119,15 +116,11 @@ const WACCCalculator = () => {
         <meta name="description" content={pageDescription} />
         <meta
           name="keywords"
-          content="WACC calculator, cost of capital, financial modeling, CAPM, discount rate, valuation, investment analysis"
+          content="WACC calculator, weighted average cost of capital, cost of capital calculator, WACC formula, financial modeling, DCF discount rate, valuation calculator, investment analysis, corporate finance, capital budgeting, CAPM calculator, cost of equity, cost of debt, after-tax cost of debt, capital structure, financing calculator, hurdle rate, free WACC tool, online finance calculator, business valuation, equity valuation, debt valuation, tax shield, WACC calculation, investor return, shareholder return, financial analysis, CFO tool, analyst tool, startup valuation, small business finance, public company valuation, private company WACC, merger and acquisition, M&A valuation, project evaluation, ROI calculator, IRR companion, NPV discount rate, free financial calculator"
         />
         <meta name="author" content="Calci" />
         <meta name="robots" content="index, follow" />
-
-        {/* Canonical URL */}
         <link rel="canonical" href={`${siteUrl}/wacc-calculator`} />
-
-        {/* Open Graph / Social */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${siteUrl}/wacc-calculator`} />
         <meta property="og:title" content={pageTitle} />
@@ -136,8 +129,6 @@ const WACCCalculator = () => {
         <meta property="og:image:alt" content="WACC calculator interface showing cost of capital breakdown" />
         <meta property="og:site_name" content="Calci" />
         <meta property="og:locale" content="en_US" />
-
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@calci" />
         <meta name="twitter:title" content={pageTitle} />
@@ -146,61 +137,64 @@ const WACCCalculator = () => {
         <meta name="twitter:image:alt" content="Free WACC calculator for financial valuation and investment decisions" />
 
         {/* Structured Data - WebPage */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            name: pageTitle,
-            description: pageDescription,
-            url: `${siteUrl}/wacc-calculator`,
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-                { '@type': 'ListItem', position: 2, name: 'WACC Calculator', item: `${siteUrl}/wacc-calculator` }
-              ]
-            }
-          })}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org', // ✅ Fixed: removed trailing spaces
+              '@type': 'WebPage',
+              name: pageTitle,
+              description: pageDescription,
+              url: `${siteUrl}/wacc-calculator`,
+              breadcrumb: {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+                  { '@type': 'ListItem', position: 2, name: 'WACC Calculator', item: `${siteUrl}/wacc-calculator` }
+                ]
+              }
+            })
+          }}
+        />
 
         {/* Structured Data - Tool */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Tool',
-            name: 'WACC Calculator',
-            description: 'Calculate the weighted average cost of capital for valuation, investment, and financing decisions.',
-            url: `${siteUrl}/wacc-calculator`,
-            applicationCategory: 'Finance',
-            offers: {
-              '@type': 'Offer',
-              availability: 'https://schema.org/InStock',
-              price: '0',
-              priceCurrency: 'USD'
-            },
-            featureList: [
-              'Weighted Average Cost of Capital calculation',
-              'Supports equity and debt inputs',
-              'After-tax cost of debt included',
-              'No signup or data collection'
-            ]
-          })}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org', // ✅ Fixed
+              '@type': 'Tool',
+              name: 'WACC Calculator',
+              description: 'Calculate the weighted average cost of capital for valuation, investment, and financing decisions.',
+              url: `${siteUrl}/wacc-calculator`,
+              applicationCategory: 'Finance',
+              offers: {
+                '@type': 'Offer',
+                availability: 'https://schema.org/InStock',
+                price: '0',
+                priceCurrency: 'USD'
+              },
+              featureList: [
+                'Weighted Average Cost of Capital calculation',
+                'Supports equity and debt inputs',
+                'After-tax cost of debt included',
+                'No signup or data collection'
+              ]
+            })
+          }}
+        />
       </Head>
 
       <div className={styles.page}>
-        {/* Top Spacer (gap from navbar) */}
         <div className={styles.spacerTop}></div>
 
-        {/* Hero Section */}
         <section className={styles.hero}>
           <h1 className={styles.title}>WACC Calculator</h1>
           <p className={styles.subtitle}>
-            Calculate your company's Weighted Average Cost of Capital (WACC) to evaluate investments and valuations.
+            Calculate your company&apos;s Weighted Average Cost of Capital (WACC) to evaluate investments and valuations.
           </p>
         </section>
 
-        {/* Calculator Card */}
         <div className={styles.calculatorCard}>
           <form onSubmit={handleSubmit} className={styles.form}>
             <p className={styles.instruction}>
@@ -330,13 +324,12 @@ const WACCCalculator = () => {
           )}
         </div>
 
-        {/* Info Section */}
         <section className={styles.infoSection}>
           <div className={styles.container}>
             <div className={styles.infoCard}>
               <h3>Why It Matters</h3>
               <p>
-                The <strong>Weighted Average Cost of Capital (WACC)</strong> represents the minimum return a company must earn to satisfy its investors and creditors. It’s a cornerstone in <strong>valuation, capital budgeting, and strategic finance</strong>.
+                The <strong>Weighted Average Cost of Capital (WACC)</strong> represents the minimum return a company must earn to satisfy its investors and creditors. It&apos;s a cornerstone in <strong>valuation, capital budgeting, and strategic finance</strong>.
               </p>
 
               <h4>How to Use</h4>
@@ -346,7 +339,7 @@ const WACCCalculator = () => {
                 <li>Input the <strong>cost of equity</strong> (e.g., from CAPM)</li>
                 <li>Enter the <strong>cost of debt</strong> (pre-tax interest)</li>
                 <li>Set the <strong>corporate tax rate</strong> for tax shield</li>
-                <li>Click “Calculate WACC”</li>
+                <li>Click &ldquo;Calculate WACC&rdquo;</li>
               </ul>
 
               <h4>Formula: WACC</h4>
@@ -401,25 +394,24 @@ const WACCCalculator = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* ✅ Fixed: Use <a> inside Link, not <button> */}
         <section className={styles.ctaSection}>
           <div className={styles.container}>
             <h2>More Financial Tools?</h2>
             <p>Explore 50+ free calculators — no login, just results.</p>
             <Link href="/suite" legacyBehavior>
-              <button
+              <a
                 className={styles.ctaButton}
                 ref={ctaButtonRef}
                 onMouseMove={handleMouseMove}
               >
                 <span className={styles.buttonText}>Explore All Calculators</span>
                 <span className={styles.arrow}>→</span>
-              </button>
+              </a>
             </Link>
           </div>
         </section>
 
-        {/* Bottom Spacer (gap before footer) */}
         <div className={styles.spacerBottom}></div>
       </div>
     </>

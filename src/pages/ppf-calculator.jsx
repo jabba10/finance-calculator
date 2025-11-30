@@ -126,24 +126,69 @@ const PPFCalculator = () => {
     <>
       {/* SEO Meta Tags */}
       <Head>
-        <title>Long-Term Savings Calculator | Project Maturity Value & Growth</title>
+        <title>PPF Calculator | Public Provident Fund Maturity & Interest Estimator</title>
         <meta
           name="description"
-          content="Free long-term savings calculator to estimate your maturity value, total interest earned, and year-by-year breakdown of growth."
+          content="Free PPF calculator to estimate maturity amount, total interest, and year-wise growth of your Public Provident Fund investment in India."
         />
         <meta
           name="keywords"
-          content="long term savings calculator, compound interest calculator, retirement savings tool, investment projection"
+          content="
+          PPF calculator,
+          Public Provident Fund,
+          PPF interest calculator,
+          PPF maturity calculator,
+          PPF investment,
+          PPF returns,
+          PPF India,
+          PPF account,
+          tax saving calculator,
+          Section 80C,
+          PPF yearly interest,
+          PPF 15 years,
+          PPF extension,
+          PPF balance,
+          PPF contribution,
+          PPF scheme,
+          government savings,
+          long term savings India,
+          tax free interest,
+          PPF compounding,
+          PPF yearly breakdown,
+          PPF online calculator,
+          free PPF tool,
+          PPF amount at maturity,
+          PPF interest rate,
+          PPF investment calculator,
+          PPF planning,
+          retirement savings India,
+          secure investment India,
+          PPF vs FD,
+          PPF vs mutual funds,
+          PPF calculator with interest,
+          PPF calculator India,
+          how much PPF,
+          PPF monthly investment,
+          PPF annual limit,
+          PPF tax benefit,
+          PPF calculator with partial withdrawal,
+          PPF calculator with loan,
+          calculate PPF maturity,
+          PPF growth estimator,
+          PPF financial calculator,
+          PPF retirement planning,
+          best PPF calculator
+          "
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/long-term-savings-calculator" />
-        <meta property="og:title" content="Long-Term Savings Calculator - Plan Your Future Growth" />
+        <link rel="canonical" href="/ppf-calculator" />
+        <meta property="og:title" content="PPF Calculator - Estimate Your Tax-Free Maturity Amount" />
         <meta
           property="og:description"
-          content="Calculate how your regular investments grow over time with compound interest in a long-term savings account."
+          content="Calculate your PPF maturity value with current interest rates, annual contributions, and 15-year tenure. Fully tax-free under Section 80C."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/long-term-savings-calculator" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/ppf-calculator" />
       </Head>
 
       <div className={styles.page}>
@@ -154,9 +199,9 @@ const PPFCalculator = () => {
 
           {/* Hero Section */}
           <section className={styles.hero}>
-            <h1 className={styles.title}>Long-Term Savings Calculator</h1>
+            <h1 className={styles.title}>PPF Calculator</h1>
             <p className={styles.subtitle}>
-              Calculate your savings maturity amount with compound interest and yearly breakdown.
+              Estimate your Public Provident Fund (PPF) maturity amount with compound interest and tax benefits.
             </p>
           </section>
 
@@ -165,7 +210,7 @@ const PPFCalculator = () => {
             <form onSubmit={handleSubmit} className={styles.form}>
               <div className={styles.inputGroup}>
                 <label htmlFor="yearlyInvestment" className={styles.label}>
-                  Yearly Investment ($)
+                  Annual PPF Investment (₹)
                 </label>
                 <input
                   type="number"
@@ -173,16 +218,16 @@ const PPFCalculator = () => {
                   name="yearlyInvestment"
                   value={inputs.yearlyInvestment}
                   onChange={handleChange}
-                  placeholder="e.g. 6,000"
+                  placeholder="e.g. 150000"
                   step="any"
                   className={styles.input}
                 />
-                <div className={styles.note}>Recommended $100 - $100,000/year</div>
+                <div className={styles.note}>Max ₹1.5 lakh/year under Section 80C</div>
               </div>
 
               <div className={styles.inputGroup}>
                 <label htmlFor="interestRate" className={styles.label}>
-                  Interest Rate (%)
+                  PPF Interest Rate (%)
                 </label>
                 <input
                   type="number"
@@ -210,7 +255,7 @@ const PPFCalculator = () => {
                   step="any"
                   className={styles.input}
                 />
-                <div className={styles.note}>Minimum 1 year</div>
+                <div className={styles.note}>Standard PPF tenure: 15 years</div>
               </div>
 
               <div className={styles.inputGroup}>
@@ -231,22 +276,22 @@ const PPFCalculator = () => {
               </div>
 
               <button type="submit" className={styles.ctaButton}>
-                <span className={styles.btnText}>Calculate Maturity Value</span>
+                <span className={styles.btnText}>Calculate PPF Maturity</span>
                 <span className={styles.btnArrow}>→</span>
               </button>
 
               {results && (
                 <div className={styles.resultSection}>
-                  <h3>Savings Projection</h3>
+                  <h3>PPF Projection</h3>
                   <div className={styles.summary}>
                     <div className={`${styles.summaryItem} ${styles.highlight}`}>
-                      <strong>Maturity Value:</strong> ${results.maturityValue}
+                      <strong>Maturity Value:</strong> ₹{results.maturityValue}
                     </div>
                     <div className={styles.summaryItem}>
-                      <strong>Total Investment:</strong> ${results.totalInvestment}
+                      <strong>Total Investment:</strong> ₹{results.totalInvestment}
                     </div>
                     <div className={styles.summaryItem}>
-                      <strong>Total Interest Earned:</strong> ${results.totalInterest}
+                      <strong>Total Interest Earned:</strong> ₹{results.totalInterest}
                     </div>
                     <div className={styles.summaryItem}>
                       <strong>Interest Rate:</strong> {results.interestRate}%
@@ -262,9 +307,9 @@ const PPFCalculator = () => {
                       <thead>
                         <tr>
                           <th>Year</th>
-                          <th>Principal ($)</th>
-                          <th>Interest ($)</th>
-                          <th>Total ($)</th>
+                          <th>Principal (₹)</th>
+                          <th>Interest (₹)</th>
+                          <th>Total (₹)</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -280,7 +325,7 @@ const PPFCalculator = () => {
                     </table>
                   </div>
                   <div className={styles.note}>
-                    Long-term savings accounts typically have better interest rates. Interest is compounded annually.
+                    PPF interest is compounded annually and is fully tax-exempt under Section 10(11).
                   </div>
                 </div>
               )}
@@ -291,86 +336,90 @@ const PPFCalculator = () => {
           <section className={styles.infoSection}>
             <div className={styles.container}>
               <div className={styles.infoCard}>
-                <h3>Understanding Long-Term Savings</h3>
+                <h3>What is PPF (Public Provident Fund)?</h3>
                 <p>
-                  Long-term savings accounts offer <strong>stable returns</strong> and <strong>capital protection</strong>, making them ideal for conservative investors seeking steady growth for retirement, education, or other long-term goals.
+                  PPF is a **government-backed savings scheme in India** offering **tax-free returns**, **capital protection**, and **long-term wealth creation**. It has a **15-year lock-in** (extendable) and qualifies for **Section 80C** tax deduction up to ₹1.5 lakh/year.
                 </p>
 
-                <h4>Key Features of Long-Term Savings</h4>
+                <h4>Key Benefits of PPF</h4>
                 <ul className={styles.list}>
-                  <li><strong>Tax Benefits:</strong> Some accounts offer tax-deferred or tax-free growth</li>
-                  <li><strong>Tenure:</strong> Typically 5+ years for best rates</li>
-                  <li><strong>Investment Limit:</strong> Varies by account type</li>
-                  <li><strong>Interest Rate:</strong> Often higher than regular savings accounts</li>
-                  <li><strong>Risk:</strong> Generally low-risk when FDIC insured</li>
-                  <li><strong>Liquidity:</strong> Some penalties for early withdrawal</li>
+                  <li><strong>Tax Exemption:</strong> EEE status — Exempt at investment, accrual & withdrawal</li>
+                  <li><strong>Safe Investment:</strong> Sovereign-backed by Government of India</li>
+                  <li><strong>Compound Interest:</strong> Interest compounded annually</li>
+                  <li><strong>Loan Facility:</strong> Available from Year 3 to Year 6</li>
+                  <li><strong>Partial Withdrawal:</strong> Permitted from Year 7 onwards</li>
+                  <li><strong>Low Minimum:</strong> ₹500/year to keep account active</li>
                 </ul>
 
-                <h4>How Compound Interest Works</h4>
+                <h4>How PPF Interest Works</h4>
                 <div className={styles.formula}>
                   <code>
-                    Annual Interest = (Opening Balance + Deposits) × Interest Rate<br />
-                    Interest is compounded annually and credited at year-end
+                    Interest = Monthly balance × (Annual Rate / 12)<br />
+                    Interest credited at year-end on lowest balance between 5th–31st of each month
                   </code>
                 </div>
                 <p>
-                  The power of compounding makes long-term savings particularly attractive. Even small regular investments can grow substantially over 10+ years.
+                  To maximize returns, deposit funds **before the 5th** of each month.
                 </p>
 
-                <h4>Savings vs Other Investment Options</h4>
+                <h4>PPF vs Other Tax-Saving Options</h4>
                 <table className={styles.table}>
                   <thead>
                     <tr>
-                      <th>Feature</th>
-                      <th>Savings Account</th>
-                      <th>CDs</th>
-                      <th>Stocks</th>
+                      <th>Scheme</th>
+                      <th>Lock-in</th>
+                      <th>Returns</th>
+                      <th>Risk</th>
+                      <th>Tax Status</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Risk Level</td>
-                      <td>Very Low</td>
+                      <td>PPF</td>
+                      <td>15 years</td>
+                      <td>7–7.5%</td>
+                      <td>None</td>
+                      <td>EEE</td>
+                    </tr>
+                    <tr>
+                      <td>ELSS</td>
+                      <td>3 years</td>
+                      <td>10–12%</td>
+                      <td>High</td>
+                      <td>EEE</td>
+                    </tr>
+                    <tr>
+                      <td>NSC</td>
+                      <td>5 years</td>
+                      <td>7.7%</td>
+                      <td>None</td>
+                      <td>EET</td>
+                    </tr>
+                    <tr>
+                      <td>5-Year FD</td>
+                      <td>5 years</td>
+                      <td>6.5–7.5%</td>
                       <td>Low</td>
-                      <td>High</td>
-                    </tr>
-                    <tr>
-                      <td>Returns</td>
-                      <td>2-5%</td>
-                      <td>3-5%</td>
-                      <td>7-10% avg (volatile)</td>
-                    </tr>
-                    <tr>
-                      <td>Liquidity</td>
-                      <td>High</td>
-                      <td>Low</td>
-                      <td>High</td>
-                    </tr>
-                    <tr>
-                      <td>Best For</td>
-                      <td>Emergency funds</td>
-                      <td>Short-term goals</td>
-                      <td>Long-term growth</td>
+                      <td>ETT</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <h4>Who Should Use Long-Term Savings?</h4>
+                <h4>Ideal For</h4>
                 <ul className={styles.list}>
-                  <li><strong>Conservative investors</strong> seeking stability</li>
-                  <li>Those saving for <strong>specific future goals</strong></li>
-                  <li>Parents saving for <strong>children's education</strong></li>
-                  <li>Individuals building a <strong>retirement safety net</strong></li>
-                  <li>Those wanting a <strong>low-risk allocation</strong> in their portfolio</li>
+                  <li>Conservative investors seeking **tax-free, risk-free returns**</li>
+                  <li>Long-term goals like **child education or retirement**</li>
+                  <li>Maximizing **Section 80C deductions**</li>
+                  <li>Portfolio **stability anchor** amid market volatility</li>
                 </ul>
 
-                <h4>Savings Strategies</h4>
+                <h4>Tips to Maximize PPF Returns</h4>
                 <ul className={styles.list}>
-                  <li><strong>Automate contributions:</strong> Set up regular transfers</li>
-                  <li><strong>Ladder maturities:</strong> For CD investments</li>
-                  <li><strong>Maximize tax-advantaged accounts:</strong> Like IRAs or 401(k)s</li>
-                  <li><strong>Review rates annually:</strong> Move funds for better returns</li>
-                  <li><strong>Combine with investments:</strong> For balanced growth</li>
+                  <li>Deposit early in the financial year (April)</li>
+                  <li>Make contributions before the 5th of each month</li>
+                  <li>Invest the full ₹1.5 lakh limit annually</li>
+                  <li>Extend after 15 years for continued compounding</li>
+                  <li>Use PPF as part of a diversified tax-saving strategy</li>
                 </ul>
               </div>
             </div>

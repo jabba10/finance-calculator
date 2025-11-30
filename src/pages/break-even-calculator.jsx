@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './breakevencalculator.module.css';
 
 const BreakEvenCalculator = () => {
@@ -66,25 +66,332 @@ const BreakEvenCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // SEO Metadata - Enhanced with comprehensive break-even keywords
+  const siteUrl = 'https://www.financecalculatorfree.com';
+  const pageTitle = 'Free Break-Even Calculator 2024 | Business Profitability Analysis Tool';
+  const pageDescription = 'Calculate your business break-even point with our free calculator. Determine units needed, revenue targets, and contribution margin for profitability analysis.';
+
+  // Comprehensive SEO Keywords Collections for Break-Even Calculator
+  const singleKeywords = [
+    'break-even', 'calculator', 'analysis', 'point', 'business', 'profitability', 
+    'fixed', 'costs', 'variable', 'price', 'unit', 'revenue', 'margin', 
+    'contribution', 'profit', 'loss', 'sales', 'volume', 'target', 
+    'viability', 'planning', 'strategy', 'pricing', 'startup', 'small', 
+    'enterprise', 'manufacturing', 'retail', 'service', 'restaurant', 
+    'ecommerce', 'saas', 'subscription', 'financial', 'model', 'forecast',
+    'budget', 'expenses', 'overhead', 'operating', 'leverage', 'safety',
+    'threshold', 'crossover', 'zero', 'equilibrium', 'coverage', 'capacity'
+  ];
+
+  const twoWordKeywords = [
+    'break-even calculator', 'break-even point', 'break-even analysis', 
+    'fixed costs', 'variable costs', 'price per unit', 'contribution margin', 
+    'profit margin', 'sales volume', 'revenue target', 'business viability', 
+    'financial planning', 'pricing strategy', 'cost analysis', 'profit analysis', 
+    'loss analysis', 'sales target', 'unit economics', 'business model', 
+    'financial model', 'startup costs', 'operating costs', 'overhead costs', 
+    'direct costs', 'indirect costs', 'marginal cost', 'average cost', 
+    'total cost', 'gross margin', 'net profit', 'operating profit', 
+    'profitability analysis', 'cost volume profit', 'CVP analysis', 
+    'margin of safety', 'operating leverage', 'financial leverage', 
+    'business planning', 'feasibility study', 'investment analysis', 
+    'capital budgeting', 'cash flow', 'return on investment', 'ROI analysis',
+    'budget planning', 'expense management', 'cost management', 'price optimization',
+    'revenue optimization', 'profit optimization', 'business strategy'
+  ];
+
+  const longTailKeywords = [
+    'free online break-even calculator for small business',
+    'how to calculate break-even point for startup',
+    'break-even analysis calculator for manufacturing',
+    'restaurant break-even calculator monthly expenses',
+    'ecommerce break-even calculator with shipping costs',
+    'saas break-even calculator for subscription business',
+    'break-even point calculator for service business',
+    'how many units do I need to sell to break even',
+    'break-even calculator for retail store inventory',
+    'free break-even analysis tool for business plan',
+    'calculate break-even point with fixed and variable costs',
+    'break-even calculator for product pricing strategy',
+    'small business break-even analysis template',
+    'break-even calculator for startup funding pitch',
+    'how to calculate break-even point in units',
+    'break-even analysis for restaurant menu pricing',
+    'manufacturing break-even calculator with labor costs',
+    'service business break-even point calculation',
+    'break-even calculator for consulting firm',
+    'free break-even analysis for freelance business',
+    'break-even point calculator for online store',
+    'how to determine break-even sales volume',
+    'break-even calculator for physical product business',
+    'break-even analysis for mobile app startup',
+    'calculate break-even point for coffee shop',
+    'break-even calculator for construction business',
+    'break-even analysis for real estate investment',
+    'break-even point calculator for franchise business',
+    'break-even calculator for gym or fitness center',
+    'break-even analysis for digital marketing agency',
+    'calculate break-even for online course business',
+    'break-even calculator for photography business',
+    'break-even analysis for cleaning service company',
+    'break-even point calculator for tutoring service',
+    'break-even calculator for food truck business',
+    'break-even analysis for beauty salon or spa',
+    'calculate break-even for consulting services',
+    'break-even calculator for software development',
+    'break-even analysis for subscription box business',
+    'break-even point calculator for dropshipping',
+    'break-even calculator for amazon FBA business',
+    'break-even analysis for Shopify store',
+    'calculate break-even for wholesale distribution',
+    'break-even calculator for manufacturing startup',
+    'break-even analysis for import export business',
+    'break-even point calculator for service franchise',
+    'break-even calculator for home based business',
+    'break-even analysis for professional services',
+    'calculate break-even for legal practice',
+    'break-even calculator for accounting firm',
+    'break-even analysis for medical practice',
+    'break-even point calculator for dental office',
+    'break-even calculator for veterinary clinic',
+    'break-even analysis for therapy practice',
+    'calculate break-even for coaching business',
+    'break-even calculator for online coaching',
+    'break-even analysis for membership site',
+    'break-even point calculator for SaaS product',
+    'break-even calculator for mobile application',
+    'break-even analysis for tech startup',
+    'calculate break-even for biotech company',
+    'break-even calculator for renewable energy'
+  ];
+
+  const allKeywords = [...singleKeywords, ...twoWordKeywords, ...longTailKeywords].join(', ');
+
   return (
     <>
-      {/* SEO Meta Tags */}
       <Head>
-        <title>Break-Even Point Calculator | Free Financial Tool</title>
-        <meta
-          name="description"
-          content="Calculate your business break-even point with this free, easy-to-use calculator. Determine how many units you need to sell to cover costs."
-        />
-        <meta name="keywords" content="break-even calculator, financial planning, startup costs, pricing strategy" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/break-even-calculator" />
-        <meta property="og:title" content="Break-Even Point Calculator" />
-        <meta
-          property="og:description"
-          content="Free tool to calculate when your business will become profitable."
-        />
+        {/* Basic Meta */}
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={allKeywords} />
+        <meta name="author" content="Calci Financial Tools" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="subject" content="Break-Even Calculator & Business Analysis" />
+        <meta name="classification" content="Business, Finance, Calculators, Profitability Analysis" />
+        <meta name="topic" content="Break-Even Point Calculation and Business Planning" />
+        <meta name="summary" content="Free online break-even calculator for business profitability analysis" />
+        <meta name="url" content={`${siteUrl}/break-even-calculator`} />
+        
+        {/* Verification & Ownership */}
+        <meta name="google-site-verification" content="your_verification_code" />
+        <meta name="msvalidate.01" content="your_bing_verification" />
+        
+        {/* Location & Business */}
+        <meta name="geo.region" content="US" />
+        <meta name="geo.placename" content="United States" />
+        <meta name="geo.position" content="39.8283;-98.5795" />
+        <meta name="ICBM" content="39.8283, -98.5795" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href={`${siteUrl}/break-even-calculator`} />
+        
+        {/* Alternate Languages */}
+        <link rel="alternate" href={`${siteUrl}/break-even-calculator`} hrefLang="x-default" />
+        <link rel="alternate" href={`${siteUrl}/break-even-calculator`} hrefLang="en" />
+        <link rel="alternate" href={`${siteUrl}/es/break-even-calculator`} hrefLang="es" />
+        
+        {/* Preload & Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/break-even-calculator" />
+        <meta property="og:url" content={`${siteUrl}/break-even-calculator`} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={`${siteUrl}/images/break-even-calculator-preview.jpg`} />
+        <meta property="og:image:alt" content="Break-Even Calculator Interface for Business Analysis" />
+        <meta property="og:site_name" content="Calci Financial Calculators" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:see_also" content={siteUrl} />
+        
+        {/* Facebook */}
+        <meta property="fb:app_id" content="your_facebook_app_id" />
+        <meta property="fb:pages" content="your_facebook_page_id" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@calcifinance" />
+        <meta name="twitter:creator" content="@calcifinance" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={`${siteUrl}/images/break-even-calculator-preview.jpg`} />
+        <meta name="twitter:image:alt" content="Free Break-Even Calculator for Business Planning" />
+        
+        {/* Additional Social */}
+        <meta name="pinterest" content="nopin" description="Free break-even calculator for business analysis" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: pageTitle,
+            description: pageDescription,
+            url: `${siteUrl}/break-even-calculator`,
+            mainEntity: {
+              '@type': 'SoftwareApplication',
+              name: 'Break-Even Calculator',
+              applicationCategory: 'BusinessApplication',
+              operatingSystem: 'Any',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD'
+              },
+              description: 'Free online break-even calculator for business profitability analysis and financial planning.',
+              featureList: [
+                'Break-even point calculation',
+                'Contribution margin analysis',
+                'Revenue target estimation',
+                'Multiple business type support',
+                'Privacy-focused local calculations'
+              ],
+              processorRequirements: 'Web browser',
+              permission: 'No special permissions required'
+            },
+            breadcrumb: {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+                { '@type': 'ListItem', position: 2, name: 'Break-Even Calculator', item: `${siteUrl}/break-even-calculator` }
+              ]
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Calci Financial Tools',
+              url: siteUrl,
+              logo: `${siteUrl}/images/logo.png`,
+              sameAs: [
+                'https://twitter.com/calcifinance',
+                'https://www.linkedin.com/company/calci-finance',
+                'https://www.facebook.com/calcifinance'
+              ]
+            }
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowToTool',
+            name: 'Break-Even Calculator',
+            description: 'A tool for calculating business break-even points and profitability analysis',
+            url: `${siteUrl}/break-even-calculator`,
+            step: [
+              {
+                '@type': 'HowToStep',
+                name: 'Enter Fixed Costs',
+                text: 'Input your monthly fixed business expenses like rent and salaries'
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Set Variable Costs',
+                text: 'Enter the cost per unit for materials, labor, and other variable expenses'
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Input Price per Unit',
+                text: 'Enter the selling price for each unit of your product or service'
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Calculate Break-Even',
+                text: 'View your break-even point in units and revenue with contribution margin'
+              }
+            ],
+            tool: ['Fixed costs input', 'Variable costs calculator', 'Price per unit selector', 'Break-even analyzer'],
+            about: {
+              '@type': 'Thing',
+              name: 'Business Profitability Analysis'
+            },
+            audience: {
+              '@type': 'Audience',
+              audienceType: ['Small Business Owners', 'Startup Founders', 'Entrepreneurs', 'Financial Analysts', 'Business Students']
+            }
+          })}
+        </script>
+
+        {/* Additional FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Is this break-even calculator completely free to use?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, our break-even calculator is 100% free with no hidden costs, registration requirements, or usage limits. You can analyze your business profitability as many times as needed.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What types of businesses can use this break-even calculator?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'This calculator works for all business types including retail, manufacturing, service-based businesses, restaurants, SaaS companies, ecommerce stores, consulting firms, and startups of any size.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How accurate are the break-even calculations?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Our calculator uses standard break-even analysis formulas and provides accurate estimates based on your inputs. Actual business performance may vary based on market conditions and operational factors.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What is the difference between fixed and variable costs?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Fixed costs remain constant regardless of production volume (rent, salaries, insurance). Variable costs change with each unit produced (materials, shipping, commissions).'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I use this for service-based businesses?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, for service businesses, consider each service appointment or project as a "unit" and calculate your costs and pricing accordingly.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you store my business financial information?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No, all calculations are performed locally in your browser. We do not store, transmit, or collect any of your business financial information.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What is contribution margin and why is it important?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Contribution margin is the amount each unit contributes to covering fixed costs after variable costs are deducted. It shows how efficiently your business generates profit and covers overhead.'
+                }
+              }
+            ]
+          })}
+        </script>
       </Head>
 
       {/* Spacing above */}

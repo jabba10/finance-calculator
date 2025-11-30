@@ -71,7 +71,51 @@ const MortgageCalculator = () => {
         />
         <meta
           name="keywords"
-          content="mortgage calculator, home loan calculator, monthly payment estimator, PITI calculator"
+          content="
+          mortgage calculator,
+          home loan calculator,
+          monthly mortgage payment,
+          mortgage payment estimator,
+          loan calculator,
+          mortgage estimator,
+          house payment calculator,
+          home mortgage,
+          mortgage rate,
+          interest rate,
+          down payment,
+          loan term,
+          30 year mortgage,
+          15 year mortgage,
+          mortgage amortization,
+          PITI calculator,
+          home affordability,
+          mortgage planning,
+          home buying calculator,
+          real estate calculator,
+          mortgage cost,
+          total interest,
+          loan amount,
+          mortgage breakdown,
+          home finance,
+          mortgage budget,
+          how much house can I afford,
+          monthly payment,
+          mortgage tool,
+          free mortgage calculator,
+          online mortgage calculator,
+          calculate mortgage,
+          estimate mortgage payment,
+          mortgage payment calculator,
+          home loan payment,
+          mortgage finance,
+          home purchase calculator,
+          mortgage calculator with taxes,
+          mortgage calculator with insurance,
+          mortgage calculator USA,
+          home loan estimator,
+          mortgage calculator for first time buyers,
+          mortgage payment estimate
+          "
         />
         <meta property="og:title" content="Mortgage Calculator" />
         <meta

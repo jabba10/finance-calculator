@@ -87,12 +87,104 @@ const LoanCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
-  // SEO Metadata
+  // SEO Metadata - Enhanced with comprehensive loan keywords
   const siteUrl = 'https://www.financecalculatorfree.com';
-  const pageTitle = 'Loan Calculator | Estimate Monthly Payment & Total Interest';
-  const pageDescription =
-    'Estimate your loan payment, total interest, and total cost with our free loan calculator. Works for mortgages, auto loans, personal loans.';
-  const imagePreview = `${siteUrl}/images/loan-calculator-preview.jpg`;
+  const pageTitle = 'Free Loan Calculator 2024 | Monthly Payment & Interest Calculator';
+  const pageDescription = 'Free loan calculator to estimate monthly payments, total interest, and amortization schedule for mortgages, auto loans, personal loans, and student loans.';
+
+  // Comprehensive SEO Keywords Collections for Loan Calculator
+  const singleKeywords = [
+    'loan', 'calculator', 'payment', 'mortgage', 'auto', 'car', 'personal', 'student', 
+    'interest', 'rate', 'term', 'principal', 'amortization', 'debt', 'borrow', 
+    'lender', 'finance', 'credit', 'monthly', 'annual', 'APR', 'schedule', 
+    'refinance', 'consolidation', 'prepayment', 'equity', 'home', 'vehicle',
+    'education', 'business', 'installment', 'fixed', 'variable', 'adjustable',
+    'secured', 'unsecured', 'collateral', 'cosigner', 'default', 'foreclosure',
+    'bank', 'credit union', 'lending', 'borrowing', 'affordability', 'qualification'
+  ];
+
+  const twoWordKeywords = [
+    'loan calculator', 'mortgage calculator', 'auto loan', 'car loan', 
+    'personal loan', 'student loan', 'home loan', 'business loan', 
+    'payment calculator', 'interest calculator', 'amortization calculator',
+    'loan payment', 'monthly payment', 'loan term', 'interest rate',
+    'loan amount', 'principal amount', 'debt calculator', 'loan estimate',
+    'loan amortization', 'loan repayment', 'loan refinance', 'loan consolidation',
+    'mortgage payment', 'car payment', 'student debt', 'credit score',
+    'loan approval', 'loan prequalification', 'debt consolidation',
+    'home equity', 'auto financing', 'education loan', 'small business loan',
+    'installment loan', 'fixed rate', 'variable rate', 'adjustable rate',
+    'secured loan', 'unsecured loan', 'loan officer', 'loan processor',
+    'loan originator', 'loan servicer', 'debt management', 'credit report',
+    'loan default', 'loan foreclosure', 'loan modification', 'debt settlement'
+  ];
+
+  const longTailKeywords = [
+    'free online loan calculator for monthly payments',
+    'mortgage payment calculator with taxes and insurance',
+    'auto loan calculator with trade in value',
+    'personal loan calculator for debt consolidation',
+    'student loan calculator for repayment plans',
+    'home equity loan calculator monthly payments',
+    'business loan calculator for small business owners',
+    'car loan calculator with down payment',
+    'amortization schedule calculator with extra payments',
+    'debt consolidation loan calculator savings',
+    'mortgage calculator for first time home buyers',
+    'refinance calculator to lower monthly payments',
+    'auto loan calculator for new and used cars',
+    'personal loan calculator for credit score improvement',
+    'student loan repayment calculator income based',
+    'home loan calculator for different mortgage types',
+    'business loan calculator for startup funding',
+    'debt payoff calculator snowball vs avalanche method',
+    'mortgage calculator 15 year vs 30 year comparison',
+    'car loan calculator with manufacturer incentives',
+    'personal loan calculator for home improvements',
+    'student loan calculator for graduate school',
+    'home equity line of credit calculator payments',
+    'small business loan calculator SBA 7a',
+    'debt consolidation calculator for credit cards',
+    'mortgage calculator with PMI and property taxes',
+    'auto loan calculator for lease vs buy',
+    'personal loan calculator for medical expenses',
+    'student loan calculator for parent PLUS loans',
+    'business loan calculator for equipment financing',
+    'loan calculator for debt to income ratio',
+    'mortgage calculator for jumbo loans',
+    'car loan calculator with bad credit',
+    'personal loan calculator for wedding expenses',
+    'student loan calculator for forgiveness programs',
+    'home loan calculator for FHA loans',
+    'business loan calculator for working capital',
+    'loan calculator for debt payoff timeline',
+    'mortgage calculator for VA loans',
+    'auto loan calculator with cash back offers',
+    'personal loan calculator for vacation funding',
+    'student loan calculator for consolidation options',
+    'home equity calculator for renovation projects',
+    'business loan calculator for expansion plans',
+    'loan calculator for credit card payoff',
+    'mortgage calculator for investment properties',
+    'car loan calculator with extended warranty',
+    'personal loan calculator for emergency expenses',
+    'student loan calculator for different interest rates',
+    'home loan calculator for construction loans',
+    'business loan calculator for inventory financing',
+    'loan calculator for debt management plan',
+    'mortgage calculator for adjustable rate mortgages',
+    'auto loan calculator with gap insurance',
+    'personal loan calculator for debt relief',
+    'student loan calculator for public service forgiveness',
+    'home equity calculator for debt consolidation',
+    'business loan calculator for franchise financing',
+    'loan calculator for bankruptcy alternatives',
+    'mortgage calculator for second homes',
+    'car loan calculator with negative equity',
+    'personal loan calculator for credit building'
+  ];
+
+  const allKeywords = [...singleKeywords, ...twoWordKeywords, ...longTailKeywords].join(', ');
 
   return (
     <>
@@ -103,35 +195,67 @@ const LoanCalculator = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <meta
-          name="keywords"
-          content="loan calculator, mortgage calculator, auto loan, personal loan, payment estimator, interest calculator"
-        />
-        <meta name="author" content="Calci" />
-        <meta name="robots" content="index, follow" />
-
-        {/* Canonical URL */}
+        <meta name="keywords" content={allKeywords} />
+        <meta name="author" content="Calci Financial Tools" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="subject" content="Loan Calculator & Payment Estimation" />
+        <meta name="classification" content="Loans, Finance, Calculators, Mortgage, Auto Loan" />
+        <meta name="topic" content="Loan Payment Calculation and Amortization" />
+        <meta name="summary" content="Free online loan calculator for all types of loans" />
+        <meta name="url" content={`${siteUrl}/loan-calculator`} />
+        
+        {/* Verification & Ownership */}
+        <meta name="google-site-verification" content="your_verification_code" />
+        <meta name="msvalidate.01" content="your_bing_verification" />
+        
+        {/* Location & Business */}
+        <meta name="geo.region" content="US" />
+        <meta name="geo.placename" content="United States" />
+        <meta name="geo.position" content="39.8283;-98.5795" />
+        <meta name="ICBM" content="39.8283, -98.5795" />
+        
+        {/* Canonical */}
         <link rel="canonical" href={`${siteUrl}/loan-calculator`} />
-
-        {/* Open Graph / Social */}
+        
+        {/* Alternate Languages */}
+        <link rel="alternate" href={`${siteUrl}/loan-calculator`} hrefLang="x-default" />
+        <link rel="alternate" href={`${siteUrl}/loan-calculator`} hrefLang="en" />
+        <link rel="alternate" href={`${siteUrl}/es/loan-calculator`} hrefLang="es" />
+        
+        {/* Preload & Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${siteUrl}/loan-calculator`} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={imagePreview} />
-        <meta property="og:image:alt" content="Loan calculator interface showing payment breakdown" />
-        <meta property="og:site_name" content="Calci" />
+        <meta property="og:image" content={`${siteUrl}/images/loan-calculator-preview.jpg`} />
+        <meta property="og:image:alt" content="Loan Calculator Interface for Payment Estimation" />
+        <meta property="og:site_name" content="Calci Financial Calculators" />
         <meta property="og:locale" content="en_US" />
-
-        {/* Twitter Card */}
+        <meta property="og:see_also" content={siteUrl} />
+        
+        {/* Facebook */}
+        <meta property="fb:app_id" content="your_facebook_app_id" />
+        <meta property="fb:pages" content="your_facebook_page_id" />
+        
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@calci" />
+        <meta name="twitter:site" content="@calcifinance" />
+        <meta name="twitter:creator" content="@calcifinance" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={imagePreview} />
-        <meta name="twitter:image:alt" content="Free loan calculator for estimating payments and interest" />
-
-        {/* Structured Data - WebPage */}
+        <meta name="twitter:image" content={`${siteUrl}/images/loan-calculator-preview.jpg`} />
+        <meta name="twitter:image:alt" content="Free Loan Calculator for All Loan Types" />
+        
+        {/* Additional Social */}
+        <meta name="pinterest" content="nopin" description="Free loan calculator for payment estimation" />
+        
+        {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
@@ -139,36 +263,151 @@ const LoanCalculator = () => {
             name: pageTitle,
             description: pageDescription,
             url: `${siteUrl}/loan-calculator`,
+            mainEntity: {
+              '@type': 'SoftwareApplication',
+              name: 'Loan Calculator',
+              applicationCategory: 'FinanceApplication',
+              operatingSystem: 'Any',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD'
+              },
+              description: 'Free online loan calculator for estimating monthly payments, total interest, and amortization schedules for all types of loans.',
+              featureList: [
+                'Monthly payment calculation',
+                'Total interest estimation',
+                'Amortization schedule generation',
+                'Multiple loan type support',
+                'Privacy-focused local calculations'
+              ],
+              processorRequirements: 'Web browser',
+              permission: 'No special permissions required'
+            },
             breadcrumb: {
               '@type': 'BreadcrumbList',
               itemListElement: [
                 { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
                 { '@type': 'ListItem', position: 2, name: 'Loan Calculator', item: `${siteUrl}/loan-calculator` }
               ]
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Calci Financial Tools',
+              url: siteUrl,
+              logo: `${siteUrl}/images/logo.png`,
+              sameAs: [
+                'https://twitter.com/calcifinance',
+                'https://www.linkedin.com/company/calci-finance',
+                'https://www.facebook.com/calcifinance'
+              ]
             }
           })}
         </script>
 
-        {/* Structured Data - Tool */}
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Tool',
+            '@type': 'HowToTool',
             name: 'Loan Calculator',
-            description: 'Calculate monthly loan payments, total interest, and amortization schedule.',
+            description: 'A tool for estimating loan payments, total interest, and creating amortization schedules',
             url: `${siteUrl}/loan-calculator`,
-            applicationCategory: 'Finance',
-            offers: {
-              '@type': 'Offer',
-              availability: 'https://schema.org/InStock',
-              price: '0',
-              priceCurrency: 'USD'
+            step: [
+              {
+                '@type': 'HowToStep',
+                name: 'Enter Loan Amount',
+                text: 'Input the total loan amount you want to borrow'
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Set Interest Rate',
+                text: 'Enter the annual interest rate offered by the lender'
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Choose Loan Term',
+                text: 'Select the repayment period in years'
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Calculate Payments',
+                text: 'View your estimated monthly payment and total loan cost'
+              }
+            ],
+            tool: ['Loan amount input', 'Interest rate selector', 'Term duration picker', 'Payment calculator'],
+            about: {
+              '@type': 'Thing',
+              name: 'Loan Payment Calculation'
             },
-            featureList: [
-              'Monthly payment calculation',
-              'Total interest estimate',
-              'Supports any loan type',
-              'No signup or data collection'
+            audience: {
+              '@type': 'Audience',
+              audienceType: ['Home Buyers', 'Car Shoppers', 'Students', 'Small Business Owners', 'Debt Consolidators']
+            }
+          })}
+        </script>
+
+        {/* Additional FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Is this loan calculator completely free to use?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, our loan calculator is 100% free with no hidden costs, registration requirements, or usage limits. You can calculate loan payments as many times as needed.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What types of loans can I calculate with this tool?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'This calculator works for all types of installment loans including mortgages, auto loans, personal loans, student loans, business loans, and home equity loans.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How accurate are the loan calculations?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Our calculator uses standard amortization formulas and provides accurate estimates for fixed-rate loans. Actual lender terms may vary based on credit score, fees, and other factors.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Does the calculator include taxes and insurance?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'This calculator shows principal and interest payments only. For mortgages, you would need to add property taxes, homeowners insurance, and PMI separately.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I calculate loans with extra payments?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'This basic calculator shows standard payment schedules. For extra payment calculations and accelerated payoff scenarios, use our advanced amortization calculator.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you store my loan information?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No, all calculations are performed locally in your browser. We do not store, transmit, or collect any of your financial or loan information.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I use this for business loan calculations?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, this calculator works for both personal and business loans. Simply enter your loan amount, interest rate, and term to get payment estimates.'
+                }
+              }
             ]
           })}
         </script>

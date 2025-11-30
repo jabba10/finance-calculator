@@ -85,8 +85,56 @@ const DurationConvexityCalculator = () => {
       <Helmet>
         <title>Duration & Convexity Calculator | Bond Price Sensitivity</title>
         <meta name="description" content="Calculate Macaulay duration, modified duration, and convexity for bonds. Understand interest rate risk with professional, responsive financial tool." />
-        <meta name="keywords" content="duration calculator, convexity calculator, bond duration, modified duration, Macaulay duration, fixed income, interest rate risk" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/durationconvexitycalculator" />
+        <meta
+          name="keywords"
+          content="
+          duration,
+          convexity,
+          bond duration,
+          modified duration,
+          Macaulay duration,
+          bond calculator,
+          fixed income,
+          interest rate risk,
+          bond price,
+          yield to maturity,
+          coupon rate,
+          bond valuation,
+          duration calculator,
+          convexity calculator,
+          bond sensitivity,
+          financial calculator,
+          investment risk,
+          bond analysis,
+          portfolio risk,
+          bond math,
+          YTM,
+          bond pricing,
+          interest rate sensitivity,
+          bond risk,
+          fixed income analysis,
+          bond maturity,
+          coupon bond,
+          zero coupon bond,
+          bond yield,
+          duration and convexity,
+          price volatility,
+          bond immunization,
+          duration matching,
+          convexity adjustment,
+          bond price change,
+          free bond calculator,
+          online duration calculator,
+          calculate bond duration,
+          bond risk management,
+          fixed income calculator,
+          professional bond tool,
+          finance calculator,
+          investment calculator,
+          bond portfolio tool
+          "
+        />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/duration-convexity-calculator" />
       </Helmet>
 
       <div className={styles.page}>
@@ -274,7 +322,6 @@ const DurationConvexityCalculator = () => {
           <section className={styles.ctaSection}>
             <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
             <p>Free Financial Planning Tools – Try Now</p>
-            {/* ✅ Correct Next.js Link — no <a> tag */}
             <Link
               href="/suite"
               className={styles.ctaButton}

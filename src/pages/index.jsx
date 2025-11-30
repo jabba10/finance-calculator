@@ -69,11 +69,91 @@ const Homepage = () => {
     setVisibleCalculators(prev => Math.min(prev + 6, calculators.length));
   };
 
-  // SEO Metadata
+  // SEO Metadata - Enhanced with dozens of keywords
   const siteUrl = 'https://www.financecalculatorfree.com';
-  const pageTitle = '57 Free Financial Calculators | ROI, Break-even, Loan, Tax Tools';
-  const pageDescription = 'Access 57 free financial calculators with accurate formulas. No signup. 100% private.';
+  const pageTitle = '57 Free Financial Calculators | Business, Investment & Personal Finance Tools 2024';
+  const pageDescription = 'Access 57+ free financial calculators for business planning, investment analysis, loan calculations, tax planning, retirement, and personal finance. No signup required. 100% private.';
   const imagePreview = `${siteUrl}/images/financial-calculators-preview.jpg`;
+
+  // Comprehensive SEO Keywords Collections
+  const singleKeywords = [
+    'calculator', 'finance', 'business', 'investment', 'loan', 'tax', 'mortgage', 
+    'retirement', 'ROI', 'NPV', 'profit', 'cashflow', 'budget', 'savings', 'debt',
+    'equity', 'valuation', 'amortization', 'interest', 'compound', '401k', 'IRA',
+    'stocks', 'bonds', 'crypto', 'realestate', 'payroll', 'EBITDA', 'WACC', 'DCF'
+  ];
+
+  const twoWordKeywords = [
+    'financial calculator', 'business calculator', 'loan calculator', 'tax calculator',
+    'mortgage calculator', 'investment calculator', 'retirement calculator', 'ROI calculator',
+    'profit calculator', 'cash flow', 'debt calculator', 'equity calculator', 
+    'savings calculator', 'budget calculator', 'amortization calculator', 'interest calculator',
+    'compound interest', 'stock calculator', 'bond calculator', 'crypto calculator',
+    'real estate', 'payroll calculator', 'business valuation', 'financial planning',
+    'wealth management', 'risk assessment', 'credit score', 'net worth'
+  ];
+
+  const longTailKeywords = [
+    'free online financial calculators for business',
+    'how to calculate return on investment for small business',
+    'best loan amortization calculator with extra payments',
+    'free tax calculation tools for self-employed',
+    'mortgage payment calculator with PMI and taxes',
+    'retirement savings calculator with social security',
+    'business valuation calculator for small companies',
+    'cash flow analysis calculator for startups',
+    'investment return calculator with dividends',
+    'debt payoff calculator snowball vs avalanche method',
+    'compound interest calculator with monthly contributions',
+    'commercial real estate investment analysis calculator',
+    'small business loan calculator monthly payments',
+    'capital budgeting calculator NPV IRR payback period',
+    'financial ratio analysis calculator for businesses',
+    'cryptocurrency investment calculator tax implications',
+    '401k retirement calculator employer match',
+    'small business break even point calculator',
+    'student loan repayment calculator different plans',
+    'home equity line of credit calculator payments',
+    'car loan calculator with trade in value',
+    'credit card payoff calculator minimum payments',
+    'small business profit margin calculator',
+    'inventory turnover ratio calculator manufacturing',
+    'working capital requirement calculator seasonal',
+    'discounted cash flow valuation calculator startup',
+    'small business tax deduction calculator self employed',
+    'commercial lease calculator net effective rent',
+    'business loan calculator SBA 7a term',
+    'investment property calculator cash on cash',
+    'retirement income calculator with inflation',
+    'college savings calculator 529 plan',
+    'small business financial planning tools free',
+    'business acquisition loan calculator seller financing',
+    'commercial mortgage calculator balloon payment',
+    'startup funding calculator equity dilution',
+    'small business valuation calculator multiples',
+    'financial independence calculator FIRE movement',
+    'debt to income ratio calculator mortgage',
+    'small business cash flow forecast template',
+    'investment portfolio rebalancing calculator',
+    'business expansion loan calculator ROI',
+    'commercial property valuation calculator cap rate',
+    'small business line of credit calculator',
+    'angel investment calculator equity stake',
+    'franchise financing calculator initial investment',
+    'equipment financing calculator lease vs buy',
+    'small business insurance cost calculator',
+    'import export business calculator duties',
+    'ecommerce business calculator shipping costs',
+    'restaurant business calculator food costs',
+    'construction business calculator project bidding',
+    'consulting business calculator hourly rate',
+    'manufacturing business calculator unit cost',
+    'nonprofit organization calculator fundraising',
+    'agriculture business calculator crop yield',
+    'transportation business calculator fuel costs'
+  ];
+
+  const allKeywords = [...singleKeywords, ...twoWordKeywords, ...longTailKeywords].join(', ');
 
   return (
     <>
@@ -84,31 +164,66 @@ const Homepage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <meta name="keywords" content="financial calculator, ROI, loan, tax, mortgage, NPV, free tools" />
-        <meta name="author" content="Calci" />
-        <meta name="robots" content="index, follow" />
-
+        <meta name="keywords" content={allKeywords} />
+        <meta name="author" content="Calci Financial Tools" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="subject" content="Financial Calculators & Business Tools" />
+        <meta name="classification" content="Finance, Business, Calculators, Investment Tools" />
+        <meta name="topic" content="Financial Planning and Business Analysis" />
+        <meta name="summary" content="Free financial calculators for business and personal finance" />
+        <meta name="url" content={siteUrl} />
+        
+        {/* Verification & Ownership */}
+        <meta name="google-site-verification" content="your_verification_code" />
+        <meta name="msvalidate.01" content="your_bing_verification" />
+        
+        {/* Location & Business */}
+        <meta name="geo.region" content="US" />
+        <meta name="geo.placename" content="United States" />
+        <meta name="geo.position" content="39.8283;-98.5795" />
+        <meta name="ICBM" content="39.8283, -98.5795" />
+        
         {/* Canonical */}
         <link rel="canonical" href={siteUrl} />
-
+        
+        {/* Alternate Languages */}
+        <link rel="alternate" href={siteUrl} hrefLang="x-default" />
+        <link rel="alternate" href={siteUrl} hrefLang="en" />
+        <link rel="alternate" href={`${siteUrl}/es`} hrefLang="es" />
+        
+        {/* Preload & Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={imagePreview} />
-        <meta property="og:image:alt" content="Collection of 54 financial calculators" />
-        <meta property="og:site_name" content="Calci" />
+        <meta property="og:image:alt" content="Comprehensive Financial Calculators Collection" />
+        <meta property="og:site_name" content="Calci Financial Calculators" />
         <meta property="og:locale" content="en_US" />
-
+        <meta property="og:see_also" content={siteUrl} />
+        
+        {/* Facebook */}
+        <meta property="fb:app_id" content="your_facebook_app_id" />
+        <meta property="fb:pages" content="your_facebook_page_id" />
+        
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@calci" />
+        <meta name="twitter:site" content="@calcifinance" />
+        <meta name="twitter:creator" content="@calcifinance" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={imagePreview} />
-        <meta name="twitter:image:alt" content="Free financial calculators for personal and business use" />
-
+        <meta name="twitter:image:alt" content="Free Financial Calculators for Business and Personal Use" />
+        
+        {/* Additional Social */}
+        <meta name="pinterest" content="nopin" description="Financial calculators and business tools" />
+        
         {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -117,10 +232,35 @@ const Homepage = () => {
             name: pageTitle,
             description: pageDescription,
             url: siteUrl,
+            mainEntity: {
+              '@type': 'ItemList',
+              numberOfItems: calculators.length,
+              itemListElement: calculators.slice(0, 10).map((calc, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                item: {
+                  '@type': 'FinancialProduct',
+                  name: `${calc.title} Calculator`,
+                  description: calc.description,
+                  url: `${siteUrl}${calc.path}`
+                }
+              }))
+            },
             breadcrumb: {
               '@type': 'BreadcrumbList',
               itemListElement: [
                 { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }
+              ]
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Calci Financial Tools',
+              url: siteUrl,
+              logo: `${siteUrl}/images/logo.png`,
+              sameAs: [
+                'https://twitter.com/calcifinance',
+                'https://www.linkedin.com/company/calci-finance',
+                'https://www.facebook.com/calcifinance'
               ]
             }
           })}
@@ -130,14 +270,58 @@ const Homepage = () => {
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
-            name: 'Free Financial Calculators',
-            description: 'A comprehensive collection of 54 financial calculators with real formulas.',
-            hasPart: calculators.slice(0, 10).map(calc => ({
+            name: 'Free Financial Calculators Collection',
+            description: 'A comprehensive collection of 57+ financial calculators with real formulas for business, investment, and personal finance.',
+            url: siteUrl,
+            hasPart: calculators.slice(0, 15).map(calc => ({
               '@type': 'WebPage',
               name: calc.title + ' Calculator',
               url: `${siteUrl}${calc.path}`,
-              description: calc.description
-            }))
+              description: calc.description,
+              isAccessibleForFree: true
+            })),
+            about: {
+              '@type': 'Thing',
+              name: 'Financial Planning and Analysis'
+            },
+            audience: {
+              '@type': 'Audience',
+              audienceType: ['Small Business Owners', 'Investors', 'Financial Analysts', 'Individuals']
+            }
+          })}
+        </script>
+
+        {/* Additional FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Are these financial calculators really free to use?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, all 57+ financial calculators are completely free to use with no registration required. We believe in providing accessible financial tools for everyone.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you store my financial data?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No, all calculations are performed locally in your browser. We do not store, transmit, or collect any of your financial data or inputs.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What types of financial calculations can I perform?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Our calculator suite covers business finance (ROI, break-even, valuation), personal finance (loans, mortgages, retirement), investments (stocks, bonds, crypto), and specialized tools for specific industries and scenarios.'
+                }
+              }
+            ]
           })}
         </script>
       </Head>

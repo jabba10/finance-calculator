@@ -65,7 +65,57 @@ const CompoundInterestCalculator = () => {
         />
         <meta
           name="keywords"
-          content="compound interest calculator, investment growth, future value calculator, Rule of 72"
+          content="
+          compound interest,
+          compound interest calculator,
+          interest calculator,
+          investment growth,
+          future value,
+          future value calculator,
+          savings calculator,
+          investment calculator,
+          financial calculator,
+          money growth,
+          wealth building,
+          passive income,
+          ROI calculator,
+          annual interest,
+          compounding frequency,
+          monthly compounding,
+          daily compounding,
+          Rule of 72,
+          investment returns,
+          long term investing,
+          retirement savings,
+          how compound interest works,
+          calculate compound interest,
+          interest earned,
+          total return,
+          investment projection,
+          free compound calculator,
+          online interest calculator,
+          interest rate calculator,
+          time value of money,
+          exponential growth,
+          financial planning,
+          savings growth,
+          investment doubling time,
+          compounding effect,
+          interest on interest,
+          principal and interest,
+          future worth,
+          financial freedom,
+          smart investing,
+          capital growth,
+          investment compounding,
+          savings account interest,
+          CD interest calculator,
+          grow your money,
+          compound vs simple interest,
+          long term savings,
+          investment strategy,
+          calculate investment growth
+          "
         />
         <meta property="og:title" content="Compound Interest Calculator" />
         <meta

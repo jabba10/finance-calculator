@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './debtequitycalculator.module.css';
 
 const DebtEquityCalculator = () => {
@@ -77,6 +77,76 @@ const DebtEquityCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "debt", "equity", "ratio", "calculator", "d/e", "leverage", "financial", "risk", "capital", "structure",
+    "liabilities", "assets", "balance", "sheet", "book", "value", "solvency", "liquidity", "solvency", "metrics",
+    "finance", "business", "corporate", "finance", "investing", "investor", "creditor", "loan", "borrowing", "funding",
+    "startup", "small", "business", "cfo", "accounting", "bookkeeping", "financial", "analysis", "health", "stability",
+    "insolvency", "bankruptcy", "risk", "assessment", "benchmark", "industry", "standard", "free", "online", "tool",
+    "finance", "metrics", "kpis", "financial", "planning", "debt", "capacity", "solvency", "ratio", "interest", "coverage"
+  ];
+
+  const twoWordKeywords = [
+    "debt equity", "equity ratio", "debt to", "to equity", "d/e ratio", "financial leverage", "capital structure",
+    "leverage ratio", "financial risk", "business finance", "corporate finance", "balance sheet", "book value",
+    "solvency ratio", "liquidity ratio", "financial health", "risk assessment", "debt capacity", "equity financing",
+    "debt financing", "financial metrics", "business metrics", "startup finance", "small business", "investor analysis",
+    "creditor risk", "loan approval", "funding ratio", "financial stability", "capital efficiency", "free calculator",
+    "online tool", "finance calculator", "debt analysis", "equity analysis", "liabilities ratio", "assets equity",
+    "interest coverage", "debt service", "financial benchmark", "industry standard", "risk level", "capital health"
+  ];
+
+  const longTailKeywords = [
+    "free debt to equity ratio calculator online",
+    "how to calculate debt-to-equity ratio",
+    "d/e ratio calculator for small business",
+    "debt to equity ratio for startups",
+    "what is a good debt to equity ratio",
+    "debt equity ratio calculator with risk assessment",
+    "financial leverage calculator free",
+    "calculate d/e ratio from balance sheet",
+    "debt to equity ratio by industry benchmark",
+    "free tool to assess financial risk using d/e",
+    "debt equity calculator for investors",
+    "is my company over leveraged calculator",
+    "debt to equity ratio for real estate",
+    "d/e ratio for saas companies",
+    "debt equity calculator for manufacturing business",
+    "how to improve debt to equity ratio",
+    "free financial health calculator for businesses",
+    "debt to equity vs debt ratio calculator",
+    "capital structure optimization tool",
+    "book value and liabilities calculator",
+    "debt equity ratio for loan application",
+    "free calculator to evaluate solvency risk",
+    "debt to equity ratio interpretation guide",
+    "compare d/e ratio across industries",
+    "debt equity calculator with industry benchmarks",
+    "how to reduce debt to equity ratio",
+    "equity financing vs debt financing calculator",
+    "free online d/e ratio tool no signup",
+    "debt to equity ratio for financial modeling",
+    "calculate shareholder equity and liabilities",
+    "d/e ratio for cfo financial planning",
+    "debt equity calculator for mba students",
+    "free balance sheet ratio analysis tool",
+    "debt to equity ratio for nonprofit organizations",
+    "assess bankruptcy risk using d/e calculator",
+    "debt capacity and equity calculator",
+    "real time debt equity ratio calculator",
+    "downloadable debt to equity spreadsheet alternative",
+    "free calculator for investor due diligence",
+    "debt equity ratio for angel investors",
+    "how lenders use d/e ratio in underwriting",
+    "optimize capital structure with d/e calculator",
+    "debt to equity ratio for e-commerce business",
+    "financial stability score based on d/e",
+    "debt equity calculator for private companies"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Metadata */}
@@ -88,10 +158,10 @@ const DebtEquityCalculator = () => {
         />
         <meta
           name="keywords"
-          content="debt to equity calculator, d/e ratio, financial leverage, capital structure, business finance tools"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/debt-to-equity-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/debt-to-equity-calculator" />
 
         {/* Open Graph / Social */}
         <meta property="og:title" content="Debt-to-Equity Calculator | Measure Financial Risk" />

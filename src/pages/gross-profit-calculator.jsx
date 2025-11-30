@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './grossprofitcalculator.module.css';
 
 const GrossProfitCalculator = () => {
@@ -76,6 +76,82 @@ const GrossProfitCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "gross", "profit", "calculator", "margin", "net", "operating", "cogs", "revenue", "cost", "expenses",
+    "tax", "rate", "business", "finance", "financial", "analysis", "tool", "free", "online", "profitability",
+    "income", "statement", "accounting", "bookkeeping", "startup", "small", "business", "owner", "entrepreneur",
+    "retail", "saas", "software", "manufacturing", "restaurant", "ecommerce", "margin", "ratio", "kpis", "metrics",
+    "break", "even", "pricing", "strategy", "overhead", "direct", "costs", "indirect", "expenses", "bottom", "line",
+    "top", "line", "valuation", "forecast", "budgeting", "planning", "roi", "efficiency", "optimization"
+  ];
+
+  const twoWordKeywords = [
+    "gross profit", "profit calculator", "gross margin", "net profit", "operating profit", "cogs calculator",
+    "profit margin", "business profitability", "financial calculator", "free calculator", "online tool",
+    "revenue calculator", "cost of", "goods sold", "operating expenses", "tax rate", "income statement",
+    "profit analysis", "margin calculator", "profitability metrics", "startup finances", "small business",
+    "retail margin", "saas profitability", "software margins", "restaurant profit", "ecommerce profit",
+    "break even", "pricing strategy", "cost analysis", "expense tracking", "financial planning", "business metrics",
+    "profit formula", "margin percentage", "net income", "gross income", "operating income", "profit benchmark",
+    "margin benchmark", "cogs ratio", "profit optimization", "bottom line", "top line", "financial health"
+  ];
+
+  const longTailKeywords = [
+    "free gross profit calculator online",
+    "how to calculate gross profit and net profit",
+    "gross margin vs net profit calculator",
+    "business profit calculator with tax",
+    "gross profit calculator for small business",
+    "free tool to calculate cogs and gross margin",
+    "operating profit and net profit calculator",
+    "gross profit calculator for retail store",
+    "saas gross margin calculator free",
+    "restaurant net profit margin calculator",
+    "ecommerce gross profit analysis tool",
+    "how to calculate profit margin with cogs",
+    "gross profit calculator with operating expenses",
+    "free financial calculator for entrepreneurs",
+    "profitability calculator for startups",
+    "gross margin benchmark by industry",
+    "what is a good gross profit margin",
+    "calculate net profit after taxes and expenses",
+    "gross profit formula calculator with examples",
+    "free online profit and loss calculator",
+    "gross profit calculator no signup required",
+    "compare gross vs net profit margins",
+    "how to improve gross profit margin",
+    "reduce cogs to increase gross profit",
+    "gross profit calculator for manufacturing business",
+    "profit calculator for service business",
+    "gross margin calculator for freelancers",
+    "free tool for small business owners profit analysis",
+    "calculate gross profit from revenue and cogs",
+    "gross profit calculator with tax deduction",
+    "profitability dashboard for small business",
+    "gross profit calculator for ecommerce store",
+    "how to read income statement with calculator",
+    "gross profit for solopreneurs calculator",
+    "free business finance calculator suite",
+    "gross profit calculator with industry benchmarks",
+    "calculate operating profit from gross profit",
+    "net profit after tax calculator",
+    "gross profit calculator for food business",
+    "free profit margin tool for consultants",
+    "how to track gross margin over time",
+    "gross profit calculator for b2b services",
+    "cogs and gross profit relationship calculator",
+    "real time gross profit calculator",
+    "downloadable gross profit spreadsheet alternative",
+    "gross profit calculator for d2c brands",
+    "profit calculator for dropshipping business",
+    "gross margin calculator for subscription business",
+    "how to set prices using gross margin",
+    "free calculator to analyze business profitability"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Metadata */}
@@ -87,10 +163,10 @@ const GrossProfitCalculator = () => {
         />
         <meta
           name="keywords"
-          content="gross profit calculator, profit margin, net profit, operating profit, financial analysis, business tools"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/gross-profit-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/gross-profit-calculator" />
 
         {/* Open Graph / Social */}
         <meta property="og:title" content="Gross Profit Calculator | Analyze Your Business Margins" />

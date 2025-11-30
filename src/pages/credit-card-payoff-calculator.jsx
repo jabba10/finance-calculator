@@ -98,7 +98,7 @@ const CreditCardPayoffCalculator = () => {
         />
         <meta
           name="keywords"
-          content="credit card calculator, payoff calculator, debt repayment, credit card interest, debt free calculator"
+          content="credit card calculator, payoff calculator, debt repayment, credit card interest, debt free calculator, credit card payoff, debt calculator, credit card debt, payoff calculator, credit card payoff calculator, debt payoff, credit card interest calculator, debt free, financial calculator, money calculator, finance tools, debt repayment calculator, credit card payoff timeline, APR calculator, monthly payment calculator, balance payoff, debt reduction, credit card management, financial planning, debt free date, interest savings, debt consolidation, credit card balance, minimum payment, debt snowball, debt avalanche, credit card APR, payoff time, total interest, debt free calculator, credit card payoff strategy, financial freedom, debt elimination, credit card payoff plan, money management, personal finance, budgeting tools, debt free journey, credit card payoff date, interest calculation, debt payoff calculator, credit card payoff schedule, financial calculator, debt free planning, credit card payoff formula, debt free goals, credit card payoff estimate, financial tools, money management tools, debt payoff strategy, credit card payoff tips, debt free living, credit card payoff methods, financial planning calculator, debt payoff timeline, credit card interest rate, payoff calculator tool, debt free calculator online, credit card payoff calculator free, financial freedom calculator, debt elimination calculator, money saving calculator, credit card debt calculator, payoff calculator app, debt free date calculator, interest payment calculator, credit card payoff app, financial calculator online, debt reduction calculator, credit card payoff planner, money calculator tool, finance calculator app, debt free plan, credit card payoff strategy calculator, financial planning tools, debt payoff estimation, credit card payoff simulation, money management calculator, personal finance calculator, debt free timeline, credit card payoff forecast, financial calculator tool, debt payoff planning, credit card payoff analyzer, budget calculator, debt free strategy, credit card payoff helper, financial calculator app, debt payoff assistant, credit card payoff estimator, money tool, finance helper, debt free assistant, credit card payoff guide, financial calculator free, debt payoff tool, credit card payoff wizard, money management app, personal finance tool, debt free app, credit card payoff assistant, financial calculator tool, debt payoff wizard, credit card payoff expert, money calculator app, finance calculator tool, debt free tool, credit card payoff master, financial calculator pro, debt payoff guru, credit card payoff specialist, money management specialist, personal finance expert, debt free expert, credit card payoff pro, financial calculator expert, debt payoff master, credit card payoff genius, money management genius, personal finance genius, debt free genius"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/credit-card-payoff-calculator" />
@@ -121,7 +121,7 @@ const CreditCardPayoffCalculator = () => {
           <section className={styles.hero}>
             <h1 className={styles.title}>Credit Card Payoff Calculator</h1>
             <p className={styles.subtitle}>
-              Estimate how long it will take to pay off your credit card and how much interest you’ll pay.
+              Estimate how long it will take to pay off your credit card and how much interest you'll pay.
             </p>
           </section>
 
@@ -213,7 +213,7 @@ const CreditCardPayoffCalculator = () => {
                   </div>
 
                   <div className={styles.note}>
-                    You’ll be debt-free in <strong>{result.payoffTime.months} months</strong> and pay <strong>${result.totalInterest}</strong> in interest.
+                    You'll be debt-free in <strong>{result.payoffTime.months} months</strong> and pay <strong>${result.totalInterest}</strong> in interest.
                   </div>
                 </div>
               )}
@@ -226,7 +226,7 @@ const CreditCardPayoffCalculator = () => {
               <div className={styles.infoCard}>
                 <h3>Why Paying Off Credit Card Debt Matters</h3>
                 <p>
-                  High-interest credit card debt can <strong>grow quickly</strong> due to compounding interest. This calculator helps you understand how long it will take to become debt-free and how much you’ll pay in interest — empowering you to make smarter repayment decisions.
+                  High-interest credit card debt can <strong>grow quickly</strong> due to compounding interest. This calculator helps you understand how long it will take to become debt-free and how much you'll pay in interest — empowering you to make smarter repayment decisions.
                 </p>
 
                 <h4>How to Use This Calculator</h4>

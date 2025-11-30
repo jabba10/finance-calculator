@@ -90,7 +90,55 @@ const AccountsReceivableTurnoverCalculator = () => {
         />
         <meta
           name="keywords"
-          content="AR turnover calculator, accounts receivable ratio, collection period, credit sales, financial efficiency tool"
+          content="
+          accounts receivable,
+          AR turnover,
+          turnover ratio,
+          receivables turnover,
+          collection period,
+          days sales outstanding,
+          DSO,
+          credit sales,
+          net credit sales,
+          average collection period,
+          financial ratio,
+          business efficiency,
+          cash flow,
+          credit management,
+          AR efficiency,
+          receivables management,
+          working capital,
+          liquidity ratio,
+          accounts receivable calculator,
+          AR turnover calculator,
+          collection efficiency,
+          billing efficiency,
+          invoice turnover,
+          receivables ratio,
+          turnover calculator,
+          business calculator,
+          financial calculator,
+          small business finance,
+          B2B collections,
+          accounts receivable days,
+          receivables cycle,
+          operating efficiency,
+          credit policy,
+          sales on credit,
+          collections metric,
+          AR days,
+          free AR calculator,
+          online turnover calculator,
+          calculate receivables turnover,
+          improve cash flow,
+          accounts receivable analysis,
+          financial performance,
+          business liquidity,
+          invoice collection,
+          credit control,
+          receivables benchmark,
+          AR metric
+          "
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/accounts-receivable-turnover-calculator" />

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './inventorycalculator.module.css';
 
 const InventoryCalculator = () => {
@@ -80,6 +80,78 @@ const InventoryCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "inventory", "turnover", "calculator", "cogs", "stock", "inventory", "management", "retail", "ecommerce",
+    "manufacturing", "warehouse", "logistics", "supply", "chain", "cost", "goods", "sold", "gross", "margin",
+    "profit", "sales", "revenue", "days", "inventory", "days", "sales", "inventory", "dsi", "ratios", "metrics",
+    "business", "efficiency", "stockout", "overstock", "holding", "cost", "reorder", "point", "forecasting",
+    "demand", "planning", "abc", "analysis", "jit", "just", "in", "time", "inventory", "control", "optimization",
+    "free", "online", "tool", "financial", "analysis", "small", "business", "owner", "startup", "shopify", "amazon",
+    "wholesale", "distribution", "merchandise", "product", "rotation", "sell", "through", "rate", "working", "capital"
+  ];
+
+  const twoWordKeywords = [
+    "inventory turnover", "turnover calculator", "cogs calculator", "stock turnover", "inventory management",
+    "retail inventory", "ecommerce inventory", "manufacturing inventory", "warehouse management", "supply chain",
+    "cost of", "goods sold", "gross margin", "profit margin", "days inventory", "days sales", "dsi ratio",
+    "inventory ratio", "stock efficiency", "inventory metrics", "business efficiency", "overstock management",
+    "stockout prevention", "holding costs", "reorder point", "demand forecasting", "abc analysis", "jit inventory",
+    "just in", "time inventory", "inventory control", "stock optimization", "free calculator", "online tool",
+    "financial calculator", "small business", "startup tools", "shopify inventory", "amazon fba", "wholesale business",
+    "inventory planning", "product rotation", "sell through", "working capital", "inventory benchmark", "stock levels"
+  ];
+
+  const longTailKeywords = [
+    "free inventory turnover calculator online",
+    "how to calculate inventory turnover ratio",
+    "cogs and inventory turnover calculator",
+    "days in inventory calculator free",
+    "inventory management calculator for small business",
+    "retail inventory turnover ratio tool",
+    "ecommerce inventory turnover calculator",
+    "shopify inventory turnover analysis",
+    "amazon fba inventory turnover calculator",
+    "calculate cogs from beginning and ending inventory",
+    "free tool to calculate days sales in inventory",
+    "what is a good inventory turnover ratio",
+    "inventory turnover benchmark by industry",
+    "how to improve inventory turnover for retail",
+    "calculate gross margin from inventory data",
+    "free inventory calculator with sales input",
+    "inventory turnover vs sell through rate",
+    "abc analysis and inventory turnover calculator",
+    "jit inventory efficiency calculator",
+    "working capital and inventory turnover tool",
+    "calculate reorder point using turnover data",
+    "free inventory turnover calculator no signup",
+    "inventory turnover for manufacturing business",
+    "how to reduce holding costs with turnover analysis",
+    "days inventory outstanding calculator",
+    "stockout risk assessment using turnover",
+    "overstock identification calculator",
+    "inventory turnover for wholesale distributors",
+    "free financial calculator for inventory metrics",
+    "compare inventory turnover across quarters",
+    "inventory turnover calculator with gross profit",
+    "how to forecast demand using historical turnover",
+    "inventory turnover for dropshipping business",
+    "real time inventory efficiency calculator",
+    "downloadable inventory turnover spreadsheet alternative",
+    "free tool for retail store inventory analysis",
+    "inventory turnover calculator for restaurants",
+    "how to optimize stock levels using turnover ratio",
+    "calculate average inventory for turnover",
+    "inventory turnover and cash flow relationship",
+    "free calculator to reduce dead stock",
+    "inventory turnover for fashion retail",
+    "seasonal inventory turnover analysis tool",
+    "inventory turnover for grocery stores",
+    "how to set safety stock using turnover data"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Metadata */}
@@ -91,10 +163,10 @@ const InventoryCalculator = () => {
         />
         <meta
           name="keywords"
-          content="inventory calculator, inventory turnover, COGS, days in inventory, retail tools, business efficiency"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/inventory-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/inventory-calculator" />
 
         {/* Open Graph / Social */}
         <meta property="og:title" content="Inventory Calculator | Measure Stock Efficiency" />

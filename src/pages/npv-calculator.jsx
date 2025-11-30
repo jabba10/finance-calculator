@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './npvcalculator.module.css';
 
 const NpvCalculator = () => {
@@ -82,6 +82,86 @@ const NpvCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "npv", "net", "present", "value", "calculator", "investment", "finance", "financial", "analysis",
+    "project", "evaluation", "capital", "budgeting", "roi", "irr", "discount", "rate", "cash", "flow",
+    "future", "money", "time", "value", "dollar", "profitability", "return", "yield", "valuation",
+    "forecast", "modeling", "business", "startup", "real", "estate", "equity", "venture", "funding",
+    "capital", "expenditure", "capex", "npv", "formula", "tool", "free", "online", "decision", "making",
+    "risk", "adjusted", "dcf", "discounted", "cf", "revenue", "expense", "profit", "loss", "break",
+    "even", "investment", "appraisal", "feasibility", "study", "spreadsheet", "excel", "alternative"
+  ];
+
+  const twoWordKeywords = [
+    "npv calculator", "net present", "present value", "investment analysis", "financial calculator",
+    "discounted cash", "cash flow", "capital budgeting", "roi calculator", "irr calculator",
+    "discount rate", "future value", "time value", "money calculator", "profitability analysis",
+    "investment appraisal", "project evaluation", "business valuation", "startup valuation",
+    "real estate", "venture capital", "equity valuation", "capital expenditure", "capex analysis",
+    "npv formula", "free calculator", "online tool", "financial modeling", "cash flow forecast",
+    "investment decision", "risk adjusted", "dcf calculator", "npv vs irr", "break even",
+    "feasibility study", "investment return", "rate of", "return calculator", "present value",
+    "npv analysis", "capital project", "investment tool", "npv calculation", "cash flow analysis",
+    "discount factor", "terminal value", "weighted average", "cost of", "capital", "wacc",
+    "npv method", "investment metric", "financial metric", "npv excel"
+  ];
+
+  const longTailKeywords = [
+    "free npv calculator online no signup",
+    "how to calculate net present value",
+    "npv calculator with smart input parsing",
+    "discounted cash flow npv calculator",
+    "npv calculator for real estate investment",
+    "free net present value calculator for startups",
+    "npv and irr calculator in one tool",
+    "calculate npv with uneven cash flows",
+    "npv calculator that accepts $10k or 15%",
+    "online npv tool for business project evaluation",
+    "how to use npv to evaluate investment opportunities",
+    "npv calculator for capital budgeting decisions",
+    "free financial calculator for npv and roi",
+    "npv calculator for small business owners",
+    "what is a good npv for a project",
+    "npv vs payback period calculator",
+    "npv calculator with wacc and terminal value",
+    "how to calculate npv in excel alternative",
+    "free tool to calculate npv for venture capital",
+    "npv calculator for real estate development",
+    "npv of annuity calculator",
+    "npv calculator for startup funding rounds",
+    "evaluate project profitability using npv",
+    "free npv calculator with multiple cash flows",
+    "npv calculator that handles messy inputs",
+    "calculate net present value of future income",
+    "npv calculator for rental property investment",
+    "npv calculator for equipment purchase decision",
+    "how to interpret npv results in business",
+    "npv calculator for private equity deals",
+    "free online npv tool for entrepreneurs",
+    "npv calculator with sensitivity analysis",
+    "npv calculator for solar panel investment",
+    "npv calculator for franchise opportunity",
+    "npv calculator for saas business valuation",
+    "npv and payback period calculator",
+    "discount rate impact on npv calculator",
+    "npv calculator with automatic number extraction",
+    "free npv calculator no registration required",
+    "npv calculator for academic finance homework",
+    "compare two projects using npv calculator",
+    "npv calculator for government grant proposals",
+    "npv calculator with inflation adjustment",
+    "npv of perpetuity calculator",
+    "free financial modeling tool for npv",
+    "npv calculator for oil and gas projects",
+    "npv calculator for mba students",
+    "npv calculator with downloadable results",
+    "real time npv calculation tool",
+    "best free npv calculator for investors"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Metadata */}
@@ -93,10 +173,10 @@ const NpvCalculator = () => {
         />
         <meta
           name="keywords"
-          content="npv calculator, net present value, investment analysis, discounted cash flow, financial calculator"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/npv-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/npv-calculator" />
 
         {/* Open Graph / Social */}
         <meta property="og:title" content="NPV Calculator | Evaluate Investment Profitability" />

@@ -115,7 +115,7 @@ const TaxBracketCalculator = () => {
         />
         <meta
           name="keywords"
-          content="tax bracket calculator, federal tax, income tax, marginal tax rate, effective tax rate, tax planning"
+          content="tax bracket calculator, federal tax calculator, income tax estimator, marginal tax rate calculator, effective tax rate calculator, 2024 tax brackets, tax planning tool, US tax calculator, progressive tax calculator, tax owed estimator, filing status calculator, single tax bracket, married filing jointly tax, head of household tax, tax rate finder, how much tax will I pay, what is my tax bracket, tax bracket by income, federal income tax calculator, IRS tax calculator, tax liability estimator, tax savings calculator, tax optimization tool, tax rate calculator, calculate my taxes, tax calculator 2024, US federal tax estimator, income tax brackets 2024, marginal vs effective tax rate, tax bracket estimator, tax calculator for salary, salary tax calculator, W-2 tax estimator, tax calculator for freelancers, self-employed tax bracket, tax planning calculator, retirement tax calculator, Roth vs traditional tax impact, capital gains tax vs income tax, tax bracket thresholds, IRS tax brackets, Form 1040 estimator, tax refund estimator, taxable income calculator, tax rate schedule, federal tax rates 2024, tax calculator with deductions, standard deduction impact, tax bracket after 401k, tax calculator after retirement contributions"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/tax-bracket-calculator" />
@@ -125,7 +125,7 @@ const TaxBracketCalculator = () => {
           content="Calculate your federal tax liability, effective rate, and marginal bracket for 2024."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/tax-bracket-calculator" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/tax-bracket-calculator  " />
       </Head>
 
       <div className={styles.page}>

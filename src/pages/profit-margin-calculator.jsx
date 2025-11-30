@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './profitmargincalculator.module.css';
 
 const ProfitMarginCalculator = () => {
@@ -60,6 +60,85 @@ const ProfitMarginCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // === SEO KEYWORDS ===
+  const singleKeywords = [
+    "profit", "margin", "calculator", "gross", "profitability", "business", "revenue", "cost", "pricing",
+    "markup", "finance", "financial", "tool", "free", "online", "percentage", "analysis", "roi", "income",
+    "expenses", "overhead", "cogs", "grossprofit", "net", "operating", "margin", "retail", "saas", "ecommerce",
+    "restaurant", "manufacturing", "consulting", "markup", "pricing", "strategy", "break", "even", "unit",
+    "economics", "benchmark", "ratio", "efficiency", "growth", "startup", "small", "business", "owner",
+    "entrepreneur", "accounting", "bookkeeping", "budgeting", "forecasting", "profitability", "metrics", "kpis"
+  ];
+
+  const twoWordKeywords = [
+    "profit margin", "margin calculator", "gross profit", "business profitability", "markup vs margin",
+    "pricing tool", "profit calculator", "margin percentage", "cost calculation", "revenue analysis",
+    "financial calculator", "free calculator", "online tool", "profit analysis", "margin benchmark",
+    "gross margin", "net margin", "operating margin", "contribution margin", "break even",
+    "price markup", "cost of goods", "business metrics", "profitability ratio", "roi calculator",
+    "saas margins", "ecommerce profit", "restaurant margins", "retail markup", "manufacturing profit",
+    "consulting margin", "small business", "startup finance", "unit economics", "pricing strategy",
+    "profit per", "margin improvement", "cost reduction", "revenue growth", "expense tracking",
+    "financial planning", "business analysis", "profit projection", "margin tracking", "income statement",
+    "profit optimization", "pricing calculator", "markup calculator", "gross profit margin", "net profit"
+  ];
+
+  const longTailKeywords = [
+    "free profit margin calculator online",
+    "how to calculate gross profit margin",
+    "profit margin vs markup calculator",
+    "gross profit percentage calculator",
+    "free online tool to calculate business profit",
+    "what is a good profit margin for small business",
+    "profit margin calculator for retail store",
+    "saas gross margin calculator free",
+    "restaurant profit margin calculator",
+    "ecommerce profit margin analysis tool",
+    "how to improve profit margins in manufacturing",
+    "calculate markup and margin in one tool",
+    "free financial calculator for entrepreneurs",
+    "profit margin benchmark by industry",
+    "is my business profitable calculator",
+    "gross profit calculator with markup",
+    "profit margin and break even analysis",
+    "how to calculate net profit margin",
+    "contribution margin calculator free",
+    "operating profit margin calculator",
+    "free tool for small business owners profitability",
+    "profit margin calculator no signup",
+    "compare profit margins across industries",
+    "calculate profit from revenue and cost",
+    "markup percentage to margin converter",
+    "how much should I charge calculator",
+    "pricing calculator based on costs and margin",
+    "profit margin for service business",
+    "free calculator for consulting firm margins",
+    "what profit margin do startups need",
+    "unit economics profit margin calculator",
+    "how to calculate cogs and gross profit",
+    "profit margin for dropshipping business",
+    "online store profit margin tool",
+    "calculate profit margin for product pricing",
+    "free gross margin calculator for ecommerce",
+    "profit margin calculator for contractors",
+    "margin calculator for freelancers",
+    "how to set prices using profit margin",
+    "profit margin calculator with industry benchmarks",
+    "free tool to analyze business profitability",
+    "gross profit vs net profit calculator",
+    "profit margin for food business calculator",
+    "calculate profit margin for subscription business",
+    "margin calculator for b2b services",
+    "how to track profit margin over time",
+    "profit margin calculator for solopreneurs",
+    "free business finance calculator suite",
+    "margin and markup difference explained tool",
+    "real time profit margin calculator",
+    "downloadable profit margin spreadsheet alternative"
+  ];
+
+  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
+
   return (
     <>
       {/* SEO Metadata */}
@@ -71,10 +150,10 @@ const ProfitMarginCalculator = () => {
         />
         <meta
           name="keywords"
-          content="profit margin calculator, gross profit, business profitability, markup vs margin, pricing tool"
+          content={allKeywords}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/profit-margin-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/profit-margin-calculator" />
 
         {/* Open Graph / Social */}
         <meta property="og:title" content="Profit Margin Calculator | Measure Business Profitability" />
