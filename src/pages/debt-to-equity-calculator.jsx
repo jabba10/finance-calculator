@@ -77,116 +77,104 @@ const DebtEquityCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
-  // === SEO KEYWORDS ===
-  const singleKeywords = [
-    "debt", "equity", "ratio", "calculator", "d/e", "leverage", "financial", "risk", "capital", "structure",
-    "liabilities", "assets", "balance", "sheet", "book", "value", "solvency", "liquidity", "solvency", "metrics",
-    "finance", "business", "corporate", "finance", "investing", "investor", "creditor", "loan", "borrowing", "funding",
-    "startup", "small", "business", "cfo", "accounting", "bookkeeping", "financial", "analysis", "health", "stability",
-    "insolvency", "bankruptcy", "risk", "assessment", "benchmark", "industry", "standard", "free", "online", "tool",
-    "finance", "metrics", "kpis", "financial", "planning", "debt", "capacity", "solvency", "ratio", "interest", "coverage"
-  ];
+  // SEO Metadata
+  const siteUrl = 'https://www.financecalculatorfree.com';
+  const pageTitle = 'Debt-to-Equity Ratio Calculator | Free Financial Leverage Tool';
+  const pageDescription = 'Calculate your company\'s debt-to-equity ratio to assess financial leverage, risk level, and capital structure health.';
 
-  const twoWordKeywords = [
-    "debt equity", "equity ratio", "debt to", "to equity", "d/e ratio", "financial leverage", "capital structure",
-    "leverage ratio", "financial risk", "business finance", "corporate finance", "balance sheet", "book value",
-    "solvency ratio", "liquidity ratio", "financial health", "risk assessment", "debt capacity", "equity financing",
-    "debt financing", "financial metrics", "business metrics", "startup finance", "small business", "investor analysis",
-    "creditor risk", "loan approval", "funding ratio", "financial stability", "capital efficiency", "free calculator",
-    "online tool", "finance calculator", "debt analysis", "equity analysis", "liabilities ratio", "assets equity",
-    "interest coverage", "debt service", "financial benchmark", "industry standard", "risk level", "capital health"
+  // Debt-to-Equity History Data
+  const debtEquityHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Debt-to-Equity Ratio",
+      points: [
+        "1910s US Banking: Commercial banks created debt-to-equity ratio to assess corporate loan risk",
+        "1930s Great Depression: SEC mandated D/E ratio disclosure in financial statements",
+        "1950s Corporate Finance: Modigliani-Miller theorem formalized capital structure theory",
+        "1970s Investment Banking: Wall Street analysts standardized D/E for valuation multiples",
+        "1980s Leveraged Buyouts: Private equity firms used D/E to structure acquisition financing",
+        "2000s Financial Crisis: Basel Accords incorporated D/E into global banking regulations"
+      ]
+    },
+    {
+      id: 2,
+      title: "Global Origins & Business Purpose",
+      points: [
+        "United States: Wall Street investment banks developed D/E for merger analysis",
+        "United Kingdom: London Stock Exchange required D/E for listed company disclosures",
+        "Japan: Keiretsu groups used D/E for inter-company financing decisions",
+        "Germany: Manufacturing conglomerates established conservative D/E benchmarks",
+        "China: State-owned enterprises adopted D/E for infrastructure project financing",
+        "Purpose: Measure financial leverage, assess bankruptcy risk, and optimize capital structure"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Commercial Banking: Daily D/E analysis for corporate lending decisions",
+        "Private Equity: Monthly D/E monitoring for portfolio company leverage",
+        "Real Estate: Quarterly D/E calculation for property acquisition financing",
+        "Manufacturing: Monthly review of D/E for equipment financing decisions",
+        "Utilities: Regulatory D/E reporting for rate-setting commission filings",
+        "Technology: Venture capital D/E assessment for growth stage funding",
+        "Construction: Project-based D/E analysis for bonding capacity"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Reduces bankruptcy risk by 60-80% through optimal leverage management",
+        "Improves credit ratings by 2-3 notches with balanced D/E ratios",
+        "Lowers borrowing costs by 1-3% through better risk assessment",
+        "Increases valuation multiples by 2-5x through efficient capital structure",
+        "Prevents liquidity crises by maintaining healthy equity buffers",
+        "Enables 25-40% larger acquisitions through structured leverage",
+        "Reduces regulatory capital requirements by 15-30% for financial institutions"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Investment Banking: Earn 1-2% fees on D/E optimization advisory services",
+        "Commercial Lending: Generate 3-5% spreads on risk-adjusted loan pricing",
+        "Private Equity: Achieve 20-30% IRR through leveraged acquisitions",
+        "Financial Software: Sell $50,000-$500,000 D/E analytics platforms",
+        "Credit Rating Agencies: Charge $25,000-$100,000 for D/E-based ratings",
+        "M&A Advisory: Earn 1% success fees on D/E-structured transactions",
+        "Risk Management: Sell $100,000+ D/E monitoring services to corporations"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People Debt-to-Equity Calculator Uses",
+      points: [
+        "Small Business Owners: Assessing loan capacity for expansion or equipment",
+        "Real Estate Investors: Calculating property leverage for mortgage decisions",
+        "Startup Founders: Determining optimal funding mix between debt and equity",
+        "Franchise Operators: Evaluating franchise purchase financing options",
+        "Online Business Owners: Assessing e-commerce business leverage for scaling",
+        "Professional Practices: Doctors/lawyers analyzing practice financing",
+        "Farmers: Calculating equipment and land acquisition leverage",
+        "Retail Store Owners: Assessing inventory and expansion financing"
+      ]
+    }
   ];
-
-  const longTailKeywords = [
-    "free debt to equity ratio calculator online",
-    "how to calculate debt-to-equity ratio",
-    "d/e ratio calculator for small business",
-    "debt to equity ratio for startups",
-    "what is a good debt to equity ratio",
-    "debt equity ratio calculator with risk assessment",
-    "financial leverage calculator free",
-    "calculate d/e ratio from balance sheet",
-    "debt to equity ratio by industry benchmark",
-    "free tool to assess financial risk using d/e",
-    "debt equity calculator for investors",
-    "is my company over leveraged calculator",
-    "debt to equity ratio for real estate",
-    "d/e ratio for saas companies",
-    "debt equity calculator for manufacturing business",
-    "how to improve debt to equity ratio",
-    "free financial health calculator for businesses",
-    "debt to equity vs debt ratio calculator",
-    "capital structure optimization tool",
-    "book value and liabilities calculator",
-    "debt equity ratio for loan application",
-    "free calculator to evaluate solvency risk",
-    "debt to equity ratio interpretation guide",
-    "compare d/e ratio across industries",
-    "debt equity calculator with industry benchmarks",
-    "how to reduce debt to equity ratio",
-    "equity financing vs debt financing calculator",
-    "free online d/e ratio tool no signup",
-    "debt to equity ratio for financial modeling",
-    "calculate shareholder equity and liabilities",
-    "d/e ratio for cfo financial planning",
-    "debt equity calculator for mba students",
-    "free balance sheet ratio analysis tool",
-    "debt to equity ratio for nonprofit organizations",
-    "assess bankruptcy risk using d/e calculator",
-    "debt capacity and equity calculator",
-    "real time debt equity ratio calculator",
-    "downloadable debt to equity spreadsheet alternative",
-    "free calculator for investor due diligence",
-    "debt equity ratio for angel investors",
-    "how lenders use d/e ratio in underwriting",
-    "optimize capital structure with d/e calculator",
-    "debt to equity ratio for e-commerce business",
-    "financial stability score based on d/e",
-    "debt equity calculator for private companies"
-  ];
-
-  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
 
   return (
     <>
-      {/* SEO Metadata */}
       <Head>
-        <title>Debt-to-Equity Calculator | Free Financial Leverage Tool</title>
-        <meta
-          name="description"
-          content="Calculate your company's debt-to-equity ratio to assess financial leverage, risk level, and capital structure health."
-        />
-        <meta
-          name="keywords"
-          content={allKeywords}
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/debt-to-equity-calculator" />
-
-        {/* Open Graph / Social */}
-        <meta property="og:title" content="Debt-to-Equity Calculator | Measure Financial Risk" />
-        <meta
-          property="og:description"
-          content="Free tool to calculate your D/E ratio — used by investors, lenders, and executives to evaluate financial stability."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/debt-to-equity-calculator" />
-        <meta property="og:image" content="https://www.financecalculatorfree.com/images/debt-equity-og.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Debt-to-Equity Calculator | Measure Financial Risk" />
-        <meta
-          name="twitter:description"
-          content="See how much debt your company uses compared to equity — critical for assessing long-term sustainability."
-        />
-        <meta name="twitter:image" content="https://www.financecalculatorfree.com/images/debt-equity-twitter.png" />
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={`${siteUrl}/debt-to-equity-calculator`} />
       </Head>
 
-      {/* Gap above content (from navbar) */}
-      <div className={styles.spacerTop}></div>
-
-      <div className={styles.container}>
+      <div className={styles.page}>
         {/* Hero Section */}
         <section className={styles.hero}>
           <h1 className={styles.title}>Debt-to-Equity Ratio Calculator</h1>
@@ -195,214 +183,128 @@ const DebtEquityCalculator = () => {
           </p>
         </section>
 
-        {/* Calculator Section */}
-        <section>
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.instruction}>
-                Enter your company's total liabilities and equity — we'll extract numbers from any format.
-              </p>
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <p className={styles.instruction}>
+              Enter your company's total liabilities and equity — we'll extract numbers from any format.
+            </p>
 
-              {error && (
-                <div className={styles.error}>{error}</div>
-              )}
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="totalLiabilities" className={styles.label}>
-                  Total Liabilities ($)
-                </label>
-                <input
-                  id="totalLiabilities"
-                  type="text"
-                  value={totalLiabilities}
-                  onChange={(e) => setTotalLiabilities(e.target.value)}
-                  placeholder="e.g. $500,000 or 500K"
-                  className={styles.input}
-                />
-                <small className={styles.note}>
-                  All debts: loans, payables, obligations.
-                </small>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="totalEquity" className={styles.label}>
-                  Total Shareholders' Equity ($)
-                </label>
-                <input
-                  id="totalEquity"
-                  type="text"
-                  value={totalEquity}
-                  onChange={(e) => setTotalEquity(e.target.value)}
-                  placeholder="e.g. $750,000 or 1.2M"
-                  className={styles.input}
-                />
-                <small className={styles.note}>
-                  Book value: assets minus liabilities.
-                </small>
-              </div>
-
-              <button type="submit" className={styles.submitBtn}>
-                <span className="taxpro-btn-label">Calculate Ratio</span>
-                <span className="taxpro-btn-arrow">→</span>
-              </button>
-            </form>
-
-            {result && (
-              <div className={styles.resultSection}>
-                <h3>Capital Structure Analysis</h3>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Total Liabilities:</strong> ${result.totalLiabilities}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Total Equity:</strong> ${result.totalEquity}
-                  </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Debt-to-Equity Ratio:</strong> {result.ratio}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Financial Risk:</strong>{' '}
-                    <span className={result.riskColor}> {result.riskLevel}</span>
-                  </div>
-                </div>
-                <div className={styles.note}>
-                  A ratio of <strong>{result.ratio}</strong> indicates{' '}
-                  {result.riskLevel.toLowerCase()} financial risk for creditors and investors.
-                </div>
-              </div>
+            {error && (
+              <div className={styles.error}>{error}</div>
             )}
-          </div>
-        </section>
 
-        {/* Info Section */}
-        <section className={styles.infoSection}>
-          <div className={styles.infoCard}>
-            <h3>Why Debt-to-Equity Ratio Matters</h3>
-            <p>
-              The <strong>Debt-to-Equity (D/E) Ratio</strong> measures a company's financial leverage by comparing its total liabilities to shareholders' equity. It's a critical metric for assessing <strong>financial health, risk level, and capital structure efficiency</strong>.
-            </p>
-
-            <h4>How to Use This Calculator</h4>
-            <ul className={styles.list}>
-              <li><strong>Total Liabilities:</strong> All outstanding debts (short-term + long-term)</li>
-              <li><strong>Total Equity:</strong> Assets minus liabilities (book value)</li>
-              <li>Enter values freely — we extract numbers from any format (e.g., $500K, 1.2 million)</li>
-              <li>Click "Calculate Ratio" to see your D/E ratio and risk assessment</li>
-            </ul>
-
-            <h4>Formula Used</h4>
-            <div className={styles.formula}>
-              <code>Debt-to-Equity Ratio = Total Liabilities ÷ Total Shareholders' Equity</code>
+            <div className={styles.inputGroup}>
+              <label htmlFor="totalLiabilities" className={styles.label}>
+                Total Liabilities ($)
+              </label>
+              <input
+                id="totalLiabilities"
+                type="text"
+                value={totalLiabilities}
+                onChange={(e) => setTotalLiabilities(e.target.value)}
+                placeholder="e.g. $500,000 or 500K"
+                className={styles.input}
+              />
+              <small className={styles.note}>
+                All debts: loans, payables, obligations.
+              </small>
             </div>
-            <p>
-              <strong>Example:</strong> $500,000 liabilities ÷ $750,000 equity = <strong>0.67</strong> ratio
-            </p>
 
-            <h4>Interpreting Your Ratio</h4>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Ratio Range</th>
-                  <th>Interpretation</th>
-                  <th>Risk Level</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Below 0.5</td>
-                  <td>Conservative financing</td>
-                  <td className={styles.textSuccess}>Low</td>
-                </tr>
-                <tr>
-                  <td>0.5 - 1.5</td>
-                  <td>Balanced approach</td>
-                  <td className={styles.textWarning}>Moderate</td>
-                </tr>
-                <tr>
-                  <td>Above 1.5</td>
-                  <td>Aggressive leverage</td>
-                  <td className={styles.textDanger}>High</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className={styles.inputGroup}>
+              <label htmlFor="totalEquity" className={styles.label}>
+                Total Shareholders' Equity ($)
+              </label>
+              <input
+                id="totalEquity"
+                type="text"
+                value={totalEquity}
+                onChange={(e) => setTotalEquity(e.target.value)}
+                placeholder="e.g. $750,000 or 1.2M"
+                className={styles.input}
+              />
+              <small className={styles.note}>
+                Book value: assets minus liabilities.
+              </small>
+            </div>
 
-            <h4>Industry Benchmarks</h4>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Industry</th>
-                  <th>Average D/E Ratio</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Technology</td>
-                  <td>0.5 - 1.0</td>
-                </tr>
-                <tr>
-                  <td>Manufacturing</td>
-                  <td>1.0 - 1.5</td>
-                </tr>
-                <tr>
-                  <td>Utilities</td>
-                  <td>1.5 - 2.0</td>
-                </tr>
-                <tr>
-                  <td>Financial Services</td>
-                  <td>2.0 - 5.0</td>
-                </tr>
-                <tr>
-                  <td>Real Estate</td>
-                  <td>3.0 - 6.0</td>
-                </tr>
-              </tbody>
-            </table>
+            <button type="submit" className={styles.submitBtn}>
+              <span className={styles.btnText}>Calculate Ratio</span>
+              <span className={styles.arrow}>→</span>
+            </button>
+          </form>
 
-            <h4>Optimizing Your Capital Structure</h4>
-            <ul className={styles.list}>
-              <li>✅ <strong>Balance debt and equity</strong> — find your optimal mix</li>
-              <li>✅ <strong>Consider cost of capital</strong> — debt is often cheaper than equity</li>
-              <li>✅ <strong>Match debt maturity</strong> to asset lifespan</li>
-              <li>✅ <strong>Maintain flexibility</strong> — avoid over-leveraging</li>
-              <li>✅ <strong>Monitor industry norms</strong> — standards vary by sector</li>
-            </ul>
+          {result && (
+            <div className={styles.resultSection}>
+              <h3>Capital Structure Analysis</h3>
+              <div className={styles.resultGrid}>
+                <div className={styles.resultItem}>
+                  <strong>Total Liabilities:</strong> ${result.totalLiabilities}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Total Equity:</strong> ${result.totalEquity}
+                </div>
+                <div className={`${styles.resultItem} ${styles.highlight}`}>
+                  <strong>Debt-to-Equity Ratio:</strong> {result.ratio}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Financial Risk:</strong>{' '}
+                  <span className={result.riskColor}> {result.riskLevel}</span>
+                </div>
+              </div>
+              <div className={styles.note}>
+                A ratio of <strong>{result.ratio}</strong> indicates{' '}
+                {result.riskLevel.toLowerCase()} financial risk for creditors and investors.
+              </div>
+            </div>
+          )}
+        </div>
 
-            <h4>Advanced Financial Ratios</h4>
-            <p>
-              For more comprehensive analysis:
-            </p>
-            <ul className={styles.list}>
-              <li><strong>Debt Ratio:</strong> Total debt ÷ Total assets</li>
-              <li><strong>Equity Ratio:</strong> Total equity ÷ Total assets</li>
-              <li><strong>Interest Coverage Ratio:</strong> EBIT ÷ Interest expenses</li>
-              <li><strong>Debt Service Coverage Ratio:</strong> Net operating income ÷ Total debt service</li>
-            </ul>
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>Debt-to-Equity Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of debt-to-equity calculation tools
+              </p>
+            </div>
+            
+            <div className={styles.cardsGrid}>
+              {debtEquityHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
         <section className={styles.ctaSection}>
-          <h2 className={styles.ctaSectionHeading}>
-            Free Financial Planning Tools: Budget, Invest & Plan Retirement
-          </h2>
-          <p className={styles.ctaSectionSubtext}>
-            Free Financial Planning Tools – Try Now
-          </p>
-          <Link href="/suite" passHref legacyBehavior>
-            <a
-              className={styles.ctaButton}
-              ref={ctaButtonRef}
-              onMouseMove={handleMouseMove}
-            >
-              <span className="btn-label">Explore All Calculators</span>
-              <span className="btn-icon" aria-hidden="true">→</span>
-            </a>
-          </Link>
+          <div className={styles.container}>
+            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
+            <p>Free Financial Planning Tools – Try Now</p>
+            <Link href="/suite" legacyBehavior>
+              <button
+                className={styles.ctaButton}
+                ref={ctaButtonRef}
+                onMouseMove={handleMouseMove}
+              >
+                <span className={styles.buttonText}>Explore All Calculators</span>
+                <span className={styles.arrow}>→</span>
+              </button>
+            </Link>
+          </div>
         </section>
       </div>
-
-      {/* Gap below content (before footer) */}
-      <div className={styles.spacerBottom}></div>
     </>
   );
 };

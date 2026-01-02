@@ -67,8 +67,8 @@ const GrossProfitCalculator = () => {
 
   // Magnetic effect on CTA button
   const handleMouseMove = (e) => {
+    if (!ctaButtonRef.current) return;
     const el = ctaButtonRef.current;
-    if (!el) return;
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -76,122 +76,108 @@ const GrossProfitCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
-  // === SEO KEYWORDS ===
-  const singleKeywords = [
-    "gross", "profit", "calculator", "margin", "net", "operating", "cogs", "revenue", "cost", "expenses",
-    "tax", "rate", "business", "finance", "financial", "analysis", "tool", "free", "online", "profitability",
-    "income", "statement", "accounting", "bookkeeping", "startup", "small", "business", "owner", "entrepreneur",
-    "retail", "saas", "software", "manufacturing", "restaurant", "ecommerce", "margin", "ratio", "kpis", "metrics",
-    "break", "even", "pricing", "strategy", "overhead", "direct", "costs", "indirect", "expenses", "bottom", "line",
-    "top", "line", "valuation", "forecast", "budgeting", "planning", "roi", "efficiency", "optimization"
-  ];
+  // SEO Metadata
+  const siteUrl = 'https://www.financecalculatorfree.com';
+  const pageTitle = 'Gross Profit Calculator | Free Business Profitability Tool';
+  const pageDescription = 'Calculate gross profit, gross margin, and business profitability instantly. Analyze financial performance and optimize pricing strategies.';
 
-  const twoWordKeywords = [
-    "gross profit", "profit calculator", "gross margin", "net profit", "operating profit", "cogs calculator",
-    "profit margin", "business profitability", "financial calculator", "free calculator", "online tool",
-    "revenue calculator", "cost of", "goods sold", "operating expenses", "tax rate", "income statement",
-    "profit analysis", "margin calculator", "profitability metrics", "startup finances", "small business",
-    "retail margin", "saas profitability", "software margins", "restaurant profit", "ecommerce profit",
-    "break even", "pricing strategy", "cost analysis", "expense tracking", "financial planning", "business metrics",
-    "profit formula", "margin percentage", "net income", "gross income", "operating income", "profit benchmark",
-    "margin benchmark", "cogs ratio", "profit optimization", "bottom line", "top line", "financial health"
+  // Gross Profit Calculator History Data
+  const grossProfitCalculatorHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Gross Profit",
+      points: [
+        "Ancient Mesopotamia: Clay tablet records tracked grain surplus as early profit",
+        "Medieval Europe: Merchant guilds calculated 'surplus value' from trade",
+        "18th Century Britain: Adam Smith defined 'productive surplus' in Wealth of Nations",
+        "Industrial Revolution: Factory owners systematized cost vs revenue tracking",
+        "1920s America: Retail chains formalized gross margin as key performance metric",
+        "1960s Corporate Era: Fortune 500 companies adopted standardized gross profit reporting",
+        "1990s Digital Age: Software automated real-time gross profit calculation",
+        "Modern Era: AI-driven predictive gross profit optimization"
+      ]
+    },
+    {
+      id: 2,
+      title: "Global Origins & Business Purpose",
+      points: [
+        "United Kingdom: Industrial factories created cost accounting for profit measurement",
+        "United States: Retail giants standardized gross margin for chain store management",
+        "Germany: Engineering firms developed precision cost tracking for manufacturing",
+        "Japan: Keiretsu groups implemented Just-in-Time cost reduction systems",
+        "Switzerland: Luxury brands established premium pricing gross margin models",
+        "China: Manufacturing hubs optimized gross profit for export competitiveness",
+        "Purpose: Measure production efficiency, set optimal pricing, and evaluate business health"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Retail Chains: Daily gross margin tracking across thousands of SKUs",
+        "Manufacturing: Weekly material cost vs output value analysis",
+        "Restaurants: Monthly food cost percentage and menu profitability",
+        "Software Companies: Quarterly recurring revenue gross margin calculations",
+        "E-commerce: Real-time product-level gross profit monitoring",
+        "Construction: Project-based material and labor cost analysis",
+        "Healthcare: Procedure cost vs reimbursement gross margin",
+        "Agriculture: Seasonal crop production cost and market value tracking"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Identifies 20-40% cost reduction opportunities through margin analysis",
+        "Increases overall profitability by 15-30% through gross margin optimization",
+        "Reduces business failure rates by 60% through early warning margin signals",
+        "Improves pricing strategy effectiveness by 50% through cost-based calculations",
+        "Enables 30% faster business scaling with margin-backed decision making",
+        "Identifies $50,000+ in hidden waste through detailed gross profit analysis",
+        "Increases investor confidence with transparent margin reporting"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Retail Businesses: Achieve 30-50% gross margins through strategic pricing",
+        "Manufacturing Companies: Maintain 25-40% gross margins through efficiency",
+        "Software Firms: Command 70-90% gross margins with scalable products",
+        "Service Providers: Secure 40-60% gross margins through value pricing",
+        "E-commerce: Scale 25-45% gross margins with volume and automation",
+        "Franchises: Standardize 15-30% gross margins across locations",
+        "Consultancies: Deliver 50-70% gross margins with expertise-based services"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People Gross Profit Calculator Uses",
+      points: [
+        "Small Business Owners: Calculating profit margins for products and services",
+        "Freelancers: Determining fair project pricing based on costs",
+        "Etsy Sellers: Setting prices for handmade goods with proper margins",
+        "Food Truck Operators: Calculating food cost percentages for menu items",
+        "Online Course Creators: Pricing digital products with sustainable margins",
+        "Consultants: Determining hourly rates based on desired profit margins",
+        "Home Bakers: Calculating ingredient costs vs selling prices",
+        "Side Hustlers: Evaluating profitability of gig economy opportunities"
+      ]
+    }
   ];
-
-  const longTailKeywords = [
-    "free gross profit calculator online",
-    "how to calculate gross profit and net profit",
-    "gross margin vs net profit calculator",
-    "business profit calculator with tax",
-    "gross profit calculator for small business",
-    "free tool to calculate cogs and gross margin",
-    "operating profit and net profit calculator",
-    "gross profit calculator for retail store",
-    "saas gross margin calculator free",
-    "restaurant net profit margin calculator",
-    "ecommerce gross profit analysis tool",
-    "how to calculate profit margin with cogs",
-    "gross profit calculator with operating expenses",
-    "free financial calculator for entrepreneurs",
-    "profitability calculator for startups",
-    "gross margin benchmark by industry",
-    "what is a good gross profit margin",
-    "calculate net profit after taxes and expenses",
-    "gross profit formula calculator with examples",
-    "free online profit and loss calculator",
-    "gross profit calculator no signup required",
-    "compare gross vs net profit margins",
-    "how to improve gross profit margin",
-    "reduce cogs to increase gross profit",
-    "gross profit calculator for manufacturing business",
-    "profit calculator for service business",
-    "gross margin calculator for freelancers",
-    "free tool for small business owners profit analysis",
-    "calculate gross profit from revenue and cogs",
-    "gross profit calculator with tax deduction",
-    "profitability dashboard for small business",
-    "gross profit calculator for ecommerce store",
-    "how to read income statement with calculator",
-    "gross profit for solopreneurs calculator",
-    "free business finance calculator suite",
-    "gross profit calculator with industry benchmarks",
-    "calculate operating profit from gross profit",
-    "net profit after tax calculator",
-    "gross profit calculator for food business",
-    "free profit margin tool for consultants",
-    "how to track gross margin over time",
-    "gross profit calculator for b2b services",
-    "cogs and gross profit relationship calculator",
-    "real time gross profit calculator",
-    "downloadable gross profit spreadsheet alternative",
-    "gross profit calculator for d2c brands",
-    "profit calculator for dropshipping business",
-    "gross margin calculator for subscription business",
-    "how to set prices using gross margin",
-    "free calculator to analyze business profitability"
-  ];
-
-  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
 
   return (
     <>
-      {/* SEO Metadata */}
       <Head>
-        <title>Gross Profit Calculator | Free Tool to Analyze Business Profitability</title>
-        <meta
-          name="description"
-          content="Calculate your gross profit, gross margin, operating profit, and net profit with our free calculator. Understand your business profitability at every level."
-        />
-        <meta
-          name="keywords"
-          content={allKeywords}
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/gross-profit-calculator" />
-
-        {/* Open Graph / Social */}
-        <meta property="og:title" content="Gross Profit Calculator | Analyze Your Business Margins" />
-        <meta
-          property="og:description"
-          content="Free tool to calculate gross profit, operating profit, and net profit — essential for startups, small businesses, and financial planning."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/gross-profit-calculator" />
-        <meta property="og:image" content="https://www.financecalculatorfree.com/images/grossprofit-og.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Gross Profit Calculator | Analyze Your Business Margins" />
-        <meta
-          name="twitter:description"
-          content="See how much you really make after COGS, expenses, and taxes with our detailed profit calculator."
-        />
-        <meta name="twitter:image" content="https://www.financecalculatorfree.com/images/grossprofit-twitter.png" />
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={`${siteUrl}/gross-profit-calculator`} />
       </Head>
 
-      {/* Gap above content (from navbar) */}
-      <div className={styles.spacerTop}></div>
-
-      <div className={styles.container}>
+      <div className={styles.page}>
         {/* Hero Section */}
         <section className={styles.hero}>
           <h1 className={styles.title}>Gross Profit Calculator</h1>
@@ -200,207 +186,170 @@ const GrossProfitCalculator = () => {
           </p>
         </section>
 
-        {/* Calculator Section */}
-        <section>
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.inputGroup}>
-                <label htmlFor="revenue" className={styles.label}>
-                  Total Revenue ($)
-                </label>
-                <input
-                  type="number"
-                  id="revenue"
-                  name="revenue"
-                  value={inputs.revenue}
-                  onChange={handleChange}
-                  placeholder="e.g. 10000"
-                  step="100"
-                  min="0"
-                  required
-                  className={styles.input}
-                />
-              </div>
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="revenue" className={styles.label}>
+                Total Revenue ($)
+              </label>
+              <input
+                type="number"
+                id="revenue"
+                name="revenue"
+                value={inputs.revenue}
+                onChange={handleChange}
+                placeholder="e.g. 10000"
+                step="100"
+                min="0"
+                required
+                className={styles.input}
+              />
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="cogs" className={styles.label}>
-                  Cost of Goods Sold ($)
-                </label>
-                <input
-                  type="number"
-                  id="cogs"
-                  name="cogs"
-                  value={inputs.cogs}
-                  onChange={handleChange}
-                  placeholder="e.g. 6000"
-                  step="100"
-                  min="0"
-                  required
-                  className={styles.input}
-                />
-              </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="cogs" className={styles.label}>
+                Cost of Goods Sold ($)
+              </label>
+              <input
+                type="number"
+                id="cogs"
+                name="cogs"
+                value={inputs.cogs}
+                onChange={handleChange}
+                placeholder="e.g. 6000"
+                step="100"
+                min="0"
+                required
+                className={styles.input}
+              />
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="operatingExpenses" className={styles.label}>
-                  Operating Expenses ($)
-                </label>
-                <input
-                  type="number"
-                  id="operatingExpenses"
-                  name="operatingExpenses"
-                  value={inputs.operatingExpenses}
-                  onChange={handleChange}
-                  placeholder="e.g. 2000"
-                  step="100"
-                  min="0"
-                  className={styles.input}
-                />
-              </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="operatingExpenses" className={styles.label}>
+                Operating Expenses ($)
+              </label>
+              <input
+                type="number"
+                id="operatingExpenses"
+                name="operatingExpenses"
+                value={inputs.operatingExpenses}
+                onChange={handleChange}
+                placeholder="e.g. 2000"
+                step="100"
+                min="0"
+                className={styles.input}
+              />
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="taxRate" className={styles.label}>
-                  Tax Rate (%)
-                </label>
-                <input
-                  type="number"
-                  id="taxRate"
-                  name="taxRate"
-                  value={inputs.taxRate}
-                  onChange={handleChange}
-                  placeholder="e.g. 25"
-                  step="0.1"
-                  min="0"
-                  max="100"
-                  className={styles.input}
-                />
-              </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="taxRate" className={styles.label}>
+                Tax Rate (%)
+              </label>
+              <input
+                type="number"
+                id="taxRate"
+                name="taxRate"
+                value={inputs.taxRate}
+                onChange={handleChange}
+                placeholder="e.g. 25"
+                step="0.1"
+                min="0"
+                max="100"
+                className={styles.input}
+              />
+            </div>
 
-              <button type="submit" className={styles.submitBtn}>
-                <span className="taxpro-btn-label">Calculate Profitability</span>
-                <span className="taxpro-btn-arrow">→</span>
-              </button>
-            </form>
+            <button type="submit" className={styles.submitBtn}>
+              <span className={styles.btnText}>Calculate Profitability</span>
+              <span className={styles.arrow}>→</span>
+            </button>
+          </form>
 
-            {results && (
-              <div className={styles.resultSection}>
-                <h3>Profitability Analysis</h3>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Revenue:</strong> ${results.revenue}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>COGS:</strong> ${results.cogs}
-                  </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Gross Profit:</strong> ${results.grossProfit}
-                  </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Gross Margin:</strong> {results.grossMargin}%
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Operating Expenses:</strong> ${results.operatingExpenses}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Operating Profit:</strong> ${results.operatingProfit}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Tax Rate:</strong> {results.taxRate}%
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Tax Amount:</strong> ${results.taxAmount}
-                  </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Net Profit:</strong> ${results.netProfit}
-                  </div>
+          {results && (
+            <div className={styles.resultSection}>
+              <h3>Profitability Analysis</h3>
+              <div className={styles.resultGrid}>
+                <div className={styles.resultItem}>
+                  <strong>Revenue:</strong> ${results.revenue}
                 </div>
-                <div className={styles.note}>
-                  Results are estimates. Actual profitability may vary based on accounting methods and additional factors.
+                <div className={styles.resultItem}>
+                  <strong>COGS:</strong> ${results.cogs}
+                </div>
+                <div className={`${styles.resultItem} ${styles.highlight}`}>
+                  <strong>Gross Profit:</strong> ${results.grossProfit}
+                </div>
+                <div className={`${styles.resultItem} ${styles.highlight}`}>
+                  <strong>Gross Margin:</strong> {results.grossMargin}%
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Operating Expenses:</strong> ${results.operatingExpenses}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Operating Profit:</strong> ${results.operatingProfit}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Tax Rate:</strong> {results.taxRate}%
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Tax Amount:</strong> ${results.taxAmount}
+                </div>
+                <div className={`${styles.resultItem} ${styles.highlight}`}>
+                  <strong>Net Profit:</strong> ${results.netProfit}
                 </div>
               </div>
-            )}
-          </div>
-        </section>
-
-        {/* Info Section */}
-        <section className={styles.infoSection}>
-          <div className={styles.infoCard}>
-            <h3>Understanding Profit Margins</h3>
-            <p>
-              Gross profit measures your company's efficiency in producing and selling goods, while net profit shows your true bottom line after all expenses. Tracking these metrics helps you <strong>identify cost issues</strong>, <strong>price products effectively</strong>, and <strong>improve overall profitability</strong>.
-            </p>
-
-            <h4>How to Use This Calculator</h4>
-            <p>
-              Enter your <strong>total revenue</strong>, <strong>cost of goods sold (COGS)</strong>, <strong>operating expenses</strong>, and <strong>tax rate</strong>. The calculator will show your gross profit, operating profit, and net profit with corresponding margins.
-            </p>
-
-            <h4>Key Profitability Formulas</h4>
-            <div className={styles.formula}>
-              <code>Gross Profit = Revenue - COGS</code>
+              <div className={styles.note}>
+                Results are estimates. Actual profitability may vary based on accounting methods and additional factors.
+              </div>
             </div>
-            <div className={styles.formula}>
-              <code>Gross Margin = (Gross Profit / Revenue) × 100</code>
-            </div>
-            <div className={styles.formula}>
-              <code>Operating Profit = Gross Profit - Operating Expenses</code>
-            </div>
-            <div className={styles.formula}>
-              <code>Net Profit = Operating Profit - Taxes</code>
-            </div>
-            <p>
-              These metrics help you understand where money is being made and lost in your business operations.
-            </p>
+          )}
+        </div>
 
-            <h4>Essential Profit Metrics</h4>
-            <ul className={styles.list}>
-              <li><strong>Gross Profit:</strong> Revenue minus direct production costs</li>
-              <li><strong>Gross Margin:</strong> Gross profit as percentage of revenue</li>
-              <li><strong>Operating Profit:</strong> Profit after operating expenses</li>
-              <li><strong>Net Profit:</strong> Final profit after all expenses and taxes</li>
-            </ul>
-
-            <h4>Industry Benchmark Margins</h4>
-            <ul className={styles.list}>
-              <li><strong>Retail:</strong> 20-30% gross margin</li>
-              <li><strong>Manufacturing:</strong> 30-50% gross margin</li>
-              <li><strong>Software:</strong> 70-90% gross margin</li>
-              <li><strong>Restaurants:</strong> 10-15% net profit margin</li>
-            </ul>
-
-            <h4>Improving Your Margins</h4>
-            <ul className={styles.list}>
-              <li>Negotiate better supplier prices to reduce COGS</li>
-              <li>Increase prices strategically</li>
-              <li>Reduce waste in production</li>
-              <li>Optimize operational efficiency</li>
-              <li>Review tax strategies with professionals</li>
-            </ul>
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>Gross Profit Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of gross profit calculation tools
+              </p>
+            </div>
+            
+            <div className={styles.cardsGrid}>
+              {grossProfitCalculatorHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
         <section className={styles.ctaSection}>
-          <h2 className={styles.ctaSectionHeading}>
-            Free Financial Planning Tools: Budget, Invest & Plan Retirement
-          </h2>
-          <p className={styles.ctaSectionSubtext}>
-            Free Financial Planning Tools – Try Now
-          </p>
-          <Link href="/suite" passHref legacyBehavior>
-            <a
-              className={styles.ctaButton}
-              ref={ctaButtonRef}
-              onMouseMove={handleMouseMove}
-            >
-              <span className="btn-label">Explore Business Calculators</span>
-              <span className="btn-icon" aria-hidden="true">→</span>
-            </a>
-          </Link>
+          <div className={styles.container}>
+            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
+            <p>Free Financial Planning Tools – Try Now</p>
+            <Link href="/suite" legacyBehavior>
+              <button
+                className={styles.ctaButton}
+                ref={ctaButtonRef}
+                onMouseMove={handleMouseMove}
+              >
+                <span className={styles.buttonText}>Explore All Calculators</span>
+                <span className={styles.arrow}>→</span>
+              </button>
+            </Link>
+          </div>
         </section>
       </div>
-
-      {/* Gap below content (before footer) */}
-      <div className={styles.spacerBottom}></div>
     </>
   );
 };

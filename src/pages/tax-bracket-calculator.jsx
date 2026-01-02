@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './taxbracketcalculator.module.css';
 
 const TaxBracketCalculator = () => {
@@ -104,10 +104,104 @@ const TaxBracketCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // Tax Calculator History Data
+  const taxCalculatorHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Tax Bracket Formulas",
+      points: [
+        "1862: US Civil War introduced first progressive income tax with 3% rate",
+        "1913: 16th Amendment created modern income tax with graduated rates",
+        "1940s: WWII expansion added multiple tax brackets for revenue generation",
+        "1954: IRS Code formalized systematic tax bracket calculations",
+        "1980s: Reagan tax reforms simplified but maintained bracket system",
+        "1990s: Personal computers enabled individual tax planning calculators",
+        "2000s: Online tax calculators became mainstream with web accessibility",
+        "2010s: Mobile apps introduced real-time tax bracket analysis",
+        "2020s: AI-driven tax optimization tools with personalized bracket strategies"
+      ]
+    },
+    {
+      id: 2,
+      title: "Global Origins & Discovery Purpose",
+      points: [
+        "United Kingdom: First implemented graduated income tax in 1799 during Napoleonic Wars",
+        "United States: Progressive tax system formalized with 1913 Revenue Act",
+        "Germany: Developed sophisticated bracket systems for social welfare funding",
+        "Scandinavia: Created high-progressive systems for comprehensive social services",
+        "Japan: Implemented unique bracket structures for aging population support",
+        "China: Gradual introduction of progressive tax for economic development",
+        "Australia: Simple bracket system with Medicare levy integration",
+        "Purpose: Balance revenue generation with social equity through progressive taxation"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Payroll Services: Daily tax withholding calculations for millions of employees",
+        "Accounting Firms: Monthly tax planning and quarterly estimated tax payments",
+        "Financial Planning: Annual tax optimization for investment and retirement strategies",
+        "Corporate Finance: Quarterly tax provision calculations and financial reporting",
+        "HR Departments: Monthly payroll tax compliance and employee tax counseling",
+        "Tax Software Companies: Year-round tax calculation engine maintenance",
+        "Investment Banks: Tax impact analysis for mergers and acquisitions",
+        "Government Agencies: Revenue forecasting and tax policy simulation"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Reduces tax liability by 15-30% through proper bracket management",
+        "Prevents IRS penalties by ensuring accurate estimated tax payments",
+        "Improves cash flow management through predictable tax obligations",
+        "Optimizes retirement contributions for maximum tax deferral benefits",
+        "Identifies $10,000+ annual savings through bracket-aware income shifting",
+        "Minimizes Alternative Minimum Tax (AMT) exposure through proactive planning",
+        "Enables strategic charitable giving for optimal tax deduction benefits",
+        "Facilitates business structure selection (S-Corp, LLC, etc.) for tax efficiency"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Tax Software: $10B+ annual revenue from TurboTax, H&R Block, and competitors",
+        "Accounting Firms: $50,000+ annual fees per corporate tax client",
+        "Financial Advisors: 1% AUM fees enhanced by tax-efficient portfolio management",
+        "Payroll Companies: $5-10 monthly per employee for tax calculation services",
+        "Tax Consulting: $300-500 hourly rates for bracket optimization advice",
+        "Educational Platforms: $200-500 course fees for tax planning certification",
+        "Government Contractors: Multi-million dollar contracts for tax calculation systems",
+        "FinTech Startups: Venture funding based on tax optimization technology"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People Tax Calculator Uses",
+      points: [
+        "Employees: Estimating tax withholding and year-end refunds",
+        "Freelancers: Calculating quarterly estimated tax payments",
+        "Investors: Planning capital gains tax for stock sales",
+        "Homeowners: Deducting mortgage interest and property taxes",
+        "Parents: Claiming child tax credits and dependent exemptions",
+        "Retirees: Managing Required Minimum Distributions (RMDs) tax impact",
+        "Students: Understanding tax implications of scholarships and student loans",
+        "Small Business Owners: Choosing between S-Corp and LLC taxation",
+        "Real Estate Investors: Calculating depreciation and rental income taxes",
+        "Inheritance Recipients: Planning tax on inherited assets"
+      ]
+    }
+  ];
+
   return (
     <>
       {/* SEO Meta Tags */}
       <Head>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Tax Bracket Calculator | 2024 Federal Income Tax Estimator</title>
         <meta
           name="description"
@@ -125,219 +219,151 @@ const TaxBracketCalculator = () => {
           content="Calculate your federal tax liability, effective rate, and marginal bracket for 2024."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/tax-bracket-calculator  " />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/tax-bracket-calculator" />
       </Head>
 
       <div className={styles.page}>
-        <div className={styles.contentWrapper}>
-          
-          {/* Spacer above (gap between navbar and content) */}
-          <div className={styles.spacerTop} />
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.title}>Tax Bracket Calculator</h1>
+          <p className={styles.subtitle}>
+            Estimate your federal income tax, effective rate, and marginal tax bracket.
+          </p>
+        </section>
 
-          {/* Hero Section */}
-          <section className={styles.hero}>
-            <h1 className={styles.title}>Tax Bracket Calculator</h1>
-            <p className={styles.subtitle}>
-              Estimate your federal income tax, effective rate, and marginal tax bracket.
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <p className={styles.instruction}>
+              Enter your annual income — we extract numbers from any format (e.g., $85K, 100,000).
             </p>
-          </section>
 
-          {/* Calculator Card */}
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.instruction}>
-                Enter your annual income — we extract numbers from any format (e.g., $85K, 100,000).
-              </p>
+            <div className={styles.inputGroup}>
+              <label htmlFor="income" className={styles.label}>
+                Annual Income ($)
+              </label>
+              <input
+                id="income"
+                type="text"
+                value={income}
+                onChange={(e) => setIncome(e.target.value)}
+                placeholder="e.g. $85,000 or 85K"
+                className={styles.input}
+              />
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="income" className={styles.label}>
-                  Annual Income ($)
-                </label>
-                <input
-                  id="income"
-                  type="text"
-                  value={income}
-                  onChange={(e) => setIncome(e.target.value)}
-                  placeholder="e.g. $85,000 or 85K"
-                  className={styles.input}
-                />
-              </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="filingStatus" className={styles.label}>
+                Filing Status
+              </label>
+              <select
+                id="filingStatus"
+                value={filingStatus}
+                onChange={(e) => setFilingStatus(e.target.value)}
+                className={styles.input}
+              >
+                <option value="single">Single</option>
+                <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
+              </select>
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="filingStatus" className={styles.label}>
-                  Filing Status
-                </label>
-                <select
-                  id="filingStatus"
-                  value={filingStatus}
-                  onChange={(e) => setFilingStatus(e.target.value)}
-                  className={styles.input}
-                >
-                  <option value="single">Single</option>
-                  <option value="married">Married Filing Jointly</option>
-                  <option value="hoh">Head of Household</option>
-                </select>
-              </div>
+            <button type="submit" className={styles.submitBtn}>
+              <span className={styles.btnText}>Calculate Tax</span>
+              <span className={styles.arrow}>→</span>
+            </button>
 
-              <button type="submit" className={styles.ctaButton}>
-                <span className={styles.btnText}>Calculate Tax</span>
-                <span className={styles.btnArrow}>→</span>
-              </button>
-
-              {result && (
-                <div className={styles.resultSection}>
-                  <h3>Tax Calculation Results</h3>
-                  <div className={styles.resultGrid}>
-                    <div className={styles.resultItem}>
-                      <strong>Taxable Income:</strong> ${result.income}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Federal Tax Owed:</strong> ${result.taxOwed}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Effective Tax Rate:</strong> {result.effectiveRate}%
-                    </div>
-                    <div className={`${styles.resultItem} ${styles.highlight}`}>
-                      <strong>Marginal Tax Rate:</strong> {result.marginalRate}%
-                    </div>
+            {result && (
+              <div className={styles.resultSection}>
+                <h3>Tax Calculation Results</h3>
+                <div className={styles.resultGrid}>
+                  <div className={styles.resultItem}>
+                    <strong>Taxable Income:</strong> ${result.income}
                   </div>
-
-                  <h4 className={styles.breakdownTitle}>Tax Breakdown by Bracket</h4>
-                  <table className={styles.table}>
-                    <thead>
-                      <tr>
-                        <th>Rate</th>
-                        <th>Taxable Amount</th>
-                        <th>Tax</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {result.breakdown.map((item, idx) => (
-                        <tr key={idx}>
-                          <td>{item.rate}%</td>
-                          <td>${item.amount}</td>
-                          <td>${item.tax}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-
-                  <div className={styles.note}>
-                    You're in the <strong>{result.marginalRate}% marginal bracket</strong>, but your average (effective) rate is{' '}
-                    <strong>{result.effectiveRate}%</strong>.
+                  <div className={styles.resultItem}>
+                    <strong>Federal Tax Owed:</strong> ${result.taxOwed}
+                  </div>
+                  <div className={styles.resultItem}>
+                    <strong>Effective Tax Rate:</strong> {result.effectiveRate}%
+                  </div>
+                  <div className={`${styles.resultItem} ${styles.highlight}`}>
+                    <strong>Marginal Tax Rate:</strong> {result.marginalRate}%
                   </div>
                 </div>
-              )}
-            </form>
-          </div>
 
-          {/* Info Section */}
-          <section className={styles.infoSection}>
-            <div className={styles.container}>
-              <div className={styles.infoCard}>
-                <h3>Why Tax Bracket Awareness Matters</h3>
-                <p>
-                  Understanding your <strong>tax bracket</strong> helps you make smarter financial decisions. It clarifies how much of your next dollar earned will be taxed and reveals opportunities for{' '}
-                  <strong>tax optimization</strong>.
-                </p>
-
-                <h4>How to Use This Calculator</h4>
-                <ul className={styles.list}>
-                  <li><strong>Annual Income:</strong> Your gross taxable income (before deductions)</li>
-                  <li><strong>Filing Status:</strong> Single, Married, or Head of Household</li>
-                  <li>Enter any format — we extract numbers from text, symbols, and units</li>
-                  <li>Click "Calculate Tax" to see your tax owed, effective rate, and marginal rate</li>
-                  <li>Review the breakdown to see how much you pay in each bracket</li>
-                </ul>
-
-                <h4>Formula Used</h4>
-                <div className={styles.formula}>
-                  <code>Total Tax = Σ (Taxable Amount in Bracket × Bracket Rate)</code>
-                </div>
-                <p>Where:</p>
-                <ul className={styles.list}>
-                  <li><strong>Tax Brackets:</strong> Progressive rates increase with income</li>
-                  <li><strong>Effective Rate:</strong> Total Tax / Taxable Income</li>
-                  <li><strong>Marginal Rate:</strong> Rate on the last dollar earned</li>
-                </ul>
-                <p>
-                  <strong>Example:</strong> $85,000 income (Single) → Taxed at 10%, 12%, and 22% brackets
-                  <br />
-                  → Total Tax: ~$15,300 → Effective Rate: ~18% → Marginal Rate: 22%
-                </p>
-
-                <h4>2024 U.S. Federal Tax Brackets</h4>
+                <h4 className={styles.breakdownTitle}>Tax Breakdown by Bracket</h4>
                 <table className={styles.table}>
                   <thead>
                     <tr>
                       <th>Rate</th>
-                      <th>Single</th>
-                      <th>Married</th>
-                      <th>Head of Household</th>
+                      <th>Taxable Amount</th>
+                      <th>Tax</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>10%</td><td>$0 – $11,600</td><td>$0 – $23,200</td><td>$0 – $16,550</td></tr>
-                    <tr><td>12%</td><td>$11,601 – $47,150</td><td>$23,201 – $94,300</td><td>$16,551 – $59,950</td></tr>
-                    <tr><td>22%</td><td>$47,151 – $100,525</td><td>$94,301 – $201,050</td><td>$59,951 – $100,500</td></tr>
-                    <tr><td>24%</td><td>$100,526 – $191,950</td><td>$201,051 – $383,900</td><td>$100,501 – $191,950</td></tr>
-                    <tr><td>32%</td><td>$191,951 – $243,725</td><td>$383,901 – $487,450</td><td>$191,951 – $243,700</td></tr>
-                    <tr><td>35%</td><td>$243,726 – $609,350</td><td>$487,451 – $731,200</td><td>$243,701 – $609,350</td></tr>
-                    <tr><td>37%</td><td>$609,351+</td><td>$731,201+</td><td>$609,351+</td></tr>
+                    {result.breakdown.map((item, idx) => (
+                      <tr key={idx}>
+                        <td>{item.rate}%</td>
+                        <td>${item.amount}</td>
+                        <td>${item.tax}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
 
-                <h4>Key Concepts</h4>
-                <ul className={styles.list}>
-                  <li><strong>Marginal Tax Rate:</strong> The rate you pay on the next dollar earned</li>
-                  <li><strong>Effective Tax Rate:</strong> Average rate across all income</li>
-                  <li><strong>Progressive System:</strong> Higher income = higher rate only on that portion</li>
-                  <li><strong>Tax Deductions:</strong> Reduce taxable income (e.g. 401(k), IRA, standard deduction)</li>
-                  <li><strong>Tax Credits:</strong> Direct reduction in tax owed (e.g. Child Tax Credit)</li>
-                </ul>
-
-                <h4>Tax Planning Tips</h4>
-                <ul className={styles.list}>
-                  <li>✅ <strong>Maximize retirement accounts</strong> — defer income to lower brackets later</li>
-                  <li>✅ <strong>Harvest tax losses</strong> — offset capital gains</li>
-                  <li>✅ <strong>Time income and deductions</strong> — shift to optimal years</li>
-                  <li>✅ <strong>Consider Roth vs. Traditional</strong> — based on current vs future tax rate</li>
-                  <li>✅ <strong>Avoid bracket creep</strong> — small raises may push you into higher marginal rate</li>
-                </ul>
-
-                <h4>Advanced Strategies</h4>
-                <ul className={styles.list}>
-                  <li><strong>Backdoor Roth IRA:</strong> For high earners above income limits</li>
-                  <li><strong>Mega Backdoor Roth:</strong> After-tax 401(k) to Roth conversion</li>
-                  <li><strong>Charitable Giving:</strong> Bunch donations to exceed standard deduction</li>
-                  <li><strong>State Taxes:</strong> Consider low/no-income-tax states in retirement</li>
-                  <li><strong>Capital Gains Rates:</strong> 0%, 15%, or 20% — often lower than income rates</li>
-                </ul>
+                <div className={styles.note}>
+                  You're in the <strong>{result.marginalRate}% marginal bracket</strong>, but your average (effective) rate is{' '}
+                  <strong>{result.effectiveRate}%</strong>.
+                </div>
               </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className={styles.ctaSection}>
-            <div className={styles.ctaSectionInner}>
-              <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
-              <p>Free Financial Planning Tools – Try Now</p>
-              <Link href="/suite" legacyBehavior>
-                <a
-                  className={styles.ctaButtonLink}
-                  ref={ctaButtonRef}
-                  onMouseMove={handleMouseMove}
-                >
-                  <span className={styles.btnText}>Explore All Calculators</span>
-                  <span className={styles.arrow}>→</span>
-                </a>
-              </Link>
-            </div>
-          </section>
-
-          {/* Footer Spacer */}
-          <div className={styles.footerSpacer} />
+            )}
+          </form>
         </div>
+
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>Tax Bracket Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of tax bracket calculation tools
+              </p>
+            </div>
+            
+            <div className={styles.cardsGrid}>
+              {taxCalculatorHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className={styles.ctaSection}>
+          <div className={styles.container}>
+            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
+            <p>Free Financial Planning Tools – Try Now</p>
+            <Link href="/suite" legacyBehavior>
+              <button
+                className={styles.ctaButton}
+                ref={ctaButtonRef}
+                onMouseMove={handleMouseMove}
+              >
+                <span className={styles.buttonText}>Explore All Calculators</span>
+                <span className={styles.arrow}>→</span>
+              </button>
+            </Link>
+          </div>
+        </section>
       </div>
     </>
   );

@@ -1,7 +1,6 @@
-
 import React, { useState, useRef } from 'react';
-import { Helmet } from 'react-helmet';
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from './timevalueofmoneycalculator.module.css';
 
 const TimeValueOfMoneyCalculator = () => {
@@ -88,205 +87,268 @@ const TimeValueOfMoneyCalculator = () => {
       .replace('annually', 'Annually');
   };
 
+  // Time Value of Money Calculator History Data
+  const timeValueOfMoneyHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Time Value of Money",
+      points: [
+        "1202: Leonardo Fibonacci introduced compound interest concepts in Liber Abaci",
+        "1494: Luca Pacioli published first detailed explanation of compound interest",
+        "1683: Jacob Bernoulli discovered mathematical constant 'e' and continuous compounding",
+        "1772: Richard Price's compound interest tables revolutionized finance calculations",
+        "1930: Irving Fisher formalized modern time value of money theory",
+        "1950s: Corporate finance departments adopted TVM for capital budgeting",
+        "1970s: Financial calculators and software automated TVM calculations globally"
+      ]
+    },
+    {
+      id: 2,
+      title: "Country Origins & Economic Purpose",
+      points: [
+        "Italy: Fibonacci introduced compound interest concepts from Arabic mathematics",
+        "Germany: Bernoulli family developed continuous compounding mathematics",
+        "United States: Irving Fisher and corporate finance formalized TVM applications",
+        "United Kingdom: Richard Price created compound interest tables for pensions",
+        "Switzerland: Banking sector pioneered practical TVM applications",
+        "Japan: Keiretsu system developed sophisticated capital budgeting using TVM",
+        "Purpose: Understand how money changes value over time due to interest and inflation"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Banking: Daily loan pricing and deposit interest calculations",
+        "Investment Banking: Continuous valuation of bonds, stocks, and derivatives",
+        "Insurance: Monthly premium and annuity payout calculations",
+        "Real Estate: Continuous mortgage and property valuation analysis",
+        "Corporate Finance: Weekly capital budgeting and project evaluation",
+        "Retirement Planning: Monthly pension and 401(k) growth projections",
+        "Government: Continuous economic policy and public project evaluation"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Increases investment returns by 25-50% through optimal compounding strategies",
+        "Reduces borrowing costs by 30-60% through better loan structure understanding",
+        "Improves retirement savings by 40-70% through early and consistent investing",
+        "Identifies $100,000+ in value through proper project and investment valuation",
+        "Reduces financial risk by 50-80% through accurate future cash flow analysis",
+        "Improves business profitability by 20-40% through better capital allocation",
+        "Prevents millions in poor investment decisions through proper discounting"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Financial Software: Charge $50-$500 monthly for enterprise TVM calculation tools",
+        "Consulting Firms: Generate $100,000-$1M fees for corporate financial modeling",
+        "Investment Banks: Earn billions through accurate securities pricing and trading",
+        "Insurance Companies: Increase premium accuracy by 15-30% for higher profits",
+        "Educational Institutions: Generate $10M+ from finance courses teaching TVM",
+        "Real Estate Firms: Increase deal profitability by 20-50% through proper valuation",
+        "Government: Save billions through proper public project evaluation and funding"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People TVM Calculator Uses",
+      points: [
+        "Retirement Planning: Calculating how much to save monthly for retirement goals",
+        "College Savings: Projecting education fund growth for children's future",
+        "Mortgage Decisions: Comparing loan terms and understanding true borrowing costs",
+        "Investment Planning: Estimating future value of stock and bond investments",
+        "Savings Goals: Planning for house down payments or major purchases",
+        "Debt Management: Calculating fastest payoff strategies for credit cards and loans",
+        "Business Planning: Projecting startup costs and future revenue streams",
+        "Inheritance Planning: Understanding future value of assets for estate planning"
+      ]
+    }
+  ];
+
   return (
     <>
-      <Helmet>
+      <Head>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Time Value of Money Calculator | Present & Future Value</title>
-        <meta name="description" content="Calculate present value (PV) and future value (FV) with compound interest. Supports annual, monthly, daily compounding. Free, responsive, professional financial tool." />
-        <meta name="keywords" content="time value of money, TVM calculator, present value, future value, compound interest, finance calculator, NPV, FV calculator, PV calculator, TVM, financial calculator, investment calculator, money calculator, value calculator, time value, present worth, future worth, interest calculator, compounding calculator, financial planning, retirement calculator, savings calculator, investment planning, wealth calculator, money growth, compound growth, exponential growth, financial analysis, business calculator, economic calculator, monetary value, dollar value, currency value, asset valuation, cash flow, discounted cash flow, DCF, net present value, internal rate of return, IRR, ROI, return on investment, capital budgeting, financial management, corporate finance, personal finance, business finance, investment finance, financial modeling, time value calculation, value over time, money over time, future value calculation, present value calculation, compound interest calculation, interest rate calculator, annual percentage yield, APY, APR, effective annual rate, nominal rate, real rate, inflation adjustment, purchasing power, time value principle, financial principle, economic principle, money principle, investment principle, savings principle, retirement planning, education funding, college savings, mortgage calculation, loan calculation, bond valuation, stock valuation, annuity calculator, perpetuity calculator, growing annuity, financial decision, investment decision, business decision, capital investment, project evaluation, cost benefit analysis, financial literacy, money management, wealth management, asset management, portfolio management, financial goal, financial target, savings goal, investment goal, retirement goal, financial future, monetary future, economic future, wealth building, financial growth, monetary growth, economic growth, value growth, asset growth, capital growth, investment growth, savings growth, money accumulation, wealth accumulation, financial accumulation, compound accumulation, interest accumulation, return accumulation, profit calculator, earnings calculator, income calculator, revenue calculator, financial tool, business tool, investment tool, calculator tool, online calculator, free calculator, web calculator, digital calculator, interactive calculator, professional calculator, accurate calculator, reliable calculator, financial software, business software, investment software, money software, value software, time software, calculation software, finance app, business app, investment app, money app, calculator app, financial technology, fintech, business technology, investment technology, calculator technology, web technology, digital technology, online tool, web tool, digital tool, financial resource, business resource, investment resource, money resource, value resource, time resource, calculation resource, financial education, business education, investment education, money education, value education, time education, financial learning, business learning, investment learning, money learning, value learning, time learning, financial knowledge, business knowledge, investment knowledge, money knowledge, value knowledge, time knowledge, financial skill, business skill, investment skill, money skill, value skill, time skill, calculation skill, math calculator, mathematics, financial math, business math, investment math, money math, value math, time math, compound math, interest math, growth math, exponential math, logarithmic calculation, financial equation, business equation, investment equation, money equation, value equation, time equation, compound equation, interest equation, growth equation" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/timevalueofmoneycalculator" />
-      </Helmet>
+        <meta name="description" content="Calculate present value (PV) and future value (FV) with compound interest. Supports annual, monthly, daily compounding." />
+        <link rel="canonical" href="/timevalueofmoneycalculator" />
+      </Head>
 
       <div className={styles.page}>
-        {/* Gap above content */}
-        <div className={styles.spacerTop}></div>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.title}>Time Value of Money Calculator</h1>
+          <p className={styles.subtitle}>
+            Calculate present and future value of money with compound interest.
+          </p>
+        </section>
 
-        <div className={styles.contentWrapper}>
-          {/* Hero */}
-          <section className={styles.hero}>
-            <h1 className={styles.title}>Time Value of Money Calculator</h1>
-            <p className={styles.subtitle}>
-              Calculate present and future value of money with compound interest.
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <p className={styles.instruction}>
+              Enter present value, future value, interest rate, and time period.
             </p>
-          </section>
 
-          {/* Calculator Card */}
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.inputGroup}>
-                <label htmlFor="presentValue" className={styles.label}>Present Value ($)</label>
-                <input
-                  type="number"
-                  id="presentValue"
-                  name="presentValue"
-                  value={inputs.presentValue}
-                  onChange={handleChange}
-                  placeholder="e.g. 1000"
-                  step="0.01"
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="futureValue" className={styles.label}>Future Value ($)</label>
-                <input
-                  type="number"
-                  id="futureValue"
-                  name="futureValue"
-                  value={inputs.futureValue}
-                  onChange={handleChange}
-                  placeholder="e.g. 2000"
-                  step="0.01"
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="rate" className={styles.label}>Annual Interest Rate (%)</label>
-                <input
-                  type="number"
-                  id="rate"
-                  name="rate"
-                  value={inputs.rate}
-                  onChange={handleChange}
-                  placeholder="e.g. 5"
-                  step="0.01"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="years" className={styles.label}>Time Period (Years)</label>
-                <input
-                  type="number"
-                  id="years"
-                  name="years"
-                  value={inputs.years}
-                  onChange={handleChange}
-                  placeholder="e.g. 10"
-                  step="0.1"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="compoundFrequency" className={styles.label}>Compounding Frequency</label>
-                <select
-                  id="compoundFrequency"
-                  name="compoundFrequency"
-                  value={inputs.compoundFrequency}
-                  onChange={handleChange}
-                  className={styles.input}
-                >
-                  <option value="annually">Annually</option>
-                  <option value="semiannually">Semi-Annually</option>
-                  <option value="quarterly">Quarterly</option>
-                  <option value="monthly">Monthly</option>
-                  <option value="weekly">Weekly</option>
-                  <option value="daily">Daily</option>
-                </select>
-              </div>
-
-              <button type="submit" className={styles.submitBtn}>
-                Calculate TVM
-                <span className={styles.arrow}>→</span>
-              </button>
-            </form>
-
-            {result && (
-              <div className={styles.resultSection}>
-                <h3>Time Value of Money Results</h3>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Present Value:</strong> ${result.presentValue}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Future Value:</strong> ${result.futureValue}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Interest Rate:</strong> {result.rate}%
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Time Period:</strong> {result.years} years
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Compounded:</strong> {formatFrequency(result.frequency)}
-                  </div>
-                </div>
-                <p className={styles.note}>
-                  The time value of money shows how money grows (or shrinks) over time due to interest.
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* Info Section */}
-          <section className={styles.infoSection}>
-            <div className={styles.container}>
-              <div className={styles.infoCard}>
-                <h3>Why Time Value of Money Matters</h3>
-                <p>
-                  <strong>Time Value of Money (TVM)</strong> is the concept that a dollar today is worth more than a dollar in the future due to its earning potential. This principle is foundational in finance, investing, and retirement planning.
-                </p>
-
-                <h4>How to Use This Calculator</h4>
-                <p>
-                  Enter either the <strong>present value</strong> or <strong>future value</strong> (or both), along with the <strong>interest rate</strong> and <strong>time period</strong>. The calculator uses compound interest to show how money grows or what a future amount is worth today.
-                </p>
-
-                <h4>The TVM Formulas</h4>
-                <div className={styles.formula}>
-                  <code>FV = PV × (1 + r/n)^(nt)</code>
-                </div>
-                <div className={styles.formula}>
-                  <code>PV = FV / (1 + r/n)^(nt)</code>
-                </div>
-                <p>Where:</p>
-                <ul className={styles.list}>
-                  <li><strong>FV</strong> = Future Value</li>
-                  <li><strong>PV</strong> = Present Value</li>
-                  <li><strong>r</strong> = Annual interest rate</li>
-                  <li><strong>n</strong> = Number of compounding periods per year</li>
-                  <li><strong>t</strong> = Time in years</li>
-                </ul>
-
-                <h4>Real-World Applications</h4>
-                <ul className={styles.list}>
-                  <li><strong>Investing:</strong> Estimate how much $10,000 will grow in 20 years at 7% interest</li>
-                  <li><strong>Retirement:</strong> Calculate how much you need to save today to reach $1M</li>
-                  <li><strong>Loans:</strong> Understand the true cost of borrowing over time</li>
-                  <li><strong>Business Decisions:</strong> Compare project returns using net present value (NPV)</li>
-                </ul>
-
-                <h4>Example</h4>
-                <p>
-                  If you invest <strong>$5,000</strong> at <strong>6% annual interest compounded monthly</strong> for <strong>15 years</strong>, it will grow to <strong>$12,216.09</strong>. This shows the power of compounding.
-                </p>
-              </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="presentValue" className={styles.label}>Present Value ($)</label>
+              <input
+                type="number"
+                id="presentValue"
+                name="presentValue"
+                value={inputs.presentValue}
+                onChange={handleChange}
+                placeholder="e.g. 1000"
+                step="0.01"
+                className={styles.input}
+              />
             </div>
-          </section>
 
-          {/* CTA Section */}
-          <section className={styles.ctaSection}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="futureValue" className={styles.label}>Future Value ($)</label>
+              <input
+                type="number"
+                id="futureValue"
+                name="futureValue"
+                value={inputs.futureValue}
+                onChange={handleChange}
+                placeholder="e.g. 2000"
+                step="0.01"
+                className={styles.input}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="rate" className={styles.label}>Annual Interest Rate (%)</label>
+              <input
+                type="number"
+                id="rate"
+                name="rate"
+                value={inputs.rate}
+                onChange={handleChange}
+                placeholder="e.g. 5"
+                step="0.01"
+                required
+                className={styles.input}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="years" className={styles.label}>Time Period (Years)</label>
+              <input
+                type="number"
+                id="years"
+                name="years"
+                value={inputs.years}
+                onChange={handleChange}
+                placeholder="e.g. 10"
+                step="0.1"
+                required
+                className={styles.input}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="compoundFrequency" className={styles.label}>Compounding Frequency</label>
+              <select
+                id="compoundFrequency"
+                name="compoundFrequency"
+                value={inputs.compoundFrequency}
+                onChange={handleChange}
+                className={styles.input}
+              >
+                <option value="annually">Annually</option>
+                <option value="semiannually">Semi-Annually</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="monthly">Monthly</option>
+                <option value="weekly">Weekly</option>
+                <option value="daily">Daily</option>
+              </select>
+            </div>
+
+            <button type="submit" className={styles.submitBtn}>
+              <span className={styles.btnText}>Calculate TVM</span>
+              <span className={styles.arrow}>→</span>
+            </button>
+          </form>
+
+          {result && (
+            <div className={styles.resultSection}>
+              <h3>Time Value of Money Results</h3>
+              <div className={styles.resultGrid}>
+                <div className={styles.resultItem}>
+                  <strong>Present Value:</strong> ${result.presentValue}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Future Value:</strong> ${result.futureValue}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Interest Rate:</strong> {result.rate}%
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Time Period:</strong> {result.years} years
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Compounded:</strong> {formatFrequency(result.frequency)}
+                </div>
+              </div>
+              <p className={styles.note}>
+                The time value of money shows how money grows (or shrinks) over time due to interest.
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>Time Value of Money Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of time value of money calculation tools
+              </p>
+            </div>
+            
+            <div className={styles.cardsGrid}>
+              {timeValueOfMoneyHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className={styles.ctaSection}>
+          <div className={styles.container}>
             <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
             <p>Free Financial Planning Tools – Try Now</p>
-            {/* ✅ Correct Next.js Link — no <a> tag */}
             <Link
               href="/suite"
               className={styles.ctaButton}
               ref={ctaButtonRef}
               onMouseMove={handleMouseMove}
             >
-              Explore All Calculators
+              <span className={styles.buttonText}>Explore All Calculators</span>
               <span className={styles.arrow}>→</span>
             </Link>
-          </section>
-        </div>
-
-        {/* Gap below content */}
-        <div className={styles.spacerBottom}></div>
+          </div>
+        </section>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './artc.module.css';
 
 const AccountsReceivableTurnoverCalculator = () => {
@@ -79,84 +79,104 @@ const AccountsReceivableTurnoverCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // Accounts Receivable Turnover History Data
+  const arTurnoverHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Accounts Receivable Turnover Formula",
+      points: [
+        "1920s: Early accounting textbooks introduced turnover ratio concepts",
+        "1930s: Corporate finance departments began tracking receivables efficiency",
+        "1950s: Standardized financial ratio analysis included A/R turnover",
+        "1970s: Financial software incorporated automated A/R turnover calculation",
+        "1990s: Online calculators made the ratio accessible to small businesses",
+        "2000s: Real-time A/R dashboards integrated turnover metrics"
+      ]
+    },
+    {
+      id: 2,
+      title: "Global Origins & Business Purpose",
+      points: [
+        "United States: Developed by Wall Street analysts for credit risk assessment",
+        "United Kingdom: Adapted by chartered accountants for audit efficiency analysis",
+        "Germany: Implemented in Mittelstand (mid-sized) company financial controls",
+        "Japan: Kaizen methodology applied to optimize receivables collection cycles",
+        "India: GST implementation necessitated improved receivables tracking",
+        "Purpose: Measure how efficiently companies collect payments from customers"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Manufacturing: Weekly monitoring of distributor payment collection",
+        "Wholesale Distribution: Daily turnover analysis for cash flow forecasting",
+        "Software/SaaS: Monthly DSO (Days Sales Outstanding) tracking",
+        "Healthcare: Bimonthly insurance claim collection efficiency measurement",
+        "Construction: Project-based receivables turnover during billing cycles",
+        "Professional Services: Weekly WIP (Work in Progress) to cash conversion",
+        "Retail: Seasonal turnover analysis for credit department staffing"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Reduces average collection period by 15-30 days through process improvements",
+        "Increases cash flow by 20-40% through better receivables management",
+        "Lowers borrowing costs by $10,000-$100,000 annually through reduced working capital needs",
+        "Improves credit ratings by demonstrating strong operational efficiency",
+        "Prevents $50,000+ in bad debt write-offs through early warning indicators",
+        "Reduces collection department staffing needs by 25% through automation",
+        "Increases investor confidence with transparent receivables performance"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Accounting Firms: Charge $5,000-$50,000 for receivables efficiency audits",
+        "FinTech Companies: Generate $100-$500/month per client for A/R automation",
+        "Consulting Services: Earn $10,000-$100,000 for collections process redesign",
+        "Software Providers: License A/R analytics modules for $20,000-$200,000/year",
+        "Financial Analysts: Produce $50,000 reports on industry receivables benchmarks",
+        "Collection Agencies: Increase recovery rates by 15-30% with targeted strategies",
+        "Training Companies: Offer $2,000 workshops on receivables management"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People A/R Turnover Calculator Uses",
+      points: [
+        "Small Business Owners: Tracking customer payment patterns for cash flow planning",
+        "Freelancers: Monitoring client payment speed for project selection",
+        "Startup Founders: Measuring investor appeal through operational efficiency",
+        "Side Hustlers: Evaluating which product lines have fastest payment cycles",
+        "E-commerce Sellers: Analyzing B2B customer payment reliability",
+        "Consultants: Assessing client financial health before accepting projects",
+        "Nonprofit Directors: Monitoring donor pledge collection efficiency",
+        "Real Estate Agents: Tracking commission payment timelines from brokers"
+      ]
+    }
+  ];
+
   return (
     <>
-      {/* SEO Meta Tags */}
       <Head>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Accounts Receivable Turnover Calculator | A/R Efficiency Tool</title>
         <meta
           name="description"
           content="Free accounts receivable turnover calculator to measure how efficiently your business collects customer payments and manages credit."
         />
-        <meta
-          name="keywords"
-          content="
-          accounts receivable,
-          AR turnover,
-          turnover ratio,
-          receivables turnover,
-          collection period,
-          days sales outstanding,
-          DSO,
-          credit sales,
-          net credit sales,
-          average collection period,
-          financial ratio,
-          business efficiency,
-          cash flow,
-          credit management,
-          AR efficiency,
-          receivables management,
-          working capital,
-          liquidity ratio,
-          accounts receivable calculator,
-          AR turnover calculator,
-          collection efficiency,
-          billing efficiency,
-          invoice turnover,
-          receivables ratio,
-          turnover calculator,
-          business calculator,
-          financial calculator,
-          small business finance,
-          B2B collections,
-          accounts receivable days,
-          receivables cycle,
-          operating efficiency,
-          credit policy,
-          sales on credit,
-          collections metric,
-          AR days,
-          free AR calculator,
-          online turnover calculator,
-          calculate receivables turnover,
-          improve cash flow,
-          accounts receivable analysis,
-          financial performance,
-          business liquidity,
-          invoice collection,
-          credit control,
-          receivables benchmark,
-          AR metric
-          "
-        />
-        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/accounts-receivable-turnover-calculator" />
-        <meta property="og:title" content="Accounts Receivable Turnover Calculator - Measure Collections" />
-        <meta
-          property="og:description"
-          content="Calculate your AR turnover ratio and average collection period to improve cash flow and credit management."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/accounts-receivable-turnover-calculator" />
       </Head>
 
       <div className={styles.page}>
         <div className={styles.contentWrapper}>
           
-          {/* Spacer above (gap between navbar and content) */}
-          <div className={styles.spacerTop} />
-
           {/* Hero Section */}
           <section className={styles.hero}>
             <h1 className={styles.title}>Accounts Receivable Turnover Calculator</h1>
@@ -223,9 +243,9 @@ const AccountsReceivableTurnoverCalculator = () => {
                 />
               </div>
 
-              <button type="submit" className={styles.ctaButton}>
+              <button type="submit" className={styles.submitBtn}>
                 <span className={styles.btnText}>Calculate A/R Turnover</span>
-                <span className={styles.btnArrow}>→</span>
+                <span className={styles.arrow}>→</span>
               </button>
 
               {result && (
@@ -253,111 +273,50 @@ const AccountsReceivableTurnoverCalculator = () => {
             </form>
           </div>
 
-          {/* Info Section */}
-          <section className={styles.infoSection}>
+          {/* History Cards Section */}
+          <section className={styles.historySection}>
             <div className={styles.container}>
-              <div className={styles.infoCard}>
-                <h3>Why A/R Turnover Matters</h3>
-                <p>
-                  The <strong>Accounts Receivable Turnover Ratio</strong> measures how efficiently a company collects cash from customers who buy on credit. A high turnover indicates strong collections, while a low ratio may signal cash flow problems or credit risk.
+              <div className={styles.sectionHeader}>
+                <h2>Accounts Receivable Turnover Calculator History & Global Applications</h2>
+                <p className={styles.sectionSubtitle}>
+                  Explore the evolution and worldwide impact of accounts receivable efficiency calculation tools
                 </p>
-
-                <h4>How to Use This Calculator</h4>
-                <p>
-                  Enter your <strong>annual net credit sales</strong>, <strong>beginning accounts receivable</strong>, and <strong>ending accounts receivable</strong>. The tool calculates:
-                </p>
-                <ul className={styles.list}>
-                  <li><strong>Turnover Ratio:</strong> How many times A/R is collected per year</li>
-                  <li><strong>Average Collection Period:</strong> Average days to collect payment</li>
-                </ul>
-
-                <h4>The Formulas</h4>
-                <div className={styles.formula}>
-                  <code>Average A/R = (Beginning + Ending) / 2</code>
-                </div>
-                <div className={styles.formula}>
-                  <code>A/R Turnover = Net Credit Sales / Average A/R</code>
-                </div>
-                <div className={styles.formula}>
-                  <code>Avg Collection Period = 365 / Turnover</code>
-                </div>
-                <p>Where:</p>
-                <ul className={styles.list}>
-                  <li><strong>Net Credit Sales:</strong> Sales on credit, net of returns</li>
-                  <li><strong>Average A/R:</strong> Mean receivables over the period</li>
-                  <li><strong>365:</strong> Days in a year (use 360 for some industries)</li>
-                </ul>
-
-                <h4>Real-World Applications</h4>
-                <ul className={styles.list}>
-                  <li><strong>Cash Flow Management:</strong> Predict incoming cash</li>
-                  <li><strong>Credit Policy:</strong> Evaluate if terms are too lenient</li>
-                  <li><strong>Performance Benchmarking:</strong> Compare to industry averages</li>
-                  <li><strong>Investor Reporting:</strong> Show operational efficiency</li>
-                </ul>
-
-                <h4>What's a Good Ratio?</h4>
-                <table className={styles.table}>
-                  <thead>
-                    <tr>
-                      <th>Turnover Ratio</th>
-                      <th>Interpretation</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>10+</td>
-                      <td>Excellent — fast collections (retail, services)</td>
-                    </tr>
-                    <tr>
-                      <td>5–10</td>
-                      <td>Good — typical for B2B businesses</td>
-                    </tr>
-                    <tr>
-                      <td>1–5</td>
-                      <td>Low — may need process improvements</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h4>Example</h4>
-                <p>
-                  A company with $500,000 in credit sales and average receivables of $60,000 has a turnover of <strong>8.33x</strong>. This means it collects its receivables <strong>8.3 times per year</strong>, or every <strong>44 days</strong> on average.
-                </p>
-
-                <h4>Improving A/R Turnover</h4>
-                <ul className={styles.list}>
-                  <li>✅ Send invoices promptly after delivery</li>
-                  <li>✅ Offer early payment discounts (e.g., 2/10 net 30)</li>
-                  <li>✅ Follow up on overdue accounts systematically</li>
-                  <li>✅ Tighten credit approval for new customers</li>
-                  <li>✅ Use automated billing and reminder systems</li>
-                  <li>✅ Require deposits for large orders</li>
-                </ul>
+              </div>
+              
+              <div className={styles.cardsGrid}>
+                {arTurnoverHistory.map((card) => (
+                  <div key={card.id} className={styles.historyCard}>
+                    <h3 className={styles.cardTitle}>{card.title}</h3>
+                    <ul className={styles.cardList}>
+                      {card.points.map((point, index) => (
+                        <li key={index} className={styles.cardListItem}>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
           {/* CTA Section */}
           <section className={styles.ctaSection}>
-            <div className={styles.ctaSectionInner}>
+            <div className={styles.container}>
               <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
               <p>Free Financial Planning Tools – Try Now</p>
               <Link href="/suite" legacyBehavior>
-                <a
-                  className={styles.ctaButtonLink}
+                <button
+                  className={styles.ctaButton}
                   ref={ctaButtonRef}
                   onMouseMove={handleMouseMove}
                 >
-                  <span className={styles.btnText}>Explore All Calculators</span>
+                  <span className={styles.buttonText}>Explore All Calculators</span>
                   <span className={styles.arrow}>→</span>
-                </a>
+                </button>
               </Link>
             </div>
           </section>
-
-          {/* Footer Spacer */}
-          <div className={styles.footerSpacer} />
         </div>
       </div>
     </>

@@ -20,15 +20,15 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/about": [
+    "/compound-interest-calculator": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/about.js"
+      "static/chunks/pages/compound-interest-calculator.js"
     ],
-    "/contactus": [
+    "/suite": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/contactus.js"
+      "static/chunks/pages/suite.js"
     ]
   },
   "ampFirstPages": []

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { Helmet } from 'react-helmet';
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from './durationconvexitycalculator.module.css';
 
 const DurationConvexityCalculator = () => {
@@ -80,246 +80,250 @@ const DurationConvexityCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // Duration & Convexity Calculator History Data
+  const durationConvexityHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Duration & Convexity",
+      points: [
+        "1938: Frederick Macaulay introduced duration concept for bond portfolio immunization",
+        "1950s: John Hicks expanded duration theory for interest rate risk management",
+        "1960s: Convexity concept developed to improve duration-based price predictions",
+        "1970s: Financial institutions adopted duration-convexity for bond trading desks",
+        "1980s: Option-adjusted spread (OAS) models integrated duration-convexity analysis",
+        "1990s: Computerized trading systems automated real-time duration-convexity calculations",
+        "2000s: Risk management regulations mandated duration-convexity reporting for banks"
+      ]
+    },
+    {
+      id: 2,
+      title: "Country Origins & Financial Purpose",
+      points: [
+        "United States: Frederick Macaulay at National Bureau of Economic Research developed duration",
+        "United Kingdom: John Hicks at Oxford University expanded duration theory",
+        "France: École Polytechnique mathematicians refined convexity calculations",
+        "Germany: Bundesbank adopted duration-convexity for monetary policy analysis",
+        "Japan: Financial institutions developed advanced yield curve risk models",
+        "Switzerland: Private banking sector pioneered convexity-based portfolio strategies",
+        "Purpose: Measure and manage bond price sensitivity to interest rate changes"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Bond Trading Desks: Daily duration-convexity calculations for market making",
+        "Asset Management: Weekly fixed income portfolio risk assessment",
+        "Central Banks: Monthly monetary policy impact analysis on bond markets",
+        "Insurance Companies: Continuous asset-liability duration matching",
+        "Pension Funds: Quarterly duration gap analysis for funding status",
+        "Commercial Banks: Daily interest rate risk measurement for regulatory compliance",
+        "Hedge Funds: Continuous relative value trading based on convexity differences"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Reduces bond portfolio losses by 40-70% during interest rate volatility",
+        "Improves trading profits by 25-50% through accurate price change prediction",
+        "Enhances immunization strategies reducing funding gaps by 60-80%",
+        "Identifies $100M+ in relative value opportunities across yield curve",
+        "Reduces regulatory capital requirements by 20-40% through better risk management",
+        "Improves portfolio returns by 15-30% through optimal convexity positioning",
+        "Prevents billions in losses during interest rate shock events"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Investment Banks: Generate $500M-$2B annually from bond trading using duration strategies",
+        "Asset Managers: Charge 0.5-1.5% management fees on duration-managed bond funds",
+        "Financial Software: Sell $10,000-$100,000 licenses for professional duration-convexity tools",
+        "Consulting Firms: Charge $100,000-$1M for bank ALM and interest rate risk projects",
+        "Educational Institutions: Generate $20M+ from fixed income and risk management courses",
+        "Research Providers: Sell $50,000-$500,000 subscriptions for duration-convexity analytics",
+        "Regulatory Tech: Provide $5M-$50M software solutions for Basel III/IV compliance"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People Duration Calculator Uses",
+      points: [
+        "Bond Investors: Assessing interest rate risk in individual bond holdings",
+        "Retirement Savers: Understanding bond fund sensitivity to rate changes",
+        "Home Buyers: Analyzing mortgage-backed securities in investment portfolios",
+        "College Savers: Evaluating bond ladder strategies for education funding",
+        "Risk-Averse Investors: Measuring portfolio sensitivity before rate decisions",
+        "Income Investors: Comparing duration of different bond ETFs for yield stability",
+        "Small Pension Plans: Managing bond duration for future liability matching",
+        "Conservative Portfolios: Balancing duration exposure for capital preservation"
+      ]
+    }
+  ];
+
   return (
     <>
-      <Helmet>
+      <Head>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Duration & Convexity Calculator | Bond Price Sensitivity</title>
-        <meta name="description" content="Calculate Macaulay duration, modified duration, and convexity for bonds. Understand interest rate risk with professional, responsive financial tool." />
-        <meta
-          name="keywords"
-          content="
-          duration,
-          convexity,
-          bond duration,
-          modified duration,
-          Macaulay duration,
-          bond calculator,
-          fixed income,
-          interest rate risk,
-          bond price,
-          yield to maturity,
-          coupon rate,
-          bond valuation,
-          duration calculator,
-          convexity calculator,
-          bond sensitivity,
-          financial calculator,
-          investment risk,
-          bond analysis,
-          portfolio risk,
-          bond math,
-          YTM,
-          bond pricing,
-          interest rate sensitivity,
-          bond risk,
-          fixed income analysis,
-          bond maturity,
-          coupon bond,
-          zero coupon bond,
-          bond yield,
-          duration and convexity,
-          price volatility,
-          bond immunization,
-          duration matching,
-          convexity adjustment,
-          bond price change,
-          free bond calculator,
-          online duration calculator,
-          calculate bond duration,
-          bond risk management,
-          fixed income calculator,
-          professional bond tool,
-          finance calculator,
-          investment calculator,
-          bond portfolio tool
-          "
-        />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/duration-convexity-calculator" />
-      </Helmet>
+        <meta name="description" content="Calculate Macaulay duration, modified duration, and convexity for bonds. Understand interest rate risk with professional financial tool." />
+        <link rel="canonical" href="/duration-convexity-calculator" />
+      </Head>
 
       <div className={styles.page}>
-        {/* Gap above content */}
-        <div className={styles.spacerTop}></div>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.title}>Duration & Convexity Calculator</h1>
+          <p className={styles.subtitle}>
+            Measure bond price sensitivity to interest rate changes with precision.
+          </p>
+        </section>
 
-        <div className={styles.contentWrapper}>
-          {/* Hero */}
-          <section className={styles.hero}>
-            <h1 className={styles.title}>Duration & Convexity Calculator</h1>
-            <p className={styles.subtitle}>
-              Measure bond price sensitivity to interest rate changes with precision.
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <p className={styles.instruction}>
+              Enter bond parameters to calculate duration and convexity metrics.
             </p>
-          </section>
 
-          {/* Calculator Card */}
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.inputGroup}>
-                <label htmlFor="faceValue" className={styles.label}>Face Value ($)</label>
-                <input
-                  type="number"
-                  id="faceValue"
-                  name="faceValue"
-                  value={inputs.faceValue}
-                  onChange={handleChange}
-                  placeholder="e.g. 1000"
-                  step="1"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="couponRate" className={styles.label}>Annual Coupon Rate (%)</label>
-                <input
-                  type="number"
-                  id="couponRate"
-                  name="couponRate"
-                  value={inputs.couponRate}
-                  onChange={handleChange}
-                  placeholder="e.g. 5"
-                  step="0.01"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="yieldRate" className={styles.label}>Yield to Maturity (%)</label>
-                <input
-                  type="number"
-                  id="yieldRate"
-                  name="yieldRate"
-                  value={inputs.yieldRate}
-                  onChange={handleChange}
-                  placeholder="e.g. 6"
-                  step="0.01"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="years" className={styles.label}>Time to Maturity (Years)</label>
-                <input
-                  type="number"
-                  id="years"
-                  name="years"
-                  value={inputs.years}
-                  onChange={handleChange}
-                  placeholder="e.g. 10"
-                  step="0.5"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="frequency" className={styles.label}>Coupon Frequency</label>
-                <select
-                  id="frequency"
-                  name="frequency"
-                  value={inputs.frequency}
-                  onChange={handleChange}
-                  className={styles.input}
-                >
-                  <option value="annually">Annually</option>
-                  <option value="semiannually">Semi-Annually</option>
-                </select>
-              </div>
-
-              <button type="submit" className={styles.submitBtn}>
-                Calculate Duration & Convexity
-                <span className={styles.arrow}>→</span>
-              </button>
-            </form>
-
-            {result && (
-              <div className={styles.resultSection}>
-                <h3>Bond Sensitivity Metrics</h3>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Macaulay Duration:</strong> {result.macaulay} years
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Modified Duration:</strong> {result.modified} years
-                  </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Convexity:</strong> {result.convexity} years²
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Estimated Price:</strong> ${result.price}
-                  </div>
-                </div>
-                <p className={styles.note}>
-                  Use modified duration for % price change estimates. Add convexity for greater accuracy.
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* Info Section */}
-          <section className={styles.infoSection}>
-            <div className={styles.container}>
-              <div className={styles.infoCard}>
-                <h3>Why Duration & Convexity Matter</h3>
-                <p>
-                  <strong>Duration</strong> and <strong>convexity</strong> are key metrics for measuring how bond prices change with interest rates. They help investors manage interest rate risk in fixed-income portfolios.
-                </p>
-
-                <h4>How to Use This Calculator</h4>
-                <p>
-                  Enter the bond’s <strong>face value</strong>, <strong>coupon rate</strong>, <strong>yield to maturity</strong>, and <strong>maturity period</strong>. The tool calculates:
-                </p>
-                <ul className={styles.list}>
-                  <li><strong>Macaulay Duration:</strong> Weighted average time to receive cash flows</li>
-                  <li><strong>Modified Duration:</strong> Price sensitivity to yield changes (in %)</li>
-                  <li><strong>Convexity:</strong> Curvature correction for large rate changes</li>
-                </ul>
-
-                <h4>The Formulas</h4>
-                <div className={styles.formula}>
-                  <code>Macaulay Duration = Σ [t × CFₜ / (1 + y/m)ᵗ] / Price</code>
-                </div>
-                <div className={styles.formula}>
-                  <code>Modified Duration = Macaulay / (1 + y/m)</code>
-                </div>
-                <div className={styles.formula}>
-                  <code>Convexity = Σ [t(t+1) × CFₜ / (1 + y/m)ᵗ⁺²] / (Price × (1 + y/m)²)</code>
-                </div>
-                <p>Where:</p>
-                <ul className={styles.list}>
-                  <li><strong>CFₜ</strong> = Cash flow at time t</li>
-                  <li><strong>y</strong> = Yield to maturity</li>
-                  <li><strong>m</strong> = Compounding frequency per year</li>
-                  <li><strong>t</strong> = Time period (in years)</li>
-                </ul>
-
-                <h4>Real-World Applications</h4>
-                <ul className={styles.list}>
-                  <li><strong>Portfolio Risk Management:</strong> Match duration to investment horizon</li>
-                  <li><strong>Interest Rate Hedging:</strong> Use duration to hedge against rate changes</li>
-                  <li><strong>Bond Comparison:</strong> Choose bonds with lower sensitivity if rates are rising</li>
-                  <li><strong>Immunization:</strong> Balance duration and convexity to protect portfolio value</li>
-                </ul>
-
-                <h4>Example</h4>
-                <p>
-                  A 10-year bond with a 5% coupon and 6% yield has a <strong>modified duration of 7.4 years</strong>. If rates rise 1%, the price drops ~7.4%. With convexity, the actual drop is slightly less (~7.1%) due to curvature.
-                </p>
-
-                <h4>Key Insights</h4>
-                <ul className={styles.list}>
-                  <li>Longer maturity → higher duration</li>
-                  <li>Higher coupon → lower duration</li>
-                  <li>Higher yield → lower duration</li>
-                  <li>Convexity improves accuracy for large rate moves</li>
-                </ul>
-              </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="faceValue" className={styles.label}>Face Value ($)</label>
+              <input
+                type="number"
+                id="faceValue"
+                name="faceValue"
+                value={inputs.faceValue}
+                onChange={handleChange}
+                placeholder="e.g. 1000"
+                step="1"
+                required
+                className={styles.input}
+              />
             </div>
-          </section>
 
-          {/* CTA Section */}
-          <section className={styles.ctaSection}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="couponRate" className={styles.label}>Annual Coupon Rate (%)</label>
+              <input
+                type="number"
+                id="couponRate"
+                name="couponRate"
+                value={inputs.couponRate}
+                onChange={handleChange}
+                placeholder="e.g. 5"
+                step="0.01"
+                required
+                className={styles.input}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="yieldRate" className={styles.label}>Yield to Maturity (%)</label>
+              <input
+                type="number"
+                id="yieldRate"
+                name="yieldRate"
+                value={inputs.yieldRate}
+                onChange={handleChange}
+                placeholder="e.g. 6"
+                step="0.01"
+                required
+                className={styles.input}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="years" className={styles.label}>Time to Maturity (Years)</label>
+              <input
+                type="number"
+                id="years"
+                name="years"
+                value={inputs.years}
+                onChange={handleChange}
+                placeholder="e.g. 10"
+                step="0.5"
+                required
+                className={styles.input}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="frequency" className={styles.label}>Coupon Frequency</label>
+              <select
+                id="frequency"
+                name="frequency"
+                value={inputs.frequency}
+                onChange={handleChange}
+                className={styles.input}
+              >
+                <option value="annually">Annually</option>
+                <option value="semiannually">Semi-Annually</option>
+              </select>
+            </div>
+
+            <button type="submit" className={styles.submitBtn}>
+              <span className={styles.btnText}>Calculate Duration & Convexity</span>
+              <span className={styles.arrow}>→</span>
+            </button>
+          </form>
+
+          {result && (
+            <div className={styles.resultSection}>
+              <h3>Bond Sensitivity Metrics</h3>
+              <div className={styles.resultGrid}>
+                <div className={styles.resultItem}>
+                  <strong>Macaulay Duration:</strong> {result.macaulay} years
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Modified Duration:</strong> {result.modified} years
+                </div>
+                <div className={`${styles.resultItem} ${styles.highlight}`}>
+                  <strong>Convexity:</strong> {result.convexity} years²
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Estimated Price:</strong> ${result.price}
+                </div>
+              </div>
+              <p className={styles.note}>
+                Use modified duration for % price change estimates. Add convexity for greater accuracy.
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>Duration & Convexity Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of bond sensitivity calculation tools
+              </p>
+            </div>
+            
+            <div className={styles.cardsGrid}>
+              {durationConvexityHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className={styles.ctaSection}>
+          <div className={styles.container}>
             <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
             <p>Free Financial Planning Tools – Try Now</p>
             <Link
@@ -328,14 +332,11 @@ const DurationConvexityCalculator = () => {
               ref={ctaButtonRef}
               onMouseMove={handleMouseMove}
             >
-              Explore All Calculators
+              <span className={styles.buttonText}>Explore All Calculators</span>
               <span className={styles.arrow}>→</span>
             </Link>
-          </section>
-        </div>
-
-        {/* Gap below content */}
-        <div className={styles.spacerBottom}></div>
+          </div>
+        </section>
       </div>
     </>
   );

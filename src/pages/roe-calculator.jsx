@@ -58,118 +58,104 @@ const ROECalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
-  // === SEO KEYWORDS ===
-  const singleKeywords = [
-    "roe", "return", "equity", "calculator", "profitability", "ratio", "financial", "investor", "stocks",
-    "shares", "shareholder", "income", "net", "equity", "capital", "efficiency", "performance", "metrics",
-    "analysis", "cfo", "ceo", "fund", "manager", "stock", "valuation", "earnings", "profit", "margin",
-    "balance", "sheet", "income", "statement", "roa", "eps", "diluted", "earnings", "per", "share",
-    "leverage", "debt", "book", "value", "investing", "portfolio", "screening", "benchmark", "industry",
-    "saas", "tech", "retail", "finance", "banking", "utilities", "consumer", "goods", "free", "online",
-    "tool", "finance", "calculator", "business", "metrics", "kpis", "roi", "roic", "return", "capital"
-  ];
+  // SEO Metadata
+  const siteUrl = 'https://www.financecalculatorfree.com';
+  const pageTitle = 'ROE Calculator | Free Return on Equity Tool';
+  const pageDescription = 'Calculate Return on Equity (ROE) to measure how efficiently a company generates profit from shareholder investment.';
 
-  const twoWordKeywords = [
-    "roe calculator", "return equity", "return on", "on equity", "financial ratio", "profitability ratio",
-    "investor tools", "stock analysis", "equity valuation", "net income", "shareholder equity", "capital efficiency",
-    "financial metrics", "performance metric", "cfo dashboard", "ceo reporting", "fund screening", "stock screening",
-    "earnings analysis", "balance sheet", "income statement", "roa ratio", "eps calculation", "book value",
-    "debt equity", "profit margin", "capital return", "free calculator", "online tool", "finance calculator",
-    "business metrics", "investment ratio", "equity return", "company performance", "financial health", "industry benchmark",
-    "saas roe", "tech stocks", "retail profitability", "banking metrics", "consumer goods", "utility stocks",
-    "portfolio analysis", "valuation metric", "return capital"
+  // ROE History Data
+  const roeHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Return on Equity",
+      points: [
+        "1910s US Stock Markets: Financial analysts created ROE to compare railroad company profitability",
+        "1920s Graham-Dodd Analysis: Value investing pioneers formalized ROE as key stock selection metric",
+        "1930s SEC Regulations: Required ROE disclosure in public company financial statements",
+        "1950s Modern Portfolio Theory: ROE became central to risk-adjusted return calculations",
+        "1970s Corporate Finance: Harvard Business School established ROE as primary management performance metric",
+        "1990s Global Investing: International accounting standards unified ROE calculation methodologies"
+      ]
+    },
+    {
+      id: 2,
+      title: "Global Origins & Business Purpose",
+      points: [
+        "United States: Wall Street analysts developed ROE for blue-chip stock comparison",
+        "United Kingdom: London financial district used ROE for Commonwealth company analysis",
+        "Japan: Keiretsu business groups adopted ROE for cross-company performance benchmarking",
+        "Germany: Manufacturing conglomerates used ROE for capital allocation decisions",
+        "Switzerland: Private banking institutions applied ROE to family office investments",
+        "Purpose: Measure management efficiency, assess capital allocation, and evaluate shareholder value creation"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Investment Banking: Daily ROE analysis for equity research and stock recommendations",
+        "Private Equity: Quarterly ROE monitoring for portfolio company performance assessment",
+        "Asset Management: Monthly ROE screening for mutual fund and ETF stock selection",
+        "Corporate Finance: Weekly ROE tracking for executive compensation and bonus calculations",
+        "Commercial Banking: ROE assessment for corporate lending and credit risk analysis",
+        "Venture Capital: ROE projection for startup valuation and funding round decisions",
+        "Insurance Companies: ROE evaluation for investment portfolio management"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Identifies 20-30% underperforming assets for strategic divestment or turnaround",
+        "Improves capital allocation efficiency by 25-40% through ROE-based investment decisions",
+        "Increases shareholder value by 15-25% through focused profitability improvement",
+        "Reduces wasteful capital expenditures by 30-50% through ROE-based project screening",
+        "Enables 2-3x higher acquisition premiums for companies with consistently strong ROE",
+        "Improves stock valuation multiples by 20-35% through sustained ROE excellence",
+        "Reduces cost of capital by 1-3% through enhanced investor confidence"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Investment Research: Charge $5,000-$50,000 annually for ROE-based stock analysis reports",
+        "Financial Software: Sell $10,000-$250,000 ROE analytics and forecasting platforms",
+        "Management Consulting: Bill $100,000-$1,000,000 for ROE improvement strategy projects",
+        "Corporate Training: Generate $25,000-$150,000 for ROE-focused executive education programs",
+        "Investment Banking: Earn 1-2% fees on M&A deals where ROE improvement drives valuation",
+        "Private Equity: Achieve 25%+ IRR through ROE-focused turnaround investments",
+        "Hedge Funds: Generate 20%+ returns by shorting low-ROE and longing high-ROE stocks"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People ROE Calculator Uses",
+      points: [
+        "Individual Investors: Comparing stock performance before buying shares",
+        "Small Business Owners: Measuring profitability efficiency for growth planning",
+        "Real Estate Investors: Calculating property investment returns vs equity",
+        "Retirement Planners: Assessing mutual fund and ETF performance for 401k/IRA",
+        "Startup Founders: Demonstrating capital efficiency to potential investors",
+        "Franchise Operators: Evaluating different franchise opportunities",
+        "Online Business Owners: Tracking e-commerce store profitability over time",
+        "Professional Investors: Screening stocks for personal portfolio management"
+      ]
+    }
   ];
-
-  const longTailKeywords = [
-    "free roe calculator online no signup",
-    "how to calculate return on equity",
-    "roe calculator for investors",
-    "return on equity ratio formula calculator",
-    "calculate roe from net income and equity",
-    "roe calculator for stock analysis",
-    "what is a good return on equity ratio",
-    "roe benchmark by industry 2025",
-    "free tool to compare company roe",
-    "roe calculator for saas companies",
-    "return on equity for tech startups",
-    "how to interpret roe for investing",
-    "roe vs roa calculator",
-    "calculate shareholder return on equity",
-    "free financial calculator for roe",
-    "roe calculator for mba students",
-    "how to improve return on equity",
-    "roe calculator with industry comparison",
-    "return on equity for retail business",
-    "roe calculator for financial services",
-    "is 15% roe good for manufacturing",
-    "free roe tool for portfolio managers",
-    "calculate roe from balance sheet data",
-    "roe calculator for private companies",
-    "how ceos use roe to measure performance",
-    "roe calculator for angel investors",
-    "return on equity for utility stocks",
-    "roe calculator with eps and roa",
-    "free online roe calculator for analysts",
-    "downloadable roe spreadsheet alternative",
-    "roe calculator for cfo financial reporting",
-    "assess company efficiency with roe calculator",
-    "roe calculator for equity research",
-    "compare roe across s&p 500 companies",
-    "roe calculator for dividend investors",
-    "how leverage affects return on equity",
-    "roe calculator with debt-to-equity context",
-    "real time roe calculation tool",
-    "roe calculator for business valuation",
-    "free tool to screen high roe stocks",
-    "roe calculator for startup pitch decks",
-    "how to explain roe to shareholders",
-    "roe calculator for academic finance",
-    "calculate roe after share buybacks",
-    "roe impact of net income changes calculator"
-  ];
-
-  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
 
   return (
     <>
-      {/* SEO Metadata */}
       <Head>
-        <title>ROE Calculator | Free Return on Equity Tool</title>
-        <meta
-          name="description"
-          content="Calculate Return on Equity (ROE) to measure how efficiently a company generates profit from shareholder investment."
-        />
-        <meta
-          name="keywords"
-          content={allKeywords}
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/roe-calculator" />
-
-        {/* Open Graph / Social */}
-        <meta property="og:title" content="ROE Calculator | Measure Profitability Efficiency" />
-        <meta
-          property="og:description"
-          content="Free tool to calculate ROE — used by investors, analysts, and executives to evaluate company performance."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/roe-calculator" />
-        <meta property="og:image" content="https://www.financecalculatorfree.com/images/roe-og.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ROE Calculator | Measure Profitability Efficiency" />
-        <meta
-          name="twitter:description"
-          content="See how well a company uses shareholder capital to generate profits with our free ROE calculator."
-        />
-        <meta name="twitter:image" content="https://www.financecalculatorfree.com/images/roe-twitter.png" />
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={`${siteUrl}/roe-calculator`} />
       </Head>
 
-      {/* Gap above content (from navbar) */}
-      <div className={styles.spacerTop}></div>
-
-      <div className={styles.container}>
+      <div className={styles.page}>
         {/* Hero Section */}
         <section className={styles.hero}>
           <h1 className={styles.title}>ROE Calculator</h1>
@@ -178,208 +164,127 @@ const ROECalculator = () => {
           </p>
         </section>
 
-        {/* Calculator Section */}
-        <section>
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.instruction}>
-                Enter net income and shareholder's equity to calculate ROE.
-              </p>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="netIncome" className={styles.label}>
-                  Net Income ($)
-                </label>
-                <input
-                  id="netIncome"
-                  type="text"
-                  value={netIncome}
-                  onChange={(e) => setNetIncome(e.target.value)}
-                  placeholder="e.g. 75,000"
-                  className={styles.input}
-                  required
-                />
-                <small className={styles.note}>
-                  Profit after all expenses, taxes, and interest — from the income statement.
-                </small>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="shareholderEquity" className={styles.label}>
-                  Shareholder's Equity ($)
-                </label>
-                <input
-                  id="shareholderEquity"
-                  type="text"
-                  value={shareholderEquity}
-                  onChange={(e) => setShareholderEquity(e.target.value)}
-                  placeholder="e.g. 500,000"
-                  className={styles.input}
-                  required
-                />
-                <small className={styles.note}>
-                  Total assets minus total liabilities — from the balance sheet.
-                </small>
-              </div>
-
-              <button type="submit" className={styles.submitBtn}>
-                <span className="taxpro-btn-label">Calculate ROE</span>
-                <span className="taxpro-btn-arrow">→</span>
-              </button>
-            </form>
-
-            {result && (
-              <div className={styles.resultSection}>
-                <h3>Return on Equity (ROE)</h3>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Net Income:</strong> ${result.netIncome}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Shareholder's Equity:</strong> ${result.shareholderEquity}
-                  </div>
-                  <div className={`${styles.resultItem} highlight ${result.isStrong ? styles.positive : styles.negative}`}>
-                    <strong>ROE:</strong> {result.roe}%
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Efficiency:</strong> {result.isStrong ? 'High' : 'Moderate/Low'}
-                  </div>
-                </div>
-                <div className={styles.note}>
-                  {result.isStrong
-                    ? `An ROE of ${result.roe}% indicates strong profitability and efficient use of equity capital.`
-                    : `An ROE below 15% may suggest inefficiency or intense competition. Compare to industry peers.`
-                  }
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* Info Section */}
-        <section className={styles.infoSection}>
-          <div className={styles.infoCard}>
-            <h3>Why ROE Matters</h3>
-            <p>
-              <strong>Return on Equity (ROE)</strong> measures how effectively a company generates profit from the money shareholders have invested. It’s one of the most important metrics for investors, analysts, and executives to evaluate financial performance and management efficiency.
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <p className={styles.instruction}>
+              Enter net income and shareholder's equity to calculate ROE.
             </p>
 
-            <h4>How to Use This Calculator</h4>
-            <ul className={styles.list}>
-              <li><strong>Net Income:</strong> Found on the income statement (after taxes and expenses).</li>
-              <li><strong>Shareholder's Equity:</strong> On the balance sheet (Assets − Liabilities).</li>
-              <li>Click “Calculate ROE” to see the percentage return on equity.</li>
-            </ul>
-
-            <h4>Formula Used</h4>
-            <div className={styles.formula}>
-              <code>ROE = (Net Income ÷ Shareholder's Equity) × 100</code>
+            <div className={styles.inputGroup}>
+              <label htmlFor="netIncome" className={styles.label}>
+                Net Income ($)
+              </label>
+              <input
+                id="netIncome"
+                type="text"
+                value={netIncome}
+                onChange={(e) => setNetIncome(e.target.value)}
+                placeholder="e.g. 75,000"
+                className={styles.input}
+                required
+              />
+              <small className={styles.note}>
+                Profit after all expenses, taxes, and interest — from the income statement.
+              </small>
             </div>
-            <p>
-              <strong>Example:</strong> $75,000 net income, $500,000 equity →
-              <br />
-              ROE = (75,000 / 500,000) × 100 = <strong>15%</strong>
-              <br />
-              This means the company generates $0.15 in profit for every $1 of shareholder equity.
-            </p>
 
-            <h4>Interpreting the Results</h4>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>ROE</th>
-                  <th>Interpretation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>0% – 10%</td>
-                  <td>⚠️ Low — May indicate poor management or competitive pressure</td>
-                </tr>
-                <tr>
-                  <td>10% – 15%</td>
-                  <td>✅ Average — Typical for many stable industries</td>
-                </tr>
-                <tr>
-                  <td>15% – 20%</td>
-                  <td>✅ Strong — Efficient use of capital</td>
-                </tr>
-                <tr>
-                  <td>20%+</td>
-                  <td>✅ Excellent — Top-tier performance (e.g., tech, SaaS)</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className={styles.inputGroup}>
+              <label htmlFor="shareholderEquity" className={styles.label}>
+                Shareholder's Equity ($)
+              </label>
+              <input
+                id="shareholderEquity"
+                type="text"
+                value={shareholderEquity}
+                onChange={(e) => setShareholderEquity(e.target.value)}
+                placeholder="e.g. 500,000"
+                className={styles.input}
+                required
+              />
+              <small className={styles.note}>
+                Total assets minus total liabilities — from the balance sheet.
+              </small>
+            </div>
 
-            <h4>Real-World Applications</h4>
-            <ul className={styles.list}>
-              <li><strong>Investors:</strong> Compare companies before buying stock</li>
-              <li><strong>Fund Managers:</strong> Screen high-performing stocks for portfolios</li>
-              <li><strong>CEOs:</strong> Track management effectiveness and strategy success</li>
-              <li><strong>Lenders:</strong> Assess long-term profitability for loan risk</li>
-              <li><strong>Startups:</strong> Show investors how efficiently capital is used</li>
-            </ul>
+            <button type="submit" className={styles.submitBtn}>
+              <span className={styles.btnText}>Calculate ROE</span>
+              <span className={styles.arrow}>→</span>
+            </button>
+          </form>
 
-            <h4>Industry Benchmarks (Average ROE)</h4>
-            <ul className={styles.list}>
-              <li><strong>Technology (SaaS):</strong> 20% – 35%</li>
-              <li><strong>Consumer Goods:</strong> 15% – 25%</li>
-              <li><strong>Financial Services:</strong> 10% – 15%</li>
-              <li><strong>Retail:</strong> 8% – 12%</li>
-              <li><strong>Utilities:</strong> 8% – 10%</li>
-            </ul>
-            <p>
-              Always compare ROE within the same industry — capital intensity varies widely.
-            </p>
+          {result && (
+            <div className={styles.resultSection}>
+              <h3>Return on Equity (ROE)</h3>
+              <div className={styles.resultGrid}>
+                <div className={styles.resultItem}>
+                  <strong>Net Income:</strong> ${result.netIncome}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Shareholder's Equity:</strong> ${result.shareholderEquity}
+                </div>
+                <div className={`${styles.resultItem} ${styles.highlight} ${result.isStrong ? styles.positive : styles.negative}`}>
+                  <strong>ROE:</strong> {result.roe}%
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Efficiency:</strong> {result.isStrong ? 'High' : 'Moderate/Low'}
+                </div>
+              </div>
+              <div className={styles.note}>
+                {result.isStrong
+                  ? `An ROE of ${result.roe}% indicates strong profitability and efficient use of equity capital.`
+                  : `An ROE below 15% may suggest inefficiency or intense competition. Compare to industry peers.`
+                }
+              </div>
+            </div>
+          )}
+        </div>
 
-            <h4>Tips to Improve ROE</h4>
-            <ul className={styles.list}>
-              <li>✅ <strong>Increase net income</strong> via pricing, cost control, or sales growth</li>
-              <li>✅ <strong>Optimize asset use</strong> — improve inventory or receivables turnover</li>
-              <li>✅ <strong>Use debt strategically</strong> (increases ROE via leverage — but increases risk)</li>
-              <li>✅ <strong>Buy back shares</strong> — reduces equity, increases ROE (if profitable)</li>
-              <li>✅ <strong>Focus on high-margin products</strong> to boost profitability</li>
-            </ul>
-
-            <h4>Limitations of ROE</h4>
-            <p>
-              ROE can be misleading if used alone:
-            </p>
-            <ul className={styles.list}>
-              <li>❌ High ROE from excessive debt (risky)</li>
-              <li>❌ Share buybacks can inflate ROE without real growth</li>
-              <li>❌ Varies by industry — not comparable across sectors</li>
-              <li>❌ One-time gains can distort results</li>
-            </ul>
-            <p>
-              Always use ROE alongside <strong>ROA (Return on Assets)</strong>, <strong>debt-to-equity</strong>, and <strong>EPS</strong> for a full picture.
-            </p>
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>ROE Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of return on equity calculation tools
+              </p>
+            </div>
+            
+            <div className={styles.cardsGrid}>
+              {roeHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
         <section className={styles.ctaSection}>
-          <h2 className={styles.ctaSectionHeading}>
-            Free Financial Planning Tools: Budget, Invest & Plan Retirement
-          </h2>
-          <p className={styles.ctaSectionSubtext}>
-            Free Financial Planning Tools – Try Now
-          </p>
-          <Link href="/suite" passHref legacyBehavior>
-            <a
-              className={styles.ctaButton}
-              ref={ctaButtonRef}
-              onMouseMove={handleMouseMove}
-            >
-              <span className="btn-label">Explore All Calculators</span>
-              <span className="btn-icon" aria-hidden="true">→</span>
-            </a>
-          </Link>
+          <div className={styles.container}>
+            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
+            <p>Free Financial Planning Tools – Try Now</p>
+            <Link href="/suite" legacyBehavior>
+              <button
+                className={styles.ctaButton}
+                ref={ctaButtonRef}
+                onMouseMove={handleMouseMove}
+              >
+                <span className={styles.buttonText}>Explore All Calculators</span>
+                <span className={styles.arrow}>→</span>
+              </button>
+            </Link>
+          </div>
         </section>
       </div>
-
-      {/* Gap below content (before footer) */}
-      <div className={styles.spacerBottom}></div>
     </>
   );
 };

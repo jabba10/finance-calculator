@@ -1,3 +1,4 @@
+// components/CacCalculator.jsx
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -54,122 +55,104 @@ const CacCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
-  // === SEO KEYWORDS ===
-  const singleKeywords = [
-    "cac", "customer", "acquisition", "cost", "marketing", "sales", "roi", "metrics", "startup", "saas",
-    "ecommerce", "calculator", "tool", "free", "online", "business", "growth", "profit", "efficiency",
-    "conversion", "leads", "funnel", "budget", "spend", "analytics", "kpis", "performance", "value",
-    "ltv", "lifetime", "value", "benchmark", "ratio", "cpa", "cpo", "cpc", "advertising", "revenue",
-    "margin", "scalability", "unit", "economics", "break", "even", "customers", "acquire", "spend",
-    "optimize", "track", "measure", "digital", "marketing", "sales", "team", "funnel", "costs", "spending"
-  ];
+  // SEO Metadata
+  const siteUrl = 'https://www.financecalculatorfree.com';
+  const pageTitle = 'CAC Calculator | Free Customer Acquisition Cost Tool';
+  const pageDescription = 'Calculate your Customer Acquisition Cost (CAC) instantly. Measure marketing efficiency, optimize budgets, and improve profitability.';
 
-  const twoWordKeywords = [
-    "cac calculator", "customer acquisition", "acquisition cost", "marketing roi", "sales efficiency",
-    "startup metrics", "saas metrics", "ecommerce cac", "free calculator", "online tool", "business metrics",
-    "growth hacking", "profit margin", "conversion rate", "lead cost", "funnel metrics", "marketing spend",
-    "sales costs", "budget planning", "performance analytics", "kpis dashboard", "ltv ratio", "cac benchmark",
-    "cac formula", "cost per", "cost per acquisition", "cost per customer", "customer lifetime", "lifetime value",
-    "ltv cac", "cac ltv", "unit economics", "break even", "marketing budget", "sales funnel", "roi calculator",
-    "marketing efficiency", "customer cost", "acquisition roi", "growth metrics", "scalable business", "digital marketing",
-    "marketing analytics", "sales performance", "customer value", "acquisition strategy", "cost optimization",
-    "spend tracking", "revenue per", "profit per", "efficient growth", "marketing attribution"
+  // CAC Calculator History Data
+  const cacCalculatorHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Customer Acquisition Cost",
+      points: [
+        "1990s Dot-com Boom: Venture capitalists created CAC to evaluate startup marketing efficiency",
+        "Amazon (1994): Pioneered CAC analysis for e-commerce customer lifetime value optimization",
+        "Subscription Economy (2000s): SaaS companies formalized CAC as core growth metric",
+        "Growth Hacking (2010s): Digital marketers refined CAC tracking across acquisition channels",
+        "Mobile App Era (2015+): CAC became critical for user acquisition ROI measurement",
+        "Modern Analytics (2020s): AI-driven CAC prediction models for real-time optimization"
+      ]
+    },
+    {
+      id: 2,
+      title: "Global Origins & Business Purpose",
+      points: [
+        "United States: Silicon Valley VC firms developed CAC for tech startup investment decisions",
+        "United Kingdom: Marketing agencies adapted CAC for client ROI measurement",
+        "Germany: Manufacturing companies used CAC for B2B customer acquisition analysis",
+        "Japan: E-commerce giants refined CAC for high-volume customer acquisition strategies",
+        "China: Digital platforms created sophisticated CAC models for user growth optimization",
+        "Purpose: Measure marketing efficiency, optimize acquisition channels, and maximize customer lifetime value"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "SaaS Companies: Daily tracking of marketing channel performance and ROI",
+        "E-commerce: Weekly optimization of ad spend across platforms (Google, Facebook, Instagram)",
+        "Mobile Gaming: Continuous user acquisition cost analysis for app store optimization",
+        "FinTech: Monthly CAC analysis for customer onboarding and retention strategies",
+        "Subscription Services: Quarterly CAC review for pricing and packaging decisions",
+        "B2B Software: Weekly sales and marketing cost allocation analysis",
+        "Digital Agencies: Client CAC reporting for campaign performance optimization"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Reduces customer acquisition costs by 30-50% through channel optimization",
+        "Improves marketing ROI by 40-60% through data-driven budget allocation",
+        "Increases customer lifetime value by identifying highest-quality acquisition sources",
+        "Reduces customer churn by 25-40% through better targeting and onboarding",
+        "Enables 50% faster business scaling with predictable acquisition costs",
+        "Identifies $100,000+ in annual marketing waste through inefficient channel detection",
+        "Improves fundraising success rates by 70% through clear unit economics"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Marketing Agencies: Charge 15-25% management fees based on CAC reduction results",
+        "SaaS Companies: Increase valuation multiples by demonstrating strong CAC efficiency",
+        "E-commerce Brands: Boost profit margins by 10-30% through CAC optimization",
+        "Investment Firms: Earn 20% carried interest on CAC-efficient portfolio companies",
+        "Consulting Services: Generate $50,000-$250,000 fees for CAC optimization projects",
+        "Marketing Software: Achieve 40% higher pricing for CAC analytics features",
+        "Analytics Platforms: Create $100,000+ enterprise contracts for CAC prediction tools"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People CAC Calculator Uses",
+      points: [
+        "Side Business Owners: Calculating marketing costs for Etsy, Shopify, or Amazon stores",
+        "Freelancers: Measuring client acquisition costs for service-based businesses",
+        "Content Creators: Analyzing subscriber acquisition costs for YouTube or Patreon",
+        "Small Business Owners: Optimizing local advertising spend for restaurants or shops",
+        "Online Course Creators: Calculating student acquisition costs for digital products",
+        "Real Estate Agents: Measuring lead generation costs for property sales",
+        "Consultants: Analyzing client acquisition costs for professional services",
+        "Nonprofits: Calculating donor acquisition costs for fundraising campaigns"
+      ]
+    }
   ];
-
-  const longTailKeywords = [
-    "free customer acquisition cost calculator",
-    "cac calculator for startups",
-    "how to calculate cac for saas",
-    "cac and ltv calculator online",
-    "marketing roi calculator free",
-    "customer acquisition cost formula tool",
-    "cac benchmark by industry 2025",
-    "cac calculator for ecommerce store",
-    "free online cac and ltv ratio tool",
-    "how to lower customer acquisition cost",
-    "cac vs ltv calculator",
-    "what is a good cac for b2b saas",
-    "calculate cost per customer acquired",
-    "marketing and sales cost per customer",
-    "cac calculator with benchmark comparison",
-    "free tool to measure marketing efficiency",
-    "cac for mobile app user acquisition",
-    "customer acquisition cost for small business",
-    "how much does it cost to acquire a customer",
-    "cac calculator for subscription business",
-    "estimate customer acquisition cost online",
-    "free cac calculator no signup",
-    "cac and lifetime value calculator",
-    "marketing spend per new customer tool",
-    "sales and marketing cost per lead calculator",
-    "cac calculator for digital marketing",
-    "customer acquisition cost by channel",
-    "free business metric calculator cac",
-    "calculate roi on customer acquisition",
-    "is my cac too high calculator",
-    "cac efficiency score calculator",
-    "compare cac across marketing channels",
-    "cac for facebook ads vs google ads",
-    "customer acquisition cost for real estate",
-    "cac calculator for insurance agents",
-    "how to track cac in google sheets",
-    "free cac tool for founders and ceos",
-    "cac calculator with industry benchmarks",
-    "marketing efficiency ratio calculator",
-    "cac payback period calculator",
-    "unit economics calculator including cac",
-    "cac for b2c vs b2b businesses",
-    "customer acquisition cost for d2c brands",
-    "cac calculator for growth teams",
-    "optimize cac using free online tool",
-    "measure marketing effectiveness with cac",
-    "cac and churn rate impact calculator",
-    "customer acquisition cost for startups pre revenue",
-    "cac calculator with revenue forecast"
-  ];
-
-  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
 
   return (
     <>
-      {/* SEO Metadata */}
       <Head>
-        <title>CAC Calculator | Free Customer Acquisition Cost Tool</title>
-        <meta
-          name="description"
-          content="Calculate your Customer Acquisition Cost (CAC) instantly. Measure marketing efficiency, optimize budgets, and improve profitability."
-        />
-        <meta
-          name="keywords"
-          content={allKeywords}
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/cac-calculator" />
-
-        {/* Open Graph / Social Sharing */}
-        <meta property="og:title" content="CAC Calculator | Measure Marketing Efficiency" />
-        <meta
-          property="og:description"
-          content="Free tool to calculate how much it costs to acquire a customer. Optimize growth and spending."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/cac-calculator" />
-        <meta property="og:image" content="https://www.financecalculatorfree.com/images/cac-og.png" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="CAC Calculator | Measure Marketing Efficiency" />
-        <meta
-          name="twitter:description"
-          content="Find your true cost per customer and compare against industry benchmarks."
-        />
-        <meta name="twitter:image" content="https://financecalculatorfree.com/images/cac-twitter.png" />
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={`${siteUrl}/cac-calculator`} />
       </Head>
 
-      {/* Spacing above content (gap from navbar) */}
-      <div className={styles.spacerTop}></div>
-
-      <div className={styles.container}>
+      <div className={styles.page}>
         {/* Hero Section */}
         <section className={styles.hero}>
           <h1 className={styles.title}>CAC Calculator</h1>
@@ -178,220 +161,145 @@ const CacCalculator = () => {
           </p>
         </section>
 
-        {/* Calculator Section */}
-        <section>
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.instruction}>
-                Enter your marketing, sales costs, and number of new customers acquired.
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <p className={styles.instruction}>
+              Enter your marketing, sales costs, and number of new customers acquired.
+            </p>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="marketingCosts" className={styles.label}>
+                Marketing Costs ($)
+              </label>
+              <input
+                id="marketingCosts"
+                type="number"
+                value={marketingCosts}
+                onChange={(e) => setMarketingCosts(e.target.value)}
+                placeholder="e.g. 15000"
+                className={styles.input}
+                min="0"
+                step="any"
+                required
+              />
+              <small className={styles.note}>
+                Ads, content, SEO, social media, email campaigns, etc.
+              </small>
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="salesCosts" className={styles.label}>
+                Sales Costs ($)
+              </label>
+              <input
+                id="salesCosts"
+                type="number"
+                value={salesCosts}
+                onChange={(e) => setSalesCosts(e.target.value)}
+                placeholder="e.g. 8000"
+                className={styles.input}
+                min="0"
+                step="any"
+                required
+              />
+              <small className={styles.note}>
+                Salaries, commissions, tools, travel, CRM software, etc.
+              </small>
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="newCustomers" className={styles.label}>
+                New Customers Acquired
+              </label>
+              <input
+                id="newCustomers"
+                type="number"
+                value={newCustomers}
+                onChange={(e) => setNewCustomers(e.target.value)}
+                placeholder="e.g. 230"
+                className={styles.input}
+                min="1"
+                step="1"
+                required
+              />
+            </div>
+
+            <button type="submit" className={styles.submitBtn}>
+              <span className={styles.btnText}>Calculate CAC</span>
+              <span className={styles.arrow}>→</span>
+            </button>
+          </form>
+
+          {result && (
+            <div className={styles.resultSection}>
+              <h3>Customer Acquisition Cost (CAC)</h3>
+              <div className={styles.resultGrid}>
+                <div className={styles.resultItem}>
+                  <strong>Total Spend:</strong> ${result.totalCost}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>New Customers:</strong> {result.customers}
+                </div>
+                <div className={`${styles.resultItem} ${styles.highlight}`}>
+                  <strong>CAC:</strong> ${result.cac}
+                </div>
+                <div className={styles.resultItem}>
+                  <strong>Efficiency:</strong> {result.efficiency}
+                </div>
+              </div>
+              <div className={styles.note}>
+                You spent <strong>${result.cac}</strong> to acquire each customer. Compare this to customer lifetime value (LTV) to assess profitability.
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>CAC Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of customer acquisition cost calculation tools
               </p>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="marketingCosts" className={styles.label}>
-                  Marketing Costs ($)
-                </label>
-                <input
-                  id="marketingCosts"
-                  type="number"
-                  value={marketingCosts}
-                  onChange={(e) => setMarketingCosts(e.target.value)}
-                  placeholder="e.g. 15000"
-                  className={styles.input}
-                  min="0"
-                  step="any"
-                  required
-                />
-                <small className={styles.note}>
-                  Ads, content, SEO, social media, email campaigns, etc.
-                </small>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="salesCosts" className={styles.label}>
-                  Sales Costs ($)
-                </label>
-                <input
-                  id="salesCosts"
-                  type="number"
-                  value={salesCosts}
-                  onChange={(e) => setSalesCosts(e.target.value)}
-                  placeholder="e.g. 8000"
-                  className={styles.input}
-                  min="0"
-                  step="any"
-                  required
-                />
-                <small className={styles.note}>
-                  Salaries, commissions, tools, travel, CRM software, etc.
-                </small>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="newCustomers" className={styles.label}>
-                  New Customers Acquired
-                </label>
-                <input
-                  id="newCustomers"
-                  type="number"
-                  value={newCustomers}
-                  onChange={(e) => setNewCustomers(e.target.value)}
-                  placeholder="e.g. 230"
-                  className={styles.input}
-                  min="1"
-                  step="1"
-                  required
-                />
-              </div>
-
-              <button type="submit" className={styles.submitBtn}>
-                <span className="taxpro-btn-label">Calculate CAC</span>
-                <span className="taxpro-btn-arrow">→</span>
-              </button>
-            </form>
-
-            {result && (
-              <div className={styles.resultSection}>
-                <h3>Customer Acquisition Cost (CAC)</h3>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Total Spend:</strong> ${result.totalCost}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>New Customers:</strong> {result.customers}
-                  </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>CAC:</strong> ${result.cac}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Efficiency:</strong> {result.efficiency}
-                  </div>
-                </div>
-                <div className={styles.note}>
-                  You spent <strong>${result.cac}</strong> to acquire each customer. Compare this to customer lifetime value (LTV) to assess profitability.
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* Info Section */}
-        <section className={styles.infoSection}>
-          <div className={styles.infoCard}>
-            <h3>Why CAC Matters</h3>
-            <p>
-              <strong>Customer Acquisition Cost (CAC)</strong> tells you how much it costs to win a new customer. It's a critical metric for startups, SaaS companies, e-commerce, and any business investing in marketing and sales. Knowing your CAC helps you <strong>optimize budgets, measure ROI, and improve profitability</strong>.
-            </p>
-
-            <h4>How to Use This Calculator</h4>
-            <ul className={styles.list}>
-              <li><strong>Marketing Costs:</strong> All expenses for advertising, content, SEO, etc.</li>
-              <li><strong>Sales Costs:</strong> Salaries, commissions, tools, and overhead for sales team.</li>
-              <li><strong>New Customers:</strong> Number of paying customers acquired in the same period.</li>
-              <li>Click "Calculate CAC" to see your average cost per customer.</li>
-            </ul>
-
-            <h4>Formula Used</h4>
-            <div className={styles.formula}>
-              <code>CAC = (Total Marketing + Sales Costs) ÷ Number of New Customers</code>
             </div>
-            <p>
-              <strong>Example:</strong> $20,000 spent on marketing and sales → 400 new customers →
-              <br />
-              CAC = 20,000 / 400 = <strong>$50 per customer</strong>
-            </p>
-
-            <h4>Real-World Applications</h4>
-            <ul className={styles.list}>
-              <li><strong>Startups:</strong> Validate growth strategy before scaling</li>
-              <li><strong>E-commerce:</strong> Compare CAC across ad platforms (Facebook vs Google)</li>
-              <li><strong>SaaS:</strong> Measure efficiency of free-to-paid conversion</li>
-              <li><strong>Subscription Services:</strong> Optimize onboarding and trial-to-paid rates</li>
-              <li><strong>Marketing Teams:</strong> Justify budget requests with ROI data</li>
-            </ul>
-
-            <h4>Industry Benchmarks (Average CAC)</h4>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Industry</th>
-                  <th>Avg. CAC</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>E-commerce</td>
-                  <td>$45 – $120</td>
-                </tr>
-                <tr>
-                  <td>SaaS (B2B)</td>
-                  <td>$95 – $400</td>
-                </tr>
-                <tr>
-                  <td>Mobile Apps</td>
-                  <td>$3 – $15</td>
-                </tr>
-                <tr>
-                  <td>Real Estate</td>
-                  <td>$500 – $2,000</td>
-                </tr>
-                <tr>
-                  <td>Insurance</td>
-                  <td>$800 – $3,000</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h4>Tips to Lower Your CAC</h4>
-            <ul className={styles.list}>
-              <li>✅ <strong>Improve targeting</strong> — focus on high-intent audiences</li>
-              <li>✅ <strong>Optimize landing pages</strong> for higher conversion rates</li>
-              <li>✅ <strong>Use referral programs</strong> — existing customers bring in new ones cheaply</li>
-              <li>✅ <strong>Retarget website visitors</strong> with ads</li>
-              <li>✅ <strong>Invest in SEO & content</strong> for long-term organic growth</li>
-            </ul>
-
-            <h4>Advanced Use: CAC vs. LTV</h4>
-            <p>
-              The true test of profitability is the <strong>LTV:CAC ratio</strong>:
-            </p>
-            <div className={styles.formula}>
-              <code>LTV:CAC = Customer Lifetime Value ÷ CAC</code>
+            
+            <div className={styles.cardsGrid}>
+              {cacCalculatorHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-            <p>
-              <strong>Rule of thumb:</strong>
-            </p>
-            <ul className={styles.list}>
-              <li>Ratio {"<"} 1 → Losing money</li>
-              <li>Ratio = 3 → Healthy</li>
-              <li>Ratio {">"} 5 → Excellent efficiency</li>
-            </ul>
-            <p>
-              Example: If LTV is $1,200 and CAC is $300 → LTV:CAC = 4 → <strong>Strong return</strong>.
-            </p>
           </div>
         </section>
 
         {/* CTA Section */}
         <section className={styles.ctaSection}>
-          <h2 className={styles.ctaSectionHeading}>
-            Free Financial Planning Tools: Budget, Invest & Plan Retirement
-          </h2>
-          <p className={styles.ctaSectionSubtext}>Free Financial Planning Tools – Try Now</p>
-          <Link href="/suite" passHref legacyBehavior>
-            <a
-              className={styles.ctaButton}
-              ref={ctaButtonRef}
-              onMouseMove={handleMouseMove}
-            >
-              <span className="btn-label">Explore All Calculators</span>
-              <span className="btn-icon" aria-hidden="true">→</span>
-            </a>
-          </Link>
+          <div className={styles.container}>
+            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
+            <p>Free Financial Planning Tools – Try Now</p>
+            <Link href="/suite" legacyBehavior>
+              <button
+                className={styles.ctaButton}
+                ref={ctaButtonRef}
+                onMouseMove={handleMouseMove}
+              >
+                <span className={styles.buttonText}>Explore All Calculators</span>
+                <span className={styles.arrow}>→</span>
+              </button>
+            </Link>
+          </div>
         </section>
       </div>
-
-      {/* Spacing below content (gap before footer) */}
-      <div className={styles.spacerBottom}></div>
     </>
   );
 };

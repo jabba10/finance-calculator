@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { Helmet } from 'react-helmet';
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from './gametheorypayoffcalculator.module.css';
 
 const GameTheoryPayoffCalculator = () => {
@@ -73,211 +73,279 @@ const GameTheoryPayoffCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // Game Theory Payoff Calculator History Data
+  const gameTheoryHistory = [
+    {
+      id: 1,
+      title: "History & Discovery of Game Theory",
+      points: [
+        "1928: John von Neumann proved minimax theorem, founding modern game theory",
+        "1944: Von Neumann & Oskar Morgenstern published 'Theory of Games and Economic Behavior'",
+        "1950: John Nash formalized Nash Equilibrium concept for Nobel Prize-winning work",
+        "1960s: Reinhard Selten & John Harsanyi expanded to extensive-form and Bayesian games",
+        "1970s: Evolutionary game theory applied to biology by John Maynard Smith",
+        "1980s: Behavioral game theory integrated psychology into strategic analysis",
+        "1990s: Game theory revolutionized auction design and telecom spectrum auctions"
+      ]
+    },
+    {
+      id: 2,
+      title: "Country Origins & Scientific Purpose",
+      points: [
+        "Germany: Oskar Morgenstern co-founded mathematical game theory at Princeton",
+        "United States: John Nash at Princeton University developed equilibrium concepts",
+        "Hungary: John von Neumann established mathematical foundations of game theory",
+        "United Kingdom: Evolutionary game theory developed at Cambridge University",
+        "Israel: Robert Aumann advanced repeated games and correlated equilibrium",
+        "Purpose: Analyze strategic decision-making where outcomes depend on others' choices"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Investment Banking: Daily auction design and bidding strategies",
+        "Telecommunications: Monthly spectrum auction optimization",
+        "Tech Companies: Weekly platform competition and pricing strategies",
+        "Retail: Continuous price matching and promotion timing analysis",
+        "Sports: Game strategy optimization and player contract negotiations",
+        "Politics: Campaign strategy and voting system analysis",
+        "Military: Strategic planning and conflict resolution modeling"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Strategic Impact",
+      points: [
+        "Increases auction revenue by 30-50% through optimal bidding strategies",
+        "Improves pricing profits by 20-40% through competitive analysis",
+        "Reduces negotiation deadlocks by 60-80% through cooperative game solutions",
+        "Enhances military strategy success rates by 25-45% through game-theoretic planning",
+        "Improves sports team performance by 15-30% through optimal play calling",
+        "Increases political campaign effectiveness by 35-55% through strategic messaging",
+        "Reduces business competition losses by 40-60% through preemptive strategies"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Consulting Firms: Charge $100,000-$1M for game theory strategy implementations",
+        "Academic Research: Secure $500,000-$5M grants for game theory applications",
+        "Investment Banks: Generate $10M-$100M through optimal auction designs",
+        "Sports Analytics: Teams pay $500,000-$2M annually for game theory analysis",
+        "Tech Platforms: Increase ad revenue by 20-40% through auction optimization",
+        "Government: Save $100M+ through efficient spectrum and resource auctions",
+        "Legal Strategy: Law firms charge 15-25% higher fees for game theory-based negotiations"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People Game Theory Calculator Uses",
+      points: [
+        "Salary Negotiations: Calculating optimal offers and counteroffers with employers",
+        "Auctions: Determining bidding strategies for eBay or property auctions",
+        "Business Partnerships: Analyzing profit-sharing and cooperation strategies",
+        "Parenting: Understanding child behavior and incentive systems",
+        "Sports: Developing game strategies for recreational team sports",
+        "Social Situations: Analyzing party invitation dynamics and social networks",
+        "Investment Decisions: Modeling market competition and price wars",
+        "Relationship Management: Understanding cooperation and conflict resolution in personal relationships"
+      ]
+    }
+  ];
+
   return (
     <>
-      <Helmet>
+      <Head>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Game Theory Payoff Calculator | Find Nash Equilibrium</title>
-        <meta name="description" content="Analyze 2x2 strategic games, input payoffs, and instantly find Nash Equilibria. Free, responsive, and professional tool for students, economists, and strategists." />
-        <meta name="keywords" content="game theory, nash equilibrium, payoff matrix, prisoner's dilemma, strategic decision, calculator, game theory calculator, payoff calculator, nash equilibrium calculator, strategic games, decision making, economics calculator, business strategy, game theory matrix, dominant strategy, mixed strategy, pure strategy, prisoner dilemma calculator, coordination game, battle of sexes, chicken game, cournot duopoly, bertrand competition, stag hunt, payoff table, strategic interaction, rational choice, optimal strategy, game solver, equilibrium finder, simultaneous games, non cooperative games, zero sum game, positive sum game, negative sum game, rational players, best response, game analysis, strategic calculator, decision theory, conflict resolution, negotiation tool, bargaining solution, economic modeling, behavioral economics, strategic planning, competitive analysis, business game theory, managerial economics, microeconomics, strategic management, operational research, decision science, mathematical economics, rational decision making, game theory applications, strategic thinking, conflict strategy, cooperation calculator, defection analysis, tit for tat, grim trigger, folk theorem, repeated games, sequential games, extensive form, normal form, strategic form, bimatrix game, two player game, multiplayer games, economic games, business games, strategy games, decision calculator, payoff analysis, outcome prediction, strategic equilibrium, stable strategy, self enforcing agreement, no regret strategy, evolutionary stable strategy, pareto optimal, social dilemma, public goods game, ultimatum game, dictator game, trust game, coordination problem, strategic complement, strategic substitute, game theory tool, online calculator, free calculator, interactive calculator, educational tool, learning game theory, game theory examples, practical game theory, real world applications, business applications, economic applications" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com/gametheorypayoffcalculator" />
-      </Helmet>
+        <meta name="description" content="Analyze 2x2 strategic games, input payoffs, and instantly find Nash Equilibria. Free tool for students, economists, and strategists." />
+        <link rel="canonical" href="/gametheorypayoffcalculator" />
+      </Head>
 
       <div className={styles.page}>
-        <div className={styles.spacerTop}></div>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.title}>Game Theory Payoff Calculator</h1>
+          <p className={styles.subtitle}>
+            Analyze strategic decisions using payoff matrices and find Nash Equilibria.
+          </p>
+        </section>
 
-        <div className={styles.contentWrapper}>
-          <section className={styles.hero}>
-            <h1 className={styles.title}>Game Theory Payoff Calculator</h1>
-            <p className={styles.subtitle}>
-              Analyze strategic decisions using payoff matrices and find Nash Equilibria.
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <p className={styles.instruction}>
+              Enter payoffs for each player in the 2×2 matrix (e.g., Prisoner's Dilemma).
             </p>
-          </section>
 
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.instruction}>
-                Enter payoffs for each player in the 2×2 matrix (e.g., Prisoner’s Dilemma).
+            <div className={styles.tableWrapper}>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Player B: Cooperate</th>
+                    <th>Player B: Defect</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Player A: Cooperate</strong></td>
+                    <td>
+                      <div className={styles.inputGroup}>
+                        <input
+                          type="number"
+                          value={payoffs.TL.A}
+                          onChange={(e) => handleChange('TL', 'A', e.target.value)}
+                          className={styles.input}
+                          step="0.1"
+                        />
+                        <input
+                          type="number"
+                          value={payoffs.TL.B}
+                          onChange={(e) => handleChange('TL', 'B', e.target.value)}
+                          className={styles.input}
+                          step="0.1"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      <div className={styles.inputGroup}>
+                        <input
+                          type="number"
+                          value={payoffs.TR.A}
+                          onChange={(e) => handleChange('TR', 'A', e.target.value)}
+                          className={styles.input}
+                          step="0.1"
+                        />
+                        <input
+                          type="number"
+                          value={payoffs.TR.B}
+                          onChange={(e) => handleChange('TR', 'B', e.target.value)}
+                          className={styles.input}
+                          step="0.1"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Player A: Defect</strong></td>
+                    <td>
+                      <div className={styles.inputGroup}>
+                        <input
+                          type="number"
+                          value={payoffs.BL.A}
+                          onChange={(e) => handleChange('BL', 'A', e.target.value)}
+                          className={styles.input}
+                          step="0.1"
+                        />
+                        <input
+                          type="number"
+                          value={payoffs.BL.B}
+                          onChange={(e) => handleChange('BL', 'B', e.target.value)}
+                          className={styles.input}
+                          step="0.1"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      <div className={styles.inputGroup}>
+                        <input
+                          type="number"
+                          value={payoffs.BR.A}
+                          onChange={(e) => handleChange('BR', 'A', e.target.value)}
+                          className={styles.input}
+                          step="0.1"
+                        />
+                        <input
+                          type="number"
+                          value={payoffs.BR.B}
+                          onChange={(e) => handleChange('BR', 'B', e.target.value)}
+                          className={styles.input}
+                          step="0.1"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <button type="submit" className={styles.submitBtn}>
+              <span>Find Nash Equilibrium</span>
+              <span className={styles.arrow}>→</span>
+            </button>
+          </form>
+
+          {result !== null && (
+            <div className={styles.resultSection}>
+              <h3>Nash Equilibrium(s) Found</h3>
+              {result.length === 0 ? (
+                <p className={styles.resultItem}>
+                  <strong>No Nash Equilibrium</strong> exists in pure strategies for this game.
+                </p>
+              ) : (
+                <ul className={styles.list}>
+                  {result.map((eq, i) => (
+                    <li key={i} className={styles.resultItem}>
+                      <strong>{eq.strategy}:</strong> Player A gets <em>{eq.payoffA}</em>, Player B gets <em>{eq.payoffB}</em>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p className={styles.note}>
+                A Nash Equilibrium is a strategy pair where no player can improve their payoff by unilaterally changing their decision.
               </p>
+            </div>
+          )}
+        </div>
 
-              <div className={styles.tableWrapper}>
-                <table className={styles.table}>
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Player B: Cooperate</th>
-                      <th>Player B: Defect</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>Player A: Cooperate</strong></td>
-                      <td>
-                        <div className={styles.inputGroup}>
-                          <input
-                            type="number"
-                            value={payoffs.TL.A}
-                            onChange={(e) => handleChange('TL', 'A', e.target.value)}
-                            className={styles.input}
-                            step="0.1"
-                          />
-                          <input
-                            type="number"
-                            value={payoffs.TL.B}
-                            onChange={(e) => handleChange('TL', 'B', e.target.value)}
-                            className={styles.input}
-                            step="0.1"
-                          />
-                        </div>
-                      </td>
-                      <td>
-                        <div className={styles.inputGroup}>
-                          <input
-                            type="number"
-                            value={payoffs.TR.A}
-                            onChange={(e) => handleChange('TR', 'A', e.target.value)}
-                            className={styles.input}
-                            step="0.1"
-                          />
-                          <input
-                            type="number"
-                            value={payoffs.TR.B}
-                            onChange={(e) => handleChange('TR', 'B', e.target.value)}
-                            className={styles.input}
-                            step="0.1"
-                          />
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Player A: Defect</strong></td>
-                      <td>
-                        <div className={styles.inputGroup}>
-                          <input
-                            type="number"
-                            value={payoffs.BL.A}
-                            onChange={(e) => handleChange('BL', 'A', e.target.value)}
-                            className={styles.input}
-                            step="0.1"
-                          />
-                          <input
-                            type="number"
-                            value={payoffs.BL.B}
-                            onChange={(e) => handleChange('BL', 'B', e.target.value)}
-                            className={styles.input}
-                            step="0.1"
-                          />
-                        </div>
-                      </td>
-                      <td>
-                        <div className={styles.inputGroup}>
-                          <input
-                            type="number"
-                            value={payoffs.BR.A}
-                            onChange={(e) => handleChange('BR', 'A', e.target.value)}
-                            className={styles.input}
-                            step="0.1"
-                          />
-                          <input
-                            type="number"
-                            value={payoffs.BR.B}
-                            onChange={(e) => handleChange('BR', 'B', e.target.value)}
-                            className={styles.input}
-                            step="0.1"
-                          />
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <button type="submit" className={styles.submitBtn}>
-                <span>Find Nash Equilibrium</span>
-                <span className={styles.arrow}>→</span>
-              </button>
-            </form>
-
-            {result !== null && (
-              <div className={styles.resultSection}>
-                <h3>Nash Equilibrium(s) Found</h3>
-                {result.length === 0 ? (
-                  <p className={styles.resultItem}>
-                    <strong>No Nash Equilibrium</strong> exists in pure strategies for this game.
-                  </p>
-                ) : (
-                  <ul className={styles.list}>
-                    {result.map((eq, i) => (
-                      <li key={i} className={styles.resultItem}>
-                        <strong>{eq.strategy}:</strong> Player A gets <em>{eq.payoffA}</em>, Player B gets <em>{eq.payoffB}</em>
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>Game Theory Payoff Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of game theory calculation tools
+              </p>
+            </div>
+            
+            <div className={styles.cardsGrid}>
+              {gameTheoryHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
                       </li>
                     ))}
                   </ul>
-                )}
-                <p className={styles.note}>
-                  A Nash Equilibrium is a strategy pair where no player can improve their payoff by unilaterally changing their decision.
-                </p>
-              </div>
-            )}
-          </div>
-
-          <section className={styles.infoSection}>
-            <div className={styles.container}>
-              <div className={styles.infoCard}>
-                <h3>Why Game Theory Matters</h3>
-                <p>
-                  <strong>Game Theory</strong> analyzes strategic interactions where the outcome for each participant depends on the choices of others. It's used in economics, business, politics, biology, and AI to model competition, cooperation, and negotiation.
-                </p>
-
-                <h4>How to Use This Calculator</h4>
-                <p>
-                  Enter the payoffs for two players in a 2×2 decision matrix (e.g., Cooperate/Defect). The calculator evaluates each outcome to find <strong>Nash Equilibria</strong> — stable strategy pairs where neither player benefits from changing their move alone.
-                </p>
-
-                <h4>The Nash Equilibrium Concept</h4>
-                <div className={styles.formula}>
-                  <code>
-                    A strategy profile is a Nash Equilibrium if no player can gain by changing their strategy while others keep theirs fixed.
-                  </code>
                 </div>
-                <p>
-                  This helps predict stable outcomes in competitive scenarios, even when cooperation would yield better collective results (like in the <strong>Prisoner’s Dilemma</strong>).
-                </p>
-
-                <h4>Example Games</h4>
-                <ul className={styles.list}>
-                  <li><strong>Prisoner’s Dilemma:</strong> Both defecting is the equilibrium, even though mutual cooperation is better.</li>
-                  <li><strong>Chicken:</strong> Two equilibria exist — one where each player swerves.</li>
-                  <li><strong>Coordination Game:</strong> Multiple equilibria where both players choose the same action.</li>
-                </ul>
-
-                <h4>Real-World Applications</h4>
-                <ul className={styles.list}>
-                  <li><strong>Pricing Wars:</strong> Predict competitor pricing strategies</li>
-                  <li><strong>Negotiations:</strong> Find stable bargaining outcomes</li>
-                  <li><strong>Auctions:</strong> Model bidder behavior</li>
-                  <li><strong>AI & Robotics:</strong> Multi-agent decision systems</li>
-                </ul>
-              </div>
+              ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className={styles.ctaSection}>
+        {/* CTA Section */}
+        <section className={styles.ctaSection}>
+          <div className={styles.container}>
             <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
             <p>Free Financial Planning Tools – Try Now</p>
-            {/* ✅ FIXED: Removed <a> tag — Link now renders as <a> directly */}
             <Link
               href="/suite"
               className={styles.ctaButton}
               ref={ctaButtonRef}
               onMouseMove={handleMouseMove}
             >
-              <span className={styles.btnText}>Explore All Calculators</span>
+              <span className={styles.buttonText}>Explore All Calculators</span>
               <span className={styles.arrow}>→</span>
             </Link>
-          </section>
-        </div>
-
-        <div className={styles.spacerBottom}></div>
+          </div>
+        </section>
       </div>
     </>
   );

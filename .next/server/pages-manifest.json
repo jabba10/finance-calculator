@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/about": "pages/about.js",
-  "/contactus": "pages/contactus.js",
-  "/": "pages/index.js"
+  "/suite": "pages/suite.js",
+  "/mortgage-calculator": "pages/mortgage-calculator.js",
+  "/compound-interest-calculator": "pages/compound-interest-calculator.js"
 }

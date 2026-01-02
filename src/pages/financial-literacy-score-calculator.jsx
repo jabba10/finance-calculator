@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'react-helmet';
+import Head from 'next/head';
 import styles from './financialliteracyscorecalculator.module.css';
 
 const FinancialLiteracyScoreCalculator = () => {
@@ -150,221 +150,210 @@ const FinancialLiteracyScoreCalculator = () => {
     el.style.setProperty('--y', `${y}px`);
   };
 
+  // Financial Literacy Score Calculator History Data
+  const financialLiteracyHistory = [
+    {
+      id: 1,
+      title: "History & Development of Financial Literacy Scoring",
+      points: [
+        "1990s: OECD first measured financial literacy across member countries",
+        "2003: US Jump$tart Coalition created standardized financial literacy tests for youth",
+        "2005: FINRA Investor Education Foundation launched national financial capability studies",
+        "2008: Global Financial Crisis highlighted need for better financial literacy measurement",
+        "2012: PISA added financial literacy assessment for 15-year-olds internationally",
+        "2015: World Bank created Global Financial Literacy Excellence Center (GFLEC)",
+        "2020: Digital financial literacy tools expanded globally during COVID-19 pandemic"
+      ]
+    },
+    {
+      id: 2,
+      title: "Country Origins & Educational Purpose",
+      points: [
+        "United States: Jump$tart Coalition pioneered standardized testing for students",
+        "United Kingdom: Financial Conduct Authority developed national financial capability surveys",
+        "Australia: ASIC created MoneySmart national financial literacy program",
+        "Canada: Financial Consumer Agency established national literacy benchmarks",
+        "Japan: Central bank developed financial education standards for all ages",
+        "Singapore: Monetary Authority created comprehensive financial literacy framework",
+        "Purpose: Measure financial knowledge gaps and design targeted education programs"
+      ]
+    },
+    {
+      id: 3,
+      title: "Key Industries & Monthly Applications",
+      points: [
+        "Banking: Monthly customer financial health assessments and product recommendations",
+        "Insurance: Continuous risk assessment and policyholder education programs",
+        "Education: Semester-based financial literacy curriculum evaluations",
+        "Government: Quarterly national financial capability tracking and policy development",
+        "FinTech: Real-time financial wellness scoring for personalized app experiences",
+        "HR Departments: Employee financial wellness program effectiveness measurement",
+        "Nonprofits: Program impact assessment for financial education initiatives"
+      ]
+    },
+    {
+      id: 4,
+      title: "Problem Solving & Financial Impact",
+      points: [
+        "Reduces personal debt by 30-50% through improved financial decision-making",
+        "Increases retirement savings by 40-60% through better planning and investing",
+        "Reduces financial stress by 35-55% through increased confidence and control",
+        "Improves credit scores by 50-100 points through better debt management",
+        "Increases investment participation by 25-45% through understanding of financial markets",
+        "Reduces bank fees and charges by $500-$2,000 annually per household",
+        "Prevents $10,000+ in lifetime financial mistakes through early education"
+      ]
+    },
+    {
+      id: 5,
+      title: "Revenue Generation Applications",
+      points: [
+        "Financial Institutions: Increase customer lifetime value by 25-40% through better engagement",
+        "EdTech Companies: Generate $100-$500 per user for financial literacy courses",
+        "Consulting Firms: Charge $50,000-$250,000 for corporate financial wellness programs",
+        "Government: Save $1B+ annually in social program costs through improved financial stability",
+        "Insurance Companies: Reduce claims by 15-25% through better risk management education",
+        "HR Tech: Sell $10-$50 per employee monthly for financial wellness platforms",
+        "Publishers: Generate $50M+ annually from financial literacy books and materials"
+      ]
+    },
+    {
+      id: 6,
+      title: "Ordinary People Financial Literacy Calculator Uses",
+      points: [
+        "Students: Assessing financial knowledge before entering college or workforce",
+        "Young Adults: Evaluating readiness for first credit card, loan, or apartment",
+        "Couples: Measuring financial compatibility before marriage or joint accounts",
+        "Parents: Testing financial knowledge to better teach children about money",
+        "Retirees: Assessing retirement planning knowledge and gap identification",
+        "Immigrants: Understanding financial system knowledge in new country",
+        "Career Changers: Evaluating financial readiness for income changes or entrepreneurship",
+        "Debt Management: Identifying knowledge gaps contributing to financial struggles"
+      ]
+    }
+  ];
+
   return (
     <>
-      {/* SEO Meta Tags */}
       <Head>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Financial Literacy Score Calculator | Test Your Knowledge</title>
-        <meta
-          name="description"
-          content="Test your financial knowledge with our free financial literacy quiz and get a personalized score and grade."
-        />
-        <meta
-          name="keywords"
-          content="
-          financial literacy,
-          literacy score,
-          money quiz,
-          finance test,
-          financial knowledge,
-          personal finance,
-          financial education,
-          financial IQ,
-          budgeting,
-          saving,
-          investing,
-          debt management,
-          credit score,
-          compound interest,
-          emergency fund,
-          retirement planning,
-          financial health,
-          money skills,
-          financial awareness,
-          financial wellness,
-          finance literacy test,
-          financial literacy quiz,
-          free financial test,
-          financial literacy assessment,
-          personal finance test,
-          financial capability,
-          money management,
-          financial planning,
-          financial confidence,
-          financial independence,
-          financial responsibility,
-          financial decision making,
-          basic finance,
-          financial basics,
-          financial literacy score,
-          test your finance knowledge,
-          are you financially literate,
-          how financially smart are you,
-          financial literacy checker,
-          financial literacy tool,
-          financial literacy calculator,
-          financial quiz for adults,
-          financial literacy for beginners,
-          measure financial knowledge,
-          improve financial literacy,
-          financial literacy grade,
-          financial health score
-          "
-        />
-        <meta name="robots" content="index, follow" />
+        <meta name="description" content="Test your financial knowledge with our free financial literacy quiz and get a personalized score and grade." />
         <link rel="canonical" href="/financial-literacy-score-calculator" />
-        <meta property="og:title" content="Financial Literacy Score Calculator - Take the Quiz" />
-        <meta
-          property="og:description"
-          content="Answer 10 key questions to assess your financial knowledge and get actionable feedback."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/financial-literacy-score-calculator" />
       </Head>
 
       <div className={styles.page}>
-        <div className={styles.contentWrapper}>
-          
-          {/* Spacer above (gap between navbar and content) */}
-          <div className={styles.spacerTop} />
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.title}>Financial Literacy Score Calculator</h1>
+          <p className={styles.subtitle}>
+            Test your financial knowledge and get a personalized score in seconds.
+          </p>
+        </section>
 
-          {/* Hero Section */}
-          <section className={styles.hero}>
-            <h1 className={styles.title}>Financial Literacy Score Calculator</h1>
-            <p className={styles.subtitle}>
-              Test your financial knowledge and get a personalized score in seconds.
+        {/* Calculator Card */}
+        <div className={styles.calculatorCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <p className={styles.instruction}>
+              Answer 10 key financial questions to assess your financial literacy.
             </p>
-          </section>
 
-          {/* Calculator Card */}
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.instruction}>
-                Answer 10 key financial questions to assess your financial literacy.
+            {questions.map((q, index) => (
+              <div className={styles.question} key={q.id}>
+                <h3 className={styles.questionText}>{q.text}</h3>
+                <div className={styles.options}>
+                  {q.options.map((option, optIndex) => (
+                    <label key={optIndex} className={styles.optionLabel}>
+                      <input
+                        type="radio"
+                        name={`q${q.id}`}
+                        value={optIndex}
+                        checked={answers[index] === optIndex}
+                        onChange={(e) => handleChange(index, e.target.value)}
+                        required
+                      />
+                      {option}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            <button type="submit" className={styles.submitBtn}>
+              <span className={styles.btnText}>Calculate My Score</span>
+              <span className={styles.arrow}>→</span>
+            </button>
+          </form>
+
+          {result && (
+            <div className={styles.resultSection}>
+              <h3>Your Financial Literacy Score</h3>
+              <div className={styles.scoreDisplay}>
+                <span className={styles.score}>{result.score}</span>
+                <span className={styles.grade}>Grade: {result.grade}</span>
+              </div>
+              <p className={styles.performance}>
+                You got <strong>{result.correct} out of {result.total}</strong> correct.
               </p>
-
-              {questions.map((q, index) => (
-                <div className={styles.question} key={q.id}>
-                  <h3 className={styles.questionText}>{q.text}</h3>
-                  <div className={styles.options}>
-                    {q.options.map((option, optIndex) => (
-                      <label key={optIndex} className={styles.optionLabel}>
-                        <input
-                          type="radio"
-                          name={`q${q.id}`}
-                          value={optIndex}
-                          checked={answers[index] === optIndex}
-                          onChange={(e) => handleChange(index, e.target.value)}
-                          required
-                        />
-                        {option}
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-              <button type="submit" className={styles.ctaButton}>
-                <span className={styles.btnText}>Calculate My Score</span>
-                <span className={styles.btnArrow}>→</span>
-              </button>
-
-              {result && (
-                <div className={styles.resultSection}>
-                  <h3>Your Financial Literacy Score</h3>
-                  <div className={styles.scoreDisplay}>
-                    <span className={styles.score}>{result.score}</span>
-                    <span className={styles.grade}>Grade: {result.grade}</span>
-                  </div>
-                  <p className={styles.performance}>
-                    You got <strong>{result.correct} out of {result.total}</strong> correct.
-                  </p>
-                  <div className={styles.feedback}>
-                    {result.score >= 80 ? (
-                      <p><strong>Excellent!</strong> You have strong financial knowledge. Keep learning and applying it.</p>
-                    ) : result.score >= 60 ? (
-                      <p><strong>Good effort!</strong> You understand the basics. Focus on compound interest, investing, and budgeting to improve.</p>
-                    ) : (
-                      <p><strong>Room to grow!</strong> Building financial literacy is one of the best investments you can make. Start with budgeting and emergency funds.</p>
-                    )}
-                  </div>
-                </div>
-              )}
-            </form>
-          </div>
-
-          {/* Info Section */}
-          <section className={styles.infoSection}>
-            <div className={styles.container}>
-              <div className={styles.infoCard}>
-                <h3>Why Financial Literacy Matters</h3>
-                <p>
-                  <strong>Financial literacy</strong> is the ability to understand and use financial skills like budgeting, saving, investing, debt management, and retirement planning. Studies show that financially literate individuals are more likely to save, invest, avoid high-cost debt, and retire comfortably.
-                </p>
-
-                <h4>How to Use This Calculator</h4>
-                <p>
-                  Answer 10 multiple-choice questions covering core financial concepts. The tool scores your responses and gives you a <strong>percentage and letter grade</strong> so you can identify knowledge gaps and focus your learning.
-                </p>
-
-                <h4>The Financial Literacy Formula</h4>
-                <div className={styles.formula}>
-                  <code>Score = (Number of Correct Answers / Total Questions) × 100</code>
-                </div>
-                <p>
-                  A score above <strong>80%</strong> indicates strong financial knowledge. Below <strong>60%</strong> means you’d benefit from financial education.
-                </p>
-
-                <h4>Key Areas of Financial Literacy</h4>
-                <ul className={styles.list}>
-                  <li><strong>Budgeting:</strong> Track income and expenses</li>
-                  <li><strong>Emergency Fund:</strong> Save 3–6 months of expenses</li>
-                  <li><strong>Compound Interest:</strong> Let your money grow over time</li>
-                  <li><strong>Investing:</strong> Diversify to reduce risk</li>
-                  <li><strong>Debt Management:</strong> Avoid high-interest credit cards</li>
-                  <li><strong>Retirement Planning:</strong> Use tax-advantaged accounts</li>
-                </ul>
-
-                <h4>Next Steps</h4>
-                <ul className={styles.list}>
-                  <li>Review incorrect answers and learn the concepts</li>
-                  <li>Read personal finance books or blogs</li>
-                  <li>Use our free calculators to practice real-world decisions</li>
-                  <li>Teach financial skills to children and family</li>
-                </ul>
-
-                <h4>Recommended Resources</h4>
-                <ul className={styles.list}>
-                  <li><strong>"The Psychology of Money"</strong> by Morgan Housel</li>
-                  <li><strong>"I Will Teach You To Be Rich"</strong> by Ramit Sethi</li>
-                  <li><strong>Khan Academy Personal Finance</strong> (free online courses)</li>
-                  <li><strong>NerdWallet & Investopedia</strong> for practical guides</li>
-                </ul>
+              <div className={styles.feedback}>
+                {result.score >= 80 ? (
+                  <p><strong>Excellent!</strong> You have strong financial knowledge. Keep learning and applying it.</p>
+                ) : result.score >= 60 ? (
+                  <p><strong>Good effort!</strong> You understand the basics. Focus on compound interest, investing, and budgeting to improve.</p>
+                ) : (
+                  <p><strong>Room to grow!</strong> Building financial literacy is one of the best investments you can make. Start with budgeting and emergency funds.</p>
+                )}
               </div>
             </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className={styles.ctaSection}>
-            <div className={styles.ctaSectionInner}>
-              <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
-              <p>Free Financial Planning Tools – Try Now</p>
-              <Link href="/suite" legacyBehavior>
-                <a
-                  className={styles.ctaButtonLink}
-                  ref={ctaButtonRef}
-                  onMouseMove={handleMouseMove}
-                >
-                  <span className={styles.btnText}>Explore All Calculators</span>
-                  <span className={styles.arrow}>→</span>
-                </a>
-              </Link>
-            </div>
-          </section>
-
-          {/* Footer Spacer */}
-          <div className={styles.footerSpacer} />
+          )}
         </div>
+
+        {/* History Cards Section */}
+        <section className={styles.historySection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2>Financial Literacy Score Calculator History & Global Applications</h2>
+              <p className={styles.sectionSubtitle}>
+                Explore the evolution and worldwide impact of financial literacy assessment tools
+              </p>
+            </div>
+            
+            <div className={styles.cardsGrid}>
+              {financialLiteracyHistory.map((card) => (
+                <div key={card.id} className={styles.historyCard}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <ul className={styles.cardList}>
+                    {card.points.map((point, index) => (
+                      <li key={index} className={styles.cardListItem}>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className={styles.ctaSection}>
+          <div className={styles.container}>
+            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
+            <p>Free Financial Planning Tools – Try Now</p>
+            <Link href="/suite" legacyBehavior>
+              <a
+                className={styles.ctaButton}
+                ref={ctaButtonRef}
+                onMouseMove={handleMouseMove}
+              >
+                <span className={styles.buttonText}>Explore All Calculators</span>
+                <span className={styles.arrow}>→</span>
+              </a>
+            </Link>
+          </div>
+        </section>
       </div>
     </>
   );
