@@ -1,0 +1,1019 @@
+/* [project]/src/pages/optionpricingcalculator.module.css [client] (css) */
+.optionpricingcalculator-module__9-Nx5W__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.optionpricingcalculator-module__9-Nx5W__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.optionpricingcalculator-module__9-Nx5W__header {
+  color: #000;
+  text-align: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: -80px;
+  margin-bottom: 2rem;
+  padding: 80px 1rem 1.5rem;
+  position: relative;
+}
+
+.optionpricingcalculator-module__9-Nx5W__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.optionpricingcalculator-module__9-Nx5W__mainTitle {
+  color: #000;
+  margin: 0 0 .5rem;
+  padding-top: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.optionpricingcalculator-module__9-Nx5W__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.optionpricingcalculator-module__9-Nx5W__badge {
+  color: #000;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.optionpricingcalculator-module__9-Nx5W__mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .optionpricingcalculator-module__9-Nx5W__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.optionpricingcalculator-module__9-Nx5W__calculatorCard, .optionpricingcalculator-module__9-Nx5W__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.optionpricingcalculator-module__9-Nx5W__sectionTitle {
+  color: #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__optionTypeSelector {
+  margin-bottom: 2rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__optionTypeButtons {
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.optionpricingcalculator-module__9-Nx5W__optionTypeButton {
+  color: #333;
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all .2s;
+}
+
+.optionpricingcalculator-module__9-Nx5W__optionTypeButton:hover {
+  background: #f8f8f8;
+  border-color: #666;
+}
+
+.optionpricingcalculator-module__9-Nx5W__optionTypeButtonActive {
+  color: #fff;
+  background: #000;
+  border-color: #000;
+}
+
+.optionpricingcalculator-module__9-Nx5W__optionTypeButtonActive:hover {
+  background: #333;
+  border-color: #000;
+}
+
+.optionpricingcalculator-module__9-Nx5W__optionTypeDescription {
+  text-align: center;
+  color: #666;
+  font-size: .875rem;
+  font-style: italic;
+}
+
+.optionpricingcalculator-module__9-Nx5W__inputGroup {
+  margin-bottom: 1.75rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__inputLabel {
+  color: #333;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.optionpricingcalculator-module__9-Nx5W__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.optionpricingcalculator-module__9-Nx5W__currencySymbol, .optionpricingcalculator-module__9-Nx5W__percentageSymbol, .optionpricingcalculator-module__9-Nx5W__yearsSymbol {
+  color: #000;
+  min-width: 20px;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+}
+
+.optionpricingcalculator-module__9-Nx5W__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.optionpricingcalculator-module__9-Nx5W__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.optionpricingcalculator-module__9-Nx5W__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+  padding: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.optionpricingcalculator-module__9-Nx5W__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.optionpricingcalculator-module__9-Nx5W__valueDisplay {
+  color: #000;
+  padding: .25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__selectInput {
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: .875rem;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.optionpricingcalculator-module__9-Nx5W__selectInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.optionpricingcalculator-module__9-Nx5W__modelDescription {
+  color: #666;
+  margin-top: .5rem;
+  font-size: .875rem;
+  font-style: italic;
+}
+
+.optionpricingcalculator-module__9-Nx5W__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.optionpricingcalculator-module__9-Nx5W__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .75rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__resultValue {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.optionpricingcalculator-module__9-Nx5W__greeksSection {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__greeksGrid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  display: grid;
+}
+
+.optionpricingcalculator-module__9-Nx5W__greekItem {
+  text-align: center;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__greekLabel {
+  color: #000;
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.optionpricingcalculator-module__9-Nx5W__greekValue {
+  color: #000;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__greekDescription {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: .75rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartContainer {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__profitLossChart {
+  height: 300px;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartAxis {
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  height: 100%;
+  position: relative;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartYAxis {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40px;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartYLabel {
+  transform-origin: 0 0;
+  color: #666;
+  font-size: .75rem;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: rotate(-90deg);
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartYScale {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px 0;
+  display: flex;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartYTick {
+  color: #666;
+  text-align: right;
+  padding-right: 5px;
+  font-size: .75rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartArea {
+  margin-left: 10px;
+  position: absolute;
+  inset: 0;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartDataPoint {
+  cursor: pointer;
+  background: #3b82f6;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  transform: translate(-50%, 50%);
+}
+
+.optionpricingcalculator-module__9-Nx5W__breakevenPoint {
+  background: #10b981;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  transform: translate(-50%, 50%);
+}
+
+.optionpricingcalculator-module__9-Nx5W__zeroLine {
+  border-top: 1px dashed #ccc;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+}
+
+.optionpricingcalculator-module__9-Nx5W__currentPriceLine, .optionpricingcalculator-module__9-Nx5W__strikePriceLine {
+  background: #10b981;
+  width: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.optionpricingcalculator-module__9-Nx5W__strikePriceLine {
+  background: #ef4444;
+}
+
+.optionpricingcalculator-module__9-Nx5W__currentPriceLabel, .optionpricingcalculator-module__9-Nx5W__strikePriceLabel {
+  color: #666;
+  white-space: nowrap;
+  font-size: .75rem;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartXAxis {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartXLabel {
+  color: #666;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: .75rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartXScale {
+  justify-content: space-between;
+  padding: 0 20px;
+  display: flex;
+}
+
+.optionpricingcalculator-module__9-Nx5W__chartXTick {
+  color: #666;
+  font-size: .75rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__formula {
+  text-align: center;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  font-family: Courier New, monospace;
+  font-size: 1.25rem;
+  overflow-x: auto;
+}
+
+.optionpricingcalculator-module__9-Nx5W__insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__insightsTitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__insightsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.optionpricingcalculator-module__9-Nx5W__insightsList li {
+  color: #333;
+  border-bottom: 1px solid #0000001a;
+  padding: .75rem 0;
+}
+
+.optionpricingcalculator-module__9-Nx5W__insightsList li:last-child {
+  border-bottom: none;
+}
+
+.optionpricingcalculator-module__9-Nx5W__insightsList strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__educationalContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.optionpricingcalculator-module__9-Nx5W__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.optionpricingcalculator-module__9-Nx5W__articleTitle {
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.optionpricingcalculator-module__9-Nx5W__articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__articleSubtitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__articleCard p {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.optionpricingcalculator-module__9-Nx5W__exampleCard {
+  background: #f8f8f8;
+  border-left: 4px solid #666;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__exampleCard h4 {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__exampleCard ul {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.optionpricingcalculator-module__9-Nx5W__exampleCard li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0;
+}
+
+.optionpricingcalculator-module__9-Nx5W__exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.optionpricingcalculator-module__9-Nx5W__exampleCard li strong {
+  color: #000;
+}
+
+.optionpricingcalculator-module__9-Nx5W__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.optionpricingcalculator-module__9-Nx5W__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.optionpricingcalculator-module__9-Nx5W__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.optionpricingcalculator-module__9-Nx5W__strategyCard h4 {
+  color: #000;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__strategyCard p {
+  color: #666;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.optionpricingcalculator-module__9-Nx5W__applicationsList {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.optionpricingcalculator-module__9-Nx5W__applicationsListItem {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .875rem 0;
+  display: flex;
+}
+
+.optionpricingcalculator-module__9-Nx5W__applicationsListItem:before {
+  content: "✓";
+  color: #000;
+  flex-shrink: 0;
+  margin-top: .125rem;
+  font-weight: bold;
+}
+
+.optionpricingcalculator-module__9-Nx5W__applicationsListItem strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 2rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.optionpricingcalculator-module__9-Nx5W__quoteFooter {
+  color: #666;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: normal;
+}
+
+.optionpricingcalculator-module__9-Nx5W__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.optionpricingcalculator-module__9-Nx5W__faqTitle {
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.optionpricingcalculator-module__9-Nx5W__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.optionpricingcalculator-module__9-Nx5W__faqItem:last-child {
+  border-bottom: none;
+}
+
+.optionpricingcalculator-module__9-Nx5W__faqQuestion {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.optionpricingcalculator-module__9-Nx5W__faqAnswer {
+  color: #333;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.optionpricingcalculator-module__9-Nx5W__actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.optionpricingcalculator-module__9-Nx5W__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__ctaTitle {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.optionpricingcalculator-module__9-Nx5W__ctaText {
+  color: #333;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__disclaimer {
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+}
+
+.optionpricingcalculator-module__9-Nx5W__disclaimer strong {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .optionpricingcalculator-module__9-Nx5W__container {
+    padding-top: 70px;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__header {
+    margin-top: -70px;
+    padding: 70px 1rem 1rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__mainTitle {
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 2rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__articleTitle {
+    font-size: 1.75rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__articleCard, .optionpricingcalculator-module__9-Nx5W__faqCard, .optionpricingcalculator-module__9-Nx5W__calculatorCard, .optionpricingcalculator-module__9-Nx5W__resultsCard {
+    padding: 1.5rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__greeksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__profitLossChart {
+    height: 250px;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__chartYLabel {
+    top: -25px;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__currentPriceLabel, .optionpricingcalculator-module__9-Nx5W__strikePriceLabel {
+    font-size: .7rem;
+    top: -20px;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__strategyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .optionpricingcalculator-module__9-Nx5W__container {
+    padding-top: 60px;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__header {
+    margin-top: -60px;
+    padding: 60px 1rem 1rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__mainTitle {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__subtitle {
+    font-size: 1rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__badge {
+    width: fit-content;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__optionTypeButtons {
+    flex-direction: column;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__slider, .optionpricingcalculator-module__9-Nx5W__numberInput {
+    width: 100%;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__numberInput {
+    order: 1;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__slider {
+    order: 2;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__currencySymbol, .optionpricingcalculator-module__9-Nx5W__percentageSymbol, .optionpricingcalculator-module__9-Nx5W__yearsSymbol {
+    text-align: center;
+    order: 3;
+    margin-top: .5rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__articleCard, .optionpricingcalculator-module__9-Nx5W__faqCard {
+    padding: 1.25rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__greeksGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__profitLossChart {
+    height: 200px;
+  }
+}
+
+@media print {
+  .optionpricingcalculator-module__9-Nx5W__container {
+    padding-top: 0 !important;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__header {
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    padding: 0 0 1rem;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__calculatorLayout {
+    break-inside: avoid;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .optionpricingcalculator-module__9-Nx5W__container {
+    color: #fff;
+    background: #121212;
+    padding-top: 80px;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__header {
+    color: #fff;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__mainTitle, .optionpricingcalculator-module__9-Nx5W__subtitle, .optionpricingcalculator-module__9-Nx5W__sectionTitle, .optionpricingcalculator-module__9-Nx5W__resultValue, .optionpricingcalculator-module__9-Nx5W__chartTitle, .optionpricingcalculator-module__9-Nx5W__articleTitle, .optionpricingcalculator-module__9-Nx5W__articleSubtitle, .optionpricingcalculator-module__9-Nx5W__faqTitle, .optionpricingcalculator-module__9-Nx5W__faqQuestion, .optionpricingcalculator-module__9-Nx5W__ctaTitle, .optionpricingcalculator-module__9-Nx5W__greekLabel, .optionpricingcalculator-module__9-Nx5W__greekValue {
+    color: #fff;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__calculatorCard, .optionpricingcalculator-module__9-Nx5W__resultsCard, .optionpricingcalculator-module__9-Nx5W__articleCard, .optionpricingcalculator-module__9-Nx5W__faqCard, .optionpricingcalculator-module__9-Nx5W__greeksSection, .optionpricingcalculator-module__9-Nx5W__chartContainer {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__optionTypeButton {
+    color: #fff;
+    background: #2d2d2d;
+    border-color: #666;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__optionTypeButtonActive {
+    color: #000;
+    background: #fff;
+    border-color: #fff;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__optionTypeButtonActive:hover {
+    background: #ccc;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__resultItem, .optionpricingcalculator-module__9-Nx5W__greekItem, .optionpricingcalculator-module__9-Nx5W__strategyCard {
+    background: #2d2d2d;
+    border: 1px solid #333;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__inputLabel {
+    color: #ccc;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__numberInput, .optionpricingcalculator-module__9-Nx5W__selectInput {
+    color: #fff;
+    background: #2d2d2d;
+    border: 1px solid #666;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__slider {
+    background: #666;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__slider::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__slider::-moz-range-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__ctaCard {
+    background: #1e1e1e;
+    border: 1px solid #fff;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__chartAxis, .optionpricingcalculator-module__9-Nx5W__zeroLine {
+    border-color: #666;
+  }
+
+  .optionpricingcalculator-module__9-Nx5W__chartYLabel, .optionpricingcalculator-module__9-Nx5W__chartXLabel, .optionpricingcalculator-module__9-Nx5W__chartYTick, .optionpricingcalculator-module__9-Nx5W__chartXTick {
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .optionpricingcalculator-module__9-Nx5W__container {
+      padding-top: 70px;
+    }
+
+    .optionpricingcalculator-module__9-Nx5W__header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .optionpricingcalculator-module__9-Nx5W__container {
+      padding-top: 60px;
+    }
+
+    .optionpricingcalculator-module__9-Nx5W__header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+/*# sourceMappingURL=src_pages_optionpricingcalculator_module_d05fc538.css.map*/

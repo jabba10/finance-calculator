@@ -1,0 +1,1501 @@
+/* [project]/src/pages/taxbracketcalculator.module.css [client] (css) */
+.taxbracketcalculator-module__vMNEEG__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.taxbracketcalculator-module__vMNEEG__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__header {
+  color: #000;
+  text-align: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: -80px;
+  margin-bottom: 2rem;
+  padding: 80px 1rem 1.5rem;
+  position: relative;
+}
+
+.taxbracketcalculator-module__vMNEEG__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.taxbracketcalculator-module__vMNEEG__mainTitle {
+  color: #000;
+  word-break: break-word;
+  margin: 0 0 .5rem;
+  padding-top: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.taxbracketcalculator-module__vMNEEG__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.taxbracketcalculator-module__vMNEEG__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__badge {
+  color: #000;
+  white-space: nowrap;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.taxbracketcalculator-module__vMNEEG__mainContent {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+  overflow-x: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .taxbracketcalculator-module__vMNEEG__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.taxbracketcalculator-module__vMNEEG__calculatorCard, .taxbracketcalculator-module__vMNEEG__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  padding: 2rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.taxbracketcalculator-module__vMNEEG__sectionTitle {
+  color: #000;
+  word-break: break-word;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__sectionSubtitle {
+  color: #333;
+  word-break: break-word;
+  border-top: 1px solid #e0e0e0;
+  margin: 1.5rem 0 1rem;
+  padding-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__inputGroup {
+  width: 100%;
+  margin-bottom: 1.75rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__inputLabel {
+  color: #333;
+  width: 100%;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.taxbracketcalculator-module__vMNEEG__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__currencySymbol, .taxbracketcalculator-module__vMNEEG__percentageSymbol, .taxbracketcalculator-module__vMNEEG__yearsSymbol {
+  color: #000;
+  flex-shrink: 0;
+  min-width: 20px;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  width: 100%;
+  min-width: 100px;
+  max-width: 100%;
+  height: 6px;
+}
+
+.taxbracketcalculator-module__vMNEEG__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.taxbracketcalculator-module__vMNEEG__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.taxbracketcalculator-module__vMNEEG__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+  min-width: 120px;
+  max-width: 100%;
+  padding: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.taxbracketcalculator-module__vMNEEG__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.taxbracketcalculator-module__vMNEEG__valueDisplay {
+  color: #000;
+  word-break: break-word;
+  padding: .5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__deductionNote {
+  color: #666;
+  word-break: break-word;
+  margin-top: .25rem;
+  font-size: .75rem;
+  font-style: italic;
+}
+
+.taxbracketcalculator-module__vMNEEG__filingOptions {
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+  width: 100%;
+  margin-top: .5rem;
+  display: grid;
+}
+
+@media (max-width: 480px) {
+  .taxbracketcalculator-module__vMNEEG__filingOptions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.taxbracketcalculator-module__vMNEEG__filingButton {
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: .75rem .5rem;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.taxbracketcalculator-module__vMNEEG__filingButton:hover {
+  background: #f8f8f8;
+  border-color: #000;
+}
+
+.taxbracketcalculator-module__vMNEEG__filingButtonActive {
+  color: #fff;
+  background: #000;
+  border-color: #000;
+}
+
+.taxbracketcalculator-module__vMNEEG__checkboxGroup {
+  flex-direction: column;
+  gap: .75rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__checkboxLabel {
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__checkboxInput {
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.taxbracketcalculator-module__vMNEEG__checkboxInput:checked {
+  background: #000;
+  border-color: #000;
+}
+
+.taxbracketcalculator-module__vMNEEG__checkboxInput:checked:after {
+  content: "✓";
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.taxbracketcalculator-module__vMNEEG__checkboxText {
+  color: #333;
+  word-break: break-word;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.taxbracketcalculator-module__vMNEEG__contributionInput, .taxbracketcalculator-module__vMNEEG__dependentInput {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: .5rem;
+  margin-left: 2rem;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__retirementSection, .taxbracketcalculator-module__vMNEEG__dependentSection {
+  border-top: 2px solid #e0e0e0;
+  width: 100%;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__summaryCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000001a;
+}
+
+.taxbracketcalculator-module__vMNEEG__summaryRow {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__summaryItem {
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  min-width: 150px;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__summaryLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  word-break: break-word;
+  text-align: center;
+  font-size: .875rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__summaryValue {
+  color: #000;
+  word-break: break-word;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.taxbracketcalculator-module__vMNEEG__summaryArrow {
+  color: #666;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.taxbracketcalculator-module__vMNEEG__summaryNote {
+  text-align: center;
+  color: #666;
+  word-break: break-word;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.taxbracketcalculator-module__vMNEEG__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .taxbracketcalculator-module__vMNEEG__resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.taxbracketcalculator-module__vMNEEG__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  word-break: break-word;
+  margin-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__resultValue {
+  color: #000;
+  word-break: break-word;
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.taxbracketcalculator-module__vMNEEG__resultDescription {
+  color: #666;
+  word-break: break-word;
+  font-size: .75rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__efficiencyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000001a;
+}
+
+.taxbracketcalculator-module__vMNEEG__efficiencyTitle {
+  color: #000;
+  text-align: center;
+  word-break: break-word;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__efficiencyLevel {
+  color: #fff;
+  text-align: center;
+  border-radius: 50px;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+  padding: .75rem 1.5rem;
+  font-weight: 700;
+  display: inline-flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__efficiencyIcon {
+  font-size: 1.25rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__efficiencyText {
+  word-break: break-word;
+  font-size: 1.125rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__efficiencyDescription {
+  color: #333;
+  text-align: center;
+  word-break: break-word;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.taxbracketcalculator-module__vMNEEG__efficiencyDescription strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartContainer {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartTitle {
+  color: #000;
+  word-break: break-word;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartBars {
+  flex-direction: column;
+  gap: .75rem;
+  width: 100%;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartBarGroup {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartBarLabel {
+  color: #333;
+  word-break: break-word;
+  min-width: 180px;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartBarContainer {
+  background: #f0f0f0;
+  border-radius: 4px;
+  flex: 1;
+  width: 100%;
+  min-width: 200px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartBar {
+  height: 100%;
+  transition: width .3s;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartBarValue {
+  text-align: right;
+  color: #000;
+  word-break: break-word;
+  min-width: 120px;
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__chartLegend {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__legendItem {
+  color: #333;
+  flex-shrink: 0;
+  align-items: center;
+  gap: .5rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__legendColor {
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.taxbracketcalculator-module__vMNEEG__bracketCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__bracketTitle {
+  color: #000;
+  text-align: center;
+  word-break: break-word;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__bracketTable {
+  flex-direction: column;
+  gap: .5rem;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+}
+
+.taxbracketcalculator-module__vMNEEG__tableHeader {
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  background: #f8f8f8;
+  border-radius: 4px;
+  grid-template-columns: 80px 1fr 100px 120px 120px;
+  gap: 1rem;
+  min-width: 600px;
+  padding: .75rem;
+  font-size: .75rem;
+  font-weight: 600;
+  display: grid;
+}
+
+.taxbracketcalculator-module__vMNEEG__tableRow {
+  border-bottom: 1px solid #e0e0e0;
+  grid-template-columns: 80px 1fr 100px 120px 120px;
+  align-items: center;
+  gap: 1rem;
+  min-width: 600px;
+  padding: .75rem;
+  display: grid;
+}
+
+.taxbracketcalculator-module__vMNEEG__tableRow:last-child {
+  border-bottom: none;
+}
+
+.taxbracketcalculator-module__vMNEEG__tableCell {
+  color: #333;
+  word-break: break-word;
+  font-size: .875rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__bracketRate {
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 4px;
+  padding: .25rem .75rem;
+  font-size: .75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.taxbracketcalculator-module__vMNEEG__insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__insightsTitle {
+  color: #000;
+  word-break: break-word;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__insightsList {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.taxbracketcalculator-module__vMNEEG__insightsList li {
+  color: #333;
+  word-break: break-word;
+  border-bottom: 1px solid #0000001a;
+  padding: .75rem 0;
+}
+
+.taxbracketcalculator-module__vMNEEG__insightsList li:last-child {
+  border-bottom: none;
+}
+
+.taxbracketcalculator-module__vMNEEG__insightsList strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__educationalContent {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.taxbracketcalculator-module__vMNEEG__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.taxbracketcalculator-module__vMNEEG__articleTitle {
+  color: #000;
+  word-break: break-word;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.taxbracketcalculator-module__vMNEEG__articleSection {
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__articleSubtitle {
+  color: #000;
+  word-break: break-word;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__articleCard p {
+  color: #333;
+  word-break: break-word;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.taxbracketcalculator-module__vMNEEG__exampleCard {
+  background: #f8f8f8;
+  border-left: 4px solid #666;
+  border-radius: 6px;
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__exampleCard h4 {
+  color: #000;
+  word-break: break-word;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__exampleCard ul {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.taxbracketcalculator-module__vMNEEG__exampleCard li {
+  color: #333;
+  word-break: break-word;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0;
+}
+
+.taxbracketcalculator-module__vMNEEG__exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.taxbracketcalculator-module__vMNEEG__exampleCard li strong {
+  color: #000;
+}
+
+.taxbracketcalculator-module__vMNEEG__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.taxbracketcalculator-module__vMNEEG__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.taxbracketcalculator-module__vMNEEG__strategyCard h4 {
+  color: #000;
+  word-break: break-word;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__strategyCard p {
+  color: #666;
+  word-break: break-word;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.taxbracketcalculator-module__vMNEEG__applicationsList {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.taxbracketcalculator-module__vMNEEG__applicationsList li {
+  color: #333;
+  word-break: break-word;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .875rem 0;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__applicationsList li:before {
+  content: "•";
+  color: #000;
+  flex-shrink: 0;
+  margin-top: .125rem;
+  font-weight: bold;
+}
+
+.taxbracketcalculator-module__vMNEEG__applicationsList li strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 2rem;
+  font-style: italic;
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__quoteFooter {
+  color: #666;
+  text-align: right;
+  word-break: break-word;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: normal;
+}
+
+.taxbracketcalculator-module__vMNEEG__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.taxbracketcalculator-module__vMNEEG__faqTitle {
+  color: #000;
+  text-align: center;
+  word-break: break-word;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.taxbracketcalculator-module__vMNEEG__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+.taxbracketcalculator-module__vMNEEG__faqItem:last-child {
+  border-bottom: none;
+}
+
+.taxbracketcalculator-module__vMNEEG__faqQuestion {
+  color: #000;
+  word-break: break-word;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__faqAnswer {
+  color: #333;
+  word-break: break-word;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.taxbracketcalculator-module__vMNEEG__actionSection {
+  width: 100%;
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.taxbracketcalculator-module__vMNEEG__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  width: 100%;
+  padding: 3rem;
+  overflow: hidden;
+}
+
+.taxbracketcalculator-module__vMNEEG__ctaTitle {
+  word-break: break-word;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.taxbracketcalculator-module__vMNEEG__ctaText {
+  color: #333;
+  word-break: break-word;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__buttonGroup {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__primaryButton, .taxbracketcalculator-module__vMNEEG__secondaryButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  min-width: 180px;
+  max-width: 300px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+}
+
+.taxbracketcalculator-module__vMNEEG__primaryButton {
+  color: #fff;
+  background: #000;
+  border: 1px solid #000;
+}
+
+.taxbracketcalculator-module__vMNEEG__primaryButton:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0003;
+}
+
+.taxbracketcalculator-module__vMNEEG__secondaryButton {
+  color: #000;
+  background: none;
+  border: 1px solid #000;
+}
+
+.taxbracketcalculator-module__vMNEEG__secondaryButton:hover {
+  color: #fff;
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0003;
+}
+
+.taxbracketcalculator-module__vMNEEG__disclaimer {
+  color: #666;
+  word-break: break-word;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+.taxbracketcalculator-module__vMNEEG__disclaimer strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.taxbracketcalculator-module__vMNEEG__footer {
+  color: #333;
+  text-align: center;
+  background: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+}
+
+.taxbracketcalculator-module__vMNEEG__footerContent {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.taxbracketcalculator-module__vMNEEG__footerText {
+  color: #333;
+  word-break: break-word;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.taxbracketcalculator-module__vMNEEG__footerNote {
+  color: #666;
+  word-break: break-word;
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: .875rem;
+}
+
+@media (max-width: 768px) {
+  .taxbracketcalculator-module__vMNEEG__container {
+    padding-top: 70px;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__header {
+    margin-top: -70px;
+    padding: 70px 1rem 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__mainTitle {
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 2rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__articleTitle {
+    font-size: 1.75rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__articleCard, .taxbracketcalculator-module__vMNEEG__faqCard, .taxbracketcalculator-module__vMNEEG__calculatorCard, .taxbracketcalculator-module__vMNEEG__resultsCard {
+    padding: 1.5rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__filingOptions {
+    grid-template-columns: 1fr;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__summaryRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__summaryArrow {
+    transform: rotate(90deg);
+  }
+
+  .taxbracketcalculator-module__vMNEEG__tableHeader, .taxbracketcalculator-module__vMNEEG__tableRow {
+    grid-template-columns: 60px 1fr 80px 100px 100px;
+    min-width: 500px;
+    font-size: .7rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__chartBarGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__chartBarContainer {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__chartBarValue {
+    text-align: left;
+    min-width: auto;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__buttonGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__primaryButton, .taxbracketcalculator-module__vMNEEG__secondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__strategyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__chartBarLabel {
+    min-width: 150px;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__chartBarValue {
+    font-size: .875rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__sectionTitle {
+    font-size: 1.25rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__sectionSubtitle, .taxbracketcalculator-module__vMNEEG__efficiencyTitle, .taxbracketcalculator-module__vMNEEG__chartTitle, .taxbracketcalculator-module__vMNEEG__bracketTitle, .taxbracketcalculator-module__vMNEEG__insightsTitle {
+    font-size: 1.1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__articleSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__faqQuestion {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .taxbracketcalculator-module__vMNEEG__container {
+    padding-top: 60px;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__header {
+    margin-top: -60px;
+    padding: 60px 1rem 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__mainTitle {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__subtitle {
+    font-size: 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__badge {
+    width: fit-content;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__slider, .taxbracketcalculator-module__vMNEEG__numberInput {
+    width: 100%;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__numberInput {
+    order: 1;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__slider {
+    order: 2;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__currencySymbol, .taxbracketcalculator-module__vMNEEG__percentageSymbol, .taxbracketcalculator-module__vMNEEG__yearsSymbol {
+    text-align: center;
+    order: 3;
+    margin-top: .5rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__tableHeader, .taxbracketcalculator-module__vMNEEG__tableRow {
+    grid-template-columns: 50px 1fr 70px 90px 90px;
+    min-width: 400px;
+    font-size: .65rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__articleCard, .taxbracketcalculator-module__vMNEEG__faqCard {
+    padding: 1.25rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__chartBarLabel {
+    min-width: 120px;
+    font-size: .75rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__chartBarValue {
+    font-size: .75rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__summaryValue {
+    font-size: 1.5rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__resultValue {
+    font-size: 1.25rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__numberInput {
+    width: 100px;
+    min-width: 100px;
+    padding: .5rem;
+    font-size: .875rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .taxbracketcalculator-module__vMNEEG__mainTitle {
+    font-size: 1.5rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__subtitle {
+    font-size: .9rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__calculatorCard, .taxbracketcalculator-module__vMNEEG__resultsCard, .taxbracketcalculator-module__vMNEEG__articleCard, .taxbracketcalculator-module__vMNEEG__faqCard {
+    padding: 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__tableHeader, .taxbracketcalculator-module__vMNEEG__tableRow {
+    min-width: 350px;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__chartBarLabel {
+    min-width: 100px;
+    font-size: .7rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__resultLabel, .taxbracketcalculator-module__vMNEEG__summaryLabel {
+    font-size: .75rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__resultValue {
+    font-size: 1.1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__summaryValue {
+    font-size: 1.25rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__articleSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__faqQuestion {
+    font-size: 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__filingButton {
+    padding: .5rem;
+    font-size: .8rem;
+  }
+}
+
+@media print {
+  .taxbracketcalculator-module__vMNEEG__container {
+    padding-top: 0 !important;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__header {
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    padding: 0 0 1rem;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__buttonGroup, .taxbracketcalculator-module__vMNEEG__badgeContainer {
+    display: none;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__calculatorLayout {
+    break-inside: avoid;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__footer {
+    background: none;
+    border-top: 2px solid #000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .taxbracketcalculator-module__vMNEEG__container * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .taxbracketcalculator-module__vMNEEG__container {
+    color: #000;
+    background: #fff;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__calculatorCard, .taxbracketcalculator-module__vMNEEG__resultsCard, .taxbracketcalculator-module__vMNEEG__articleCard, .taxbracketcalculator-module__vMNEEG__faqCard {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__primaryButton {
+    color: #fff;
+    background: #000;
+    border: 2px solid #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .taxbracketcalculator-module__vMNEEG__container {
+    color: #fff;
+    background: #121212;
+    padding-top: 80px;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__header {
+    color: #fff;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__mainTitle, .taxbracketcalculator-module__vMNEEG__subtitle, .taxbracketcalculator-module__vMNEEG__sectionTitle, .taxbracketcalculator-module__vMNEEG__resultValue, .taxbracketcalculator-module__vMNEEG__chartTitle, .taxbracketcalculator-module__vMNEEG__articleTitle, .taxbracketcalculator-module__vMNEEG__articleSubtitle, .taxbracketcalculator-module__vMNEEG__faqTitle, .taxbracketcalculator-module__vMNEEG__faqQuestion, .taxbracketcalculator-module__vMNEEG__ctaTitle {
+    color: #fff;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__calculatorCard, .taxbracketcalculator-module__vMNEEG__resultsCard, .taxbracketcalculator-module__vMNEEG__articleCard, .taxbracketcalculator-module__vMNEEG__faqCard {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__primaryButton {
+    color: #000;
+    background: #fff;
+    border: 1px solid #fff;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__secondaryButton {
+    color: #fff;
+    background: none;
+    border: 1px solid #fff;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__secondaryButton:hover {
+    color: #000;
+    background: #fff;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__badge {
+    color: #fff;
+    background: #333;
+    border: 1px solid #666;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__inputLabel {
+    color: #ccc;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__numberInput, .taxbracketcalculator-module__vMNEEG__selectInput {
+    color: #fff;
+    background: #1e1e1e;
+    border: 1px solid #666;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__slider {
+    background: #666;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__slider::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__slider::-moz-range-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  @media (max-width: 768px) {
+    .taxbracketcalculator-module__vMNEEG__container {
+      padding-top: 70px;
+    }
+
+    .taxbracketcalculator-module__vMNEEG__header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .taxbracketcalculator-module__vMNEEG__container {
+      padding-top: 60px;
+    }
+
+    .taxbracketcalculator-module__vMNEEG__header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+.taxbracketcalculator-module__vMNEEG__container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.taxbracketcalculator-module__vMNEEG__container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.taxbracketcalculator-module__vMNEEG__container ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.taxbracketcalculator-module__vMNEEG__container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.taxbracketcalculator-module__vMNEEG__slider, .taxbracketcalculator-module__vMNEEG__numberInput, .taxbracketcalculator-module__vMNEEG__primaryButton, .taxbracketcalculator-module__vMNEEG__secondaryButton, .taxbracketcalculator-module__vMNEEG__selectInput, .taxbracketcalculator-module__vMNEEG__filingButton, .taxbracketcalculator-module__vMNEEG__checkboxInput {
+  touch-action: manipulation;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 768px) {
+  .taxbracketcalculator-module__vMNEEG__articleCard p, .taxbracketcalculator-module__vMNEEG__faqAnswer, .taxbracketcalculator-module__vMNEEG__ctaText, .taxbracketcalculator-module__vMNEEG__exampleCard p, .taxbracketcalculator-module__vMNEEG__strategyCard p, .taxbracketcalculator-module__vMNEEG__efficiencyDescription, .taxbracketcalculator-module__vMNEEG__disclaimer {
+    font-size: .9375rem;
+    line-height: 1.6;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__insightsList li, .taxbracketcalculator-module__vMNEEG__applicationsList li, .taxbracketcalculator-module__vMNEEG__exampleCard li {
+    font-size: .9375rem;
+    line-height: 1.5;
+  }
+
+  .taxbracketcalculator-module__vMNEEG__tableCell, .taxbracketcalculator-module__vMNEEG__bracketRate {
+    font-size: .75rem;
+  }
+}
+
+body, .taxbracketcalculator-module__vMNEEG__container, .taxbracketcalculator-module__vMNEEG__mainContent {
+  overflow-x: hidden;
+}
+
+/*# sourceMappingURL=src_pages_taxbracketcalculator_module_3a13c678.css.map*/

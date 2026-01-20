@@ -1,0 +1,9 @@
+__turbopack_load_page_chunks__("/working-capital-calculator", [
+  "static/chunks/5ab36a06f6dd4e0e.js",
+  "static/chunks/2f1efe3aab54a21e.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/53c24e6e884f8741.css",
+  "static/chunks/turbopack-40e9afbd94537f47.js"
+])

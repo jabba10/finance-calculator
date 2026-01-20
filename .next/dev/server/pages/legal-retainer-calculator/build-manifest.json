@@ -1,0 +1,23 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/legal-retainer-calculator": [
+      "static/chunks/[root-of-the-server]__73f72571._.js",
+      "static/chunks/node_modules_next_dist_compiled_9c6fb6f2._.js",
+      "static/chunks/node_modules_next_dist_shared_lib_e7a9eec2._.js",
+      "static/chunks/node_modules_next_dist_client_5a8a528e._.js",
+      "static/chunks/node_modules_next_dist_335aced5._.js",
+      "static/chunks/node_modules_next_3e7984f4._.js",
+      "static/chunks/node_modules_react-dom_4411d9bd._.js",
+      "static/chunks/node_modules_f1be3ba2._.js",
+      "static/chunks/src_pages_legalretainercalculator_module_2ad9a1ad.css",
+      "static/chunks/src_pages_legal-retainer-calculator_2da965e7._.js",
+      "static/chunks/turbopack-src_pages_legal-retainer-calculator_d1cf62b3._.js"
+    ]
+  },
+  "ampFirstPages": []
+}

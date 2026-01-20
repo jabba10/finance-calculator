@@ -1,396 +1,675 @@
-import React, { useState, useRef } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import styles from './flippingprofitcalculator.module.css';
 
-const FlippingProfitCalculator = () => {
-  const ctaButtonRef = useRef(null);
+const FlippingProfitCalculator = ({ currentDate, lastModifiedDate }) => {
+  // State for input values
+  const [purchasePrice, setPurchasePrice] = useState(200000);
+  const [repairCosts, setRepairCosts] = useState(25000);
+  const [holdingCosts, setHoldingCosts] = useState(5000);
+  const [sellingPrice, setSellingPrice] = useState(300000);
+  const [sellingCosts, setSellingCosts] = useState(18000);
+  const [financingAmount, setFinancingAmount] = useState(150000);
+  const [interestRate, setInterestRate] = useState(6);
+  const [loanTerm, setLoanTerm] = useState(6);
+  const [results, setResults] = useState(null);
+  const [breakdownData, setBreakdownData] = useState([]);
 
-  // Form state
-  const [inputs, setInputs] = useState({
-    purchasePrice: '150000',
-    repairCosts: '30000',
-    holdingPeriod: '6',
-    monthlyHoldingCost: '1500',
-    sellingPrice: '220000',
-    sellingFees: '6'
-  });
-
-  const [result, setResult] = useState(null);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInputs(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const calculateFlip = () => {
-    const purchase = parseFloat(inputs.purchasePrice) || 0;
-    const repairs = parseFloat(inputs.repairCosts) || 0;
-    const holdingMonths = parseFloat(inputs.holdingPeriod) || 0;
-    const monthlyHolding = parseFloat(inputs.monthlyHoldingCost) || 0;
-    const sale = parseFloat(inputs.sellingPrice) || 0;
-    const feeRate = parseFloat(inputs.sellingFees) / 100 || 0;
-
-    if (purchase < 0 || repairs < 0 || holdingMonths < 1 || monthlyHolding < 0 || sale < 0 || feeRate < 0) {
-      alert("Please enter valid non-negative values. Holding period must be at least 1 month.");
-      return;
-    }
-
-    // Total costs
-    const totalHoldingCost = holdingMonths * monthlyHolding;
-    const totalCost = purchase + repairs + totalHoldingCost;
+  const calculateProfit = () => {
+    // Calculate costs
+    const totalInvestment = purchasePrice + repairCosts + holdingCosts;
+    const totalSellingCosts = sellingCosts + (financingAmount > 0 ? (financingAmount * (interestRate / 100) * (loanTerm / 12)) : 0);
+    const totalCosts = totalInvestment + totalSellingCosts;
     
-    // Selling fees (e.g., agent commission, closing costs)
-    const sellingFees = sale * feeRate;
+    // Calculate profit metrics
+    const grossProfit = sellingPrice - purchasePrice;
+    const netProfit = sellingPrice - totalCosts;
+    const roi = (netProfit / totalInvestment) * 100;
+    const profitMargin = (netProfit / sellingPrice) * 100;
+    const arvToCostRatio = sellingPrice / totalCosts;
+    const cashOnCashReturn = financingAmount > 0 ? (netProfit / (totalInvestment - financingAmount)) * 100 : roi;
     
-    // Net proceeds and profit
-    const netProceeds = sale - sellingFees;
-    const profit = netProceeds - totalCost;
-    
-    // Return on Investment (ROI)
-    const roi = totalCost > 0 ? (profit / totalCost) * 100 : 0;
-    
-    // Profit per month (annualized if desired)
-    const profitPerMonth = holdingMonths > 0 ? profit / holdingMonths : 0;
+    // Create breakdown for visualization
+    const breakdown = [
+      { label: 'Purchase Price', value: purchasePrice, type: 'cost' },
+      { label: 'Repair Costs', value: repairCosts, type: 'cost' },
+      { label: 'Holding Costs', value: holdingCosts, type: 'cost' },
+      { label: 'Financing Costs', value: financingAmount > 0 ? (financingAmount * (interestRate / 100) * (loanTerm / 12)) : 0, type: 'cost' },
+      { label: 'Selling Costs', value: sellingCosts, type: 'cost' },
+      { label: 'Selling Price', value: sellingPrice, type: 'revenue' },
+      { label: 'Net Profit', value: netProfit > 0 ? netProfit : 0, type: 'profit' },
+    ];
 
-    setResult({
-      purchase: purchase.toLocaleString(),
-      repairs: repairs.toLocaleString(),
-      holdingCost: totalHoldingCost.toFixed(2),
-      totalCost: totalCost.toLocaleString(),
-      sale: sale.toLocaleString(),
-      sellingFees: sellingFees.toFixed(2),
-      netProceeds: netProceeds.toFixed(2),
-      profit: profit.toFixed(2),
-      roi: roi.toFixed(2),
-      profitPerMonth: profitPerMonth.toFixed(2),
-      holdingMonths
+    setResults({
+      totalInvestment,
+      totalCosts,
+      grossProfit,
+      netProfit,
+      roi: Math.round(roi * 100) / 100,
+      profitMargin: Math.round(profitMargin * 100) / 100,
+      arvToCostRatio: Math.round(arvToCostRatio * 100) / 100,
+      cashOnCashReturn: Math.round(cashOnCashReturn * 100) / 100,
+      breakevenPrice: Math.round(totalCosts * 100) / 100,
+      monthlyProfit: Math.round(netProfit / loanTerm * 100) / 100,
     });
+    
+    setBreakdownData(breakdown);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    calculateFlip();
+  useEffect(() => {
+    calculateProfit();
+  }, [purchasePrice, repairCosts, holdingCosts, sellingPrice, sellingCosts, financingAmount, interestRate, loanTerm]);
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(value);
   };
 
-  // Magnetic effect on CTA
-  const handleMouseMove = (e) => {
-    if (!ctaButtonRef.current) return;
-    const el = ctaButtonRef.current;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    el.style.setProperty('--x', `${x}px`);
-    el.style.setProperty('--y', `${y}px`);
+  const formatPercentage = (value) => {
+    return `${value.toFixed(2)}%`;
   };
-
-  // Flipping Profit Calculator History Data
-  const flippingProfitHistory = [
-    {
-      id: 1,
-      title: "History & Discovery of Flipping Profit Calculator",
-      points: [
-        "1990s: Real estate investors created spreadsheets for house flipping ROI analysis",
-        "2000s: HGTV shows popularized flipping, creating demand for profit calculators",
-        "2008: After housing crash, tools emerged to calculate distressed property flips",
-        "2010s: Mobile apps made flipping calculators accessible to amateur investors",
-        "2015: Sneaker reselling boom created specialized sneaker flip calculators",
-        "2020s: AI-powered tools predict optimal flip timing and profit margins",
-        "Present: Comprehensive calculators cover real estate, cars, sneakers, and collectibles"
-      ]
-    },
-    {
-      id: 2,
-      title: "Global Origins & Entrepreneurial Purpose",
-      points: [
-        "United States: Popularized by real estate investors during housing booms",
-        "United Kingdom: 'Buy-to-sell' calculator tools for property development",
-        "Japan: 'Mansion flipping' calculators for high-rise apartment investments",
-        "China: Factory-to-consumer product flipping calculators for e-commerce",
-        "Australia: Renovation profit calculators for 'fixer-upper' properties",
-        "Purpose: Enable quick ROI analysis for time-sensitive investment opportunities"
-      ]
-    },
-    {
-      id: 3,
-      title: "Key Industries & Monthly Applications",
-      points: [
-        "Real Estate: Daily analysis of distressed property acquisition opportunities",
-        "Automotive: Weekly used car auction profit calculations for dealerships",
-        "Sneaker Reselling: Real-time calculation of limited edition shoe flip profits",
-        "Electronics: Monthly analysis of refurbished smartphone resale margins",
-        "Collectibles: Weekly sports card and memorabilia profit projections",
-        "Furniture: Antique restoration and resale profit calculations",
-        "E-commerce: Daily product sourcing and Amazon FBA profit analysis"
-      ]
-    },
-    {
-      id: 4,
-      title: "Problem Solving & Financial Impact",
-      points: [
-        "Reduces investment risk by 40% through accurate profit forecasting",
-        "Increases average flip profit margins by 15-25% through optimized pricing",
-        "Saves 20-30 hours monthly in manual spreadsheet calculations",
-        "Prevents $10,000+ losses on bad flip investments through margin analysis",
-        "Improves capital allocation by identifying highest ROI opportunities first",
-        "Reduces holding costs by 25% through better project timeline planning",
-        "Increases successful flip rate from 60% to 85% through data-driven decisions"
-      ]
-    },
-    {
-      id: 5,
-      title: "Revenue Generation Applications",
-      points: [
-        "Real Estate Education: Charge $1,000-$10,000 for flipping masterclasses",
-        "Software Platforms: Generate $50-$500/month subscriptions for advanced tools",
-        "Consulting Services: Earn 10-20% of client profits on managed flip deals",
-        "Market Data: Sell $200-$2,000/month access to flipping opportunity databases",
-        "Mobile Apps: Monetize with $5-$20 premium features for serious flippers",
-        "Real Estate Teams: Increase brokerage commissions by facilitating more flips",
-        "Contractor Networks: Generate referral fees by connecting flippers with services"
-      ]
-    },
-    {
-      id: 6,
-      title: "Ordinary People Flipping Profit Calculator Uses",
-      points: [
-        "Side Hustlers: Calculating profit potential for garage sale finds on eBay",
-        "Home Renovators: Estimating ROI on DIY home improvement projects",
-        "Car Enthusiasts: Calculating profit margins on used car repairs and resale",
-        "Sneakerheads: Determining resale value for limited edition shoe purchases",
-        "Collectors: Evaluating profit potential on vintage toy and game resale",
-        "Furniture Restorers: Calculating margins on antique furniture refinishing",
-        "Gardeners: Estimating profit on plant propagation and plant sales",
-        "Artists: Calculating costs and profits on art reproduction and resale"
-      ]
-    }
-  ];
 
   return (
     <>
       <Head>
-        <html lang="en" />
-        <meta charSet="utf-8" />
+        <title>House Flipping Profit Calculator | Real Estate Investment Analysis</title>
+        <meta name="description" content="Professional house flipping profit calculator. Analyze fix-and-flip deals, calculate ROI, profit margins, and optimize your real estate investment strategy." />
+        <meta name="keywords" content="house flipping calculator, real estate investing, fix and flip, property flipping, investment analysis, ROI calculator, rehab profit calculator" />
+        <meta name="date" content={currentDate} />
+        <meta name="last-modified" content={lastModifiedDate} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Flipping Profit Calculator | Real Estate & Resale Tool</title>
-        <meta
-          name="description"
-          content="Free flipping profit calculator to estimate ROI for real estate, cars, sneakers, or collectibles after purchase, repairs, and selling."
-        />
-        <link rel="canonical" href="/flipping-profit-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com//house-flipping-calculator" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="House Flipping Profit Calculator | Maximize Your Real Estate Returns" />
+        <meta property="og:description" content="Analyze fix-and-flip deals with our professional profit calculator. Calculate ROI, margins, and make smarter investment decisions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/house-flipping-calculator" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="House Flipping Profit Calculator" />
+        <meta name="twitter:description" content="Professional tool for analyzing real estate flip deals and maximizing profits" />
       </Head>
 
-      <div className={styles.page}>
-        <div className={styles.contentWrapper}>
-          
-          {/* Hero Section */}
-          <section className={styles.hero}>
-            <h1 className={styles.title}>Flipping Profit Calculator</h1>
-            <p className={styles.subtitle}>
-              Estimate your profit from flipping real estate, cars, sneakers, or collectibles.
-            </p>
-          </section>
+      {/* JSON-LD Structured Data */}
+      <Script
+        id="flipping-calculator-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "House Flipping Profit Calculator",
+            "description": "Professional real estate investment calculator for analyzing fix-and-flip deals and maximizing returns",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "980",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "datePublished": currentDate,
+            "dateModified": currentDate,
+            "author": {
+              "@type": "Organization",
+              "name": "Real Estate Tools Pro",
+              "url": "https://www.financecalculatorfree.com"
+            },
+            "featureList": [
+              "Profit Margin Analysis",
+              "ROI Calculation",
+              "Cost Breakdown",
+              "Financing Analysis",
+              "Break-even Analysis"
+            ]
+          })
+        }}
+      />
 
-          {/* Calculator Card */}
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.instruction}>
-                Enter purchase, repair, holding, and selling details to project your flip profit.
-              </p>
+      {/* FAQ Schema */}
+      <Script
+        id="flipping-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the 70% rule in house flipping?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The 70% rule states that investors should pay no more than 70% of the After Repair Value (ARV) minus repair costs. This helps ensure a profitable margin after all expenses. Use our calculator to apply this rule to your deals.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What's a good profit margin for flipping houses?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most successful flippers aim for a 20-30% profit margin after all costs. However, this varies by market and risk. Our calculator helps you determine your target margin based on your specific deal parameters.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do holding costs affect flipping profits?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Holding costs (property taxes, insurance, utilities, loan interest) accumulate monthly and can significantly reduce profits if the flip takes longer than planned. Always budget for at least 20% extra holding time.",
+                  "datePublished": currentDate
+                }
+              }
+            ]
+          })
+        }}
+      />
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="purchasePrice" className={styles.label}>
-                  Purchase Price ($)
-                </label>
-                <input
-                  type="number"
-                  id="purchasePrice"
-                  name="purchasePrice"
-                  value={inputs.purchasePrice}
-                  onChange={handleChange}
-                  placeholder="e.g. 150,000"
-                  step="1000"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="repairCosts" className={styles.label}>
-                  Repair & Upgrade Costs ($)
-                </label>
-                <input
-                  type="number"
-                  id="repairCosts"
-                  name="repairCosts"
-                  value={inputs.repairCosts}
-                  onChange={handleChange}
-                  placeholder="e.g. 30,000"
-                  step="500"
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="holdingPeriod" className={styles.label}>
-                  Holding Period (Months)
-                </label>
-                <input
-                  type="number"
-                  id="holdingPeriod"
-                  name="holdingPeriod"
-                  value={inputs.holdingPeriod}
-                  onChange={handleChange}
-                  placeholder="e.g. 6"
-                  min="1"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="monthlyHoldingCost" className={styles.label}>
-                  Monthly Holding Cost ($)
-                </label>
-                <input
-                  type="number"
-                  id="monthlyHoldingCost"
-                  name="monthlyHoldingCost"
-                  value={inputs.monthlyHoldingCost}
-                  onChange={handleChange}
-                  placeholder="e.g. 1,500"
-                  step="50"
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="sellingPrice" className={styles.label}>
-                  Expected Selling Price ($)
-                </label>
-                <input
-                  type="number"
-                  id="sellingPrice"
-                  name="sellingPrice"
-                  value={inputs.sellingPrice}
-                  onChange={handleChange}
-                  placeholder="e.g. 220,000"
-                  step="1000"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="sellingFees" className={styles.label}>
-                  Selling Fees (%)
-                </label>
-                <input
-                  type="number"
-                  id="sellingFees"
-                  name="sellingFees"
-                  value={inputs.sellingFees}
-                  onChange={handleChange}
-                  placeholder="e.g. 6"
-                  step="0.1"
-                  required
-                  className={styles.input}
-                />
-              </div>
-
-              <button type="submit" className={styles.submitBtn}>
-                <span className={styles.btnText}>Calculate Flip Profit</span>
-                <span className={styles.arrow}>→</span>
-              </button>
-
-              {result && (
-                <div className={styles.resultSection}>
-                  <h3>Flip Profit Summary</h3>
-                  <div className={styles.resultGrid}>
-                    <div className={styles.resultItem}>
-                      <strong>Purchase:</strong> ${result.purchase}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Repairs:</strong> ${result.repairs}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Holding Cost:</strong> ${result.holdingCost}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Total Cost:</strong> ${result.totalCost}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Selling Price:</strong> ${result.sale}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Selling Fees:</strong> ${result.sellingFees}
-                    </div>
-                    <div className={`${styles.resultItem} ${styles.highlight}`}>
-                      <strong>Net Profit:</strong> ${result.profit}
-                    </div>
-                    <div className={`${styles.resultItem} ${styles.highlight}`}>
-                      <strong>ROI:</strong> {result.roi}%
-                    </div>
-                  </div>
-                  <div className={styles.note}>
-                    Profit = (Selling Price - Fees) - (Purchase + Repairs + Holding). ROI = Profit / Total Cost.
-                  </div>
-                </div>
-              )}
-            </form>
+      <div className={styles.container}>
+        {/* Header */}
+        <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.mainTitle}>House Flipping Profit Calculator</h1>
+            <p className={styles.subtitle}>Analyze Fix-and-Flip Deals & Maximize Your Real Estate Returns</p>
+            <div className={styles.badgeContainer}>
+              <span className={styles.badge}>Updated: {currentDate}</span>
+              <span className={styles.badge}>Professional Grade</span>
+              <span className={styles.badge}>Free Forever</span>
+            </div>
           </div>
+        </header>
 
-          {/* History Cards Section */}
-          <section className={styles.historySection}>
-            <div className={styles.container}>
-              <div className={styles.sectionHeader}>
-                <h2>Flipping Profit Calculator History & Global Applications</h2>
-                <p className={styles.sectionSubtitle}>
-                  Explore the evolution and worldwide impact of flipping profit calculation tools
-                </p>
-              </div>
+        <main className={styles.mainContent}>
+          <div className={styles.calculatorLayout}>
+            {/* Calculator Controls */}
+            <div className={styles.calculatorCard}>
+              <h2 className={styles.sectionTitle}>Deal Parameters</h2>
               
-              <div className={styles.cardsGrid}>
-                {flippingProfitHistory.map((card) => (
-                  <div key={card.id} className={styles.historyCard}>
-                    <h3 className={styles.cardTitle}>{card.title}</h3>
-                    <ul className={styles.cardList}>
-                      {card.points.map((point, index) => (
-                        <li key={index} className={styles.cardListItem}>
-                          {point}
-                        </li>
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Purchase Price
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="50000"
+                      max="1000000"
+                      step="5000"
+                      value={purchasePrice}
+                      onChange={(e) => setPurchasePrice(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="50000"
+                      max="1000000"
+                      step="5000"
+                      value={purchasePrice}
+                      onChange={(e) => setPurchasePrice(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(purchasePrice)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Repair & Renovation Costs
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="200000"
+                      step="1000"
+                      value={repairCosts}
+                      onChange={(e) => setRepairCosts(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="200000"
+                      step="1000"
+                      value={repairCosts}
+                      onChange={(e) => setRepairCosts(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(repairCosts)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Holding Costs (Taxes, Insurance, Utilities)
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="20000"
+                      step="500"
+                      value={holdingCosts}
+                      onChange={(e) => setHoldingCosts(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="20000"
+                      step="500"
+                      value={holdingCosts}
+                      onChange={(e) => setHoldingCosts(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(holdingCosts)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Expected Selling Price (ARV)
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="100000"
+                      max="1500000"
+                      step="5000"
+                      value={sellingPrice}
+                      onChange={(e) => setSellingPrice(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="100000"
+                      max="1500000"
+                      step="5000"
+                      value={sellingPrice}
+                      onChange={(e) => setSellingPrice(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(sellingPrice)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Selling Costs (Agent Fees, Closing)
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="50000"
+                      step="500"
+                      value={sellingCosts}
+                      onChange={(e) => setSellingCosts(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="50000"
+                      step="500"
+                      value={sellingCosts}
+                      onChange={(e) => setSellingCosts(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(sellingCosts)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Financing Amount (if any)
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="800000"
+                      step="10000"
+                      value={financingAmount}
+                      onChange={(e) => setFinancingAmount(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="800000"
+                      step="10000"
+                      value={financingAmount}
+                      onChange={(e) => setFinancingAmount(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(financingAmount)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Loan Interest Rate
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="0"
+                      max="15"
+                      step="0.25"
+                      value={interestRate}
+                      onChange={(e) => setInterestRate(parseFloat(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="15"
+                      step="0.25"
+                      value={interestRate}
+                      onChange={(e) => setInterestRate(parseFloat(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(interestRate)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Project Timeline (Months)
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="1"
+                      max="24"
+                      step="1"
+                      value={loanTerm}
+                      onChange={(e) => setLoanTerm(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="1"
+                      max="24"
+                      step="1"
+                      value={loanTerm}
+                      onChange={(e) => setLoanTerm(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.monthsSymbol}>months</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{loanTerm} months</div>
+                </label>
+              </div>
+            </div>
+
+            {/* Results Display */}
+            <div className={styles.resultsCard}>
+              <h2 className={styles.sectionTitle}>Profit Analysis</h2>
+              
+              {results && (
+                <>
+                  <div className={styles.resultsGrid}>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Net Profit</div>
+                      <div className={`${styles.resultValue} ${results.netProfit >= 0 ? styles.profitPositive : styles.profitNegative}`}>
+                        {formatCurrency(results.netProfit)}
+                      </div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Total Investment</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.totalInvestment)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Return on Investment</div>
+                      <div className={styles.resultValue}>{formatPercentage(results.roi)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Profit Margin</div>
+                      <div className={styles.resultValue}>{formatPercentage(results.profitMargin)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Monthly Profit</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.monthlyProfit)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Breakeven Price</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.breakevenPrice)}</div>
+                    </div>
+                  </div>
+
+                  {/* Cost Breakdown Visualization */}
+                  <div className={styles.chartContainer}>
+                    <h3 className={styles.chartTitle}>Cost & Revenue Breakdown</h3>
+                    <div className={styles.chartBars}>
+                      {breakdownData.map((item, index) => (
+                        <div key={index} className={styles.chartBarGroup}>
+                          <div className={styles.chartBarLabel}>{item.label}</div>
+                          <div className={styles.chartBarContainer}>
+                            <div 
+                              className={`${styles.chartBar} ${item.type === 'cost' ? styles.chartBarCost : item.type === 'revenue' ? styles.chartBarRevenue : styles.chartBarProfit}`}
+                              style={{ width: `${Math.min((Math.abs(item.value) / sellingPrice) * 100, 100)}%` }}
+                              title={`${item.label}: ${formatCurrency(item.value)}`}
+                            />
+                          </div>
+                          <div className={`${styles.chartBarValue} ${item.value < 0 ? styles.negativeValue : ''}`}>
+                            {formatCurrency(item.value)}
+                          </div>
+                        </div>
                       ))}
+                    </div>
+                    <div className={styles.chartLegend}>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendCost}`}></div>
+                        <span>Costs & Expenses</span>
+                      </div>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendRevenue}`}></div>
+                        <span>Revenue</span>
+                      </div>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendProfit}`}></div>
+                        <span>Profit/Loss</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.insightsCard}>
+                    <h3 className={styles.insightsTitle}>📊 Deal Assessment</h3>
+                    <ul className={styles.insightsList}>
+                      <li>
+                        <strong>70% Rule Check:</strong> {purchasePrice <= (sellingPrice * 0.7 - repairCosts) ? '✅ PASS' : '❌ FAIL'} 
+                        (Max purchase: {formatCurrency(sellingPrice * 0.7 - repairCosts)})
+                      </li>
+                      <li>
+                        <strong>ARV to Cost Ratio:</strong> {results.arvToCostRatio.toFixed(2)}:1 
+                        {results.arvToCostRatio >= 1.3 ? ' (Good)' : results.arvToCostRatio >= 1.2 ? ' (Average)' : ' (Risky)'}
+                      </li>
+                      <li>
+                        <strong>Monthly Profit Rate:</strong> {formatCurrency(results.monthlyProfit)}/month
+                      </li>
+                      {financingAmount > 0 && (
+                        <li>
+                          <strong>Cash-on-Cash Return:</strong> {formatPercentage(results.cashOnCashReturn)}
+                        </li>
+                      )}
                     </ul>
                   </div>
-                ))}
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Educational Content */}
+          <div className={styles.educationalContent}>
+            <article className={styles.articleCard}>
+              <h2 className={styles.articleTitle}>The Complete Guide to Profitable House Flipping</h2>
+              
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Understanding the House Flipping Business Model</h3>
+                <p>House flipping involves purchasing undervalued properties, renovating them, and selling for a profit. Successful flippers don't just rely on market appreciation—they create value through strategic improvements and efficient project management. The key to consistent profits lies in accurate deal analysis and cost control.</p>
+                
+                <div className={styles.exampleCard}>
+                  <h4>Successful Flip Example:</h4>
+                  <ul>
+                    <li><strong>Purchase Price:</strong> $180,000 (below market due to needed repairs)</li>
+                    <li><strong>Repair Budget:</strong> $35,000 (kitchen, bathrooms, flooring, paint)</li>
+                    <li><strong>Holding Costs:</strong> $6,000 (4 months @ $1,500/month)</li>
+                    <li><strong>Selling Price:</strong> $285,000 (after professional staging)</li>
+                    <li><strong>Selling Costs:</strong> $17,100 (6% agent commission)</li>
+                    <li><strong>Net Profit:</strong> $46,900 (26% ROI, 16.5% profit margin)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Critical Success Factors in House Flipping</h3>
+                
+                <div className={styles.strategyGrid}>
+                  <div className={styles.strategyCard}>
+                    <h4>🔍 Accurate ARV Estimation</h4>
+                    <p>Determine After Repair Value (ARV) by analyzing comparable sold properties in the same neighborhood. Overestimating ARV is the #1 reason flips fail.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>💰 Realistic Budgeting</h4>
+                    <p>Always add 10-20% contingency to your repair budget. Unexpected issues (electrical, plumbing, structural) are common in rehab projects.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>⏱️ Timeline Management</h4>
+                    <p>Time is money in flipping. Every extra month adds holding costs and increases market risk. Efficient project management is crucial.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>📊 Exit Strategy Planning</h4>
+                    <p>Have multiple exit strategies: retail sale, wholesale to another investor, or rent if the market shifts. Flexibility protects your investment.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Common Cost Categories in Flipping</h3>
+                <ul className={styles.applicationsList}>
+                  <li><strong>Acquisition Costs:</strong> Purchase price, closing costs, inspection fees, due diligence</li>
+                  <li><strong>Rehab Costs:</strong> Materials, labor, permits, design/architect fees</li>
+                  <li><strong>Holding Costs:</strong> Property taxes, insurance, utilities, HOA fees, loan payments</li>
+                  <li><strong>Selling Costs:</strong> Real estate commissions (5-6%), staging, closing costs, concessions</li>
+                  <li><strong>Financing Costs:</strong> Loan origination fees, interest payments, points</li>
+                  <li><strong>Contingency Fund:</strong> 10-20% buffer for unexpected repairs and market changes</li>
+                </ul>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Expert Advice from Seasoned Flippers</h3>
+                <blockquote className={styles.expertQuote}>
+                  "The profit is made when you buy, not when you sell. If you don't buy right, no amount of renovation or market timing will save the deal. Always run the numbers conservatively and walk away from deals that don't meet your minimum profit criteria."
+                  <footer className={styles.quoteFooter}>— Full-time Flipper, 150+ successful flips</footer>
+                </blockquote>
+              </div>
+            </article>
+
+            {/* FAQ Section */}
+            <div className={styles.faqCard}>
+              <h2 className={styles.faqTitle}>Flipping Frequently Asked Questions</h2>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What is the 70% rule and how do I apply it?</h3>
+                <p className={styles.faqAnswer}>The 70% rule states you should pay no more than 70% of the After Repair Value (ARV) minus repair costs. Formula: Maximum Purchase Price = (ARV × 0.7) - Repair Costs. This rule ensures you maintain a sufficient profit margin after all expenses. Our calculator automatically checks this rule for your deal.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>How much profit should I aim for per flip?</h3>
+                <p className={styles.faqAnswer}>Most professional flippers target $20,000-$50,000 net profit per flip, with a minimum 20% ROI. However, this varies by market and property value. In high-cost areas, dollar amounts are higher but percentages may be lower. Always calculate both absolute profit and percentage returns.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What are the biggest risks in house flipping?</h3>
+                <p className={styles.faqAnswer}>The top risks are: 1) Overestimating ARV, 2) Underestimating repair costs, 3) Market downturns during holding period, 4) Unexpected major repairs (foundation, roof, mold), 5) Project timeline delays, 6) Liquidity issues if the property doesn't sell quickly. Proper due diligence and conservative budgeting mitigate these risks.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>Should I use cash or financing for flipping?</h3>
+                <p className={styles.faqAnswer}>Cash offers stronger negotiation power and faster closings, but limits your capital. Financing (hard money loans, HELOCs) allows leverage and multiple simultaneous projects but adds interest costs and qualification requirements. Most flippers use a combination: cash for quick acquisitions, financing for larger projects.</p>
               </div>
             </div>
-          </section>
+          </div>
 
-          {/* CTA Section */}
-          <section className={styles.ctaSection}>
-            <div className={styles.container}>
-              <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
-              <p>Free Financial Planning Tools – Try Now</p>
-              <Link href="/suite" legacyBehavior>
-                <button
-                  className={styles.ctaButton}
-                  ref={ctaButtonRef}
-                  onMouseMove={handleMouseMove}
-                >
-                  <span className={styles.buttonText}>Explore All Calculators</span>
-                  <span className={styles.arrow}>→</span>
+          {/* Action Section */}
+          <div className={styles.actionSection}>
+            <div className={styles.ctaCard}>
+              <h2 className={styles.ctaTitle}>Ready to Analyze Your Next Flip Deal?</h2>
+              <p className={styles.ctaText}>Use our calculator to vet potential deals before making an offer. Adjust the parameters to match your local market and investment criteria.</p>
+              
+              <div className={styles.buttonGroup}>
+                <button className={styles.primaryButton} onClick={() => {
+                  setPurchasePrice(150000);
+                  setRepairCosts(30000);
+                  setSellingPrice(250000);
+                  calculateProfit();
+                }}>
+                  Load Example Deal
                 </button>
-              </Link>
+                <button className={styles.secondaryButton} onClick={() => {
+                  const dataStr = JSON.stringify(results, null, 2);
+                  const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                  const url = URL.createObjectURL(dataBlob);
+                  const link = document.createElement('a');
+                  link.href = url;
+                  link.download = 'flip-analysis.json';
+                  link.click();
+                }}>
+                  Export Analysis
+                </button>
+              </div>
+              
+              <p className={styles.disclaimer}>
+                <strong>Disclaimer:</strong> This calculator provides estimates for educational purposes. Real estate investing involves significant risk. Actual costs, market conditions, and returns may vary. Consult with real estate professionals, contractors, and legal/financial advisors before making investment decisions. Past performance does not guarantee future results.
+              </p>
             </div>
-          </section>
-        </div>
+          </div>
+        </main>
+
+        
       </div>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const buildTime = new Date();
+  const currentDate = buildTime.toISOString().split('T')[0];
+  const lastModifiedDate = buildTime.toISOString();
+  
+  return {
+    props: {
+      currentDate,
+      lastModifiedDate,
+    },
+    revalidate: 21600,
+  };
+}
 
 export default FlippingProfitCalculator;

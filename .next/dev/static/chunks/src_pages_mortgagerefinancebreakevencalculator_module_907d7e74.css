@@ -1,0 +1,1091 @@
+/* [project]/src/pages/mortgagerefinancebreakevencalculator.module.css [client] (css) */
+.mortgagerefinancebreakevencalculator-module__-0MIQa__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__header {
+  color: #000;
+  text-align: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: -80px;
+  margin-bottom: 2rem;
+  padding: 80px 1rem 1.5rem;
+  position: relative;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__mainTitle {
+  color: #000;
+  margin: 0 0 .5rem;
+  padding-top: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__badge {
+  color: #000;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__calculatorCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__sectionTitle {
+  color: #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__inputGroup {
+  margin-bottom: 1.75rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__inputLabel {
+  color: #333;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__currencySymbol, .mortgagerefinancebreakevencalculator-module__-0MIQa__percentageSymbol, .mortgagerefinancebreakevencalculator-module__-0MIQa__yearsSymbol {
+  color: #000;
+  min-width: 20px;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+  padding: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__valueDisplay {
+  color: #000;
+  padding: .5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__selectInput {
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: .875rem;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__selectInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__toggleGroup {
+  gap: 1rem;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__toggleButton {
+  color: #333;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  padding: .875rem 1rem;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__toggleButton:hover {
+  border-color: #000;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__toggleButton.mortgagerefinancebreakevencalculator-module__-0MIQa__active {
+  color: #fff;
+  background: #000;
+  border-color: #000;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__resultValue {
+  color: #000;
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__resultSubtext {
+  color: #666;
+  font-size: .875rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__positive {
+  color: #2e7d32;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__negative {
+  color: #c62828;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__chartContainer {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__chartTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__chartTimeline {
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: .5rem;
+  min-height: 200px;
+  padding: 1rem 0;
+  display: flex;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__timelinePoint {
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  gap: .75rem;
+  display: flex;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__timelineLabel {
+  color: #666;
+  text-align: center;
+  min-height: 2rem;
+  font-size: .75rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__timelineBarContainer {
+  background: #f5f5f5;
+  border-radius: 4px;
+  flex-direction: column-reverse;
+  width: 30px;
+  height: 150px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__timelineBarSavings {
+  background: #2e7d32;
+  width: 100%;
+  transition: height .3s;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__timelineBarCosts {
+  background: #c62828;
+  width: 100%;
+  transition: height .3s;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__timelineValue {
+  text-align: center;
+  min-height: 1.5rem;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__chartLegend {
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__legendItem {
+  color: #333;
+  align-items: center;
+  gap: .5rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__legendColor {
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__legendSavings {
+  background: #2e7d32;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__legendCosts {
+  background: #c62828;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__legendBreakEven {
+  background: #ff9800;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__tableContainer {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable th {
+  text-align: left;
+  color: #000;
+  background: #f5f5f5;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable td {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable tr:last-child td {
+  border-bottom: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__positiveRow {
+  background: #f1f8e9;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__negativeRow {
+  background: #ffebee;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__insightsTitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__insightsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__insightsList li {
+  color: #333;
+  border-bottom: 1px solid #0000001a;
+  padding: .75rem 0;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__insightsList li:last-child {
+  border-bottom: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__insightsList strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__decisionCard {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 6px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__decisionTitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__decisionContent {
+  color: #333;
+  line-height: 1.6;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__decisionPositive {
+  color: #2e7d32;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__decisionNegative {
+  color: #c62828;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__educationalContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__articleTitle {
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__articleSubtitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__articleCard p {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__exampleCard {
+  background: #f8f8f8;
+  border-left: 4px solid #666;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__exampleCard h4 {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__exampleCard ul {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__exampleCard li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__exampleCard li strong {
+  color: #000;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__strategyCard h4 {
+  color: #000;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__strategyCard p {
+  color: #666;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__applicationsList {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__applicationsList li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .875rem 0;
+  display: flex;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__applicationsList li:before {
+  content: "✓";
+  color: #000;
+  flex-shrink: 0;
+  margin-top: .125rem;
+  font-weight: bold;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__applicationsList li strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 2rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__quoteFooter {
+  color: #666;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: normal;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__faqTitle {
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__faqItem:last-child {
+  border-bottom: none;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__faqQuestion {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__faqAnswer {
+  color: #333;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__ctaTitle {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__ctaText {
+  color: #333;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__tipBox {
+  text-align: left;
+  color: #333;
+  background: #fff8e1;
+  border-left: 4px solid #ff9800;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__tipBox strong {
+  color: #000;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__disclaimer {
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__disclaimer strong {
+  color: #000;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__footer {
+  color: #333;
+  text-align: center;
+  background: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__footerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__footerText {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__footerNote {
+  color: #666;
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: .875rem;
+}
+
+@media (max-width: 768px) {
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__container {
+    padding-top: 70px;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__header {
+    margin-top: -70px;
+    padding: 70px 1rem 1rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__mainTitle {
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 2rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__articleTitle {
+    font-size: 1.75rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__articleCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__faqCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__calculatorCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__resultsCard {
+    padding: 1.5rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__chartTimeline {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__timelinePoint {
+    flex: 0 0 calc(33.333% - 1rem);
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__strategyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable {
+    font-size: .875rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable th, .mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable td {
+    padding: .75rem .5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__container {
+    padding-top: 60px;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__header {
+    margin-top: -60px;
+    padding: 60px 1rem 1rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__mainTitle {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__subtitle {
+    font-size: 1rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__badge {
+    width: fit-content;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__slider, .mortgagerefinancebreakevencalculator-module__-0MIQa__numberInput {
+    width: 100%;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__numberInput {
+    order: 1;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__slider {
+    order: 2;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__currencySymbol, .mortgagerefinancebreakevencalculator-module__-0MIQa__percentageSymbol, .mortgagerefinancebreakevencalculator-module__-0MIQa__yearsSymbol {
+    text-align: center;
+    order: 3;
+    margin-top: .5rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__toggleGroup {
+    flex-direction: column;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__articleCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__faqCard {
+    padding: 1.25rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__timelinePoint {
+    flex: 0 0 calc(50% - 1rem);
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__chartLegend {
+    flex-direction: column;
+    gap: .75rem;
+  }
+}
+
+@media print {
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__container {
+    padding-top: 0 !important;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__header {
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    padding: 0 0 1rem;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__toggleGroup, .mortgagerefinancebreakevencalculator-module__-0MIQa__badgeContainer {
+    display: none;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__calculatorLayout, .mortgagerefinancebreakevencalculator-module__-0MIQa__chartContainer {
+    break-inside: avoid;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__footer {
+    background: none;
+    border-top: 2px solid #000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__container * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__container {
+    color: #000;
+    background: #fff;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__calculatorCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__resultsCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__articleCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__faqCard {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__timelineBarSavings {
+    background: #006400;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__timelineBarCosts {
+    background: #8b0000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__container {
+    color: #fff;
+    background: #121212;
+    padding-top: 80px;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__header {
+    color: #fff;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__mainTitle, .mortgagerefinancebreakevencalculator-module__-0MIQa__subtitle, .mortgagerefinancebreakevencalculator-module__-0MIQa__sectionTitle, .mortgagerefinancebreakevencalculator-module__-0MIQa__resultValue, .mortgagerefinancebreakevencalculator-module__-0MIQa__chartTitle, .mortgagerefinancebreakevencalculator-module__-0MIQa__articleTitle, .mortgagerefinancebreakevencalculator-module__-0MIQa__articleSubtitle, .mortgagerefinancebreakevencalculator-module__-0MIQa__faqTitle, .mortgagerefinancebreakevencalculator-module__-0MIQa__faqQuestion, .mortgagerefinancebreakevencalculator-module__-0MIQa__ctaTitle {
+    color: #fff;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__calculatorCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__resultsCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__articleCard, .mortgagerefinancebreakevencalculator-module__-0MIQa__faqCard {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__badge {
+    color: #fff;
+    background: #333;
+    border: 1px solid #666;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__inputLabel {
+    color: #ccc;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__numberInput, .mortgagerefinancebreakevencalculator-module__-0MIQa__selectInput {
+    color: #fff;
+    background: #1e1e1e;
+    border: 1px solid #666;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__slider {
+    background: #666;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__slider::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__slider::-moz-range-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__positive {
+    color: #4caf50;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__negative {
+    color: #f44336;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__timelineBarContainer {
+    background: #2d2d2d;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable th {
+    color: #fff;
+    background: #2d2d2d;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__savingsTable td {
+    color: #ccc;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__positiveRow {
+    background: #4caf501a;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__negativeRow {
+    background: #f443361a;
+  }
+
+  .mortgagerefinancebreakevencalculator-module__-0MIQa__tipBox {
+    color: #ccc;
+    background: #2d2d2d;
+    border-left-color: #ff9800;
+  }
+
+  @media (max-width: 768px) {
+    .mortgagerefinancebreakevencalculator-module__-0MIQa__container {
+      padding-top: 70px;
+    }
+
+    .mortgagerefinancebreakevencalculator-module__-0MIQa__header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .mortgagerefinancebreakevencalculator-module__-0MIQa__container {
+      padding-top: 60px;
+    }
+
+    .mortgagerefinancebreakevencalculator-module__-0MIQa__header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__container ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.mortgagerefinancebreakevencalculator-module__-0MIQa__container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*# sourceMappingURL=src_pages_mortgagerefinancebreakevencalculator_module_907d7e74.css.map*/

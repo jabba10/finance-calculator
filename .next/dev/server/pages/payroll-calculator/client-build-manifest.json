@@ -1,0 +1,5 @@
+{
+  "/payroll-calculator": [
+    "static/chunks/pages/payroll-calculator.js"
+  ]
+}

@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/cap-rate-calculator", [
+  "static/chunks/8484f7ae4c0ac996.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/7d1dc2e497c68398.css",
+  "static/chunks/turbopack-1f02f19d41debc79.js"
+])

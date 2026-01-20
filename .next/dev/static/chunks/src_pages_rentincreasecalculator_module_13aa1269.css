@@ -1,0 +1,1125 @@
+/* [project]/src/pages/rentincreasecalculator.module.css [client] (css) */
+.rentincreasecalculator-module__irQSmq__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.rentincreasecalculator-module__irQSmq__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.rentincreasecalculator-module__irQSmq__header {
+  color: #000;
+  text-align: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: -80px;
+  margin-bottom: 2rem;
+  padding: 80px 1rem 1.5rem;
+  position: relative;
+}
+
+.rentincreasecalculator-module__irQSmq__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.rentincreasecalculator-module__irQSmq__mainTitle {
+  color: #000;
+  margin: 0 0 .5rem;
+  padding-top: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.rentincreasecalculator-module__irQSmq__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.rentincreasecalculator-module__irQSmq__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__badge {
+  color: #000;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.rentincreasecalculator-module__irQSmq__mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.rentincreasecalculator-module__irQSmq__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .rentincreasecalculator-module__irQSmq__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.rentincreasecalculator-module__irQSmq__calculatorCard, .rentincreasecalculator-module__irQSmq__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.rentincreasecalculator-module__irQSmq__sectionTitle {
+  color: #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__inputGroup {
+  margin-bottom: 1.75rem;
+}
+
+.rentincreasecalculator-module__irQSmq__inputLabel {
+  color: #333;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.rentincreasecalculator-module__irQSmq__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__currencySymbol, .rentincreasecalculator-module__irQSmq__percentageSymbol, .rentincreasecalculator-module__irQSmq__yearsSymbol {
+  color: #000;
+  min-width: 20px;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+}
+
+.rentincreasecalculator-module__irQSmq__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.rentincreasecalculator-module__irQSmq__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.rentincreasecalculator-module__irQSmq__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+  padding: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.rentincreasecalculator-module__irQSmq__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.rentincreasecalculator-module__irQSmq__valueDisplay {
+  color: #000;
+  padding: .5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__affordabilityNote, .rentincreasecalculator-module__irQSmq__increaseNote, .rentincreasecalculator-module__irQSmq__inflationNote {
+  color: #666;
+  margin-top: .25rem;
+  font-size: .875rem;
+  font-style: italic;
+}
+
+.rentincreasecalculator-module__irQSmq__affordabilityNote {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.rentincreasecalculator-module__irQSmq__increaseNote {
+  color: #f59e0b;
+}
+
+.rentincreasecalculator-module__irQSmq__marketInfo {
+  background: #f0f0f0;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+.rentincreasecalculator-module__irQSmq__marketTitle {
+  color: #000;
+  margin-bottom: .75rem;
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__marketGrid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+  display: grid;
+}
+
+.rentincreasecalculator-module__irQSmq__marketItem {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__marketLabel {
+  color: #666;
+  text-align: center;
+  margin-bottom: .25rem;
+  font-size: .75rem;
+}
+
+.rentincreasecalculator-module__irQSmq__marketValue {
+  color: #000;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.rentincreasecalculator-module__irQSmq__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.rentincreasecalculator-module__irQSmq__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.rentincreasecalculator-module__irQSmq__resultValue {
+  color: #000;
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.rentincreasecalculator-module__irQSmq__increaseValue {
+  color: #ef4444;
+}
+
+.rentincreasecalculator-module__irQSmq__warningValue {
+  color: #f59e0b;
+}
+
+.rentincreasecalculator-module__irQSmq__resultDescription {
+  color: #666;
+  margin-top: .25rem;
+  font-size: .875rem;
+}
+
+.rentincreasecalculator-module__irQSmq__chartContainer {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.rentincreasecalculator-module__irQSmq__chartTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__chartBars {
+  flex-direction: column;
+  gap: .75rem;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__chartBarGroup {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__chartBarLabel {
+  color: #333;
+  align-items: center;
+  gap: .5rem;
+  min-width: 80px;
+  font-size: .875rem;
+  font-weight: 500;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__finalMarker {
+  font-size: 1rem;
+}
+
+.rentincreasecalculator-module__irQSmq__chartBarContainer {
+  background: #f0f0f0;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 200px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.rentincreasecalculator-module__irQSmq__chartBarRent {
+  border-radius: 4px;
+  height: 100%;
+  transition: width .3s;
+}
+
+.rentincreasecalculator-module__irQSmq__chartBarValue {
+  text-align: right;
+  color: #000;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 150px;
+  font-size: .9375rem;
+  font-weight: 600;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__rentValue {
+  color: #000;
+}
+
+.rentincreasecalculator-module__irQSmq__increaseValueSmall {
+  color: #ef4444;
+  margin-top: .125rem;
+  font-size: .75rem;
+  font-weight: 500;
+}
+
+.rentincreasecalculator-module__irQSmq__chartLegend {
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__legendItem {
+  color: #333;
+  align-items: center;
+  gap: .5rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__legendColor {
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.rentincreasecalculator-module__irQSmq__legendCurrent {
+  background: #3b82f6;
+}
+
+.rentincreasecalculator-module__irQSmq__legendModerate {
+  background: #f59e0b;
+}
+
+.rentincreasecalculator-module__irQSmq__legendHigh {
+  background: #ef4444;
+}
+
+.rentincreasecalculator-module__irQSmq__insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.rentincreasecalculator-module__irQSmq__insightsTitle {
+  color: #000;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__insightsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rentincreasecalculator-module__irQSmq__insightsList li {
+  color: #333;
+  border-bottom: 1px solid #0000001a;
+  padding: .75rem 0;
+}
+
+.rentincreasecalculator-module__irQSmq__insightsList li:last-child {
+  border-bottom: none;
+}
+
+.rentincreasecalculator-module__irQSmq__insightsList strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__warning {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.rentincreasecalculator-module__irQSmq__educationalContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rentincreasecalculator-module__irQSmq__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.rentincreasecalculator-module__irQSmq__articleTitle {
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.rentincreasecalculator-module__irQSmq__articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.rentincreasecalculator-module__irQSmq__articleSubtitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__articleCard p {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.rentincreasecalculator-module__irQSmq__exampleCard {
+  background: #f8f8f8;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.rentincreasecalculator-module__irQSmq__exampleCard h4 {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__exampleCard ul {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rentincreasecalculator-module__irQSmq__exampleCard li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0;
+}
+
+.rentincreasecalculator-module__irQSmq__exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.rentincreasecalculator-module__irQSmq__exampleCard li strong {
+  color: #000;
+}
+
+.rentincreasecalculator-module__irQSmq__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.rentincreasecalculator-module__irQSmq__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.rentincreasecalculator-module__irQSmq__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.rentincreasecalculator-module__irQSmq__strategyCard h4 {
+  color: #000;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+}
+
+.rentincreasecalculator-module__irQSmq__strategyCard p {
+  color: #666;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.rentincreasecalculator-module__irQSmq__affordabilityTable {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.rentincreasecalculator-module__irQSmq__tableRow {
+  border-bottom: 1px solid #e0e0e0;
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+}
+
+.rentincreasecalculator-module__irQSmq__tableRow:last-child {
+  border-bottom: none;
+}
+
+.rentincreasecalculator-module__irQSmq__tableCell {
+  text-align: center;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.rentincreasecalculator-module__irQSmq__tableRow:first-child .rentincreasecalculator-module__irQSmq__tableCell {
+  color: #fff;
+  background: #3b82f6;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonCard {
+  background: #f8f8f8;
+  border-left: 4px solid #10b981;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonCard h4 {
+  color: #000;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .rentincreasecalculator-module__irQSmq__comparisonGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonColumn h5 {
+  color: #000;
+  text-align: center;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonColumn ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonColumn li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0 .5rem 1.5rem;
+  position: relative;
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonColumn li:before {
+  content: "✓";
+  color: #10b981;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonColumn li:last-child {
+  border-bottom: none;
+}
+
+.rentincreasecalculator-module__irQSmq__comparisonNote {
+  text-align: center;
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-style: italic;
+}
+
+.rentincreasecalculator-module__irQSmq__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 2rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.rentincreasecalculator-module__irQSmq__quoteFooter {
+  color: #666;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: normal;
+}
+
+.rentincreasecalculator-module__irQSmq__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.rentincreasecalculator-module__irQSmq__faqTitle {
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.rentincreasecalculator-module__irQSmq__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.rentincreasecalculator-module__irQSmq__faqItem:last-child {
+  border-bottom: none;
+}
+
+.rentincreasecalculator-module__irQSmq__faqQuestion {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.rentincreasecalculator-module__irQSmq__faqAnswer {
+  color: #333;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.rentincreasecalculator-module__irQSmq__actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.rentincreasecalculator-module__irQSmq__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.rentincreasecalculator-module__irQSmq__ctaTitle {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.rentincreasecalculator-module__irQSmq__ctaText {
+  color: #333;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.rentincreasecalculator-module__irQSmq__disclaimer {
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+}
+
+.rentincreasecalculator-module__irQSmq__disclaimer strong {
+  color: #3b82f6;
+}
+
+.rentincreasecalculator-module__irQSmq__footer {
+  color: #333;
+  text-align: center;
+  background: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+}
+
+.rentincreasecalculator-module__irQSmq__footerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rentincreasecalculator-module__irQSmq__footerText {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.rentincreasecalculator-module__irQSmq__footerNote {
+  color: #666;
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: .875rem;
+}
+
+@media (max-width: 768px) {
+  .rentincreasecalculator-module__irQSmq__container {
+    padding-top: 70px;
+  }
+
+  .rentincreasecalculator-module__irQSmq__header {
+    margin-top: -70px;
+    padding: 70px 1rem 1rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__mainTitle {
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 2rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__articleTitle {
+    font-size: 1.75rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__articleCard, .rentincreasecalculator-module__irQSmq__faqCard, .rentincreasecalculator-module__irQSmq__calculatorCard, .rentincreasecalculator-module__irQSmq__resultsCard {
+    padding: 1.5rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__chartBarGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__chartBarContainer {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .rentincreasecalculator-module__irQSmq__chartBarValue {
+    text-align: left;
+    min-width: auto;
+  }
+
+  .rentincreasecalculator-module__irQSmq__marketGrid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__strategyGrid, .rentincreasecalculator-module__irQSmq__affordabilityTable .rentincreasecalculator-module__irQSmq__tableRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .rentincreasecalculator-module__irQSmq__container {
+    padding-top: 60px;
+  }
+
+  .rentincreasecalculator-module__irQSmq__header {
+    margin-top: -60px;
+    padding: 60px 1rem 1rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__mainTitle {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .rentincreasecalculator-module__irQSmq__subtitle {
+    font-size: 1rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__badge {
+    width: fit-content;
+  }
+
+  .rentincreasecalculator-module__irQSmq__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__slider, .rentincreasecalculator-module__irQSmq__numberInput {
+    width: 100%;
+  }
+
+  .rentincreasecalculator-module__irQSmq__numberInput {
+    order: 1;
+  }
+
+  .rentincreasecalculator-module__irQSmq__slider {
+    order: 2;
+  }
+
+  .rentincreasecalculator-module__irQSmq__currencySymbol, .rentincreasecalculator-module__irQSmq__percentageSymbol, .rentincreasecalculator-module__irQSmq__yearsSymbol {
+    text-align: center;
+    order: 3;
+    margin-top: .5rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__articleCard, .rentincreasecalculator-module__irQSmq__faqCard {
+    padding: 1.25rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media print {
+  .rentincreasecalculator-module__irQSmq__container {
+    padding-top: 0 !important;
+  }
+
+  .rentincreasecalculator-module__irQSmq__header {
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    padding: 0 0 1rem;
+  }
+
+  .rentincreasecalculator-module__irQSmq__badgeContainer {
+    display: none;
+  }
+
+  .rentincreasecalculator-module__irQSmq__calculatorLayout {
+    break-inside: avoid;
+  }
+
+  .rentincreasecalculator-module__irQSmq__footer {
+    background: none;
+    border-top: 2px solid #000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rentincreasecalculator-module__irQSmq__container * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .rentincreasecalculator-module__irQSmq__container {
+    color: #000;
+    background: #fff;
+  }
+
+  .rentincreasecalculator-module__irQSmq__calculatorCard, .rentincreasecalculator-module__irQSmq__resultsCard, .rentincreasecalculator-module__irQSmq__articleCard, .rentincreasecalculator-module__irQSmq__faqCard {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .rentincreasecalculator-module__irQSmq__insightsCard {
+    border-left: 4px solid #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .rentincreasecalculator-module__irQSmq__container {
+    color: #fff;
+    background: #121212;
+    padding-top: 80px;
+  }
+
+  .rentincreasecalculator-module__irQSmq__header {
+    color: #fff;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .rentincreasecalculator-module__irQSmq__mainTitle, .rentincreasecalculator-module__irQSmq__subtitle, .rentincreasecalculator-module__irQSmq__sectionTitle, .rentincreasecalculator-module__irQSmq__resultValue, .rentincreasecalculator-module__irQSmq__chartTitle, .rentincreasecalculator-module__irQSmq__articleTitle, .rentincreasecalculator-module__irQSmq__articleSubtitle, .rentincreasecalculator-module__irQSmq__faqTitle, .rentincreasecalculator-module__irQSmq__faqQuestion, .rentincreasecalculator-module__irQSmq__ctaTitle {
+    color: #fff;
+  }
+
+  .rentincreasecalculator-module__irQSmq__calculatorCard, .rentincreasecalculator-module__irQSmq__resultsCard, .rentincreasecalculator-module__irQSmq__articleCard, .rentincreasecalculator-module__irQSmq__faqCard {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .rentincreasecalculator-module__irQSmq__badge {
+    color: #fff;
+    background: #333;
+    border: 1px solid #666;
+  }
+
+  .rentincreasecalculator-module__irQSmq__inputLabel {
+    color: #ccc;
+  }
+
+  .rentincreasecalculator-module__irQSmq__numberInput {
+    color: #fff;
+    background: #1e1e1e;
+    border: 1px solid #666;
+  }
+
+  .rentincreasecalculator-module__irQSmq__slider {
+    background: #666;
+  }
+
+  .rentincreasecalculator-module__irQSmq__slider::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .rentincreasecalculator-module__irQSmq__slider::-moz-range-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .rentincreasecalculator-module__irQSmq__resultItem, .rentincreasecalculator-module__irQSmq__chartContainer {
+    background: #2d2d2d;
+    border: 1px solid #444;
+  }
+
+  .rentincreasecalculator-module__irQSmq__chartBarContainer {
+    background: #444;
+  }
+
+  .rentincreasecalculator-module__irQSmq__insightsCard, .rentincreasecalculator-module__irQSmq__exampleCard {
+    background: #2d2d2d;
+    border-left: 4px solid #3b82f6;
+  }
+
+  .rentincreasecalculator-module__irQSmq__affordabilityTable {
+    background: #2d2d2d;
+    border: 1px solid #444;
+  }
+
+  .rentincreasecalculator-module__irQSmq__tableRow:first-child .rentincreasecalculator-module__irQSmq__tableCell {
+    color: #fff;
+    background: #3b82f6;
+  }
+
+  .rentincreasecalculator-module__irQSmq__marketInfo {
+    background: #2d2d2d;
+    border-left: 4px solid #3b82f6;
+  }
+
+  .rentincreasecalculator-module__irQSmq__comparisonCard {
+    background: #2d2d2d;
+    border-left: 4px solid #10b981;
+  }
+
+  .rentincreasecalculator-module__irQSmq__expertQuote {
+    background: #2d2d2d;
+    border-left: 4px solid #3b82f6;
+  }
+
+  .rentincreasecalculator-module__irQSmq__ctaCard {
+    background: #1e1e1e;
+    border: 1px solid #3b82f6;
+  }
+
+  .rentincreasecalculator-module__irQSmq__footer {
+    background: #1e1e1e;
+    border-top: 1px solid #333;
+  }
+
+  .rentincreasecalculator-module__irQSmq__increaseValue {
+    color: #ef4444;
+  }
+
+  .rentincreasecalculator-module__irQSmq__warningValue {
+    color: #f59e0b;
+  }
+
+  .rentincreasecalculator-module__irQSmq__affordabilityNote {
+    color: #3b82f6;
+  }
+
+  .rentincreasecalculator-module__irQSmq__increaseNote {
+    color: #f59e0b;
+  }
+
+  @media (max-width: 768px) {
+    .rentincreasecalculator-module__irQSmq__container {
+      padding-top: 70px;
+    }
+
+    .rentincreasecalculator-module__irQSmq__header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .rentincreasecalculator-module__irQSmq__container {
+      padding-top: 60px;
+    }
+
+    .rentincreasecalculator-module__irQSmq__header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+.rentincreasecalculator-module__irQSmq__container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.rentincreasecalculator-module__irQSmq__container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.rentincreasecalculator-module__irQSmq__container ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.rentincreasecalculator-module__irQSmq__container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*# sourceMappingURL=src_pages_rentincreasecalculator_module_13aa1269.css.map*/

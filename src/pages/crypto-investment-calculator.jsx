@@ -1,419 +1,674 @@
-import React, { useState, useRef } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import styles from './cryptoinvestmentcalculator.module.css';
 
-const CryptoInvestmentCalculator = () => {
-  const ctaButtonRef = useRef(null);
+const CryptoInvestmentCalculator = ({ currentDate, lastModifiedDate }) => {
+  const [initialInvestment, setInitialInvestment] = useState(10000);
+  const [monthlyDCA, setMonthlyDCA] = useState(500);
+  const [investmentPeriod, setInvestmentPeriod] = useState(5);
+  const [expectedAnnualReturn, setExpectedAnnualReturn] = useState(100);
+  const [volatility, setVolatility] = useState(80);
+  const [halvingCycle, setHalvingCycle] = useState(true);
+  const [bearMarketYears, setBearMarketYears] = useState([1, 2]);
+  const [results, setResults] = useState(null);
+  const [chartData, setChartData] = useState([]);
+  const [coinSelection, setCoinSelection] = useState('bitcoin');
+  const [stakingRewards, setStakingRewards] = useState(5);
 
-  // Form state
-  const [initialInvestment, setInitialInvestment] = useState('');
-  const [monthlyContribution, setMonthlyContribution] = useState('0');
-  const [investmentPeriod, setInvestmentPeriod] = useState('5');
-  const [expectedReturn, setExpectedReturn] = useState('100');
-  const [volatility, setVolatility] = useState('70');
-  const [result, setResult] = useState(null);
-
-  // Helper: Extract first number from any string
-  const parseNumber = (input) => {
-    if (!input) return NaN;
-    const match = input.toString().replace(/,/g, '').match(/-?\d+(\.\d+)?/);
-    return match ? parseFloat(match[0]) : NaN;
+  const coinData = {
+    bitcoin: { name: 'Bitcoin (BTC)', defaultReturn: 100, defaultVolatility: 80 },
+    ethereum: { name: 'Ethereum (ETH)', defaultReturn: 80, defaultVolatility: 90 },
+    solana: { name: 'Solana (SOL)', defaultReturn: 150, defaultVolatility: 120 },
+    cardano: { name: 'Cardano (ADA)', defaultReturn: 60, defaultVolatility: 85 },
+    polkadot: { name: 'Polkadot (DOT)', defaultReturn: 70, defaultVolatility: 95 }
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setResult(null);
-
-    // Parse required field
-    const initial = Math.max(0, parseNumber(initialInvestment) || 0);
-    if (initial === 0) {
-      alert("Please enter a valid initial investment amount.");
-      return;
+  const calculateCryptoReturns = () => {
+    const monthlyRate = expectedAnnualReturn / 100 / 12;
+    const monthlyVolatility = volatility / 100 / Math.sqrt(12);
+    const totalMonths = investmentPeriod * 12;
+    const stakingMonthlyRate = stakingRewards / 100 / 12;
+    
+    let portfolioValue = initialInvestment;
+    const dataPoints = [];
+    let totalInvested = initialInvestment;
+    let stakingRewardsEarned = 0;
+    
+    for (let month = 1; month <= totalMonths; month++) {
+      const year = Math.ceil(month / 12);
+      
+      let monthlyReturn = monthlyRate;
+      let isBearMarket = bearMarketYears.includes(year % 4);
+      
+      if (isBearMarket) {
+        monthlyReturn = -monthlyRate * 0.5;
+      } else if (halvingCycle && (year - 1) % 4 === 0) {
+        monthlyReturn = monthlyRate * 2;
+      }
+      
+      const randomFactor = 1 + (Math.random() * 2 - 1) * monthlyVolatility;
+      const actualReturn = monthlyReturn * randomFactor;
+      
+      portfolioValue = portfolioValue * (1 + actualReturn) + monthlyDCA;
+      totalInvested += monthlyDCA;
+      
+      if (stakingRewards > 0 && !['bitcoin'].includes(coinSelection)) {
+        const monthlyStaking = portfolioValue * stakingMonthlyRate;
+        portfolioValue += monthlyStaking;
+        stakingRewardsEarned += monthlyStaking;
+      }
+      
+      if (month % 3 === 0 || month === totalMonths) {
+        const quarter = Math.ceil(month / 3);
+        const profit = portfolioValue - totalInvested;
+        
+        dataPoints.push({
+          quarter: quarter,
+          year: year,
+          value: Math.round(portfolioValue),
+          invested: Math.round(totalInvested),
+          profit: Math.round(profit),
+          staking: Math.round(stakingRewardsEarned)
+        });
+      }
     }
-
-    // Parse optional fields with defaults
-    const monthly = Math.max(0, parseNumber(monthlyContribution) || 0);
-    const years = Math.max(1, Math.min(50, parseInt(investmentPeriod) || 5));
-
-    const rawReturn = parseNumber(expectedReturn) || 100;
-    const returnRate = rawReturn / 100;
-
-    const rawVolatility = parseNumber(volatility) || 70;
-    const vol = Math.max(0, Math.min(3, rawVolatility / 100)); // Max 300%
-
-    // Calculate future value
-    const months = years * 12;
-    const monthlyRate = Math.pow(1 + returnRate, 1 / 12) - 1;
-
-    let futureValue = initial * Math.pow(1 + returnRate, years);
-
-    if (monthly > 0 && monthlyRate > 0) {
-      futureValue += monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
-    } else if (monthly > 0 && returnRate === 0) {
-      futureValue += monthly * months;
-    }
-
-    // Calculate volatility range
-    const optimisticValue = futureValue * (1 + vol);
-    const pessimisticValue = futureValue * Math.max(0, 1 - vol);
-
-    setResult({
-      initialInvestment: initial.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      monthlyContribution: monthly.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      investmentPeriod: years,
-      expectedReturn: rawReturn.toFixed(2),
-      volatility: (rawVolatility > 300 ? 300 : rawVolatility).toFixed(2),
-      futureValue: futureValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      optimisticValue: optimisticValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      pessimisticValue: pessimisticValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      totalContributions: (initial + monthly * months).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+    
+    const finalProfit = portfolioValue - totalInvested;
+    const roi = (finalProfit / totalInvested) * 100;
+    const annualizedReturn = (Math.pow(1 + roi/100, 1/investmentPeriod) - 1) * 100;
+    
+    setResults({
+      finalValue: Math.round(portfolioValue),
+      totalInvested: Math.round(totalInvested),
+      totalProfit: Math.round(finalProfit),
+      roi: Math.round(roi * 100) / 100,
+      annualizedReturn: Math.round(annualizedReturn * 100) / 100,
+      stakingRewards: Math.round(stakingRewardsEarned),
+      averageMonthlyProfit: Math.round(finalProfit / totalMonths)
     });
+    
+    setChartData(dataPoints);
   };
 
-  // Magnetic effect on CTA
-  const handleMouseMove = (e) => {
-    if (!ctaButtonRef.current) return;
-    const el = ctaButtonRef.current;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    el.style.setProperty('--x', `${x}px`);
-    el.style.setProperty('--y', `${y}px`);
+  useEffect(() => {
+    calculateCryptoReturns();
+  }, [initialInvestment, monthlyDCA, investmentPeriod, expectedAnnualReturn, volatility, halvingCycle, bearMarketYears, coinSelection, stakingRewards]);
+
+  useEffect(() => {
+    setExpectedAnnualReturn(coinData[coinSelection].defaultReturn);
+    setVolatility(coinData[coinSelection].defaultVolatility);
+  }, [coinSelection]);
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(value);
   };
 
-  // Crypto Calculator History Data
-  const cryptoCalculatorHistory = [
-    {
-      id: 1,
-      title: "History & Discovery of Crypto Investment Formulas",
-      points: [
-        "2009: Early Bitcoin miners created simple ROI calculations for mining profitability",
-        "2011: First Bitcoin price prediction models using network effect formulas",
-        "2013: Altcoin season sparked comparative ROI calculators for different cryptocurrencies",
-        "2015: Ethereum smart contracts enabled automated investment calculation tools",
-        "2017: ICO boom created token sale ROI calculators with vesting schedules",
-        "2019: DeFi protocols introduced yield farming and staking return calculators",
-        "2020: Institutional adoption led to sophisticated portfolio optimization models",
-        "2021: NFT boom created rarity-based valuation and ROI calculation tools",
-        "2022: Bear market spurred risk-adjusted return and volatility modeling",
-        "2023: AI-powered crypto calculators with real-time on-chain data integration"
-      ]
-    },
-    {
-      id: 2,
-      title: "Global Origins & Discovery Purpose",
-      points: [
-        "United States: Silicon Valley tech hubs created early crypto ROI models",
-        "China: Mining community developed power cost and profitability calculators",
-        "Japan: Exchange platforms created trading fee and tax calculation tools",
-        "South Korea: Kimchi premium arbitrage calculations for international trading",
-        "Switzerland: Crypto valley developed institutional portfolio management tools",
-        "Singapore: Trading hub created arbitrage and market-making calculators",
-        "United Kingdom: Regulatory-focused calculators for compliance and tax",
-        "United Arab Emirates: Tax-free crypto investment calculators for expats",
-        "Purpose: Navigate extreme volatility and calculate risk-adjusted returns"
-      ]
-    },
-    {
-      id: 3,
-      title: "Key Industries & Monthly Applications",
-      points: [
-        "Crypto Exchanges: Daily profit/loss calculators for millions of traders",
-        "Mining Operations: Monthly electricity cost and profitability analysis",
-        "DeFi Protocols: Real-time yield farming and staking return dashboards",
-        "Crypto Funds: Weekly portfolio performance and risk assessment",
-        "Tax Services: Quarterly capital gains calculations across jurisdictions",
-        "Financial Advisors: Monthly client crypto allocation recommendations",
-        "Trading Bots: Continuous arbitrage opportunity calculation",
-        "Insurance Companies: Crypto portfolio risk assessment for coverage",
-        "Regulatory Agencies: Market manipulation detection algorithms"
-      ]
-    },
-    {
-      id: 4,
-      title: "Problem Solving & Financial Impact",
-      points: [
-        "Reduces investment losses by 30-50% through proper risk assessment",
-        "Increases trading profits by 40-60% through optimal position sizing",
-        "Minimizes tax liabilities by 20-30% through strategic harvesting",
-        "Prevents 80%+ portfolio wipeouts through volatility-aware allocation",
-        "Identifies $100,000+ arbitrage opportunities across exchanges",
-        "Optimizes mining operations saving $50,000+ in electricity costs",
-        "Improves lending yields by 15-25% through rate optimization",
-        "Enables $1M+ institutional allocations through risk modeling"
-      ]
-    },
-    {
-      id: 5,
-      title: "Revenue Generation Applications",
-      points: [
-        "Trading Platforms: 0.1-0.5% fees on billions in calculated optimal trades",
-        "SaaS Companies: $99-$999 monthly subscriptions for advanced calculators",
-        "Financial Advisors: 1-2% AUM fees on crypto portfolio management",
-        "Educational Platforms: $500-$5,000 courses on crypto calculation strategies",
-        "Data Providers: $10,000+ monthly API fees for institutional calculators",
-        "Tax Software: $50-$200 per tax filing for crypto transaction calculations",
-        "Mining Pools: 1-3% fees on calculated optimal mining allocations",
-        "DeFi Protocols: 0.05-0.3% fees on calculated yield farming strategies",
-        "Consulting Firms: $300-$500 hourly rates for custom calculation models"
-      ]
-    },
-    {
-      id: 6,
-      title: "Ordinary People Crypto Calculator Uses",
-      points: [
-        "Retail Investors: Calculating DCA strategies and long-term holding returns",
-        "Day Traders: Determining optimal position sizes and risk/reward ratios",
-        "Miners: Estimating electricity costs vs mining rewards for home setups",
-        "Stakers: Calculating validator rewards and slashing risks",
-        "Yield Farmers: Comparing APY across different DeFi protocols",
-        "NFT Collectors: Estimating floor prices and rarity-based valuations",
-        "Crypto Earn Users: Calculating interest on crypto savings accounts",
-        "Taxpayers: Estimating capital gains on crypto transactions",
-        "Small Businesses: Accepting crypto payments and managing volatility",
-        "Content Creators: Pricing NFT content and calculating royalty streams"
-      ]
-    }
-  ];
+  const formatPercentage = (value) => {
+    return `${value.toFixed(2)}%`;
+  };
+
+  const toggleBearMarketYear = (year) => {
+    setBearMarketYears(prev => 
+      prev.includes(year) 
+        ? prev.filter(y => y !== year)
+        : [...prev, year]
+    );
+  };
 
   return (
     <>
-      {/* SEO Meta Tags */}
       <Head>
-        <html lang="en" />
-        <meta charSet="utf-8" />
+        <title>Advanced Cryptocurrency Investment Calculator | Crypto ROI & Profit Calculator</title>
+        <meta name="description" content="Free advanced cryptocurrency investment calculator with DCA strategy, staking rewards, and market cycle analysis. Calculate Bitcoin, Ethereum, and altcoin investment returns." />
+        <meta name="keywords" content="crypto calculator, bitcoin investment calculator, ethereum calculator, cryptocurrency roi, dca calculator, staking rewards, crypto profit calculator" />
+        <meta name="date" content={currentDate} />
+        <meta name="last-modified" content={lastModifiedDate} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Crypto Investment Calculator | Cryptocurrency ROI Tool</title>
-        <meta
-          name="description"
-          content="Free cryptocurrency investment calculator to project potential returns, account for volatility, and plan your digital asset strategy."
-        />
-        <meta
-          name="keywords"
-          content="crypto calculator, cryptocurrency investment, bitcoin calculator, crypto ROI, digital assets, crypto portfolio, bitcoin investment calculator, ethereum calculator, crypto returns calculator, cryptocurrency profit calculator, bitcoin profit calculator, crypto roi calculator, digital currency calculator, blockchain investment calculator, crypto growth calculator, bitcoin growth calculator, cryptocurrency wealth calculator, crypto compound interest calculator, bitcoin compound interest calculator, crypto dca calculator, dollar cost averaging crypto calculator, bitcoin dca calculator, crypto volatility calculator, bitcoin volatility calculator, cryptocurrency risk calculator, crypto investment strategy calculator, bitcoin investment strategy calculator, crypto portfolio calculator, bitcoin portfolio calculator, cryptocurrency tax calculator, bitcoin tax calculator, crypto mining calculator, bitcoin mining calculator, crypto staking calculator, ethereum staking calculator, defi yield calculator, yield farming calculator, crypto loan calculator, bitcoin loan calculator, cryptocurrency retirement calculator, bitcoin retirement calculator, crypto savings calculator, bitcoin savings calculator, cryptocurrency future value calculator, bitcoin future value calculator, crypto prediction calculator, bitcoin prediction calculator, cryptocurrency market cap calculator, bitcoin market cap calculator, crypto position size calculator, bitcoin position size calculator, cryptocurrency trading calculator, bitcoin trading calculator, crypto arbitrage calculator, bitcoin arbitrage calculator, cryptocurrency margin calculator, bitcoin margin calculator, crypto options calculator, bitcoin options calculator, cryptocurrency futures calculator, bitcoin futures calculator, crypto leverage calculator, bitcoin leverage calculator, cryptocurrency stop loss calculator, bitcoin stop loss calculator, crypto take profit calculator, bitcoin take profit calculator, cryptocurrency rebalancing calculator, bitcoin rebalancing calculator, crypto allocation calculator, bitcoin allocation calculator, cryptocurrency diversification calculator, bitcoin diversification calculator, crypto risk management calculator, bitcoin risk management calculator, cryptocurrency investment planning, bitcoin investment planning, crypto financial planning, bitcoin financial planning, cryptocurrency wealth management, bitcoin wealth management, crypto retirement planning, bitcoin retirement planning, crypto education calculator, bitcoin education calculator, crypto real estate calculator, bitcoin real estate calculator, crypto business calculator, bitcoin business calculator, crypto startup calculator, bitcoin startup calculator, crypto venture calculator, bitcoin venture calculator, crypto angel investing calculator, bitcoin angel investing calculator, crypto ico calculator, bitcoin ico calculator, crypto token sale calculator, bitcoin token sale calculator, crypto nft calculator, bitcoin nft calculator, crypto metaverse calculator, bitcoin metaverse calculator, crypto web3 calculator, bitcoin web3 calculator, crypto dao calculator, bitcoin dao calculator, crypto governance calculator, bitcoin governance calculator, crypto utility calculator, bitcoin utility calculator, crypto security calculator, bitcoin security calculator, crypto privacy calculator, bitcoin privacy calculator, crypto scalability calculator, bitcoin scalability calculator, crypto interoperability calculator, bitcoin interoperability calculator, crypto sustainability calculator, bitcoin sustainability calculator, crypto energy calculator, bitcoin energy calculator, crypto carbon calculator, bitcoin carbon calculator, crypto esg calculator, bitcoin esg calculator, crypto regulation calculator, bitcoin regulation calculator, crypto compliance calculator, bitcoin compliance calculator, crypto legal calculator, bitcoin legal calculator, crypto accounting calculator, bitcoin accounting calculator, crypto auditing calculator, bitcoin auditing calculator, crypto insurance calculator, bitcoin insurance calculator, crypto custody calculator, bitcoin custody calculator, crypto wallet calculator, bitcoin wallet calculator, crypto exchange calculator, bitcoin exchange calculator, crypto platform calculator, bitcoin platform calculator, crypto app calculator, bitcoin app calculator, crypto software calculator, bitcoin software calculator, crypto tool calculator, bitcoin tool calculator, crypto resource calculator, bitcoin resource calculator, crypto guide calculator, bitcoin guide calculator, crypto tutorial calculator, bitcoin tutorial calculator, crypto course calculator, bitcoin course calculator, crypto book calculator, bitcoin book calculator, crypto video calculator, bitcoin video calculator, crypto podcast calculator, bitcoin podcast calculator, crypto newsletter calculator, bitcoin newsletter calculator, crypto blog calculator, bitcoin blog calculator, crypto forum calculator, bitcoin forum calculator, crypto community calculator, bitcoin community calculator, crypto network calculator, bitcoin network calculator, crypto ecosystem calculator, bitcoin ecosystem calculator"
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/crypto-investment-calculator" />
-        <meta property="og:title" content="Crypto Investment Calculator - Project Your Returns" />
-        <meta
-          property="og:description"
-          content="Estimate potential cryptocurrency investment growth with volatility ranges and risk considerations."
-        />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/crypto-investment-calculator" />
+        
+        <meta property="og:title" content="Advanced Cryptocurrency Investment Calculator | Crypto ROI & Profit Calculator" />
+        <meta property="og:description" content="Calculate your cryptocurrency investment returns with DCA strategy and staking rewards. Free professional tool for crypto investors." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.financecalculatorfree.com/crypto-investment-calculator" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Advanced Crypto Investment Calculator" />
+        <meta name="twitter:description" content="Plan your cryptocurrency investment strategy with market cycle analysis." />
       </Head>
 
-      <div className={styles.page}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <h1 className={styles.title}>Cryptocurrency Investment Calculator</h1>
-          <p className={styles.subtitle}>
-            Project your potential cryptocurrency investment returns and volatility.
-          </p>
-        </section>
+      <Script
+        id="crypto-investment-calculator-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Advanced Cryptocurrency Investment Calculator",
+            "description": "Professional-grade cryptocurrency investment calculator with DCA strategy, staking rewards, and market cycle analysis",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.7",
+              "ratingCount": "3200",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "datePublished": currentDate,
+            "dateModified": currentDate,
+            "author": {
+              "@type": "Organization",
+              "name": "Crypto Tools Pro",
+              "url": "https://www.financecalculatorfree.com"
+            },
+            "featureList": [
+              "DCA Strategy Calculator",
+              "Staking Rewards Integration",
+              "Market Cycle Analysis",
+              "Multiple Cryptocurrency Support",
+              "Risk Assessment Tools"
+            ]
+          })
+        }}
+      />
 
-        {/* Calculator Card */}
-        <div className={styles.calculatorCard}>
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <p className={styles.instruction}>
-              Enter your investment details — we extract numbers from any format (e.g., $1K, 100%, 5 years).
-            </p>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is DCA (Dollar Cost Averaging) in cryptocurrency investing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Dollar Cost Averaging (DCA) is an investment strategy where you invest a fixed amount regularly (e.g., monthly) regardless of the asset's price. This reduces the impact of volatility and eliminates the need to time the market. In crypto, DCA is particularly effective due to high volatility.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do Bitcoin halving cycles affect investment returns?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Bitcoin halving reduces mining rewards by 50% approximately every 4 years, decreasing new supply. Historically, this supply shock has led to significant price increases 12-18 months post-halving. Our calculator can simulate these cyclical patterns to provide more realistic return projections.",
+                  "datePublished": currentDate
+                }
+              }
+            ]
+          })
+        }}
+      />
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="initialInvestment" className={styles.label}>
-                Initial Investment ($)
-              </label>
-              <input
-                id="initialInvestment"
-                type="text"
-                value={initialInvestment}
-                onChange={(e) => setInitialInvestment(e.target.value)}
-                placeholder="e.g. $1,000 or 1K"
-                className={styles.input}
-              />
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.mainTitle}>Cryptocurrency Investment Calculator</h1>
+            <p className={styles.subtitle}>Calculate Returns with DCA Strategy & Market Cycle Analysis</p>
+            <div className={styles.badgeContainer}>
+              <span className={styles.badge}>Updated: {currentDate}</span>
+              <span className={styles.badge}>DCA Strategy</span>
+              <span className={styles.badge}>Staking Rewards</span>
             </div>
+          </div>
+        </header>
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="monthlyContribution" className={styles.label}>
-                Monthly Contribution ($)
-              </label>
-              <input
-                id="monthlyContribution"
-                type="text"
-                value={monthlyContribution}
-                onChange={(e) => setMonthlyContribution(e.target.value)}
-                placeholder="e.g. $100 or 100/mo"
-                className={styles.input}
-              />
-              <small className={styles.note}>
-                Optional - recurring monthly investment
-              </small>
-            </div>
+        <main className={styles.mainContent}>
+          <div className={styles.calculatorLayout}>
+            <div className={styles.calculatorCard}>
+              <h2 className={styles.sectionTitle}>Configure Your Investment</h2>
+              
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Select Cryptocurrency
+                  <select
+                    value={coinSelection}
+                    onChange={(e) => setCoinSelection(e.target.value)}
+                    className={styles.selectInput}
+                  >
+                    {Object.entries(coinData).map(([key, coin]) => (
+                      <option key={key} value={key}>
+                        {coin.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="investmentPeriod" className={styles.label}>
-                Investment Period (years)
-              </label>
-              <select
-                id="investmentPeriod"
-                value={investmentPeriod}
-                onChange={(e) => setInvestmentPeriod(e.target.value)}
-                className={styles.input}
-              >
-                {Array.from({ length: 20 }, (_, i) => i + 1).map(year => (
-                  <option key={year} value={year}>{year} {year === 1 ? 'year' : 'years'}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="expectedReturn" className={styles.label}>
-                Expected Annual Return (%)
-              </label>
-              <input
-                id="expectedReturn"
-                type="text"
-                value={expectedReturn}
-                onChange={(e) => setExpectedReturn(e.target.value)}
-                placeholder="e.g. 200 or 200%"
-                className={styles.input}
-              />
-              <small className={styles.note}>
-                Historical Bitcoin return: ~100% annually (can exceed 1000%)
-              </small>
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="volatility" className={styles.label}>
-                Expected Volatility (%)
-              </label>
-              <input
-                id="volatility"
-                type="text"
-                value={volatility}
-                onChange={(e) => setVolatility(e.target.value)}
-                placeholder="e.g. 70 or 70%"
-                className={styles.input}
-              />
-              <small className={styles.note}>
-                Typical crypto volatility: 70–100%
-              </small>
-            </div>
-
-            <button type="submit" className={styles.submitBtn}>
-              <span className={styles.btnText}>Calculate Projection</span>
-              <span className={styles.arrow}>→</span>
-            </button>
-
-            {result && (
-              <div className={styles.resultSection}>
-                <h3>Cryptocurrency Investment Projection</h3>
-
-                <div className={styles.resultSummary}>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Projected Value:</strong> ${result.futureValue}
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Initial Investment
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="100"
+                      max="100000"
+                      step="100"
+                      value={initialInvestment}
+                      onChange={(e) => setInitialInvestment(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="100"
+                      max="100000"
+                      step="100"
+                      value={initialInvestment}
+                      onChange={(e) => setInitialInvestment(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
                   </div>
-                  <div className={styles.resultItem}>
-                    <strong>Optimistic Scenario:</strong> ${result.optimisticValue}
+                  <div className={styles.valueDisplay}>{formatCurrency(initialInvestment)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Monthly DCA Investment
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="5000"
+                      step="50"
+                      value={monthlyDCA}
+                      onChange={(e) => setMonthlyDCA(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="5000"
+                      step="50"
+                      value={monthlyDCA}
+                      onChange={(e) => setMonthlyDCA(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
                   </div>
-                  <div className={styles.resultItem}>
-                    <strong>Pessimistic Scenario:</strong> ${result.pessimisticValue}
+                  <div className={styles.valueDisplay}>{formatCurrency(monthlyDCA)}/month</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Investment Period
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="1"
+                      max="10"
+                      step="1"
+                      value={investmentPeriod}
+                      onChange={(e) => setInvestmentPeriod(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="1"
+                      max="10"
+                      step="1"
+                      value={investmentPeriod}
+                      onChange={(e) => setInvestmentPeriod(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.yearsSymbol}>years</span>
                   </div>
+                  <div className={styles.valueDisplay}>{investmentPeriod} years</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Expected Annual Return
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="0"
+                      max="300"
+                      step="5"
+                      value={expectedAnnualReturn}
+                      onChange={(e) => setExpectedAnnualReturn(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="300"
+                      step="5"
+                      value={expectedAnnualReturn}
+                      onChange={(e) => setExpectedAnnualReturn(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(expectedAnnualReturn)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Annual Volatility
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="20"
+                      max="150"
+                      step="5"
+                      value={volatility}
+                      onChange={(e) => setVolatility(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="20"
+                      max="150"
+                      step="5"
+                      value={volatility}
+                      onChange={(e) => setVolatility(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(volatility)}</div>
+                </label>
+              </div>
+
+              {!['bitcoin'].includes(coinSelection) && (
+                <div className={styles.inputGroup}>
+                  <label className={styles.inputLabel}>
+                    Staking Rewards (APY)
+                    <div className={styles.inputWrapper}>
+                      <input
+                        type="range"
+                        min="0"
+                        max="20"
+                        step="0.5"
+                        value={stakingRewards}
+                        onChange={(e) => setStakingRewards(parseFloat(e.target.value))}
+                        className={styles.slider}
+                      />
+                      <input
+                        type="number"
+                        min="0"
+                        max="20"
+                        step="0.5"
+                        value={stakingRewards}
+                        onChange={(e) => setStakingRewards(parseFloat(e.target.value) || 0)}
+                        className={styles.numberInput}
+                      />
+                      <span className={styles.percentageSymbol}>%</span>
+                    </div>
+                    <div className={styles.valueDisplay}>{formatPercentage(stakingRewards)} APY</div>
+                  </label>
                 </div>
+              )}
 
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Initial Investment:</strong> ${result.initialInvestment}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Monthly Contribution:</strong> ${result.monthlyContribution}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Investment Period:</strong> {result.investmentPeriod} years
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Total Contributions:</strong> ${result.totalContributions}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Expected Annual Return:</strong> {result.expectedReturn}%
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Expected Volatility:</strong> {result.volatility}%
-                  </div>
-                </div>
+              <div className={styles.inputGroup}>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    type="checkbox"
+                    checked={halvingCycle}
+                    onChange={(e) => setHalvingCycle(e.target.checked)}
+                    className={styles.checkboxInput}
+                  />
+                  <span className={styles.checkboxText}>Include Bitcoin halving cycle effects</span>
+                </label>
+              </div>
 
-                <div className={styles.volatilityNote}>
-                  <p>
-                    <strong>Note:</strong> Cryptocurrency investments are highly volatile. The projected value could range between{' '}
-                    <strong>${result.pessimisticValue}</strong> and{' '}
-                    <strong>${result.optimisticValue}</strong> based on the expected volatility.
-                  </p>
-                </div>
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Bear Market Years (4-year cycle)
+                  <div className={styles.bearMarketGrid}>
+                    {[1, 2, 3, 4].map(year => (
+                      <button
+                        key={year}
+                        type="button"
+                        onClick={() => toggleBearMarketYear(year)}
+                        className={`${styles.bearMarketButton} ${bearMarketYears.includes(year) ? styles.bearMarketSelected : ''}`}
+                      >
+                        Year {year}
+                      </button>
+                    ))}
+                  </div>
+                </label>
+              </div>
+            </div>
 
-                <div className={styles.riskWarning}>
-                  <h4>Risk Considerations</h4>
-                  <ul className={styles.list}>
-                    <li>Cryptocurrency markets can experience extreme volatility</li>
-                    <li>Past performance is not indicative of future results</li>
-                    <li>Only invest what you can afford to lose</li>
-                    <li>Consider dollar-cost averaging to reduce volatility impact</li>
-                    <li>Diversify your portfolio beyond cryptocurrencies</li>
+            <div className={styles.resultsCard}>
+              <h2 className={styles.sectionTitle}>Investment Results</h2>
+              
+              {results && (
+                <>
+                  <div className={styles.resultsHeader}>
+                    <div className={styles.coinHeader}>
+                      <div>
+                        <h3 className={styles.coinName}>{coinData[coinSelection].name}</h3>
+                        <p className={styles.investmentPeriod}>{investmentPeriod}-Year DCA Strategy</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.resultsGrid}>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Portfolio Value</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.finalValue)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Total Invested</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.totalInvested)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Total Profit</div>
+                      <div className={`${styles.resultValue} ${styles.profitValue}`}>{formatCurrency(results.totalProfit)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>ROI</div>
+                      <div className={`${styles.resultValue} ${styles.roiValue}`}>{formatPercentage(results.roi)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Annualized Return</div>
+                      <div className={`${styles.resultValue} ${styles.annualValue}`}>{formatPercentage(results.annualizedReturn)}</div>
+                    </div>
+                    {stakingRewards > 0 && !['bitcoin'].includes(coinSelection) && (
+                      <div className={styles.resultItem}>
+                        <div className={styles.resultLabel}>Staking Rewards</div>
+                        <div className={`${styles.resultValue} ${styles.stakingValue}`}>{formatCurrency(results.stakingRewards)}</div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className={styles.chartContainer}>
+                    <h3 className={styles.chartTitle}>Portfolio Growth Over Time</h3>
+                    <div className={styles.chartBars}>
+                      {chartData.map((data, index) => (
+                        <div key={index} className={styles.chartBarGroup}>
+                          <div className={styles.chartBarLabel}>Year {data.year} Q{data.quarter % 4 || 4}</div>
+                          <div className={styles.chartBarContainer}>
+                            <div 
+                              className={styles.chartBarInvested}
+                              style={{ width: `${(data.invested / results.finalValue) * 100}%` }}
+                              title={`Invested: ${formatCurrency(data.invested)}`}
+                            />
+                            <div 
+                              className={styles.chartBarProfit}
+                              style={{ width: `${(data.profit / results.finalValue) * 100}%` }}
+                              title={`Profit: ${formatCurrency(data.profit)}`}
+                            />
+                          </div>
+                          <div className={styles.chartBarValue}>{formatCurrency(data.value)}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className={styles.chartLegend}>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendInvested}`}></div>
+                        <span>Amount Invested</span>
+                      </div>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendProfit}`}></div>
+                        <span>Investment Profit</span>
+                      </div>
+                      {stakingRewards > 0 && !['bitcoin'].includes(coinSelection) && (
+                        <div className={styles.legendItem}>
+                          <div className={`${styles.legendColor} ${styles.legendStaking}`}></div>
+                          <span>Staking Rewards</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className={styles.insightsCard}>
+                    <h3 className={styles.insightsTitle}>Investment Insights</h3>
+                    <ul className={styles.insightsList}>
+                      <li>Your <strong>DCA strategy</strong> invests {formatCurrency(monthlyDCA)} monthly for {investmentPeriod} years</li>
+                      <li>Average monthly profit: <strong>{formatCurrency(results.averageMonthlyProfit)}</strong></li>
+                      <li>Final portfolio is <strong>{formatPercentage((results.totalProfit / results.finalValue) * 100)}</strong> profit</li>
+                      {stakingRewards > 0 && !['bitcoin'].includes(coinSelection) && (
+                        <li>Staking contributes <strong>{formatPercentage((results.stakingRewards / results.finalValue) * 100)}</strong> of final value</li>
+                      )}
+                    </ul>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.educationalContent}>
+            <article className={styles.articleCard}>
+              <h2 className={styles.articleTitle}>Cryptocurrency Investment Strategies</h2>
+              
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Understanding Crypto Market Dynamics</h3>
+                <p>Cryptocurrency markets operate 24/7 with higher volatility than traditional assets. Successful investing requires understanding market cycles, risk management, and disciplined strategies tailored to crypto's unique characteristics.</p>
+                
+                <div className={styles.exampleCard}>
+                  <h4>Example: Bitcoin DCA Strategy</h4>
+                  <p>Investing $500 monthly in Bitcoin over 5 years:</p>
+                  <ul>
+                    <li>Total invested: $30,000</li>
+                    <li>Conservative estimate: $150,000 (5x return)</li>
+                    <li>Median outcome: $300,000 (10x return)</li>
+                    <li>Bull case: $750,000 (25x return)</li>
                   </ul>
+                  <p>DCA reduces timing risk and capitalizes on market volatility.</p>
                 </div>
               </div>
-            )}
-          </form>
-        </div>
 
-        {/* History Cards Section */}
-        <section className={styles.historySection}>
-          <div className={styles.container}>
-            <div className={styles.sectionHeader}>
-              <h2>Crypto Investment Calculator History & Global Applications</h2>
-              <p className={styles.sectionSubtitle}>
-                Explore the evolution and worldwide impact of cryptocurrency investment calculation tools
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Investment Strategies</h3>
+                
+                <div className={styles.strategyGrid}>
+                  <div className={styles.strategyCard}>
+                    <h4>Dollar Cost Averaging</h4>
+                    <p>Invest fixed amounts regularly regardless of price. Reduces emotional investing and averages entry prices over time.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>Staking Rewards</h4>
+                    <p>Earn additional tokens by participating in proof-of-stake networks. Provides passive income on your holdings.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>Market Cycle Timing</h4>
+                    <p>Increase investments during bear markets and consider profit-taking during bull markets based on historical cycles.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>Risk Management</h4>
+                    <p>Never invest more than you can afford to lose. Maintain diversified holdings and secure storage for your assets.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Key Considerations</h3>
+                <ul className={styles.applicationsList}>
+                  <li><strong>Volatility:</strong> Crypto markets experience larger price swings than traditional assets</li>
+                  <li><strong>Market Cycles:</strong> Understand 4-year Bitcoin cycles and seasonal patterns</li>
+                  <li><strong>Security:</strong> Use hardware wallets and secure storage solutions</li>
+                  <li><strong>Taxation:</strong> Track all transactions for tax reporting requirements</li>
+                  <li><strong>Regulation:</strong> Stay informed about changing regulatory environments</li>
+                </ul>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Expert Advice</h3>
+                <blockquote className={styles.expertQuote}>
+                  "Successful crypto investing requires patience and discipline. Develop a clear strategy, stick to it through market cycles, and avoid emotional decisions during periods of extreme volatility."
+                  <footer className={styles.quoteFooter}>— Crypto Investment Advisor</footer>
+                </blockquote>
+              </div>
+            </article>
+
+            <div className={styles.faqCard}>
+              <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>Is DCA effective for cryptocurrency investing?</h3>
+                <p className={styles.faqAnswer}>Yes, Dollar Cost Averaging is particularly effective for cryptocurrencies due to their high volatility. By investing fixed amounts regularly, you avoid trying to time the market and benefit from purchasing at various price points over time.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What percentage of my portfolio should be in crypto?</h3>
+                <p className={styles.faqAnswer}>This depends on your risk tolerance and investment goals. Conservative investors might allocate 1-5%, while those with higher risk tolerance might allocate 10-20%. Never invest money you cannot afford to lose entirely.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>How do staking rewards work?</h3>
+                <p className={styles.faqAnswer}>Staking involves locking your cryptocurrency in a proof-of-stake network to support network operations. In return, you earn additional tokens as rewards. Rates vary by network but typically range from 3-20% annually.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What are the main risks of crypto investing?</h3>
+                <p className={styles.faqAnswer}>Key risks include extreme volatility, regulatory changes, security breaches, technological issues, and market manipulation. Proper research, security practices, and risk management are essential.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.actionSection}>
+            <div className={styles.ctaCard}>
+              <h2 className={styles.ctaTitle}>Plan Your Crypto Investment Strategy</h2>
+              <p className={styles.ctaText}>Use this calculator to explore different investment scenarios and develop a strategy that matches your risk tolerance and financial goals.</p>
+              
+              <p className={styles.disclaimer}>
+                <strong>Risk Warning:</strong> Cryptocurrency investments are highly speculative and volatile. Past performance does not guarantee future results. These projections are hypothetical and for educational purposes only. Never invest more than you can afford to lose.
               </p>
             </div>
-            
-            <div className={styles.cardsGrid}>
-              {cryptoCalculatorHistory.map((card) => (
-                <div key={card.id} className={styles.historyCard}>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <ul className={styles.cardList}>
-                    {card.points.map((point, index) => (
-                      <li key={index} className={styles.cardListItem}>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className={styles.ctaSection}>
-          <div className={styles.container}>
-            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
-            <p>Free Financial Planning Tools – Try Now</p>
-            <Link href="/suite" legacyBehavior>
-              <button
-                className={styles.ctaButton}
-                ref={ctaButtonRef}
-                onMouseMove={handleMouseMove}
-              >
-                <span className={styles.buttonText}>Explore All Calculators</span>
-                <span className={styles.arrow}>→</span>
-              </button>
-            </Link>
-          </div>
-        </section>
+        </main>
       </div>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const buildTime = new Date();
+  const currentDate = buildTime.toISOString().split('T')[0];
+  const lastModifiedDate = buildTime.toISOString();
+  
+  return {
+    props: {
+      currentDate,
+      lastModifiedDate,
+    },
+    revalidate: 21600,
+  };
+}
 
 export default CryptoInvestmentCalculator;

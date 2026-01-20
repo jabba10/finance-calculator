@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/dividend-yield-calculator", [
+  "static/chunks/3a4591a8cb17f0c0.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/5bb9d94ac48baf04.css",
+  "static/chunks/turbopack-402a86a82542d9e9.js"
+])

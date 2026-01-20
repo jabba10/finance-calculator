@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/roi-calculator", [
+  "static/chunks/80c0c32d4e70d697.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/8a7987856d761a4e.css",
+  "static/chunks/turbopack-72e1a42eba43e5af.js"
+])

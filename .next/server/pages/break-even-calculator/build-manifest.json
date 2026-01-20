@@ -1,0 +1,18 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/break-even-calculator": [
+      "static/chunks/3a86c5011b3f2096.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/bd607353ef614aea.css",
+      "static/chunks/turbopack-def15c4c5c8ba384.js"
+    ]
+  },
+  "ampFirstPages": []
+}

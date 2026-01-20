@@ -1,0 +1,1319 @@
+/* [project]/src/pages/cashflowcal.module.css [client] (css) */
+.cashflowcal-module__GZflxG__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cashflowcal-module__GZflxG__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.cashflowcal-module__GZflxG__header {
+  color: #000;
+  text-align: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: -80px;
+  margin-bottom: 2rem;
+  padding: 80px 1rem 1.5rem;
+  position: relative;
+}
+
+.cashflowcal-module__GZflxG__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.cashflowcal-module__GZflxG__mainTitle {
+  color: #000;
+  margin: 0 0 .5rem;
+  padding-top: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cashflowcal-module__GZflxG__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.cashflowcal-module__GZflxG__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__badge {
+  color: #000;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.cashflowcal-module__GZflxG__mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.cashflowcal-module__GZflxG__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .cashflowcal-module__GZflxG__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cashflowcal-module__GZflxG__calculatorCard, .cashflowcal-module__GZflxG__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.cashflowcal-module__GZflxG__sectionTitle {
+  color: #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__inputGroup {
+  margin-bottom: 1.75rem;
+}
+
+.cashflowcal-module__GZflxG__inputLabel {
+  color: #333;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.cashflowcal-module__GZflxG__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__currencySymbol, .cashflowcal-module__GZflxG__percentageSymbol, .cashflowcal-module__GZflxG__monthsSymbol {
+  color: #000;
+  min-width: 20px;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+}
+
+.cashflowcal-module__GZflxG__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.cashflowcal-module__GZflxG__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.cashflowcal-module__GZflxG__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+  padding: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.cashflowcal-module__GZflxG__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.cashflowcal-module__GZflxG__valueDisplay {
+  color: #000;
+  padding: .5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__selectInput {
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: .875rem;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.cashflowcal-module__GZflxG__selectInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.cashflowcal-module__GZflxG__irregularSection {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.cashflowcal-module__GZflxG__irregularHeader {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__irregularHeader h4 {
+  color: #333;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.cashflowcal-module__GZflxG__irregularButtons {
+  gap: .5rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__smallButton {
+  color: #fff;
+  cursor: pointer;
+  background: #000;
+  border: none;
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  transition: background-color .2s;
+}
+
+.cashflowcal-module__GZflxG__smallButton:hover {
+  background: #333;
+}
+
+.cashflowcal-module__GZflxG__irregularList {
+  margin-bottom: 1rem;
+}
+
+.cashflowcal-module__GZflxG__irregularList h5 {
+  color: #666;
+  margin: .5rem 0;
+  font-size: .9375rem;
+}
+
+.cashflowcal-module__GZflxG__irregularItem {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .5rem;
+  padding: .5rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__irregularItem span {
+  color: #333;
+  font-size: .875rem;
+}
+
+.cashflowcal-module__GZflxG__removeButton {
+  color: #f44;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0 .25rem;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.cashflowcal-module__GZflxG__removeButton:hover {
+  color: #c00;
+}
+
+.cashflowcal-module__GZflxG__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.cashflowcal-module__GZflxG__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.cashflowcal-module__GZflxG__resultValue {
+  color: #000;
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.cashflowcal-module__GZflxG__resultSubtext {
+  color: #666;
+  margin-top: .25rem;
+  font-size: .75rem;
+}
+
+.cashflowcal-module__GZflxG__chartContainer {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.cashflowcal-module__GZflxG__chartTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__chartBars {
+  flex-direction: column;
+  gap: .75rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__chartBarGroup {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__chartBarLabel {
+  color: #333;
+  min-width: 80px;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.cashflowcal-module__GZflxG__chartBarContainer {
+  background: #f0f0f0;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 200px;
+  height: 30px;
+  display: flex;
+  overflow: hidden;
+}
+
+.cashflowcal-module__GZflxG__chartBarRevenue {
+  background: #10b981;
+  height: 100%;
+  transition: width .3s;
+}
+
+.cashflowcal-module__GZflxG__chartBarExpenses {
+  background: #ef4444;
+  height: 100%;
+  transition: width .3s;
+}
+
+.cashflowcal-module__GZflxG__chartBarValue {
+  text-align: right;
+  color: #000;
+  min-width: 120px;
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__chartLegend {
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__legendItem {
+  color: #333;
+  align-items: center;
+  gap: .5rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__legendColor {
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.cashflowcal-module__GZflxG__legendRevenue {
+  background: #10b981;
+}
+
+.cashflowcal-module__GZflxG__legendExpenses {
+  background: #ef4444;
+}
+
+.cashflowcal-module__GZflxG__metricsCard {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.cashflowcal-module__GZflxG__metricsTitle {
+  color: #000;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__metricsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  display: grid;
+}
+
+.cashflowcal-module__GZflxG__metricItem {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.cashflowcal-module__GZflxG__metricLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .25rem;
+  font-size: .8125rem;
+}
+
+.cashflowcal-module__GZflxG__metricValue {
+  color: #000;
+  margin-bottom: .5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__metricStatus {
+  border-radius: 4px;
+  padding: .25rem .5rem;
+  font-size: .75rem;
+  display: inline-block;
+}
+
+.cashflowcal-module__GZflxG__metricStatus.cashflowcal-module__GZflxG__positive {
+  color: #065f46;
+  background: #d1fae5;
+}
+
+.cashflowcal-module__GZflxG__metricStatus.cashflowcal-module__GZflxG__negative {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.cashflowcal-module__GZflxG__metricStatus.cashflowcal-module__GZflxG__caution {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.cashflowcal-module__GZflxG__scenariosCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-top: 4px solid #3b82f6;
+  border-radius: 8px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.cashflowcal-module__GZflxG__scenariosTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__scenariosGrid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  display: grid;
+}
+
+.cashflowcal-module__GZflxG__scenarioItem {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: transform .2s;
+}
+
+.cashflowcal-module__GZflxG__scenarioItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px #0000001a;
+}
+
+.cashflowcal-module__GZflxG__scenarioHeader {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__scenarioHeader h4 {
+  color: #000;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.cashflowcal-module__GZflxG__scenarioMultipliers {
+  color: #666;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: .75rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__scenarioContent {
+  flex-direction: column;
+  gap: .5rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__scenarioMetric {
+  justify-content: space-between;
+  align-items: center;
+  font-size: .875rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__scenarioMetric span {
+  color: #666;
+}
+
+.cashflowcal-module__GZflxG__scenarioMetric strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__monthlySection {
+  margin: 3rem 0;
+}
+
+.cashflowcal-module__GZflxG__monthlyCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  overflow-x: auto;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.cashflowcal-module__GZflxG__monthlyTable {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+  display: table;
+}
+
+.cashflowcal-module__GZflxG__tableHeader {
+  color: #fff;
+  background: #000;
+  display: table-row;
+}
+
+.cashflowcal-module__GZflxG__tableCell {
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
+  font-weight: 600;
+  display: table-cell;
+}
+
+.cashflowcal-module__GZflxG__tableRow {
+  background: #fff;
+  display: table-row;
+}
+
+.cashflowcal-module__GZflxG__tableRow:nth-child(2n) {
+  background: #f8f8f8;
+}
+
+.cashflowcal-module__GZflxG__tableRow .cashflowcal-module__GZflxG__tableCell {
+  color: #333;
+  font-weight: normal;
+}
+
+.cashflowcal-module__GZflxG__positive {
+  color: #10b981 !important;
+  font-weight: 600 !important;
+}
+
+.cashflowcal-module__GZflxG__negative {
+  color: #ef4444 !important;
+  font-weight: 600 !important;
+}
+
+.cashflowcal-module__GZflxG__educationalContent {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cashflowcal-module__GZflxG__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.cashflowcal-module__GZflxG__articleTitle {
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cashflowcal-module__GZflxG__articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.cashflowcal-module__GZflxG__articleSubtitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__articleCard p {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.cashflowcal-module__GZflxG__exampleCard {
+  background: #f8f8f8;
+  border-left: 4px solid #10b981;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.cashflowcal-module__GZflxG__exampleCard h4 {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__exampleCard ul {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cashflowcal-module__GZflxG__exampleCard li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0;
+}
+
+.cashflowcal-module__GZflxG__exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.cashflowcal-module__GZflxG__exampleCard li strong {
+  color: #000;
+}
+
+.cashflowcal-module__GZflxG__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.cashflowcal-module__GZflxG__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-top: 4px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.cashflowcal-module__GZflxG__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.cashflowcal-module__GZflxG__strategyCard h4 {
+  color: #000;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__strategyCard p {
+  color: #666;
+  margin: 0;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.cashflowcal-module__GZflxG__metricsExplanation {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.cashflowcal-module__GZflxG__metricExplanation {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.cashflowcal-module__GZflxG__metricExplanation h4 {
+  color: #000;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__metricExplanation p {
+  color: #666;
+  margin: 0;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.cashflowcal-module__GZflxG__applicationsList {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cashflowcal-module__GZflxG__applicationsList li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .875rem 0;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__applicationsList li:before {
+  content: "💰";
+  flex-shrink: 0;
+  margin-top: .125rem;
+}
+
+.cashflowcal-module__GZflxG__applicationsList li strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 2rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.cashflowcal-module__GZflxG__quoteFooter {
+  color: #666;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: normal;
+}
+
+.cashflowcal-module__GZflxG__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.cashflowcal-module__GZflxG__faqTitle {
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.cashflowcal-module__GZflxG__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.cashflowcal-module__GZflxG__faqItem:last-child {
+  border-bottom: none;
+}
+
+.cashflowcal-module__GZflxG__faqQuestion {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cashflowcal-module__GZflxG__faqAnswer {
+  color: #333;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.cashflowcal-module__GZflxG__actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.cashflowcal-module__GZflxG__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.cashflowcal-module__GZflxG__ctaTitle {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cashflowcal-module__GZflxG__ctaText {
+  color: #333;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.cashflowcal-module__GZflxG__buttonGroup {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__primaryButton, .cashflowcal-module__GZflxG__secondaryButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  min-width: 180px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+}
+
+.cashflowcal-module__GZflxG__primaryButton {
+  color: #fff;
+  background: #000;
+  border: 1px solid #000;
+}
+
+.cashflowcal-module__GZflxG__primaryButton:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0003;
+}
+
+.cashflowcal-module__GZflxG__secondaryButton {
+  color: #000;
+  background: none;
+  border: 1px solid #000;
+}
+
+.cashflowcal-module__GZflxG__secondaryButton:hover {
+  color: #fff;
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0003;
+}
+
+.cashflowcal-module__GZflxG__disclaimer {
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+}
+
+.cashflowcal-module__GZflxG__disclaimer strong {
+  color: #000;
+}
+
+.cashflowcal-module__GZflxG__footer {
+  color: #333;
+  text-align: center;
+  background: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+}
+
+.cashflowcal-module__GZflxG__footerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cashflowcal-module__GZflxG__footerText {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.cashflowcal-module__GZflxG__footerNote {
+  color: #666;
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: .875rem;
+}
+
+@media (max-width: 768px) {
+  .cashflowcal-module__GZflxG__container {
+    padding-top: 70px;
+  }
+
+  .cashflowcal-module__GZflxG__header {
+    margin-top: -70px;
+    padding: 70px 1rem 1rem;
+  }
+
+  .cashflowcal-module__GZflxG__mainTitle {
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 2rem;
+  }
+
+  .cashflowcal-module__GZflxG__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cashflowcal-module__GZflxG__articleTitle {
+    font-size: 1.75rem;
+  }
+
+  .cashflowcal-module__GZflxG__articleCard, .cashflowcal-module__GZflxG__faqCard, .cashflowcal-module__GZflxG__calculatorCard, .cashflowcal-module__GZflxG__resultsCard, .cashflowcal-module__GZflxG__monthlyCard {
+    padding: 1.5rem;
+  }
+
+  .cashflowcal-module__GZflxG__resultsGrid, .cashflowcal-module__GZflxG__metricsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cashflowcal-module__GZflxG__chartBarGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  .cashflowcal-module__GZflxG__chartBarContainer {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .cashflowcal-module__GZflxG__chartBarValue {
+    text-align: left;
+    min-width: auto;
+  }
+
+  .cashflowcal-module__GZflxG__scenariosGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cashflowcal-module__GZflxG__monthlyTable {
+    min-width: 100%;
+  }
+
+  .cashflowcal-module__GZflxG__tableCell {
+    padding: .75rem .5rem;
+    font-size: .875rem;
+  }
+
+  .cashflowcal-module__GZflxG__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .cashflowcal-module__GZflxG__ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .cashflowcal-module__GZflxG__buttonGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cashflowcal-module__GZflxG__primaryButton, .cashflowcal-module__GZflxG__secondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cashflowcal-module__GZflxG__strategyGrid, .cashflowcal-module__GZflxG__metricsExplanation {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cashflowcal-module__GZflxG__container {
+    padding-top: 60px;
+  }
+
+  .cashflowcal-module__GZflxG__header {
+    margin-top: -60px;
+    padding: 60px 1rem 1rem;
+  }
+
+  .cashflowcal-module__GZflxG__mainTitle {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .cashflowcal-module__GZflxG__subtitle {
+    font-size: 1rem;
+  }
+
+  .cashflowcal-module__GZflxG__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .cashflowcal-module__GZflxG__badge {
+    width: fit-content;
+  }
+
+  .cashflowcal-module__GZflxG__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .cashflowcal-module__GZflxG__slider, .cashflowcal-module__GZflxG__numberInput {
+    width: 100%;
+  }
+
+  .cashflowcal-module__GZflxG__numberInput {
+    order: 1;
+  }
+
+  .cashflowcal-module__GZflxG__slider {
+    order: 2;
+  }
+
+  .cashflowcal-module__GZflxG__currencySymbol, .cashflowcal-module__GZflxG__percentageSymbol, .cashflowcal-module__GZflxG__monthsSymbol {
+    text-align: center;
+    order: 3;
+    margin-top: .5rem;
+  }
+
+  .cashflowcal-module__GZflxG__irregularHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+  }
+
+  .cashflowcal-module__GZflxG__irregularButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cashflowcal-module__GZflxG__smallButton {
+    width: 100%;
+  }
+
+  .cashflowcal-module__GZflxG__articleCard, .cashflowcal-module__GZflxG__faqCard {
+    padding: 1.25rem;
+  }
+
+  .cashflowcal-module__GZflxG__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media print {
+  .cashflowcal-module__GZflxG__container {
+    padding-top: 0 !important;
+  }
+
+  .cashflowcal-module__GZflxG__header {
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    padding: 0 0 1rem;
+  }
+
+  .cashflowcal-module__GZflxG__buttonGroup, .cashflowcal-module__GZflxG__badgeContainer, .cashflowcal-module__GZflxG__smallButton, .cashflowcal-module__GZflxG__removeButton {
+    display: none;
+  }
+
+  .cashflowcal-module__GZflxG__calculatorLayout {
+    break-inside: avoid;
+  }
+
+  .cashflowcal-module__GZflxG__footer {
+    background: none;
+    border-top: 2px solid #000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cashflowcal-module__GZflxG__container * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .cashflowcal-module__GZflxG__container {
+    color: #000;
+    background: #fff;
+  }
+
+  .cashflowcal-module__GZflxG__calculatorCard, .cashflowcal-module__GZflxG__resultsCard, .cashflowcal-module__GZflxG__articleCard, .cashflowcal-module__GZflxG__faqCard {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .cashflowcal-module__GZflxG__primaryButton {
+    color: #fff;
+    background: #000;
+    border: 2px solid #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .cashflowcal-module__GZflxG__container {
+    color: #fff;
+    background: #121212;
+    padding-top: 80px;
+  }
+
+  .cashflowcal-module__GZflxG__header {
+    color: #fff;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .cashflowcal-module__GZflxG__mainTitle, .cashflowcal-module__GZflxG__subtitle, .cashflowcal-module__GZflxG__sectionTitle, .cashflowcal-module__GZflxG__resultValue, .cashflowcal-module__GZflxG__chartTitle, .cashflowcal-module__GZflxG__articleTitle, .cashflowcal-module__GZflxG__articleSubtitle, .cashflowcal-module__GZflxG__faqTitle, .cashflowcal-module__GZflxG__faqQuestion, .cashflowcal-module__GZflxG__ctaTitle {
+    color: #fff;
+  }
+
+  .cashflowcal-module__GZflxG__calculatorCard, .cashflowcal-module__GZflxG__resultsCard, .cashflowcal-module__GZflxG__monthlyCard, .cashflowcal-module__GZflxG__articleCard, .cashflowcal-module__GZflxG__faqCard {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .cashflowcal-module__GZflxG__primaryButton {
+    color: #000;
+    background: #fff;
+    border: 1px solid #fff;
+  }
+
+  .cashflowcal-module__GZflxG__secondaryButton {
+    color: #fff;
+    background: none;
+    border: 1px solid #fff;
+  }
+
+  .cashflowcal-module__GZflxG__secondaryButton:hover {
+    color: #000;
+    background: #fff;
+  }
+
+  .cashflowcal-module__GZflxG__badge {
+    color: #fff;
+    background: #333;
+    border: 1px solid #666;
+  }
+
+  .cashflowcal-module__GZflxG__inputLabel {
+    color: #ccc;
+  }
+
+  .cashflowcal-module__GZflxG__numberInput, .cashflowcal-module__GZflxG__selectInput {
+    color: #fff;
+    background: #1e1e1e;
+    border: 1px solid #666;
+  }
+
+  .cashflowcal-module__GZflxG__slider {
+    background: #666;
+  }
+
+  .cashflowcal-module__GZflxG__slider::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .cashflowcal-module__GZflxG__slider::-moz-range-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .cashflowcal-module__GZflxG__smallButton {
+    color: #000;
+    background: #fff;
+  }
+
+  .cashflowcal-module__GZflxG__irregularItem, .cashflowcal-module__GZflxG__resultItem, .cashflowcal-module__GZflxG__metricItem, .cashflowcal-module__GZflxG__scenarioItem {
+    background: #2d2d2d;
+    border: 1px solid #444;
+  }
+
+  .cashflowcal-module__GZflxG__tableHeader {
+    color: #fff;
+    background: #333;
+  }
+
+  .cashflowcal-module__GZflxG__tableRow {
+    background: #1e1e1e;
+  }
+
+  .cashflowcal-module__GZflxG__tableRow:nth-child(2n) {
+    background: #2d2d2d;
+  }
+
+  @media (max-width: 768px) {
+    .cashflowcal-module__GZflxG__container {
+      padding-top: 70px;
+    }
+
+    .cashflowcal-module__GZflxG__header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cashflowcal-module__GZflxG__container {
+      padding-top: 60px;
+    }
+
+    .cashflowcal-module__GZflxG__header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+.cashflowcal-module__GZflxG__container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cashflowcal-module__GZflxG__container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.cashflowcal-module__GZflxG__container ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.cashflowcal-module__GZflxG__container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*# sourceMappingURL=src_pages_cashflowcal_module_cd013776.css.map*/

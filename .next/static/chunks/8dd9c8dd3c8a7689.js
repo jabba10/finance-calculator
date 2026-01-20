@@ -1,0 +1,9 @@
+__turbopack_load_page_chunks__("/retirement-calculator", [
+  "static/chunks/5ab36a06f6dd4e0e.js",
+  "static/chunks/9158baf76f4f088c.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/caf47f9f246c87e4.css",
+  "static/chunks/turbopack-10dca175cb09fcb5.js"
+])

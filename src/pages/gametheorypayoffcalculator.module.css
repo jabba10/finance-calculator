@@ -1,663 +1,926 @@
-.page {
-  min-height: 100vh;
-  background-color: white;
-  color: #0d1b2a;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  padding-top: 5rem;
-}
-
-.contentWrapper {
-  flex: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Hero Section */
-.hero {
-  padding: 3rem 1.8rem 2rem;
-  text-align: center;
-}
-
-.title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #0d1b2a;
-  margin-bottom: 0.8rem;
-  line-height: 1.3;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: #414a4c;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Calculator Card */
-.calculatorCard {
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto 3rem;
-  background-color: white;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.12);
-  border: 1px solid #e9ecef;
-  overflow: hidden;
-}
-
-/* Form */
-.form {
-  padding: 1.4rem 1.5rem 1.5rem;
-}
-
-.instruction {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  text-align: center;
-}
-
-/* Table Styles */
-.tableWrapper {
-  overflow-x: auto;
-  margin: 1rem 0;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95rem;
-  min-width: 500px;
-}
-
-.table th,
-.table td {
-  border: 1px solid #dee2e6;
-  padding: 0.8rem 1rem;
-  text-align: left;
-}
-
-.table th {
-  background-color: #f1f3f5;
-  font-weight: 600;
-  text-align: center;
-}
-
-.inputGroup {
-  display: flex;
-  gap: 0.5rem;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input {
-  width: 100%;
-  max-width: 120px;
-  padding: 0.5rem 0.6rem;
-  font-size: 0.95rem;
-  border: 1px solid #ced4da;
-  border-radius: 6px;
-  outline: none;
-  background-color: white;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.input:focus {
-  border-color: #0d1b2a;
-  box-shadow: 0 0 0 2px rgba(13, 27, 42, 0.1);
-}
-
-/* Submit Button */
-.submitBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  background: #0d1b2a;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
+/* Reset and Base Styles */
+.container * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-.submitBtn:hover {
-  background: #1b263b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+.container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-top: 80px;
 }
 
-.submitBtn .arrow {
-  font-size: 1.1em;
-  transition: transform 0.3s ease;
+/* Header Styles - Fixed to prevent overlap */
+.header {
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  z-index: 100;
+  margin-top: -80px;
+  padding-top: 80px;
 }
 
-.submitBtn:hover .arrow {
-  transform: translateX(4px);
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 20px;
 }
 
-/* Result Section */
-.resultSection {
-  padding: 1.1rem 1.5rem 1.3rem;
-  border-top: 1px dashed #e9ecef;
-  background-color: #f9fafa;
-  border-radius: 8px;
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  color: #000000;
+  padding-top: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badgeContainer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 1rem;
 }
 
-.resultSection h3 {
-  font-size: 1.1rem;
-  color: #0d1b2a;
-  margin: 0 0 0.7rem;
-  text-align: center;
+.badge {
+  background: #f5f5f5;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
   font-weight: 500;
+  border: 1px solid #dddddd;
+}
+
+/* Main Content */
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.calculatorLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 992px) {
+  .calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.calculatorCard,
+.resultsCard {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #000000;
+}
+
+/* Input Styles */
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.inputLabel {
+  display: block;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.slider {
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.numberInput {
+  width: 100px;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  text-align: center;
+  background: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.numberInput:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.valueDisplay {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000000;
+  padding: 0.25rem 0;
+}
+
+.selectInput {
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #000000;
+  background: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.selectInput:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.presetDescription {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Parameter Groups */
+.parameterGroupTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #cccccc;
+}
+
+.gameParameters,
+.repeatedGameParams,
+.strategySelection {
+  margin-bottom: 1.5rem;
+}
+
+/* Strategy Selection */
+.strategyRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .strategyRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.strategyColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.strategyDescription {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #ffffff;
+  border-radius: 4px;
+  border-left: 3px solid #000000;
+}
+
+/* Results Styles */
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .resultItem {
-  font-size: 0.95rem;
-  color: #414a4c;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
 }
 
-.resultItem strong {
-  color: #0d1b2a;
+.resultLabel {
+  font-size: 0.75rem;
+  color: #666666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resultValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Payoff Matrix */
+.payoffMatrix {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.chartTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.matrixContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.matrixHeader,
+.matrixRow {
+  display: contents;
+}
+
+.matrixCell {
+  background: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
   font-weight: 500;
 }
 
-.note {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-top: 0.8rem;
-  text-align: center;
-  padding: 0 0.2rem;
-}
-
-/* History Cards Section */
-.historySection {
-  padding: 2rem 1.8rem 3rem;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.sectionHeader {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.sectionHeader h2 {
-  font-size: 1.8rem;
+.matrixHeader .matrixCell {
+  background: #f5f5f5;
   font-weight: 600;
-  color: #0d1b2a;
-  margin-bottom: 0.5rem;
 }
 
-.sectionSubtitle {
-  font-size: 1.1rem;
-  color: #6c757d;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.historyCard {
-  background-color: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid #e9ecef;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.payoffPair {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  gap: 0.25rem;
 }
 
-.historyCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.1);
-}
-
-.cardTitle {
-  font-size: 1.2rem;
+.payoffValue {
   font-weight: 600;
-  color: #0d1b2a;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #e9ecef;
+  color: #000000;
 }
 
-.cardList {
+/* Equilibrium Sections */
+.equilibriumSection,
+.paretoSection {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.equilibriumList,
+.paretoList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.equilibriumItem,
+.paretoItem {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.equilibriumOutcome,
+.paretoOutcome {
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.equilibriumPayoffs,
+.paretoPayoffs {
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.noEquilibrium {
+  text-align: center;
+  color: #666666;
+  font-style: italic;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 4px;
+}
+
+/* Insights Card */
+.insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000000;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-top: 2rem;
+}
+
+.insightsTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.insightsList {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex: 1;
 }
 
-.cardListItem {
-  font-size: 0.95rem;
-  color: #414a4c;
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
-  padding-left: 1.2rem;
-  position: relative;
+.insightsList li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #333333;
 }
 
-.cardListItem:before {
-  content: "•";
-  color: #0d1b2a;
-  position: absolute;
-  left: 0;
-  font-weight: bold;
+.insightsList li:last-child {
+  border-bottom: none;
 }
 
-/* CTA Section */
-.ctaSection {
-  padding: 3rem 1.8rem;
-  text-align: center;
-  background-color: #0d1b2a;
-  color: white;
-  border-radius: 12px;
-  margin: 2rem auto 4rem;
+.insightsList strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Educational Content */
+.educationalContent {
   max-width: 800px;
-  width: 100%;
+  margin: 0 auto;
 }
 
-.ctaSection h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+.articleCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2.5rem;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.articleTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.articleSubtitle {
+  font-size: 1.5rem;
   font-weight: 600;
-  line-height: 1.4;
+  color: #000000;
+  margin-bottom: 1rem;
 }
 
-.ctaSection p {
+.articleCard p {
+  margin-bottom: 1rem;
+  color: #333333;
+  line-height: 1.7;
+}
+
+.exampleCard {
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #666666;
+}
+
+.exampleCard h4 {
+  color: #000000;
+  margin-bottom: 1rem;
   font-size: 1.1rem;
-  color: #cccccc;
-  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.exampleCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.exampleCard li {
+  padding: 0.5rem 0;
+  color: #333333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.exampleCard li strong {
+  color: #000000;
+}
+
+.strategyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.strategyCard {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.strategyCard h4 {
+  color: #000000;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.strategyCard p {
+  color: #666666;
+  font-size: 0.9375rem;
   line-height: 1.6;
 }
 
-.ctaButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  background: white;
-  color: #0d1b2a;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  width: auto;
-  min-width: 200px;
-  max-width: 400px;
-  margin: 0 auto;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.applicationsList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
 }
 
-.ctaButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+.applicationsListItem {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333333;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-.buttonText {
+.applicationsListItem:before {
+  content: "✓";
+  color: #000000;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.applicationsListItem strong {
+  color: #000000;
   font-weight: 600;
 }
 
-.ctaButton .arrow {
-  font-size: 1.2em;
-  transition: transform 0.3s ease;
+/* Expert Quote */
+.expertQuote {
+  background: #f5f5f5;
+  border-left: 4px solid #000000;
+  padding: 2rem;
+  border-radius: 6px;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #333333;
+  line-height: 1.7;
 }
 
-.ctaButton:hover .arrow {
-  transform: translateX(6px);
+.quoteFooter {
+  margin-top: 1rem;
+  font-style: normal;
+  color: #666666;
+  font-size: 0.875rem;
+  text-align: right;
 }
 
-/* Magnetic Glow Effect */
-.ctaButton::before {
-  content: '';
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+/* FAQ Styles */
+.faqCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2.5rem;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.ctaButton:hover::before {
-  opacity: 1;
-  left: var(--x, 50%);
-  top: var(--y, 50%);
+.faqTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQuestion {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.faqAnswer {
+  color: #333333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Action Section */
+.actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.ctaCard {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid #000000;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  color: #333333;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.disclaimer {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.disclaimer strong {
+  color: #000000;
 }
 
 /* Responsive Design */
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .page {
-    padding-top: 4.5rem;
-  }
-  
-  .cardsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.25rem;
-  }
-  
-  .ctaSection {
-    max-width: 90%;
-  }
-}
-
 @media (max-width: 768px) {
-  .page {
-    padding-top: 4rem;
+  .container {
+    padding-top: 70px;
   }
   
-  .hero {
-    padding: 2.5rem 1.5rem 1.8rem;
+  .header {
+    padding: 1.5rem 1rem 1rem;
+    margin-top: -70px;
+    padding-top: 70px;
   }
   
-  .title {
-    font-size: 1.7rem;
+  .mainTitle {
+    font-size: 2rem;
+    margin-top: 0;
+    padding-top: 10px;
   }
   
   .subtitle {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
   
-  .calculatorCard {
-    margin-bottom: 2.5rem;
-    max-width: 100%;
+  .articleTitle {
+    font-size: 1.75rem;
   }
   
-  .historySection {
-    padding: 1.5rem 1rem 2.5rem;
+  .articleCard,
+  .faqCard,
+  .calculatorCard,
+  .resultsCard {
+    padding: 1.5rem;
   }
   
-  .sectionHeader {
-    margin-bottom: 2rem;
-  }
-  
-  .sectionHeader h2 {
-    font-size: 1.6rem;
-  }
-  
-  .sectionSubtitle {
-    font-size: 1rem;
-  }
-  
-  .cardsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-  }
-  
-  .historyCard {
-    padding: 1.25rem;
-  }
-  
-  .cardTitle {
-    font-size: 1.15rem;
-  }
-  
-  .cardListItem {
-    font-size: 0.9rem;
-  }
-  
-  .ctaSection {
-    padding: 2.5rem 1.5rem;
-    margin: 1.5rem auto 3rem;
-  }
-  
-  .ctaSection h2 {
-    font-size: 1.4rem;
-  }
-  
-  .ctaSection p {
-    font-size: 1rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .page {
-    padding-top: 3.5rem;
-    padding: 0 0.5rem;
-  }
-  
-  .hero {
-    padding: 2rem 1rem 1.5rem;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .calculatorCard {
-    max-width: 100%;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-  }
-
-  .form {
-    padding: 1.2rem;
-  }
-
-  .instruction {
-    font-size: 0.95rem;
-  }
-
-  .input {
-    font-size: 0.95rem;
-    padding: 0.65rem 0.75rem;
-    max-width: 100px;
-  }
-
-  .table {
-    min-width: 400px;
-    font-size: 0.9rem;
-  }
-
-  .table th,
-  .table td {
-    padding: 0.6rem 0.8rem;
-  }
-
-  .submitBtn {
-    font-size: 0.95rem;
-    padding: 0.7rem 1.1rem;
-  }
-
-  .resultSection {
-    padding: 1rem 1.2rem;
-  }
-
-  .resultSection h3 {
-    font-size: 1.05rem;
-  }
-
-  .resultItem {
-    font-size: 0.9rem;
-  }
-
-  .historySection {
-    padding: 1.5rem 0.5rem 2rem;
-  }
-  
-  .sectionHeader {
-    margin-bottom: 1.5rem;
-  }
-  
-  .sectionHeader h2 {
-    font-size: 1.4rem;
-  }
-  
-  .sectionSubtitle {
-    font-size: 0.95rem;
-  }
-  
-  .cardsGrid {
+  .resultsGrid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  .historyCard {
-    padding: 1.2rem;
+  .matrixContainer {
+    grid-template-columns: 1fr;
   }
   
-  .cardTitle {
-    font-size: 1.1rem;
+  .matrixCell {
+    min-height: 50px;
+    font-size: 0.875rem;
   }
   
-  .cardListItem {
-    font-size: 0.85rem;
-    margin-bottom: 0.6rem;
+  .ctaCard {
+    padding: 2rem 1.5rem;
   }
   
-  .ctaSection {
-    padding: 2rem 1rem;
-    margin: 1rem auto 2.5rem;
-    border-radius: 10px;
+  .ctaTitle {
+    font-size: 1.75rem;
   }
   
-  .ctaSection h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .ctaSection p {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .ctaButton {
-    padding: 0.9rem 1.5rem;
-    font-size: 1rem;
-    min-width: 180px;
+  .strategyGrid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .page {
-    padding-top: 3rem;
+  .container {
+    padding-top: 60px;
   }
   
-  .title {
-    font-size: 1.4rem;
+  .header {
+    padding: 1.25rem 1rem 1rem;
+    margin-top: -60px;
+    padding-top: 60px;
   }
-
+  
+  .mainTitle {
+    font-size: 1.75rem;
+    margin-top: 0;
+    line-height: 1.3;
+    padding-top: 5px;
+  }
+  
   .subtitle {
-    font-size: 0.95rem;
-  }
-
-  .input {
-    height: 40px;
-    font-size: 0.9rem;
-    padding: 0.5rem 0.6rem;
-  }
-
-  .submitBtn {
-    font-size: 0.9rem;
-    padding: 0.65rem 1rem;
+    font-size: 1rem;
   }
   
-  .table {
-    min-width: 350px;
+  .badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
   
-  .sectionHeader h2 {
-    font-size: 1.3rem;
+  .badge {
+    width: fit-content;
   }
   
-  .sectionSubtitle {
-    font-size: 0.9rem;
-  }
-  
-  .historyCard {
-    padding: 1rem;
-  }
-  
-  .ctaSection h2 {
-    font-size: 1.2rem;
-  }
-
-  .ctaButton {
-    font-size: 0.95rem;
-    padding: 0.8rem 1.2rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .page {
-    padding-top: 2.5rem;
-  }
-  
-  .table {
-    min-width: 320px;
-    font-size: 0.85rem;
-  }
-  
-  .cardsGrid {
+  .inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
     gap: 0.75rem;
   }
   
-  .historyCard {
-    padding: 0.9rem;
-  }
-}
-
-/* Ensure no overflow */
-.page, .container, .historyCard, .calculatorCard, .tableWrapper {
-  overflow: hidden;
-}
-
-.page * {
-  box-sizing: border-box;
-}
-
-/* Print styles */
-@media print {
-  .ctaSection {
-    break-inside: avoid;
+  .slider,
+  .numberInput {
+    width: 100%;
   }
   
-  .ctaButton {
-    display: none;
+  .numberInput {
+    order: 1;
+  }
+  
+  .slider {
+    order: 2;
+  }
+  
+  .articleCard,
+  .faqCard {
+    padding: 1.25rem;
+  }
+  
+  .ctaCard {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .container {
+    padding-top: 0 !important;
+  }
+  
+  .header {
+    border-bottom: 2px solid #000000;
+    padding: 1rem 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .calculatorLayout {
+    break-inside: avoid;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #121212;
+    color: #ffffff;
+    padding-top: 80px;
+  }
+  
+  .header {
+    background: #121212;
+    color: #ffffff;
+    border-bottom: 1px solid #333333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+  
+  .mainTitle,
+  .subtitle,
+  .sectionTitle,
+  .resultValue,
+  .chartTitle,
+  .articleTitle,
+  .articleSubtitle,
+  .faqTitle,
+  .faqQuestion,
+  .ctaTitle,
+  .parameterGroupTitle,
+  .equilibriumOutcome,
+  .paretoOutcome,
+  .matrixCell {
+    color: #ffffff;
+  }
+  
+  .calculatorCard,
+  .resultsCard {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+  }
+  
+  .articleCard,
+  .faqCard,
+  .payoffMatrix,
+  .equilibriumSection,
+  .paretoSection {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+  }
+  
+  .resultItem,
+  .equilibriumItem,
+  .paretoItem,
+  .strategyCard {
+    background: #2d2d2d;
+    border: 1px solid #333333;
+  }
+  
+  .matrixCell {
+    background: #2d2d2d;
+  }
+  
+  .matrixHeader .matrixCell {
+    background: #1e1e1e;
+  }
+  
+  .inputLabel {
+    color: #cccccc;
+  }
+  
+  .numberInput,
+  .selectInput {
+    background: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #666666;
+  }
+  
+  .slider {
+    background: #666666;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    background: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .slider::-moz-range-thumb {
+    background: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .ctaCard {
+    background: #1e1e1e;
+    border: 1px solid #ffffff;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding-top: 70px;
+    }
+    
+    .header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding-top: 60px;
+    }
+    
+    .header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
   }
 }

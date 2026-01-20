@@ -1,0 +1,9 @@
+__turbopack_load_page_chunks__("/roe-calculator", [
+  "static/chunks/5ab36a06f6dd4e0e.js",
+  "static/chunks/370e1a7c5f4235df.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/23efe9c6e2821686.css",
+  "static/chunks/turbopack-ec4a592f55acff9e.js"
+])

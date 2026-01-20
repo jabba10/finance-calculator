@@ -1,0 +1,976 @@
+/* [project]/src/pages/durationconvexitycalculator.module.css [client] (css) */
+.durationconvexitycalculator-module__EYbeHa__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.durationconvexitycalculator-module__EYbeHa__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.durationconvexitycalculator-module__EYbeHa__header {
+  color: #000;
+  text-align: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: -80px;
+  margin-bottom: 2rem;
+  padding: 80px 1rem 1.5rem;
+  position: relative;
+}
+
+.durationconvexitycalculator-module__EYbeHa__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.durationconvexitycalculator-module__EYbeHa__mainTitle {
+  color: #000;
+  margin: 0 0 .5rem;
+  padding-top: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.durationconvexitycalculator-module__EYbeHa__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.durationconvexitycalculator-module__EYbeHa__badge {
+  color: #000;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.durationconvexitycalculator-module__EYbeHa__mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .durationconvexitycalculator-module__EYbeHa__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.durationconvexitycalculator-module__EYbeHa__calculatorCard, .durationconvexitycalculator-module__EYbeHa__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.durationconvexitycalculator-module__EYbeHa__sectionTitle {
+  color: #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__inputGroup {
+  margin-bottom: 1.75rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__inputLabel {
+  color: #333;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.durationconvexitycalculator-module__EYbeHa__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.durationconvexitycalculator-module__EYbeHa__currencySymbol, .durationconvexitycalculator-module__EYbeHa__percentageSymbol, .durationconvexitycalculator-module__EYbeHa__yearsSymbol {
+  color: #000;
+  min-width: 20px;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+}
+
+.durationconvexitycalculator-module__EYbeHa__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.durationconvexitycalculator-module__EYbeHa__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.durationconvexitycalculator-module__EYbeHa__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+  padding: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.durationconvexitycalculator-module__EYbeHa__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.durationconvexitycalculator-module__EYbeHa__valueDisplay {
+  color: #000;
+  padding: .25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__selectInput {
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: .875rem;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.durationconvexitycalculator-module__EYbeHa__selectInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.durationconvexitycalculator-module__EYbeHa__bondTypeDescription, .durationconvexitycalculator-module__EYbeHa__frequencyDescription {
+  color: #666;
+  margin-top: .5rem;
+  font-size: .875rem;
+  font-style: italic;
+}
+
+.durationconvexitycalculator-module__EYbeHa__bondCharacteristics {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__parameterGroupTitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__characteristicsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  display: grid;
+}
+
+.durationconvexitycalculator-module__EYbeHa__characteristicItem {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__characteristicLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .75rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__characteristicValue {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+}
+
+.durationconvexitycalculator-module__EYbeHa__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .75rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__resultValue {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.durationconvexitycalculator-module__EYbeHa__durationMetrics, .durationconvexitycalculator-module__EYbeHa__convexityMetrics {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__chartTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__metricsGrid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  display: grid;
+}
+
+.durationconvexitycalculator-module__EYbeHa__metricItem {
+  text-align: center;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__metricLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__metricValue {
+  color: #000;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.durationconvexitycalculator-module__EYbeHa__metricDescription {
+  color: #666;
+  font-size: .75rem;
+  line-height: 1.4;
+}
+
+.durationconvexitycalculator-module__EYbeHa__priceChangeAnalysis {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__priceChangeGrid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  display: grid;
+}
+
+.durationconvexitycalculator-module__EYbeHa__priceChangeItem {
+  flex-direction: column;
+  display: flex;
+}
+
+.durationconvexitycalculator-module__EYbeHa__priceChangeLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__priceChangeValue {
+  color: #000;
+  margin-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.durationconvexitycalculator-module__EYbeHa__priceChangeBarContainer {
+  background: #f0f0f0;
+  border-radius: 4px;
+  height: 8px;
+  display: flex;
+  overflow: hidden;
+}
+
+.durationconvexitycalculator-module__EYbeHa__priceChangeBar {
+  height: 100%;
+  transition: width .3s;
+}
+
+.durationconvexitycalculator-module__EYbeHa__priceChangeComparison {
+  color: #666;
+  margin-top: .5rem;
+  font-size: .875rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__formula {
+  text-align: center;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  font-family: Times New Roman, serif;
+  font-size: 1.25rem;
+  overflow-x: auto;
+}
+
+.durationconvexitycalculator-module__EYbeHa__formula sub {
+  vertical-align: sub;
+  font-size: .75em;
+}
+
+.durationconvexitycalculator-module__EYbeHa__insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__insightsTitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__insightsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.durationconvexitycalculator-module__EYbeHa__insightsList li {
+  color: #333;
+  border-bottom: 1px solid #0000001a;
+  padding: .75rem 0;
+}
+
+.durationconvexitycalculator-module__EYbeHa__insightsList li:last-child {
+  border-bottom: none;
+}
+
+.durationconvexitycalculator-module__EYbeHa__insightsList strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__educationalContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.durationconvexitycalculator-module__EYbeHa__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.durationconvexitycalculator-module__EYbeHa__articleTitle {
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.durationconvexitycalculator-module__EYbeHa__articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__articleSubtitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__articleCard p {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.durationconvexitycalculator-module__EYbeHa__exampleCard {
+  background: #f8f8f8;
+  border-left: 4px solid #666;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__exampleCard h4 {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__exampleCard ul {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.durationconvexitycalculator-module__EYbeHa__exampleCard li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0;
+}
+
+.durationconvexitycalculator-module__EYbeHa__exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.durationconvexitycalculator-module__EYbeHa__exampleCard li strong {
+  color: #000;
+}
+
+.durationconvexitycalculator-module__EYbeHa__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.durationconvexitycalculator-module__EYbeHa__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.durationconvexitycalculator-module__EYbeHa__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.durationconvexitycalculator-module__EYbeHa__strategyCard h4 {
+  color: #000;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__strategyCard p {
+  color: #666;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.durationconvexitycalculator-module__EYbeHa__applicationsList {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.durationconvexitycalculator-module__EYbeHa__applicationsListItem {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .875rem 0;
+  display: flex;
+}
+
+.durationconvexitycalculator-module__EYbeHa__applicationsListItem:before {
+  content: "•";
+  color: #000;
+  flex-shrink: 0;
+  margin-top: .125rem;
+  font-weight: bold;
+}
+
+.durationconvexitycalculator-module__EYbeHa__applicationsListItem strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 2rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.durationconvexitycalculator-module__EYbeHa__quoteFooter {
+  color: #666;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: normal;
+}
+
+.durationconvexitycalculator-module__EYbeHa__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.durationconvexitycalculator-module__EYbeHa__faqTitle {
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.durationconvexitycalculator-module__EYbeHa__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.durationconvexitycalculator-module__EYbeHa__faqItem:last-child {
+  border-bottom: none;
+}
+
+.durationconvexitycalculator-module__EYbeHa__faqQuestion {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__faqAnswer {
+  color: #333;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.durationconvexitycalculator-module__EYbeHa__dataTableCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.durationconvexitycalculator-module__EYbeHa__dataTableTitle {
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.durationconvexitycalculator-module__EYbeHa__dataTableContainer {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.durationconvexitycalculator-module__EYbeHa__dataTable {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: .875rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__dataTable th {
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  text-align: left;
+  background: #f8f8f8;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__dataTable td {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__dataTable tbody tr:hover {
+  background: #f8f8f8;
+}
+
+.durationconvexitycalculator-module__EYbeHa__lowError {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__highError {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.durationconvexitycalculator-module__EYbeHa__dataTableNote {
+  color: #666;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: italic;
+}
+
+.durationconvexitycalculator-module__EYbeHa__actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.durationconvexitycalculator-module__EYbeHa__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__ctaTitle {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.durationconvexitycalculator-module__EYbeHa__ctaText {
+  color: #333;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__disclaimer {
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+}
+
+.durationconvexitycalculator-module__EYbeHa__disclaimer strong {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .durationconvexitycalculator-module__EYbeHa__container {
+    padding-top: 70px;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__header {
+    margin-top: -70px;
+    padding: 70px 1rem 1rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__mainTitle {
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 2rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__articleTitle {
+    font-size: 1.75rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__articleCard, .durationconvexitycalculator-module__EYbeHa__faqCard, .durationconvexitycalculator-module__EYbeHa__calculatorCard, .durationconvexitycalculator-module__EYbeHa__resultsCard, .durationconvexitycalculator-module__EYbeHa__dataTableCard {
+    padding: 1.5rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__resultsGrid, .durationconvexitycalculator-module__EYbeHa__characteristicsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__metricsGrid, .durationconvexitycalculator-module__EYbeHa__priceChangeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__strategyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__dataTable {
+    font-size: .75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .durationconvexitycalculator-module__EYbeHa__container {
+    padding-top: 60px;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__header {
+    margin-top: -60px;
+    padding: 60px 1rem 1rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__mainTitle {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__subtitle {
+    font-size: 1rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__badge {
+    width: fit-content;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__slider, .durationconvexitycalculator-module__EYbeHa__numberInput {
+    width: 100%;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__numberInput {
+    order: 1;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__slider {
+    order: 2;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__currencySymbol, .durationconvexitycalculator-module__EYbeHa__percentageSymbol, .durationconvexitycalculator-module__EYbeHa__yearsSymbol {
+    text-align: center;
+    order: 3;
+    margin-top: .5rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__articleCard, .durationconvexitycalculator-module__EYbeHa__faqCard, .durationconvexitycalculator-module__EYbeHa__dataTableCard {
+    padding: 1.25rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media print {
+  .durationconvexitycalculator-module__EYbeHa__container {
+    padding-top: 0 !important;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__header {
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    padding: 0 0 1rem;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__calculatorLayout {
+    break-inside: avoid;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__dataTable {
+    font-size: .75rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .durationconvexitycalculator-module__EYbeHa__container {
+    color: #fff;
+    background: #121212;
+    padding-top: 80px;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__header {
+    color: #fff;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__mainTitle, .durationconvexitycalculator-module__EYbeHa__subtitle, .durationconvexitycalculator-module__EYbeHa__sectionTitle, .durationconvexitycalculator-module__EYbeHa__resultValue, .durationconvexitycalculator-module__EYbeHa__chartTitle, .durationconvexitycalculator-module__EYbeHa__articleTitle, .durationconvexitycalculator-module__EYbeHa__articleSubtitle, .durationconvexitycalculator-module__EYbeHa__faqTitle, .durationconvexitycalculator-module__EYbeHa__faqQuestion, .durationconvexitycalculator-module__EYbeHa__ctaTitle, .durationconvexitycalculator-module__EYbeHa__parameterGroupTitle, .durationconvexitycalculator-module__EYbeHa__metricValue, .durationconvexitycalculator-module__EYbeHa__priceChangeValue, .durationconvexitycalculator-module__EYbeHa__dataTableTitle {
+    color: #fff;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__calculatorCard, .durationconvexitycalculator-module__EYbeHa__resultsCard, .durationconvexitycalculator-module__EYbeHa__articleCard, .durationconvexitycalculator-module__EYbeHa__faqCard, .durationconvexitycalculator-module__EYbeHa__dataTableCard, .durationconvexitycalculator-module__EYbeHa__durationMetrics, .durationconvexitycalculator-module__EYbeHa__convexityMetrics, .durationconvexitycalculator-module__EYbeHa__priceChangeAnalysis {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__resultItem, .durationconvexitycalculator-module__EYbeHa__metricItem, .durationconvexitycalculator-module__EYbeHa__characteristicItem, .durationconvexitycalculator-module__EYbeHa__strategyCard {
+    background: #2d2d2d;
+    border: 1px solid #333;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__inputLabel {
+    color: #ccc;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__numberInput, .durationconvexitycalculator-module__EYbeHa__selectInput {
+    color: #fff;
+    background: #2d2d2d;
+    border: 1px solid #666;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__slider {
+    background: #666;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__slider::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__slider::-moz-range-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__ctaCard {
+    background: #1e1e1e;
+    border: 1px solid #fff;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__dataTable th {
+    color: #fff;
+    background: #2d2d2d;
+    border-bottom-color: #666;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__dataTable td {
+    color: #ccc;
+    border-bottom-color: #666;
+  }
+
+  .durationconvexitycalculator-module__EYbeHa__dataTable tbody tr:hover, .durationconvexitycalculator-module__EYbeHa__priceChangeBarContainer {
+    background: #2d2d2d;
+  }
+
+  @media (max-width: 768px) {
+    .durationconvexitycalculator-module__EYbeHa__container {
+      padding-top: 70px;
+    }
+
+    .durationconvexitycalculator-module__EYbeHa__header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .durationconvexitycalculator-module__EYbeHa__container {
+      padding-top: 60px;
+    }
+
+    .durationconvexitycalculator-module__EYbeHa__header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+/*# sourceMappingURL=src_pages_durationconvexitycalculator_module_7a17e9e8.css.map*/

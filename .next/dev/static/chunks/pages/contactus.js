@@ -1,0 +1,12 @@
+__turbopack_load_page_chunks__("/contactus", [
+  "static/chunks/node_modules_next_dist_compiled_9c6fb6f2._.js",
+  "static/chunks/node_modules_next_dist_shared_lib_2f2a332e._.js",
+  "static/chunks/node_modules_next_dist_client_5a8a528e._.js",
+  "static/chunks/node_modules_next_dist_335aced5._.js",
+  "static/chunks/node_modules_react-dom_4411d9bd._.js",
+  "static/chunks/node_modules_f1be3ba2._.js",
+  "static/chunks/[root-of-the-server]__7e69b822._.js",
+  "static/chunks/src_pages_contact_module_ccdfb469.css",
+  "static/chunks/src_pages_contactus_2da965e7._.js",
+  "static/chunks/turbopack-src_pages_contactus_ab9496dc._.js"
+])

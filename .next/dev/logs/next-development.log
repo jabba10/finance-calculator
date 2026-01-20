@@ -1,0 +1,1903 @@
+[00:00:03.798] Server  LOG     ✓ Ready in 2.7s
+[00:00:22.115] Server  ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[00:00:22.145] Server  ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[00:00:25.504] Server  WARN    ⚠ Cross origin request detected from 192.168.19.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:26.373] Browser ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[00:00:26.373] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[00:17:08.545] Server  LOG     ✓ Compiled in 358ms
+[00:17:23.397] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:20:35.186] Server  LOG     ✓ Compiled in 66ms
+[00:21:34.323] Server  LOG     ✓ Compiled in 90ms
+[00:35:03.344] Server  LOG     ✓ Compiled in 28ms
+[00:35:58.130] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:36:21.020] Browser ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[00:36:21.020] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[00:48:19.294] Browser LOG     Refreshing page data due to server-side change
+[00:48:19.306] Server  LOG     ✓ Compiled in 148ms
+[00:50:02.247] Server  LOG     ✓ Compiled in 36ms
+[00:51:01.632] Server  LOG     ✓ Compiled in 87ms
+[00:53:26.009] Server  LOG     ✓ Compiled in 96ms
+[00:54:02.945] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:54:11.280] Browser ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[00:54:11.280] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[01:01:46.167] Browser LOG     Refreshing page data due to server-side change
+[01:01:46.174] Server  LOG     ✓ Compiled in 118ms
+[01:03:41.897] Server  LOG     ✓ Compiled in 29ms
+[01:04:21.888] Server  LOG     ✓ Compiled in 103ms
+[01:04:30.100] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:10:44.029] Server  LOG     ✓ Compiled in 183ms
+[01:10:44.041] Browser LOG     Refreshing page data due to server-side change
+[01:14:02.040] Server  LOG     ✓ Compiled in 27ms
+[01:16:50.784] Server  LOG     ✓ Compiled in 75ms
+[01:17:00.939] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:28:58.764] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:28:58.777] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:28:58.787] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:28:58.793] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:28:58.804] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:28:58.811] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:28:58.819] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:28:58.826] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:28:58.845] Server  LOG     ✓ Compiled in 142ms
+[01:28:59.043] Browser LOG     Refreshing page data due to server-side change
+[01:28:59.043] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:29:18.038] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './SocialSecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './SocialSecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:29:46.794] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:46.805] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:46.815] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:46.823] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:46.831] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:46.840] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:46.848] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:46.857] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:46.863] Server  LOG     ✓ Compiled in 88ms
+[01:29:47.041] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:29:54.955] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:54.963] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:54.972] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:54.978] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:54.988] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:55.376] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:29:55.558] Browser ERROR   uncaughtError: Error: ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:29:55.753] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:29:55.753] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:30:08.100] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:30:08.124] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:30:08.145] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:30:08.172] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:30:08.191] Server  ERROR   ⨯ ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:30:08.570] Browser ERROR   uncaughtError: Error: ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:30:08.739] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:30:08.739] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:30:22.053] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:30:28.384] Server  LOG     ✓ Compiled in 233ms
+[01:30:29.100] Browser ERROR   ./src/pages/social-security-calculator.jsx:4:1
+Module not found: Can't resolve './socialsecurityCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './socialsecurityCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const SocialSecurityCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [birthDate, setBirthDate] = useState('1980-01-01');
+
+https://nextjs.org/docs/messages/module-not-found
+[01:30:33.157] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:35:18.843] Server  LOG     ✓ Compiled in 128ms
+[01:36:37.030] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:43:00.260] Server  ERROR   ⨯ ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:43:00.279] Server  ERROR   ⨯ ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:43:00.294] Server  ERROR   ⨯ ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:43:00.312] Server  ERROR   ⨯ ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:43:00.330] Server  ERROR   ⨯ ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:43:00.348] Server  ERROR   ⨯ ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:43:00.366] Server  ERROR   ⨯ ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:43:00.384] Server  ERROR   ⨯ ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:43:00.422] Server  LOG     ✓ Compiled in 200ms
+[01:43:01.049] Browser LOG     Refreshing page data due to server-side change
+[01:43:01.049] Browser ERROR   ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+https://nextjs.org/docs/messages/module-not-found
+[01:44:52.050] Browser ERROR   ./src/pages/he-loc-calculator.jsx:4:1
+Module not found: Can't resolve './HELOCCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './HELOCCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const HELOCCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [homeValue, setHomeValue] = useState(500000);
+
+https://nextjs.org/docs/messages/module-not-found
+[01:45:26.064] Server  LOG     ✓ Compiled in 182ms
+[01:46:34.538] Server  LOG     ✓ Compiled in 184ms
+[01:49:00.520] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:50:29.847] Browser ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[01:50:29.847] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[02:00:55.173] Server  LOG     ✓ Compiled in 59ms
+[02:00:55.493] Server  ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[02:01:16.264] Server  ERROR   ⨯ ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:01:16.279] Server  ERROR   ⨯ ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:01:16.292] Server  ERROR   ⨯ ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:01:16.305] Server  ERROR   ⨯ ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:01:16.321] Server  ERROR   ⨯ ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:01:16.334] Server  ERROR   ⨯ ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:01:16.344] Server  ERROR   ⨯ ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:01:16.360] Server  ERROR   ⨯ ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:01:16.371] Server  LOG     ✓ Compiled in 154ms
+[02:01:17.046] Browser ERROR   ./src/pages/credit-card-payoff-calculator.jsx:4:1
+Module not found: Can't resolve './CreditCardPayoffCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './CreditCardPayoffCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CreditCardPayoffCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentBalance, setCurrentBalance] = useState(5000);
+
+https://nextjs.org/docs/messages/module-not-found
+[02:01:28.786] Browser ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[02:01:28.786] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[02:01:52.985] Server  LOG     ✓ Compiled in 293ms
+[02:03:04.553] Server  LOG     ✓ Compiled in 202ms
+[02:03:11.102] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[02:04:01.874] Browser ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[02:04:01.874] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[02:12:29.262] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:12:29.279] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:12:29.293] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:12:29.310] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:12:29.328] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:12:29.345] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:12:29.358] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:12:29.370] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[02:12:29.501] Server  LOG     ✓ Compiled in 216ms
+[02:12:30.052] Browser LOG     Refreshing page data due to server-side change
+[02:12:30.052] Browser ERROR   ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+https://nextjs.org/docs/messages/module-not-found
+[02:12:46.043] Browser ERROR   ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+https://nextjs.org/docs/messages/module-not-found
+[02:13:49.042] Browser ERROR   ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+https://nextjs.org/docs/messages/module-not-found
+[02:20:07.045] Browser ERROR   ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+https://nextjs.org/docs/messages/module-not-found
+[02:20:43.240] Server  LOG     ✓ Compiled in 189ms
+[03:04:37.466] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:04:37.481] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:04:37.503] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:04:37.518] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:04:37.537] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:04:37.547] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:04:37.562] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:04:37.575] Server  ERROR   ⨯ ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:04:37.586] Server  LOG     ✓ Compiled in 333ms
+[03:04:38.044] Browser ERROR   ./src/pages/education-cost-calculator.jsx:4:1
+Module not found: Can't resolve './EducationCostCalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './EducationCostCalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const EducationCostCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [currentAge, setCurrentAge] = useState(5);
+
+https://nextjs.org/docs/messages/module-not-found
+[03:04:58.382] Server  LOG     ✓ Compiled in 140ms
+[03:05:42.798] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[03:09:50.048] Browser ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[03:09:50.048] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[03:34:34.786] Server  ERROR   ⨯ ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:34:34.818] Server  ERROR   ⨯ ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:34:34.846] Server  ERROR   ⨯ ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:34:34.864] Server  ERROR   ⨯ ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:34:34.885] Server  ERROR   ⨯ ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:34:34.899] Server  ERROR   ⨯ ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:34:34.914] Server  ERROR   ⨯ ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:34:34.929] Server  ERROR   ⨯ ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[03:34:34.974] Server  LOG     ✓ Compiled in 329ms
+[03:34:36.046] Browser LOG     Refreshing page data due to server-side change
+[03:34:36.046] Browser ERROR   ./src/pages/business-valuation-calculator.jsx:4:1
+Module not found: Can't resolve './businessvaluationcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './businessvaluationcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const BusinessValuationCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [valuationMethod, setValuationMethod] = useState('dca');
+
+https://nextjs.org/docs/messages/module-not-found
+[03:34:59.772] Server  LOG     ✓ Compiled in 205ms
+[03:35:22.042] Server  LOG     ✓ Compiled in 99ms
+[03:36:32.895] Server  LOG     ✓ Compiled in 149ms
+[03:40:08.752] Server  LOG     ✓ Compiled in 96ms
+[03:40:23.276] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[04:02:36.665] Server  LOG     ✓ Compiled in 187ms
+[04:16:18.613] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[04:17:58.337] Server  LOG     ✓ Compiled in 163ms
+[04:43:39.538] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[04:44:53.422] Browser ERROR   Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.
+[04:44:53.422] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[04:56:50.147] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[04:56:50.167] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[04:56:50.189] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[04:56:50.215] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[04:56:50.236] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[04:56:50.256] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[04:56:50.282] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[04:56:50.302] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[04:56:50.317] Server  LOG     ✓ Compiled in 202ms
+[04:56:51.049] Browser LOG     Refreshing page data due to server-side change
+[04:56:51.049] Browser ERROR   ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+https://nextjs.org/docs/messages/module-not-found
+[04:57:16.421] Server  LOG     ✓ Compiled in 93ms
+[04:57:33.201] Server  LOG     ✓ Compiled in 32ms
+[04:57:36.087] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <CashFlowCalculator> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[05:05:51.933] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:05:51.948] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:05:51.960] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:05:51.972] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:05:51.988] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:05:52.004] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:05:52.018] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:05:52.033] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:05:52.048] Server  LOG     ✓ Compiled in 163ms
+[05:05:53.053] Browser ERROR   ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+https://nextjs.org/docs/messages/module-not-found
+[05:06:07.165] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:06:07.180] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:06:07.195] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:06:07.209] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:06:07.221] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:06:07.234] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:06:07.245] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:06:07.253] Server  ERROR   ⨯ ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[05:06:07.264] Server  LOG     ✓ Compiled in 101ms
+[05:06:08.041] Browser ERROR   ./src/pages/cashflow-calculator.jsx:4:1
+Module not found: Can't resolve './cashflowcalculator.module.css'
+  2 | import Head from 'next/head';
+  3 | import Script from 'next/script';
+> 4 | import styles from './cashflowcalculator.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const CashFlowCalculator = ({ currentDate, lastModifiedDate }) => {
+  7 |   const [cashFlowType, setCashFlowType] = useState('business');
+
+https://nextjs.org/docs/messages/module-not-found
+[05:06:16.802] Server  LOG     ✓ Compiled in 145ms
+[05:06:26.081] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:11:40.136] Server  LOG     ✓ Compiled in 87ms
+[05:11:51.704] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:12:59.064] Server  LOG     ✓ Compiled in 58ms
+[05:13:32.266] Server  LOG     ✓ Compiled in 79ms
+[05:16:33.472] Server  LOG     ✓ Compiled in 74ms
+[05:16:50.271] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:18:35.342] Server  LOG     ✓ Compiled in 77ms
+[05:18:40.546] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:20:34.568] Server  LOG     ✓ Compiled in 67ms
+[05:20:48.819] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:22:15.868] Server  LOG     ✓ Compiled in 47ms
+[05:22:27.622] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:23:36.761] Server  LOG     ✓ Compiled in 104ms
+[05:23:54.012] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:25:03.424] Server  LOG     ✓ Compiled in 92ms
+[05:25:26.334] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:27:08.327] Server  LOG     ✓ Compiled in 73ms
+[05:27:27.203] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:32:57.295] Server  LOG     ✓ Compiled in 66ms
+[05:33:05.794] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:34:51.570] Server  LOG     ✓ Compiled in 82ms
+[05:35:10.395] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:39:55.352] Server  LOG     ✓ Compiled in 103ms
+[05:40:01.343] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:41:06.832] Server  LOG     ✓ Compiled in 83ms
+[05:41:21.102] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:42:23.325] Server  LOG     ✓ Compiled in 76ms
+[05:47:29.603] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:54:46.270] Server  LOG     ✓ Compiled in 180ms
+[05:55:14.188] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:58:10.820] Server  LOG     ✓ Compiled in 113ms
+[06:42:12.434] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[06:44:48.688] Server  LOG     ✓ Compiled in 240ms
+[06:45:14.480] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[06:46:15.087] Server  LOG     ✓ Compiled in 120ms
+[06:46:34.408] Server  LOG     ✓ Compiled in 110ms
+[06:50:43.850] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[06:52:13.887] Server  LOG     ✓ Compiled in 184ms
+[06:52:28.052] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[06:59:54.085] Server  LOG     ✓ Compiled in 168ms
+[07:07:29.169] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[07:09:43.451] Server  LOG     ✓ Compiled in 110ms
+[07:39:10.830] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[07:42:33.571] Server  LOG     ✓ Compiled in 153ms
+[07:46:34.206] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[07:49:25.743] Server  LOG     ✓ Compiled in 131ms
+[07:50:51.182] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[07:52:50.960] Server  LOG     ✓ Compiled in 95ms
+[07:53:17.245] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[07:54:51.540] Server  LOG     ✓ Compiled in 134ms
+[08:02:00.640] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:03:22.885] Server  LOG     ✓ Compiled in 208ms
+[08:06:26.375] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:10:21.240] Server  LOG     ✓ Compiled in 138ms
+[08:11:01.157] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:14:07.404] Server  LOG     ✓ Compiled in 102ms
+[08:15:07.793] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:16:58.405] Server  LOG     ✓ Compiled in 151ms
+[08:17:05.298] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:18:50.804] Server  LOG     ✓ Compiled in 120ms
+[08:19:40.802] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:20:56.595] Server  LOG     ✓ Compiled in 141ms
+[08:23:03.806] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:25:12.908] Server  LOG     ✓ Compiled in 125ms
+[08:26:46.356] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:29:20.947] Server  LOG     ✓ Compiled in 142ms
+[08:29:36.032] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:31:15.922] Browser LOG     Refreshing page data due to server-side change
+[08:32:43.027] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:33:25.663] Server  LOG     ✓ Compiled in 145ms
+[08:33:46.150] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:40:46.136] Server  LOG     ✓ Compiled in 155ms
+[08:41:03.874] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:42:49.552] Server  LOG     ✓ Compiled in 139ms
+[08:42:58.038] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:46:35.194] Server  LOG     ✓ Compiled in 122ms
+[08:47:02.333] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:51:15.360] Server  LOG     ✓ Compiled in 148ms
+[08:51:21.396] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:52:49.639] Server  LOG     ✓ Compiled in 136ms
+[08:56:34.842] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[08:57:47.025] Server  LOG     ✓ Compiled in 147ms
+[09:01:29.292] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:23:37.900] Server  LOG     ✓ Compiled in 137ms
+[09:23:55.631] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:25:37.213] Server  LOG     ✓ Compiled in 118ms
+[09:25:58.246] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:31:50.180] Server  LOG     ✓ Compiled in 95ms
+[09:32:01.459] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:34:36.944] Server  LOG     ✓ Compiled in 142ms
+[09:34:51.794] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:37:09.274] Server  LOG     ✓ Compiled in 78ms
+[09:37:25.990] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:39:46.978] Server  LOG     ✓ Compiled in 87ms
+[09:39:52.692] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:46:41.469] Server  LOG     ✓ Compiled in 158ms
+[09:47:22.712] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:49:19.318] Server  LOG     ✓ Compiled in 66ms
+[09:49:32.743] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:52:05.161] Server  LOG     ✓ Compiled in 89ms
+[09:53:16.013] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:54:51.248] Server  LOG     ✓ Compiled in 87ms
+[09:55:05.262] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[09:56:26.908] Server  LOG     ✓ Compiled in 244ms
+[09:56:35.338] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[10:04:54.560] Server  LOG     ✓ Compiled in 84ms
+[10:05:01.143] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:09:04.441] Server  LOG     ✓ Compiled in 361ms
+[12:10:38.631] Server  LOG     ✓ Compiled in 189ms
+[12:10:53.407] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:12:50.309] Server  LOG     ✓ Compiled in 141ms
+[12:14:26.266] Server  LOG     ✓ Compiled in 169ms
+[12:14:37.461] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:16:09.491] Server  LOG     ✓ Compiled in 88ms
+[12:16:26.974] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:18:46.236] Server  LOG     ✓ Compiled in 126ms
+[12:19:03.413] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:20:32.201] Server  LOG     ✓ Compiled in 107ms
+[12:20:44.906] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:25:38.980] Server  LOG     ✓ Compiled in 206ms
+[12:25:49.650] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:28:01.510] Server  LOG     ✓ Compiled in 122ms
+[12:28:50.241] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:44:52.273] Server  LOG     ✓ Compiled in 148ms
+[12:44:58.480] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:48:16.549] Server  LOG     ✓ Compiled in 113ms
+[12:48:49.709] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[13:38:13.051] Server  LOG     ✓ Compiled in 91ms
+[13:49:45.674] Server  LOG     ✓ Compiled in 94ms
+[13:50:20.755] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[14:01:20.156] Server  LOG     ✓ Compiled in 52ms
+[14:08:34.118] Server  LOG     ✓ Compiled in 82ms
+[14:09:41.196] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[14:19:45.357] Server  LOG     ✓ Compiled in 144ms
+[14:19:58.680] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[14:34:38.275] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[14:46:36.194] Server  LOG     ✓ Compiled in 116ms
+[14:46:44.273] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[14:52:43.890] Server  LOG     ✓ Compiled in 123ms
+[14:53:08.088] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[14:56:17.486] Server  LOG     ✓ Compiled in 123ms
+[15:04:59.205] Server  LOG     ✓ Compiled in 60ms
+[15:10:06.100] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[15:12:29.627] Server  LOG     ✓ Compiled in 128ms
+[15:12:47.889] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[15:19:31.252] Server  LOG     ✓ Compiled in 59ms
+[15:20:15.054] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[15:23:34.370] Server  LOG     ✓ Compiled in 125ms
+[15:25:34.583] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

@@ -1,0 +1,1002 @@
+/* [project]/src/pages/inventorycalculator.module.css [client] (css) */
+.inventorycalculator-module__DkKdlq__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.inventorycalculator-module__DkKdlq__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.inventorycalculator-module__DkKdlq__headerSpacer {
+  width: 100%;
+  height: 80px;
+}
+
+.inventorycalculator-module__DkKdlq__header {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 2rem 1rem 1.5rem;
+  position: relative;
+}
+
+.inventorycalculator-module__DkKdlq__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.inventorycalculator-module__DkKdlq__mainTitle {
+  color: #000;
+  margin: 0 0 .5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.inventorycalculator-module__DkKdlq__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.inventorycalculator-module__DkKdlq__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__badge {
+  color: #000;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.inventorycalculator-module__DkKdlq__mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.inventorycalculator-module__DkKdlq__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .inventorycalculator-module__DkKdlq__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.inventorycalculator-module__DkKdlq__calculatorCard, .inventorycalculator-module__DkKdlq__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.inventorycalculator-module__DkKdlq__sectionTitle {
+  color: #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__inputGroup {
+  margin-bottom: 1.75rem;
+}
+
+.inventorycalculator-module__DkKdlq__inputLabel {
+  color: #333;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.inventorycalculator-module__DkKdlq__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__currencySymbol, .inventorycalculator-module__DkKdlq__timesSymbol {
+  color: #000;
+  min-width: 20px;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+}
+
+.inventorycalculator-module__DkKdlq__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.inventorycalculator-module__DkKdlq__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.inventorycalculator-module__DkKdlq__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+  padding: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.inventorycalculator-module__DkKdlq__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.inventorycalculator-module__DkKdlq__valueDisplay {
+  color: #000;
+  padding: .5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__selectInput {
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: .875rem;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.inventorycalculator-module__DkKdlq__selectInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.inventorycalculator-module__DkKdlq__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.inventorycalculator-module__DkKdlq__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.inventorycalculator-module__DkKdlq__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.inventorycalculator-module__DkKdlq__resultValue {
+  color: #000;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.inventorycalculator-module__DkKdlq__resultInterpretation {
+  color: #333;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonContainer {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonBars {
+  flex-direction: column;
+  gap: .75rem;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonBarGroup {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonBarLabel {
+  color: #333;
+  min-width: 120px;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonBarContainer {
+  background: #f0f0f0;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 200px;
+  height: 25px;
+  overflow: hidden;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonBarCurrent {
+  background: #333;
+  height: 100%;
+  transition: width .3s;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonBarIndustry {
+  background: #666;
+  height: 100%;
+  transition: width .3s;
+}
+
+.inventorycalculator-module__DkKdlq__comparisonBarValue {
+  text-align: right;
+  color: #000;
+  min-width: 80px;
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__trendContainer {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.inventorycalculator-module__DkKdlq__trendTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__trendChart {
+  flex-direction: column;
+  gap: .75rem;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__trendBarGroup {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__trendBarLabel {
+  color: #333;
+  min-width: 40px;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.inventorycalculator-module__DkKdlq__trendBarContainer {
+  background: #f0f0f0;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 200px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.inventorycalculator-module__DkKdlq__trendBar {
+  background: #999;
+  height: 100%;
+  transition: width .3s;
+}
+
+.inventorycalculator-module__DkKdlq__trendBarValue {
+  text-align: right;
+  color: #000;
+  min-width: 80px;
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__chartLegend {
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__legendItem {
+  color: #333;
+  align-items: center;
+  gap: .5rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__legendColor {
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.inventorycalculator-module__DkKdlq__legendCurrent {
+  background: #333;
+}
+
+.inventorycalculator-module__DkKdlq__legendIndustry {
+  background: #666;
+}
+
+.inventorycalculator-module__DkKdlq__insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.inventorycalculator-module__DkKdlq__insightsTitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__insightsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inventorycalculator-module__DkKdlq__insightsList li {
+  color: #333;
+  border-bottom: 1px solid #0000001a;
+  padding: .75rem 0;
+}
+
+.inventorycalculator-module__DkKdlq__insightsList li:last-child {
+  border-bottom: none;
+}
+
+.inventorycalculator-module__DkKdlq__insightsList strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__educationalContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.inventorycalculator-module__DkKdlq__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.inventorycalculator-module__DkKdlq__articleTitle {
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.inventorycalculator-module__DkKdlq__articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.inventorycalculator-module__DkKdlq__articleSubtitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__articleCard p {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.inventorycalculator-module__DkKdlq__formulaCard {
+  background: #f8f8f8;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.inventorycalculator-module__DkKdlq__formulaCard h4 {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__formula {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin: 1rem 0;
+  padding: 1rem;
+  font-family: Courier New, monospace;
+  font-size: 1.1rem;
+}
+
+.inventorycalculator-module__DkKdlq__formulaExplanation ul {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: .5rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.inventorycalculator-module__DkKdlq__formulaExplanation li {
+  color: #000;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: .5rem;
+  font-size: .9rem;
+}
+
+.inventorycalculator-module__DkKdlq__formulaExplanation strong {
+  color: #000;
+}
+
+.inventorycalculator-module__DkKdlq__importanceGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.inventorycalculator-module__DkKdlq__importanceCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.inventorycalculator-module__DkKdlq__importanceCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.inventorycalculator-module__DkKdlq__importanceCard h4 {
+  color: #000;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__importanceCard p {
+  color: #666;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.inventorycalculator-module__DkKdlq__industryTable {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.inventorycalculator-module__DkKdlq__industryRow {
+  border-bottom: 1px solid #e0e0e0;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  padding: 1rem;
+  display: grid;
+}
+
+.inventorycalculator-module__DkKdlq__industryRow:first-child {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__industryRow:last-child {
+  border-bottom: none;
+}
+
+.inventorycalculator-module__DkKdlq__industryName {
+  color: #000;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__industryTurnover, .inventorycalculator-module__DkKdlq__industryDays {
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__industryExplanation {
+  color: #666;
+  text-align: right;
+  font-size: .9rem;
+}
+
+.inventorycalculator-module__DkKdlq__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 2rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.inventorycalculator-module__DkKdlq__quoteFooter {
+  color: #666;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: normal;
+}
+
+.inventorycalculator-module__DkKdlq__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.inventorycalculator-module__DkKdlq__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.inventorycalculator-module__DkKdlq__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.inventorycalculator-module__DkKdlq__strategyCard h4 {
+  color: #000;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__strategyCard p {
+  color: #666;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.inventorycalculator-module__DkKdlq__applicationsList {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inventorycalculator-module__DkKdlq__applicationsList li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .875rem 0;
+  display: flex;
+}
+
+.inventorycalculator-module__DkKdlq__applicationsList li:before {
+  content: "✓";
+  color: #000;
+  flex-shrink: 0;
+  margin-top: .125rem;
+  font-weight: bold;
+}
+
+.inventorycalculator-module__DkKdlq__applicationsList li strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.inventorycalculator-module__DkKdlq__faqTitle {
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.inventorycalculator-module__DkKdlq__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.inventorycalculator-module__DkKdlq__faqItem:last-child {
+  border-bottom: none;
+}
+
+.inventorycalculator-module__DkKdlq__faqQuestion {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.inventorycalculator-module__DkKdlq__faqAnswer {
+  color: #333;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.inventorycalculator-module__DkKdlq__actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.inventorycalculator-module__DkKdlq__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.inventorycalculator-module__DkKdlq__ctaTitle {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.inventorycalculator-module__DkKdlq__ctaText {
+  color: #333;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.inventorycalculator-module__DkKdlq__disclaimer {
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+}
+
+.inventorycalculator-module__DkKdlq__disclaimer strong {
+  color: #000;
+}
+
+.inventorycalculator-module__DkKdlq__footer {
+  color: #333;
+  text-align: center;
+  background: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+}
+
+.inventorycalculator-module__DkKdlq__footerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.inventorycalculator-module__DkKdlq__footerText {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.inventorycalculator-module__DkKdlq__footerNote {
+  color: #666;
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: .875rem;
+}
+
+@media (max-width: 768px) {
+  .inventorycalculator-module__DkKdlq__headerSpacer {
+    height: 60px;
+  }
+
+  .inventorycalculator-module__DkKdlq__header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__mainTitle {
+    font-size: 2rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__articleTitle {
+    font-size: 1.75rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__articleCard, .inventorycalculator-module__DkKdlq__faqCard, .inventorycalculator-module__DkKdlq__calculatorCard, .inventorycalculator-module__DkKdlq__resultsCard {
+    padding: 1.5rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__comparisonBarGroup, .inventorycalculator-module__DkKdlq__trendBarGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__comparisonBarContainer, .inventorycalculator-module__DkKdlq__trendBarContainer {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .inventorycalculator-module__DkKdlq__comparisonBarValue, .inventorycalculator-module__DkKdlq__trendBarValue {
+    text-align: left;
+    min-width: auto;
+  }
+
+  .inventorycalculator-module__DkKdlq__industryRow {
+    grid-template-columns: 1fr;
+  }
+
+  .inventorycalculator-module__DkKdlq__industryName, .inventorycalculator-module__DkKdlq__industryTurnover, .inventorycalculator-module__DkKdlq__industryDays, .inventorycalculator-module__DkKdlq__industryExplanation {
+    text-align: left;
+    padding: .5rem 1rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__importanceGrid, .inventorycalculator-module__DkKdlq__strategyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .inventorycalculator-module__DkKdlq__chartLegend {
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .inventorycalculator-module__DkKdlq__headerSpacer {
+    height: 50px;
+  }
+
+  .inventorycalculator-module__DkKdlq__header {
+    padding: 1.25rem 1rem 1rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__mainTitle {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .inventorycalculator-module__DkKdlq__subtitle {
+    font-size: 1rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__badge {
+    width: fit-content;
+  }
+
+  .inventorycalculator-module__DkKdlq__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__slider, .inventorycalculator-module__DkKdlq__numberInput {
+    width: 100%;
+  }
+
+  .inventorycalculator-module__DkKdlq__numberInput {
+    order: 1;
+  }
+
+  .inventorycalculator-module__DkKdlq__slider {
+    order: 2;
+  }
+
+  .inventorycalculator-module__DkKdlq__currencySymbol, .inventorycalculator-module__DkKdlq__timesSymbol {
+    text-align: center;
+    order: 3;
+    margin-top: .5rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__articleCard, .inventorycalculator-module__DkKdlq__faqCard {
+    padding: 1.25rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .inventorycalculator-module__DkKdlq__formula {
+    font-size: .9rem;
+    overflow-x: auto;
+  }
+
+  .inventorycalculator-module__DkKdlq__formulaExplanation ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .inventorycalculator-module__DkKdlq__headerSpacer {
+    display: none;
+  }
+
+  .inventorycalculator-module__DkKdlq__container {
+    padding-top: 0 !important;
+  }
+
+  .inventorycalculator-module__DkKdlq__header {
+    border-bottom: 2px solid #000;
+    padding: 1rem 0;
+  }
+
+  .inventorycalculator-module__DkKdlq__badgeContainer {
+    display: none;
+  }
+
+  .inventorycalculator-module__DkKdlq__calculatorLayout {
+    break-inside: avoid;
+  }
+
+  .inventorycalculator-module__DkKdlq__footer {
+    background: none;
+    border-top: 2px solid #000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inventorycalculator-module__DkKdlq__container * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .inventorycalculator-module__DkKdlq__container {
+    color: #000;
+    background: #fff;
+  }
+
+  .inventorycalculator-module__DkKdlq__calculatorCard, .inventorycalculator-module__DkKdlq__resultsCard, .inventorycalculator-module__DkKdlq__articleCard, .inventorycalculator-module__DkKdlq__faqCard {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .inventorycalculator-module__DkKdlq__comparisonBarCurrent, .inventorycalculator-module__DkKdlq__comparisonBarIndustry, .inventorycalculator-module__DkKdlq__trendBar {
+    border: 1px solid #000;
+  }
+
+  .inventorycalculator-module__DkKdlq__badge {
+    border: 2px solid #000;
+  }
+
+  .inventorycalculator-module__DkKdlq__inputLabel, .inventorycalculator-module__DkKdlq__articleCard p {
+    color: #000;
+  }
+}
+
+.inventorycalculator-module__DkKdlq__container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.inventorycalculator-module__DkKdlq__container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.inventorycalculator-module__DkKdlq__container ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.inventorycalculator-module__DkKdlq__container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*# sourceMappingURL=src_pages_inventorycalculator_module_e65a7eef.css.map*/

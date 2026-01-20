@@ -1,0 +1,18 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/asset-turnover-calculator": [
+      "static/chunks/5367190f951b5cd6.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/160e0f25493a874b.css",
+      "static/chunks/turbopack-9b822338ef05998a.js"
+    ]
+  },
+  "ampFirstPages": []
+}

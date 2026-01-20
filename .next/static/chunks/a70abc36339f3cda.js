@@ -1,0 +1,9 @@
+__turbopack_load_page_chunks__("/tax-bracket-calculator", [
+  "static/chunks/5ab36a06f6dd4e0e.js",
+  "static/chunks/a54457280bbe36f3.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/fbf467ecb3316c29.css",
+  "static/chunks/turbopack-72bee076bc1866f0.js"
+])

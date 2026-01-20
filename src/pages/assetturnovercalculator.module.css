@@ -1,0 +1,1307 @@
+/* Reset and Base Styles */
+.container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+/* Header Styles */
+.header {
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  z-index: 100;
+  margin-top: -80px;
+  padding-top: 80px;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 20px;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  color: #000000;
+  padding-top: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badgeContainer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.badge {
+  background: #f5f5f5;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #dddddd;
+}
+
+/* Main Content */
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.calculatorLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 992px) {
+  .calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.calculatorCard,
+.resultsCard {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #000000;
+}
+
+/* Input Styles */
+.inputGroup {
+  margin-bottom: 1.75rem;
+}
+
+.inputLabel {
+  display: block;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.currencySymbol {
+  font-weight: 600;
+  color: #000000;
+  min-width: 20px;
+}
+
+.slider {
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.numberInput {
+  width: 120px;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  text-align: center;
+  background: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.numberInput:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.valueDisplay {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  padding: 0.5rem 0;
+}
+
+.selectInput {
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #000000;
+  background: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.selectInput:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+/* Calculation Note */
+.calculationNote {
+  background: #f0f7ff;
+  border-left: 4px solid #2563eb;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.noteIcon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.noteContent {
+  font-size: 0.9rem;
+  color: #333333;
+  line-height: 1.5;
+}
+
+.noteContent strong {
+  color: #000000;
+}
+
+.noteContent small {
+  color: #666666;
+  font-size: 0.8rem;
+}
+
+/* Results Styles - Efficiency Display */
+.efficiencyDisplay {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.efficiencyValue {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.efficiencyLabel {
+  font-size: 1.25rem;
+  color: #666666;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.efficiencyStatus {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Calculation Breakdown */
+.calculationBreakdown {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e0e0e0;
+}
+
+.breakdownTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.breakdownGrid {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.breakdownItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.breakdownItem:last-child {
+  border-bottom: none;
+}
+
+.breakdownLabel {
+  color: #333333;
+  font-weight: 500;
+}
+
+.breakdownValue {
+  color: #000000;
+  font-weight: 600;
+}
+
+.breakdownDivider {
+  padding: 0.5rem 0;
+}
+
+.dividerLine {
+  display: block;
+  height: 2px;
+  background: #000000;
+  width: 100%;
+}
+
+/* Efficiency Metrics */
+.efficiencyMetrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.metricCard {
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 1.25rem;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.metricLabel {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metricValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .efficiencyMetrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Benchmark Comparison */
+.benchmarkContainer {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e0e0e0;
+}
+
+.benchmarkTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.benchmarkScale {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.scaleLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #666666;
+  font-weight: 500;
+}
+
+.scaleBar {
+  display: flex;
+  height: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scaleSegment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease;
+}
+
+.scaleValue {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.currentMarker {
+  position: absolute;
+  top: -25px;
+  width: 10px;
+  height: 60px;
+  background: #000000;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  z-index: 10;
+}
+
+.currentMarker:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #000000;
+}
+
+.markerLabel {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #000000;
+  background: #ffffff;
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Industry Comparison */
+.industryComparison {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.comparisonTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.comparisonItem {
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.comparisonIndustry {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.comparisonRange {
+  font-size: 0.85rem;
+  color: #666666;
+  margin-bottom: 0.25rem;
+}
+
+.comparisonTarget {
+  font-size: 0.8rem;
+  color: #333333;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .comparisonGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Analysis Card */
+.analysisCard {
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-left: 4px solid #000000;
+}
+
+.analysisTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.analysisText {
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.improvementTips {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 1.25rem;
+  border: 1px solid #e0e0e0;
+}
+
+.tipsTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tipsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tipsList li {
+  padding: 0.5rem 0;
+  color: #333333;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.tipsList li:before {
+  content: "•";
+  color: #000000;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.tipsList li:last-child {
+  border-bottom: none;
+}
+
+.tipsList li strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Educational Content */
+.educationalContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.articleCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2.5rem;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.articleTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.articleSubtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.articleCard p {
+  margin-bottom: 1rem;
+  color: #333333;
+  line-height: 1.7;
+}
+
+.exampleCard {
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #666666;
+}
+
+.exampleCard h4 {
+  color: #000000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.exampleCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.exampleCard li {
+  padding: 0.5rem 0;
+  color: #333333;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.exampleCard li:before {
+  content: "→";
+  color: #000000;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.exampleCard li strong {
+  color: #000000;
+}
+
+.strategyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.strategyCard {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.strategyCard h4 {
+  color: #000000;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strategyCard p {
+  color: #666666;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.applicationsList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.applicationsList li {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333333;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.applicationsList li:before {
+  content: "✓";
+  color: #000000;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.applicationsList li strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Expert Quote */
+.expertQuote {
+  background: #f5f5f5;
+  border-left: 4px solid #000000;
+  padding: 2rem;
+  border-radius: 6px;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #333333;
+  line-height: 1.7;
+}
+
+.quoteFooter {
+  margin-top: 1rem;
+  font-style: normal;
+  color: #666666;
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+/* FAQ Styles */
+.faqCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2.5rem;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.faqTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQuestion {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.faqAnswer {
+  color: #333333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Action Section */
+.actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.ctaCard {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid #000000;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  color: #333333;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 180px;
+  text-decoration: none;
+}
+
+.primaryButton {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.primaryButton:hover {
+  background: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.secondaryButton:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.disclaimer {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.disclaimer strong {
+  color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding-top: 70px;
+  }
+  
+  .header {
+    padding: 1.5rem 1rem 1rem;
+    margin-top: -70px;
+    padding-top: 70px;
+  }
+  
+  .mainTitle {
+    font-size: 2rem;
+    margin-top: 0;
+    padding-top: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .articleTitle {
+    font-size: 1.75rem;
+  }
+  
+  .articleCard,
+  .faqCard,
+  .calculatorCard,
+  .resultsCard {
+    padding: 1.5rem;
+  }
+  
+  .efficiencyValue {
+    font-size: 3rem;
+  }
+  
+  .benchmarkContainer {
+    padding: 1rem;
+  }
+  
+  .scaleBar {
+    height: 30px;
+  }
+  
+  .scaleValue {
+    font-size: 0.65rem;
+  }
+  
+  .currentMarker {
+    height: 50px;
+    top: -20px;
+  }
+  
+  .ctaCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.75rem;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .strategyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-top: 60px;
+  }
+  
+  .header {
+    padding: 1.25rem 1rem 1rem;
+    margin-top: -60px;
+    padding-top: 60px;
+  }
+  
+  .mainTitle {
+    font-size: 1.75rem;
+    margin-top: 0;
+    line-height: 1.3;
+    padding-top: 5px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .badge {
+    width: fit-content;
+  }
+  
+  .inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .slider,
+  .numberInput {
+    width: 100%;
+  }
+  
+  .numberInput {
+    order: 1;
+  }
+  
+  .slider {
+    order: 2;
+  }
+  
+  .currencySymbol {
+    order: 3;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  .articleCard,
+  .faqCard {
+    padding: 1.25rem;
+  }
+  
+  .ctaCard {
+    padding: 1.5rem 1rem;
+  }
+  
+  .scaleLabels {
+    font-size: 0.75rem;
+  }
+  
+  .scaleValue {
+    font-size: 0.6rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .container {
+    padding-top: 0 !important;
+  }
+  
+  .header {
+    border-bottom: 2px solid #000000;
+    padding: 1rem 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .actionButtons,
+  .badgeContainer {
+    display: none;
+  }
+  
+  .calculatorLayout {
+    break-inside: avoid;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .container * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .container {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .calculatorCard,
+  .resultsCard,
+  .articleCard,
+  .faqCard {
+    background: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .primaryButton {
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #121212;
+    color: #ffffff;
+    padding-top: 80px;
+  }
+  
+  .header {
+    background: #121212;
+    color: #ffffff;
+    border-bottom: 1px solid #333333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+  
+  .mainTitle,
+  .subtitle,
+  .sectionTitle,
+  .articleTitle,
+  .articleSubtitle,
+  .faqTitle,
+  .faqQuestion,
+  .ctaTitle {
+    color: #ffffff;
+  }
+  
+  .calculatorCard,
+  .resultsCard {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+  }
+  
+  .articleCard,
+  .faqCard {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+  }
+  
+  .primaryButton {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+  }
+  
+  .secondaryButton {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+  
+  .secondaryButton:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .badge {
+    background: #333333;
+    color: #ffffff;
+    border: 1px solid #666666;
+  }
+  
+  .inputLabel {
+    color: #cccccc;
+  }
+  
+  .numberInput,
+  .selectInput {
+    background: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #666666;
+  }
+  
+  .slider {
+    background: #666666;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    background: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .slider::-moz-range-thumb {
+    background: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .efficiencyDisplay {
+    background: #1e1e1e;
+    border-color: #333333;
+  }
+  
+  .calculationBreakdown,
+  .benchmarkContainer {
+    background: #1e1e1e;
+    border-color: #333333;
+  }
+  
+  .breakdownLabel {
+    color: #cccccc;
+  }
+  
+  .metricCard {
+    background: #2a2a2a;
+    border-color: #333333;
+  }
+  
+  .metricLabel {
+    color: #cccccc;
+  }
+  
+  .analysisCard {
+    background: #2a2a2a;
+  }
+  
+  .improvementTips {
+    background: #1e1e1e;
+    border-color: #333333;
+  }
+  
+  .tipsList li {
+    color: #cccccc;
+  }
+  
+  .exampleCard {
+    background: #2a2a2a;
+  }
+  
+  .strategyCard {
+    background: #1e1e1e;
+    border-color: #333333;
+  }
+  
+  .strategyCard p {
+    color: #cccccc;
+  }
+  
+  .expertQuote {
+    background: #2a2a2a;
+  }
+  
+  .ctaCard {
+    background: #1e1e1e;
+    border-color: #333333;
+  }
+  
+  .ctaText {
+    color: #cccccc;
+  }
+  
+  .calculationNote {
+    background: #2a2a2a;
+    border-color: #2563eb;
+  }
+  
+  .noteContent {
+    color: #cccccc;
+  }
+  
+  .comparisonItem {
+    background: #2a2a2a;
+    border-color: #333333;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding-top: 70px;
+    }
+    
+    .header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding-top: 60px;
+    }
+    
+    .header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+.container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.container ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

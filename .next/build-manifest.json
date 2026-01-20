@@ -1,38 +1,749 @@
 {
-  "polyfillFiles": [
-    "static/chunks/polyfills.js"
-  ],
-  "devFiles": [
-    "static/chunks/react-refresh.js"
-  ],
-  "ampDevFiles": [],
-  "lowPriorityFiles": [
-    "static/development/_buildManifest.js",
-    "static/development/_ssgManifest.js"
-  ],
-  "rootMainFiles": [],
-  "rootMainFilesTree": {},
   "pages": {
+    "/": [
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/54507ca3d282cdc0.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/0e0949499c5b91b8.css",
+      "static/chunks/turbopack-b0675dadd72e9dc8.js"
+    ],
+    "/404": [
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/8fe1225bd80a97a4.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/turbopack-0be93c456975615a.js"
+    ],
     "/_app": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_app.js"
+      "static/chunks/95b0ca1fc954cff2.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/2dfcd1e473e5395a.css",
+      "static/chunks/turbopack-ee5e6337e430f141.js"
     ],
     "/_error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_error.js"
+      "static/chunks/15c928b42fd4040d.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/turbopack-248579e42a61707c.js"
+    ],
+    "/about": [
+      "static/chunks/6e0bd5a57e41f7fe.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/2f186b9247f2fd2c.css",
+      "static/chunks/turbopack-f5012907c1b77f11.js"
+    ],
+    "/accounts-receivable-turnover-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/a88ab6b94ebf0c6a.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/b424be9475b56aa8.css",
+      "static/chunks/turbopack-9d3b247c4330cf93.js"
+    ],
+    "/annuity-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/f1ee1cc29c32c64f.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/9815ce0e1280cf2e.css",
+      "static/chunks/turbopack-a381144a00d4c70d.js"
+    ],
+    "/asset-turnover-calculator": [
+      "static/chunks/5367190f951b5cd6.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/160e0f25493a874b.css",
+      "static/chunks/turbopack-9b822338ef05998a.js"
+    ],
+    "/blog": [
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/ae58f22a1de9b2cf.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/2645a66753cd7d29.css",
+      "static/chunks/turbopack-1d507db701b9387e.js"
+    ],
+    "/break-even-calculator": [
+      "static/chunks/3a86c5011b3f2096.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/bd607353ef614aea.css",
+      "static/chunks/turbopack-def15c4c5c8ba384.js"
+    ],
+    "/business-valuation-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/645f25520d148387.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/592d7b4296cad8c5.css",
+      "static/chunks/turbopack-e619f2b199f28c2a.js"
+    ],
+    "/cac-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/f2472aa15d5a899e.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/c409cef533eb22e9.css",
+      "static/chunks/turbopack-7a7bc9f82ddcbf81.js"
+    ],
+    "/cap-rate-calculator": [
+      "static/chunks/8484f7ae4c0ac996.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/7d1dc2e497c68398.css",
+      "static/chunks/turbopack-1f02f19d41debc79.js"
+    ],
+    "/capital-gains-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/d4cdec42c9ceaa77.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/3304c7af93bf6d95.css",
+      "static/chunks/turbopack-869edb62b0f75742.js"
+    ],
+    "/car-loan-calculator": [
+      "static/chunks/3a0808e200acc86d.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/ad22abf780b3e729.css",
+      "static/chunks/turbopack-cf5a9ba56488ad27.js"
+    ],
+    "/cash-on-cash-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/b6f41a4e8685a484.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/4e4004a1c8e21800.css",
+      "static/chunks/turbopack-de2e8b402b1d4b93.js"
+    ],
+    "/cashflow-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/e2f26e4a08735577.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/69cea17c39929fc9.css",
+      "static/chunks/turbopack-8e17a032e7c2725b.js"
+    ],
+    "/cd-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/710d53b96d386f50.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/dfe133b7d809e504.css",
+      "static/chunks/turbopack-869bd08526e95e74.js"
     ],
     "/compound-interest-calculator": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/compound-interest-calculator.js"
+      "static/chunks/64c6c91ae41f1722.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/df5867a4d51f90d1.css",
+      "static/chunks/turbopack-e4f25f9b0c99a836.js"
+    ],
+    "/contactus": [
+      "static/chunks/9f257446fdb8254f.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/4fc39cfa6f6afc60.css",
+      "static/chunks/turbopack-94dcd05a958c6fa5.js"
+    ],
+    "/credit-card-payoff-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/6b39600397be4b86.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/d83a9e7401d4b4e4.css",
+      "static/chunks/turbopack-2df94e48fc465f39.js"
+    ],
+    "/crypto-investment-calculator": [
+      "static/chunks/a87be5c7514dbcfb.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/c1f534456f8c02c0.css",
+      "static/chunks/turbopack-dab64a9a573fd423.js"
+    ],
+    "/current-ratio-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/f70ce1ff09d78d3f.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/b424f8dafc022dc9.css",
+      "static/chunks/turbopack-2a232d13ebf2151d.js"
+    ],
+    "/debt-to-equity-calculator": [
+      "static/chunks/59a8295591f0119c.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/0abdb38ea76675d8.css",
+      "static/chunks/turbopack-0aa06f832e5a6e56.js"
+    ],
+    "/debt-to-income-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/20799458e64af1ad.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/345b3bb1c2c5796d.css",
+      "static/chunks/turbopack-634239abdfc02610.js"
+    ],
+    "/development-feasibility-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/6f2696725f9f250b.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/1fd96f6c6acda207.css",
+      "static/chunks/turbopack-38be36d62a65e85a.js"
+    ],
+    "/discounted-cash-flow-calculator": [
+      "static/chunks/19a9da1ce505ba14.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/2e6f504a93512bd1.css",
+      "static/chunks/turbopack-b2bcd16c5d7d6455.js"
+    ],
+    "/dividend-yield-calculator": [
+      "static/chunks/3a4591a8cb17f0c0.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/5bb9d94ac48baf04.css",
+      "static/chunks/turbopack-402a86a82542d9e9.js"
+    ],
+    "/dscr-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/8a2ae39a7377d05d.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/143e653055b6efe9.css",
+      "static/chunks/turbopack-4a240b96ef569ec1.js"
+    ],
+    "/duration-convexity-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/75a2041b4b10a121.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/821c8c3efed8dc39.css",
+      "static/chunks/turbopack-f084d7bf46aa96d3.js"
+    ],
+    "/early-retirement-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/604a6ba6e3e3ebbe.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/bd675f60a3e58047.css",
+      "static/chunks/turbopack-1b2eefa4d60873c9.js"
+    ],
+    "/ebitda-calculator": [
+      "static/chunks/315debd6d14c729f.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/cc7bd226c55f9494.css",
+      "static/chunks/turbopack-d055e3bd37e04b85.js"
+    ],
+    "/education-cost-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/11e64dc7fb84c439.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/7316ec16f3edeb85.css",
+      "static/chunks/turbopack-18f68379ff207cbb.js"
+    ],
+    "/eps-calculator": [
+      "static/chunks/5bce82cc4503215b.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/85ba7616058d56de.css",
+      "static/chunks/turbopack-4eda1aea7eb433d5.js"
+    ],
+    "/eva-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/6bd08cd0201fe486.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/98af1ec913b595fd.css",
+      "static/chunks/turbopack-2deac3ab343a1def.js"
+    ],
+    "/financial-literacy-score-calculator": [
+      "static/chunks/834b02b25ac57eaa.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/f0c3506800fd8844.css",
+      "static/chunks/turbopack-78e268a1a5f79b4b.js"
+    ],
+    "/flipping-profit-calculator": [
+      "static/chunks/1bd911b2f8c7d797.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/f3136a70e95bb96c.css",
+      "static/chunks/turbopack-7fa945316eb3a3ef.js"
+    ],
+    "/free-cash-flow-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/c80de9071d17cb37.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/1da00272b3626397.css",
+      "static/chunks/turbopack-62f55bbd43198d0a.js"
+    ],
+    "/game-theory-payoff-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/fc50b23e7fe914fe.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/bafc4d879f206a71.css",
+      "static/chunks/turbopack-13fc64408c7ceb68.js"
+    ],
+    "/government-bonds-calculator": [
+      "static/chunks/e8c0a5da94cc5737.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/0dd10e31dccbd807.css",
+      "static/chunks/turbopack-d3a4716e17fb6677.js"
+    ],
+    "/grm-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/66422be46bc725b8.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/25dc900817543f96.css",
+      "static/chunks/turbopack-2e5bc86e694380f8.js"
+    ],
+    "/gross-profit-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/ff003e616f0a6c13.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/1872eb0216b024d0.css",
+      "static/chunks/turbopack-95143c841c2f91bb.js"
+    ],
+    "/heloc-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/2484c4092e285a56.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/45c31ab5ae01d091.css",
+      "static/chunks/turbopack-aa9782b130fc7d9a.js"
+    ],
+    "/inflation-adjusted-calculator": [
+      "static/chunks/967c18674ffb846f.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/2fe856063bd47ede.css",
+      "static/chunks/turbopack-665163285cc3433a.js"
+    ],
+    "/inventory-turnover-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/fd9f9e57a59800ed.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/6250b61ed9766755.css",
+      "static/chunks/turbopack-c2298b5cace66775.js"
+    ],
+    "/irr-calculator": [
+      "static/chunks/4b50d8ca39b55733.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/37b496097267e931.css",
+      "static/chunks/turbopack-daead3ed8bbd56bb.js"
+    ],
+    "/lease-vs-buy-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/07562411fd85b247.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/a4ec6aadf271ab89.css",
+      "static/chunks/turbopack-6c30ef969c401327.js"
+    ],
+    "/legal-retainer-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/c4447292c55bfe1b.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/2a3728c2a0848e24.css",
+      "static/chunks/turbopack-9e9ab444f8683f82.js"
+    ],
+    "/litigation-cost-calculator": [
+      "static/chunks/e2e1f7089e9c853e.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/07a08122e0740505.css",
+      "static/chunks/turbopack-574ff8f869e1c0a4.js"
+    ],
+    "/loan-calculator": [
+      "static/chunks/cd8b13f8cadc48d1.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/d7cb4d8a105c9c31.css",
+      "static/chunks/turbopack-ae9b7afd2093b3c6.js"
+    ],
+    "/ltv-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/97630b9434f9616d.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/b10e91d8f6420697.css",
+      "static/chunks/turbopack-2181d2bd8cf7ed02.js"
+    ],
+    "/markup-calculator": [
+      "static/chunks/6238ed9e7f44c2e2.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/052cdf22406d4409.css",
+      "static/chunks/turbopack-33354e8b632935d0.js"
+    ],
+    "/millionaire-calculator": [
+      "static/chunks/812d0fbedd3ff1e0.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/aa1712fdc28615d1.css",
+      "static/chunks/turbopack-a69920605d432035.js"
+    ],
+    "/monte-carlo-simulation-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/05aea804a664683c.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/6988afd0b27baef1.css",
+      "static/chunks/turbopack-9e471c046b12d01c.js"
+    ],
+    "/mortgage-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/3fc0d7e7b0eb904b.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/1b37857ba5bf8998.css",
+      "static/chunks/turbopack-3a2bf76f3f21921e.js"
+    ],
+    "/mortgage-refinance-break-even-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/6ef6108d8b7c5814.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/1056a32e44d86836.css",
+      "static/chunks/turbopack-21b65f26c82c00d0.js"
+    ],
+    "/npv-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/248627f1447d7170.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/1a89bda678d0e26f.css",
+      "static/chunks/turbopack-dfac3d669f7af539.js"
+    ],
+    "/occupancy-cost-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/278e3dab7c6be694.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/2c768ecac7d91447.css",
+      "static/chunks/turbopack-3b7d630b88d805d9.js"
+    ],
+    "/operating-leverage-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/aa55c33d7ad9b1ed.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/2684c798f68a92ab.css",
+      "static/chunks/turbopack-7814d0482f9fc7cc.js"
+    ],
+    "/option-pricing-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/858598b62c448947.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/fb6774ecee0fd13a.css",
+      "static/chunks/turbopack-1caf83e814f6e2dd.js"
+    ],
+    "/payback-period-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/52f66eea26cccc5f.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/1d95df00ab5369eb.css",
+      "static/chunks/turbopack-1fdf49441c7f1ec6.js"
+    ],
+    "/payroll-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/66eabc5eb0666d20.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/e2c1b0c2a6b8cce1.css",
+      "static/chunks/turbopack-f0c5277efdf911fe.js"
+    ],
+    "/pe-ratio-calculator": [
+      "static/chunks/fa4d9e2ce36d6ca2.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/4cb06fac04f274f3.css",
+      "static/chunks/turbopack-8a2441fbf35c769b.js"
+    ],
+    "/pension-planning-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/7b18a13113f51924.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/a226aa2cc12f5393.css",
+      "static/chunks/turbopack-95d11da39b30ad7c.js"
+    ],
+    "/ppf-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/7e8305516affa83c.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/b16da3d67e8968e2.css",
+      "static/chunks/turbopack-9eaf3ff31195a156.js"
+    ],
+    "/present-value-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/f28878a7f8814c02.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/7445abfebf879ec5.css",
+      "static/chunks/turbopack-fed569e4d4aed961.js"
+    ],
+    "/privacy-policy": [
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/28893b73ca8eb58e.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/804194cedd5f8957.css",
+      "static/chunks/turbopack-d21a02b8f2b41543.js"
+    ],
+    "/profit-margin-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/9ec4be3f76a80775.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/3db5d3907ae0a481.css",
+      "static/chunks/turbopack-5193a82ae91782df.js"
+    ],
+    "/property-tax-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/ad063512d3a1c767.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/ea93295f936c245c.css",
+      "static/chunks/turbopack-7b586d7b1c253f6a.js"
+    ],
+    "/purchasing-power-parity-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/65e4114919f2f666.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/aab499cca93df1b9.css",
+      "static/chunks/turbopack-bc002273974f9f29.js"
+    ],
+    "/quick-ratio-calculator": [
+      "static/chunks/4453a82b37f6ff4d.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/fdb281a0b26b7191.css",
+      "static/chunks/turbopack-5ca5ef81a97bd1b3.js"
+    ],
+    "/rent-increase-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/52dc64518da184d2.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/0e049ad2798957fe.css",
+      "static/chunks/turbopack-adbc31864b443cd5.js"
+    ],
+    "/retirement-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/9158baf76f4f088c.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/caf47f9f246c87e4.css",
+      "static/chunks/turbopack-10dca175cb09fcb5.js"
+    ],
+    "/roe-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/370e1a7c5f4235df.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/23efe9c6e2821686.css",
+      "static/chunks/turbopack-ec4a592f55acff9e.js"
+    ],
+    "/roi-calculator": [
+      "static/chunks/80c0c32d4e70d697.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/8a7987856d761a4e.css",
+      "static/chunks/turbopack-72e1a42eba43e5af.js"
+    ],
+    "/simple-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/757e5aff5eb8d4ab.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/52f9c3c357be5256.css",
+      "static/chunks/turbopack-02e0df380df73d0a.js"
+    ],
+    "/social-security-calculator": [
+      "static/chunks/7bc64b7cb8aa2f21.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/a1e55425fbe11819.css",
+      "static/chunks/turbopack-cadbeadd916fa00e.js"
+    ],
+    "/staking-rewards-calculator": [
+      "static/chunks/30c679072981bc31.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/e8621f1781fc96ae.css",
+      "static/chunks/turbopack-c13861c985695664.js"
+    ],
+    "/subscription-cost-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/5bd2ab3e036740da.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/cc896c547637c1ce.css",
+      "static/chunks/turbopack-f25f12f960d5f165.js"
     ],
     "/suite": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/suite.js"
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/e66f7d169d32a8de.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/d0cb11a31b48fcff.css",
+      "static/chunks/turbopack-680642a7a40fc605.js"
+    ],
+    "/tax-bracket-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/a54457280bbe36f3.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/fbf467ecb3316c29.css",
+      "static/chunks/turbopack-72bee076bc1866f0.js"
+    ],
+    "/tax-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/cc9ac931813dff01.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/2184fef80592a333.css",
+      "static/chunks/turbopack-4b2f35fc4cdfc018.js"
+    ],
+    "/time-value-of-money-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/2ef36dd1aa41fb6b.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/0eb45f7d1693300c.css",
+      "static/chunks/turbopack-51ddf339eee2e9b6.js"
+    ],
+    "/wacc-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/60096c4e6a0a1867.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/16edf263aa8ab2fc.css",
+      "static/chunks/turbopack-c6fb013a435798e1.js"
+    ],
+    "/worker-classification-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/7683a14def1d5914.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/05798708e496d1d8.css",
+      "static/chunks/turbopack-6b72e20212f06b4e.js"
+    ],
+    "/working-capital-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/2f1efe3aab54a21e.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/53c24e6e884f8741.css",
+      "static/chunks/turbopack-40e9afbd94537f47.js"
     ]
   },
-  "ampFirstPages": []
+  "devFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [
+    "static/7VYHI1DElf1phZOFqx_CL/_ssgManifest.js",
+    "static/7VYHI1DElf1phZOFqx_CL/_buildManifest.js"
+  ],
+  "rootMainFiles": []
 }

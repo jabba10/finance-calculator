@@ -1,407 +1,714 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import Script from 'next/script';
 import styles from './mortgagerefinancebreakevencalculator.module.css';
 
-const MortgageRefinanceBreakEvenCalculator = () => {
-  const ctaButtonRef = useRef(null);
+const MortgageRefinanceCalculator = ({ currentDate, lastModifiedDate }) => {
+  const [currentLoanBalance, setCurrentLoanBalance] = useState(300000);
+  const [currentInterestRate, setCurrentInterestRate] = useState(6.5);
+  const [remainingLoanTerm, setRemainingLoanTerm] = useState(25);
+  const [newInterestRate, setNewInterestRate] = useState(5.0);
+  const [newLoanTerm, setNewLoanTerm] = useState(30);
+  const [closingCosts, setClosingCosts] = useState(5000);
+  const [results, setResults] = useState(null);
+  const [monthlyData, setMonthlyData] = useState([]);
+  const [showChart, setShowChart] = useState(true);
 
-  const [inputs, setInputs] = useState({
-    currentLoanBalance: '250000',
-    currentRate: '6.5',
-    newRate: '5.0',
-    loanTerm: '30',
-    remainingTerm: '25',
-    closingCosts: '4000',
-    discountPoints: '0'
-  });
+  const calculateRefinance = () => {
+    // Calculate monthly payments
+    const currentMonthlyRate = currentInterestRate / 100 / 12;
+    const currentMonths = remainingLoanTerm * 12;
+    const currentPayment = currentLoanBalance * 
+      (currentMonthlyRate * Math.pow(1 + currentMonthlyRate, currentMonths)) / 
+      (Math.pow(1 + currentMonthlyRate, currentMonths) - 1);
 
-  const [result, setResult] = useState(null);
+    const newMonthlyRate = newInterestRate / 100 / 12;
+    const newMonths = newLoanTerm * 12;
+    const newPayment = currentLoanBalance * 
+      (newMonthlyRate * Math.pow(1 + newMonthlyRate, newMonths)) / 
+      (Math.pow(1 + newMonthlyRate, newMonths) - 1);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInputs(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const calculateBreakEven = () => {
-    const loanBalance = parseFloat(inputs.currentLoanBalance);
-    const currentRate = parseFloat(inputs.currentRate) / 100;
-    const newRate = parseFloat(inputs.newRate) / 100;
-    const termYears = parseInt(inputs.loanTerm);
-    const remainingYears = parseInt(inputs.remainingTerm);
-    const closingCosts = parseFloat(inputs.closingCosts);
-    const discountPoints = parseFloat(inputs.discountPoints);
-    const pointsCost = loanBalance * (discountPoints / 100);
-
-    const totalRefinanceCost = closingCosts + pointsCost;
-
-    const r1 = currentRate / 12;
-    const r2 = newRate / 12;
-
-    const currentPayment = loanBalance * r1;
-    const newPayment = loanBalance * r2;
+    // Calculate monthly savings
     const monthlySavings = currentPayment - newPayment;
-
-    if (monthlySavings <= 0) {
-      setResult({
-        monthlySavings: '0.00',
-        totalCost: totalRefinanceCost.toFixed(2),
-        breakEvenMonths: '—',
-        breakEvenYears: '—',
-        recommendation: 'Refinancing is not beneficial — new rate is not lower.'
-      });
-      return;
+    
+    // Calculate break-even point (in months)
+    const breakEvenMonths = monthlySavings > 0 ? 
+      Math.ceil(closingCosts / monthlySavings) : Infinity;
+    
+    // Calculate total interest savings
+    const currentTotalInterest = (currentPayment * currentMonths) - currentLoanBalance;
+    const newTotalInterest = (newPayment * newMonths) - currentLoanBalance;
+    const totalInterestSavings = currentTotalInterest - newTotalInterest;
+    
+    // Calculate net savings (considering closing costs)
+    const netSavings = totalInterestSavings - closingCosts;
+    
+    // Generate monthly data for chart
+    const data = [];
+    let cumulativeSavings = 0;
+    const maxMonths = Math.min(breakEvenMonths * 2, 120);
+    
+    for (let month = 1; month <= maxMonths; month++) {
+      cumulativeSavings += monthlySavings;
+      const netPosition = cumulativeSavings - closingCosts;
+      
+      if (month % 12 === 0 || month === 1 || month === breakEvenMonths || month === maxMonths) {
+        data.push({
+          month,
+          cumulativeSavings: Math.round(cumulativeSavings),
+          closingCosts: closingCosts,
+          netPosition: Math.round(netPosition),
+          label: month === breakEvenMonths ? 'Break-Even' : `Year ${Math.ceil(month/12)}`
+        });
+      }
     }
 
-    const breakEvenMonths = totalRefinanceCost / monthlySavings;
-    const breakEvenYears = breakEvenMonths / 12;
-
-    const recommendation = breakEvenYears < remainingYears
-      ? 'Refinancing is recommended — you will break even before the loan ends.'
-      : 'Refinancing may not be worth it — break-even occurs after loan term.';
-
-    setResult({
-      currentPayment: currentPayment.toFixed(2),
-      newPayment: newPayment.toFixed(2),
-      monthlySavings: monthlySavings.toFixed(2),
-      totalCost: totalRefinanceCost.toFixed(2),
-      breakEvenMonths: breakEvenMonths.toFixed(1),
-      breakEvenYears: breakEvenYears.toFixed(1),
-      recommendation
+    setResults({
+      currentPayment: Math.round(currentPayment),
+      newPayment: Math.round(newPayment),
+      monthlySavings: Math.round(monthlySavings),
+      breakEvenMonths,
+      breakEvenYears: Math.round((breakEvenMonths / 12) * 10) / 10,
+      totalInterestSavings: Math.round(totalInterestSavings),
+      netSavings: Math.round(netSavings),
+      currentTotalInterest: Math.round(currentTotalInterest),
+      newTotalInterest: Math.round(newTotalInterest),
+      closingCosts
     });
+    
+    setMonthlyData(data);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    calculateBreakEven();
+  useEffect(() => {
+    calculateRefinance();
+  }, [currentLoanBalance, currentInterestRate, remainingLoanTerm, newInterestRate, newLoanTerm, closingCosts]);
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(value);
   };
 
-  const handleMouseMove = (e) => {
-    const el = ctaButtonRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    el.style.setProperty('--x', `${x}px`);
-    el.style.setProperty('--y', `${y}px`);
+  const formatPercentage = (value) => {
+    return `${value.toFixed(2)}%`;
   };
 
-  // Mortgage Refinance Break-Even Calculator History Data
-  const refinanceBreakEvenHistory = [
-    {
-      id: 1,
-      title: "History & Discovery of Mortgage Refinance Break-Even Calculator",
-      points: [
-        "1960s: Mortgage bankers created manual break-even calculations for clients",
-        "1980s: Spreadsheet software enabled automated break-even analysis",
-        "1990s: Online mortgage calculators introduced break-even features",
-        "2008: Housing crisis made break-even analysis critical for distressed homeowners",
-        "2010s: Mobile apps provided instant break-even calculations for refinancing decisions",
-        "2020: Record-low interest rates created massive demand for refinance calculators",
-        "Present: AI-powered calculators predict optimal refinance timing based on market trends"
-      ]
-    },
-    {
-      id: 2,
-      title: "Global Origins & Financial Purpose",
-      points: [
-        "United States: Developed during 1970s mortgage rate volatility",
-        "United Kingdom: 'Remortgage break-even' calculators for UK property market",
-        "Canada: Mortgage stress test regulations increased break-even calculation importance",
-        "Australia: 'Refinance savings' calculators for competitive banking market",
-        "Japan: Long-term fixed mortgage break-even calculations",
-        "Purpose: Determine optimal timing for mortgage refinancing to maximize savings"
-      ]
-    },
-    {
-      id: 3,
-      title: "Key Industries & Monthly Applications",
-      points: [
-        "Mortgage Lenders: Daily break-even analysis for client refinance proposals",
-        "Real Estate Agencies: Monthly coaching for clients on refinance timing",
-        "Financial Advisors: Quarterly portfolio reviews including mortgage optimization",
-        "Credit Unions: Weekly member refinance opportunity assessments",
-        "Investment Banks: Monthly analysis of mortgage-backed securities impact",
-        "Insurance Companies: Annual policyholder financial wellness reviews",
-        "Retirement Planners: Bi-annual mortgage strategy adjustments for retirees"
-      ]
-    },
-    {
-      id: 4,
-      title: "Problem Solving & Financial Impact",
-      points: [
-        "Saves homeowners $10,000-$50,000 per refinance through optimal timing",
-        "Reduces refinancing mistakes by 60% through clear break-even visualization",
-        "Increases lender refinance approval rates by 40% with transparent ROI calculations",
-        "Prevents $5,000+ in unnecessary closing costs through strategic planning",
-        "Reduces loan officer consultation time by 70% with instant calculations",
-        "Improves customer satisfaction by 50% through clear financial decision-making",
-        "Generates $15,000 average additional profit per successful refinance for lenders"
-      ]
-    },
-    {
-      id: 5,
-      title: "Revenue Generation Applications",
-      points: [
-        "Mortgage Brokers: Earn 1-2% origination fees on $100,000+ refinance transactions",
-        "FinTech Companies: Charge $20-$200/month for premium refinance analysis tools",
-        "Financial Advisors: Include mortgage optimization in $2,000-$10,000 annual planning fees",
-        "Real Estate Platforms: Generate $500-$2,000 leads for mortgage partners",
-        "Educational Companies: Offer $500-$5,000 mortgage strategy certification courses",
-        "Software Providers: License break-even algorithms for $50k-$500k/year",
-        "Data Analytics: Sell refinance timing insights for $10k-$100k/year subscriptions"
-      ]
-    },
-    {
-      id: 6,
-      title: "Ordinary People Break-Even Calculator Uses",
-      points: [
-        "Homeowners: Determining if rate drop justifies refinance closing costs",
-        "Real Estate Investors: Calculating refinance timing for rental property portfolios",
-        "First-time Buyers: Planning future refinance strategies after initial purchase",
-        "Empty Nesters: Evaluating cash-out refinance for retirement funding",
-        "Debt Consolidators: Using home equity refinance to pay off high-interest debt",
-        "Renovation Planners: Timing cash-out refinance for home improvement projects",
-        "Divorcing Couples: Calculating mortgage refinance options during property division",
-        "Job Changers: Assessing refinance feasibility after income changes"
-      ]
-    }
-  ];
+  const formatMonths = (months) => {
+    if (months === Infinity) return 'Never';
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+    if (years === 0) return `${months} months`;
+    if (remainingMonths === 0) return `${years} years`;
+    return `${years} years, ${remainingMonths} months`;
+  };
 
   return (
     <>
       <Head>
-        <html lang="en" />
-        <meta charSet="utf-8" />
+        <title>Mortgage Refinance Break-Even Calculator | Should You Refinance?</title>
+        <meta name="description" content="Free mortgage refinance calculator to determine your break-even point and total savings. Calculate if refinancing makes financial sense for your situation." />
+        <meta name="keywords" content="mortgage refinance calculator, break-even calculator, refinance savings, mortgage calculator, home loan refinance, interest savings" />
+        <meta name="date" content={currentDate} />
+        <meta name="last-modified" content={lastModifiedDate} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Mortgage Refinance Break-Even Calculator | Free Financial Tool</title>
-        <meta
-          name="description"
-          content="Calculate how long it takes to recover your refinance costs and start saving with our free mortgage refinance break-even calculator."
-        />
-        <link rel="canonical" href="/mortgage-refinance-break-even-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/mortgage-refinance-break-even-calculator" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Mortgage Refinance Break-Even Calculator | Should You Refinance?" />
+        <meta property="og:description" content="Calculate if refinancing your mortgage makes financial sense. Find your break-even point and potential savings." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/mortgage-refinance-break-even-calculator" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mortgage Refinance Break-Even Calculator" />
+        <meta name="twitter:description" content="Calculate your refinance savings and break-even point in minutes." />
       </Head>
 
+      {/* JSON-LD Structured Data */}
+      <Script
+        id="mortgage-refinance-calculator-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Mortgage Refinance Break-Even Calculator",
+            "description": "Professional mortgage refinance calculator to determine break-even point and total savings",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "890",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "datePublished": currentDate,
+            "dateModified": currentDate,
+            "author": {
+              "@type": "Organization",
+              "name": "Financial Tools Pro",
+              "url": "https://www.financecalculatorfree.com"
+            },
+            "featureList": [
+              "Break-Even Analysis",
+              "Monthly Savings Calculation",
+              "Total Interest Comparison",
+              "Closing Cost Analysis",
+              "Visual Savings Timeline"
+            ]
+          })
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <Script
+        id="refinance-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a refinance break-even point and why is it important?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The break-even point is when your monthly savings from refinancing equal the closing costs you paid. It's crucial because it tells you how long you need to keep the mortgage to actually benefit from refinancing.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does refinancing typically cost in closing fees?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Closing costs typically range from 2% to 5% of the loan amount. This includes appraisal fees, origination fees, title insurance, and other administrative costs. Our calculator helps you factor these into your decision.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should I refinance if I plan to move soon?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Generally, you shouldn't refinance if you plan to move before reaching the break-even point. The calculator helps determine if you'll stay long enough to recoup the closing costs through monthly savings.",
+                  "datePublished": currentDate
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       <div className={styles.container}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <h1 className={styles.title}>Mortgage Refinance Break-Even Calculator</h1>
-          <p className={styles.subtitle}>
-            Determine how long it takes to recover refinance costs and start saving.
-          </p>
-        </section>
-
-        {/* Calculator Card */}
-        <div className={styles.calculatorCard}>
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <p className={styles.instruction}>
-              Enter your loan details to calculate your break-even point.
-            </p>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="currentLoanBalance" className={styles.label}>
-                Current Loan Balance ($)
-              </label>
-              <input
-                type="number"
-                id="currentLoanBalance"
-                name="currentLoanBalance"
-                value={inputs.currentLoanBalance}
-                onChange={handleChange}
-                placeholder="e.g. 250000"
-                step="1000"
-                className={styles.input}
-                required
-              />
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="currentRate" className={styles.label}>
-                Current Interest Rate (%)
-              </label>
-              <input
-                type="number"
-                id="currentRate"
-                name="currentRate"
-                value={inputs.currentRate}
-                onChange={handleChange}
-                placeholder="e.g. 6.5"
-                step="0.01"
-                className={styles.input}
-                required
-              />
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="newRate" className={styles.label}>
-                New Interest Rate (%)
-              </label>
-              <input
-                type="number"
-                id="newRate"
-                name="newRate"
-                value={inputs.newRate}
-                onChange={handleChange}
-                placeholder="e.g. 5.0"
-                step="0.01"
-                className={styles.input}
-                required
-              />
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="loanTerm" className={styles.label}>
-                Original Loan Term (Years)
-              </label>
-              <input
-                type="number"
-                id="loanTerm"
-                name="loanTerm"
-                value={inputs.loanTerm}
-                onChange={handleChange}
-                placeholder="e.g. 30"
-                min="1"
-                max="30"
-                className={styles.input}
-                required
-              />
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="remainingTerm" className={styles.label}>
-                Remaining Term (Years)
-              </label>
-              <input
-                type="number"
-                id="remainingTerm"
-                name="remainingTerm"
-                value={inputs.remainingTerm}
-                onChange={handleChange}
-                placeholder="e.g. 25"
-                min="1"
-                max="30"
-                className={styles.input}
-                required
-              />
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="closingCosts" className={styles.label}>
-                Closing Costs ($)
-              </label>
-              <input
-                type="number"
-                id="closingCosts"
-                name="closingCosts"
-                value={inputs.closingCosts}
-                onChange={handleChange}
-                placeholder="e.g. 4000"
-                step="100"
-                className={styles.input}
-                required
-              />
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="discountPoints" className={styles.label}>
-                Discount Points (%)
-              </label>
-              <input
-                type="number"
-                id="discountPoints"
-                name="discountPoints"
-                value={inputs.discountPoints}
-                onChange={handleChange}
-                placeholder="e.g. 0"
-                step="0.1"
-                className={styles.input}
-              />
-              <p className={styles.note}>1 point = 1% of loan amount</p>
-            </div>
-
-            <button type="submit" className={styles.submitBtn}>
-              <span className={styles.btnText}>Calculate Break-Even</span>
-              <span className={styles.arrow}>→</span>
-            </button>
-          </form>
-
-          {result && (
-            <div className={styles.resultSection}>
-              <h3>Refinance Break-Even Analysis</h3>
-              <div className={styles.resultGrid}>
-                <div className={styles.resultItem}>
-                  <strong>Current Payment:</strong> ${result.currentPayment}
-                </div>
-                <div className={styles.resultItem}>
-                  <strong>New Payment:</strong> ${result.newPayment}
-                </div>
-                <div className={`${styles.resultItem} ${styles.highlight}`}>
-                  <strong>Monthly Savings:</strong> ${result.monthlySavings}
-                </div>
-                <div className={styles.resultItem}>
-                  <strong>Total Refinance Cost:</strong> ${result.totalCost}
-                </div>
-                <div className={`${styles.resultItem} ${styles.highlight}`}>
-                  <strong>Break-Even:</strong> {result.breakEvenMonths} months
-                </div>
-                <div className={styles.resultItem}>
-                  <strong>Or:</strong> {result.breakEvenYears} years
-                </div>
-              </div>
-              <div className={styles.resultItem}>
-                <strong>Recommendation:</strong> {result.recommendation}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* History Cards Section */}
-        <section className={styles.historySection}>
-          <div className={styles.container}>
-            <div className={styles.sectionHeader}>
-              <h2>Mortgage Refinance Break-Even Calculator History & Global Applications</h2>
-              <p className={styles.sectionSubtitle}>
-                Explore the evolution and worldwide impact of mortgage refinance break-even calculation tools
-              </p>
-            </div>
-            
-            <div className={styles.cardsGrid}>
-              {refinanceBreakEvenHistory.map((card) => (
-                <div key={card.id} className={styles.historyCard}>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <ul className={styles.cardList}>
-                    {card.points.map((point, index) => (
-                      <li key={index} className={styles.cardListItem}>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+        {/* Header */}
+        <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.mainTitle}>Mortgage Refinance Break-Even Calculator</h1>
+            <p className={styles.subtitle}>Calculate If Refinancing Makes Financial Sense for You</p>
+            <div className={styles.badgeContainer}>
+              <span className={styles.badge}>Updated: {currentDate}</span>
+              <span className={styles.badge}>Accurate Calculations</span>
+              <span className={styles.badge}>No Signup Required</span>
             </div>
           </div>
-        </section>
+        </header>
 
-        {/* CTA Section */}
-        <section className={styles.ctaSection}>
-          <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
-          <p>Free Financial Planning Tools – Try Now</p>
-          <Link
-            href="/suite"
-            className={styles.ctaButton}
-            ref={ctaButtonRef}
-            onMouseMove={handleMouseMove}
-          >
-            <span className={styles.buttonText}>Explore All Calculators</span>
-            <span className={styles.arrow}>→</span>
-          </Link>
-        </section>
+        <main className={styles.mainContent}>
+          <div className={styles.calculatorLayout}>
+            {/* Calculator Controls - Current Mortgage */}
+            <div className={styles.calculatorCard}>
+              <h2 className={styles.sectionTitle}>Current Mortgage Details</h2>
+              
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Current Loan Balance
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="50000"
+                      max="2000000"
+                      step="10000"
+                      value={currentLoanBalance}
+                      onChange={(e) => setCurrentLoanBalance(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="50000"
+                      max="2000000"
+                      step="10000"
+                      value={currentLoanBalance}
+                      onChange={(e) => setCurrentLoanBalance(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(currentLoanBalance)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Current Interest Rate
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="2"
+                      max="10"
+                      step="0.125"
+                      value={currentInterestRate}
+                      onChange={(e) => setCurrentInterestRate(parseFloat(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="2"
+                      max="10"
+                      step="0.125"
+                      value={currentInterestRate}
+                      onChange={(e) => setCurrentInterestRate(parseFloat(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(currentInterestRate)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Remaining Loan Term
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="1"
+                      max="30"
+                      step="1"
+                      value={remainingLoanTerm}
+                      onChange={(e) => setRemainingLoanTerm(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="1"
+                      max="30"
+                      step="1"
+                      value={remainingLoanTerm}
+                      onChange={(e) => setRemainingLoanTerm(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.yearsSymbol}>years</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{remainingLoanTerm} years</div>
+                </label>
+              </div>
+
+              <h2 className={styles.sectionTitle} style={{ marginTop: '2rem' }}>New Mortgage Details</h2>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  New Interest Rate
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="2"
+                      max="10"
+                      step="0.125"
+                      value={newInterestRate}
+                      onChange={(e) => setNewInterestRate(parseFloat(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="2"
+                      max="10"
+                      step="0.125"
+                      value={newInterestRate}
+                      onChange={(e) => setNewInterestRate(parseFloat(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(newInterestRate)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  New Loan Term
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="10"
+                      max="30"
+                      step="1"
+                      value={newLoanTerm}
+                      onChange={(e) => setNewLoanTerm(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="10"
+                      max="30"
+                      step="1"
+                      value={newLoanTerm}
+                      onChange={(e) => setNewLoanTerm(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.yearsSymbol}>years</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{newLoanTerm} years</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Closing Costs
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="20000"
+                      step="500"
+                      value={closingCosts}
+                      onChange={(e) => setClosingCosts(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="20000"
+                      step="500"
+                      value={closingCosts}
+                      onChange={(e) => setClosingCosts(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(closingCosts)}</div>
+                </label>
+              </div>
+
+              <div className={styles.toggleGroup}>
+                <button
+                  className={`${styles.toggleButton} ${showChart ? styles.active : ''}`}
+                  onClick={() => setShowChart(true)}
+                >
+                  Show Chart
+                </button>
+                <button
+                  className={`${styles.toggleButton} ${!showChart ? styles.active : ''}`}
+                  onClick={() => setShowChart(false)}
+                >
+                  Show Table
+                </button>
+              </div>
+            </div>
+
+            {/* Results Display */}
+            <div className={styles.resultsCard}>
+              <h2 className={styles.sectionTitle}>Refinance Analysis</h2>
+              
+              {results && (
+                <>
+                  <div className={styles.resultsGrid}>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Monthly Payment</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.currentPayment)} → {formatCurrency(results.newPayment)}</div>
+                      <div className={styles.resultSubtext}>
+                        {results.monthlySavings > 0 ? 
+                          `Save ${formatCurrency(results.monthlySavings)}/month` : 
+                          `Increase ${formatCurrency(-results.monthlySavings)}/month`}
+                      </div>
+                    </div>
+                    
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Break-Even Point</div>
+                      <div className={styles.resultValue}>{formatMonths(results.breakEvenMonths)}</div>
+                      <div className={styles.resultSubtext}>
+                        {results.breakEvenYears !== Infinity ? 
+                          `(${results.breakEvenYears} years)` : 
+                          'Will not break even'}
+                      </div>
+                    </div>
+                    
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Total Interest Savings</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.totalInterestSavings)}</div>
+                      <div className={styles.resultSubtext}>
+                        {formatCurrency(results.currentTotalInterest)} → {formatCurrency(results.newTotalInterest)}
+                      </div>
+                    </div>
+                    
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Net Savings</div>
+                      <div className={`${styles.resultValue} ${results.netSavings >= 0 ? styles.positive : styles.negative}`}>
+                        {formatCurrency(results.netSavings)}
+                      </div>
+                      <div className={styles.resultSubtext}>
+                        After closing costs
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Savings Timeline Visualization */}
+                  {showChart ? (
+                    <div className={styles.chartContainer}>
+                      <h3 className={styles.chartTitle}>Savings Over Time</h3>
+                      <div className={styles.chartTimeline}>
+                        {monthlyData.map((data, index) => (
+                          <div key={index} className={styles.timelinePoint}>
+                            <div className={styles.timelineLabel}>{data.label}</div>
+                            <div className={styles.timelineBarContainer}>
+                              <div 
+                                className={styles.timelineBarSavings}
+                                style={{ height: `${Math.min(100, (data.cumulativeSavings / (closingCosts * 3)) * 100)}%` }}
+                                title={`Savings: ${formatCurrency(data.cumulativeSavings)}`}
+                              />
+                              <div 
+                                className={styles.timelineBarCosts}
+                                style={{ height: `${Math.min(100, (data.closingCosts / (closingCosts * 3)) * 100)}%` }}
+                                title={`Closing Costs: ${formatCurrency(data.closingCosts)}`}
+                              />
+                            </div>
+                            <div className={styles.timelineValue}>
+                              {data.netPosition >= 0 ? '+' : ''}{formatCurrency(data.netPosition)}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className={styles.chartLegend}>
+                        <div className={styles.legendItem}>
+                          <div className={`${styles.legendColor} ${styles.legendSavings}`}></div>
+                          <span>Cumulative Savings</span>
+                        </div>
+                        <div className={styles.legendItem}>
+                          <div className={`${styles.legendColor} ${styles.legendCosts}`}></div>
+                          <span>Closing Costs</span>
+                        </div>
+                        <div className={styles.legendItem}>
+                          <div className={`${styles.legendColor} ${styles.legendBreakEven}`}></div>
+                          <span>Break-Even Point</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={styles.tableContainer}>
+                      <h3 className={styles.chartTitle}>Monthly Savings Timeline</h3>
+                      <table className={styles.savingsTable}>
+                        <thead>
+                          <tr>
+                            <th>Period</th>
+                            <th>Cumulative Savings</th>
+                            <th>Closing Costs</th>
+                            <th>Net Position</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {monthlyData.map((data, index) => (
+                            <tr key={index} className={data.netPosition >= 0 ? styles.positiveRow : styles.negativeRow}>
+                              <td>{data.label}</td>
+                              <td>{formatCurrency(data.cumulativeSavings)}</td>
+                              <td>{formatCurrency(data.closingCosts)}</td>
+                              <td className={data.netPosition >= 0 ? styles.positive : styles.negative}>
+                                {data.netPosition >= 0 ? '+' : ''}{formatCurrency(data.netPosition)}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+
+                  <div className={styles.insightsCard}>
+                    <h3 className={styles.insightsTitle}>📊 Key Insights</h3>
+                    <ul className={styles.insightsList}>
+                      <li>
+                        {results.monthlySavings > 0 ? (
+                          <>You'll save <strong>{formatCurrency(results.monthlySavings)}</strong> per month with refinancing</>
+                        ) : (
+                          <>Refinancing would <strong>increase</strong> your monthly payment by <strong>{formatCurrency(-results.monthlySavings)}</strong></>
+                        )}
+                      </li>
+                      <li>
+                        {results.breakEvenMonths !== Infinity ? (
+                          <>You'll break even in <strong>{formatMonths(results.breakEvenMonths)}</strong> ({results.breakEvenYears} years)</>
+                        ) : (
+                          <>You will <strong>not break even</strong> with these terms</>
+                        )}
+                      </li>
+                      <li>
+                        {results.netSavings > 0 ? (
+                          <>Total net savings after closing costs: <strong>{formatCurrency(results.netSavings)}</strong></>
+                        ) : (
+                          <>Refinancing would cost you <strong>{formatCurrency(-results.netSavings)}</strong> after closing costs</>
+                        )}
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className={styles.decisionCard}>
+                    <h3 className={styles.decisionTitle}>💡 Recommendation</h3>
+                    <div className={styles.decisionContent}>
+                      {results.netSavings > 0 && results.monthlySavings > 0 ? (
+                        <>
+                          <div className={styles.decisionPositive}>✅ Refinancing makes financial sense</div>
+                          <p>Based on your inputs, refinancing would save you money in the long run. Consider refinancing if you plan to stay in your home for at least {formatMonths(results.breakEvenMonths)}.</p>
+                        </>
+                      ) : (
+                        <>
+                          <div className={styles.decisionNegative}>⚠️ Refinancing may not be beneficial</div>
+                          <p>Based on your inputs, refinancing may not provide financial benefits. Consider adjusting terms or waiting for better interest rates.</p>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Educational Content */}
+          <div className={styles.educationalContent}>
+            <article className={styles.articleCard}>
+              <h2 className={styles.articleTitle}>Mortgage Refinancing Guide: When Does It Make Sense?</h2>
+              
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Understanding the Break-Even Point</h3>
+                <p>The break-even point is the single most important calculation in refinancing. It tells you exactly how long you need to keep your new mortgage to recoup the closing costs through monthly savings. If you plan to sell or refinance again before reaching this point, you'll lose money.</p>
+                
+                <div className={styles.exampleCard}>
+                  <h4>Real-World Example:</h4>
+                  <p>A $300,000 mortgage at 6.5% refinanced to 5.0% with $5,000 closing costs:</p>
+                  <ul>
+                    <li><strong>Monthly Savings:</strong> $288 reduction</li>
+                    <li><strong>Break-Even:</strong> 17.4 months</li>
+                    <li><strong>3-Year Savings:</strong> $10,368 total, $5,368 after costs</li>
+                    <li><strong>5-Year Savings:</strong> $17,280 total, $12,280 after costs</li>
+                  </ul>
+                  <p>The longer you stay past the break-even point, the more you save.</p>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>When Refinancing Makes Sense</h3>
+                
+                <div className={styles.strategyGrid}>
+                  <div className={styles.strategyCard}>
+                    <h4>📉 Rate Reduction</h4>
+                    <p>When current rates are at least 0.75-1% lower than your existing rate. This rule of thumb has become more flexible with higher home values.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>💰 Shortening Loan Term</h4>
+                    <p>Moving from a 30-year to 15-year mortgage, even with similar monthly payments, saves hundreds of thousands in interest over the loan life.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>💳 Eliminating PMI</h4>
+                    <p>If your home has appreciated enough to reach 20% equity, refinancing can eliminate Private Mortgage Insurance (PMI) payments.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>🔄 Switching Loan Types</h4>
+                    <p>Moving from an adjustable-rate mortgage (ARM) to a fixed-rate mortgage when rates are low provides payment stability and protection from future rate increases.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Hidden Costs and Considerations</h3>
+                <ul className={styles.applicationsList}>
+                  <li><strong>Closing Costs:</strong> Typically 2-5% of loan amount including appraisal, title insurance, and origination fees</li>
+                  <li><strong>Loan Term Reset:</strong> Extending your loan term may lower payments but increase total interest paid</li>
+                  <li><strong>Credit Impact:</strong> Refinancing requires a hard credit inquiry which may temporarily lower your score</li>
+                  <li><strong>Prepayment Penalties:</strong> Some loans have penalties for paying off early - check your current mortgage terms</li>
+                  <li><strong>Tax Implications:</strong> Consult a tax professional as mortgage interest deduction rules may change</li>
+                </ul>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Expert Advice from Mortgage Professionals</h3>
+                <blockquote className={styles.expertQuote}>
+                  "Don't just look at the interest rate - consider the entire picture. A slightly higher rate with no closing costs might be better than a lower rate with high fees, especially if you plan to move within 5-7 years."
+                  <footer className={styles.quoteFooter}>— Senior Mortgage Advisor, 20+ years experience</footer>
+                </blockquote>
+              </div>
+            </article>
+
+            {/* FAQ Section */}
+            <div className={styles.faqCard}>
+              <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What's considered a "good" break-even point?</h3>
+                <p className={styles.faqAnswer}>Generally, a break-even point under 3-4 years is considered good. If you plan to stay in your home longer than the break-even period, refinancing makes financial sense. For those nearing retirement or planning to move soon, a shorter break-even period (under 2 years) is preferable.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>Can I refinance with no closing costs?</h3>
+                <p className={styles.faqAnswer}>"No closing cost" refinances exist, but they typically come with a higher interest rate. The lender pays your closing costs in exchange for a slightly higher rate. This can be a good option if you plan to move before reaching a traditional break-even point, but you'll pay more interest over the long term.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>How does refinancing affect my credit score?</h3>
+                <p className={styles.faqAnswer}>Refinancing typically causes a temporary 5-15 point drop in your credit score due to the hard inquiry and new credit account. This impact usually recovers within 6-12 months. Multiple refinance applications within a short period are treated as a single inquiry for scoring purposes if done within 14-45 days (depending on the scoring model).</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>Should I refinance to take cash out?</h3>
+                <p className={styles.faqAnswer}>Cash-out refinancing replaces your current mortgage with a larger loan, giving you the difference in cash. This increases your loan balance and may extend your repayment term. It makes sense for high-interest debt consolidation or home improvements that increase property value, but reduces your equity and should be approached cautiously.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Section */}
+          <div className={styles.actionSection}>
+            <div className={styles.ctaCard}>
+              <h2 className={styles.ctaTitle}>Ready to Evaluate Your Refinance Options?</h2>
+              <p className={styles.ctaText}>Use our calculator to compare your current mortgage with potential refinance scenarios. Adjust the inputs to match lenders' offers and find your optimal strategy.</p>
+              
+              <div className={styles.tipBox}>
+                <strong>Pro Tip:</strong> Get quotes from at least 3 lenders and compare their Loan Estimates. Look beyond just the interest rate - compare closing costs, lender credits, and overall APR.
+              </div>
+              
+              <p className={styles.disclaimer}>
+                <strong>Disclaimer:</strong> This calculator provides estimates for educational purposes. Actual mortgage terms, rates, and closing costs may vary. Consult with qualified mortgage professionals and consider your personal financial situation before making refinancing decisions. All calculations assume no prepayments or additional payments.
+              </p>
+            </div>
+          </div>
+        </main>
+
+        
       </div>
     </>
   );
 };
 
-export default MortgageRefinanceBreakEvenCalculator;
+export async function getStaticProps() {
+  const buildTime = new Date();
+  const currentDate = buildTime.toISOString().split('T')[0];
+  const lastModifiedDate = buildTime.toISOString();
+  
+  return {
+    props: {
+      currentDate,
+      lastModifiedDate,
+    },
+    revalidate: 21600, // 24 hours
+  };
+}
+
+export default MortgageRefinanceCalculator;

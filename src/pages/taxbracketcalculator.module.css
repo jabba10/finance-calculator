@@ -1,715 +1,1602 @@
-/* Base Page Layout */
-.page {
-  min-height: 100vh;
-  background-color: white;
-  color: #0d1b2a;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  padding-top: 5rem;
-}
-
-/* Spacers for Navbar and Footer Gap */
-.spacerTop {
-  height: 3rem;
-}
-
-.spacerBottom {
-  height: 6rem;
-}
-
-/* Hero Section */
-.hero {
-  padding: 3rem 1.8rem 2rem;
-  text-align: center;
-  margin-top: 0;
-}
-
-.title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #0d1b2a;
-  margin-bottom: 0.8rem;
-  line-height: 1.3;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: #414a4c;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Calculator Card */
-.calculatorCard {
-  max-width: 440px;
-  width: 100%;
-  margin: 0 auto 3rem;
-  background-color: white;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.12);
-  border: 1px solid #e9ecef;
-  overflow: hidden;
-}
-
-/* Form */
-.form {
-  padding: 1.4rem 1.5rem 1.5rem;
-}
-
-.instruction {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  text-align: center;
-}
-
-/* Input Group */
-.inputGroup {
-  margin-bottom: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.label {
-  text-align: left;
-  font-size: 1rem;
-  color: #0d1b2a;
-  margin-bottom: 0.4rem;
-  font-weight: 500;
-  padding-left: 0.2rem;
-}
-
-.input {
-  width: 100%;
-  padding: 0.7rem 0.8rem;
-  font-size: 1rem;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  outline: none;
-  background-color: white;
-  transition: all 0.3s ease;
-  height: 50px;
+/* Reset and Base Styles */
+.container * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-
-.input:focus {
-  border-color: #0d1b2a;
-  box-shadow: 0 0 0 3px rgba(13, 27, 42, 0.1);
-}
-
-.input::placeholder {
-  color: #adb5bd;
-  font-size: 1rem;
-}
-
-.note {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-top: 0.4rem;
-  text-align: left;
-  padding-left: 0.2rem;
-}
-
-/* Submit Button */
-.submitBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  background: #0d1b2a;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 0.6rem;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-}
-
-.submitBtn:hover {
-  background: #1b263b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.btnText {
-  font-weight: 500;
-}
-
-.arrow {
-  font-size: 1.1em;
-  transition: transform 0.3s ease;
-}
-
-.submitBtn:hover .arrow {
-  transform: translateX(4px);
-}
-
-/* Result Section */
-.resultSection {
-  padding: 1.1rem 1.5rem 1.3rem;
-  border-top: 1px dashed #e9ecef;
-  background-color: #f9fafa;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-.resultSection h3 {
-  font-size: 1.1rem;
-  color: #0d1b2a;
-  margin: 0 0 0.7rem;
-  text-align: center;
-  font-weight: 500;
-}
-
-.resultGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.6rem;
-  margin-bottom: 0.8rem;
-}
-
-.resultItem {
-  font-size: 0.95rem;
-  color: #414a4c;
-  line-height: 1.5;
-}
-
-.resultItem strong {
-  color: #0d1b2a;
-  font-weight: 500;
-}
-
-.resultItem.highlight {
-  font-weight: 600;
-  color: #0d1b2a;
-}
-
-/* Breakdown Title */
-.breakdownTitle {
-  font-size: 1rem;
-  color: #0d1b2a;
-  margin: 1rem 0 0.6rem;
-  font-weight: 500;
-}
-
-/* Table */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0.6rem 0 1rem;
-  font-size: 0.95rem;
-  overflow-x: auto;
-  display: block;
-}
-
-.table th,
-.table td {
-  border: 1px solid #dee2e6;
-  padding: 0.7rem 0.9rem;
-  text-align: left;
-}
-
-.table th {
-  background-color: #f1f3f5;
-  font-weight: 600;
-  font-size: 0.98rem;
-}
-
-.table tbody tr:nth-child(even) {
-  background-color: #fcfcfd;
-}
-
-/* History Cards Section */
-.historySection {
-  padding: 2rem 1.8rem 3rem;
 }
 
 .container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+/* Header Styles - Fixed to prevent overlap */
+.header {
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  z-index: 100;
+  margin-top: -80px;
+  padding-top: 80px;
+}
+
+/* Ensure header doesn't get covered by nav */
+.headerContent {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.sectionHeader {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.sectionHeader h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #0d1b2a;
-  margin-bottom: 0.5rem;
-}
-
-.sectionSubtitle {
-  font-size: 1.1rem;
-  color: #6c757d;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.historyCard {
-  background-color: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid #e9ecef;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.historyCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.1);
-}
-
-.cardTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #0d1b2a;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #e9ecef;
-}
-
-.cardList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex: 1;
-}
-
-.cardListItem {
-  font-size: 0.95rem;
-  color: #414a4c;
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
-  padding-left: 1.2rem;
   position: relative;
+  padding-top: 20px;
 }
 
-.cardListItem:before {
-  content: "•";
-  color: #0d1b2a;
-  position: absolute;
-  left: 0;
-  font-weight: bold;
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  color: #000000;
+  padding-top: 0;
+  word-break: break-word;
 }
 
-/* CTA Section */
-.ctaSection {
-  padding: 3rem 1.8rem;
-  text-align: center;
-  background-color: #0d1b2a;
-  color: white;
-  border-radius: 12px;
-  margin: 2rem auto 4rem;
-  max-width: 800px;
-  width: 100%;
-}
-
-.ctaSection h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+.subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.4;
 }
 
-.ctaSection p {
-  font-size: 1.1rem;
-  color: #cccccc;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+.badgeContainer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-.ctaButton {
-  display: inline-flex;
+.badge {
+  background: #f5f5f5;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #dddddd;
+  white-space: nowrap;
+}
+
+/* Main Content */
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.calculatorLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.calculatorCard,
+.resultsCard {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  overflow: hidden;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #000000;
+  word-break: break-word;
+}
+
+.sectionSubtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333333;
+  margin: 1.5rem 0 1rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  word-break: break-word;
+}
+
+/* Input Styles */
+.inputGroup {
+  margin-bottom: 1.75rem;
+  width: 100%;
+}
+
+.inputLabel {
+  display: block;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.currencySymbol,
+.percentageSymbol,
+.yearsSymbol {
+  font-weight: 600;
+  color: #000000;
+  min-width: 20px;
+  flex-shrink: 0;
+}
+
+.slider {
+  flex: 1;
+  min-width: 100px;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.numberInput {
+  width: 120px;
+  min-width: 120px;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  text-align: center;
+  background: #ffffff;
+  transition: border-color 0.2s;
+  max-width: 100%;
+}
+
+.numberInput:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.valueDisplay {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  padding: 0.5rem 0;
+  word-break: break-word;
+}
+
+.deductionNote {
+  font-size: 0.75rem;
+  color: #666666;
+  margin-top: 0.25rem;
+  font-style: italic;
+  word-break: break-word;
+}
+
+/* Filing Status Options */
+.filingOptions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .filingOptions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filingButton {
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #333333;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.filingButton:hover {
+  border-color: #000000;
+  background: #f8f8f8;
+}
+
+.filingButtonActive {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* Checkbox Styles */
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+}
+
+.checkboxInput {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cccccc;
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.checkboxInput:checked {
+  background: #000000;
+  border-color: #000000;
+}
+
+.checkboxInput:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkboxText {
+  font-weight: 500;
+  color: #333333;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.contributionInput,
+.dependentInput {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Retirement & Dependent Sections */
+.retirementSection,
+.dependentSection {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e0e0e0;
+  width: 100%;
+}
+
+/* Results Summary */
+.summaryCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow: hidden;
+}
+
+.summaryRow {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  background: white;
-  color: #0d1b2a;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  width: auto;
-  min-width: 200px;
-  max-width: 400px;
-  margin: 0 auto;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
-.ctaButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 150px;
 }
 
-.buttonText {
-  font-weight: 600;
+.summaryLabel {
+  font-size: 0.875rem;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  word-break: break-word;
+  text-align: center;
 }
 
-.ctaButton .arrow {
-  font-size: 1.2em;
-  transition: transform 0.3s ease;
+.summaryValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  word-break: break-word;
+  text-align: center;
 }
 
-.ctaButton:hover .arrow {
-  transform: translateX(6px);
+.summaryArrow {
+  font-size: 2rem;
+  color: #666666;
+  font-weight: bold;
 }
 
-/* Magnetic Glow Effect */
-.ctaButton::before {
-  content: '';
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.summaryNote {
+  text-align: center;
+  font-size: 1rem;
+  color: #666666;
+  font-style: italic;
+  word-break: break-word;
 }
 
-.ctaButton:hover::before {
-  opacity: 1;
-  left: var(--x, 50%);
-  top: var(--y, 50%);
-}
-
-/* Responsive Design */
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .page {
-    padding-top: 4.5rem;
-  }
-  
-  .cardsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.25rem;
-  }
-  
-  .ctaSection {
-    max-width: 90%;
-  }
+/* Results Grid */
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
-  .page {
-    padding-top: 4rem;
-  }
-  
-  .hero {
-    padding: 2.5rem 1.5rem 1.8rem;
-  }
-  
-  .title {
-    font-size: 1.7rem;
-  }
-  
-  .subtitle {
-    font-size: 1.05rem;
-  }
-  
-  .calculatorCard {
-    margin-bottom: 2.5rem;
-  }
-  
-  .historySection {
-    padding: 1.5rem 1rem 2.5rem;
-  }
-  
-  .sectionHeader {
-    margin-bottom: 2rem;
-  }
-  
-  .sectionHeader h2 {
-    font-size: 1.6rem;
-  }
-  
-  .sectionSubtitle {
-    font-size: 1rem;
-  }
-  
-  .cardsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  .resultsGrid {
+    grid-template-columns: 1fr;
     gap: 1rem;
-  }
-  
-  .historyCard {
-    padding: 1.25rem;
-  }
-  
-  .cardTitle {
-    font-size: 1.15rem;
-  }
-  
-  .cardListItem {
-    font-size: 0.9rem;
-  }
-  
-  .resultSection {
-    padding: 1rem 1.2rem;
-  }
-  
-  .table th,
-  .table td {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.9rem;
-  }
-  
-  .ctaSection {
-    padding: 2.5rem 1.5rem;
-    margin: 1.5rem auto 3rem;
-  }
-  
-  .ctaSection h2 {
-    font-size: 1.4rem;
-  }
-  
-  .ctaSection p {
-    font-size: 1rem;
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .page {
-    padding-top: 3.5rem;
-    padding: 0 0.5rem;
+.resultItem {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.resultLabel {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  word-break: break-word;
+}
+
+.resultValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.25rem;
+  word-break: break-word;
+}
+
+.resultDescription {
+  font-size: 0.75rem;
+  color: #666666;
+  word-break: break-word;
+}
+
+/* Efficiency Card */
+.efficiencyCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow: hidden;
+}
+
+.efficiencyTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+  text-align: center;
+  word-break: break-word;
+}
+
+.efficiencyLevel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.efficiencyIcon {
+  font-size: 1.25rem;
+}
+
+.efficiencyText {
+  font-size: 1.125rem;
+  word-break: break-word;
+}
+
+.efficiencyDescription {
+  font-size: 1rem;
+  color: #333333;
+  text-align: center;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.efficiencyDescription strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Chart Styles */
+.chartContainer {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.chartTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+
+.chartBars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.chartBarGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.chartBarLabel {
+  min-width: 180px;
+  font-size: 0.875rem;
+  color: #333333;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.chartBarContainer {
+  flex: 1;
+  min-width: 200px;
+  height: 30px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.chartBar {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.chartBarValue {
+  min-width: 120px;
+  text-align: right;
+  font-weight: 600;
+  color: #000000;
+  font-size: 0.9375rem;
+  word-break: break-word;
+}
+
+.chartLegend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #333333;
+  flex-shrink: 0;
+}
+
+.legendColor {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* Bracket Card */
+.bracketCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bracketTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  word-break: break-word;
+}
+
+.bracketTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 80px 1fr 100px 120px 120px;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: #f8f8f8;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #333333;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 600px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 80px 1fr 100px 120px 120px;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: center;
+  min-width: 600px;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCell {
+  font-size: 0.875rem;
+  color: #333333;
+  word-break: break-word;
+}
+
+.bracketRate {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Insights Card */
+.insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000000;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-top: 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.insightsTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.insightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.insightsList li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #333333;
+  word-break: break-word;
+}
+
+.insightsList li:last-child {
+  border-bottom: none;
+}
+
+.insightsList strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Educational Content */
+.educationalContent {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.articleCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2.5rem;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  overflow: hidden;
+}
+
+.articleTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.articleSection {
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.articleSubtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.articleCard p {
+  margin-bottom: 1rem;
+  color: #333333;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.exampleCard {
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #666666;
+  width: 100%;
+  overflow: hidden;
+}
+
+.exampleCard h4 {
+  color: #000000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.exampleCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.exampleCard li {
+  padding: 0.5rem 0;
+  color: #333333;
+  border-bottom: 1px solid #e0e0e0;
+  word-break: break-word;
+}
+
+.exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.exampleCard li strong {
+  color: #000000;
+}
+
+.strategyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.strategyCard {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  overflow: hidden;
+}
+
+.strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.strategyCard h4 {
+  color: #000000;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.strategyCard p {
+  color: #666666;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.applicationsList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.applicationsList li {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333333;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  word-break: break-word;
+}
+
+.applicationsList li:before {
+  content: "•";
+  color: #000000;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.applicationsList li strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Expert Quote */
+.expertQuote {
+  background: #f5f5f5;
+  border-left: 4px solid #000000;
+  padding: 2rem;
+  border-radius: 6px;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #333333;
+  line-height: 1.7;
+  width: 100%;
+  overflow: hidden;
+}
+
+.quoteFooter {
+  margin-top: 1rem;
+  font-style: normal;
+  color: #666666;
+  font-size: 0.875rem;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* FAQ Styles */
+.faqCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2.5rem;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  overflow: hidden;
+}
+
+.faqTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: center;
+  word-break: break-word;
+}
+
+.faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+  width: 100%;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQuestion {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.faqAnswer {
+  color: #333333;
+  line-height: 1.7;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Action Section */
+.actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  width: 100%;
+}
+
+.ctaCard {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid #000000;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  color: #333333;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-word;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 180px;
+  text-decoration: none;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Black buttons with white text */
+.primaryButton {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.primaryButton:hover {
+  background: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.secondaryButton:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.disclaimer {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.disclaimer strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  background: #f8f8f8;
+  color: #333333;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 4rem;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+.footerContent {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footerText {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #333333;
+  word-break: break-word;
+}
+
+.footerNote {
+  font-size: 0.875rem;
+  color: #666666;
+  border-top: 1px solid #cccccc;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  word-break: break-word;
+}
+
+/* Responsive Design - Fixed Header Spacing */
+@media (max-width: 768px) {
+  .container {
+    padding-top: 70px;
   }
   
-  .hero {
-    padding: 2rem 1rem 1.5rem;
+  .header {
+    padding: 1.5rem 1rem 1rem;
+    margin-top: -70px;
+    padding-top: 70px;
   }
-
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 0.6rem;
+  
+  .mainTitle {
+    font-size: 2rem;
+    margin-top: 0;
+    padding-top: 10px;
   }
-
+  
   .subtitle {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .calculatorCard {
-    max-width: 100%;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-  }
-
-  .form {
-    padding: 1.2rem;
-  }
-
-  .instruction {
-    font-size: 0.95rem;
-  }
-
-  .input {
-    font-size: 0.95rem;
-    padding: 0.65rem 0.75rem;
-    height: 48px;
-  }
-
-  .label {
-    font-size: 0.95rem;
-  }
-
-  .submitBtn {
-    font-size: 0.95rem;
-    padding: 0.7rem 1.1rem;
-  }
-
-  .resultSection {
-    padding: 1rem 1.2rem;
-  }
-
-  .resultSection h3 {
-    font-size: 1.05rem;
-  }
-
-  .resultItem {
-    font-size: 0.9rem;
-  }
-
-  .breakdownTitle {
-    font-size: 0.95rem;
-  }
-
-  .historySection {
-    padding: 1.5rem 0.5rem 2rem;
+    font-size: 1.1rem;
   }
   
-  .sectionHeader {
-    margin-bottom: 1.5rem;
+  .articleTitle {
+    font-size: 1.75rem;
   }
   
-  .sectionHeader h2 {
-    font-size: 1.4rem;
+  .articleCard,
+  .faqCard,
+  .calculatorCard,
+  .resultsCard {
+    padding: 1.5rem;
   }
   
-  .sectionSubtitle {
-    font-size: 0.95rem;
-  }
-  
-  .cardsGrid {
+  .resultsGrid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  .historyCard {
-    padding: 1.2rem;
+  .filingOptions {
+    grid-template-columns: 1fr;
   }
   
-  .cardTitle {
-    font-size: 1.1rem;
+  .summaryRow {
+    flex-direction: column;
+    gap: 1rem;
   }
   
-  .cardListItem {
-    font-size: 0.85rem;
-    margin-bottom: 0.6rem;
+  .summaryArrow {
+    transform: rotate(90deg);
   }
   
-  .table th,
-  .table td {
-    padding: 0.5rem 0.7rem;
-    font-size: 0.85rem;
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 60px 1fr 80px 100px 100px;
+    font-size: 0.7rem;
+    min-width: 500px;
   }
   
-  .ctaSection {
-    padding: 2rem 1rem;
-    margin: 1rem auto 2.5rem;
-    border-radius: 10px;
+  .chartBarGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
   
-  .ctaSection h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
+  .chartBarContainer {
+    min-width: 100%;
+    width: 100%;
   }
   
-  .ctaSection p {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
+  .chartBarValue {
+    text-align: left;
+    min-width: auto;
   }
   
-  .ctaButton {
-    padding: 0.9rem 1.5rem;
-    font-size: 1rem;
-    min-width: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .page {
-    padding-top: 3rem;
+  .ctaCard {
+    padding: 2rem 1.5rem;
   }
   
-  .title {
-    font-size: 1.4rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-  }
-
-  .input {
-    height: 46px;
-    font-size: 0.9rem;
-  }
-
-  .submitBtn {
-    font-size: 0.9rem;
-    padding: 0.65rem 1rem;
+  .ctaTitle {
+    font-size: 1.75rem;
   }
   
-  .sectionHeader h2 {
-    font-size: 1.3rem;
+  .buttonGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .strategyGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chartBarLabel {
+    min-width: 150px;
+  }
+  
+  .chartBarValue {
+    font-size: 0.875rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
   }
   
   .sectionSubtitle {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
   
-  .historyCard {
-    padding: 1rem;
+  .efficiencyTitle,
+  .chartTitle,
+  .bracketTitle,
+  .insightsTitle {
+    font-size: 1.1rem;
   }
   
-  .ctaSection h2 {
-    font-size: 1.2rem;
+  .articleSubtitle {
+    font-size: 1.25rem;
   }
-
-  .ctaButton {
-    font-size: 0.95rem;
-    padding: 0.8rem 1.2rem;
+  
+  .faqQuestion {
+    font-size: 1.1rem;
   }
 }
 
-@media (max-width: 375px) {
-  .page {
-    padding-top: 2.5rem;
+@media (max-width: 480px) {
+  .container {
+    padding-top: 60px;
   }
   
-  .cardsGrid {
+  .header {
+    padding: 1.25rem 1rem 1rem;
+    margin-top: -60px;
+    padding-top: 60px;
+  }
+  
+  .mainTitle {
+    font-size: 1.75rem;
+    margin-top: 0;
+    line-height: 1.3;
+    padding-top: 5px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .badge {
+    width: fit-content;
+  }
+  
+  .inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
     gap: 0.75rem;
   }
   
-  .historyCard {
-    padding: 0.9rem;
+  .slider,
+  .numberInput {
+    width: 100%;
   }
-}
-
-/* Ensure no overflow */
-.page, .container, .historyCard, .calculatorCard {
-  overflow: hidden;
-}
-
-/* Ensure all text fits properly */
-.cardListItem, .resultItem, .note, .label, .input {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Ensure table scrolls horizontally on tiny screens */
-@media (max-width: 480px) {
-  .table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+  
+  .numberInput {
+    order: 1;
   }
-
-  .table th,
-  .table td {
+  
+  .slider {
+    order: 2;
+  }
+  
+  .currencySymbol,
+  .percentageSymbol,
+  .yearsSymbol {
+    order: 3;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 50px 1fr 70px 90px 90px;
+    font-size: 0.65rem;
+    min-width: 400px;
+  }
+  
+  .articleCard,
+  .faqCard {
+    padding: 1.25rem;
+  }
+  
+  .ctaCard {
+    padding: 1.5rem 1rem;
+  }
+  
+  .chartBarLabel {
     min-width: 120px;
-    padding: 0.5rem 0.6rem;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
+  
+  .chartBarValue {
+    font-size: 0.75rem;
+  }
+  
+  .summaryValue {
+    font-size: 1.5rem;
+  }
+  
+  .resultValue {
+    font-size: 1.25rem;
+  }
+  
+  .numberInput {
+    width: 100px;
+    min-width: 100px;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Mobile optimizations for very small screens */
+@media (max-width: 360px) {
+  .mainTitle {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .calculatorCard,
+  .resultsCard,
+  .articleCard,
+  .faqCard {
+    padding: 1rem;
+  }
+  
+  .tableHeader,
+  .tableRow {
+    min-width: 350px;
+  }
+  
+  .chartBarLabel {
+    min-width: 100px;
+    font-size: 0.7rem;
+  }
+  
+  .resultLabel,
+  .summaryLabel {
+    font-size: 0.75rem;
+  }
+  
+  .resultValue {
+    font-size: 1.1rem;
+  }
+  
+  .summaryValue {
+    font-size: 1.25rem;
+  }
+  
+  .articleSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .faqQuestion {
+    font-size: 1rem;
+  }
+  
+  .filingButton {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .container {
+    padding-top: 0 !important;
+  }
+  
+  .header {
+    border-bottom: 2px solid #000000;
+    padding: 1rem 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .buttonGroup,
+  .badgeContainer {
+    display: none;
+  }
+  
+  .calculatorLayout {
+    break-inside: avoid;
+  }
+  
+  .footer {
+    border-top: 2px solid #000000;
+    background: transparent;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .container * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .container {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .calculatorCard,
+  .resultsCard,
+  .articleCard,
+  .faqCard {
+    background: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .primaryButton {
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #121212;
+    color: #ffffff;
+    padding-top: 80px;
+  }
+  
+  .header {
+    background: #121212;
+    color: #ffffff;
+    border-bottom: 1px solid #333333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+  
+  .mainTitle,
+  .subtitle,
+  .sectionTitle,
+  .resultValue,
+  .chartTitle,
+  .articleTitle,
+  .articleSubtitle,
+  .faqTitle,
+  .faqQuestion,
+  .ctaTitle {
+    color: #ffffff;
+  }
+  
+  .calculatorCard,
+  .resultsCard {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+  }
+  
+  .articleCard,
+  .faqCard {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+  }
+  
+  .primaryButton {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+  }
+  
+  .secondaryButton {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+  
+  .secondaryButton:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .badge {
+    background: #333333;
+    color: #ffffff;
+    border: 1px solid #666666;
+  }
+  
+  .inputLabel {
+    color: #cccccc;
+  }
+  
+  .numberInput,
+  .selectInput {
+    background: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #666666;
+  }
+  
+  .slider {
+    background: #666666;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    background: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .slider::-moz-range-thumb {
+    background: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding-top: 70px;
+    }
+    
+    .header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding-top: 60px;
+    }
+    
+    .header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+.container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.container ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Touch-friendly optimizations */
+.slider,
+.numberInput,
+.primaryButton,
+.secondaryButton,
+.selectInput,
+.filingButton,
+.checkboxInput {
+  touch-action: manipulation;
+}
+
+/* Prevent text size adjustment on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Improve readability on mobile */
+@media (max-width: 768px) {
+  .articleCard p,
+  .faqAnswer,
+  .ctaText,
+  .exampleCard p,
+  .strategyCard p,
+  .efficiencyDescription,
+  .disclaimer {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  
+  .insightsList li,
+  .applicationsList li,
+  .exampleCard li {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+  
+  .tableCell,
+  .bracketRate {
+    font-size: 0.75rem;
+  }
+}
+
+/* Ensure no horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+.container,
+.mainContent {
+  overflow-x: hidden;
 }

@@ -1,0 +1,867 @@
+/* [project]/src/pages/gametheorypayoffcalculator.module.css [client] (css) */
+.gametheorypayoffcalculator-module__Og5n8G__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__header {
+  color: #000;
+  text-align: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: -80px;
+  margin-bottom: 2rem;
+  padding: 80px 1rem 1.5rem;
+  position: relative;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__mainTitle {
+  color: #000;
+  margin: 0 0 .5rem;
+  padding-top: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__badge {
+  color: #000;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .gametheorypayoffcalculator-module__Og5n8G__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__calculatorCard, .gametheorypayoffcalculator-module__Og5n8G__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__sectionTitle {
+  color: #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__inputLabel {
+  color: #333;
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+  height: 6px;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+  padding: .75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__valueDisplay {
+  color: #000;
+  padding: .25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__selectInput {
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: .875rem;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__selectInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__presetDescription {
+  color: #666;
+  margin-top: .5rem;
+  font-size: .875rem;
+  font-style: italic;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__parameterGroupTitle {
+  color: #000;
+  border-bottom: 1px solid #ccc;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: .5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__gameParameters, .gametheorypayoffcalculator-module__Og5n8G__repeatedGameParams, .gametheorypayoffcalculator-module__Og5n8G__strategySelection {
+  margin-bottom: 1.5rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__strategyRow {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  display: grid;
+}
+
+@media (min-width: 768px) {
+  .gametheorypayoffcalculator-module__Og5n8G__strategyRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__strategyColumn {
+  flex-direction: column;
+  display: flex;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__strategyDescription {
+  color: #666;
+  background: #fff;
+  border-left: 3px solid #000;
+  border-radius: 4px;
+  margin-top: .5rem;
+  padding: .5rem;
+  font-size: .875rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  font-size: .75rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__resultValue {
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__payoffMatrix {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__chartTitle {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__matrixContainer {
+  background: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  display: grid;
+  overflow: hidden;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__matrixHeader, .gametheorypayoffcalculator-module__Og5n8G__matrixRow {
+  display: contents;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__matrixCell {
+  text-align: center;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  padding: 1rem;
+  font-weight: 500;
+  display: flex;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__matrixHeader .gametheorypayoffcalculator-module__Og5n8G__matrixCell {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__payoffPair {
+  flex-direction: column;
+  gap: .25rem;
+  display: flex;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__payoffValue {
+  color: #000;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__equilibriumSection, .gametheorypayoffcalculator-module__Og5n8G__paretoSection {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__equilibriumList, .gametheorypayoffcalculator-module__Og5n8G__paretoList {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  display: grid;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__equilibriumItem, .gametheorypayoffcalculator-module__Og5n8G__paretoItem {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__equilibriumOutcome, .gametheorypayoffcalculator-module__Og5n8G__paretoOutcome {
+  color: #000;
+  margin-bottom: .5rem;
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__equilibriumPayoffs, .gametheorypayoffcalculator-module__Og5n8G__paretoPayoffs {
+  color: #666;
+  font-size: .875rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__noEquilibrium {
+  text-align: center;
+  color: #666;
+  background: #f8f8f8;
+  border-radius: 4px;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__insightsTitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__insightsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__insightsList li {
+  color: #333;
+  border-bottom: 1px solid #0000001a;
+  padding: .75rem 0;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__insightsList li:last-child {
+  border-bottom: none;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__insightsList strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__educationalContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__articleTitle {
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__articleSection {
+  margin-bottom: 2.5rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__articleSubtitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__articleCard p {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__exampleCard {
+  background: #f8f8f8;
+  border-left: 4px solid #666;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__exampleCard h4 {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__exampleCard ul {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__exampleCard li {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__exampleCard li strong {
+  color: #000;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__strategyCard h4 {
+  color: #000;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__strategyCard p {
+  color: #666;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__applicationsList {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__applicationsListItem {
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .875rem 0;
+  display: flex;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__applicationsListItem:before {
+  content: "✓";
+  color: #000;
+  flex-shrink: 0;
+  margin-top: .125rem;
+  font-weight: bold;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__applicationsListItem strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 2rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__quoteFooter {
+  color: #666;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-style: normal;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__faqTitle {
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__faqItem:last-child {
+  border-bottom: none;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__faqQuestion {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__faqAnswer {
+  color: #333;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__actionSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__ctaTitle {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__ctaText {
+  color: #333;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__disclaimer {
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+}
+
+.gametheorypayoffcalculator-module__Og5n8G__disclaimer strong {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .gametheorypayoffcalculator-module__Og5n8G__container {
+    padding-top: 70px;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__header {
+    margin-top: -70px;
+    padding: 70px 1rem 1rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__mainTitle {
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 2rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__articleTitle {
+    font-size: 1.75rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__articleCard, .gametheorypayoffcalculator-module__Og5n8G__faqCard, .gametheorypayoffcalculator-module__Og5n8G__calculatorCard, .gametheorypayoffcalculator-module__Og5n8G__resultsCard {
+    padding: 1.5rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__matrixContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__matrixCell {
+    min-height: 50px;
+    font-size: .875rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__strategyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .gametheorypayoffcalculator-module__Og5n8G__container {
+    padding-top: 60px;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__header {
+    margin-top: -60px;
+    padding: 60px 1rem 1rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__mainTitle {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__subtitle {
+    font-size: 1rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__badge {
+    width: fit-content;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__slider, .gametheorypayoffcalculator-module__Og5n8G__numberInput {
+    width: 100%;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__numberInput {
+    order: 1;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__slider {
+    order: 2;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__articleCard, .gametheorypayoffcalculator-module__Og5n8G__faqCard {
+    padding: 1.25rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media print {
+  .gametheorypayoffcalculator-module__Og5n8G__container {
+    padding-top: 0 !important;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__header {
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    padding: 0 0 1rem;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__calculatorLayout {
+    break-inside: avoid;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .gametheorypayoffcalculator-module__Og5n8G__container {
+    color: #fff;
+    background: #121212;
+    padding-top: 80px;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__header {
+    color: #fff;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__mainTitle, .gametheorypayoffcalculator-module__Og5n8G__subtitle, .gametheorypayoffcalculator-module__Og5n8G__sectionTitle, .gametheorypayoffcalculator-module__Og5n8G__resultValue, .gametheorypayoffcalculator-module__Og5n8G__chartTitle, .gametheorypayoffcalculator-module__Og5n8G__articleTitle, .gametheorypayoffcalculator-module__Og5n8G__articleSubtitle, .gametheorypayoffcalculator-module__Og5n8G__faqTitle, .gametheorypayoffcalculator-module__Og5n8G__faqQuestion, .gametheorypayoffcalculator-module__Og5n8G__ctaTitle, .gametheorypayoffcalculator-module__Og5n8G__parameterGroupTitle, .gametheorypayoffcalculator-module__Og5n8G__equilibriumOutcome, .gametheorypayoffcalculator-module__Og5n8G__paretoOutcome, .gametheorypayoffcalculator-module__Og5n8G__matrixCell {
+    color: #fff;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__calculatorCard, .gametheorypayoffcalculator-module__Og5n8G__resultsCard, .gametheorypayoffcalculator-module__Og5n8G__articleCard, .gametheorypayoffcalculator-module__Og5n8G__faqCard, .gametheorypayoffcalculator-module__Og5n8G__payoffMatrix, .gametheorypayoffcalculator-module__Og5n8G__equilibriumSection, .gametheorypayoffcalculator-module__Og5n8G__paretoSection {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__resultItem, .gametheorypayoffcalculator-module__Og5n8G__equilibriumItem, .gametheorypayoffcalculator-module__Og5n8G__paretoItem, .gametheorypayoffcalculator-module__Og5n8G__strategyCard {
+    background: #2d2d2d;
+    border: 1px solid #333;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__matrixCell {
+    background: #2d2d2d;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__matrixHeader .gametheorypayoffcalculator-module__Og5n8G__matrixCell {
+    background: #1e1e1e;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__inputLabel {
+    color: #ccc;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__numberInput, .gametheorypayoffcalculator-module__Og5n8G__selectInput {
+    color: #fff;
+    background: #2d2d2d;
+    border: 1px solid #666;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__slider {
+    background: #666;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__slider::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__slider::-moz-range-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .gametheorypayoffcalculator-module__Og5n8G__ctaCard {
+    background: #1e1e1e;
+    border: 1px solid #fff;
+  }
+
+  @media (max-width: 768px) {
+    .gametheorypayoffcalculator-module__Og5n8G__container {
+      padding-top: 70px;
+    }
+
+    .gametheorypayoffcalculator-module__Og5n8G__header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gametheorypayoffcalculator-module__Og5n8G__container {
+      padding-top: 60px;
+    }
+
+    .gametheorypayoffcalculator-module__Og5n8G__header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+/*# sourceMappingURL=src_pages_gametheorypayoffcalculator_module_8bc3b67f.css.map*/

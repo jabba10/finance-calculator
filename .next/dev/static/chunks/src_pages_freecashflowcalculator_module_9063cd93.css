@@ -1,0 +1,1327 @@
+/* [project]/src/pages/freecashflowcalculator.module.css [client] (css) */
+.freecashflowcalculator-module__eL2eea__container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.freecashflowcalculator-module__eL2eea__container {
+  color: #000;
+  background-color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__header {
+  color: #000;
+  text-align: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: -80px;
+  margin-bottom: 2rem;
+  padding: 80px 1rem 1.5rem;
+  position: relative;
+}
+
+.freecashflowcalculator-module__eL2eea__headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.freecashflowcalculator-module__eL2eea__mainTitle {
+  color: #000;
+  word-wrap: break-word;
+  margin: 0 0 .5rem;
+  padding-top: 0;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.freecashflowcalculator-module__eL2eea__subtitle {
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.4;
+}
+
+.freecashflowcalculator-module__eL2eea__badgeContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.freecashflowcalculator-module__eL2eea__badge {
+  color: #000;
+  white-space: nowrap;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.freecashflowcalculator-module__eL2eea__mainContent {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+  overflow-x: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__calculatorLayout {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .freecashflowcalculator-module__eL2eea__calculatorLayout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.freecashflowcalculator-module__eL2eea__calculatorCard, .freecashflowcalculator-module__eL2eea__resultsCard {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  overflow: hidden;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.freecashflowcalculator-module__eL2eea__sectionTitle {
+  color: #000;
+  word-wrap: break-word;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: .75rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__inputGroup {
+  width: 100%;
+  margin-bottom: 1.75rem;
+}
+
+.freecashflowcalculator-module__eL2eea__inputRow {
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 1.75rem;
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .freecashflowcalculator-module__eL2eea__inputRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.freecashflowcalculator-module__eL2eea__inputLabel {
+  color: #333;
+  width: 100%;
+  margin-bottom: .75rem;
+  font-size: clamp(.9rem, 2vw, 1rem);
+  font-weight: 500;
+  display: block;
+}
+
+.freecashflowcalculator-module__eL2eea__inputWrapper {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.freecashflowcalculator-module__eL2eea__currencySymbol, .freecashflowcalculator-module__eL2eea__percentageSymbol, .freecashflowcalculator-module__eL2eea__yearsSymbol {
+  color: #000;
+  white-space: nowrap;
+  min-width: 20px;
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__slider {
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  flex: 1;
+  min-width: 100px;
+  max-width: 100%;
+  height: 6px;
+}
+
+.freecashflowcalculator-module__eL2eea__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.freecashflowcalculator-module__eL2eea__slider::-moz-range-thumb {
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.freecashflowcalculator-module__eL2eea__numberInput {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: clamp(80px, 15vw, 120px);
+  max-width: 100%;
+  padding: .75rem;
+  font-size: clamp(.9rem, 2vw, 1rem);
+  font-weight: 500;
+  transition: border-color .2s;
+}
+
+.freecashflowcalculator-module__eL2eea__numberInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.freecashflowcalculator-module__eL2eea__valueDisplay {
+  color: #000;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: .5rem 0;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__inputHint {
+  color: #666;
+  word-wrap: break-word;
+  margin-top: .25rem;
+  font-size: .875rem;
+  display: block;
+}
+
+.freecashflowcalculator-module__eL2eea__selectInput {
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 100%;
+  padding: .875rem;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+
+.freecashflowcalculator-module__eL2eea__selectInput:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.freecashflowcalculator-module__eL2eea__infoCard {
+  background: #f0f7ff;
+  border-left: 4px solid #06c;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__infoTitle {
+  color: #06c;
+  margin-bottom: .5rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__infoText {
+  color: #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+  font-family: Courier New, monospace;
+  font-size: clamp(.9rem, 2vw, 1rem);
+}
+
+.freecashflowcalculator-module__eL2eea__resultsGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .freecashflowcalculator-module__eL2eea__resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .freecashflowcalculator-module__eL2eea__resultsGrid {
+    gap: .75rem;
+  }
+}
+
+.freecashflowcalculator-module__eL2eea__resultItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__resultLabel {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  word-wrap: break-word;
+  margin-bottom: .5rem;
+  font-size: clamp(.75rem, 1.5vw, .875rem);
+}
+
+.freecashflowcalculator-module__eL2eea__resultValue {
+  color: #000;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+}
+
+.freecashflowcalculator-module__eL2eea__resultSubtext {
+  color: #666;
+  word-wrap: break-word;
+  margin-top: .5rem;
+  font-size: clamp(.75rem, 1.5vw, .875rem);
+}
+
+.freecashflowcalculator-module__eL2eea__breakdownCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__breakdownTitle {
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__flowChart {
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+  display: flex;
+}
+
+.freecashflowcalculator-module__eL2eea__flowStep {
+  text-align: center;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__flowLabel {
+  color: #666;
+  word-wrap: break-word;
+  margin-bottom: .5rem;
+  font-size: clamp(.8rem, 1.5vw, .875rem);
+}
+
+.freecashflowcalculator-module__eL2eea__flowValue {
+  color: #000;
+  word-wrap: break-word;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__flowArrow {
+  color: #000;
+  margin: .5rem 0;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+}
+
+.freecashflowcalculator-module__eL2eea__valuationCard {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__valuationTitle {
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__valuationGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .freecashflowcalculator-module__eL2eea__valuationGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.freecashflowcalculator-module__eL2eea__valuationItem {
+  text-align: center;
+  background: #fff;
+  border-radius: 6px;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__valuationLabel {
+  color: #666;
+  word-wrap: break-word;
+  margin-bottom: .5rem;
+  font-size: clamp(.75rem, 1.5vw, .875rem);
+}
+
+.freecashflowcalculator-module__eL2eea__valuationValue {
+  color: #000;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: .5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+}
+
+.freecashflowcalculator-module__eL2eea__valuationSubtext {
+  color: #666;
+  word-wrap: break-word;
+  font-size: clamp(.75rem, 1.5vw, .875rem);
+}
+
+.freecashflowcalculator-module__eL2eea__projectionContainer {
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionTitle {
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionTable {
+  width: 100%;
+  min-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .freecashflowcalculator-module__eL2eea__projectionTable {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .freecashflowcalculator-module__eL2eea__projectionTable {
+    min-width: 400px;
+  }
+}
+
+.freecashflowcalculator-module__eL2eea__projectionHeader {
+  background: #f5f5f5;
+  border-radius: 6px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: .5rem;
+  margin-bottom: .75rem;
+  padding: 1rem;
+  display: grid;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionHeaderCell {
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-size: clamp(.7rem, 1.5vw, .875rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionRow {
+  border-bottom: 1px solid #e0e0e0;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem;
+  display: grid;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionRow:last-child {
+  border-bottom: none;
+}
+
+.freecashflowcalculator-module__eL2eea__projectionCell {
+  text-align: center;
+  color: #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-size: clamp(.75rem, 1.5vw, .9375rem);
+}
+
+.freecashflowcalculator-module__eL2eea__insightsCard {
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__insightsTitle {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__insightsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.freecashflowcalculator-module__eL2eea__insightsListItem {
+  color: #333;
+  word-wrap: break-word;
+  border-bottom: 1px solid #0000001a;
+  padding: .75rem 0;
+}
+
+.freecashflowcalculator-module__eL2eea__insightsListItem:last-child {
+  border-bottom: none;
+}
+
+.freecashflowcalculator-module__eL2eea__insightsList strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__educationalContent {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__articleCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.freecashflowcalculator-module__eL2eea__articleTitle {
+  color: #000;
+  word-wrap: break-word;
+  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.freecashflowcalculator-module__eL2eea__articleSection {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__articleSubtitle {
+  color: #000;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__articleCard p {
+  color: #333;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.freecashflowcalculator-module__eL2eea__exampleCard {
+  background: #f8f8f8;
+  border-left: 4px solid #666;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__exampleCard h4 {
+  color: #000;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__exampleCard ul {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.freecashflowcalculator-module__eL2eea__exampleCard li {
+  color: #333;
+  word-wrap: break-word;
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5rem 0;
+}
+
+.freecashflowcalculator-module__eL2eea__exampleCard li:last-child {
+  border-bottom: none;
+}
+
+.freecashflowcalculator-module__eL2eea__exampleCard li strong {
+  color: #000;
+}
+
+.freecashflowcalculator-module__eL2eea__strategyGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .freecashflowcalculator-module__eL2eea__strategyGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.freecashflowcalculator-module__eL2eea__strategyCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__strategyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.freecashflowcalculator-module__eL2eea__strategyCard h4 {
+  color: #000;
+  word-wrap: break-word;
+  margin-bottom: .75rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__strategyCard p {
+  color: #666;
+  word-wrap: break-word;
+  margin: 0;
+  font-size: clamp(.85rem, 1.5vw, .9375rem);
+  line-height: 1.6;
+}
+
+.freecashflowcalculator-module__eL2eea__applicationsList {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.freecashflowcalculator-module__eL2eea__applicationsListItem {
+  color: #333;
+  word-wrap: break-word;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .875rem 0;
+  display: flex;
+}
+
+.freecashflowcalculator-module__eL2eea__applicationsListItem:before {
+  content: "✓";
+  color: #000;
+  flex-shrink: 0;
+  margin-top: .125rem;
+  font-weight: bold;
+}
+
+.freecashflowcalculator-module__eL2eea__applicationsListItem strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__industryTable {
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.freecashflowcalculator-module__eL2eea__industryTable::-webkit-scrollbar {
+  height: 6px;
+}
+
+.freecashflowcalculator-module__eL2eea__industryTable::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.freecashflowcalculator-module__eL2eea__industryTable::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.freecashflowcalculator-module__eL2eea__industryHeader {
+  background: #f5f5f5;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5rem;
+  min-width: 500px;
+  padding: 1rem;
+  display: grid;
+}
+
+.freecashflowcalculator-module__eL2eea__industryHeaderCell {
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+  font-size: clamp(.75rem, 1.5vw, .875rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__industryRow {
+  border-top: 1px solid #e0e0e0;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: .5rem;
+  min-width: 500px;
+  padding: 1rem;
+  display: grid;
+}
+
+.freecashflowcalculator-module__eL2eea__industryCell {
+  text-align: center;
+  color: #333;
+  word-wrap: break-word;
+  white-space: normal;
+  font-size: clamp(.75rem, 1.5vw, .9375rem);
+}
+
+.freecashflowcalculator-module__eL2eea__warningCard {
+  background: #fff8e1;
+  border-left: 4px solid #ff9800;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__warningCard h4 {
+  color: #000;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__marginSteps {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+
+.freecashflowcalculator-module__eL2eea__marginSteps li {
+  color: #333;
+  word-wrap: break-word;
+  padding: .5rem 0;
+}
+
+.freecashflowcalculator-module__eL2eea__marginSteps li strong {
+  color: #000;
+}
+
+.freecashflowcalculator-module__eL2eea__expertQuote {
+  color: #333;
+  background: #f5f5f5;
+  border-left: 4px solid #000;
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  font-style: italic;
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__quoteFooter {
+  color: #666;
+  text-align: right;
+  word-wrap: break-word;
+  margin-top: 1rem;
+  font-size: clamp(.75rem, 1.5vw, .875rem);
+  font-style: normal;
+}
+
+.freecashflowcalculator-module__eL2eea__faqCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.freecashflowcalculator-module__eL2eea__faqTitle {
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
+  font-weight: 700;
+}
+
+.freecashflowcalculator-module__eL2eea__faqItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__faqItem:last-child {
+  border-bottom: none;
+}
+
+.freecashflowcalculator-module__eL2eea__faqQuestion {
+  color: #000;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+}
+
+.freecashflowcalculator-module__eL2eea__faqAnswer {
+  color: #333;
+  word-wrap: break-word;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.freecashflowcalculator-module__eL2eea__actionSection {
+  width: 100%;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__ctaCard {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  width: 100%;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__ctaTitle {
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+}
+
+.freecashflowcalculator-module__eL2eea__ctaText {
+  color: #333;
+  word-wrap: break-word;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.6;
+}
+
+.freecashflowcalculator-module__eL2eea__buttonGroup {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.freecashflowcalculator-module__eL2eea__primaryButton, .freecashflowcalculator-module__eL2eea__secondaryButton {
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  min-width: min(180px, 100%);
+  padding: clamp(.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+  font-size: clamp(.9rem, 2vw, 1rem);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+}
+
+.freecashflowcalculator-module__eL2eea__primaryButton {
+  color: #fff;
+  background: #000;
+  border: 1px solid #000;
+}
+
+.freecashflowcalculator-module__eL2eea__primaryButton:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0003;
+}
+
+.freecashflowcalculator-module__eL2eea__secondaryButton {
+  color: #000;
+  background: none;
+  border: 1px solid #000;
+}
+
+.freecashflowcalculator-module__eL2eea__secondaryButton:hover {
+  color: #fff;
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #0003;
+}
+
+.freecashflowcalculator-module__eL2eea__disclaimer {
+  color: #666;
+  word-wrap: break-word;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: clamp(.75rem, 1.5vw, .875rem);
+  line-height: 1.6;
+}
+
+.freecashflowcalculator-module__eL2eea__disclaimer strong {
+  color: #000;
+}
+
+.freecashflowcalculator-module__eL2eea__footer {
+  color: #333;
+  text-align: center;
+  background: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.freecashflowcalculator-module__eL2eea__footerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.freecashflowcalculator-module__eL2eea__footerText {
+  color: #333;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.freecashflowcalculator-module__eL2eea__footerNote {
+  color: #666;
+  word-wrap: break-word;
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: clamp(.75rem, 1.5vw, .875rem);
+}
+
+@media (max-width: 768px) {
+  .freecashflowcalculator-module__eL2eea__container {
+    padding-top: 70px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__header {
+    margin-top: -70px;
+    padding: 70px 1rem 1rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__mainTitle {
+    padding-top: 10px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__articleCard, .freecashflowcalculator-module__eL2eea__faqCard, .freecashflowcalculator-module__eL2eea__calculatorCard, .freecashflowcalculator-module__eL2eea__resultsCard {
+    padding: 1.5rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__projectionHeader {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 400px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__projectionRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .freecashflowcalculator-module__eL2eea__projectionHeaderCell:nth-child(4), .freecashflowcalculator-module__eL2eea__projectionHeaderCell:nth-child(5), .freecashflowcalculator-module__eL2eea__projectionHeaderCell:nth-child(6), .freecashflowcalculator-module__eL2eea__projectionCell:nth-child(4), .freecashflowcalculator-module__eL2eea__projectionCell:nth-child(5), .freecashflowcalculator-module__eL2eea__projectionCell:nth-child(6) {
+    display: none;
+  }
+
+  .freecashflowcalculator-module__eL2eea__ctaCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__buttonGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .freecashflowcalculator-module__eL2eea__primaryButton, .freecashflowcalculator-module__eL2eea__secondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__industryHeader {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 300px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__industryRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .freecashflowcalculator-module__eL2eea__industryHeaderCell:nth-child(3), .freecashflowcalculator-module__eL2eea__industryHeaderCell:nth-child(4), .freecashflowcalculator-module__eL2eea__industryCell:nth-child(3), .freecashflowcalculator-module__eL2eea__industryCell:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .freecashflowcalculator-module__eL2eea__container {
+    padding-top: 60px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__header {
+    margin-top: -60px;
+    padding: 60px 1rem 1rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__mainTitle {
+    padding-top: 5px;
+    line-height: 1.3;
+  }
+
+  .freecashflowcalculator-module__eL2eea__badgeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__badge {
+    width: fit-content;
+  }
+
+  .freecashflowcalculator-module__eL2eea__inputWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__slider, .freecashflowcalculator-module__eL2eea__numberInput {
+    width: 100%;
+  }
+
+  .freecashflowcalculator-module__eL2eea__numberInput {
+    order: 1;
+  }
+
+  .freecashflowcalculator-module__eL2eea__slider {
+    order: 2;
+  }
+
+  .freecashflowcalculator-module__eL2eea__currencySymbol, .freecashflowcalculator-module__eL2eea__percentageSymbol, .freecashflowcalculator-module__eL2eea__yearsSymbol {
+    text-align: center;
+    order: 3;
+    margin-top: .5rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__articleCard, .freecashflowcalculator-module__eL2eea__faqCard {
+    padding: 1.25rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__ctaCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__projectionHeader, .freecashflowcalculator-module__eL2eea__projectionRow {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 300px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__projectionHeaderCell:nth-child(3), .freecashflowcalculator-module__eL2eea__projectionHeaderCell:nth-child(4), .freecashflowcalculator-module__eL2eea__projectionHeaderCell:nth-child(5), .freecashflowcalculator-module__eL2eea__projectionHeaderCell:nth-child(6), .freecashflowcalculator-module__eL2eea__projectionCell:nth-child(3), .freecashflowcalculator-module__eL2eea__projectionCell:nth-child(4), .freecashflowcalculator-module__eL2eea__projectionCell:nth-child(5), .freecashflowcalculator-module__eL2eea__projectionCell:nth-child(6) {
+    display: none;
+  }
+
+  .freecashflowcalculator-module__eL2eea__strategyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .freecashflowcalculator-module__eL2eea__container {
+    padding-top: 0 !important;
+  }
+
+  .freecashflowcalculator-module__eL2eea__header {
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    padding: 0 0 1rem;
+  }
+
+  .freecashflowcalculator-module__eL2eea__buttonGroup, .freecashflowcalculator-module__eL2eea__badgeContainer {
+    display: none;
+  }
+
+  .freecashflowcalculator-module__eL2eea__calculatorLayout {
+    break-inside: avoid;
+  }
+
+  .freecashflowcalculator-module__eL2eea__footer {
+    background: none;
+    border-top: 2px solid #000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .freecashflowcalculator-module__eL2eea__container * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .freecashflowcalculator-module__eL2eea__container {
+    color: #000;
+    background: #fff;
+  }
+
+  .freecashflowcalculator-module__eL2eea__calculatorCard, .freecashflowcalculator-module__eL2eea__resultsCard, .freecashflowcalculator-module__eL2eea__articleCard, .freecashflowcalculator-module__eL2eea__faqCard {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .freecashflowcalculator-module__eL2eea__primaryButton {
+    color: #fff;
+    background: #000;
+    border: 2px solid #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .freecashflowcalculator-module__eL2eea__container {
+    color: #fff;
+    background: #121212;
+    padding-top: 80px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__header {
+    color: #fff;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+
+  .freecashflowcalculator-module__eL2eea__mainTitle, .freecashflowcalculator-module__eL2eea__subtitle, .freecashflowcalculator-module__eL2eea__sectionTitle, .freecashflowcalculator-module__eL2eea__resultValue, .freecashflowcalculator-module__eL2eea__valuationTitle, .freecashflowcalculator-module__eL2eea__valuationValue, .freecashflowcalculator-module__eL2eea__projectionTitle, .freecashflowcalculator-module__eL2eea__articleTitle, .freecashflowcalculator-module__eL2eea__articleSubtitle, .freecashflowcalculator-module__eL2eea__faqTitle, .freecashflowcalculator-module__eL2eea__faqQuestion, .freecashflowcalculator-module__eL2eea__ctaTitle {
+    color: #fff;
+  }
+
+  .freecashflowcalculator-module__eL2eea__calculatorCard, .freecashflowcalculator-module__eL2eea__resultsCard, .freecashflowcalculator-module__eL2eea__articleCard, .freecashflowcalculator-module__eL2eea__faqCard {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .freecashflowcalculator-module__eL2eea__primaryButton {
+    color: #000;
+    background: #fff;
+    border: 1px solid #fff;
+  }
+
+  .freecashflowcalculator-module__eL2eea__secondaryButton {
+    color: #fff;
+    background: none;
+    border: 1px solid #fff;
+  }
+
+  .freecashflowcalculator-module__eL2eea__secondaryButton:hover {
+    color: #000;
+    background: #fff;
+  }
+
+  .freecashflowcalculator-module__eL2eea__badge {
+    color: #fff;
+    background: #333;
+    border: 1px solid #666;
+  }
+
+  .freecashflowcalculator-module__eL2eea__inputLabel {
+    color: #ccc;
+  }
+
+  .freecashflowcalculator-module__eL2eea__numberInput, .freecashflowcalculator-module__eL2eea__selectInput {
+    color: #fff;
+    background: #1e1e1e;
+    border: 1px solid #666;
+  }
+
+  .freecashflowcalculator-module__eL2eea__slider {
+    background: #666;
+  }
+
+  .freecashflowcalculator-module__eL2eea__slider::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  .freecashflowcalculator-module__eL2eea__slider::-moz-range-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+
+  @media (max-width: 768px) {
+    .freecashflowcalculator-module__eL2eea__container {
+      padding-top: 70px;
+    }
+
+    .freecashflowcalculator-module__eL2eea__header {
+      margin-top: -70px;
+      padding-top: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .freecashflowcalculator-module__eL2eea__container {
+      padding-top: 60px;
+    }
+
+    .freecashflowcalculator-module__eL2eea__header {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
+}
+
+.freecashflowcalculator-module__eL2eea__container ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.freecashflowcalculator-module__eL2eea__container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.freecashflowcalculator-module__eL2eea__container ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.freecashflowcalculator-module__eL2eea__container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*# sourceMappingURL=src_pages_freecashflowcalculator_module_9063cd93.css.map*/

@@ -1,0 +1,19 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/free-cash-flow-calculator": [
+      "static/chunks/5ab36a06f6dd4e0e.js",
+      "static/chunks/c80de9071d17cb37.js",
+      "static/chunks/5c8a8a26cf163ca2.js",
+      "static/chunks/928e9f9fde90bc3c.js",
+      "static/chunks/944b77968600e50a.js",
+      "static/chunks/1da00272b3626397.css",
+      "static/chunks/turbopack-62f55bbd43198d0a.js"
+    ]
+  },
+  "ampFirstPages": []
+}

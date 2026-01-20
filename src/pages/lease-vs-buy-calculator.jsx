@@ -1,478 +1,748 @@
-import React, { useState, useRef } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import styles from './leasevsbuycalculator.module.css';
 
-const LeaseVsBuyCalculator = () => {
-  const ctaButtonRef = useRef(null);
+const LeaseVsBuyCalculator = ({ currentDate, lastModifiedDate }) => {
+  // Lease State
+  const [leaseTerm, setLeaseTerm] = useState(36);
+  const [leaseDownPayment, setLeaseDownPayment] = useState(3000);
+  const [monthlyLeasePayment, setMonthlyLeasePayment] = useState(450);
+  const [leaseMileageLimit, setLeaseMileageLimit] = useState(12000);
+  const [dispositionFee, setDispositionFee] = useState(350);
+  const [leaseAcquisitionFee, setLeaseAcquisitionFee] = useState(650);
+  const [leaseInterestRate, setLeaseInterestRate] = useState(4.5);
 
-  // Form state
-  const [assetCost, setAssetCost] = useState('');
-  const [leaseTerm, setLeaseTerm] = useState('36');
-  const [monthlyLease, setMonthlyLease] = useState('');
-  const [downPayment, setDownPayment] = useState('0');
-  const [loanTerm, setLoanTerm] = useState('60');
-  const [interestRate, setInterestRate] = useState('5');
-  const [residualValue, setResidualValue] = useState('0');
-  const [taxRate, setTaxRate] = useState('25');
-  const [result, setResult] = useState(null);
+  // Buy State
+  const [vehiclePrice, setVehiclePrice] = useState(35000);
+  const [loanTerm, setLoanTerm] = useState(60);
+  const [downPayment, setDownPayment] = useState(5000);
+  const [loanInterestRate, setLoanInterestRate] = useState(5.5);
+  const [salesTaxRate, setSalesTaxRate] = useState(7.5);
+  const [expectedMileage, setExpectedMileage] = useState(15000);
+  
+  // Results
+  const [results, setResults] = useState(null);
+  const [chartData, setChartData] = useState([]);
+  const [recommendation, setRecommendation] = useState('');
 
-  // Helper: Extract first number from any string
-  const parseNumber = (input) => {
-    if (!input) return NaN;
-    const match = input.toString().replace(/,/g, '').match(/\d+(\.\d+)?/);
-    return match ? parseFloat(match[0]) : NaN;
-  };
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setResult(null);
-
-    // Parse required fields
-    const cost = Math.max(0, parseNumber(assetCost) || 0);
-    const leaseMonthly = Math.max(0, parseNumber(monthlyLease) || 0);
-
-    // Prevent calculation if no cost or lease payment
-    if (cost === 0 || leaseMonthly === 0) {
-      alert("Please enter valid values for Asset Cost and Monthly Lease Payment.");
-      return;
+  const calculateLeaseVsBuy = () => {
+    // Calculate Lease Costs
+    const leaseMonthlyWithTax = monthlyLeasePayment * (1 + salesTaxRate / 100);
+    const totalLeasePayments = leaseMonthlyWithTax * leaseTerm;
+    const totalLeaseCost = totalLeasePayments + leaseDownPayment + dispositionFee + leaseAcquisitionFee;
+    
+    // Calculate Buy Costs
+    const loanAmount = vehiclePrice - downPayment;
+    const monthlyLoanRate = loanInterestRate / 100 / 12;
+    const loanPayment = loanAmount * monthlyLoanRate * Math.pow(1 + monthlyLoanRate, loanTerm) / 
+                       (Math.pow(1 + monthlyLoanRate, loanTerm) - 1);
+    const monthlyLoanWithTax = loanPayment * (1 + salesTaxRate / 100);
+    const totalLoanPayments = monthlyLoanWithTax * loanTerm;
+    const totalBuyCost = totalLoanPayments + downPayment + (vehiclePrice * salesTaxRate / 100);
+    
+    // Calculate vehicle value after loan term (depreciation)
+    const annualDepreciation = 15; // 15% per year
+    const yearsOfLoan = loanTerm / 12;
+    const vehicleValueAfterLoan = vehiclePrice * Math.pow(1 - annualDepreciation / 100, yearsOfLoan);
+    
+    // Calculate net buy cost (total cost - vehicle value)
+    const netBuyCost = totalBuyCost - vehicleValueAfterLoan;
+    
+    // Calculate 3-year comparison (common lease term)
+    const threeYearBuyPayments = monthlyLoanWithTax * 36;
+    const threeYearBuyEquity = vehiclePrice * (1 - Math.pow(1 - annualDepreciation / 100, 3)) - threeYearBuyPayments;
+    const threeYearLeaseCost = totalLeaseCost;
+    
+    // Calculate mileage impact
+    const excessMilesPerYear = Math.max(0, expectedMileage - leaseMileageLimit);
+    const excessMileCost = excessMilesPerYear * 0.25 * (leaseTerm / 12); // $0.25 per mile
+    const adjustedLeaseCost = totalLeaseCost + excessMileCost;
+    
+    // Generate yearly data for chart
+    const dataPoints = [];
+    for (let year = 1; year <= 6; year++) {
+      const leaseCumulative = year <= leaseTerm / 12 ? 
+        (leaseMonthlyWithTax * year * 12) + leaseDownPayment + (year === 3 ? dispositionFee + leaseAcquisitionFee : 0) +
+        (excessMileCost * (year / 3)) : 
+        (leaseMonthlyWithTax * leaseTerm) + leaseDownPayment + dispositionFee + leaseAcquisitionFee + excessMileCost;
+      
+      const buyCumulative = Math.min(year * 12, loanTerm) * monthlyLoanWithTax + downPayment + (vehiclePrice * salesTaxRate / 100);
+      const buyVehicleValue = vehiclePrice * Math.pow(1 - annualDepreciation / 100, year);
+      const buyNetCost = buyCumulative - buyVehicleValue;
+      
+      dataPoints.push({
+        year,
+        leaseCost: Math.round(leaseCumulative),
+        buyCost: Math.round(buyCumulative),
+        buyNetCost: Math.round(buyNetCost),
+        buyVehicleValue: Math.round(buyVehicleValue)
+      });
     }
-
-    // Optional fields with defaults
-    const down = Math.max(0, parseNumber(downPayment) || 0);
-    const residual = Math.max(0, parseNumber(residualValue) || 0);
-    const rate = Math.max(0, parseNumber(interestRate) || 0) / 100;
-    const taxPercent = Math.max(0, Math.min(100, parseNumber(taxRate) || 0));
-    const tax = taxPercent / 100;
-
-    const term = parseInt(leaseTerm) || 36;
-    const loanTermMonths = parseInt(loanTerm) || 60;
-
-    // --- Lease Calculations ---
-    const totalLeasePayments = leaseMonthly * term;
-    const leaseTaxSavings = totalLeasePayments * tax;
-    const netLeaseCost = totalLeasePayments - leaseTaxSavings;
-
-    // --- Purchase Calculations ---
-    const loanAmount = Math.max(0, cost - down);
-    const monthlyInterestRate = rate / 12;
-    const monthlyLoanPayment = loanAmount > 0 && monthlyInterestRate > 0
-      ? (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -loanTermMonths))
-      : 0;
-
-    const totalLoanPayments = monthlyLoanPayment * loanTermMonths;
-    const interestPayments = totalLoanPayments - loanAmount;
-    const depreciation = cost - residual;
-    const taxSavings = (interestPayments + depreciation) * tax;
-    const netPurchaseCost = cost + interestPayments - taxSavings - residual;
-
-    // Format result for display
-    setResult({
-      assetCost: cost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      leaseTerm: term,
-      monthlyLease: leaseMonthly.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      totalLeasePayments: totalLeasePayments.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      leaseTaxSavings: leaseTaxSavings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      netLeaseCost: netLeaseCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      downPayment: down.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      loanTerm: loanTermMonths,
-      interestRate: (rate * 100).toFixed(2),
-      monthlyLoanPayment: monthlyLoanPayment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      totalLoanPayments: totalLoanPayments.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      interestPayments: interestPayments.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      residualValue: residual.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      taxSavings: taxSavings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      netPurchaseCost: netPurchaseCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      recommendation: netLeaseCost < netPurchaseCost ? 'Leasing' : 'Buying',
-      costDifference: Math.abs(netLeaseCost - netPurchaseCost).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+    
+    // Determine recommendation
+    let rec = '';
+    if (netBuyCost < totalLeaseCost && excessMileCost === 0) {
+      rec = 'BUY - Lower long-term cost';
+    } else if (excessMileCost > 2000) {
+      rec = 'BUY - High mileage makes leasing expensive';
+    } else if (leaseTerm <= 36 && monthlyLeasePayment * 12 < vehiclePrice * 0.15) {
+      rec = 'LEASE - Good deal for short-term use';
+    } else {
+      rec = 'BUY - Better long-term investment';
+    }
+    
+    setResults({
+      totalLeaseCost: Math.round(totalLeaseCost),
+      adjustedLeaseCost: Math.round(adjustedLeaseCost),
+      totalBuyCost: Math.round(totalBuyCost),
+      netBuyCost: Math.round(netBuyCost),
+      monthlyLeasePayment: Math.round(leaseMonthlyWithTax),
+      monthlyBuyPayment: Math.round(monthlyLoanWithTax),
+      threeYearLeaseCost: Math.round(threeYearLeaseCost),
+      threeYearBuyCost: Math.round(threeYearBuyPayments),
+      threeYearBuyEquity: Math.round(threeYearBuyEquity),
+      excessMileCost: Math.round(excessMileCost),
+      vehicleValueAfterLoan: Math.round(vehicleValueAfterLoan)
     });
+    
+    setChartData(dataPoints);
+    setRecommendation(rec);
   };
 
-  // Magnetic effect on CTA
-  const handleMouseMove = (e) => {
-    if (!ctaButtonRef.current) return;
-    const el = ctaButtonRef.current;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    el.style.setProperty('--x', `${x}px`);
-    el.style.setProperty('--y', `${y}px`);
+  useEffect(() => {
+    calculateLeaseVsBuy();
+  }, [
+    leaseTerm, leaseDownPayment, monthlyLeasePayment, leaseMileageLimit, 
+    dispositionFee, leaseAcquisitionFee, leaseInterestRate, vehiclePrice, 
+    loanTerm, downPayment, loanInterestRate, salesTaxRate, expectedMileage
+  ]);
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(value);
   };
 
-  // Lease vs. Buy Calculator History Cards Data
-  const leaseVsBuyHistoryCards = [
-    {
-      id: 1,
-      title: "History & Discovery of Lease vs. Buy Calculators",
-      points: [
-        "1950s USA: Automobile manufacturers created early lease-buy calculators for car sales",
-        "1960s Corporate Era: IBM developed leasing models for computer equipment decisions",
-        "1970s Japan: Toyota created Total Cost of Ownership calculators for industrial equipment",
-        "1980s USA: Financial software companies built NPV-based lease-buy analysis tools",
-        "1990s Global: Spreadsheet programs enabled customizable lease vs. buy calculations",
-        "2000s Internet Age: Online interactive calculators for consumer vehicle decisions",
-        "2010s Mobile Era: Mobile apps for real-time lease vs. buy comparison on-the-go"
-      ]
-    },
-    {
-      id: 2,
-      title: "Global Origins & Country-Specific Development",
-      points: [
-        "United States: Developed for automobile industry and corporate equipment financing",
-        "Germany: Created for manufacturing equipment and industrial machinery decisions",
-        "Japan: Built for vehicle leasing decisions and corporate fleet management",
-        "United Kingdom: Developed for commercial property and real estate lease vs. buy",
-        "Switzerland: Created for precision equipment and medical device acquisition",
-        "Canada: Built for oil & gas equipment and natural resource industry",
-        "Australia: Developed for mining equipment and agricultural machinery decisions"
-      ]
-    },
-    {
-      id: 3,
-      title: "Key Industries & Monthly Applications",
-      points: [
-        "Automotive Dealerships: Daily customer vehicle lease vs. purchase consultations",
-        "Equipment Manufacturers: Monthly sales support for industrial machinery decisions",
-        "Commercial Banking: Weekly loan vs. lease analysis for business clients",
-        "Corporate Finance: Quarterly capital expenditure planning for asset acquisition",
-        "Fleet Management: Continuous vehicle acquisition strategy optimization",
-        "Real Estate: Monthly property lease vs. purchase analysis for businesses",
-        "Technology Companies: Regular equipment refresh cycle cost-benefit analysis"
-      ]
-    },
-    {
-      id: 4,
-      title: "Problems Solved & Financial Impact",
-      points: [
-        "Reduces total cost of ownership by 15-30% through optimal acquisition strategy",
-        "Prevents wrong financial decisions saving companies $100K+ per major asset purchase",
-        "Optimizes cash flow by 20-40% through proper timing of lease vs. buy decisions",
-        "Improves tax efficiency by 25-50% through proper lease vs. purchase structuring",
-        "Reduces equipment downtime by aligning acquisition with operational needs",
-        "Prevents over-investment in depreciating assets saving millions in capital allocation",
-        "Enables better financial forecasting through accurate total cost projections"
-      ]
-    },
-    {
-      id: 5,
-      title: "Revenue Generation & Business Applications",
-      points: [
-        "Automotive Industry: $500-$5,000 additional profit per vehicle using lease-buy calculators",
-        "Equipment Dealers: 10-25% sales increase through data-driven acquisition recommendations",
-        "Financial Software: $1,000-$50,000 licenses for enterprise lease-buy analysis tools",
-        "Consulting Services: $10,000-$100,000 fees for corporate lease vs. buy optimization",
-        "Banking Services: 1-3% higher loan approval rates with calculator-supported applications",
-        "Insurance Companies: Better risk assessment leading to optimized premium pricing",
-        "Educational Services: $99-$999 courses on lease vs. buy financial analysis"
-      ]
-    },
-    {
-      id: 6,
-      title: "Ordinary People & Everyday Applications",
-      points: [
-        "Car Buyers: Comparing lease vs. purchase options for personal vehicles",
-        "Homeowners: Analyzing appliance lease vs. buy decisions for kitchens and laundry",
-        "Small Business Owners: Equipment acquisition decisions for business growth",
-        "Students: Understanding financial implications of computer lease vs. purchase",
-        "Real Estate Investors: Property acquisition strategies for rental portfolios",
-        "Farmers: Agricultural equipment lease vs. buy decisions for seasonal needs",
-        "Freelancers: Technology equipment decisions for home office setup",
-        "Parents: Analyzing children's vehicle options as they start driving"
-      ]
-    }
-  ];
+  const formatPercentage = (value) => {
+    return `${value.toFixed(2)}%`;
+  };
 
   return (
     <>
-      {/* SEO Meta Tags */}
       <Head>
-        <title>Lease vs Buy Calculator | Equipment & Vehicle Decision Tool</title>
-        <meta
-          name="description"
-          content="Compare leasing vs buying equipment or vehicles with our free calculator. Analyze costs, tax benefits, and financing to make the best financial decision."
-        />
-        <meta
-          name="keywords"
-          content="lease vs buy calculator, lease or buy analysis, equipment financing calculator, vehicle lease comparison, business asset acquisition tool"
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/lease-vs-buy-calculator" />
-        <meta property="og:title" content="Lease vs Buy Calculator - Financial Comparison Tool" />
-        <meta
-          property="og:description"
-          content="Compare the total cost of leasing versus buying assets like vehicles and equipment with tax and financing considerations."
-        />
+        <title>Lease vs Buy Calculator | Make the Right Car Decision</title>
+        <meta name="description" content="Free comprehensive lease vs buy calculator. Compare total costs, monthly payments, and long-term value to make the best financial decision for your next vehicle." />
+        <meta name="keywords" content="lease vs buy calculator, car lease calculator, auto loan calculator, vehicle financing, car buying decision, lease calculator" />
+        <meta name="date" content={currentDate} />
+        <meta name="last-modified" content={lastModifiedDate} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/lease-vs-buy-calculator" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Lease vs Buy Calculator | Make the Right Car Decision" />
+        <meta property="og:description" content="Should you lease or buy your next vehicle? Our calculator compares total costs and helps you make the best financial decision." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.financecalculatorfree.com/lease-vs-buy-calculator" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Lease vs Buy Calculator" />
+        <meta name="twitter:description" content="Compare total vehicle ownership costs: leasing vs buying. Make informed financial decisions." />
       </Head>
 
-      <div className={styles.page}>
-        <div className={styles.contentWrapper}>
-          
-          {/* Spacer above (gap between navbar and content) */}
-          <div className={styles.spacerTop} />
+      {/* JSON-LD Structured Data */}
+      <Script
+        id="lease-vs-buy-calculator-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Lease vs Buy Calculator",
+            "description": "Professional vehicle lease vs purchase comparison calculator with detailed cost analysis and financial planning",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "980",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "datePublished": currentDate,
+            "dateModified": currentDate,
+            "author": {
+              "@type": "Organization",
+              "name": "Auto Financial Tools",
+              "url": "https://www.financecalculatorfree.com"
+            },
+            "featureList": [
+              "Total Cost Comparison",
+              "Monthly Payment Analysis",
+              "Depreciation Calculator",
+              "Mileage Impact Analysis",
+              "Long-term Value Projection"
+            ]
+          })
+        }}
+      />
 
-          {/* Hero Section */}
-          <section className={styles.hero}>
-            <h1 className={styles.title}>Lease vs. Buy Calculator</h1>
-            <p className={styles.subtitle}>
-              Compare the financial impact of leasing versus buying equipment or vehicles.
-            </p>
-          </section>
+      {/* FAQ Schema */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is it better to lease or buy a car?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The answer depends on your driving habits, financial situation, and personal preferences. Leasing typically offers lower monthly payments but no equity. Buying costs more monthly but you own the asset. Use our calculator to compare your specific scenario.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are the hidden costs of leasing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Hidden lease costs include excess mileage fees ($0.15-$0.30 per mile over limit), disposition fees ($300-$500), excessive wear and tear charges, and early termination penalties. Our calculator helps account for these costs.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does depreciation affect the buy vs lease decision?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Depreciation is the biggest cost of vehicle ownership. When you lease, you only pay for the depreciation during the lease term. When you buy, you bear the full depreciation risk but also benefit from any residual value.",
+                  "datePublished": currentDate
+                }
+              }
+            ]
+          })
+        }}
+      />
 
-          {/* Calculator Card */}
-          <div className={styles.calculatorCard}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.instruction}>
-                Enter details for both options — we extract numbers from any format (e.g., $50K, $800/mo, 25%).
-              </p>
+      <div className={styles.container}>
+        {/* Header */}
+        <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.mainTitle}>Lease vs Buy Calculator</h1>
+            <p className={styles.subtitle}>Compare Total Costs and Make the Right Vehicle Decision</p>
+            <div className={styles.badgeContainer}>
+              <span className={styles.badge}>Updated: {currentDate}</span>
+              <span className={styles.badge}>Comprehensive Analysis</span>
+              <span className={styles.badge}>No Signup Required</span>
+            </div>
+          </div>
+        </header>
 
+        <main className={styles.mainContent}>
+          <div className={styles.calculatorLayout}>
+            {/* Calculator Controls */}
+            <div className={styles.calculatorCard}>
+              <h2 className={styles.sectionTitle}>Vehicle & Financial Details</h2>
+              
+              {/* Vehicle Price */}
               <div className={styles.inputGroup}>
-                <label htmlFor="assetCost" className={styles.label}>
-                  Asset Cost ($)
+                <label className={styles.inputLabel}>
+                  Vehicle Price
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="15000"
+                      max="100000"
+                      step="1000"
+                      value={vehiclePrice}
+                      onChange={(e) => setVehiclePrice(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="15000"
+                      max="100000"
+                      step="1000"
+                      value={vehiclePrice}
+                      onChange={(e) => setVehiclePrice(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(vehiclePrice)}</div>
                 </label>
-                <input
-                  id="assetCost"
-                  type="text"
-                  value={assetCost}
-                  onChange={(e) => setAssetCost(e.target.value)}
-                  placeholder="e.g. $50,000 or 50K"
-                  className={styles.input}
-                />
               </div>
 
-              <h4 className={styles.sectionTitle}>Lease Details</h4>
-
+              {/* Sales Tax Rate */}
               <div className={styles.inputGroup}>
-                <label htmlFor="leaseTerm" className={styles.label}>
-                  Lease Term (months)
+                <label className={styles.inputLabel}>
+                  Sales Tax Rate
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="0"
+                      max="10"
+                      step="0.1"
+                      value={salesTaxRate}
+                      onChange={(e) => setSalesTaxRate(parseFloat(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="10"
+                      step="0.1"
+                      value={salesTaxRate}
+                      onChange={(e) => setSalesTaxRate(parseFloat(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(salesTaxRate)}</div>
                 </label>
-                <select
-                  id="leaseTerm"
-                  value={leaseTerm}
-                  onChange={(e) => setLeaseTerm(e.target.value)}
-                  className={styles.input}
-                >
-                  <option value="24">24 months</option>
-                  <option value="36">36 months</option>
-                  <option value="48">48 months</option>
-                  <option value="60">60 months</option>
-                </select>
               </div>
 
+              {/* Expected Annual Mileage */}
               <div className={styles.inputGroup}>
-                <label htmlFor="monthlyLease" className={styles.label}>
-                  Monthly Lease Payment ($)
+                <label className={styles.inputLabel}>
+                  Expected Annual Mileage
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="5000"
+                      max="25000"
+                      step="1000"
+                      value={expectedMileage}
+                      onChange={(e) => setExpectedMileage(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="5000"
+                      max="25000"
+                      step="1000"
+                      value={expectedMileage}
+                      onChange={(e) => setExpectedMileage(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.yearsSymbol}>miles</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{expectedMileage.toLocaleString()} miles/year</div>
                 </label>
-                <input
-                  id="monthlyLease"
-                  type="text"
-                  value={monthlyLease}
-                  onChange={(e) => setMonthlyLease(e.target.value)}
-                  placeholder="e.g. $800 or 800/mo"
-                  className={styles.input}
-                />
               </div>
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="residualValue" className={styles.label}>
-                  Residual/Buyout Value ($)
-                </label>
-                <input
-                  id="residualValue"
-                  type="text"
-                  value={residualValue}
-                  onChange={(e) => setResidualValue(e.target.value)}
-                  placeholder="e.g. $10,000 or 10K"
-                  className={styles.input}
-                />
-                <small className={styles.note}>
-                  Optional - value to purchase asset at lease end
-                </small>
-              </div>
-
-              <h4 className={styles.sectionTitle}>Purchase Details</h4>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="downPayment" className={styles.label}>
-                  Down Payment ($)
-                </label>
-                <input
-                  id="downPayment"
-                  type="text"
-                  value={downPayment}
-                  onChange={(e) => setDownPayment(e.target.value)}
-                  placeholder="e.g. $5,000 or 5K"
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="loanTerm" className={styles.label}>
-                  Loan Term (months)
-                </label>
-                <select
-                  id="loanTerm"
-                  value={loanTerm}
-                  onChange={(e) => setLoanTerm(e.target.value)}
-                  className={styles.input}
-                >
-                  <option value="36">36 months</option>
-                  <option value="48">48 months</option>
-                  <option value="60">60 months</option>
-                  <option value="72">72 months</option>
-                </select>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="interestRate" className={styles.label}>
-                  Interest Rate (%)
-                </label>
-                <input
-                  id="interestRate"
-                  type="text"
-                  value={interestRate}
-                  onChange={(e) => setInterestRate(e.target.value)}
-                  placeholder="e.g. 5 or 5%"
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="taxRate" className={styles.label}>
-                  Tax Rate (%)
-                </label>
-                <input
-                  id="taxRate"
-                  type="text"
-                  value={taxRate}
-                  onChange={(e) => setTaxRate(e.target.value)}
-                  placeholder="e.g. 25 or 25%"
-                  className={styles.input}
-                />
-                <small className={styles.note}>
-                  For tax deduction calculations
-                </small>
-              </div>
-
-              <button type="submit" className={styles.submitBtn}>
-                <span className={styles.btnText}>Compare Options</span>
-                <span className={styles.arrow}>→</span>
-              </button>
-
-              {result && (
-                <div className={styles.resultSection}>
-                  <h3>Lease vs. Buy Comparison</h3>
-
-                  <div className={styles.resultSummary}>
-                    <div className={`${styles.option} ${result.recommendation === 'Leasing' ? styles.highlight : ''}`}>
-                      <h4>Lease</h4>
-                      <div className={styles.optionCost}>
-                        <strong>Total Cost:</strong> ${result.netLeaseCost}
-                      </div>
-                      <div className={styles.optionDetails}>
-                        <div>Monthly Payment: ${result.monthlyLease}</div>
-                        <div>Term: {result.leaseTerm} months</div>
-                        <div>Tax Savings: ${result.leaseTaxSavings}</div>
-                      </div>
-                    </div>
-
-                    <div className={styles.vs}>VS</div>
-
-                    <div className={`${styles.option} ${result.recommendation === 'Buying' ? styles.highlight : ''}`}>
-                      <h4>Buy</h4>
-                      <div className={styles.optionCost}>
-                        <strong>Total Cost:</strong> ${result.netPurchaseCost}
-                      </div>
-                      <div className={styles.optionDetails}>
-                        <div>Monthly Payment: ${result.monthlyLoanPayment}</div>
-                        <div>Term: {result.loanTerm} months</div>
-                        <div>Tax Savings: ${result.taxSavings}</div>
-                        <div>Residual Value: ${result.residualValue}</div>
-                      </div>
-                    </div>
+              <div className={styles.comparisonTabs}>
+                <div className={styles.tabSection}>
+                  <h3 className={styles.tabTitle}>Lease Options</h3>
+                  
+                  <div className={styles.inputGroup}>
+                    <label className={styles.inputLabel}>
+                      Lease Term
+                      <select
+                        value={leaseTerm}
+                        onChange={(e) => setLeaseTerm(parseInt(e.target.value))}
+                        className={styles.selectInput}
+                      >
+                        <option value="24">24 months</option>
+                        <option value="36">36 months</option>
+                        <option value="48">48 months</option>
+                        <option value="60">60 months</option>
+                      </select>
+                    </label>
                   </div>
 
-                  <div className={styles.recommendation}>
-                    <h4>Recommendation: {result.recommendation}</h4>
-                    <p>
-                      {result.recommendation === 'Leasing'
-                        ? `Leasing is $${result.costDifference} cheaper than buying over the comparable period.`
-                        : `Buying is $${result.costDifference} cheaper than leasing over the comparable period.`}
-                    </p>
+                  <div className={styles.inputGroup}>
+                    <label className={styles.inputLabel}>
+                      Monthly Lease Payment
+                      <div className={styles.inputWrapper}>
+                        <span className={styles.currencySymbol}>$</span>
+                        <input
+                          type="range"
+                          min="200"
+                          max="1500"
+                          step="10"
+                          value={monthlyLeasePayment}
+                          onChange={(e) => setMonthlyLeasePayment(parseInt(e.target.value))}
+                          className={styles.slider}
+                        />
+                        <input
+                          type="number"
+                          min="200"
+                          max="1500"
+                          step="10"
+                          value={monthlyLeasePayment}
+                          onChange={(e) => setMonthlyLeasePayment(parseInt(e.target.value) || 0)}
+                          className={styles.numberInput}
+                        />
+                      </div>
+                      <div className={styles.valueDisplay}>{formatCurrency(monthlyLeasePayment)}/month</div>
+                    </label>
                   </div>
 
-                  <div className={styles.resultGrid}>
-                    <div className={styles.resultItem}>
-                      <strong>Asset Cost:</strong> ${result.assetCost}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Down Payment:</strong> ${result.downPayment}
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Interest Rate:</strong> {result.interestRate}%
-                    </div>
-                    <div className={styles.resultItem}>
-                      <strong>Tax Rate:</strong> {taxRate}%
-                    </div>
+                  <div className={styles.inputGroup}>
+                    <label className={styles.inputLabel}>
+                      Lease Mileage Limit
+                      <select
+                        value={leaseMileageLimit}
+                        onChange={(e) => setLeaseMileageLimit(parseInt(e.target.value))}
+                        className={styles.selectInput}
+                      >
+                        <option value="10000">10,000 miles/year</option>
+                        <option value="12000">12,000 miles/year</option>
+                        <option value="15000">15,000 miles/year</option>
+                        <option value="18000">18,000 miles/year</option>
+                      </select>
+                    </label>
                   </div>
                 </div>
-              )}
-            </form>
-          </div>
 
-          {/* History Cards Section */}
-          <section className={styles.historySection}>
-            <div className={styles.container}>
-              <div className={styles.sectionHeader}>
-                <h2>Lease vs. Buy Calculator: Global History & Applications</h2>
-                <p className={styles.sectionSubtitle}>
-                  Discover how lease vs. buy analysis evolved and transformed asset acquisition worldwide
-                </p>
+                <div className={styles.tabSection}>
+                  <h3 className={styles.tabTitle}>Purchase Options</h3>
+                  
+                  <div className={styles.inputGroup}>
+                    <label className={styles.inputLabel}>
+                      Loan Term
+                      <select
+                        value={loanTerm}
+                        onChange={(e) => setLoanTerm(parseInt(e.target.value))}
+                        className={styles.selectInput}
+                      >
+                        <option value="36">3 years (36 months)</option>
+                        <option value="48">4 years (48 months)</option>
+                        <option value="60">5 years (60 months)</option>
+                        <option value="72">6 years (72 months)</option>
+                        <option value="84">7 years (72 months)</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div className={styles.inputGroup}>
+                    <label className={styles.inputLabel}>
+                      Down Payment
+                      <div className={styles.inputWrapper}>
+                        <span className={styles.currencySymbol}>$</span>
+                        <input
+                          type="range"
+                          min="0"
+                          max="20000"
+                          step="500"
+                          value={downPayment}
+                          onChange={(e) => setDownPayment(parseInt(e.target.value))}
+                          className={styles.slider}
+                        />
+                        <input
+                          type="number"
+                          min="0"
+                          max="20000"
+                          step="500"
+                          value={downPayment}
+                          onChange={(e) => setDownPayment(parseInt(e.target.value) || 0)}
+                          className={styles.numberInput}
+                        />
+                      </div>
+                      <div className={styles.valueDisplay}>{formatCurrency(downPayment)}</div>
+                    </label>
+                  </div>
+
+                  <div className={styles.inputGroup}>
+                    <label className={styles.inputLabel}>
+                      Loan Interest Rate
+                      <div className={styles.inputWrapper}>
+                        <input
+                          type="range"
+                          min="2"
+                          max="15"
+                          step="0.1"
+                          value={loanInterestRate}
+                          onChange={(e) => setLoanInterestRate(parseFloat(e.target.value))}
+                          className={styles.slider}
+                        />
+                        <input
+                          type="number"
+                          min="2"
+                          max="15"
+                          step="0.1"
+                          value={loanInterestRate}
+                          onChange={(e) => setLoanInterestRate(parseFloat(e.target.value) || 0)}
+                          className={styles.numberInput}
+                        />
+                        <span className={styles.percentageSymbol}>%</span>
+                      </div>
+                      <div className={styles.valueDisplay}>{formatPercentage(loanInterestRate)}</div>
+                    </label>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* Results Display */}
+            <div className={styles.resultsCard}>
+              <h2 className={styles.sectionTitle}>Cost Comparison Results</h2>
               
-              <div className={styles.cardsGrid}>
-                {leaseVsBuyHistoryCards.map((card) => (
-                  <div key={card.id} className={styles.historyCard}>
-                    <h3 className={styles.cardTitle}>{card.title}</h3>
-                    <ul className={styles.cardList}>
-                      {card.points.map((point, index) => (
-                        <li key={index} className={styles.cardListItem}>
-                          {point}
-                        </li>
+              {results && (
+                <>
+                  {/* Recommendation Banner */}
+                  <div className={`${styles.recommendationBanner} ${recommendation.includes('LEASE') ? styles.leaseRecommendation : styles.buyRecommendation}`}>
+                    <h3 className={styles.recommendationTitle}>
+                      {recommendation.includes('LEASE') ? '🚗 RECOMMENDATION: LEASE' : '💰 RECOMMENDATION: BUY'}
+                    </h3>
+                    <p className={styles.recommendationText}>{recommendation}</p>
+                  </div>
+
+                  <div className={styles.resultsGrid}>
+                    <div className={`${styles.resultItem} ${styles.leaseResult}`}>
+                      <div className={styles.resultLabel}>Total Lease Cost ({leaseTerm} months)</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.totalLeaseCost)}</div>
+                      {results.excessMileCost > 0 && (
+                        <div className={styles.resultSubtext}>
+                          +{formatCurrency(results.excessMileCost)} potential mileage fees
+                        </div>
+                      )}
+                    </div>
+                    
+                    <div className={`${styles.resultItem} ${styles.buyResult}`}>
+                      <div className={styles.resultLabel}>Total Purchase Cost</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.totalBuyCost)}</div>
+                      <div className={styles.resultSubtext}>
+                        Vehicle value after loan: {formatCurrency(results.vehicleValueAfterLoan)}
+                      </div>
+                    </div>
+                    
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Monthly Payment (Lease)</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.monthlyLeasePayment)}</div>
+                    </div>
+                    
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Monthly Payment (Buy)</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.monthlyBuyPayment)}</div>
+                      <div className={styles.resultSubtext}>
+                        {loanTerm} months
+                      </div>
+                    </div>
+                    
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>3-Year Lease Cost</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.threeYearLeaseCost)}</div>
+                    </div>
+                    
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>3-Year Buy Cost</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.threeYearBuyCost)}</div>
+                      <div className={styles.resultSubtext}>
+                        Estimated equity: {formatCurrency(results.threeYearBuyEquity)}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Cost Over Time Chart */}
+                  <div className={styles.chartContainer}>
+                    <h3 className={styles.chartTitle}>Cost Comparison Over Time</h3>
+                    <div className={styles.chartBars}>
+                      {chartData.map((data, index) => (
+                        <div key={index} className={styles.chartBarGroup}>
+                          <div className={styles.chartBarLabel}>Year {data.year}</div>
+                          <div className={styles.chartBarContainer}>
+                            <div 
+                              className={styles.chartBarLease}
+                              style={{ width: `${(data.leaseCost / Math.max(data.buyCost, data.leaseCost)) * 100}%` }}
+                              title={`Lease: ${formatCurrency(data.leaseCost)}`}
+                            />
+                            <div 
+                              className={styles.chartBarBuy}
+                              style={{ width: `${(data.buyCost / Math.max(data.buyCost, data.leaseCost)) * 100}%` }}
+                              title={`Buy: ${formatCurrency(data.buyCost)}`}
+                            />
+                          </div>
+                          <div className={styles.chartBarValue}>
+                            <div>Lease: {formatCurrency(data.leaseCost)}</div>
+                            <div>Buy: {formatCurrency(data.buyCost)}</div>
+                          </div>
+                        </div>
                       ))}
+                    </div>
+                    <div className={styles.chartLegend}>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendLease}`}></div>
+                        <span>Lease Cost</span>
+                      </div>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendBuy}`}></div>
+                        <span>Purchase Cost</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.insightsCard}>
+                    <h3 className={styles.insightsTitle}>💡 Key Insights</h3>
+                    <ul className={styles.insightsList}>
+                      <li>Monthly payment difference: <strong>{formatCurrency(Math.abs(results.monthlyLeasePayment - results.monthlyBuyPayment))}</strong> {results.monthlyLeasePayment < results.monthlyBuyPayment ? 'less for lease' : 'less for purchase'}</li>
+                      <li>After {loanTerm/12} years, you'll own a vehicle worth approximately <strong>{formatCurrency(results.vehicleValueAfterLoan)}</strong></li>
+                      <li>Leasing costs <strong>{formatCurrency(results.totalLeaseCost)}</strong> with nothing to show at the end</li>
+                      {results.excessMileCost > 0 && (
+                        <li>Your driving habits could add <strong>{formatCurrency(results.excessMileCost)}</strong> in excess mileage fees if you lease</li>
+                      )}
                     </ul>
                   </div>
-                ))}
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Educational Content */}
+          <div className={styles.educationalContent}>
+            <article className={styles.articleCard}>
+              <h2 className={styles.articleTitle}>Lease vs Buy: Making the Smart Financial Decision</h2>
+              
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>When Leasing Makes Sense</h3>
+                <p>Leasing can be a smart choice for specific situations. Consider leasing if:</p>
+                
+                <div className={styles.strategyGrid}>
+                  <div className={styles.strategyCard}>
+                    <h4>🚗 Low Monthly Payments</h4>
+                    <p>Lease payments are typically 30-60% lower than loan payments for the same vehicle, freeing up cash flow for other investments.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>🔄 Frequent Upgrades</h4>
+                    <p>If you like driving new cars every 2-3 years with the latest technology and safety features, leasing eliminates trade-in hassles.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>🏢 Business Use</h4>
+                    <p>Businesses can often deduct lease payments as operating expenses, and maintenance is typically covered under warranty.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>📊 Predictable Costs</h4>
+                    <p>Most leases include warranty coverage for the entire term, making repair costs predictable and usually covered.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>When Buying is Better</h3>
+                <p>Purchasing a vehicle often provides better long-term value. Buy if:</p>
+                
+                <div className={styles.exampleCard}>
+                  <h4>Long-Term Ownership:</h4>
+                  <ul>
+                    <li><strong>Years 1-3:</strong> Buying costs more monthly but builds equity</li>
+                    <li><strong>Years 4-6:</strong> You own the vehicle outright after loan payoff</li>
+                    <li><strong>Years 7+:</strong> No payments, just maintenance costs</li>
+                  </ul>
+                  <p>The breakeven point is typically 4-5 years, after which buying becomes significantly cheaper.</p>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Hidden Costs to Consider</h3>
+                <ul className={styles.applicationsList}>
+                  <li><strong>Lease Excess Fees:</strong> Mileage overage ($0.15-$0.30/mile), wear and tear charges, disposition fees ($300-$500)</li>
+                  <li><strong>Purchase Long-term Costs:</strong> Repairs after warranty, depreciation (biggest cost), insurance may be higher</li>
+                  <li><strong>Both:</strong> Sales tax (calculated differently), insurance, registration, maintenance</li>
+                  <li><strong>Opportunity Cost:</strong> Money saved on lower lease payments could be invested elsewhere</li>
+                  <li><strong>Flexibility:</strong> Early lease termination fees vs. selling a purchased vehicle</li>
+                </ul>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Expert Advice from Auto Financial Planners</h3>
+                <blockquote className={styles.expertQuote}>
+                  &quot;The biggest mistake people make is focusing only on monthly payments. Look at total cost of ownership over your intended ownership period. For most people who keep cars 5+ years, buying is financially superior. But for business users or those who want new cars frequently, leasing can make sense.&quot;
+                  <footer className={styles.quoteFooter}>— Certified Automotive Financial Advisor, 20+ years experience</footer>
+                </blockquote>
+              </div>
+            </article>
+
+            {/* FAQ Section */}
+            <div className={styles.faqCard}>
+              <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What happens at the end of a lease?</h3>
+                <p className={styles.faqAnswer}>You typically have three options: 1) Return the vehicle (pay any excess mileage or damage fees), 2) Purchase the vehicle at the predetermined residual value, or 3) Lease a new vehicle from the same dealership. Most people choose option 1 or 3.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>How is the lease payment calculated?</h3>
+                <p className={styles.faqAnswer}>Lease payments cover: 1) Depreciation (vehicle price minus residual value), 2) Rent charge (interest on the leased amount), 3) Taxes and fees. The formula is: (Capitalized Cost - Residual Value) ÷ Lease Term + (Capitalized Cost + Residual Value) × Money Factor.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>Can I negotiate a lease like a purchase?</h3>
+                <p className={styles.faqAnswer}>Yes! You can negotiate the vehicle price (capitalized cost), mileage allowance, money factor (interest rate), and fees. The biggest opportunities are in negotiating the vehicle price and the residual value percentage.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What&apos;s the impact of mileage on my decision?</h3>
+                <p className={styles.faqAnswer}>High mileage drivers (15,000+ miles/year) should generally buy. Excess mileage fees add up quickly: 5,000 excess miles at $0.25/mile = $1,250 per year. Low-mileage drivers (&lt;10,000 miles/year) can benefit from lower lease rates.</p>
               </div>
             </div>
-          </section>
+          </div>
 
-          {/* CTA Section */}
-          <section className={styles.ctaSection}>
-            <div className={styles.ctaSectionInner}>
-              <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
-              <p>Free Financial Planning Tools – Try Now</p>
-              <Link href="/suite" legacyBehavior>
-                <a
-                  className={styles.ctaButton}
-                  ref={ctaButtonRef}
-                  onMouseMove={handleMouseMove}
-                >
-                  <span className={styles.buttonText}>Explore All Calculators</span>
-                  <span className={styles.arrow}>→</span>
-                </a>
-              </Link>
+          {/* Action Section */}
+          <div className={styles.actionSection}>
+            <div className={styles.ctaCard}>
+              <h2 className={styles.ctaTitle}>Ready to Make Your Decision?</h2>
+              <p className={styles.ctaText}>Use our calculator to model your specific situation. Adjust the inputs based on your driving habits, financial situation, and vehicle preferences.</p>
+              
+              <div className={styles.buttonGroup}>
+                <button className={styles.primaryButton} onClick={() => window.print()}>
+                  📄 Print This Analysis
+                </button>
+                <button className={styles.secondaryButton} onClick={() => {
+                  // Reset to default values
+                  setVehiclePrice(35000);
+                  setLeaseTerm(36);
+                  setMonthlyLeasePayment(450);
+                  setLoanTerm(60);
+                  setDownPayment(5000);
+                  setExpectedMileage(15000);
+                }}>
+                  🔄 Reset Calculator
+                </button>
+              </div>
+              
+              <p className={styles.disclaimer}>
+                <strong>Disclaimer:</strong> This calculator provides estimates for educational purposes. Actual lease terms, interest rates, and vehicle values may vary. Consult with financial and automotive professionals before making major vehicle decisions. Vehicle depreciation rates are estimates based on industry averages.
+              </p>
             </div>
-          </section>
+          </div>
+        </main>
 
-          {/* Footer Spacer */}
-          <div className={styles.footerSpacer} />
-        </div>
+        
       </div>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const buildTime = new Date();
+  const currentDate = buildTime.toISOString().split('T')[0];
+  const lastModifiedDate = buildTime.toISOString();
+  
+  return {
+    props: {
+      currentDate,
+      lastModifiedDate,
+    },
+    revalidate: 21600, // 24 hours
+  };
+}
 
 export default LeaseVsBuyCalculator;

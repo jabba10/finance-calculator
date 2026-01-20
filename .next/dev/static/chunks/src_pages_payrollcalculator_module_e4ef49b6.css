@@ -1,0 +1,615 @@
+/* [project]/src/pages/payrollcalculator.module.css [client] (css) */
+.payrollcalculator-module__yweEva__page {
+  color: #0d1b2a;
+  background-color: #fff;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 5rem 1rem 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  display: flex;
+}
+
+.payrollcalculator-module__yweEva__hero {
+  text-align: center;
+  margin-top: 0;
+  padding: 3rem 1.8rem 2rem;
+}
+
+.payrollcalculator-module__yweEva__title {
+  color: #0d1b2a;
+  margin-bottom: .8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.payrollcalculator-module__yweEva__subtitle {
+  color: #414a4c;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.payrollcalculator-module__yweEva__calculatorCard {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto 3rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px #0d1b2a1f;
+}
+
+.payrollcalculator-module__yweEva__form {
+  padding: 1.4rem 1.5rem 1.5rem;
+}
+
+.payrollcalculator-module__yweEva__instruction {
+  color: #555;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.payrollcalculator-module__yweEva__inputGroup {
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 1.1rem;
+  display: flex;
+}
+
+.payrollcalculator-module__yweEva__label {
+  text-align: left;
+  color: #0d1b2a;
+  margin-bottom: .4rem;
+  padding-left: .2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.payrollcalculator-module__yweEva__input {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  height: 50px;
+  padding: .7rem .8rem;
+  font-size: 1rem;
+  transition: all .3s;
+}
+
+.payrollcalculator-module__yweEva__input:focus {
+  border-color: #0d1b2a;
+  box-shadow: 0 0 0 3px #0d1b2a1a;
+}
+
+.payrollcalculator-module__yweEva__input::placeholder {
+  color: #adb5bd;
+  font-size: 1rem;
+}
+
+.payrollcalculator-module__yweEva__note {
+  color: #6c757d;
+  text-align: left;
+  margin-top: .4rem;
+  padding-left: .2rem;
+  font-size: .85rem;
+}
+
+.payrollcalculator-module__yweEva__submitBtn {
+  color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+  background: #0d1b2a;
+  border: none;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: .6rem;
+  width: 100%;
+  margin-top: .6rem;
+  padding: .75rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all .3s;
+  display: inline-flex;
+}
+
+.payrollcalculator-module__yweEva__submitBtn:hover {
+  background: #1b263b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px #0000001a;
+}
+
+.payrollcalculator-module__yweEva__btnText {
+  font-weight: 500;
+}
+
+.payrollcalculator-module__yweEva__arrow {
+  font-size: 1.1em;
+  transition: transform .3s;
+}
+
+.payrollcalculator-module__yweEva__submitBtn:hover .payrollcalculator-module__yweEva__arrow {
+  transform: translateX(4px);
+}
+
+.payrollcalculator-module__yweEva__resultSection {
+  background-color: #f9fafa;
+  border-top: 1px dashed #e9ecef;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1.1rem 1.5rem 1.3rem;
+}
+
+.payrollcalculator-module__yweEva__resultSection h3 {
+  color: #0d1b2a;
+  text-align: center;
+  margin: 0 0 .7rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.payrollcalculator-module__yweEva__resultGrid {
+  grid-template-columns: 1fr;
+  gap: .6rem;
+  margin-bottom: .8rem;
+  display: grid;
+}
+
+.payrollcalculator-module__yweEva__resultItem {
+  color: #414a4c;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+.payrollcalculator-module__yweEva__resultItem strong {
+  color: #0d1b2a;
+  font-weight: 500;
+}
+
+.payrollcalculator-module__yweEva__resultItem.payrollcalculator-module__yweEva__highlight {
+  color: #0d1b2a;
+  font-weight: 600;
+}
+
+.payrollcalculator-module__yweEva__historySection {
+  padding: 2rem 1.8rem 3rem;
+}
+
+.payrollcalculator-module__yweEva__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.payrollcalculator-module__yweEva__sectionHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.payrollcalculator-module__yweEva__sectionHeader h2 {
+  color: #0d1b2a;
+  margin-bottom: .5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.payrollcalculator-module__yweEva__sectionSubtitle {
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.payrollcalculator-module__yweEva__cardsGrid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.payrollcalculator-module__yweEva__historyCard {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  transition: transform .3s, box-shadow .3s;
+  display: flex;
+  box-shadow: 0 4px 12px #0000000d;
+}
+
+.payrollcalculator-module__yweEva__historyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px #0d1b2a1a;
+}
+
+.payrollcalculator-module__yweEva__cardTitle {
+  color: #0d1b2a;
+  border-bottom: 2px solid #e9ecef;
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.payrollcalculator-module__yweEva__cardList {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.payrollcalculator-module__yweEva__cardListItem {
+  color: #414a4c;
+  margin-bottom: .8rem;
+  padding-left: 1.2rem;
+  font-size: .95rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.payrollcalculator-module__yweEva__cardListItem:before {
+  content: "•";
+  color: #0d1b2a;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.payrollcalculator-module__yweEva__ctaSection {
+  text-align: center;
+  color: #fff;
+  background-color: #0d1b2a;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  padding: 3rem 1.8rem;
+}
+
+.payrollcalculator-module__yweEva__ctaSection h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.payrollcalculator-module__yweEva__ctaSection p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.payrollcalculator-module__yweEva__ctaButton {
+  color: #0d1b2a;
+  cursor: pointer;
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: .8rem;
+  width: auto;
+  min-width: 200px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px #00000026;
+}
+
+.payrollcalculator-module__yweEva__ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px #0003;
+}
+
+.payrollcalculator-module__yweEva__buttonText {
+  font-weight: 600;
+}
+
+.payrollcalculator-module__yweEva__ctaButton .payrollcalculator-module__yweEva__arrow {
+  font-size: 1.2em;
+  transition: transform .3s;
+}
+
+.payrollcalculator-module__yweEva__ctaButton:hover .payrollcalculator-module__yweEva__arrow {
+  transform: translateX(6px);
+}
+
+.payrollcalculator-module__yweEva__ctaButton:before {
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle, #ffffff80 0%, #0000 70%);
+  width: 120px;
+  height: 120px;
+  transition: opacity .4s;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.payrollcalculator-module__yweEva__ctaButton:hover:before {
+  opacity: 1;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+}
+
+@media (max-width: 1024px) {
+  .payrollcalculator-module__yweEva__page {
+    padding-top: 4.5rem;
+  }
+
+  .payrollcalculator-module__yweEva__cardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaSection {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .payrollcalculator-module__yweEva__page {
+    padding-top: 4rem;
+  }
+
+  .payrollcalculator-module__yweEva__hero {
+    padding: 2.5rem 1.5rem 1.8rem;
+  }
+
+  .payrollcalculator-module__yweEva__title {
+    font-size: 1.7rem;
+  }
+
+  .payrollcalculator-module__yweEva__subtitle {
+    font-size: 1.05rem;
+  }
+
+  .payrollcalculator-module__yweEva__calculatorCard {
+    margin-bottom: 2.5rem;
+  }
+
+  .payrollcalculator-module__yweEva__historySection {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .payrollcalculator-module__yweEva__sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .payrollcalculator-module__yweEva__sectionHeader h2 {
+    font-size: 1.6rem;
+  }
+
+  .payrollcalculator-module__yweEva__sectionSubtitle {
+    font-size: 1rem;
+  }
+
+  .payrollcalculator-module__yweEva__cardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .payrollcalculator-module__yweEva__historyCard {
+    padding: 1.25rem;
+  }
+
+  .payrollcalculator-module__yweEva__cardTitle {
+    font-size: 1.15rem;
+  }
+
+  .payrollcalculator-module__yweEva__cardListItem {
+    font-size: .9rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaSection {
+    margin: 1.5rem auto 3rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaSection h2 {
+    font-size: 1.4rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaSection p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .payrollcalculator-module__yweEva__page {
+    padding: 0 .5rem;
+  }
+
+  .payrollcalculator-module__yweEva__hero {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .payrollcalculator-module__yweEva__title {
+    margin-bottom: .6rem;
+    font-size: 1.5rem;
+  }
+
+  .payrollcalculator-module__yweEva__subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .payrollcalculator-module__yweEva__calculatorCard {
+    border-radius: 12px;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .payrollcalculator-module__yweEva__form {
+    padding: 1.2rem;
+  }
+
+  .payrollcalculator-module__yweEva__instruction {
+    font-size: .95rem;
+  }
+
+  .payrollcalculator-module__yweEva__input {
+    height: 48px;
+    padding: .65rem .75rem;
+    font-size: .95rem;
+  }
+
+  .payrollcalculator-module__yweEva__label {
+    font-size: .95rem;
+  }
+
+  .payrollcalculator-module__yweEva__submitBtn {
+    padding: .7rem 1.1rem;
+    font-size: .95rem;
+  }
+
+  .payrollcalculator-module__yweEva__resultSection {
+    padding: 1rem 1.2rem;
+  }
+
+  .payrollcalculator-module__yweEva__resultSection h3 {
+    font-size: 1.05rem;
+  }
+
+  .payrollcalculator-module__yweEva__resultItem {
+    font-size: .9rem;
+  }
+
+  .payrollcalculator-module__yweEva__historySection {
+    padding: 1.5rem .5rem 2rem;
+  }
+
+  .payrollcalculator-module__yweEva__sectionHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .payrollcalculator-module__yweEva__sectionHeader h2 {
+    font-size: 1.4rem;
+  }
+
+  .payrollcalculator-module__yweEva__sectionSubtitle {
+    font-size: .95rem;
+  }
+
+  .payrollcalculator-module__yweEva__cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .payrollcalculator-module__yweEva__historyCard {
+    padding: 1.2rem;
+  }
+
+  .payrollcalculator-module__yweEva__cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .payrollcalculator-module__yweEva__cardListItem {
+    margin-bottom: .6rem;
+    font-size: .85rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaSection {
+    border-radius: 10px;
+    margin: 1rem auto 2.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaSection h2 {
+    margin-bottom: .8rem;
+    font-size: 1.3rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaSection p {
+    margin-bottom: 1.2rem;
+    font-size: .95rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaButton {
+    min-width: 180px;
+    padding: .9rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .payrollcalculator-module__yweEva__page {
+    padding-top: 3rem;
+  }
+
+  .payrollcalculator-module__yweEva__title {
+    font-size: 1.4rem;
+  }
+
+  .payrollcalculator-module__yweEva__subtitle {
+    font-size: .95rem;
+  }
+
+  .payrollcalculator-module__yweEva__input {
+    height: 46px;
+    font-size: .9rem;
+  }
+
+  .payrollcalculator-module__yweEva__submitBtn {
+    padding: .65rem 1rem;
+    font-size: .9rem;
+  }
+
+  .payrollcalculator-module__yweEva__sectionHeader h2 {
+    font-size: 1.3rem;
+  }
+
+  .payrollcalculator-module__yweEva__sectionSubtitle {
+    font-size: .9rem;
+  }
+
+  .payrollcalculator-module__yweEva__historyCard {
+    padding: 1rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaSection h2 {
+    font-size: 1.2rem;
+  }
+
+  .payrollcalculator-module__yweEva__ctaButton {
+    padding: .8rem 1.2rem;
+    font-size: .95rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .payrollcalculator-module__yweEva__page {
+    padding-top: 2.5rem;
+  }
+
+  .payrollcalculator-module__yweEva__cardsGrid {
+    gap: .75rem;
+  }
+
+  .payrollcalculator-module__yweEva__historyCard {
+    padding: .9rem;
+  }
+}
+
+.payrollcalculator-module__yweEva__page, .payrollcalculator-module__yweEva__container, .payrollcalculator-module__yweEva__historyCard, .payrollcalculator-module__yweEva__calculatorCard {
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=src_pages_payrollcalculator_module_e4ef49b6.css.map*/

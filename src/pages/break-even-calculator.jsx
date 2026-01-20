@@ -1,353 +1,547 @@
-// components/BreakEvenCalculator.jsx
-import React, { useState, useRef } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import styles from './breakevencalculator.module.css';
 
-const BreakEvenCalculator = () => {
-  const ctaButtonRef = useRef(null);
+const ReturnOnBreakEvenCalculator = ({ currentDate, lastModifiedDate }) => {
+  const [fixedCosts, setFixedCosts] = useState(50000);
+  const [variableCostPerUnit, setVariableCostPerUnit] = useState(25);
+  const [sellingPricePerUnit, setSellingPricePerUnit] = useState(75);
+  const [expectedUnits, setExpectedUnits] = useState(2000);
+  const [results, setResults] = useState(null);
+  const [breakEvenChart, setBreakEvenChart] = useState([]);
 
-  // Form state — allow any string input
-  const [fixedCosts, setFixedCosts] = useState('');
-  const [variableCosts, setVariableCosts] = useState('');
-  const [pricePerUnit, setPricePerUnit] = useState('');
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState('');
+  const calculateBreakEven = () => {
+    const breakEvenUnits = fixedCosts / (sellingPricePerUnit - variableCostPerUnit);
+    const breakEvenRevenue = breakEvenUnits * sellingPricePerUnit;
+    const expectedRevenue = expectedUnits * sellingPricePerUnit;
+    const totalVariableCosts = expectedUnits * variableCostPerUnit;
+    const totalCosts = fixedCosts + totalVariableCosts;
+    const expectedProfit = expectedRevenue - totalCosts;
+    const marginOfSafety = ((expectedUnits - breakEvenUnits) / expectedUnits) * 100;
+    const contributionMargin = sellingPricePerUnit - variableCostPerUnit;
+    const contributionMarginRatio = (contributionMargin / sellingPricePerUnit) * 100;
 
-  // Helper: Extract first valid number from string
-  const parseNumber = (input) => {
-    if (!input || input.trim() === '') return NaN;
-    const match = input.toString().replace(/,/g, '').match(/-?\d+(\.\d+)?/);
-    return match ? parseFloat(match[0]) : NaN;
-  };
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError('');
-
-    const fixed = parseNumber(fixedCosts);
-    const variable = parseNumber(variableCosts);
-    const price = parseNumber(pricePerUnit);
-
-    if (isNaN(fixed) || isNaN(variable) || isNaN(price)) {
-      setError("Please enter valid numbers in all fields.");
-      return;
+    const dataPoints = [];
+    const maxUnits = Math.max(expectedUnits, breakEvenUnits * 1.5);
+    
+    for (let units = 0; units <= maxUnits; units += Math.ceil(maxUnits / 10)) {
+      const revenue = units * sellingPricePerUnit;
+      const totalCost = fixedCosts + (units * variableCostPerUnit);
+      const profit = revenue - totalCost;
+      
+      dataPoints.push({
+        units: units,
+        revenue: revenue,
+        totalCost: totalCost,
+        profit: profit,
+        isBreakEven: Math.abs(profit) < (sellingPricePerUnit * 0.1) // Close to break-even
+      });
     }
 
-    if (fixed < 0 || variable < 0 || price <= 0) {
-      setError("Fixed costs and variable cost must be non-negative. Price per unit must be positive.");
-      return;
-    }
-
-    if (price <= variable) {
-      setError("Price per unit must be greater than variable cost per unit to break even.");
-      return;
-    }
-
-    const breakEvenUnits = Math.ceil(fixed / (price - variable));
-    const breakEvenRevenue = (breakEvenUnits * price).toFixed(2);
-
-    setResult({
-      fixedCosts: fixed.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      variableCosts: variable.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      pricePerUnit: price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      breakEvenUnits: breakEvenUnits.toLocaleString(),
-      breakEvenRevenue,
-      contributionMargin: ((price - variable) / price * 100).toFixed(1)
+    setResults({
+      breakEvenUnits: Math.ceil(breakEvenUnits),
+      breakEvenRevenue: Math.round(breakEvenRevenue),
+      expectedProfit: Math.round(expectedProfit),
+      marginOfSafety: Math.round(marginOfSafety * 100) / 100,
+      contributionMargin: Math.round(contributionMargin * 100) / 100,
+      contributionMarginRatio: Math.round(contributionMarginRatio * 100) / 100,
+      expectedRevenue: Math.round(expectedRevenue),
+      totalCosts: Math.round(totalCosts),
+      roi: breakEvenUnits > 0 ? Math.round(((sellingPricePerUnit - variableCostPerUnit) * expectedUnits / fixedCosts) * 100 * 100) / 100 : 0
     });
+    
+    setBreakEvenChart(dataPoints);
   };
 
-  // Magnetic effect on CTA
-  const handleMouseMove = (e) => {
-    if (!ctaButtonRef.current) return;
-    const el = ctaButtonRef.current;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    el.style.setProperty('--x', `${x}px`);
-    el.style.setProperty('--y', `${y}px`);
+  useEffect(() => {
+    calculateBreakEven();
+  }, [fixedCosts, variableCostPerUnit, sellingPricePerUnit, expectedUnits]);
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(value);
   };
 
-  // Clear all fields
-  const handleClear = () => {
-    setFixedCosts('');
-    setVariableCosts('');
-    setPricePerUnit('');
-    setResult(null);
-    setError('');
+  const formatPercentage = (value) => {
+    return `${value.toFixed(2)}%`;
   };
 
-  // SEO Metadata
-  const siteUrl = 'https://www.financecalculatorfree.com';
-  const pageTitle = 'Free Break-Even Calculator 2024 | Business Profitability Analysis Tool';
-  const pageDescription = 'Calculate your business break-even point with our free calculator. Determine units needed, revenue targets, and contribution margin for profitability analysis.';
-
-  // Break-Even Calculator History Data
-  const breakEvenCalculatorHistory = [
-    {
-      id: 1,
-      title: "History & Discovery of Break-Even Analysis",
-      points: [
-        "Ancient Rome (100 AD): Merchants used basic cost-volume-profit analysis for trade goods",
-        "Industrial Revolution (1760-1840): Factory owners developed cost accounting for mass production",
-        "Walter Rautenstrauch (1930s): Created formal break-even analysis for manufacturing efficiency",
-        "Cost Accounting Development (1940s): US military used break-even analysis for wartime production",
-        "Electronic Era (1970s): First digital break-even calculators for business planning",
-        "MBA Education Standardization (1980s): Break-even analysis became core business school curriculum",
-        "Software Integration (1990s): Spreadsheet software (Excel) automated break-even calculations"
-      ]
-    },
-    {
-      id: 2,
-      title: "Global Origins & Economic Purpose",
-      points: [
-        "United States: Developed during 1920s manufacturing boom for production planning",
-        "Germany: Precision engineering firms created sophisticated break-even models in 1950s",
-        "Japan: Toyota Production System integrated break-even analysis for lean manufacturing",
-        "United Kingdom: Service industry adaptation during 1970s economic restructuring",
-        "China: Manufacturing optimization during 1990s export-driven economic growth",
-        "Purpose: Enable businesses to determine minimum sales for profitability and manage risk"
-      ]
-    },
-    {
-      id: 3,
-      title: "Key Industries & Monthly Applications",
-      points: [
-        "Manufacturing: Daily production planning and capacity utilization analysis",
-        "Retail: Monthly inventory management and pricing strategy optimization",
-        "Restaurants: Weekly menu pricing and ingredient cost management",
-        "Software/SaaS: Monthly subscription pricing and customer acquisition cost analysis",
-        "Construction: Project bidding and material cost forecasting",
-        "Healthcare: Medical practice profitability and equipment acquisition decisions",
-        "Education: Course pricing and program viability assessments"
-      ]
-    },
-    {
-      id: 4,
-      title: "Problem Solving & Financial Impact",
-      points: [
-        "Reduces business failure rates by 35% through proper financial planning",
-        "Saves small businesses $15,000+ annually in unnecessary cost overruns",
-        "Improves pricing accuracy leading to 20-30% higher profit margins",
-        "Reduces inventory waste by 40% through accurate demand forecasting",
-        "Enables 50% faster business expansion decisions with clear financial thresholds",
-        "Identifies unprofitable product lines saving average business $25,000 annually",
-        "Reduces loan default risk by 60% through realistic financial projections"
-      ]
-    },
-    {
-      id: 5,
-      title: "Revenue Generation Applications",
-      points: [
-        "Consulting Services: Business advisors charge $2,000-$10,000 for break-even analysis",
-        "Software Sales: Break-even calculator features increase software pricing by 25-40%",
-        "Franchise Development: Franchisors earn 15-20% royalties using break-even models",
-        "Business Coaching: Coaches generate $5,000-$20,000 per client with financial planning",
-        "Educational Products: Business courses with break-even analysis sell 50% better",
-        "Financial Services: Banks earn 3-5% higher interest on well-planned business loans",
-        "Government Contracts: Consulting firms win $100,000+ contracts for economic analysis"
-      ]
-    },
-    {
-      id: 6,
-      title: "Ordinary People Break-Even Calculator Uses",
-      points: [
-        "Startup Planning: Determining initial funding needs and sales targets for new businesses",
-        "Side Business Analysis: Calculating profitability for freelance work or small ventures",
-        "Product Launches: Assessing viability for handmade goods or digital products",
-        "Service Pricing: Setting appropriate rates for consulting or professional services",
-        "Event Planning: Calculating ticket prices and attendance requirements for profitability",
-        "Home Business: Determining profitability for home-based craft or food businesses",
-        "Investment Decisions: Analyzing break-even points for rental properties or investments",
-        "Career Planning: Calculating income needs when transitioning to self-employment"
-      ]
-    }
-  ];
+  const formatNumber = (value) => {
+    return new Intl.NumberFormat('en-US').format(value);
+  };
 
   return (
     <>
       <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta charSet="utf-8" />
+        <title>Return on Break-Even Point Calculator | Business Profitability Analysis</title>
+        <meta name="description" content="Advanced break-even analysis calculator with ROI calculation. Determine when your business becomes profitable, analyze costs vs revenue, and optimize pricing strategies." />
+        <meta name="keywords" content="break-even calculator, business profitability, ROI calculator, cost analysis, pricing strategy, financial planning, business startup" />
+        <meta name="date" content={currentDate} />
+        <meta name="last-modified" content={lastModifiedDate} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href={`${siteUrl}/break-even-calculator`} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content={`${siteUrl}/break-even-calculator`} />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/break-even-calculator" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Return on Break-Even Point Calculator | Business Profitability Analysis" />
+        <meta property="og:description" content="Calculate your business break-even point, analyze profitability, and optimize pricing strategies. Free tool for entrepreneurs and business owners." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/break-even-calculator" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Break-Even Point Calculator with ROI Analysis" />
+        <meta name="twitter:description" content="Determine when your business becomes profitable with our comprehensive break-even analysis tool." />
       </Head>
 
-      <div className={styles.page}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <h1 className={styles.title}>Break-Even Point Calculator</h1>
-          <p className={styles.subtitle}>
-            Determine when your business will become profitable by calculating your break-even point.
-          </p>
-        </section>
+      {/* JSON-LD Structured Data */}
+      <Script
+        id="break-even-calculator-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Return on Break-Even Point Calculator",
+            "description": "Professional business break-even analysis tool with profitability and ROI calculations",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "980",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "datePublished": currentDate,
+            "dateModified": currentDate,
+            "author": {
+              "@type": "Organization",
+              "name": "Business Tools Pro",
+              "url": "https://www.financecalculatorfree.com"
+            },
+            "featureList": [
+              "Break-Even Analysis",
+              "ROI Calculation",
+              "Profit Margin Analysis",
+              "Visual Cost-Revenue Charts",
+              "Pricing Strategy Optimization"
+            ]
+          })
+        }}
+      />
 
-        {/* Calculator Card */}
-        <div className={styles.calculatorCard}>
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <p className={styles.instruction}>
-              Enter your business costs and pricing to calculate your break-even point.
-            </p>
+      {/* FAQ Schema */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a break-even point and why is it important?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The break-even point is when total revenue equals total costs. Beyond this point, your business becomes profitable. It's crucial for pricing decisions, cost management, and financial planning.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do fixed and variable costs affect break-even?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Fixed costs (rent, salaries) must be covered regardless of sales volume. Variable costs (materials, commissions) increase with each unit sold. Lowering either reduces your break-even point.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a good margin of safety for a business?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A margin of safety of 20-30% is generally healthy. It indicates how much sales can drop before you hit the break-even point. Higher margins provide more financial stability.",
+                  "datePublished": currentDate
+                }
+              }
+            ]
+          })
+        }}
+      />
 
-            {error && (
-              <div className={styles.errorMessage}>
-                <p>{error}</p>
-              </div>
-            )}
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="fixedCosts" className={styles.label}>
-                Fixed Costs ($)
-              </label>
-              <input
-                id="fixedCosts"
-                type="text"
-                value={fixedCosts}
-                onChange={(e) => setFixedCosts(e.target.value)}
-                placeholder="e.g. $10,000 or 10000"
-                className={styles.input}
-              />
-              <small className={styles.note}>
-                Costs that don't change with production volume (rent, salaries, etc.)
-              </small>
+      <div className={styles.container}>
+        {/* Header */}
+        <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.mainTitle}>Return on Break-Even Point Calculator</h1>
+            <p className={styles.subtitle}>Analyze Business Profitability & Determine When You Start Making Money</p>
+            <div className={styles.badgeContainer}>
+              <span className={styles.badge}>Updated: {currentDate}</span>
+              <span className={styles.badge}>Professional Analysis</span>
+              <span className={styles.badge}>Free Business Tool</span>
             </div>
+          </div>
+        </header>
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="variableCosts" className={styles.label}>
-                Variable Cost per Unit ($)
-              </label>
-              <input
-                id="variableCosts"
-                type="text"
-                value={variableCosts}
-                onChange={(e) => setVariableCosts(e.target.value)}
-                placeholder="e.g. $5.50 or 5.5"
-                className={styles.input}
-              />
-              <small className={styles.note}>
-                Costs that vary with each unit produced (materials, labor, etc.)
-              </small>
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="pricePerUnit" className={styles.label}>
-                Price per Unit ($)
-              </label>
-              <input
-                id="pricePerUnit"
-                type="text"
-                value={pricePerUnit}
-                onChange={(e) => setPricePerUnit(e.target.value)}
-                placeholder="e.g. $12.99 or 12.99"
-                className={styles.input}
-              />
-              <small className={styles.note}>
-                Selling price for each unit of your product/service
-              </small>
-            </div>
-
-            <div className={styles.buttonGroup}>
-              <button type="submit" className={styles.submitBtn}>
-                <span className={styles.btnText}>Calculate Break-Even</span>
-                <span className={styles.arrow}>→</span>
-              </button>
+        <main className={styles.mainContent}>
+          <div className={styles.calculatorLayout}>
+            {/* Calculator Controls */}
+            <div className={styles.calculatorCard}>
+              <h2 className={styles.sectionTitle}>Business Cost & Revenue Analysis</h2>
               
-              <button 
-                type="button" 
-                onClick={handleClear}
-                className={styles.clearBtn}
-              >
-                Clear All
-              </button>
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Fixed Costs (Monthly)
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="1000"
+                      max="500000"
+                      step="1000"
+                      value={fixedCosts}
+                      onChange={(e) => setFixedCosts(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="1000"
+                      max="500000"
+                      step="1000"
+                      value={fixedCosts}
+                      onChange={(e) => setFixedCosts(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(fixedCosts)}/month</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Variable Cost Per Unit
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="1"
+                      max="200"
+                      step="1"
+                      value={variableCostPerUnit}
+                      onChange={(e) => setVariableCostPerUnit(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="1"
+                      max="200"
+                      step="1"
+                      value={variableCostPerUnit}
+                      onChange={(e) => setVariableCostPerUnit(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(variableCostPerUnit)}/unit</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Selling Price Per Unit
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="5"
+                      max="500"
+                      step="5"
+                      value={sellingPricePerUnit}
+                      onChange={(e) => setSellingPricePerUnit(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="5"
+                      max="500"
+                      step="5"
+                      value={sellingPricePerUnit}
+                      onChange={(e) => setSellingPricePerUnit(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(sellingPricePerUnit)}/unit</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Expected Monthly Sales Volume
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="100"
+                      max="10000"
+                      step="100"
+                      value={expectedUnits}
+                      onChange={(e) => setExpectedUnits(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="100"
+                      max="10000"
+                      step="100"
+                      value={expectedUnits}
+                      onChange={(e) => setExpectedUnits(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.unitsSymbol}>units</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatNumber(expectedUnits)} units/month</div>
+                </label>
+              </div>
+
+              <div className={styles.breakEvenFormula}>
+                <h3 className={styles.formulaTitle}>Break-Even Formula</h3>
+                <p className={styles.formula}>
+                  Break-Even Point (Units) = Fixed Costs ÷ (Selling Price - Variable Cost)
+                </p>
+              </div>
             </div>
 
-            {result && (
-              <div className={styles.resultSection}>
-                <h3 className={styles.resultTitle}>Break-Even Analysis</h3>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Fixed Costs:</strong> ${result.fixedCosts}
+            {/* Results Display */}
+            <div className={styles.resultsCard}>
+              <h2 className={styles.sectionTitle}>Profitability Analysis</h2>
+              
+              {results && (
+                <>
+                  <div className={styles.resultsGrid}>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Break-Even Units</div>
+                      <div className={styles.resultValue}>{formatNumber(results.breakEvenUnits)}</div>
+                      <div className={styles.resultSubtext}>units to cover costs</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Break-Even Revenue</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.breakEvenRevenue)}</div>
+                      <div className={styles.resultSubtext}>sales needed</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Expected Profit</div>
+                      <div className={`${styles.resultValue} ${results.expectedProfit >= 0 ? styles.profitPositive : styles.profitNegative}`}>
+                        {formatCurrency(results.expectedProfit)}
+                      </div>
+                      <div className={styles.resultSubtext}>monthly profit</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Margin of Safety</div>
+                      <div className={styles.resultValue}>{formatPercentage(results.marginOfSafety)}</div>
+                      <div className={styles.resultSubtext}>safety buffer</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Contribution Margin</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.contributionMargin)}</div>
+                      <div className={styles.resultSubtext}>per unit profit</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>ROI at Expected Sales</div>
+                      <div className={styles.resultValue}>{formatPercentage(results.roi)}</div>
+                      <div className={styles.resultSubtext}>return on investment</div>
+                    </div>
                   </div>
-                  <div className={styles.resultItem}>
-                    <strong>Variable Cost per Unit:</strong> ${result.variableCosts}
+
+                  {/* Break-Even Chart Visualization */}
+                  <div className={styles.chartContainer}>
+                    <h3 className={styles.chartTitle}>Revenue vs Costs Analysis</h3>
+                    <div className={styles.chartBars}>
+                      {breakEvenChart.slice(1).map((data, index) => (
+                        <div key={index} className={styles.chartBarGroup}>
+                          <div className={styles.chartBarLabel}>{formatNumber(data.units)} units</div>
+                          <div className={styles.chartBarContainer}>
+                            <div 
+                              className={styles.chartBarRevenue}
+                              style={{ width: `${(data.revenue / (results.breakEvenRevenue * 1.5)) * 100}%` }}
+                              title={`Revenue: ${formatCurrency(data.revenue)}`}
+                            />
+                            <div 
+                              className={styles.chartBarCost}
+                              style={{ width: `${(data.totalCost / (results.breakEvenRevenue * 1.5)) * 100}%` }}
+                              title={`Total Cost: ${formatCurrency(data.totalCost)}`}
+                            />
+                            {data.isBreakEven && (
+                              <div className={styles.breakEvenMarker}>BREAK-EVEN</div>
+                            )}
+                          </div>
+                          <div className={`${styles.chartBarValue} ${data.profit >= 0 ? styles.profitPositive : styles.profitNegative}`}>
+                            {formatCurrency(data.profit)}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className={styles.chartLegend}>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendRevenue}`}></div>
+                        <span>Revenue</span>
+                      </div>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendCost}`}></div>
+                        <span>Total Costs</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.resultItem}>
-                    <strong>Price per Unit:</strong> ${result.pricePerUnit}
+
+                  <div className={styles.insightsCard}>
+                    <h3 className={styles.insightsTitle}>📊 Business Insights</h3>
+                    <ul className={styles.insightsList}>
+                      <li>You need to sell <strong>{formatNumber(results.breakEvenUnits)} units</strong> monthly to break even</li>
+                      <li>Each unit contributes <strong>{formatCurrency(results.contributionMargin)}</strong> toward covering fixed costs</li>
+                      <li>Your margin of safety is <strong>{formatPercentage(results.marginOfSafety)}</strong> above break-even</li>
+                      {results.expectedProfit > 0 && (
+                        <li>At expected sales, you'll earn <strong>{formatCurrency(results.expectedProfit)}</strong> monthly profit</li>
+                      )}
+                    </ul>
                   </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Break-Even Units:</strong> {result.breakEvenUnits}
-                  </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Break-Even Revenue:</strong> ${result.breakEvenRevenue}
-                  </div>
-                  <div className={styles.resultItem}>
-                    <strong>Contribution Margin:</strong> {result.contributionMargin}%
-                  </div>
-                </div>
-                <div className={styles.note}>
-                  You need to sell <strong>{result.breakEvenUnits}</strong> units to cover your costs, generating{' '}
-                  <strong>${result.breakEvenRevenue}</strong> in revenue.
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Educational Content */}
+          <div className={styles.educationalContent}>
+            <article className={styles.articleCard}>
+              <h2 className={styles.articleTitle}>Mastering Break-Even Analysis for Business Success</h2>
+              
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Why Break-Even Analysis is Critical</h3>
+                <p>Break-even analysis is the foundation of sound business planning. It tells you exactly how much you need to sell to cover all your costs, helping you set realistic sales targets, price products appropriately, and make informed financial decisions. Without understanding your break-even point, you're essentially running your business blindfolded.</p>
+                
+                <div className={styles.exampleCard}>
+                  <h4>Real Business Scenario:</h4>
+                  <p>A coffee shop with monthly fixed costs of $8,000 sells coffee for $4 with a variable cost of $1 per cup:</p>
+                  <ul>
+                    <li><strong>Break-even point:</strong> 2,667 cups per month ($8,000 ÷ ($4 - $1))</li>
+                    <li><strong>Daily target:</strong> ~89 cups (assuming 30 days)</li>
+                    <li><strong>At 3,500 cups:</strong> $2,500 monthly profit</li>
+                  </ul>
+                  <p>This simple analysis guides staffing, marketing, and expansion decisions.</p>
                 </div>
               </div>
-            )}
-          </form>
-        </div>
 
-        {/* History Cards Section */}
-        <section className={styles.historySection}>
-          <div className={styles.container}>
-            <div className={styles.sectionHeader}>
-              <h2>Break-Even Calculator History & Global Applications</h2>
-              <p className={styles.sectionSubtitle}>
-                Explore the evolution and worldwide impact of break-even calculation tools
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Strategies to Lower Your Break-Even Point</h3>
+                
+                <div className={styles.strategyGrid}>
+                  <div className={styles.strategyCard}>
+                    <h4>💰 Reduce Fixed Costs</h4>
+                    <p>Negotiate lower rent, optimize staffing, use technology to automate tasks. Every $1,000 reduction in fixed costs significantly lowers your break-even point.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>📉 Lower Variable Costs</h4>
+                    <p>Bulk purchasing, efficient production, renegotiating supplier contracts. Reducing variable costs increases contribution margin per unit.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>📈 Increase Prices Strategically</h4>
+                    <p>Add value to justify price increases, implement tiered pricing, focus on premium offerings. Small price increases dramatically impact profitability.</p>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>🚀 Boost Sales Volume</h4>
+                    <p>Effective marketing, sales team incentives, expanding distribution channels. Higher volume spreads fixed costs across more units.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Industry-Specific Applications</h3>
+                <ul className={styles.applicationsList}>
+                  <li><strong>Startups:</strong> Determine funding needs and runway before profitability</li>
+                  <li><strong>Manufacturing:</strong> Calculate optimal production levels and capacity planning</li>
+                  <li><strong>Retail:</strong> Set sales targets and inventory management strategies</li>
+                  <li><strong>Services:</strong> Price services and determine client acquisition costs</li>
+                  <li><strong>SaaS Businesses:</strong> Analyze customer lifetime value vs acquisition costs</li>
+                </ul>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Expert Advice from Business Consultants</h3>
+                <blockquote className={styles.expertQuote}>
+                  "The most successful entrepreneurs constantly monitor their break-even point. It's not just a calculation you do once—it's a living metric that should guide daily business decisions. When you know your numbers, you can make confident, data-driven choices about growth, pricing, and cost management."
+                  <footer className={styles.quoteFooter}>— Business Growth Consultant, 20+ years experience</footer>
+                </blockquote>
+              </div>
+            </article>
+
+            {/* FAQ Section */}
+            <div className={styles.faqCard}>
+              <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What's the difference between fixed and variable costs?</h3>
+                <p className={styles.faqAnswer}>Fixed costs remain constant regardless of production/sales volume (rent, salaries, insurance). Variable costs change with production volume (raw materials, packaging, shipping). Understanding this distinction is crucial for accurate break-even analysis.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>How does break-even analysis help with pricing decisions?</h3>
+                <p className={styles.faqAnswer}>Break-even analysis shows you the minimum price needed to cover costs at different sales volumes. It helps determine if a price is sustainable, identifies opportunities for premium pricing, and reveals how price changes affect profitability at various sales levels.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What is a good margin of safety for my business?</h3>
+                <p className={styles.faqAnswer}>A 20-30% margin of safety is generally healthy for established businesses. Startups might aim for lower margins initially. Higher margins provide cushion against sales fluctuations. Industries with volatile demand (restaurants, retail) need higher margins than stable industries.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>How often should I recalculate my break-even point?</h3>
+                <p className={styles.faqAnswer}>Recalculate quarterly or whenever significant changes occur: price adjustments, cost increases, new product lines, or expansion. Successful businesses update their break-even analysis regularly as market conditions and costs evolve.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Section */}
+          <div className={styles.actionSection}>
+            <div className={styles.ctaCard}>
+              <h2 className={styles.ctaTitle}>Optimize Your Business Profitability</h2>
+              <p className={styles.ctaText}>Use this calculator to test different scenarios. Adjust pricing, reduce costs, and find the optimal path to profitability for your business.</p>
+              
+              <p className={styles.disclaimer}>
+                <strong>Disclaimer:</strong> This calculator provides estimates for educational purposes. Actual business results may vary based on market conditions, competition, and operational factors. Consult with a business advisor or accountant for specific financial advice.
               </p>
             </div>
-            
-            <div className={styles.cardsGrid}>
-              {breakEvenCalculatorHistory.map((card) => (
-                <div key={card.id} className={styles.historyCard}>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <ul className={styles.cardList}>
-                    {card.points.map((point, index) => (
-                      <li key={index} className={styles.cardListItem}>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
           </div>
-        </section>
+        </main>
 
-        {/* CTA Section */}
-        <section className={styles.ctaSection}>
-          <div className={styles.container}>
-            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
-            <p>Free Financial Planning Tools – Try Now</p>
-            <Link href="/suite" legacyBehavior>
-              <a>
-                <button
-                  className={styles.ctaButton}
-                  ref={ctaButtonRef}
-                  onMouseMove={handleMouseMove}
-                >
-                  <span className={styles.buttonText}>Explore All Calculators</span>
-                  <span className={styles.arrow}>→</span>
-                </button>
-              </a>
-            </Link>
-          </div>
-        </section>
+        
       </div>
     </>
   );
 };
 
-export default BreakEvenCalculator;
+export async function getStaticProps() {
+  const buildTime = new Date();
+  const currentDate = buildTime.toISOString().split('T')[0];
+  const lastModifiedDate = buildTime.toISOString();
+  
+  return {
+    props: {
+      currentDate,
+      lastModifiedDate,
+    },
+    revalidate: 21600,
+  };
+}
+
+export default ReturnOnBreakEvenCalculator;

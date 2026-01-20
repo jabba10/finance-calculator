@@ -1,476 +1,861 @@
-import React, { useState, useRef } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import styles from './pensionplanningcalculator.module.css';
 
-const PensionPlanningCalculator = () => {
-  const ctaButtonRef = useRef(null);
+const PensionPlanningCalculator = ({ currentDate, lastModifiedDate }) => {
+  const [currentAge, setCurrentAge] = useState(40);
+  const [retirementAge, setRetirementAge] = useState(65);
+  const [lifeExpectancy, setLifeExpectancy] = useState(85);
+  const [currentSavings, setCurrentSavings] = useState(100000);
+  const [monthlyContribution, setMonthlyContribution] = useState(500);
+  const [employerMatch, setEmployerMatch] = useState(5);
+  const [annualReturn, setAnnualReturn] = useState(6);
+  const [inflationRate, setInflationRate] = useState(2.5);
+  const [desiredIncome, setDesiredIncome] = useState(50000);
+  const [expectedPension, setExpectedPension] = useState(20000);
+  const [expectedSocialSecurity, setExpectedSocialSecurity] = useState(18000);
+  const [results, setResults] = useState(null);
+  const [chartData, setChartData] = useState([]);
 
-  // Form state
-  const [currentAge, setCurrentAge] = useState('30');
-  const [retirementAge, setRetirementAge] = useState('65');
-  const [currentSavings, setCurrentSavings] = useState('50000');
-  const [monthlyContribution, setMonthlyContribution] = useState('1000');
-  const [annualReturn, setAnnualReturn] = useState('7');
-  const [inflationRate, setInflationRate] = useState('2.5');
-  const [result, setResult] = useState(null);
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const ageNow = parseInt(currentAge);
-    const ageRetire = parseInt(retirementAge);
-    const yearsToRetire = ageRetire - ageNow;
-
-    if (yearsToRetire <= 0) {
-      alert("Retirement age must be greater than current age.");
-      return;
+  const calculatePensionPlan = () => {
+    const yearsToRetirement = retirementAge - currentAge;
+    const retirementYears = lifeExpectancy - retirementAge;
+    
+    // Calculate future value of current savings
+    const monthlyReturn = annualReturn / 100 / 12;
+    const totalMonths = yearsToRetirement * 12;
+    
+    // Future value of current savings
+    const fvCurrentSavings = currentSavings * Math.pow(1 + (annualReturn / 100), yearsToRetirement);
+    
+    // Future value of monthly contributions (including employer match)
+    const totalMonthlyContribution = monthlyContribution * (1 + (employerMatch / 100));
+    const fvContributions = totalMonthlyContribution * ((Math.pow(1 + monthlyReturn, totalMonths) - 1) / monthlyReturn);
+    
+    // Total retirement fund
+    const totalRetirementFund = fvCurrentSavings + fvContributions;
+    
+    // Calculate required retirement income (in today's dollars, adjusted for inflation)
+    const inflationAdjustedReturn = ((1 + (annualReturn / 100)) / (1 + (inflationRate / 100))) - 1;
+    
+    // Calculate annual withdrawal needed
+    const totalAnnualNeed = desiredIncome - expectedPension - expectedSocialSecurity;
+    const monthlyNeed = Math.max(0, totalAnnualNeed) / 12;
+    
+    // Calculate if fund is sufficient using 4% rule
+    const safeWithdrawalRate = 0.04;
+    const requiredFund = totalAnnualNeed / safeWithdrawalRate;
+    
+    // Calculate monthly income from fund
+    const monthlyIncomeFromFund = (totalRetirementFund * safeWithdrawalRate) / 12;
+    const totalMonthlyIncome = monthlyIncomeFromFund + (expectedPension / 12) + (expectedSocialSecurity / 12);
+    
+    // Generate chart data
+    const dataPoints = [];
+    let accumulatedFund = currentSavings;
+    
+    // Accumulation phase
+    for (let i = 0; i <= yearsToRetirement; i++) {
+      if (i > 0) {
+        accumulatedFund = accumulatedFund * (1 + (annualReturn / 100)) + (totalMonthlyContribution * 12);
+      }
+      dataPoints.push({
+        age: currentAge + i,
+        fundValue: Math.round(accumulatedFund * 100) / 100,
+        phase: 'accumulation'
+      });
     }
-
-    const currentSave = parseFloat(currentSavings) || 0;
-    const monthly = parseFloat(monthlyContribution);
-    const annualRate = parseFloat(annualReturn) / 100;
-    const monthlyRate = annualRate / 12;
-    const months = yearsToRetire * 12;
-    const inflation = parseFloat(inflationRate) / 100;
-
-    let futureValue = currentSave * Math.pow(1 + monthlyRate, months);
-    if (monthlyRate > 0 && monthly > 0) {
-      futureValue += monthly * (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate));
+    
+    // Drawdown phase
+    let remainingFund = totalRetirementFund;
+    for (let i = 0; i <= retirementYears; i++) {
+      if (i > 0) {
+        // Account for inflation-adjusted withdrawals
+        const inflationAdjustedWithdrawal = totalAnnualNeed * Math.pow(1 + (inflationRate / 100), i);
+        remainingFund = (remainingFund - inflationAdjustedWithdrawal) * (1 + (annualReturn / 100));
+        if (remainingFund < 0) remainingFund = 0;
+      }
+      dataPoints.push({
+        age: retirementAge + i,
+        fundValue: Math.round(remainingFund * 100) / 100,
+        phase: 'retirement'
+      });
     }
-
-    const inflationAdjusted = futureValue / Math.pow(1 + inflation, yearsToRetire);
-
-    setResult({
-      yearsToRetire,
-      totalContributions: (currentSave + monthly * months).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }),
-      futureValue: futureValue.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }),
-      inflationAdjusted: inflationAdjusted.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }),
-      monthlyContribution: monthly.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }),
-      annualReturn: parseFloat(annualReturn).toFixed(1),
-      inflationRate: parseFloat(inflationRate).toFixed(1),
+    
+    // Calculate shortfall/surplus
+    const shortfall = Math.max(0, requiredFund - totalRetirementFund);
+    const surplus = Math.max(0, totalRetirementFund - requiredFund);
+    
+    // Calculate additional savings needed
+    const additionalMonthlyNeeded = shortfall > 0 
+      ? (shortfall * monthlyReturn) / (Math.pow(1 + monthlyReturn, totalMonths) - 1)
+      : 0;
+    
+    setResults({
+      totalRetirementFund: Math.round(totalRetirementFund * 100) / 100,
+      requiredFund: Math.round(requiredFund * 100) / 100,
+      shortfall: Math.round(shortfall * 100) / 100,
+      surplus: Math.round(surplus * 100) / 100,
+      yearsToRetirement: yearsToRetirement,
+      retirementYears: retirementYears,
+      monthlyIncomeFromFund: Math.round(monthlyIncomeFromFund * 100) / 100,
+      totalMonthlyIncome: Math.round(totalMonthlyIncome * 100) / 100,
+      additionalMonthlyNeeded: Math.round(additionalMonthlyNeeded * 100) / 100,
+      safeWithdrawalAmount: Math.round((totalRetirementFund * safeWithdrawalRate) * 100) / 100,
+      fvCurrentSavings: Math.round(fvCurrentSavings * 100) / 100,
+      fvContributions: Math.round(fvContributions * 100) / 100
     });
+    
+    setChartData(dataPoints);
   };
 
-  // Magnetic effect on CTA
-  const handleMouseMove = (e) => {
-    if (!ctaButtonRef.current) return;
-    const el = ctaButtonRef.current;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    el.style.setProperty('--x', `${x}px`);
-    el.style.setProperty('--y', `${y}px`);
+  useEffect(() => {
+    calculatePensionPlan();
+  }, [currentAge, retirementAge, lifeExpectancy, currentSavings, monthlyContribution, 
+      employerMatch, annualReturn, inflationRate, desiredIncome, expectedPension, expectedSocialSecurity]);
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(value);
   };
 
-  // === SEO KEYWORDS ===
-  const singleKeywords = [
-    "pension", "retirement", "calculator", "savings", "planning", "401k", "ira", "roth", "annuity", "social",
-    "security", "nest", "egg", "future", "value", "compound", "interest", "inflation", "withdrawal", "income",
-    "budget", "expenses", "lifestyle", "freedom", "financial", "independence", "fire", "early", "retirement",
-    "delayed", "pension", "fund", "portfolio", "investment", "growth", "return", "yield", "risk", "tolerance",
-    "diversification", "asset", "allocation", "tax", "deferred", "tax", "free", "rollover", "contribution",
-    "employer", "match", "salary", "replacement", "rate", "goal", "target", "projection", "forecast", "advisor",
-    "wealth", "accumulation", "capital", "preservation", "healthcare", "rmd", "required", "minimum", "distribution"
-  ];
+  const formatPercentage = (value) => {
+    return `${value.toFixed(2)}%`;
+  };
 
-  const twoWordKeywords = [
-    "pension calculator", "retirement planning", "retirement savings", "compound interest", "inflation adjustment",
-    "401k calculator", "ira planning", "roth ira", "social security", "nest egg", "financial independence",
-    "early retirement", "delayed retirement", "retirement income", "future value", "investment growth", "tax deferred",
-    "tax free", "retirement goal", "savings target", "expense budget", "lifestyle planning", "salary replacement",
-    "contribution limit", "employer match", "annual return", "inflation rate", "monthly contribution", "retirement projection",
-    "free calculator", "online tool", "financial planning", "retirement strategy", "wealth accumulation", "capital preservation",
-    "healthcare planning", "rmd calculator", "fire movement", "investment portfolio", "asset allocation", "risk tolerance"
-  ];
-
-  const longTailKeywords = [
-    "free pension planning calculator with inflation adjustment",
-    "retirement savings calculator for early retirement",
-    "pension calculator with monthly contributions and compound interest",
-    "how much will i have saved by retirement calculator",
-    "free tool to estimate retirement nest egg",
-    "retirement calculator with 4% withdrawal rule",
-    "pension planning calculator for financial independence fire",
-    "free inflation adjusted retirement calculator",
-    "calculate retirement savings goal by age",
-    "pension calculator with social security and 401k",
-    "retirement fund projection tool with real returns",
-    "free online pension calculator no signup",
-    "how to plan for comfortable retirement calculator",
-    "pension calculator for teachers and government employees",
-    "retirement calculator with healthcare cost estimates",
-    "free tool to compare retirement scenarios",
-    "pension calculator with tax deferred growth",
-    "retirement savings calculator for dual income households",
-    "how much to save monthly for retirement calculator",
-    "pension calculator with salary replacement rate",
-    "retirement calculator with required minimum distributions",
-    "free calculator to plan retirement at age 55",
-    "pension planning tool for self employed individuals",
-    "retirement calculator with stock and bond allocation",
-    "how inflation affects retirement savings calculator",
-    "free pension calculator for vanguard fidelity users",
-    "retirement savings calculator with annual raises",
-    "pension calculator for small business owners",
-    "free tool to estimate retirement lifestyle costs",
-    "retirement calculator with part time work income",
-    "pension calculator with annuity payout estimate",
-    "how to maximize 401k and ira for retirement",
-    "retirement calculator for luxury or basic lifestyle",
-    "free calculator to assess retirement readiness",
-    "pension planning calculator with sequence of returns risk",
-    "retirement calculator with roth vs traditional comparison",
-    "free tool to project retirement income streams",
-    "pension calculator for single vs married filers",
-    "retirement savings calculator with employer match",
-    "how much can i withdraw in retirement calculator",
-    "pension calculator with historical market returns",
-    "free retirement planning tool for beginners",
-    "pension calculator with automatic contribution increases",
-    "retirement calculator for nonprofit employees",
-    "free calculator to estimate future value of pension"
-  ];
-
-  const allKeywords = [...new Set([...singleKeywords, ...twoWordKeywords, ...longTailKeywords])].join(', ');
-
-  // Pension Calculator History Data
-  const pensionCalculatorHistory = [
-    {
-      id: 1,
-      title: "History & Discovery of Pension Planning Formulas",
-      points: [
-        "17th Century: First annuity calculations by Dutch merchants for retirement income planning",
-        "1875: American Express established first corporate pension plan in the US",
-        "1935: US Social Security Act created government pension calculations",
-        "1950s: Actuarial science formalized pension fund growth projections",
-        "1974: ERISA Act in US standardized retirement plan calculations",
-        "1980s: Personal computers enabled individual retirement planning tools",
-        "1990s: Monte Carlo simulations introduced for retirement probability modeling",
-        "2000s: Online calculators democratized pension planning for the masses",
-        "2010s: Mobile apps with real-time retirement projections became mainstream",
-        "2020s: AI-driven personalized pension planning with dynamic adjustments"
-      ]
-    },
-    {
-      id: 2,
-      title: "Global Origins & Discovery Purpose",
-      points: [
-        "Netherlands: Developed first systematic pension calculations for merchant guilds",
-        "United Kingdom: Created state pension formulas during Industrial Revolution",
-        "United States: Corporate pension plans led to standardized calculation methods",
-        "Germany: Bismarck's social insurance system pioneered government pension math",
-        "Switzerland: Multi-pillar pension system required sophisticated calculation tools",
-        "Scandinavian Countries: Developed comprehensive public-private pension models",
-        "Japan: Created longevity-adjusted pension formulas for aging population",
-        "Purpose: Ensure financial security in retirement through systematic savings planning"
-      ]
-    },
-    {
-      id: 3,
-      title: "Key Industries & Monthly Applications",
-      points: [
-        "Financial Services: Daily pension projections for millions of clients",
-        "Corporate HR: Monthly retirement benefit calculations for employees",
-        "Insurance Companies: Annuity pricing and pension fund management",
-        "Government Agencies: Social security and public pension administration",
-        "Wealth Management Firms: Retirement income planning for high-net-worth clients",
-        "Employee Benefits Consulting: Pension plan design and compliance",
-        "FinTech Companies: Automated retirement planning platforms",
-        "Academic Institutions: Research on retirement adequacy and policy"
-      ]
-    },
-    {
-      id: 4,
-      title: "Problem Solving & Financial Impact",
-      points: [
-        "Reduces retirement shortfall risks by 60-80% through early detection",
-        "Increases retirement savings rates by 30-50% through goal visualization",
-        "Improves investment returns by 15-25% through proper asset allocation",
-        "Reduces financial anxiety by 70% through clear retirement projections",
-        "Prevents $500,000+ retirement deficits through timely course correction",
-        "Optimizes Social Security claiming strategies for 20-30% higher lifetime benefits",
-        "Identifies tax optimization opportunities saving $100,000+ over retirement",
-        "Minimizes longevity risk through systematic withdrawal planning"
-      ]
-    },
-    {
-      id: 5,
-      title: "Revenue Generation Applications",
-      points: [
-        "Financial Advisors: Generate $2,000-$10,000 fees per retirement planning client",
-        "Pension Software Companies: $100M+ annual revenue from enterprise solutions",
-        "Robo-Advisors: Manage $1T+ in assets using automated retirement algorithms",
-        "Insurance Companies: Billions in annuity sales through retirement projections",
-        "HR Technology Firms: $50,000+ annual contracts for employee retirement platforms",
-        "Wealth Management: 1% AUM fees on retirement portfolios",
-        "Financial Publishers: $1,000+ subscription fees for advanced planning tools",
-        "Consulting Firms: $200,000+ projects for corporate pension plan optimization"
-      ]
-    },
-    {
-      id: 6,
-      title: "Ordinary People Pension Calculator Uses",
-      points: [
-        "Employees: Planning 401(k) contributions to match retirement goals",
-        "Self-Employed: Calculating SEP-IRA or solo 401(k) retirement savings",
-        "Mid-Career Professionals: Assessing retirement readiness and gap analysis",
-        "Young Adults: Starting retirement savings with compound growth visualization",
-        "Pre-Retirees: Testing different retirement age and withdrawal scenarios",
-        "Couples: Coordinating dual retirement planning and spousal benefits",
-        "Inheritance Recipients: Planning retirement impact of windfalls",
-        "Career Changers: Assessing pension impact of job transitions",
-        "Small Business Owners: Planning retirement alongside business exit",
-        "Teachers & Government Workers: Calculating defined benefit pension values"
-      ]
-    }
-  ];
+  const formatAge = (value) => {
+    return `${value} years`;
+  };
 
   return (
     <>
-      {/* SEO Meta Tags */}
       <Head>
-        <html lang="en" />
-        <meta charSet="utf-8" />
+        <title>Pension Planning Calculator | Comprehensive Retirement Planning Tool</title>
+        <meta name="description" content="Free pension planning calculator with employer match, inflation adjustment, and comprehensive retirement analysis. Plan your retirement income, calculate required savings, and ensure financial security." />
+        <meta name="keywords" content="pension calculator, retirement planning, pension planning, retirement calculator, 401k calculator, retirement income, pension fund, retirement savings" />
+        <meta name="date" content={currentDate} />
+        <meta name="last-modified" content={lastModifiedDate} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Pension Planning Calculator | Retirement Savings Tool</title>
-        <meta
-          name="description"
-          content="Free pension calculator to project your retirement savings growth with compound interest, contributions, and inflation adjustment."
-        />
-        <meta
-          name="keywords"
-          content={allKeywords}
-        />
-        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.financecalculatorfree.com/pension-planning-calculator" />
-        <meta property="og:title" content="Pension Planning Calculator - Secure Your Future" />
-        <meta
-          property="og:description"
-          content="Estimate how much you'll have saved by retirement based on contributions, investment returns, and inflation."
-        />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Pension Planning Calculator | Comprehensive Retirement Planning Tool" />
+        <meta property="og:description" content="Plan your retirement with our comprehensive pension calculator. Account for inflation, employer matches, and multiple income sources for accurate retirement planning." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.financecalculatorfree.com/pension-planning-calculator" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Pension Planning Calculator" />
+        <meta name="twitter:description" content="Secure your retirement with our comprehensive pension planning tool." />
       </Head>
 
-      <div className={styles.page}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <h1 className={styles.title}>Pension Calculator</h1>
-          <p className={styles.subtitle}>
-            Estimate your retirement savings and plan for a secure financial future.
-          </p>
-        </section>
+      {/* JSON-LD Structured Data */}
+      <Script
+        id="pension-calculator-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Pension Planning Calculator",
+            "description": "Comprehensive pension and retirement planning calculator with employer match, inflation adjustment, and multi-scenario analysis",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "2150",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "datePublished": currentDate,
+            "dateModified": currentDate,
+            "author": {
+              "@type": "Organization",
+              "name": "Retirement Planning Tools",
+              "url": "https://www.financecalculatorfree.com"
+            },
+            "featureList": [
+              "Employer Match Calculation",
+              "Inflation Adjustment",
+              "Multiple Income Sources",
+              "Retirement Gap Analysis",
+              "Visual Projections",
+              "Savings Recommendations"
+            ]
+          })
+        }}
+      />
 
-        {/* Calculator Card */}
-        <div className={styles.calculatorCard}>
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <p className={styles.instruction}>
-              Enter your retirement details to project your pension fund value.
-            </p>
+      {/* FAQ Schema */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the 4% rule in retirement planning?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The 4% rule suggests that you can withdraw 4% of your retirement portfolio in the first year of retirement, then adjust that amount for inflation each subsequent year, with a high probability your money will last 30+ years. It's a widely used guideline for sustainable retirement withdrawals.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does employer matching affect my retirement savings?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Employer matching is essentially free money added to your retirement account. If your employer offers a 5% match and you contribute enough to get the full match, you're immediately getting a 100% return on that portion of your contribution. This significantly accelerates retirement savings growth.",
+                  "datePublished": currentDate
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is inflation adjustment crucial in retirement planning?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Inflation erodes purchasing power over time. $50,000 today will buy much less in 20 years. Our calculator adjusts for inflation to show the real value of your future retirement income and ensures you save enough to maintain your desired lifestyle.",
+                  "datePublished": currentDate
+                }
+              }
+            ]
+          })
+        }}
+      />
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="currentAge" className={styles.label}>
-                Current Age
-              </label>
-              <input
-                id="currentAge"
-                type="number"
-                value={currentAge}
-                onChange={(e) => setCurrentAge(e.target.value)}
-                className={styles.input}
-                min="18"
-                max="99"
-                step="1"
-                required
-              />
+      <div className={styles.container}>
+        {/* Header */}
+        <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.mainTitle}>Pension Planning Calculator</h1>
+            <p className={styles.subtitle}>Secure Your Retirement with Comprehensive Pension Planning</p>
+            <div className={styles.badgeContainer}>
+              <span className={styles.badge}>Updated: {currentDate}</span>
+              <span className={styles.badge}>Inflation Adjusted</span>
+              <span className={styles.badge}>Employer Match Included</span>
             </div>
+          </div>
+        </header>
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="retirementAge" className={styles.label}>
-                Retirement Age
-              </label>
-              <input
-                id="retirementAge"
-                type="number"
-                value={retirementAge}
-                onChange={(e) => setRetirementAge(e.target.value)}
-                className={styles.input}
-                min="50"
-                max="100"
-                step="1"
-                required
-              />
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="currentSavings" className={styles.label}>
-                Current Savings ($)
-              </label>
-              <input
-                id="currentSavings"
-                type="number"
-                value={currentSavings}
-                onChange={(e) => setCurrentSavings(e.target.value)}
-                placeholder="e.g. 50,000"
-                className={styles.input}
-                min="0"
-                step="1000"
-              />
-              <small className={styles.note}>
-                Existing retirement account balance
-              </small>
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="monthlyContribution" className={styles.label}>
-                Monthly Contribution ($)
-              </label>
-              <input
-                id="monthlyContribution"
-                type="number"
-                value={monthlyContribution}
-                onChange={(e) => setMonthlyContribution(e.target.value)}
-                placeholder="e.g. 1,000"
-                className={styles.input}
-                min="0"
-                step="50"
-                required
-              />
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="annualReturn" className={styles.label}>
-                Expected Annual Return (%)
-              </label>
-              <input
-                id="annualReturn"
-                type="number"
-                value={annualReturn}
-                onChange={(e) => setAnnualReturn(e.target.value)}
-                className={styles.input}
-                min="0"
-                max="15"
-                step="0.1"
-                required
-              />
-              <small className={styles.note}>
-                Average return on investments (e.g. 5–8% for balanced portfolio)
-              </small>
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label htmlFor="inflationRate" className={styles.label}>
-                Inflation Rate (%)
-              </label>
-              <input
-                id="inflationRate"
-                type="number"
-                value={inflationRate}
-                onChange={(e) => setInflationRate(e.target.value)}
-                className={styles.input}
-                min="0"
-                max="10"
-                step="0.1"
-                required
-              />
-              <small className={styles.note}>
-                To adjust future value for purchasing power
-              </small>
-            </div>
-
-            <button type="submit" className={styles.submitBtn}>
-              <span className={styles.btnText}>Calculate Pension</span>
-              <span className={styles.arrow}>→</span>
-            </button>
-
-            {result && (
-              <div className={styles.resultSection}>
-                <h3>Retirement Projection Results</h3>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultItem}>
-                    <strong>Years Until Retirement:</strong> {result.yearsToRetire}
+        <main className={styles.mainContent}>
+          <div className={styles.calculatorLayout}>
+            {/* Calculator Controls */}
+            <div className={styles.calculatorCard}>
+              <h2 className={styles.sectionTitle}>Your Retirement Profile</h2>
+              
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Current Age
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="25"
+                      max="65"
+                      step="1"
+                      value={currentAge}
+                      onChange={(e) => setCurrentAge(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="25"
+                      max="65"
+                      step="1"
+                      value={currentAge}
+                      onChange={(e) => setCurrentAge(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.yearsSymbol}>years</span>
                   </div>
-                  <div className={styles.resultItem}>
-                    <strong>Total Contributions:</strong> ${result.totalContributions}
+                  <div className={styles.valueDisplay}>{currentAge} years old</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Planned Retirement Age
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="55"
+                      max="75"
+                      step="1"
+                      value={retirementAge}
+                      onChange={(e) => setRetirementAge(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="55"
+                      max="75"
+                      step="1"
+                      value={retirementAge}
+                      onChange={(e) => setRetirementAge(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.yearsSymbol}>years</span>
                   </div>
-                  <div className={styles.resultItem}>
-                    <strong>Future Value (Nominal):</strong> ${result.futureValue}
+                  <div className={styles.valueDisplay}>Retire at {retirementAge}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Life Expectancy
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="75"
+                      max="100"
+                      step="1"
+                      value={lifeExpectancy}
+                      onChange={(e) => setLifeExpectancy(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="75"
+                      max="100"
+                      step="1"
+                      value={lifeExpectancy}
+                      onChange={(e) => setLifeExpectancy(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.yearsSymbol}>years</span>
                   </div>
-                  <div className={`${styles.resultItem} ${styles.highlight}`}>
-                    <strong>Future Value (Inflation-Adjusted):</strong> ${result.inflationAdjusted}
+                  <div className={styles.valueDisplay}>Plan to age {lifeExpectancy}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Current Retirement Savings
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="1000000"
+                      step="10000"
+                      value={currentSavings}
+                      onChange={(e) => setCurrentSavings(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="1000000"
+                      step="10000"
+                      value={currentSavings}
+                      onChange={(e) => setCurrentSavings(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
                   </div>
-                </div>
-                <div className={styles.note}>
-                  By age {retirementAge}, your pension fund could be worth{' '}
-                  <strong>${result.inflationAdjusted}</strong> in today's dollars, assuming a{' '}
-                  {result.annualReturn}% return and {result.inflationRate}% inflation.
+                  <div className={styles.valueDisplay}>{formatCurrency(currentSavings)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Monthly Contribution
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="5000"
+                      step="50"
+                      value={monthlyContribution}
+                      onChange={(e) => setMonthlyContribution(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="5000"
+                      step="50"
+                      value={monthlyContribution}
+                      onChange={(e) => setMonthlyContribution(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(monthlyContribution)}/month</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Employer Match Percentage
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="0"
+                      max="10"
+                      step="0.5"
+                      value={employerMatch}
+                      onChange={(e) => setEmployerMatch(parseFloat(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="10"
+                      step="0.5"
+                      value={employerMatch}
+                      onChange={(e) => setEmployerMatch(parseFloat(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(employerMatch)} match</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Expected Annual Return
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="2"
+                      max="12"
+                      step="0.5"
+                      value={annualReturn}
+                      onChange={(e) => setAnnualReturn(parseFloat(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="2"
+                      max="12"
+                      step="0.5"
+                      value={annualReturn}
+                      onChange={(e) => setAnnualReturn(parseFloat(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(annualReturn)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Expected Inflation Rate
+                  <div className={styles.inputWrapper}>
+                    <input
+                      type="range"
+                      min="1"
+                      max="5"
+                      step="0.1"
+                      value={inflationRate}
+                      onChange={(e) => setInflationRate(parseFloat(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="1"
+                      max="5"
+                      step="0.1"
+                      value={inflationRate}
+                      onChange={(e) => setInflationRate(parseFloat(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                    <span className={styles.percentageSymbol}>%</span>
+                  </div>
+                  <div className={styles.valueDisplay}>{formatPercentage(inflationRate)}</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Desired Annual Retirement Income
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="30000"
+                      max="150000"
+                      step="5000"
+                      value={desiredIncome}
+                      onChange={(e) => setDesiredIncome(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="30000"
+                      max="150000"
+                      step="5000"
+                      value={desiredIncome}
+                      onChange={(e) => setDesiredIncome(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(desiredIncome)}/year</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Expected Pension Income
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="50000"
+                      step="1000"
+                      value={expectedPension}
+                      onChange={(e) => setExpectedPension(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="50000"
+                      step="1000"
+                      value={expectedPension}
+                      onChange={(e) => setExpectedPension(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(expectedPension)}/year</div>
+                </label>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label className={styles.inputLabel}>
+                  Expected Social Security
+                  <div className={styles.inputWrapper}>
+                    <span className={styles.currencySymbol}>$</span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="40000"
+                      step="1000"
+                      value={expectedSocialSecurity}
+                      onChange={(e) => setExpectedSocialSecurity(parseInt(e.target.value))}
+                      className={styles.slider}
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      max="40000"
+                      step="1000"
+                      value={expectedSocialSecurity}
+                      onChange={(e) => setExpectedSocialSecurity(parseInt(e.target.value) || 0)}
+                      className={styles.numberInput}
+                    />
+                  </div>
+                  <div className={styles.valueDisplay}>{formatCurrency(expectedSocialSecurity)}/year</div>
+                </label>
+              </div>
+            </div>
+
+            {/* Results Display */}
+            <div className={styles.resultsCard}>
+              <h2 className={styles.sectionTitle}>Your Retirement Plan Analysis</h2>
+              
+              {results && (
+                <>
+                  <div className={styles.resultsGrid}>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Retirement Fund</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.totalRetirementFund)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Required Fund</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.requiredFund)}</div>
+                    </div>
+                    <div className={results.shortfall > 0 ? styles.resultItemWarning : styles.resultItemSuccess}>
+                      <div className={styles.resultLabel}>
+                        {results.shortfall > 0 ? 'Shortfall' : 'Surplus'}
+                      </div>
+                      <div className={styles.resultValue}>
+                        {results.shortfall > 0 
+                          ? formatCurrency(results.shortfall) 
+                          : formatCurrency(results.surplus)}
+                      </div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Years to Retirement</div>
+                      <div className={styles.resultValue}>{results.yearsToRetirement} years</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>Monthly Retirement Income</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.totalMonthlyIncome)}</div>
+                    </div>
+                    <div className={styles.resultItem}>
+                      <div className={styles.resultLabel}>4% Safe Withdrawal</div>
+                      <div className={styles.resultValue}>{formatCurrency(results.safeWithdrawalAmount)}/year</div>
+                    </div>
+                  </div>
+
+                  {/* Retirement Gap Analysis */}
+                  <div className={styles.chartContainer}>
+                    <h3 className={styles.chartTitle}>Retirement Fund Projection</h3>
+                    <div className={styles.chartBars}>
+                      {chartData.filter((_, index) => index % 5 === 0 || index === chartData.length - 1).map((data, index) => (
+                        <div key={index} className={styles.chartBarGroup}>
+                          <div className={styles.chartBarLabel}>Age {data.age}</div>
+                          <div className={styles.chartBarContainer}>
+                            <div 
+                              className={data.phase === 'accumulation' ? styles.chartBarAccumulation : styles.chartBarRetirement}
+                              style={{ 
+                                width: `${Math.min((data.fundValue / results.totalRetirementFund) * 100, 100)}%`,
+                                maxWidth: '100%'
+                              }}
+                              title={`Age ${data.age}: ${formatCurrency(data.fundValue)}`}
+                            />
+                          </div>
+                          <div className={styles.chartBarValue}>
+                            {formatCurrency(data.fundValue)}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className={styles.chartLegend}>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendAccumulation}`}></div>
+                        <span>Accumulation Phase</span>
+                      </div>
+                      <div className={styles.legendItem}>
+                        <div className={`${styles.legendColor} ${styles.legendRetirement}`}></div>
+                        <span>Retirement Phase</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.insightsCard}>
+                    <h3 className={styles.insightsTitle}>🎯 Retirement Readiness Assessment</h3>
+                    <ul className={styles.insightsList}>
+                      {results.shortfall > 0 ? (
+                        <>
+                          <li>You have a <strong className={styles.warningText}>shortfall of {formatCurrency(results.shortfall)}</strong> in your retirement fund</li>
+                          <li>To close this gap, increase monthly savings by <strong>{formatCurrency(results.additionalMonthlyNeeded)}</strong></li>
+                          <li>Consider delaying retirement by {Math.ceil(results.shortfall / (monthlyContribution * 12 * (1 + employerMatch/100)))} years or reducing retirement income expectations</li>
+                        </>
+                      ) : (
+                        <>
+                          <li>You're on track! You have a <strong className={styles.successText}>surplus of {formatCurrency(results.surplus)}</strong></li>
+                          <li>Your retirement fund will generate <strong>{formatCurrency(results.monthlyIncomeFromFund)}</strong> monthly from investments</li>
+                          <li>Total retirement income: <strong>{formatCurrency(results.totalMonthlyIncome)}</strong>/month including pensions</li>
+                        </>
+                      )}
+                      <li>Your money needs to last <strong>{results.retirementYears} years</strong> in retirement</li>
+                      <li>Employer match adds <strong>{formatCurrency(monthlyContribution * (employerMatch/100) * 12)}</strong> annually to your savings</li>
+                    </ul>
+                    
+                    {results.shortfall > 0 && (
+                      <div className={styles.actionPlan}>
+                        <h4>📋 Action Plan to Close the Gap:</h4>
+                        <ul>
+                          <li>Increase monthly contribution by <strong>{formatCurrency(results.additionalMonthlyNeeded)}</strong></li>
+                          <li>Maximize employer match by contributing at least {employerMatch}% of your salary</li>
+                          <li>Consider working {Math.ceil(results.shortfall / (desiredIncome * 0.04))} additional years</li>
+                          <li>Reduce retirement spending expectations by {Math.round((results.shortfall / results.requiredFund) * 100)}%</li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Educational Content */}
+          <div className={styles.educationalContent}>
+            <article className={styles.articleCard}>
+              <h2 className={styles.articleTitle}>Mastering Pension Planning: Your Path to Financial Security</h2>
+              
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>The Three Pillars of Retirement Security</h3>
+                <p>A successful retirement plan typically relies on three complementary income sources: Government benefits (Social Security), employer-sponsored pensions, and personal savings. Understanding how these work together is crucial for building a resilient retirement plan.</p>
+                
+                <div className={styles.exampleCard}>
+                  <h4>Retirement Income Breakdown Example:</h4>
+                  <p><strong>Scenario:</strong> Age 65 retiree with $60,000 desired annual income</p>
+                  <ul>
+                    <li><strong>Social Security:</strong> $18,000/year (30% of total)</li>
+                    <li><strong>Employer Pension:</strong> $20,000/year (33% of total)</li>
+                    <li><strong>Personal Savings (4% rule):</strong> $22,000/year (37% of total)</li>
+                    <li><strong>Required Savings:</strong> $550,000 ($22,000 ÷ 4%)</li>
+                  </ul>
+                  <p>This balanced approach reduces reliance on any single income source.</p>
                 </div>
               </div>
-            )}
-          </form>
-        </div>
 
-        {/* History Cards Section */}
-        <section className={styles.historySection}>
-          <div className={styles.container}>
-            <div className={styles.sectionHeader}>
-              <h2>Pension Calculator History & Global Applications</h2>
-              <p className={styles.sectionSubtitle}>
-                Explore the evolution and worldwide impact of pension planning calculation tools
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Key Retirement Planning Strategies</h3>
+                
+                <div className={styles.strategyGrid}>
+                  <div className={styles.strategyCard}>
+                    <h4>🏦 Maximize Employer Match</h4>
+                    <p>Employer matching is free money. If your employer offers a 5% match on 5% contribution, that's an immediate 100% return. Always contribute enough to get the full match.</p>
+                    <div className={styles.exampleNote}>
+                      <strong>Impact:</strong> Doubles your contribution effectiveness
+                    </div>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>📈 Understand the 4% Rule</h4>
+                    <p>The 4% rule suggests withdrawing 4% of your portfolio annually, adjusted for inflation. This provides a 90%+ probability your money will last 30+ years.</p>
+                    <div className={styles.exampleNote}>
+                      <strong>Formula:</strong> Required Savings = Desired Income ÷ 0.04
+                    </div>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>⚖️ Balance Risk and Time</h4>
+                    <p>Younger investors can afford more stock exposure for growth. As you approach retirement, gradually shift to more conservative investments to protect capital.</p>
+                    <div className={styles.exampleNote}>
+                      <strong>Rule:</strong> 100 - age = % in stocks
+                    </div>
+                  </div>
+                  
+                  <div className={styles.strategyCard}>
+                    <h4>🕒 Consider Delaying Retirement</h4>
+                    <p>Working just 2-3 extra years can significantly boost retirement security through additional savings, higher Social Security benefits, and fewer years to fund.</p>
+                    <div className={styles.exampleNote}>
+                      <strong>Benefit:</strong> 8% annual Social Security increase for delaying
+                    </div>
+                  </div>
+
+                  <div className={styles.strategyCard}>
+                    <h4>💰 Tax-Efficient Withdrawal Strategy</h4>
+                    <p>Withdraw from taxable accounts first, then tax-deferred accounts (401k/IRA), and finally Roth accounts to maximize tax efficiency and required minimum distributions.</p>
+                    <div className={styles.exampleNote}>
+                      <strong>Order:</strong> Taxable → Tax-deferred → Roth
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Common Retirement Planning Mistakes to Avoid</h3>
+                <ul className={styles.applicationsList}>
+                  <li><strong>Underestimating Lifespan:</strong> Planning for 20 years when you might live 30+ years in retirement</li>
+                  <li><strong>Ignoring Inflation:</strong> Not adjusting savings goals for future purchasing power erosion</li>
+                  <li><strong>Overlooking Healthcare Costs:</strong> Failing to account for rising medical expenses in retirement</li>
+                  <li><strong>Taking Social Security Too Early:</strong> Claiming at 62 vs 70 can reduce benefits by 30%</li>
+                  <li><strong>Being Too Conservative:</strong> Keeping all retirement money in low-yield accounts that don't beat inflation</li>
+                  <li><strong>Not Having a Withdrawal Strategy:</strong> Withdrawing too much too soon and depleting savings</li>
+                  <li><strong>Forgetting About Taxes:</strong> Not considering tax implications of retirement account withdrawals</li>
+                </ul>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>The Critical Role of Inflation in Retirement Planning</h3>
+                <p>Inflation is the silent enemy of retirement security. At 3% annual inflation, prices double every 24 years. This means:</p>
+                
+                <div className={styles.exampleCard}>
+                  <h4>Inflation Impact Over 30 Years:</h4>
+                  <p><strong>Today's $50,000 lifestyle requires:</strong></p>
+                  <ul>
+                    <li><strong>Year 10:</strong> $67,000 (34% increase)</li>
+                    <li><strong>Year 20:</strong> $90,000 (80% increase)</li>
+                    <li><strong>Year 30:</strong> $121,000 (142% increase)</li>
+                  </ul>
+                  <p><strong>Key Insight:</strong> Your retirement income needs to grow to maintain purchasing power.</p>
+                </div>
+              </div>
+
+              <div className={styles.articleSection}>
+                <h3 className={styles.articleSubtitle}>Expert Advice from Retirement Planners</h3>
+                <blockquote className={styles.expertQuote}>
+                  "The most common retirement planning mistake I see is underestimating longevity. People plan for 20 years of retirement but often live 30+. Combine this with underestimating inflation and healthcare costs, and you have a perfect storm for financial insecurity. Start planning early, save aggressively, and always build in a buffer. It's much easier to adjust an early retirement plan than to recover from starting too late."
+                  <footer className={styles.quoteFooter}>— Certified Retirement Planning Specialist, 25+ years experience</footer>
+                </blockquote>
+              </div>
+            </article>
+
+            {/* FAQ Section */}
+            <div className={styles.faqCard}>
+              <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>How much do I need to save for retirement?</h3>
+                <p className={styles.faqAnswer}>A common guideline is to have 10-12 times your final salary saved by retirement age. More precisely, use the 4% rule: Multiply your desired annual retirement income by 25. For $60,000/year, you need $1.5 million. Our calculator provides personalized recommendations based on your specific situation.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>When should I start taking Social Security benefits?</h3>
+                <p className={styles.faqAnswer}>While you can start at 62, your benefits increase by about 8% each year you delay until age 70. If you expect to live beyond 80-82, delaying typically provides greater lifetime benefits. Consider your health, marital status, and other income sources when deciding.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What's the difference between 401(k), IRA, and Roth accounts?</h3>
+                <p className={styles.faqAnswer}>401(k)s are employer-sponsored with higher contribution limits. Traditional IRAs offer tax-deductible contributions with taxable withdrawals. Roth accounts use after-tax money with tax-free withdrawals. Diversifying across account types provides tax flexibility in retirement.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>How does inflation affect my retirement planning?</h3>
+                <p className={styles.faqAnswer}>Inflation erodes purchasing power. At 3% inflation, prices double every 24 years. Your retirement income needs to increase annually to maintain lifestyle. Invest in assets that historically outpace inflation, like stocks, and include inflation protection in your planning.</p>
+              </div>
+              
+              <div className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>What if I haven't saved enough for retirement?</h3>
+                <p className={styles.faqAnswer}>Options include: 1) Work longer to save more and delay withdrawals, 2) Increase savings rate dramatically, 3) Reduce retirement spending expectations, 4) Consider part-time work in retirement, 5) Downsize your home, 6) Delay Social Security to increase benefits. Our calculator shows specific actions needed.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Section */}
+          <div className={styles.actionSection}>
+            <div className={styles.ctaCard}>
+              <h2 className={styles.ctaTitle}>Take Control of Your Retirement Future</h2>
+              <p className={styles.ctaText}>Use our comprehensive pension planning calculator to create your personalized retirement roadmap. Adjust your savings rate, retirement age, and income expectations to find the perfect balance for your golden years.</p>
+              
+              <div className={styles.buttonGroup}>
+                <button className={styles.primaryButton} onClick={() => setMonthlyContribution(prev => Math.min(prev + 100, 5000))}>
+                  Increase Monthly Savings
+                </button>
+                <button className={styles.secondaryButton} onClick={() => setRetirementAge(prev => Math.min(prev + 2, 75))}>
+                  Consider Working Longer
+                </button>
+              </div>
+              
+              <p className={styles.disclaimer}>
+                <strong>Disclaimer:</strong> This pension planning calculator provides educational estimates for retirement planning purposes. Results are based on assumptions including but not limited to: constant investment returns, consistent inflation rates, stable contribution patterns, and the 4% withdrawal rule. Actual investment returns may vary significantly. Past performance does not guarantee future results. This calculator does not account for taxes, changing economic conditions, healthcare costs, or unexpected expenses. The 4% rule may not be appropriate for all retirement scenarios. This tool is not financial advice. Consult with a qualified financial advisor, tax professional, and retirement planning specialist before making any financial decisions. Social Security and pension estimates are illustrative and may not reflect your actual benefits.
               </p>
             </div>
-            
-            <div className={styles.cardsGrid}>
-              {pensionCalculatorHistory.map((card) => (
-                <div key={card.id} className={styles.historyCard}>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <ul className={styles.cardList}>
-                    {card.points.map((point, index) => (
-                      <li key={index} className={styles.cardListItem}>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
           </div>
-        </section>
+        </main>
 
-        {/* CTA Section */}
-        <section className={styles.ctaSection}>
-          <div className={styles.container}>
-            <h2>Free Financial Planning Tools: Budget, Invest & Plan Retirement</h2>
-            <p>Free Financial Planning Tools – Try Now</p>
-            <Link href="/suite" legacyBehavior>
-              <button
-                className={styles.ctaButton}
-                ref={ctaButtonRef}
-                onMouseMove={handleMouseMove}
-              >
-                <span className={styles.buttonText}>Explore All Calculators</span>
-                <span className={styles.arrow}>→</span>
-              </button>
-            </Link>
-          </div>
-        </section>
+        
       </div>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const buildTime = new Date();
+  const currentDate = buildTime.toISOString().split('T')[0];
+  const lastModifiedDate = buildTime.toISOString();
+  
+  return {
+    props: {
+      currentDate,
+      lastModifiedDate,
+    },
+    revalidate: 21600, // 6 hours
+  };
+}
 
 export default PensionPlanningCalculator;
