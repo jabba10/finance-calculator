@@ -5,9 +5,9 @@
   --payrollcalc-text-light: #ffffff;
   --payrollcalc-text-dark: #1e293b;
   --payrollcalc-bg-light: #f8fafc;
-  --payrollcalc-bg-dark: #0c1421;
+  /* Removed dark background variables since we're not using dark mode */
   --payrollcalc-card-bg: #ffffff;
-  --payrollcalc-card-bg-dark: #1a2433;
+  /* Removed dark card bg */
   --payrollcalc-border-radius: 16px;
   --payrollcalc-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --payrollcalc-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -15,11 +15,6 @@
   --payrollcalc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --payrollcalc-container-width: 1280px;
   --payrollcalc-padding: 0 1.5rem;
-}
-
-body.dark-mode {
-  background-color: var(--payrollcalc-bg-dark);
-  color: #e2e8f0;
 }
 
 /* Reset */
@@ -33,7 +28,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   color: var(--payrollcalc-text-dark);
-  background: var(--payrollcalc-bg-light);
+  background: var(--payrollcalc-bg-light); /* Always light */
   transition: background-color 0.4s ease;
 }
 
@@ -104,12 +99,6 @@ body {
   transition: var(--payrollcalc-transition);
 }
 
-.dark .payrollcalc-calculator-card {
-  background: var(--payrollcalc-card-bg-dark);
-  border-color: rgba(255, 255, 255, 0.08);
-  color: var(--payrollcalc-text-light);
-}
-
 /* Instruction */
 .payrollcalc-instruction {
   font-size: 0.95rem;
@@ -117,10 +106,6 @@ body {
   opacity: 0.8;
   margin-bottom: 2rem;
   text-align: center;
-}
-
-.dark .payrollcalc-instruction {
-  color: var(--payrollcalc-text-light);
 }
 
 /* Input Group */
@@ -134,10 +119,6 @@ body {
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: var(--payrollcalc-text-dark);
-}
-
-.dark .payrollcalc-label {
-  color: var(--payrollcalc-text-light);
 }
 
 .payrollcalc-input {
@@ -156,17 +137,6 @@ body {
   box-shadow: 0 0 0 3px rgba(0, 128, 157, 0.1);
 }
 
-.dark .payrollcalc-input {
-  background: #1e293b;
-  border-color: rgba(255, 255, 255, 0.15);
-  color: #e2e8f0;
-}
-
-.dark .payrollcalc-input:focus {
-  border-color: #34d3f9;
-  box-shadow: 0 0 0 3px rgba(52, 211, 249, 0.15);
-}
-
 /* Note */
 .payrollcalc-note {
   font-size: 0.9rem;
@@ -174,10 +144,6 @@ body {
   color: var(--payrollcalc-text-dark);
   opacity: 0.7;
   margin-top: 0.8rem;
-}
-
-.dark .payrollcalc-note {
-  color: #e2e8f0;
 }
 
 /* Result */
@@ -188,19 +154,10 @@ body {
   color: var(--payrollcalc-text-dark);
 }
 
-.dark .payrollcalc-result {
-  color: #e2e8f0;
-  border-top-color: rgba(255, 255, 255, 0.1);
-}
-
 .payrollcalc-result h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
   color: #00809d;
-}
-
-.dark .payrollcalc-result h3 {
-  color: var(--payrollcalc-hover-blue);
 }
 
 /* Result Grid */
@@ -223,14 +180,6 @@ body {
   font-weight: 600;
 }
 
-.dark .payrollcalc-result-item {
-  background: rgba(52, 211, 249, 0.1);
-}
-
-.dark .payrollcalc-result-item.highlight {
-  background: rgba(34, 183, 156, 0.2);
-}
-
 /* Formula */
 .payrollcalc-formula {
   background: rgba(0, 128, 157, 0.05);
@@ -239,11 +188,6 @@ body {
   font-family: 'Courier New', monospace;
   font-size: 0.95rem;
   margin: 1rem 0;
-}
-
-.dark .payrollcalc-formula {
-  background: rgba(52, 211, 249, 0.1);
-  color: #e2e8f0;
 }
 
 /* Info Section */
@@ -263,21 +207,10 @@ body {
   line-height: 1.7;
 }
 
-.dark .payrollcalc-info-card {
-  background: var(--payrollcalc-card-bg-dark);
-  border-color: rgba(255, 255, 255, 0.06);
-  color: #e2e8f0;
-}
-
 .payrollcalc-info-card h3,
 .payrollcalc-info-card h4 {
   margin: 1.5rem 0 0.8rem 0;
   color: #00809d;
-}
-
-.dark .payrollcalc-info-card h3,
-.dark .payrollcalc-info-card h4 {
-  color: var(--payrollcalc-hover-blue);
 }
 
 .payrollcalc-info-card h3 {
@@ -306,16 +239,6 @@ body {
 .payrollcalc-table th {
   background: rgba(0, 128, 157, 0.1);
   font-weight: 600;
-}
-
-.dark .payrollcalc-table th {
-  background: rgba(52, 211, 249, 0.1);
-  color: var(--payrollcalc-hover-blue);
-}
-
-.dark .payrollcalc-table th,
-.dark .payrollcalc-table td {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 .payrollcalc-table tr:last-child td {
@@ -429,10 +352,6 @@ body {
   background: var(--payrollcalc-card-bg);
 }
 
-.dark .payrollcalc-cta-section {
-  background: var(--payrollcalc-card-bg-dark);
-}
-
 .payrollcalc-cta-section .payrollcalc-container {
   text-align: center;
   max-width: 42rem;
@@ -444,11 +363,6 @@ body {
   margin: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.dark .payrollcalc-cta-section .payrollcalc-container {
-  background: var(--payrollcalc-card-bg-dark);
-  border-color: rgba(255, 255, 255, 0.05);
 }
 
 .payrollcalc-cta-section .payrollcalc-container:hover {
@@ -465,10 +379,6 @@ body {
   letter-spacing: -0.02em;
 }
 
-.dark .payrollcalc-cta-section h2 {
-  color: var(--payrollcalc-hover-blue);
-}
-
 .payrollcalc-cta-section p {
   font-size: clamp(1rem, 2vw, 1.125rem);
   color: #4b5563;
@@ -477,10 +387,6 @@ body {
   max-width: 32rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.dark .payrollcalc-cta-section p {
-  color: #e2e8f0;
 }
 
 /* Responsive */

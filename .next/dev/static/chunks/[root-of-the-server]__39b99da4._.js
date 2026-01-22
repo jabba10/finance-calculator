@@ -2967,41 +2967,6 @@ const PayrollCalculator = ({ currentDate, lastModifiedDate })=>{
                                             lineNumber: 773,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$payrollcal$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].buttonGroup,
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$payrollcal$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].primaryButton,
-                                                    onClick: ()=>window.print(),
-                                                    children: "📄 Print Pay Stub"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/pages/payroll-calculator.jsx",
-                                                    lineNumber: 776,
-                                                    columnNumber: 17
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$payrollcal$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].secondaryButton,
-                                                    onClick: ()=>{
-                                                        const data = {
-                                                            employeeName,
-                                                            results,
-                                                            date: new Date().toLocaleDateString()
-                                                        };
-                                                        navigator.clipboard.writeText(JSON.stringify(data, null, 2));
-                                                        alert('Payroll data copied to clipboard!');
-                                                    },
-                                                    children: "📋 Copy Results"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/pages/payroll-calculator.jsx",
-                                                    lineNumber: 782,
-                                                    columnNumber: 17
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/pages/payroll-calculator.jsx",
-                                            lineNumber: 775,
-                                            columnNumber: 15
-                                        }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$payrollcal$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].disclaimer,
                                             children: [
@@ -3009,14 +2974,14 @@ const PayrollCalculator = ({ currentDate, lastModifiedDate })=>{
                                                     children: "Disclaimer:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/payroll-calculator.jsx",
-                                                    lineNumber: 799,
+                                                    lineNumber: 778,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " This calculator provides estimates based on 2024 tax rates and brackets. Actual payroll deductions may vary based on specific employer policies, additional local taxes, exact withholding allowances, and other factors. This tool is for educational purposes only and not a substitute for professional tax advice."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/payroll-calculator.jsx",
-                                            lineNumber: 798,
+                                            lineNumber: 777,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]

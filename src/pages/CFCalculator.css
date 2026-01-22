@@ -3,11 +3,12 @@
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   max-width: 500px;
   margin: 2rem auto;
+  color-scheme: light; /* Explicitly force light mode */
 }
 
 /* Card Styles */
 .cashflow-card {
-  background: #ffffff;
+  background: #ffffff !important;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -49,6 +50,7 @@
 /* Body Styles */
 .cashflow-body {
   padding: 2rem;
+  background: #ffffff !important;
 }
 
 .input-group {
@@ -83,14 +85,15 @@
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background-color: #f8fafc;
+  background-color: #f8fafc !important;
+  color: #2d3748 !important;
 }
 
 .input-wrapper input:focus {
   outline: none;
   border-color: #00b4db;
   box-shadow: 0 0 0 3px rgba(0, 180, 219, 0.1);
-  background-color: white;
+  background-color: white !important;
 }
 
 /* Button Styles */
@@ -172,7 +175,7 @@
 /* Footer Styles */
 .cashflow-footer {
   padding: 1rem 2rem;
-  background-color: #f8fafc;
+  background-color: #f8fafc !important;
   border-top: 1px solid #e2e8f0;
   text-align: center;
   font-size: 0.85rem;
@@ -197,6 +200,7 @@
   
   .cashflow-body {
     padding: 1.5rem;
+    background: #ffffff !important;
   }
   
   .result-amount {
@@ -211,13 +215,20 @@
   
   .cashflow-body {
     padding: 1.25rem;
+    background: #ffffff !important;
   }
   
   .input-wrapper input {
     padding: 0.9rem 1rem 0.9rem 2.2rem;
+    background-color: #f8fafc !important;
+    color: #2d3748 !important;
   }
   
   .calculate-btn {
     padding: 1rem;
+  }
+  
+  .cashflow-footer {
+    background-color: #f8fafc !important;
   }
 }

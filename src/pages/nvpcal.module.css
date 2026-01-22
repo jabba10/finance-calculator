@@ -271,3 +271,41 @@
     padding: 1rem;
   }
 }
+
+/* Force light mode - PREVENT SYSTEM DARK MODE OVERRIDE */
+@media (prefers-color-scheme: dark) {
+  .npv-calculator,
+  .npv-card,
+  .npv-body,
+  .npv-result,
+  .npv-footer,
+  .npv-input-group input,
+  .cashflow-input-group input {
+    background: #ffffff !important;
+    color: #2d3748 !important;
+    border-color: #e2e8f0 !important;
+  }
+  
+  .npv-input-group input:focus {
+    background: white !important;
+    border-color: #434343 !important;
+  }
+  
+  .npv-result.positive {
+    background-color: rgba(46, 204, 113, 0.1) !important;
+    border-color: rgba(46, 204, 113, 0.2) !important;
+  }
+  
+  .npv-result.negative {
+    background-color: rgba(231, 76, 60, 0.1) !important;
+    border-color: rgba(231, 76, 60, 0.2) !important;
+  }
+  
+  .positive .result-value {
+    color: #2ecc71 !important;
+  }
+  
+  .negative .result-value {
+    color: #e74c3c !important;
+  }
+}

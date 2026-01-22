@@ -1,3 +1,8 @@
+/* Enforce light color scheme */
+:root {
+  color-scheme: light;
+}
+
 .page {
   min-height: 100vh;
   background-color: white;
@@ -14,6 +19,7 @@
   padding: 3rem 1.8rem 2rem;
   text-align: center;
   margin-top: 0;
+  background-color: white; /* Explicitly white */
 }
 
 .title {
@@ -47,6 +53,7 @@
 /* Form */
 .form {
   padding: 1.4rem 1.5rem 1.5rem;
+  background-color: white;
 }
 
 .instruction {
@@ -85,6 +92,7 @@
   transition: all 0.3s ease;
   height: 50px;
   box-sizing: border-box;
+  color: #0d1b2a;
 }
 
 .input:focus {
@@ -148,7 +156,7 @@
 .resultSection {
   padding: 1.1rem 1.5rem 1.3rem;
   border-top: 1px dashed #e9ecef;
-  background-color: #f9fafa;
+  background-color: #f9fafa; /* Light gray, but acceptable */
   border-radius: 8px;
   margin-top: 1rem;
 }
@@ -187,11 +195,13 @@
 /* History Cards Section */
 .historySection {
   padding: 2rem 1.8rem 3rem;
+  background-color: white; /* Explicitly white */
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  background-color: white;
 }
 
 .sectionHeader {
@@ -271,7 +281,7 @@
   font-weight: bold;
 }
 
-/* CTA Section */
+/* CTA Section — Keep dark background (intentional design) */
 .ctaSection {
   padding: 3rem 1.8rem;
   text-align: center;
@@ -625,4 +635,9 @@
 /* Ensure no overflow */
 .page, .container, .historyCard, .calculatorCard {
   overflow: hidden;
+}
+
+/* Prevent any accidental darkening */
+* {
+  -webkit-tap-highlight-color: transparent;
 }

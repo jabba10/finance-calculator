@@ -4,6 +4,7 @@
   max-width: 500px;
   margin: 2rem auto;
   color: #2d3748;
+  background-color: #ffffff; /* Explicitly white */
 }
 
 /* Card Styles */
@@ -50,6 +51,7 @@
 /* Body Styles */
 .margin-body {
   padding: 2rem;
+  background-color: #ffffff;
 }
 
 .margin-input-group {
@@ -61,6 +63,7 @@
   margin-bottom: 0.75rem;
   font-weight: 500;
   font-size: 0.95rem;
+  color: #2d3748;
 }
 
 .input-wrapper {
@@ -85,6 +88,7 @@
   font-size: 1rem;
   transition: all 0.3s ease;
   background-color: #f8fafc;
+  color: #2d3748;
 }
 
 .margin-input-group input:focus {
@@ -131,6 +135,7 @@
   padding: 1.5rem;
   border-radius: 8px;
   animation: fadeIn 0.5s ease-out;
+  background-color: #ffffff; /* Ensure base is white */
 }
 
 .margin-result.excellent {
@@ -216,6 +221,7 @@
   font-size: 0.8rem;
   font-weight: 600;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: #2d3748;
 }
 
 .excellent .margin-indicator {
@@ -293,4 +299,9 @@
   .margin-calculate-btn {
     padding: 1rem;
   }
+}
+
+/* Enforce light color scheme */
+:root {
+  color-scheme: light;
 }

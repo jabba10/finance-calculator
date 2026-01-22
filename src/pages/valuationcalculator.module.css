@@ -1,3 +1,8 @@
+/* Force light mode globally */
+:root {
+  color-scheme: light;
+}
+
 .page {
   min-height: 100vh;
   background-color: white;
@@ -674,4 +679,40 @@
   overflow: hidden;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+/* Explicitly override any system dark mode */
+@media (prefers-color-scheme: dark) {
+  .page,
+  .calculatorCard,
+  .historyCard,
+  .resultSection,
+  .form,
+  .input,
+  body,
+  html {
+    background-color: white !important;
+    color: #0d1b2a !important;
+  }
+  
+  .input::placeholder {
+    color: #adb5bd !important;
+  }
+  
+  .label,
+  .title,
+  .subtitle,
+  .sectionHeader h2,
+  .cardTitle,
+  .resultSection h3 {
+    color: #0d1b2a !important;
+  }
+  
+  .note,
+  .instruction,
+  .cardListItem,
+  .resultItem,
+  .sectionSubtitle {
+    color: #414a4c !important;
+  }
 }

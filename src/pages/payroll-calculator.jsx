@@ -772,28 +772,7 @@ const PayrollCalculator = ({ currentDate, lastModifiedDate }) => {
               <h2 className={styles.ctaTitle}>Ready to Optimize Your Paycheck?</h2>
               <p className={styles.ctaText}>Use our calculator to experiment with different scenarios. See how adjustments to your retirement contributions, filing status, or state of residence affect your take-home pay.</p>
               
-              <div className={styles.buttonGroup}>
-                <button 
-                  className={styles.primaryButton}
-                  onClick={() => window.print()}
-                >
-                  📄 Print Pay Stub
-                </button>
-                <button 
-                  className={styles.secondaryButton}
-                  onClick={() => {
-                    const data = {
-                      employeeName,
-                      results,
-                      date: new Date().toLocaleDateString()
-                    };
-                    navigator.clipboard.writeText(JSON.stringify(data, null, 2));
-                    alert('Payroll data copied to clipboard!');
-                  }}
-                >
-                  📋 Copy Results
-                </button>
-              </div>
+              
               
               <p className={styles.disclaimer}>
                 <strong>Disclaimer:</strong> This calculator provides estimates based on 2024 tax rates and brackets. Actual payroll deductions may vary based on specific employer policies, additional local taxes, exact withholding allowances, and other factors. This tool is for educational purposes only and not a substitute for professional tax advice.

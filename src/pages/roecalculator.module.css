@@ -13,10 +13,10 @@
   line-height: 1.6;
   max-width: 100%;
   overflow-x: hidden;
-  padding-top: 80px; /* Increased padding for nav bar clearance */
+  padding-top: 80px;
 }
 
-/* Header Styles - Fixed to prevent overlap */
+/* Header Styles */
 .header {
   background: #ffffff;
   color: #000000;
@@ -25,17 +25,16 @@
   margin-bottom: 2rem;
   border-bottom: 1px solid #e0e0e0;
   position: relative;
-  z-index: 100; /* Increased z-index */
-  margin-top: -80px; /* Counteract container padding */
-  padding-top: 80px; /* Add padding for clearance */
+  z-index: 100;
+  margin-top: -80px;
+  padding-top: 80px;
 }
 
-/* Ensure header doesn't get covered by nav */
 .headerContent {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  padding-top: 20px; /* Additional spacing */
+  padding-top: 20px;
 }
 
 .mainTitle {
@@ -109,12 +108,29 @@
   color: #000000;
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #000000;
+  border-bottom: 2px solid #059669;
 }
 
 /* Input Styles */
 .inputGroup {
   margin-bottom: 1.75rem;
+}
+
+.inputGroupHalf {
+  margin-bottom: 1.75rem;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .inputRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .inputLabel {
@@ -125,13 +141,6 @@
   font-size: 1rem;
 }
 
-.inputHelp {
-  font-size: 0.875rem;
-  color: #666666;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
 .inputWrapper {
   display: flex;
   align-items: center;
@@ -140,7 +149,9 @@
   flex-wrap: wrap;
 }
 
-.currencySymbol {
+.currencySymbol,
+.percentageSymbol,
+.unitSymbol {
   font-weight: 600;
   color: #000000;
   min-width: 20px;
@@ -161,7 +172,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #000000;
+  background: #059669;
   cursor: pointer;
   border: 2px solid #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -171,7 +182,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #000000;
+  background: #059669;
   cursor: pointer;
   border: 2px solid #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -192,92 +203,74 @@
 
 .numberInput:focus {
   outline: none;
-  border-color: #000000;
+  border-color: #059669;
 }
 
 .valueDisplay {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #000000;
+  color: #059669;
   padding: 0.5rem 0;
 }
 
-.checkboxLabel {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: #333333;
+.selectInput {
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #000000;
+  background: #ffffff;
   cursor: pointer;
+  transition: border-color 0.2s;
 }
 
-.checkboxInput {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
+.selectInput:focus {
+  outline: none;
+  border-color: #059669;
+}
+
+/* Retirement Info */
+.retirementInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e0e0;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.retirementAge {
+  font-weight: 700;
+  color: #059669;
+  font-size: 1.25rem;
+}
+
+.yearsToGo {
+  font-weight: 600;
+  color: #666666;
+  background: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 2px solid #059669;
 }
 
 /* Results Styles */
-.resultsHeader {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border: 1px solid #e0e0e0;
-  text-align: center;
-}
-
-.primaryResult {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.primaryResultLabel {
-  font-size: 1rem;
-  color: #666666;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.primaryResultValue {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #000000;
-  margin-bottom: 0.5rem;
-  line-height: 1;
-}
-
-.primaryResultStatus {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.statusEmoji {
-  font-size: 1.5rem;
-}
-
-.statusText {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #000000;
-}
-
-.statusDescription {
-  font-size: 0.875rem;
-  color: #666666;
-  font-style: italic;
-  max-width: 400px;
-}
-
 .resultsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .resultItem {
@@ -286,6 +279,12 @@
   border-radius: 6px;
   text-align: center;
   border: 1px solid #e0e0e0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.resultItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .resultLabel {
@@ -300,17 +299,32 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #000000;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.highlightValue {
+  color: #059669;
+  font-size: 1.75rem;
+}
+
+.incomeValue {
+  color: #2563eb;
+  font-size: 1.75rem;
 }
 
 .resultSubtext {
-  font-size: 0.75rem;
-  color: #888888;
-  font-style: italic;
+  font-size: 0.875rem;
+  color: #666666;
+  line-height: 1.4;
+  margin-top: 0.5rem;
 }
 
-/* DuPont Analysis */
-.dupontContainer {
+.resultSubtext div {
+  margin-bottom: 0.25rem;
+}
+
+/* Chart Styles */
+.chartContainer {
   margin: 2rem 0;
   padding: 1.5rem;
   background: #ffffff;
@@ -318,307 +332,166 @@
   border: 1px solid #e0e0e0;
 }
 
-.dupontTitle {
+.chartTitle {
   font-size: 1.25rem;
   font-weight: 600;
   color: #000000;
   margin-bottom: 1.5rem;
-  text-align: center;
 }
 
-.dupontFormula {
-  margin-bottom: 1.5rem;
-}
-
-.dupontEquation {
+.chartBars {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.dupontComponent {
-  padding: 0.5rem 1rem;
-  background: #f5f5f5;
-  border-radius: 4px;
-  font-weight: 600;
-  color: #000000;
-  border: 1px solid #e0e0e0;
-}
-
-.dupontEquals,
-.dupontTimes {
-  font-weight: 700;
-  color: #000000;
-  font-size: 1.25rem;
-}
-
-.dupontValues {
+.chartBarGroup {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.dupontValue {
+.chartBarLabel {
+  min-width: 80px;
+  font-size: 0.875rem;
+  color: #333333;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.chartBarContainer {
   flex: 1;
-  min-width: 120px;
-  text-align: center;
-}
-
-.dupontValueLabel {
-  font-size: 0.75rem;
-  color: #666666;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.dupontValueNumber {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #000000;
-  margin-bottom: 0.5rem;
-}
-
-.dupontValueBar {
-  height: 8px;
+  min-width: 200px;
+  height: 30px;
   background: #f0f0f0;
   border-radius: 4px;
   overflow: hidden;
+  display: flex;
 }
 
-.dupontValueFill {
+.chartBarEmployee {
+  background: #059669;
   height: 100%;
-  background: #666666;
-  border-radius: 4px;
   transition: width 0.3s ease;
 }
 
-.dupontTimesSymbol,
-.dupontEqualsSymbol {
-  font-size: 1.5rem;
-  font-weight: 700;
+.chartBarEmployer {
+  background: #3b82f6;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.chartBarGrowth {
+  background: #f59e0b;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.chartBarValue {
+  min-width: 80px;
+  text-align: right;
+  font-weight: 600;
   color: #000000;
+  font-size: 0.9375rem;
 }
 
-.dupontResult {
-  flex: 1;
-  min-width: 120px;
-  text-align: center;
-}
-
-.dupontResult .dupontValueNumber {
-  font-size: 1.5rem;
-  color: #000000;
-}
-
-.dupontInsights {
+.chartLegend {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.5rem;
   margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e0e0e0;
-}
-
-.dupontInsight {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.dupontInsightEmoji {
-  font-size: 1.25rem;
-}
-
-.dupontInsightText {
-  font-size: 0.875rem;
-  color: #333333;
-  flex: 1;
-}
-
-/* Composition Container */
-.compositionContainer {
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background: #ffffff;
-  border-radius: 6px;
-  border: 1px solid #e0e0e0;
-}
-
-.compositionTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #000000;
-  margin-bottom: 1.5rem;
-}
-
-.compositionChart {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.compositionBar {
-  height: 40px;
-  background: #f0f0f0;
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-
-.compositionSegment {
-  height: 100%;
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  transition: width 0.3s ease;
 }
 
-.compositionSegmentLabel {
-  color: white;
-  font-weight: 600;
-  font-size: 0.875rem;
-  padding: 0 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.compositionBreakdown {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.compositionItem {
-  background: #f8f8f8;
-  padding: 1rem;
-  border-radius: 4px;
-  border: 1px solid #e0e0e0;
-}
-
-.compositionItemLabel {
+.legendItem {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
   color: #333333;
-  margin-bottom: 0.5rem;
 }
 
-.compositionDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.legendColor {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
 }
 
-.compositionItemValue {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #000000;
+.legendEmployee {
+  background: #059669;
 }
 
-/* Industry Comparison */
-.industryComparison {
-  margin: 2rem 0;
-  padding: 1.5rem;
+.legendEmployer {
+  background: #3b82f6;
+}
+
+.legendGrowth {
+  background: #f59e0b;
+}
+
+/* Milestone Card */
+.milestoneCard {
   background: #ffffff;
   border-radius: 6px;
+  padding: 1.5rem;
   border: 1px solid #e0e0e0;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
 }
 
-.comparisonTitle {
+.milestoneTitle {
   font-size: 1.25rem;
   font-weight: 600;
   color: #000000;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-.comparisonGrid {
+.milestoneGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
 }
 
-.industryCard {
-  background: #f8f8f8;
+.milestoneItem {
+  background: #ffffff;
   padding: 1rem;
   border-radius: 6px;
-  border: 1px solid #e0e0e0;
-}
-
-.industryHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.industryName {
-  font-weight: 600;
-  color: #333333;
-  font-size: 1rem;
-}
-
-.industryROE {
-  font-weight: 700;
-  color: #000000;
-  font-size: 1.25rem;
-}
-
-.industryDetails {
-  margin-bottom: 0.75rem;
-}
-
-.industryDetail {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: #666666;
-}
-
-.comparisonBar {
-  margin-bottom: 0.5rem;
-}
-
-.comparisonTrack {
-  height: 6px;
-  background: #e0e0e0;
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.comparisonFill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.3s ease;
-}
-
-.comparisonResult {
-  font-size: 0.75rem;
   text-align: center;
-  padding-top: 0.5rem;
-  border-top: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s;
 }
 
-.better {
+.milestoneItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.milestoneYear {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #059669;
+  margin-bottom: 0.5rem;
+}
+
+.milestoneBalance {
+  font-size: 1.125rem;
+  font-weight: 600;
   color: #000000;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.worse {
+.milestoneDetail {
+  font-size: 0.75rem;
   color: #666666;
-  font-weight: 600;
+  line-height: 1.4;
 }
 
 /* Insights Card */
 .insightsCard {
-  background: #f5f5f5;
-  border-left: 4px solid #000000;
+  background: #f0fdf4;
+  border-left: 4px solid #059669;
   padding: 1.5rem;
   border-radius: 6px;
   margin-top: 2rem;
@@ -639,7 +512,7 @@
 
 .insightsListItem {
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(5, 150, 105, 0.1);
   color: #333333;
 }
 
@@ -648,7 +521,7 @@
 }
 
 .insightsList strong {
-  color: #000000;
+  color: #059669;
   font-weight: 600;
 }
 
@@ -693,11 +566,11 @@
 }
 
 .exampleCard {
-  background: #f8f8f8;
+  background: #f0fdf4;
   border-radius: 6px;
   padding: 1.5rem;
   margin: 1.5rem 0;
-  border-left: 4px solid #666666;
+  border-left: 4px solid #059669;
 }
 
 .exampleCard h4 {
@@ -716,7 +589,18 @@
 .exampleCard li {
   padding: 0.5rem 0;
   color: #333333;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid rgba(5, 150, 105, 0.1);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.exampleCard li:before {
+  content: "•";
+  color: #059669;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
 }
 
 .exampleCard li:last-child {
@@ -748,7 +632,7 @@
 }
 
 .strategyCard h4 {
-  color: #000000;
+  color: #059669;
   margin-bottom: 0.75rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -776,9 +660,7 @@
 }
 
 .applicationsListItem:before {
-  content: "✓";
-  color: #000000;
-  font-weight: bold;
+  content: "⚠️";
   flex-shrink: 0;
   margin-top: 0.125rem;
 }
@@ -790,8 +672,8 @@
 
 /* Expert Quote */
 .expertQuote {
-  background: #f5f5f5;
-  border-left: 4px solid #000000;
+  background: #f0fdf4;
+  border-left: 4px solid #059669;
   padding: 2rem;
   border-radius: 6px;
   margin: 2rem 0;
@@ -860,13 +742,14 @@
   border-radius: 8px;
   padding: 3rem;
   text-align: center;
-  border: 1px solid #000000;
+  border: 2px solid #059669;
 }
 
 .ctaTitle {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: #059669;
 }
 
 .ctaText {
@@ -903,30 +786,29 @@
   text-decoration: none;
 }
 
-/* Black buttons with white text */
 .primaryButton {
-  background: #000000;
+  background: #059669;
   color: #ffffff;
-  border: 1px solid #000000;
+  border: 1px solid #059669;
 }
 
 .primaryButton:hover {
-  background: #333333;
+  background: #047857;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(5, 150, 105, 0.2);
 }
 
 .secondaryButton {
   background: transparent;
-  color: #000000;
-  border: 1px solid #000000;
+  color: #059669;
+  border: 1px solid #059669;
 }
 
 .secondaryButton:hover {
-  background: #000000;
+  background: #059669;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(5, 150, 105, 0.2);
 }
 
 .disclaimer {
@@ -935,6 +817,7 @@
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid #e0e0e0;
+  line-height: 1.6;
 }
 
 .disclaimer strong {
@@ -970,16 +853,16 @@
   margin-top: 1rem;
 }
 
-/* Responsive Design - Fixed Header Spacing */
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding-top: 70px; /* Adjusted for mobile nav */
+    padding-top: 70px;
   }
   
   .header {
     padding: 1.5rem 1rem 1rem;
-    margin-top: -70px; /* Counteract container padding */
-    padding-top: 70px; /* Add padding for clearance */
+    margin-top: -70px;
+    padding-top: 70px;
   }
   
   .mainTitle {
@@ -1003,27 +886,20 @@
     padding: 1.5rem;
   }
   
-  .resultsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .primaryResultValue {
-    font-size: 2.5rem;
-  }
-  
-  .dupontValues {
+  .chartBarGroup {
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
   
-  .dupontTimesSymbol,
-  .dupontEqualsSymbol {
-    transform: rotate(90deg);
+  .chartBarContainer {
+    min-width: 100%;
+    width: 100%;
   }
   
-  .comparisonGrid {
-    grid-template-columns: 1fr;
+  .chartBarValue {
+    text-align: left;
+    min-width: auto;
   }
   
   .ctaCard {
@@ -1048,17 +924,21 @@
   .strategyGrid {
     grid-template-columns: 1fr;
   }
+  
+  .milestoneGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding-top: 60px; /* Further adjusted for very small screens */
+    padding-top: 60px;
   }
   
   .header {
     padding: 1.25rem 1rem 1rem;
-    margin-top: -60px; /* Counteract container padding */
-    padding-top: 60px; /* Add padding for clearance */
+    margin-top: -60px;
+    padding-top: 60px;
   }
   
   .mainTitle {
@@ -1101,7 +981,9 @@
     order: 2;
   }
   
-  .currencySymbol {
+  .currencySymbol,
+  .percentageSymbol,
+  .unitSymbol {
     order: 3;
     text-align: center;
     margin-top: 0.5rem;
@@ -1116,13 +998,14 @@
     padding: 1.5rem 1rem;
   }
   
-  .primaryResultValue {
-    font-size: 2rem;
+  .milestoneGrid {
+    grid-template-columns: 1fr;
   }
   
-  .dupontEquation {
+  .retirementInfo {
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
+    text-align: center;
   }
 }
 
@@ -1133,7 +1016,7 @@
   }
   
   .header {
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #059669;
     padding: 1rem 0;
     margin-top: 0;
     padding-top: 0;
@@ -1149,7 +1032,7 @@
   }
   
   .footer {
-    border-top: 2px solid #000000;
+    border-top: 2px solid #059669;
     background: transparent;
   }
 }
@@ -1183,119 +1066,17 @@
     color: #ffffff;
     border: 2px solid #000000;
   }
+  
+  .sectionTitle {
+    border-bottom: 3px solid #000000;
+  }
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .container {
-    background: #121212;
-    color: #ffffff;
-    padding-top: 80px; /* Maintain same padding in dark mode */
-  }
-  
-  .header {
-    background: #121212;
-    color: #ffffff;
-    border-bottom: 1px solid #333333;
-    margin-top: -80px;
-    padding-top: 80px;
-  }
-  
-  .mainTitle,
-  .subtitle,
-  .sectionTitle,
-  .resultValue,
-  .dupontTitle,
-  .compositionTitle,
-  .articleTitle,
-  .articleSubtitle,
-  .faqTitle,
-  .faqQuestion,
-  .ctaTitle {
-    color: #ffffff;
-  }
-  
-  .calculatorCard,
-  .resultsCard {
-    background: #1e1e1e;
-    border: 1px solid #333333;
-  }
-  
-  .articleCard,
-  .faqCard {
-    background: #1e1e1e;
-    border: 1px solid #333333;
-  }
-  
-  .primaryButton {
-    background: #ffffff;
-    color: #000000;
-    border: 1px solid #ffffff;
-  }
-  
-  .secondaryButton {
-    background: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-  }
-  
-  .secondaryButton:hover {
-    background: #ffffff;
-    color: #000000;
-  }
-  
-  .badge {
-    background: #333333;
-    color: #ffffff;
-    border: 1px solid #666666;
-  }
-  
-  .inputLabel {
-    color: #cccccc;
-  }
-  
-  .numberInput {
-    background: #1e1e1e;
-    color: #ffffff;
-    border: 1px solid #666666;
-  }
-  
-  .slider {
-    background: #666666;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    background: #ffffff;
-    border: 2px solid #000000;
-  }
-  
-  .slider::-moz-range-thumb {
-    background: #ffffff;
-    border: 2px solid #000000;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding-top: 70px;
-    }
-    
-    .header {
-      margin-top: -70px;
-      padding-top: 70px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .container {
-      padding-top: 60px;
-    }
-    
-    .header {
-      margin-top: -60px;
-      padding-top: 60px;
-    }
-  }
-}
+/*
+✅ DARK MODE SUPPORT REMOVED ENTIRELY
+The @media (prefers-color-scheme: dark) block has been deleted.
+All elements now use light theme colors on all devices.
+*/
 
 /* Custom scrollbar for webkit browsers */
 .container ::-webkit-scrollbar {
@@ -1307,10 +1088,10 @@
 }
 
 .container ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #059669;
   border-radius: 4px;
 }
 
 .container ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #047857;
 }

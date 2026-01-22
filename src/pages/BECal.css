@@ -1,6 +1,6 @@
 /* Card Container */
 .calculator-card {
-  background: #ffffff;
+  background: #ffffff !important;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -8,6 +8,7 @@
   margin: 2rem auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.3s ease;
+  color-scheme: light; /* Explicitly force light mode */
 }
 
 .calculator-card:hover {
@@ -31,6 +32,7 @@
 /* Card Body */
 .card-body {
   padding: 2rem;
+  background: #ffffff !important;
 }
 
 /* Input Groups */
@@ -52,6 +54,8 @@
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 1rem;
+  background: #ffffff !important;
+  color: #333 !important;
   transition: border 0.3s ease;
 }
 
@@ -96,7 +100,7 @@
 .result-container {
   margin-top: 2rem;
   padding: 1.5rem;
-  background: #f8f9fa;
+  background: #f8f9fa !important;
   border-radius: 8px;
   text-align: center;
   animation: fadeIn 0.5s ease;
@@ -132,6 +136,7 @@
   .calculator-card {
     margin: 1rem;
     border-radius: 10px;
+    background: #ffffff !important;
   }
   
   .card-header {
@@ -144,6 +149,7 @@
   
   .card-body {
     padding: 1.5rem;
+    background: #ffffff !important;
   }
   
   .result-value {
@@ -155,17 +161,25 @@
   .calculator-card {
     margin: 0.5rem;
     border-radius: 8px;
+    background: #ffffff !important;
   }
   
   .card-body {
     padding: 1.2rem;
+    background: #ffffff !important;
   }
   
   .input-group input {
     padding: 0.7rem 0.9rem;
+    background: #ffffff !important;
+    color: #333 !important;
   }
   
   .calculate-btn {
     padding: 0.9rem;
+  }
+  
+  .result-container {
+    background: #f8f9fa !important;
   }
 }

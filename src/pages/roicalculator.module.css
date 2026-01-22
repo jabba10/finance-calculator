@@ -338,13 +338,13 @@
   position: relative;
 }
 
-.chartBarCumulative {
+.chartBar_cumulative {
   background: #666666;
   height: 100%;
   transition: width 0.3s ease;
 }
 
-.chartBarAnnual {
+.chartBar_annual {
   background: #333333;
   height: 100%;
   transition: width 0.3s ease;
@@ -906,108 +906,11 @@
   }
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .container {
-    background: #121212;
-    color: #ffffff;
-    padding-top: 80px;
-  }
-  
-  .header {
-    background: #121212;
-    color: #ffffff;
-    border-bottom: 1px solid #333333;
-    margin-top: -80px;
-    padding-top: 80px;
-  }
-  
-  .mainTitle,
-  .subtitle,
-  .sectionTitle,
-  .resultValue,
-  .chartTitle,
-  .articleTitle,
-  .articleSubtitle,
-  .faqTitle,
-  .faqQuestion,
-  .ctaTitle {
-    color: #ffffff;
-  }
-  
-  .calculatorCard,
-  .resultsCard {
-    background: #1e1e1e;
-    border: 1px solid #333333;
-  }
-  
-  .articleCard,
-  .faqCard {
-    background: #1e1e1e;
-    border: 1px solid #333333;
-  }
-  
-  .badge {
-    background: #333333;
-    color: #ffffff;
-    border: 1px solid #666666;
-  }
-  
-  .inputLabel {
-    color: #cccccc;
-  }
-  
-  .numberInput,
-  .selectInput {
-    background: #1e1e1e;
-    color: #ffffff;
-    border: 1px solid #666666;
-  }
-  
-  .slider {
-    background: #666666;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    background: #ffffff;
-    border: 2px solid #000000;
-  }
-  
-  .slider::-moz-range-thumb {
-    background: #ffffff;
-    border: 2px solid #000000;
-  }
-  
-  .breakEvenLine {
-    background: #ff6b6b;
-  }
-  
-  .breakEvenLine::before {
-    background: #ff6b6b;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding-top: 70px;
-    }
-    
-    .header {
-      margin-top: -70px;
-      padding-top: 70px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .container {
-      padding-top: 60px;
-    }
-    
-    .header {
-      margin-top: -60px;
-      padding-top: 60px;
-    }
-  }
-}
+/*
+✅ DARK MODE SUPPORT REMOVED ENTIRELY
+The @media (prefers-color-scheme: dark) block has been deleted.
+All elements now use light theme colors on all devices.
+*/
 
 /* Custom scrollbar for webkit browsers */
 .container ::-webkit-scrollbar {

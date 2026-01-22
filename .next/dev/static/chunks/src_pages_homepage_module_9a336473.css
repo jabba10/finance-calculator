@@ -1,12 +1,18 @@
 /* [project]/src/pages/homepage.module.css [client] (css) */
+@media (prefers-color-scheme: dark) {
+  .homepage-module__XyMAXq__landingPage, .homepage-module__XyMAXq__landingPage * {
+    --dark-mode-overridden: true;
+  }
+}
+
 .homepage-module__XyMAXq__landingPage {
   color: #0d1b2a;
-  background-color: #fff;
   min-height: 100vh;
   padding-top: 80px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
+  background-color: #fff !important;
 }
 
 .homepage-module__XyMAXq__container {
@@ -17,10 +23,10 @@
 
 .homepage-module__XyMAXq__hero {
   text-align: center;
-  background-color: #fff;
   border-bottom: 1px solid #eaeaea;
   margin-top: 0;
   padding: 6rem 1.5rem 3rem;
+  background-color: #fff !important;
 }
 
 .homepage-module__XyMAXq__heroTitle {
@@ -155,8 +161,8 @@
 }
 
 .homepage-module__XyMAXq__eeatProof {
-  background-color: #fff;
   padding: 4rem 1.5rem;
+  background-color: #fff !important;
 }
 
 .homepage-module__XyMAXq__eeatGrid {
@@ -205,8 +211,8 @@
 }
 
 .homepage-module__XyMAXq__featuredSection {
-  background-color: #fff;
   padding: 4rem 1.5rem;
+  background-color: #fff !important;
 }
 
 .homepage-module__XyMAXq__featuredGrid {
@@ -271,8 +277,8 @@
 }
 
 .homepage-module__XyMAXq__calculatorsSection {
-  background-color: #fff;
   padding: 4rem 1.5rem;
+  background-color: #fff !important;
 }
 
 .homepage-module__XyMAXq__categoryFilter {
@@ -439,8 +445,8 @@
 }
 
 .homepage-module__XyMAXq__guideSection {
-  background-color: #fff;
   padding: 4rem 1.5rem;
+  background-color: #fff !important;
 }
 
 .homepage-module__XyMAXq__guideGrid {
@@ -500,8 +506,8 @@
 }
 
 .homepage-module__XyMAXq__testimonialSection {
-  background-color: #fff;
   padding: 4rem 1.5rem;
+  background-color: #fff !important;
 }
 
 .homepage-module__XyMAXq__testimonialGrid {
@@ -546,9 +552,9 @@
 
 .homepage-module__XyMAXq__finalCta {
   text-align: center;
-  background-color: #fff;
   border-top: 1px solid #eaeaea;
   padding: 4rem 1.5rem;
+  background-color: #fff !important;
 }
 
 .homepage-module__XyMAXq__finalCta h2 {
