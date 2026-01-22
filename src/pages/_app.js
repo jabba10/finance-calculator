@@ -32,19 +32,31 @@ export default function App({ Component, pageProps }) {
     };
   }, [router.events, router.asPath]);
 
-  // GoatCounter route tracking (fixes undercounting)
+  // GoatCounter route tracking - Enhanced version
   useEffect(() => {
-    const handleRouteChange = () => {
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count();
-      }
+    const handleRouteChange = (url) => {
+      // Wait a bit for GoatCounter to load
+      setTimeout(() => {
+        if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+          window.goatcounter.count({
+            path: url,
+          });
+          console.log('GoatCounter tracked:', url);
+        } else {
+          console.log('GoatCounter not available');
+        }
+      }, 100);
     };
 
+    // Track initial load
+    handleRouteChange(router.asPath);
+
+    // Track route changes
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.events]);
+  }, [router.events, router.asPath]);
 
   return (
     <>
@@ -73,11 +85,29 @@ export default function App({ Component, pageProps }) {
         }}
       />
 
-      {/* GoatCounter */}
+      {/* GoatCounter - Fixed version */}
       <Script
-        data-goatcounter="https://financecalculatorfree.goatcounter.com/count"
-        src="https://gc.zgo.at/count.js"
+        id="goatcounter-init"
         strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            // Initialize GoatCounter before loading the script
+            window.goatcounter = {
+              no_onload: true, // Prevent automatic page load tracking
+              path: function(p) {
+                return location.host + p;
+              }
+            };
+          `,
+        }}
+      />
+      
+      <Script
+        id="goatcounter-script"
+        strategy="afterInteractive"
+        src="https://gc.zgo.at/count.js"
+        data-goatcounter="https://financecalculatorfree.goatcounter.com/count"
+        async
       />
 
       <Navbar />
