@@ -26,21 +26,8 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/src_pages__app_2da965e7._.js",
       "static/chunks/turbopack-src_pages__app_4c264437._.js"
     ],
-    "/payroll-calculator": [
-      "static/chunks/[root-of-the-server]__39b99da4._.js",
-      "static/chunks/node_modules_next_dist_compiled_9c6fb6f2._.js",
-      "static/chunks/node_modules_next_dist_shared_lib_e7a9eec2._.js",
-      "static/chunks/node_modules_next_dist_client_5a8a528e._.js",
-      "static/chunks/node_modules_next_dist_335aced5._.js",
-      "static/chunks/node_modules_next_3e7984f4._.js",
-      "static/chunks/node_modules_react-dom_4411d9bd._.js",
-      "static/chunks/node_modules_f1be3ba2._.js",
-      "static/chunks/src_pages_payrollcal_module_f9ebae24.css",
-      "static/chunks/src_pages_payroll-calculator_2da965e7._.js",
-      "static/chunks/turbopack-src_pages_payroll-calculator_fa2b097d._.js"
-    ],
-    "/suite": [
-      "static/chunks/[root-of-the-server]__1f17b1df._.js",
+    "/formulas": [
+      "static/chunks/[root-of-the-server]__38d278c8._.js",
       "static/chunks/node_modules_next_dist_compiled_9c6fb6f2._.js",
       "static/chunks/node_modules_next_dist_shared_lib_8cf386ea._.js",
       "static/chunks/node_modules_next_dist_client_881bc7f7._.js",
@@ -48,9 +35,9 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/node_modules_next_fe51e8a4._.js",
       "static/chunks/node_modules_react-dom_4411d9bd._.js",
       "static/chunks/node_modules_f1be3ba2._.js",
-      "static/chunks/src_pages_businesscalculatorsuite_module_f20e968d.css",
-      "static/chunks/src_pages_suite_2da965e7._.js",
-      "static/chunks/turbopack-src_pages_suite_9a874245._.js"
+      "static/chunks/src_pages_blogpost_module_f449ce43.css",
+      "static/chunks/src_pages_formulas_2da965e7._.js",
+      "static/chunks/turbopack-src_pages_formulas_15db888e._.js"
     ]
   },
   "devFiles": [],

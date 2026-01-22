@@ -100,16 +100,16 @@
       "namedRegex": "^/annuity\\-calculator(?:/)?$"
     },
     {
+      "page": "/api/indexnow",
+      "regex": "^/api/indexnow(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/indexnow(?:/)?$"
+    },
+    {
       "page": "/asset-turnover-calculator",
       "regex": "^/asset\\-turnover\\-calculator(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/asset\\-turnover\\-calculator(?:/)?$"
-    },
-    {
-      "page": "/blog",
-      "regex": "^/blog(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog(?:/)?$"
     },
     {
       "page": "/break-even-calculator",
@@ -278,6 +278,12 @@
       "regex": "^/flipping\\-profit\\-calculator(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/flipping\\-profit\\-calculator(?:/)?$"
+    },
+    {
+      "page": "/formulas",
+      "regex": "^/formulas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/formulas(?:/)?$"
     },
     {
       "page": "/free-cash-flow-calculator",
@@ -577,323 +583,323 @@
   "dataRoutes": [
     {
       "page": "/",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/index\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/index\\.json$"
     },
     {
       "page": "/accounts-receivable-turnover-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/accounts-receivable-turnover-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/accounts-receivable-turnover-calculator\\.json$"
     },
     {
       "page": "/annuity-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/annuity-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/annuity-calculator\\.json$"
     },
     {
       "page": "/asset-turnover-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/asset-turnover-calculator\\.json$"
-    },
-    {
-      "page": "/blog",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/blog\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/asset-turnover-calculator\\.json$"
     },
     {
       "page": "/break-even-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/break-even-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/break-even-calculator\\.json$"
     },
     {
       "page": "/business-valuation-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/business-valuation-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/business-valuation-calculator\\.json$"
     },
     {
       "page": "/cac-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/cac-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/cac-calculator\\.json$"
     },
     {
       "page": "/cap-rate-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/cap-rate-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/cap-rate-calculator\\.json$"
     },
     {
       "page": "/capital-gains-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/capital-gains-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/capital-gains-calculator\\.json$"
     },
     {
       "page": "/car-loan-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/car-loan-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/car-loan-calculator\\.json$"
     },
     {
       "page": "/cash-on-cash-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/cash-on-cash-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/cash-on-cash-calculator\\.json$"
     },
     {
       "page": "/cashflow-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/cashflow-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/cashflow-calculator\\.json$"
     },
     {
       "page": "/cd-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/cd-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/cd-calculator\\.json$"
     },
     {
       "page": "/compound-interest-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/compound-interest-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/compound-interest-calculator\\.json$"
     },
     {
       "page": "/credit-card-payoff-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/credit-card-payoff-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/credit-card-payoff-calculator\\.json$"
     },
     {
       "page": "/crypto-investment-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/crypto-investment-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/crypto-investment-calculator\\.json$"
     },
     {
       "page": "/current-ratio-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/current-ratio-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/current-ratio-calculator\\.json$"
     },
     {
       "page": "/debt-to-equity-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/debt-to-equity-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/debt-to-equity-calculator\\.json$"
     },
     {
       "page": "/debt-to-income-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/debt-to-income-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/debt-to-income-calculator\\.json$"
     },
     {
       "page": "/development-feasibility-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/development-feasibility-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/development-feasibility-calculator\\.json$"
     },
     {
       "page": "/discounted-cash-flow-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/discounted-cash-flow-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/discounted-cash-flow-calculator\\.json$"
     },
     {
       "page": "/dividend-yield-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/dividend-yield-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/dividend-yield-calculator\\.json$"
     },
     {
       "page": "/dscr-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/dscr-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/dscr-calculator\\.json$"
     },
     {
       "page": "/duration-convexity-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/duration-convexity-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/duration-convexity-calculator\\.json$"
     },
     {
       "page": "/early-retirement-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/early-retirement-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/early-retirement-calculator\\.json$"
     },
     {
       "page": "/ebitda-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/ebitda-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/ebitda-calculator\\.json$"
     },
     {
       "page": "/education-cost-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/education-cost-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/education-cost-calculator\\.json$"
     },
     {
       "page": "/eps-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/eps-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/eps-calculator\\.json$"
     },
     {
       "page": "/eva-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/eva-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/eva-calculator\\.json$"
     },
     {
       "page": "/financial-literacy-score-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/financial-literacy-score-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/financial-literacy-score-calculator\\.json$"
     },
     {
       "page": "/flipping-profit-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/flipping-profit-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/flipping-profit-calculator\\.json$"
+    },
+    {
+      "page": "/formulas",
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/formulas\\.json$"
     },
     {
       "page": "/free-cash-flow-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/free-cash-flow-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/free-cash-flow-calculator\\.json$"
     },
     {
       "page": "/game-theory-payoff-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/game-theory-payoff-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/game-theory-payoff-calculator\\.json$"
     },
     {
       "page": "/government-bonds-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/government-bonds-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/government-bonds-calculator\\.json$"
     },
     {
       "page": "/grm-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/grm-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/grm-calculator\\.json$"
     },
     {
       "page": "/gross-profit-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/gross-profit-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/gross-profit-calculator\\.json$"
     },
     {
       "page": "/heloc-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/heloc-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/heloc-calculator\\.json$"
     },
     {
       "page": "/inflation-adjusted-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/inflation-adjusted-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/inflation-adjusted-calculator\\.json$"
     },
     {
       "page": "/inventory-turnover-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/inventory-turnover-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/inventory-turnover-calculator\\.json$"
     },
     {
       "page": "/irr-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/irr-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/irr-calculator\\.json$"
     },
     {
       "page": "/lease-vs-buy-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/lease-vs-buy-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/lease-vs-buy-calculator\\.json$"
     },
     {
       "page": "/legal-retainer-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/legal-retainer-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/legal-retainer-calculator\\.json$"
     },
     {
       "page": "/litigation-cost-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/litigation-cost-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/litigation-cost-calculator\\.json$"
     },
     {
       "page": "/loan-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/loan-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/loan-calculator\\.json$"
     },
     {
       "page": "/ltv-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/ltv-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/ltv-calculator\\.json$"
     },
     {
       "page": "/markup-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/markup-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/markup-calculator\\.json$"
     },
     {
       "page": "/millionaire-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/millionaire-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/millionaire-calculator\\.json$"
     },
     {
       "page": "/monte-carlo-simulation-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/monte-carlo-simulation-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/monte-carlo-simulation-calculator\\.json$"
     },
     {
       "page": "/mortgage-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/mortgage-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/mortgage-calculator\\.json$"
     },
     {
       "page": "/mortgage-refinance-break-even-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/mortgage-refinance-break-even-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/mortgage-refinance-break-even-calculator\\.json$"
     },
     {
       "page": "/npv-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/npv-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/npv-calculator\\.json$"
     },
     {
       "page": "/occupancy-cost-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/occupancy-cost-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/occupancy-cost-calculator\\.json$"
     },
     {
       "page": "/operating-leverage-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/operating-leverage-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/operating-leverage-calculator\\.json$"
     },
     {
       "page": "/option-pricing-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/option-pricing-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/option-pricing-calculator\\.json$"
     },
     {
       "page": "/payback-period-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/payback-period-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/payback-period-calculator\\.json$"
     },
     {
       "page": "/payroll-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/payroll-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/payroll-calculator\\.json$"
     },
     {
       "page": "/pe-ratio-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/pe-ratio-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/pe-ratio-calculator\\.json$"
     },
     {
       "page": "/pension-planning-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/pension-planning-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/pension-planning-calculator\\.json$"
     },
     {
       "page": "/ppf-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/ppf-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/ppf-calculator\\.json$"
     },
     {
       "page": "/present-value-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/present-value-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/present-value-calculator\\.json$"
     },
     {
       "page": "/profit-margin-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/profit-margin-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/profit-margin-calculator\\.json$"
     },
     {
       "page": "/property-tax-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/property-tax-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/property-tax-calculator\\.json$"
     },
     {
       "page": "/purchasing-power-parity-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/purchasing-power-parity-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/purchasing-power-parity-calculator\\.json$"
     },
     {
       "page": "/quick-ratio-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/quick-ratio-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/quick-ratio-calculator\\.json$"
     },
     {
       "page": "/rent-increase-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/rent-increase-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/rent-increase-calculator\\.json$"
     },
     {
       "page": "/retirement-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/retirement-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/retirement-calculator\\.json$"
     },
     {
       "page": "/roe-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/roe-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/roe-calculator\\.json$"
     },
     {
       "page": "/roi-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/roi-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/roi-calculator\\.json$"
     },
     {
       "page": "/simple-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/simple-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/simple-calculator\\.json$"
     },
     {
       "page": "/social-security-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/social-security-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/social-security-calculator\\.json$"
     },
     {
       "page": "/staking-rewards-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/staking-rewards-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/staking-rewards-calculator\\.json$"
     },
     {
       "page": "/subscription-cost-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/subscription-cost-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/subscription-cost-calculator\\.json$"
     },
     {
       "page": "/suite",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/suite\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/suite\\.json$"
     },
     {
       "page": "/tax-bracket-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/tax-bracket-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/tax-bracket-calculator\\.json$"
     },
     {
       "page": "/tax-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/tax-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/tax-calculator\\.json$"
     },
     {
       "page": "/time-value-of-money-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/time-value-of-money-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/time-value-of-money-calculator\\.json$"
     },
     {
       "page": "/wacc-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/wacc-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/wacc-calculator\\.json$"
     },
     {
       "page": "/worker-classification-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/worker-classification-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/worker-classification-calculator\\.json$"
     },
     {
       "page": "/working-capital-calculator",
-      "dataRouteRegex": "^/_next/data/7VYHI1DElf1phZOFqx_CL/working-capital-calculator\\.json$"
+      "dataRouteRegex": "^/_next/data/Ak1GNaA4FyowDe51Du_ra/working-capital-calculator\\.json$"
     }
   ],
   "rsc": {

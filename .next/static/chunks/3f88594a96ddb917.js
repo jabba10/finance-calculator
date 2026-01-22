@@ -1,0 +1,9 @@
+__turbopack_load_page_chunks__("/property-tax-calculator", [
+  "static/chunks/5ab36a06f6dd4e0e.js",
+  "static/chunks/ad063512d3a1c767.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/bb04a19ada70e27e.css",
+  "static/chunks/turbopack-f1bef430d29e58c9.js"
+])

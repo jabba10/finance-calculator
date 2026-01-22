@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/litigation-cost-calculator", [
+  "static/chunks/09977f33d9651104.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/d1749916287260b0.css",
+  "static/chunks/turbopack-6deca6d6fafdf426.js"
+])

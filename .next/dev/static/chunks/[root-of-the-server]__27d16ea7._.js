@@ -612,10 +612,10 @@ const Navbar = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/blog",
-                            className: isActive('/blog') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].active : '',
-                            "aria-current": isActive('/blog') ? 'page' : undefined,
-                            children: "Blog"
+                            href: "/formulas",
+                            className: isActive('/formulas') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].active : '',
+                            "aria-current": isActive('/formulas') ? 'page' : undefined,
+                            children: "Formulas"
                         }, void 0, false, {
                             fileName: "[project]/src/Components/Navbar.jsx",
                             lineNumber: 91,
@@ -623,8 +623,8 @@ const Navbar = ()=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/about",
-                            className: isActive('/aboutus') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].active : '',
-                            "aria-current": isActive('/aboutus') ? 'page' : undefined,
+                            className: isActive('/about') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].active : '',
+                            "aria-current": isActive('/about') ? 'page' : undefined,
                             children: "About"
                         }, void 0, false, {
                             fileName: "[project]/src/Components/Navbar.jsx",
@@ -663,10 +663,10 @@ const Navbar = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/blog",
-                            className: isActive('/blog') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].active : '',
+                            href: "/formulas",
+                            className: isActive('/formulas') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].active : '',
                             onClick: handleLinkClick,
-                            "aria-current": isActive('/blog') ? 'page' : undefined,
+                            "aria-current": isActive('/formulas') ? 'page' : undefined,
                             children: "Blog"
                         }, void 0, false, {
                             fileName: "[project]/src/Components/Navbar.jsx",
@@ -675,9 +675,9 @@ const Navbar = ()=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/aboutus",
-                            className: isActive('/aboutus') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].active : '',
+                            className: isActive('/about') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].active : '',
                             onClick: handleLinkClick,
-                            "aria-current": isActive('/aboutus') ? 'page' : undefined,
+                            "aria-current": isActive('/about') ? 'page' : undefined,
                             children: "About"
                         }, void 0, false, {
                             fileName: "[project]/src/Components/Navbar.jsx",
@@ -885,9 +885,9 @@ const Footer = ()=>{
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/blog",
+                                                href: "/formulas",
                                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Footer$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].footerLink,
-                                                children: "Blog & Guides"
+                                                children: "Formulas & Guides"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/Components/Footer.jsx",
                                                 lineNumber: 27,
@@ -900,7 +900,7 @@ const Footer = ()=>{
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/aboutus",
+                                                href: "/about",
                                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Footer$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].footerLink,
                                                 children: "About Us"
                                             }, void 0, false, {
@@ -1155,7 +1155,7 @@ function App({ Component, pageProps }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const canonicalUrl = `https://www.financecalculatorfree.com${router.asPath}`;
     const GA_MEASUREMENT_ID = 'G-2E7Q5ZXC2D';
-    // Track page views
+    // Track page views for Google Analytics
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "App.useEffect": ()=>{
             const handleRouteChange = {
@@ -1224,9 +1224,19 @@ function App({ Component, pageProps }) {
                 lineNumber: 47,
                 columnNumber: 7
             }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                strategy: "afterInteractive",
+                "data-goatcounter": "https://financecalculatorfree.goatcounter.com/count",
+                src: "//gc.zgo.at/count.js",
+                async: true
+            }, void 0, false, {
+                fileName: "[project]/src/pages/_app.js",
+                lineNumber: 65,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 64,
+                lineNumber: 72,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1235,17 +1245,17 @@ function App({ Component, pageProps }) {
                     ...pageProps
                 }, void 0, false, {
                     fileName: "[project]/src/pages/_app.js",
-                    lineNumber: 66,
+                    lineNumber: 74,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 65,
+                lineNumber: 73,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Footer$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 68,
+                lineNumber: 76,
                 columnNumber: 7
             }, this)
         ]

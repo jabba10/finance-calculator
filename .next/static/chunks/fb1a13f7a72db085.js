@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/debt-to-equity-calculator", [
+  "static/chunks/59a8295591f0119c.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/30b50c592e5402ce.css",
+  "static/chunks/turbopack-bf658d1931dca53f.js"
+])

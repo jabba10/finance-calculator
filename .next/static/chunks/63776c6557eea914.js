@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/loan-calculator", [
+  "static/chunks/cd8b13f8cadc48d1.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/0c67a7b533299b20.css",
+  "static/chunks/turbopack-df88da6d1b57dc67.js"
+])

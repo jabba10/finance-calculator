@@ -1,9 +1,0 @@
-__turbopack_load_page_chunks__("/cash-on-cash-calculator", [
-  "static/chunks/5ab36a06f6dd4e0e.js",
-  "static/chunks/b6f41a4e8685a484.js",
-  "static/chunks/5c8a8a26cf163ca2.js",
-  "static/chunks/928e9f9fde90bc3c.js",
-  "static/chunks/944b77968600e50a.js",
-  "static/chunks/4e4004a1c8e21800.css",
-  "static/chunks/turbopack-de2e8b402b1d4b93.js"
-])

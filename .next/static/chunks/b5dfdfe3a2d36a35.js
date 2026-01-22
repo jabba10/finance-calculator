@@ -1,8 +1,0 @@
-__turbopack_load_page_chunks__("/flipping-profit-calculator", [
-  "static/chunks/1bd911b2f8c7d797.js",
-  "static/chunks/5c8a8a26cf163ca2.js",
-  "static/chunks/928e9f9fde90bc3c.js",
-  "static/chunks/944b77968600e50a.js",
-  "static/chunks/f3136a70e95bb96c.css",
-  "static/chunks/turbopack-7fa945316eb3a3ef.js"
-])

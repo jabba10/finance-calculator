@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/quick-ratio-calculator", [
+  "static/chunks/a45fb7ab7c5a3e40.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/564cfff02d0774de.css",
+  "static/chunks/turbopack-2b4fa30bec60a819.js"
+])

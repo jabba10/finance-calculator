@@ -81,13 +81,13 @@ const QuickRatioCalculator = ({ currentDate, lastModifiedDate }) => {
         <meta name="date" content={currentDate} />
         <meta name="last-modified" content={lastModifiedDate} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://yourdomain.com/quick-ratio-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com/quick-ratio-calculator" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Quick Ratio Calculator | Measure Business Liquidity Accurately" />
         <meta property="og:description" content="Calculate and analyze your company's quick ratio. Free tool with industry benchmarks and actionable insights." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/quick-ratio-calculator" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/quick-ratio-calculator" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -124,7 +124,7 @@ const QuickRatioCalculator = ({ currentDate, lastModifiedDate }) => {
             "author": {
               "@type": "Organization",
               "name": "Financial Analysis Tools",
-              "url": "https://yourdomain.com"
+              "url": "https://www.financecalculatorfree.com"
             },
             "featureList": [
               "Industry Benchmarks",

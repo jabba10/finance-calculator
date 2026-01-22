@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/staking-rewards-calculator", [
+  "static/chunks/30c679072981bc31.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/753c1056f4ead938.css",
+  "static/chunks/turbopack-84f79d8951d1b2fe.js"
+])

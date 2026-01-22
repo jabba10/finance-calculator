@@ -1,9 +1,0 @@
-__turbopack_load_page_chunks__("/npv-calculator", [
-  "static/chunks/5ab36a06f6dd4e0e.js",
-  "static/chunks/248627f1447d7170.js",
-  "static/chunks/5c8a8a26cf163ca2.js",
-  "static/chunks/928e9f9fde90bc3c.js",
-  "static/chunks/944b77968600e50a.js",
-  "static/chunks/1a89bda678d0e26f.css",
-  "static/chunks/turbopack-dfac3d669f7af539.js"
-])

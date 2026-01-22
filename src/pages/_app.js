@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
   
   const GA_MEASUREMENT_ID = 'G-2E7Q5ZXC2D';
 
-  // Track page views
+  // Track page views for Google Analytics
   useEffect(() => {
     const handleRouteChange = (url) => {
       window.gtag?.('config', GA_MEASUREMENT_ID, {
@@ -59,6 +59,14 @@ export default function App({ Component, pageProps }) {
             });
           `,
         }}
+      />
+      
+      {/* GoatCounter Analytics Script */}
+      <Script
+        strategy="afterInteractive"
+        data-goatcounter="https://financecalculatorfree.goatcounter.com/count"
+        src="//gc.zgo.at/count.js"
+        async
       />
       
       <Navbar />

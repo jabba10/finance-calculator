@@ -1,9 +1,0 @@
-__turbopack_load_page_chunks__("/payback-period-calculator", [
-  "static/chunks/5ab36a06f6dd4e0e.js",
-  "static/chunks/52f66eea26cccc5f.js",
-  "static/chunks/5c8a8a26cf163ca2.js",
-  "static/chunks/928e9f9fde90bc3c.js",
-  "static/chunks/944b77968600e50a.js",
-  "static/chunks/1d95df00ab5369eb.css",
-  "static/chunks/turbopack-1fdf49441c7f1ec6.js"
-])

@@ -83,13 +83,13 @@ const FlippingProfitCalculator = ({ currentDate, lastModifiedDate }) => {
         <meta name="date" content={currentDate} />
         <meta name="last-modified" content={lastModifiedDate} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://www.financecalculatorfree.com//house-flipping-calculator" />
+        <link rel="canonical" href="https://www.financecalculatorfree.com//flipping-profit-calculator" />
         
         {/* Open Graph */}
         <meta property="og:title" content="House Flipping Profit Calculator | Maximize Your Real Estate Returns" />
         <meta property="og:description" content="Analyze fix-and-flip deals with our professional profit calculator. Calculate ROI, margins, and make smarter investment decisions." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.financecalculatorfree.com/house-flipping-calculator" />
+        <meta property="og:url" content="https://www.financecalculatorfree.com/flipping-profit-calculator" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />

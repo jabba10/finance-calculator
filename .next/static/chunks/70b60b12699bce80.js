@@ -1,0 +1,9 @@
+__turbopack_load_page_chunks__("/dscr-calculator", [
+  "static/chunks/5ab36a06f6dd4e0e.js",
+  "static/chunks/cc96124dfeccd4e2.js",
+  "static/chunks/5c8a8a26cf163ca2.js",
+  "static/chunks/928e9f9fde90bc3c.js",
+  "static/chunks/944b77968600e50a.js",
+  "static/chunks/907ac5bd9d3e7bfb.css",
+  "static/chunks/turbopack-373f6a328c03dd5d.js"
+])

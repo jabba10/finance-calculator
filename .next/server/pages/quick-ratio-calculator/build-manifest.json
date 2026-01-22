@@ -6,12 +6,12 @@
   "rootMainFiles": [],
   "pages": {
     "/quick-ratio-calculator": [
-      "static/chunks/4453a82b37f6ff4d.js",
+      "static/chunks/a45fb7ab7c5a3e40.js",
       "static/chunks/5c8a8a26cf163ca2.js",
       "static/chunks/928e9f9fde90bc3c.js",
       "static/chunks/944b77968600e50a.js",
-      "static/chunks/fdb281a0b26b7191.css",
-      "static/chunks/turbopack-5ca5ef81a97bd1b3.js"
+      "static/chunks/564cfff02d0774de.css",
+      "static/chunks/turbopack-2b4fa30bec60a819.js"
     ]
   },
   "ampFirstPages": []

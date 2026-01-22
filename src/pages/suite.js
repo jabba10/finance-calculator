@@ -539,7 +539,7 @@ export async function getStaticProps() {
       currentDate,
       lastModifiedDate,
     },
-    revalidate: 86400, // 24 hours
+    revalidate: 21600, 
   };
 }
 

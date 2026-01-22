@@ -2,11 +2,8 @@ self.__BUILD_MANIFEST = {
   "/": [
     "static/chunks/pages/index.js"
   ],
-  "/payroll-calculator": [
-    "static/chunks/pages/payroll-calculator.js"
-  ],
-  "/suite": [
-    "static/chunks/pages/suite.js"
+  "/formulas": [
+    "static/chunks/pages/formulas.js"
   ],
   "__rewrites": {
     "afterFiles": [
@@ -26,7 +23,6 @@ self.__BUILD_MANIFEST = {
     "/accounts-receivable-turnover-calculator",
     "/annuity-calculator",
     "/asset-turnover-calculator",
-    "/blog",
     "/break-even-calculator",
     "/business-valuation-calculator",
     "/cac-calculator",
@@ -55,6 +51,7 @@ self.__BUILD_MANIFEST = {
     "/eva-calculator",
     "/financial-literacy-score-calculator",
     "/flipping-profit-calculator",
+    "/formulas",
     "/free-cash-flow-calculator",
     "/game-theory-payoff-calculator",
     "/government-bonds-calculator",

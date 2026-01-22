@@ -11,13 +11,25 @@
   overflow-x: hidden;
 }
 
-/* Hero Section */
+/* Hero Section - Fixed for navigation bar */
 .hero {
-  padding: clamp(4rem, 6vw, 5rem) 1rem clamp(1.5rem, 2vw, 2rem);
+  padding: 5rem 1rem 1.5rem;
   text-align: center;
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
   position: relative;
+  width: 100%;
+  scroll-margin-top: 80px; /* For anchor links to account for fixed nav */
+}
+
+/* Safe area for navigation bar - ensure content starts below fixed nav */
+.hero::before {
+  content: '';
+  display: block;
+  height: 60px; /* Height of navigation bar */
+  margin-top: -60px; /* Negative margin to pull up */
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .heroContent {
@@ -31,6 +43,7 @@
   margin-bottom: 1rem;
   line-height: 1.2;
   color: #000000;
+  padding-top: 20px; /* Extra padding to ensure visibility */
 }
 
 .subtitle {
@@ -559,14 +572,17 @@
   margin: 0 auto;
 }
 
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
+  /* Reset hero padding for mobile with fixed nav */
   .hero {
-    padding: clamp(3rem, 5vw, 4rem) 0.75rem clamp(1rem, 2vw, 1.5rem);
+    padding: calc(60px + 2rem) 0.75rem 1.5rem; /* nav height + 2rem top padding */
+    margin-top: 0;
   }
   
   .title {
     font-size: 1.5rem;
+    padding-top: 0;
   }
   
   .subtitle {
@@ -604,7 +620,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: clamp(2.5rem, 4vw, 3rem) 0.5rem clamp(0.75rem, 2vw, 1rem);
+    padding: calc(60px + 1.5rem) 0.5rem 1rem; /* nav height + 1.5rem top padding */
   }
   
   .title {
@@ -641,6 +657,55 @@
     padding: 1rem;
   }
 }
+
+/* Extra small screens with fixed nav */
+@media (max-width: 375px) {
+  .hero {
+    padding: calc(50px + 1rem) 0.5rem 0.75rem; /* Smaller nav height on very small screens */
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .searchInput {
+    padding: 0.75rem 0.875rem 0.75rem 2.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero {
+    padding: calc(50px + 0.75rem) 0.5rem 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.125rem;
+  }
+  
+  .cardsContainer {
+    gap: 1rem;
+  }
+}
+
+/* If you have a fixed navigation bar, also add this to your global or layout CSS */
+/* This is a suggestion if you control the navigation CSS */
+/*
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 60px; /* Match this with the hero::before height */
+/* }
+*/
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {

@@ -89,16 +89,16 @@ const Navbar = () => {
             Calculators
           </Link>
           <Link
-            href="/blog"
-            className={isActive('/blog') ? styles.active : ''}
-            aria-current={isActive('/blog') ? 'page' : undefined}
+            href="/formulas"
+            className={isActive('/formulas') ? styles.active : ''}
+            aria-current={isActive('/formulas') ? 'page' : undefined}
           >
-            Blog
+            Formulas
           </Link>
           <Link
             href="/about"
-            className={isActive('/aboutus') ? styles.active : ''}
-            aria-current={isActive('/aboutus') ? 'page' : undefined}
+            className={isActive('/about') ? styles.active : ''}
+            aria-current={isActive('/about') ? 'page' : undefined}
           >
             About
           </Link>
@@ -125,18 +125,18 @@ const Navbar = () => {
             Calculators
           </Link>
           <Link
-            href="/blog"
-            className={isActive('/blog') ? styles.active : ''}
+            href="/formulas"
+            className={isActive('/formulas') ? styles.active : ''}
             onClick={handleLinkClick}
-            aria-current={isActive('/blog') ? 'page' : undefined}
+            aria-current={isActive('/formulas') ? 'page' : undefined}
           >
             Blog
           </Link>
           <Link
             href="/aboutus"
-            className={isActive('/aboutus') ? styles.active : ''}
+            className={isActive('/about') ? styles.active : ''}
             onClick={handleLinkClick}
-            aria-current={isActive('/aboutus') ? 'page' : undefined}
+            aria-current={isActive('/about') ? 'page' : undefined}
           >
             About
           </Link>

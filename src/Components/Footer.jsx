@@ -24,8 +24,8 @@ const Footer = () => {
             <ul className={styles.linkList}>
               <li><Link href="/" className={styles.footerLink}>Home</Link></li>
               <li><Link href="/suite" className={styles.footerLink}>All Calculators</Link></li>
-              <li><Link href="/blog" className={styles.footerLink}>Blog & Guides</Link></li>
-              <li><Link href="/aboutus" className={styles.footerLink}>About Us</Link></li>
+              <li><Link href="/formulas" className={styles.footerLink}>Formulas & Guides</Link></li>
+              <li><Link href="/about" className={styles.footerLink}>About Us</Link></li>
               <li><Link href="/contactus" className={styles.footerLink}>Contact</Link></li>
             </ul>
           </div>

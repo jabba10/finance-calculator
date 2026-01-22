@@ -1,11 +1,25 @@
 {
   "version": 4,
   "routes": {
+    "/asset-turnover-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/asset-turnover-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/annuity-calculator": {
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/annuity-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/annuity-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -19,21 +33,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/accounts-receivable-turnover-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/cap-rate-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/cap-rate-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/accounts-receivable-turnover-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -47,49 +47,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/business-valuation-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/car-loan-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/car-loan-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/cac-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/cac-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blog": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/blog.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/business-valuation-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -103,7 +61,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/capital-gains-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/capital-gains-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -113,53 +71,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/break-even-calculator": {
+    "/cac-calculator": {
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/break-even-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/cash-on-cash-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/cash-on-cash-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/cd-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/cd-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/cashflow-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/cashflow-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/cac-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -173,7 +89,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/compound-interest-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/compound-interest-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -187,7 +103,35 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/crypto-investment-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/crypto-investment-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/cashflow-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/cashflow-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/cap-rate-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/cap-rate-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -201,7 +145,7 @@
       "initialRevalidateSeconds": 86400,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/credit-card-payoff-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/credit-card-payoff-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -211,25 +155,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/current-ratio-calculator": {
+    "/cash-on-cash-calculator": {
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/current-ratio-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/debt-to-equity-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/debt-to-equity-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/cash-on-cash-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -243,7 +173,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/discounted-cash-flow-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/discounted-cash-flow-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -253,11 +183,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/dividend-yield-calculator": {
+    "/current-ratio-calculator": {
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/dividend-yield-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/current-ratio-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -267,25 +197,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/early-retirement-calculator": {
+    "/cd-calculator": {
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/early-retirement-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/dscr-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/dscr-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/cd-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -299,91 +215,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/development-feasibility-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/duration-convexity-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/duration-convexity-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/ebitda-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/ebitda-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/eps-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/eps-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/financial-literacy-score-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/financial-literacy-score-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/flipping-profit-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/flipping-profit-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/eva-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/eva-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/development-feasibility-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -397,7 +229,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/debt-to-income-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/debt-to-income-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -407,11 +239,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/game-theory-payoff-calculator": {
+    "/dividend-yield-calculator": {
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/game-theory-payoff-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/dividend-yield-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -421,11 +253,151 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/government-bonds-calculator": {
-      "initialRevalidateSeconds": 86400,
+    "/ebitda-calculator": {
+      "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/government-bonds-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/ebitda-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/debt-to-equity-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/debt-to-equity-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/dscr-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/dscr-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/eps-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/eps-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/early-retirement-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/early-retirement-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/eva-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/eva-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/duration-convexity-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/duration-convexity-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/financial-literacy-score-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/financial-literacy-score-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/flipping-profit-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/flipping-profit-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/car-loan-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/car-loan-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/formulas": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/formulas.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -439,7 +411,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/free-cash-flow-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/free-cash-flow-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -449,123 +421,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/inflation-adjusted-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/inflation-adjusted-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/inventory-turnover-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/inventory-turnover-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/grm-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/grm-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/education-cost-calculator": {
+    "/government-bonds-calculator": {
       "initialRevalidateSeconds": 86400,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/education-cost-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/legal-retainer-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/legal-retainer-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/irr-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/irr-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/gross-profit-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/gross-profit-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/litigation-cost-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/litigation-cost-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/loan-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/loan-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/government-bonds-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -579,7 +439,119 @@
       "initialRevalidateSeconds": 86400,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/heloc-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/heloc-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/gross-profit-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/gross-profit-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/education-cost-calculator": {
+      "initialRevalidateSeconds": 86400,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/education-cost-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/inventory-turnover-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/inventory-turnover-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/inflation-adjusted-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/inflation-adjusted-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/irr-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/irr-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/game-theory-payoff-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/game-theory-payoff-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/grm-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/grm-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/legal-retainer-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/legal-retainer-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -593,21 +565,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/millionaire-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/markup-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/markup-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/millionaire-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -621,21 +579,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/lease-vs-buy-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/monte-carlo-simulation-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/monte-carlo-simulation-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/lease-vs-buy-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -649,7 +593,49 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/ltv-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/ltv-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/markup-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/markup-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/litigation-cost-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/litigation-cost-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/monte-carlo-simulation-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/monte-carlo-simulation-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -663,21 +649,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/mortgage-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/npv-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/npv-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/mortgage-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -691,7 +663,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/mortgage-refinance-break-even-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/mortgage-refinance-break-even-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -705,7 +677,21 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/index.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/index.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/npv-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/npv-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -719,63 +705,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/operating-leverage-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/pe-ratio-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/pe-ratio-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/payback-period-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/payback-period-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/payroll-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/payroll-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/option-pricing-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/option-pricing-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/operating-leverage-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -789,7 +719,63 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/occupancy-cost-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/occupancy-cost-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/option-pricing-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/option-pricing-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/loan-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/loan-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/payback-period-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/payback-period-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/pe-ratio-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/pe-ratio-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -803,161 +789,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/ppf-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/profit-margin-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/profit-margin-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/property-tax-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/property-tax-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/present-value-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/present-value-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/quick-ratio-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/quick-ratio-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/purchasing-power-parity-calculator": {
-      "initialRevalidateSeconds": 86400,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/purchasing-power-parity-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/retirement-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/retirement-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/rent-increase-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/rent-increase-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/social-security-calculator": {
-      "initialRevalidateSeconds": 86400,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/social-security-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/simple-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/simple-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/staking-rewards-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/staking-rewards-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/roi-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/roi-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/ppf-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -971,7 +803,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/pension-planning-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/pension-planning-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -981,25 +813,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/suite": {
-      "initialRevalidateSeconds": 86400,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/suite.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/tax-calculator": {
+    "/payroll-calculator": {
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/tax-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/payroll-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1009,11 +827,95 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tax-bracket-calculator": {
+    "/present-value-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/present-value-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/quick-ratio-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/quick-ratio-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/property-tax-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/property-tax-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/profit-margin-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/profit-margin-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/rent-increase-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/rent-increase-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/purchasing-power-parity-calculator": {
       "initialRevalidateSeconds": 86400,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/tax-bracket-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/purchasing-power-parity-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/retirement-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/retirement-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1027,7 +929,91 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/roe-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/roe-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/simple-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/simple-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/social-security-calculator": {
+      "initialRevalidateSeconds": 86400,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/social-security-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/staking-rewards-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/staking-rewards-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/roi-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/roi-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tax-bracket-calculator": {
+      "initialRevalidateSeconds": 86400,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/tax-bracket-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/suite": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/suite.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1041,49 +1027,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/subscription-cost-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/wacc-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/wacc-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/worker-classification-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/worker-classification-calculator.json",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/working-capital-calculator": {
-      "initialRevalidateSeconds": 21600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/working-capital-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/subscription-cost-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1097,7 +1041,7 @@
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/time-value-of-money-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/time-value-of-money-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1107,11 +1051,67 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/asset-turnover-calculator": {
+    "/tax-calculator": {
       "initialRevalidateSeconds": 21600,
       "initialExpireSeconds": 31536000,
       "srcRoute": null,
-      "dataRoute": "/_next/data/7VYHI1DElf1phZOFqx_CL/asset-turnover-calculator.json",
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/tax-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/wacc-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/wacc-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/working-capital-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/working-capital-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/worker-classification-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/worker-classification-calculator.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/break-even-calculator": {
+      "initialRevalidateSeconds": 21600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/Ak1GNaA4FyowDe51Du_ra/break-even-calculator.json",
       "allowHeader": [
         "host",
         "x-matched-path",
