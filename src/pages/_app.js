@@ -13,33 +13,46 @@ export default function App({ Component, pageProps }) {
   
   const GA_MEASUREMENT_ID = 'G-2E7Q5ZXC2D';
 
-  // Track page views for Google Analytics
+  // Google Analytics route tracking
   useEffect(() => {
     const handleRouteChange = (url) => {
       window.gtag?.('config', GA_MEASUREMENT_ID, {
         page_path: url,
-        anonymize_ip: true, // GDPR compliance
+        anonymize_ip: true,
       });
     };
-    
+
     // Track initial load
     handleRouteChange(router.asPath);
-    
+
     // Track route changes
     router.events.on('routeChangeComplete', handleRouteChange);
-    
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events, router.asPath]);
+
+  // GoatCounter route tracking (fixes undercounting)
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count();
+      }
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
       <Head>
         <link rel="canonical" href={canonicalUrl} key="canonical" />
       </Head>
-      
-      {/* Google Analytics Script */}
+
+      {/* Google Analytics */}
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -52,7 +65,6 @@ export default function App({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
               anonymize_ip: true
@@ -60,15 +72,14 @@ export default function App({ Component, pageProps }) {
           `,
         }}
       />
-      
-      {/* GoatCounter Analytics Script */}
+
+      {/* GoatCounter */}
       <Script
-        strategy="afterInteractive"
         data-goatcounter="https://financecalculatorfree.goatcounter.com/count"
-        src="//gc.zgo.at/count.js"
-        async
+        src="https://gc.zgo.at/count.js"
+        strategy="afterInteractive"
       />
-      
+
       <Navbar />
       <main className="app-wrapper">
         <Component {...pageProps} />
