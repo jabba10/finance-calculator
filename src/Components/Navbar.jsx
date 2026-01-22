@@ -130,7 +130,7 @@ const Navbar = () => {
             onClick={handleLinkClick}
             aria-current={isActive('/formulas') ? 'page' : undefined}
           >
-            Blog
+            Formulas
           </Link>
           <Link
             href="/aboutus"
