@@ -69,8 +69,8 @@ const LandingPage = ({ currentDate, lastModifiedDate }) => {
   };
 
   const siteUrl = 'https://www.financecalculatorfree.com';
-  const pageTitle = '57 Free Financial Calculators | Business, Investment & Personal Finance Tools 2024';
-  const pageDescription = 'Access 57+ free financial calculators for business planning, investment analysis, loan calculations, tax planning, retirement, and personal finance. No signup required. 100% private.';
+  const pageTitle = '50+ Free Financial Calculators | Business, Investment & Personal Finance Tools 2026';
+  const pageDescription = 'Access 50+ free financial calculators for business planning, investment analysis, loan calculations, tax planning, retirement, and personal finance. No signup required. 100% private.';
 
   const imagePreview = `${siteUrl}/images/financial-calculators-preview.jpg`;
 
@@ -220,7 +220,7 @@ const LandingPage = ({ currentDate, lastModifiedDate }) => {
                 name: 'Are these financial calculators really free to use?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes, all 57+ financial calculators are completely free to use with no registration required. We believe in providing accessible financial tools for everyone.'
+                  text: 'Yes, all 50+ financial calculators are completely free to use with no registration required. We believe in providing accessible financial tools for everyone.'
                 }
               },
               {
@@ -321,7 +321,7 @@ const LandingPage = ({ currentDate, lastModifiedDate }) => {
         {/* Hero Section */}
         <section className={styles.hero}>
           <h1 className={styles.heroTitle}>
-            Master Your Finances With <span className={styles.highlight}>57 Expert-Designed Calculators</span>
+            Master Your Finances With <span className={styles.highlight}>50+ Expert-Designed Calculators</span>
           </h1>
           <p className={styles.heroSubtitle}>
             Precision financial tools powered by industry-standard formulas — no sign-up, 100% private, instant results. 
@@ -329,7 +329,7 @@ const LandingPage = ({ currentDate, lastModifiedDate }) => {
           </p>
           <div className={styles.ctaContainer}>
             <Link href="/suite" className={styles.primaryCta}>
-              Explore All 54 Calculators →
+              Explore All 50+ Calculators →
             </Link>
             <Link href="#why-choose-us" className={styles.secondaryCta}>
               Why Choose Us?

@@ -927,8 +927,8 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
         setVisibleCalculators((prev)=>Math.min(prev + 6, calculators.length));
     };
     const siteUrl = 'https://www.financecalculatorfree.com';
-    const pageTitle = '57 Free Financial Calculators | Business, Investment & Personal Finance Tools 2024';
-    const pageDescription = 'Access 57+ free financial calculators for business planning, investment analysis, loan calculations, tax planning, retirement, and personal finance. No signup required. 100% private.';
+    const pageTitle = '50+ Free Financial Calculators | Business, Investment & Personal Finance Tools 2026';
+    const pageDescription = 'Access 50+ free financial calculators for business planning, investment analysis, loan calculations, tax planning, retirement, and personal finance. No signup required. 100% private.';
     const imagePreview = `${siteUrl}/images/financial-calculators-preview.jpg`;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
@@ -1362,7 +1362,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                     name: 'Are these financial calculators really free to use?',
                                     acceptedAnswer: {
                                         '@type': 'Answer',
-                                        text: 'Yes, all 57+ financial calculators are completely free to use with no registration required. We believe in providing accessible financial tools for everyone.'
+                                        text: 'Yes, all 50+ financial calculators are completely free to use with no registration required. We believe in providing accessible financial tools for everyone.'
                                     }
                                 },
                                 {
@@ -1490,7 +1490,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                     "Master Your Finances With ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$homepage$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].highlight,
-                                        children: "57 Expert-Designed Calculators"
+                                        children: "50+ Expert-Designed Calculators"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/index.js",
                                         lineNumber: 324,
@@ -1534,7 +1534,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/suite",
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$pages$2f$homepage$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].primaryCta,
-                                        children: "Explore All 54 Calculators →"
+                                        children: "Explore All 50+ Calculators →"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/index.js",
                                         lineNumber: 331,

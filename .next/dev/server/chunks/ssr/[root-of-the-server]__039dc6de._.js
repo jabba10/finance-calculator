@@ -228,7 +228,7 @@ const Navbar = ()=>{
                             className: isActive('/formulas') ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$module$2e$css__$5b$ssr$5d$__$28$css__module$29$__["default"].active : '',
                             onClick: handleLinkClick,
                             "aria-current": isActive('/formulas') ? 'page' : undefined,
-                            children: "Blog"
+                            children: "Formulas"
                         }, void 0, false, {
                             fileName: "[project]/src/Components/Navbar.jsx",
                             lineNumber: 127,
@@ -697,7 +697,7 @@ function App({ Component, pageProps }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const canonicalUrl = `https://www.financecalculatorfree.com${router.asPath}`;
     const GA_MEASUREMENT_ID = 'G-2E7Q5ZXC2D';
-    // Track page views for Google Analytics
+    // Google Analytics route tracking
     (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
         const handleRouteChange = (url)=>{
             window.gtag?.('config', GA_MEASUREMENT_ID, {
@@ -705,9 +705,7 @@ function App({ Component, pageProps }) {
                 anonymize_ip: true
             });
         };
-        // Track initial load
         handleRouteChange(router.asPath);
-        // Track route changes
         router.events.on('routeChangeComplete', handleRouteChange);
         return ()=>{
             router.events.off('routeChangeComplete', handleRouteChange);
@@ -716,20 +714,69 @@ function App({ Component, pageProps }) {
         router.events,
         router.asPath
     ]);
+    // ===== CORE GOATCOUNTER FIX =====
+    // Manual GoatCounter Tracking for Next.js SPA
+    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
+        // This is the key function that sends data to GoatCounter
+        const sendToGoatCounter = (path)=>{
+            // SAFETY CHECK: Only run this in the browser
+            if ("TURBOPACK compile-time truthy", 1) return;
+            //TURBOPACK unreachable
+            ;
+            const baseUrl = undefined;
+            const query = undefined;
+            // Append a timestamp to prevent caching
+            const imgUrl = undefined;
+            // Create and append an invisible tracking pixel
+            const pixel = undefined;
+        };
+        // Track the initial page load
+        sendToGoatCounter(router.asPath);
+        // Track subsequent route changes
+        const handleRouteChange = (url)=>{
+            sendToGoatCounter(url);
+        };
+        router.events.on('routeChangeComplete', handleRouteChange);
+        return ()=>{
+            router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, [
+        router.events,
+        router.asPath
+    ]);
+    // ===== END GOATCOUNTER FIX =====
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("link", {
-                    rel: "canonical",
-                    href: canonicalUrl
-                }, "canonical", false, {
-                    fileName: "[project]/src/pages/_app.js",
-                    lineNumber: 39,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("link", {
+                        rel: "canonical",
+                        href: canonicalUrl
+                    }, "canonical", false, {
+                        fileName: "[project]/src/pages/_app.js",
+                        lineNumber: 76,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("link", {
+                        rel: "preconnect",
+                        href: "https://financecalculatorfree.goatcounter.com"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/_app.js",
+                        lineNumber: 78,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("link", {
+                        rel: "dns-prefetch",
+                        href: "https://gc.zgo.at"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/_app.js",
+                        lineNumber: 79,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 38,
+                lineNumber: 75,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -737,7 +784,7 @@ function App({ Component, pageProps }) {
                 src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
             }, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 43,
+                lineNumber: 83,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -748,7 +795,6 @@ function App({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
               anonymize_ip: true
@@ -757,22 +803,22 @@ function App({ Component, pageProps }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 47,
+                lineNumber: 87,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                strategy: "afterInteractive",
                 "data-goatcounter": "https://financecalculatorfree.goatcounter.com/count",
-                src: "//gc.zgo.at/count.js",
+                src: "https://gc.zgo.at/count.js",
+                strategy: "lazyOnload",
                 async: true
             }, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 65,
+                lineNumber: 105,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Navbar$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 72,
+                lineNumber: 112,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("main", {
@@ -781,17 +827,17 @@ function App({ Component, pageProps }) {
                     ...pageProps
                 }, void 0, false, {
                     fileName: "[project]/src/pages/_app.js",
-                    lineNumber: 74,
+                    lineNumber: 114,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 73,
+                lineNumber: 113,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$Components$2f$Footer$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/_app.js",
-                lineNumber: 76,
+                lineNumber: 116,
                 columnNumber: 7
             }, this)
         ]
