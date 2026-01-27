@@ -1,6 +1,3 @@
-[00:00:05.746] Server  LOG     ✓ Ready in 4.2s
-[00:00:08.748] Browser LOG     [GoatCounter] Tracked: /
-[00:00:09.112] Browser WARN    goatcounter: not counting because of: localhost
-[00:01:19.288] Server  LOG     ✓ Compiled in 86ms
-[00:02:56.354] Browser LOG     [GoatCounter] Tracked: /
-[00:02:56.463] Browser WARN    goatcounter: not counting because of: localhost
+[00:00:02.787] Server  LOG     ✓ Ready in 2.1s
+[00:00:09.791] Browser LOG     [GoatCounter] Tracked: /
+[00:00:09.791] Browser WARN    goatcounter: not counting because of: localhost
