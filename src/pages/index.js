@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -538,7 +537,7 @@ export async function getStaticProps() {
       currentDate,
       lastModifiedDate,
     },
-    revalidate: 21600,
+    revalidate: 3600,
   };
 }
 

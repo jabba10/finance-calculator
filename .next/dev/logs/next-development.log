@@ -1,3 +1,5 @@
-[00:00:02.787] Server  LOG     ✓ Ready in 2.1s
-[00:00:09.791] Browser LOG     [GoatCounter] Tracked: /
-[00:00:09.791] Browser WARN    goatcounter: not counting because of: localhost
+[00:00:07.716] Server  LOG     ✓ Ready in 5.6s
+[00:00:11.900] Server  WARN    ⚠ Cross origin request detected from 192.168.19.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:12.543] Browser LOG     [GoatCounter] Tracked: /
+[00:00:12.993] Browser WARN    goatcounter: not counting because of: localhost

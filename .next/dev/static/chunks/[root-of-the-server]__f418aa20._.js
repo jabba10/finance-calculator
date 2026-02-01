@@ -938,14 +938,14 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         lang: "en"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 81,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         charSet: "utf-8"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 82,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -953,14 +953,14 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "width=device-width, initial-scale=1"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 83,
+                        lineNumber: 82,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
                         children: pageTitle
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 84,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -968,7 +968,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: pageDescription
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 85,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -976,7 +976,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "Calci Financial Tools"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 86,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -984,7 +984,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 87,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -992,7 +992,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: currentDate
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 90,
+                        lineNumber: 89,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1000,7 +1000,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: lastModifiedDate
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 91,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1008,7 +1008,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "Financial Calculators & Business Tools"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 94,
+                        lineNumber: 93,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1016,7 +1016,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "Finance, Business, Calculators, Investment Tools"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 95,
+                        lineNumber: 94,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1024,7 +1024,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "Financial Planning and Business Analysis"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 96,
+                        lineNumber: 95,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1032,7 +1032,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "Free financial calculators for business and personal finance"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 97,
+                        lineNumber: 96,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1040,7 +1040,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: siteUrl
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 98,
+                        lineNumber: 97,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1048,7 +1048,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "your_verification_code"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 101,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1056,7 +1056,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "your_bing_verification"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 102,
+                        lineNumber: 101,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1064,7 +1064,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "US"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 105,
+                        lineNumber: 104,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1072,7 +1072,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "United States"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 106,
+                        lineNumber: 105,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1080,7 +1080,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "39.8283;-98.5795"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 107,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1088,7 +1088,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "39.8283, -98.5795"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 108,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -1096,7 +1096,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         href: siteUrl
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 111,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -1105,7 +1105,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         hrefLang: "x-default"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 114,
+                        lineNumber: 113,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -1114,7 +1114,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         hrefLang: "en"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 115,
+                        lineNumber: 114,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -1123,7 +1123,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         hrefLang: "es"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 116,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -1131,7 +1131,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         href: "https://fonts.googleapis.com"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 119,
+                        lineNumber: 118,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -1140,7 +1140,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         crossOrigin: "true"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 120,
+                        lineNumber: 119,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1148,7 +1148,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "website"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 123,
+                        lineNumber: 122,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1156,7 +1156,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: siteUrl
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 124,
+                        lineNumber: 123,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1164,7 +1164,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: pageTitle
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 125,
+                        lineNumber: 124,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1172,7 +1172,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: pageDescription
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 126,
+                        lineNumber: 125,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1180,7 +1180,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: imagePreview
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 127,
+                        lineNumber: 126,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1188,7 +1188,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "Comprehensive Financial Calculators Collection"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 128,
+                        lineNumber: 127,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1196,7 +1196,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "Calci Financial Calculators"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 129,
+                        lineNumber: 128,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1204,7 +1204,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "en_US"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 130,
+                        lineNumber: 129,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1212,7 +1212,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "summary_large_image"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 133,
+                        lineNumber: 132,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1220,7 +1220,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "@calcifinance"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 134,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1228,7 +1228,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "@calcifinance"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 135,
+                        lineNumber: 134,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1236,7 +1236,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: pageTitle
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 136,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1244,7 +1244,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: pageDescription
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 137,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1252,7 +1252,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: imagePreview
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 138,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1260,7 +1260,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "Free Financial Calculators for Business and Personal Use"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 139,
+                        lineNumber: 138,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -1268,7 +1268,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         content: "nopin"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 142,
+                        lineNumber: 141,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -1310,7 +1310,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 145,
+                        lineNumber: 144,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -1348,7 +1348,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 184,
+                        lineNumber: 183,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -1393,7 +1393,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 213,
+                        lineNumber: 212,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -1442,7 +1442,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 255,
+                        lineNumber: 254,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -1469,13 +1469,13 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 296,
+                        lineNumber: 295,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.js",
-                lineNumber: 79,
+                lineNumber: 78,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1493,13 +1493,13 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                         children: "50+ Expert-Designed Calculators"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/index.js",
-                                        lineNumber: 324,
+                                        lineNumber: 323,
                                         columnNumber: 39
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/pages/index.js",
-                                lineNumber: 323,
+                                lineNumber: 322,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1510,7 +1510,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                         children: "12,000+ business owners"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/index.js",
-                                        lineNumber: 328,
+                                        lineNumber: 327,
                                         columnNumber: 24
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     " and ",
@@ -1518,14 +1518,14 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                         children: "45,000+ individuals"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/index.js",
-                                        lineNumber: 328,
+                                        lineNumber: 327,
                                         columnNumber: 69
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     " worldwide."
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/pages/index.js",
-                                lineNumber: 326,
+                                lineNumber: 325,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1537,7 +1537,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                         children: "Explore All 50+ Calculators →"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/index.js",
-                                        lineNumber: 331,
+                                        lineNumber: 330,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1546,19 +1546,19 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                         children: "Why Choose Us?"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/index.js",
-                                        lineNumber: 334,
+                                        lineNumber: 333,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/pages/index.js",
-                                lineNumber: 330,
+                                lineNumber: 329,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 322,
+                        lineNumber: 321,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1572,7 +1572,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                     children: "Why Financial Professionals Trust Our Calculators"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 343,
+                                    lineNumber: 342,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1586,27 +1586,27 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "🎓"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 346,
+                                                    lineNumber: 345,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Expertise-Backed Formulas"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 347,
+                                                    lineNumber: 346,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "Every calculator uses industry-standard financial formulas reviewed by CFA charterholders and financial analysts with 10+ years experience."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 348,
+                                                    lineNumber: 347,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 345,
+                                            lineNumber: 344,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1617,27 +1617,27 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "🛡️"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 351,
+                                                    lineNumber: 350,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "100% Private & Secure"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 352,
+                                                    lineNumber: 351,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "All calculations happen locally in your browser. No data storage, no tracking, complete GDPR & CCPA compliance."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 353,
+                                                    lineNumber: 352,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 350,
+                                            lineNumber: 349,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1648,27 +1648,27 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "📈"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 356,
+                                                    lineNumber: 355,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Proven Accuracy"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 357,
+                                                    lineNumber: 356,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "Regularly audited against professional financial software. Results match Excel, QuickBooks, and industry benchmarks."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 358,
+                                                    lineNumber: 357,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 355,
+                                            lineNumber: 354,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1679,44 +1679,44 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "🔍"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 361,
+                                                    lineNumber: 360,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Transparent Calculations"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 362,
+                                                    lineNumber: 361,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "See the exact formulas used. We explain the math behind every result so you understand, not just calculate."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 363,
+                                                    lineNumber: 362,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 360,
+                                            lineNumber: 359,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 344,
+                                    lineNumber: 343,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/index.js",
-                            lineNumber: 342,
+                            lineNumber: 341,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 341,
+                        lineNumber: 340,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1731,7 +1731,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "Most Popular Financial Tools"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 373,
+                                            lineNumber: 372,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1742,20 +1742,20 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "2.3 million times"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 375,
+                                                    lineNumber: 374,
                                                     columnNumber: 22
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " this year by businesses and individuals"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 374,
+                                            lineNumber: 373,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 372,
+                                    lineNumber: 371,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1769,21 +1769,21 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "📊"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 380,
+                                                    lineNumber: 379,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "ROI Calculator"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 381,
+                                                    lineNumber: 380,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "Measure marketing campaign returns with detailed breakdown of costs, revenues, and net profit."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 382,
+                                                    lineNumber: 381,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1792,13 +1792,13 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "Calculate ROI →"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 383,
+                                                    lineNumber: 382,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 379,
+                                            lineNumber: 378,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1809,21 +1809,21 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "🏦"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 388,
+                                                    lineNumber: 387,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Loan Amortization"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 389,
+                                                    lineNumber: 388,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "See exact monthly payments, total interest paid, and full amortization schedule for any loan."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 390,
+                                                    lineNumber: 389,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1832,13 +1832,13 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "Analyze Loans →"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 391,
+                                                    lineNumber: 390,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 387,
+                                            lineNumber: 386,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1849,21 +1849,21 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "💰"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 396,
+                                                    lineNumber: 395,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Business Valuation"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 397,
+                                                    lineNumber: 396,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "Estimate your company's worth using multiple methods: revenue multiples, DCF, and asset-based."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 398,
+                                                    lineNumber: 397,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1872,30 +1872,30 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "Value Your Business →"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 399,
+                                                    lineNumber: 398,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 395,
+                                            lineNumber: 394,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 378,
+                                    lineNumber: 377,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/index.js",
-                            lineNumber: 371,
+                            lineNumber: 370,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 370,
+                        lineNumber: 369,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1910,7 +1910,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "Complete Financial Calculator Library"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 411,
+                                            lineNumber: 410,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1918,13 +1918,13 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "57 specialized tools covering every financial scenario — from startups to retirement"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 412,
+                                            lineNumber: 411,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 410,
+                                    lineNumber: 409,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1935,7 +1935,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "All Calculators"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 418,
+                                            lineNumber: 417,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1943,7 +1943,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "Business Finance"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 419,
+                                            lineNumber: 418,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1951,7 +1951,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "Personal Finance"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 420,
+                                            lineNumber: 419,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1959,7 +1959,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "Investment Tools"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 421,
+                                            lineNumber: 420,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1967,13 +1967,13 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "Specialized"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 422,
+                                            lineNumber: 421,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 417,
+                                    lineNumber: 416,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1989,7 +1989,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                         children: calc.icon
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/index.js",
-                                                        lineNumber: 429,
+                                                        lineNumber: 428,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2003,7 +2003,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/pages/index.js",
-                                                                lineNumber: 431,
+                                                                lineNumber: 430,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2011,7 +2011,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                                 children: calc.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/pages/index.js",
-                                                                lineNumber: 432,
+                                                                lineNumber: 431,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2022,7 +2022,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                                         children: "Finance"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/pages/index.js",
-                                                                        lineNumber: 434,
+                                                                        lineNumber: 433,
                                                                         columnNumber: 25
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2030,19 +2030,19 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                                         children: "3 min"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/pages/index.js",
-                                                                        lineNumber: 435,
+                                                                        lineNumber: 434,
                                                                         columnNumber: 25
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/pages/index.js",
-                                                                lineNumber: 433,
+                                                                lineNumber: 432,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/pages/index.js",
-                                                        lineNumber: 430,
+                                                        lineNumber: 429,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2050,23 +2050,23 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                         children: "Use Calculator →"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/index.js",
-                                                        lineNumber: 438,
+                                                        lineNumber: 437,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/pages/index.js",
-                                                lineNumber: 428,
+                                                lineNumber: 427,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, calc.id, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 427,
+                                            lineNumber: 426,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 425,
+                                    lineNumber: 424,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 visibleCalculators < calculators.length && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2082,7 +2082,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 446,
+                                            lineNumber: 445,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2096,24 +2096,24 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 449,
+                                            lineNumber: 448,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 445,
+                                    lineNumber: 444,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/index.js",
-                            lineNumber: 409,
+                            lineNumber: 408,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 408,
+                        lineNumber: 407,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2126,7 +2126,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                     children: "How to Maximize Your Financial Health"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 460,
+                                    lineNumber: 459,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2140,27 +2140,27 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 463,
+                                                    lineNumber: 462,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Analyze Your Current Position"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 464,
+                                                    lineNumber: 463,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "Use our net worth calculator and debt analysis tools to understand where you stand financially."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 465,
+                                                    lineNumber: 464,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 462,
+                                            lineNumber: 461,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2171,27 +2171,27 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 468,
+                                                    lineNumber: 467,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Plan Your Financial Goals"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 469,
+                                                    lineNumber: 468,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "Set clear targets for retirement, investments, debt payoff, and major purchases."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 470,
+                                                    lineNumber: 469,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 467,
+                                            lineNumber: 466,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2202,27 +2202,27 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 473,
+                                                    lineNumber: 472,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Run Scenarios & Compare"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 474,
+                                                    lineNumber: 473,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "Test different financial scenarios to find the optimal strategy for your situation."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 475,
+                                                    lineNumber: 474,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 472,
+                                            lineNumber: 471,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2233,44 +2233,44 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: "4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 478,
+                                                    lineNumber: 477,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: "Make Informed Decisions"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 479,
+                                                    lineNumber: 478,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "Use data-driven insights to make confident financial choices for business and personal life."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 480,
+                                                    lineNumber: 479,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 477,
+                                            lineNumber: 476,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 461,
+                                    lineNumber: 460,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/index.js",
-                            lineNumber: 459,
+                            lineNumber: 458,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 458,
+                        lineNumber: 457,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2283,7 +2283,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                     children: "Trusted By Professionals Worldwide"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 489,
+                                    lineNumber: 488,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2297,7 +2297,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: '"As a CPA with 15 years experience, I recommend these calculators to all my small business clients. The accuracy matches professional software."'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 492,
+                                                    lineNumber: 491,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2307,26 +2307,26 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                             children: "Sarah Johnson, CPA"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/index.js",
-                                                            lineNumber: 496,
+                                                            lineNumber: 495,
                                                             columnNumber: 19
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Financial Consultant"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/index.js",
-                                                            lineNumber: 497,
+                                                            lineNumber: 496,
                                                             columnNumber: 19
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 495,
+                                                    lineNumber: 494,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 491,
+                                            lineNumber: 490,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2337,7 +2337,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                     children: '"Used the ROI calculator to justify a $50k marketing budget. The detailed breakdown convinced our board and we achieved 127% ROI."'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 501,
+                                                    lineNumber: 500,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2347,43 +2347,43 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                                             children: "Michael Chen"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/index.js",
-                                                            lineNumber: 505,
+                                                            lineNumber: 504,
                                                             columnNumber: 19
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Marketing Director, Tech Startup"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/index.js",
-                                                            lineNumber: 506,
+                                                            lineNumber: 505,
                                                             columnNumber: 19
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/pages/index.js",
-                                                    lineNumber: 504,
+                                                    lineNumber: 503,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 500,
+                                            lineNumber: 499,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 490,
+                                    lineNumber: 489,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/index.js",
-                            lineNumber: 488,
+                            lineNumber: 487,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 487,
+                        lineNumber: 486,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2395,14 +2395,14 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                     children: "Start Making Smarter Financial Decisions Today"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 516,
+                                    lineNumber: 515,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: "Join 57,000+ users who trust our calculators for accurate, private financial analysis."
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 517,
+                                    lineNumber: 516,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2414,7 +2414,7 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             children: "Access All 54 Calculators Free →"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 519,
+                                            lineNumber: 518,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2425,30 +2425,30 @@ const LandingPage = ({ currentDate, lastModifiedDate })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/pages/index.js",
-                                            lineNumber: 522,
+                                            lineNumber: 521,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/index.js",
-                                    lineNumber: 518,
+                                    lineNumber: 517,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/index.js",
-                            lineNumber: 515,
+                            lineNumber: 514,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.js",
-                        lineNumber: 514,
+                        lineNumber: 513,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.js",
-                lineNumber: 320,
+                lineNumber: 319,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
